@@ -67,11 +67,18 @@ function createReactiveState(initialState) {
             const oldValue = target[prop];
 
             // Only notify if value actually changed
-            // Use JSON comparison for arrays/objects
-            const oldJson = JSON.stringify(oldValue);
-            const newJson = JSON.stringify(value);
+            // Handle Sets specially since JSON.stringify(Set) returns "{}"
+            let hasChanged;
+            if (value instanceof Set && oldValue instanceof Set) {
+                hasChanged = value.size !== oldValue.size ||
+                    [...value].some(v => !oldValue.has(v));
+            } else {
+                const oldJson = JSON.stringify(oldValue);
+                const newJson = JSON.stringify(value);
+                hasChanged = oldJson !== newJson;
+            }
 
-            if (oldJson !== newJson) {
+            if (hasChanged) {
                 target[prop] = value;
                 notify(prop, value, oldValue);
             }
@@ -91,12 +98,16 @@ export const state = createReactiveState({
     // Recipe state
     recipe: [],              // Array of {id, weight}
     weightLocks: new Set(),  // Set of indices with locked weights
-    percentageLockIndex: null, // Index of fat locked for percentage scaling
+    percentageLocks: new Set(), // Set of indices with locked percentages
     recipeAdditives: [],     // Array of {id, weight}
 
     // YOLO mode state
     yoloRecipe: [],          // Array of {id, percentage}
-    yoloLockedIndex: null,   // Index of locked fat in YOLO mode
+    yoloLockedIndices: new Set(),  // Set of locked fat indices in YOLO mode
+
+    // Properties mode state
+    propertiesRecipe: [],    // Array of {id, percentage} from profile builder
+    propertiesLockedIndices: new Set(),  // Set of locked fat indices in properties mode
 
     // Data (loaded from JSON)
     fatsDatabase: {},        // Fat data with SAP values, fatty acids
@@ -105,7 +116,14 @@ export const state = createReactiveState({
     additivesDatabase: {},   // Additive data (EOs, colourants, functional)
 
     // UI state
-    excludedFats: []         // Fats excluded from profile builder
+    excludedFats: [],        // Fats excluded from profile builder
+
+    // Cupboard cleaner state
+    cupboardFats: [],              // Array of {id, weight}
+    cupboardFatLocks: new Set(),   // Indices of locked cupboard fats
+    cupboardSuggestions: [],       // Array of {id, weight, percentage}
+    cupboardLockedIndices: new Set(), // Indices of locked suggestions
+    allowRatioMode: false          // If true, optimizer can suggest ratio changes
 });
 
 // ============================================
@@ -147,12 +165,17 @@ export function removeFatFromRecipe(index) {
     }
     state.weightLocks = newWeightLocks;
 
-    // Adjust percentage lock index if needed
-    if (state.percentageLockIndex === index) {
-        state.percentageLockIndex = null;
-    } else if (state.percentageLockIndex !== null && index < state.percentageLockIndex) {
-        state.percentageLockIndex = state.percentageLockIndex - 1;
+    // Adjust percentage locks - rebuild set with adjusted indices
+    const newPercentageLocks = new Set();
+    for (const lockedIndex of state.percentageLocks) {
+        if (lockedIndex < index) {
+            newPercentageLocks.add(lockedIndex);
+        } else if (lockedIndex > index) {
+            newPercentageLocks.add(lockedIndex - 1);
+        }
+        // If lockedIndex === index, it's removed (not added to new set)
     }
+    state.percentageLocks = newPercentageLocks;
 }
 
 /**
@@ -165,12 +188,12 @@ export function updateFatWeight(index, weight, scaleOthers = false) {
     const newRecipe = [...state.recipe];
     const newWeight = parseFloat(weight) || 0;
 
-    if (scaleOthers && state.percentageLockIndex === index && newRecipe.length > 1) {
+    if (scaleOthers && state.percentageLocks.has(index) && newRecipe.length > 1) {
         const oldWeight = newRecipe[index].weight;
         if (oldWeight > 0 && newWeight > 0) {
             const scaleFactor = newWeight / oldWeight;
             newRecipe.forEach((fat, i) => {
-                if (i !== index) {
+                if (i !== index && !state.percentageLocks.has(i)) {
                     fat.weight = Math.round(fat.weight * scaleFactor * 10) / 10;
                 }
             });
@@ -196,12 +219,17 @@ export function toggleWeightLock(index) {
 }
 
 /**
- * Toggle percentage lock on a fat (for proportional scaling)
- * Only one fat can have percentage locked at a time
+ * Toggle percentage lock on a fat (keeps percentage constant when other fats change)
  * @param {number} index - Fat index
  */
 export function togglePercentageLock(index) {
-    state.percentageLockIndex = state.percentageLockIndex === index ? null : index;
+    const newLocks = new Set(state.percentageLocks);
+    if (newLocks.has(index)) {
+        newLocks.delete(index);
+    } else {
+        newLocks.add(index);
+    }
+    state.percentageLocks = newLocks;
 }
 
 /**
@@ -210,7 +238,7 @@ export function togglePercentageLock(index) {
 export function clearRecipe() {
     state.recipe = [];
     state.weightLocks = new Set();
-    state.percentageLockIndex = null;
+    state.percentageLocks = new Set();
 }
 
 /**
@@ -284,11 +312,11 @@ export function updateAdditiveWeight(index, weight) {
 /**
  * Set the YOLO recipe
  * @param {Array} recipe - Array of {id, percentage}
- * @param {number|null} preserveLockedIndex - Index of locked fat to preserve (null to reset)
+ * @param {Set|null} preserveLockedIndices - Set of locked indices to preserve (null to reset)
  */
-export function setYoloRecipe(recipe, preserveLockedIndex = null) {
+export function setYoloRecipe(recipe, preserveLockedIndices = null) {
     state.yoloRecipe = recipe;
-    state.yoloLockedIndex = preserveLockedIndex;
+    state.yoloLockedIndices = preserveLockedIndices || new Set();
 }
 
 /**
@@ -296,7 +324,13 @@ export function setYoloRecipe(recipe, preserveLockedIndex = null) {
  * @param {number} index - Fat index
  */
 export function toggleYoloLock(index) {
-    state.yoloLockedIndex = state.yoloLockedIndex === index ? null : index;
+    const newLocks = new Set(state.yoloLockedIndices);
+    if (newLocks.has(index)) {
+        newLocks.delete(index);
+    } else {
+        newLocks.add(index);
+    }
+    state.yoloLockedIndices = newLocks;
 }
 
 /**
@@ -308,12 +342,17 @@ export function removeYoloFat(index) {
     newRecipe.splice(index, 1);
     state.yoloRecipe = newRecipe;
 
-    // Adjust locked index if needed
-    if (state.yoloLockedIndex === index) {
-        state.yoloLockedIndex = null;
-    } else if (state.yoloLockedIndex !== null && index < state.yoloLockedIndex) {
-        state.yoloLockedIndex = state.yoloLockedIndex - 1;
+    // Adjust locked indices
+    const newLocks = new Set();
+    for (const lockedIndex of state.yoloLockedIndices) {
+        if (lockedIndex < index) {
+            newLocks.add(lockedIndex);
+        } else if (lockedIndex > index) {
+            newLocks.add(lockedIndex - 1);
+        }
+        // If lockedIndex === index, it's removed (not added to new set)
     }
+    state.yoloLockedIndices = newLocks;
 }
 
 /**
@@ -321,8 +360,7 @@ export function removeYoloFat(index) {
  * @returns {Array} Array of {id, percentage} for locked fats
  */
 export function getYoloLockedFats() {
-    if (state.yoloLockedIndex === null) return [];
-    return [state.yoloRecipe[state.yoloLockedIndex]];
+    return state.yoloRecipe.filter((_, i) => state.yoloLockedIndices.has(i));
 }
 
 /**
@@ -330,7 +368,207 @@ export function getYoloLockedFats() {
  */
 export function clearYoloRecipe() {
     state.yoloRecipe = [];
-    state.yoloLockedIndex = null;
+    state.yoloLockedIndices = new Set();
+}
+
+// ============================================
+// Properties Mode Methods
+// ============================================
+
+/**
+ * Set properties recipe from profile builder
+ * @param {Array} recipe - Array of {id, percentage}
+ * @param {Set} preserveLockedIndices - Optional locked indices to preserve
+ */
+export function setPropertiesRecipe(recipe, preserveLockedIndices = null) {
+    state.propertiesRecipe = recipe;
+    state.propertiesLockedIndices = preserveLockedIndices || new Set();
+}
+
+/**
+ * Toggle lock on a properties mode fat
+ * @param {number} index - Fat index
+ */
+export function togglePropertiesLock(index) {
+    const newLocks = new Set(state.propertiesLockedIndices);
+    if (newLocks.has(index)) {
+        newLocks.delete(index);
+    } else {
+        newLocks.add(index);
+    }
+    state.propertiesLockedIndices = newLocks;
+}
+
+/**
+ * Get locked fats from properties recipe
+ * @returns {Array} Array of {id, percentage} for locked fats
+ */
+export function getPropertiesLockedFats() {
+    return [...state.propertiesLockedIndices]
+        .filter(i => i < state.propertiesRecipe.length)
+        .map(i => state.propertiesRecipe[i]);
+}
+
+/**
+ * Clear properties recipe
+ */
+export function clearPropertiesRecipe() {
+    state.propertiesRecipe = [];
+    state.propertiesLockedIndices = new Set();
+}
+
+// ============================================
+// Cupboard Cleaner Methods
+// ============================================
+
+/**
+ * Add a fat to the cupboard
+ * @param {string} id - Fat id (kebab-case key)
+ * @param {number} weight - Weight in grams
+ * @returns {boolean} True if added, false if already exists
+ */
+export function addCupboardFat(id, weight = DEFAULTS.FAT_WEIGHT) {
+    if (state.cupboardFats.some(fat => fat.id === id)) {
+        return false;
+    }
+    state.cupboardFats = [...state.cupboardFats, { id, weight }];
+    return true;
+}
+
+/**
+ * Remove a fat from the cupboard by index
+ * @param {number} index - Index to remove
+ */
+export function removeCupboardFat(index) {
+    const newFats = [...state.cupboardFats];
+    newFats.splice(index, 1);
+    state.cupboardFats = newFats;
+
+    // Adjust locked indices
+    const newLocks = new Set();
+    for (const lockedIndex of state.cupboardFatLocks) {
+        if (lockedIndex < index) {
+            newLocks.add(lockedIndex);
+        } else if (lockedIndex > index) {
+            newLocks.add(lockedIndex - 1);
+        }
+    }
+    state.cupboardFatLocks = newLocks;
+}
+
+/**
+ * Update a cupboard fat's weight
+ * @param {number} index - Fat index
+ * @param {number} weight - New weight
+ */
+export function updateCupboardFatWeight(index, weight) {
+    const newFats = [...state.cupboardFats];
+    newFats[index] = { ...newFats[index], weight: parseFloat(weight) || 0 };
+    state.cupboardFats = newFats;
+}
+
+/**
+ * Clear all cupboard fats
+ */
+export function clearCupboardFats() {
+    state.cupboardFats = [];
+    state.cupboardFatLocks = new Set();
+    state.cupboardSuggestions = [];
+    state.cupboardLockedIndices = new Set();
+}
+
+/**
+ * Toggle lock on a cupboard fat
+ * @param {number} index - Fat index
+ */
+export function toggleCupboardFatLock(index) {
+    const newLocks = new Set(state.cupboardFatLocks);
+    if (newLocks.has(index)) {
+        newLocks.delete(index);
+    } else {
+        newLocks.add(index);
+    }
+    state.cupboardFatLocks = newLocks;
+}
+
+/**
+ * Set cupboard suggestions from optimizer
+ * @param {Array} suggestions - Array of {id, weight, percentage}
+ */
+export function setCupboardSuggestions(suggestions) {
+    state.cupboardSuggestions = suggestions;
+    state.cupboardLockedIndices = new Set();
+}
+
+/**
+ * Toggle lock on a cupboard suggestion
+ * @param {number} index - Suggestion index
+ */
+export function toggleCupboardSuggestionLock(index) {
+    const newLocks = new Set(state.cupboardLockedIndices);
+    if (newLocks.has(index)) {
+        newLocks.delete(index);
+    } else {
+        newLocks.add(index);
+    }
+    state.cupboardLockedIndices = newLocks;
+}
+
+/**
+ * Remove a suggestion from the cupboard suggestions by index
+ * @param {number} index - Index to remove
+ */
+export function removeCupboardSuggestion(index) {
+    const newSuggestions = [...state.cupboardSuggestions];
+    newSuggestions.splice(index, 1);
+    state.cupboardSuggestions = newSuggestions;
+
+    // Adjust locked indices
+    const newLocks = new Set();
+    for (const lockedIndex of state.cupboardLockedIndices) {
+        if (lockedIndex < index) {
+            newLocks.add(lockedIndex);
+        } else if (lockedIndex > index) {
+            newLocks.add(lockedIndex - 1);
+        }
+    }
+    state.cupboardLockedIndices = newLocks;
+}
+
+/**
+ * Get locked suggestions from cupboard
+ * @returns {Array} Array of {id, weight, percentage} for locked suggestions
+ */
+export function getCupboardLockedSuggestions() {
+    return state.cupboardSuggestions.filter((_, i) => state.cupboardLockedIndices.has(i));
+}
+
+/**
+ * Update a cupboard suggestion's weight
+ * @param {number} index - Suggestion index
+ * @param {number} weight - New weight
+ */
+export function updateCupboardSuggestionWeight(index, weight) {
+    const newSuggestions = [...state.cupboardSuggestions];
+    const newWeight = parseFloat(weight) || 0;
+    newSuggestions[index] = { ...newSuggestions[index], weight: newWeight };
+    state.cupboardSuggestions = newSuggestions;
+}
+
+/**
+ * Set whether ratio mode is allowed
+ * @param {boolean} allow - Whether to allow ratio adjustments
+ */
+export function setAllowRatioMode(allow) {
+    state.allowRatioMode = allow;
+}
+
+/**
+ * Get the total weight of cupboard fats
+ * @returns {number} Total weight
+ */
+export function getCupboardTotalWeight() {
+    return state.cupboardFats.reduce((sum, fat) => sum + fat.weight, 0);
 }
 
 // ============================================
@@ -347,9 +585,15 @@ export function saveState() {
         const dataToSave = {
             recipe: state.recipe,
             weightLocks: Array.from(state.weightLocks),
-            percentageLockIndex: state.percentageLockIndex,
+            percentageLocks: Array.from(state.percentageLocks),
             excludedFats: state.excludedFats,
-            recipeAdditives: state.recipeAdditives
+            recipeAdditives: state.recipeAdditives,
+            // Cupboard cleaner state
+            cupboardFats: state.cupboardFats,
+            cupboardFatLocks: Array.from(state.cupboardFatLocks),
+            cupboardSuggestions: state.cupboardSuggestions,
+            cupboardLockedIndices: Array.from(state.cupboardLockedIndices),
+            allowRatioMode: state.allowRatioMode
         };
         localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
     } catch (_e) {
@@ -372,14 +616,30 @@ export function restoreState() {
             if (Array.isArray(data.weightLocks)) {
                 state.weightLocks = new Set(data.weightLocks);
             }
-            if (data.percentageLockIndex !== undefined) {
-                state.percentageLockIndex = data.percentageLockIndex;
+            if (Array.isArray(data.percentageLocks)) {
+                state.percentageLocks = new Set(data.percentageLocks);
             }
             if (Array.isArray(data.excludedFats)) {
                 state.excludedFats = data.excludedFats;
             }
             if (Array.isArray(data.recipeAdditives)) {
                 state.recipeAdditives = data.recipeAdditives;
+            }
+            // Cupboard cleaner state
+            if (Array.isArray(data.cupboardFats)) {
+                state.cupboardFats = data.cupboardFats;
+            }
+            if (Array.isArray(data.cupboardFatLocks)) {
+                state.cupboardFatLocks = new Set(data.cupboardFatLocks);
+            }
+            if (Array.isArray(data.cupboardSuggestions)) {
+                state.cupboardSuggestions = data.cupboardSuggestions;
+            }
+            if (Array.isArray(data.cupboardLockedIndices)) {
+                state.cupboardLockedIndices = new Set(data.cupboardLockedIndices);
+            }
+            if (typeof data.allowRatioMode === 'boolean') {
+                state.allowRatioMode = data.allowRatioMode;
             }
             return true;
         }

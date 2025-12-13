@@ -1,67 +1,82 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "glossary.schema.json",
-  "title": "Soap Making Glossary",
-  "description": "Schema for glossary terms and definitions",
-  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": {
     "$ref": "#/definitions/Term"
   },
   "definitions": {
     "Term": {
-      "type": "object",
-      "required": ["term", "category", "desc"],
+      "additionalProperties": false,
       "properties": {
-        "term": {
-          "type": "string",
-          "description": "Display name for the term",
-          "minLength": 1
-        },
         "category": {
-          "type": "string",
           "description": "Classification of the term",
-          "enum": ["property", "concept", "calculation", "additive"]
+          "enum": [
+            "property",
+            "concept",
+            "calculation",
+            "additive"
+          ],
+          "type": "string"
         },
         "desc": {
-          "type": "string",
           "description": "Short description",
-          "minLength": 1
+          "minLength": 1,
+          "type": "string"
         },
         "details": {
-          "type": "string",
-          "description": "Extended explanation with examples and ranges"
-        },
-        "related": {
-          "type": "array",
-          "description": "Keys of related glossary terms",
-          "items": { "type": "string" }
+          "description": "Extended explanation with examples and ranges",
+          "type": "string"
         },
         "ranges": {
-          "type": "object",
+          "additionalProperties": false,
           "description": "Structured range values for property terms",
           "properties": {
-            "min": {
-              "type": "number",
-              "description": "Minimum recommended value"
-            },
-            "max": {
-              "type": "number",
-              "description": "Maximum recommended value"
-            },
             "ideal": {
-              "type": "object",
+              "additionalProperties": false,
               "description": "Ideal range within the min/max bounds",
               "properties": {
-                "min": { "type": "number" },
-                "max": { "type": "number" }
+                "max": {
+                  "type": "number"
+                },
+                "min": {
+                  "type": "number"
+                }
               },
-              "additionalProperties": false
+              "type": "object"
+            },
+            "max": {
+              "description": "Maximum recommended value",
+              "type": "number"
+            },
+            "min": {
+              "description": "Minimum recommended value",
+              "type": "number"
             }
           },
-          "additionalProperties": false
+          "type": "object"
+        },
+        "related": {
+          "description": "Keys of related glossary terms",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "term": {
+          "description": "Display name for the term",
+          "minLength": 1,
+          "type": "string"
         }
       },
-      "additionalProperties": false
+      "required": [
+        "term",
+        "category",
+        "desc"
+      ],
+      "type": "object"
     }
-  }
+  },
+  "description": "Schema for glossary terms and definitions",
+  "title": "Soap Making Glossary",
+  "type": "object"
 }

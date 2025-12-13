@@ -1,74 +1,105 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "fatty-acids.schema.json",
-  "title": "Fatty Acids Database",
-  "description": "Schema for fatty acid definitions",
-  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": {
     "$ref": "#/definitions/FattyAcid"
   },
   "definitions": {
     "FattyAcid": {
-      "type": "object",
-      "required": ["name", "formula", "carbonChain", "saturation", "meltingPoint", "soapProperties", "description", "commonSources"],
+      "additionalProperties": false,
       "properties": {
-        "name": {
-          "type": "string",
-          "description": "Full name of the fatty acid"
-        },
-        "formula": {
-          "type": "string",
-          "description": "Chemical formula notation (e.g., C12:0, C18:1)"
-        },
         "carbonChain": {
-          "type": "integer",
           "description": "Number of carbon atoms",
+          "maximum": 30,
           "minimum": 1,
-          "maximum": 30
-        },
-        "saturation": {
-          "type": "string",
-          "description": "Saturation level",
-          "enum": ["saturated", "monounsaturated", "polyunsaturated", "monounsaturated (hydroxylated)"]
-        },
-        "meltingPoint": {
-          "type": "number",
-          "description": "Melting point in Celsius"
-        },
-        "soapProperties": {
-          "type": "object",
-          "description": "Qualitative soap property contributions",
-          "properties": {
-            "hardness": { "type": "string" },
-            "cleansing": { "type": "string" },
-            "lather": { "type": "string" },
-            "conditioning": { "type": "string" }
-          },
-          "additionalProperties": false
-        },
-        "description": {
-          "type": "string",
-          "description": "Additional notes about this fatty acid"
+          "type": "integer"
         },
         "commonSources": {
-          "type": "array",
           "description": "Oils/fats that contain this fatty acid",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "description": {
+          "description": "Additional notes about this fatty acid",
+          "type": "string"
+        },
+        "formula": {
+          "description": "Chemical formula notation (e.g., C12:0, C18:1)",
+          "type": "string"
+        },
+        "meltingPoint": {
+          "description": "Melting point in Celsius",
+          "type": "number"
+        },
+        "name": {
+          "description": "Full name of the fatty acid",
+          "type": "string"
         },
         "references": {
-          "type": "array",
           "items": {
-            "type": "object",
+            "additionalProperties": false,
             "properties": {
-              "source": { "type": "string" },
-              "section": { "type": "string" },
-              "url": { "type": "string", "format": "uri" }
+              "section": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              },
+              "url": {
+                "format": "uri",
+                "type": "string"
+              }
             },
-            "additionalProperties": false
-          }
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "saturation": {
+          "description": "Saturation level",
+          "enum": [
+            "saturated",
+            "monounsaturated",
+            "polyunsaturated",
+            "monounsaturated (hydroxylated)"
+          ],
+          "type": "string"
+        },
+        "soapProperties": {
+          "additionalProperties": false,
+          "description": "Qualitative soap property contributions",
+          "properties": {
+            "cleansing": {
+              "type": "string"
+            },
+            "conditioning": {
+              "type": "string"
+            },
+            "hardness": {
+              "type": "string"
+            },
+            "lather": {
+              "type": "string"
+            }
+          },
+          "type": "object"
         }
       },
-      "additionalProperties": false
+      "required": [
+        "name",
+        "formula",
+        "carbonChain",
+        "saturation",
+        "meltingPoint",
+        "soapProperties",
+        "description",
+        "commonSources"
+      ],
+      "type": "object"
     }
-  }
+  },
+  "description": "Schema for fatty acid definitions",
+  "title": "Fatty Acids Database",
+  "type": "object"
 }
