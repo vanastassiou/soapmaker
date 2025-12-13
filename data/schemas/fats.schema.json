@@ -1,120 +1,190 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "oils.schema.json",
-  "title": "Soap Making Oils Database",
-  "description": "Schema for oils used in soap making calculations",
-  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": {
     "$ref": "#/definitions/Oil"
   },
   "definitions": {
     "Oil": {
-      "type": "object",
-      "required": ["name", "sap", "fattyAcids", "iodine", "ins", "density", "usage", "description"],
+      "additionalProperties": false,
       "properties": {
-        "name": {
-          "type": "string",
-          "description": "Display name of the oil/fat",
-          "minLength": 1
-        },
-        "sap": {
-          "type": "object",
-          "description": "Saponification values for different lye types",
-          "required": ["naoh", "koh"],
-          "properties": {
-            "naoh": {
-              "type": "number",
-              "description": "Grams of NaOH per gram of oil",
-              "minimum": 0,
-              "maximum": 0.3
-            },
-            "koh": {
-              "type": "number",
-              "description": "Grams of KOH per gram of oil",
-              "minimum": 0,
-              "maximum": 0.4
-            }
-          },
-          "additionalProperties": false
-        },
-        "fattyAcids": {
-          "type": "object",
-          "description": "Fatty acid percentages (0-100)",
-          "properties": {
-            "lauric": { "type": "number", "minimum": 0, "maximum": 100 },
-            "myristic": { "type": "number", "minimum": 0, "maximum": 100 },
-            "palmitic": { "type": "number", "minimum": 0, "maximum": 100 },
-            "stearic": { "type": "number", "minimum": 0, "maximum": 100 },
-            "ricinoleic": { "type": "number", "minimum": 0, "maximum": 100 },
-            "oleic": { "type": "number", "minimum": 0, "maximum": 100 },
-            "linoleic": { "type": "number", "minimum": 0, "maximum": 100 },
-            "linolenic": { "type": "number", "minimum": 0, "maximum": 100 }
-          },
-          "additionalProperties": false
-        },
-        "iodine": {
-          "type": "number",
-          "description": "Iodine value",
-          "minimum": 0,
-          "maximum": 200
-        },
-        "ins": {
-          "type": "number",
-          "description": "INS value (sapKOH * 1000 - iodine)",
-          "minimum": 0,
-          "maximum": 400
-        },
         "density": {
-          "type": "number",
           "description": "Density in g/mL",
+          "maximum": 1.1,
           "minimum": 0.7,
-          "maximum": 1.1
-        },
-        "usage": {
-          "type": "object",
-          "description": "Recommended usage percentage range",
-          "required": ["min", "max"],
-          "properties": {
-            "min": { "type": "integer", "minimum": 0, "maximum": 100 },
-            "max": { "type": "integer", "minimum": 0, "maximum": 100 }
-          },
-          "additionalProperties": false
+          "type": "number"
         },
         "description": {
-          "type": "string",
           "description": "Brief description of the oil",
-          "minLength": 1
-        },
-        "references": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": ["source", "section", "url"],
-            "properties": {
-              "source": { "type": "string" },
-              "section": { "type": "string" },
-              "url": { "type": "string", "format": "uri" }
-            },
-            "additionalProperties": false
-          }
+          "minLength": 1,
+          "type": "string"
         },
         "dietary": {
-          "type": "object",
+          "additionalProperties": false,
           "description": "Dietary and ethical classification flags",
           "properties": {
             "animalBased": {
-              "type": "boolean",
-              "description": "True if derived from animal sources"
+              "description": "True if derived from animal sources",
+              "type": "boolean"
+            },
+            "commonAllergen": {
+              "description": "True if associated with common allergens (tree nuts, soy, etc.)",
+              "type": "boolean"
             },
             "ethicalConcerns": {
-              "type": "boolean",
-              "description": "True if there are significant ethical concerns (e.g., palm oil deforestation)"
+              "description": "True if there are significant ethical concerns (e.g., palm oil deforestation)",
+              "type": "boolean"
             }
           },
-          "additionalProperties": false
+          "type": "object"
+        },
+        "fattyAcids": {
+          "additionalProperties": false,
+          "description": "Fatty acid percentages (0-100)",
+          "properties": {
+            "lauric": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "linoleic": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "linolenic": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "myristic": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "oleic": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "palmitic": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "ricinoleic": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "stearic": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "ins": {
+          "description": "INS value (sapKOH * 1000 - iodine)",
+          "maximum": 400,
+          "minimum": 0,
+          "type": "number"
+        },
+        "iodine": {
+          "description": "Iodine value",
+          "maximum": 200,
+          "minimum": 0,
+          "type": "number"
+        },
+        "name": {
+          "description": "Display name of the oil/fat",
+          "minLength": 1,
+          "type": "string"
+        },
+        "references": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "section": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              },
+              "url": {
+                "format": "uri",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source",
+              "section",
+              "url"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "sap": {
+          "additionalProperties": false,
+          "description": "Saponification values for different lye types",
+          "properties": {
+            "koh": {
+              "description": "Grams of KOH per gram of oil",
+              "maximum": 0.4,
+              "minimum": 0,
+              "type": "number"
+            },
+            "naoh": {
+              "description": "Grams of NaOH per gram of oil",
+              "maximum": 0.3,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "naoh",
+            "koh"
+          ],
+          "type": "object"
+        },
+        "usage": {
+          "additionalProperties": false,
+          "description": "Recommended usage percentage range",
+          "properties": {
+            "max": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "min": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "min",
+            "max"
+          ],
+          "type": "object"
         }
       },
-      "additionalProperties": false
+      "required": [
+        "name",
+        "sap",
+        "fattyAcids",
+        "iodine",
+        "ins",
+        "density",
+        "usage",
+        "description"
+      ],
+      "type": "object"
     }
-  }
+  },
+  "description": "Schema for oils used in soap making calculations",
+  "title": "Soap Making Oils Database",
+  "type": "object"
 }

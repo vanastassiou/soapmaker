@@ -33,6 +33,7 @@ import {
 
 import {
     attachRowEventHandlers,
+    attachRowEventHandlersWithSignal,
     renderEmptyState,
     renderItemRow,
     renderTotalsRow
@@ -64,22 +65,26 @@ export function populateFatSelect(selectElement, fatsDatabase, excludeIds = [], 
  * Render the recipe fats list
  * @param {HTMLElement} container - Container element
  * @param {Array} recipe - Recipe array of {id, weight}
- * @param {Object} locks - {weightLocks: Set, percentageLockIndex: number|null}
+ * @param {Object} locks - {weightLocks: Set, percentageLocks: Set}
  * @param {string} unit - Unit string (g or oz)
  * @param {Object} fatsDatabase - Fat database for name lookups
  * @param {Object} callbacks - {onWeightChange, onToggleWeightLock, onTogglePercentageLock, onRemove, onFatInfo}
  */
 export function renderRecipe(container, recipe, locks, unit, fatsDatabase, callbacks) {
+    // Abort any previous event listeners on this container
+    if (container._abortController) {
+        container._abortController.abort();
+    }
+    container._abortController = new AbortController();
+    const signal = container._abortController.signal;
+
     if (recipe.length === 0) {
-        container.innerHTML = renderEmptyState(
-            UI_MESSAGES.NO_FATS_ADDED,
-            UI_MESSAGES.SELECT_FATS_PROMPT
-        );
+        container.innerHTML = renderEmptyState(UI_MESSAGES.NO_FATS_ADDED);
         return;
     }
 
     const totalWeight = recipe.reduce((sum, fat) => sum + fat.weight, 0);
-    const { weightLocks = new Set(), percentageLockIndex = null } = locks || {};
+    const { weightLocks = new Set(), percentageLocks = new Set() } = locks || {};
 
     const headerRow = `
         <div class="fat-row header-row">
@@ -98,7 +103,7 @@ export function renderRecipe(container, recipe, locks, unit, fatsDatabase, callb
             weight: fat.weight,
             percentage: totalWeight > 0 ? ((fat.weight / totalWeight) * 100).toFixed(1) : 0,
             isWeightLocked: weightLocks.has(i),
-            isPercentageLocked: percentageLockIndex === i
+            isPercentageLocked: percentageLocks.has(i)
         }, i, {
             showWeightInput: true,
             showLockButton: true,
@@ -110,14 +115,14 @@ export function renderRecipe(container, recipe, locks, unit, fatsDatabase, callb
 
     container.innerHTML = headerRow + rows + renderTotalsRow('Total Fats', totalWeight, unit, 1);
 
-    // Attach event handlers using shared utility
-    attachRowEventHandlers(container, {
+    // Attach event handlers with abort signal for cleanup
+    attachRowEventHandlersWithSignal(container, {
         onWeightChange: callbacks.onWeightChange,
         onToggleWeightLock: callbacks.onToggleWeightLock,
         onTogglePercentageLock: callbacks.onTogglePercentageLock,
         onRemove: callbacks.onRemove,
         onInfo: callbacks.onFatInfo
-    }, 'fat');
+    }, 'fat', signal);
 }
 
 // ============================================
@@ -699,6 +704,8 @@ export function initGlossaryTooltips(glossaryData) {
 
         // Clicking a help tip icon - toggle if same, show if different
         if (tipEl) {
+            // Prevent label from toggling checkbox when clicking help-tip inside it
+            e.preventDefault();
             if (tipEl === activeTipEl) {
                 hideTooltip();
                 activeTipEl = null;
@@ -728,9 +735,10 @@ export function initGlossaryTooltips(glossaryData) {
  * @param {Object} result - Result from findOilsForProfile
  * @param {Object} targetProfile - Original target profile
  * @param {Object} fatsDatabase - Fat database for name lookups
- * @param {Function} onUseRecipe - Callback when user clicks "Use This Recipe"
+ * @param {Set} lockedIndices - Set of locked fat indices
+ * @param {Object} callbacks - {onUseRecipe, onFatInfo, onToggleLock}
  */
-export function renderProfileResults(result, targetProfile, fatsDatabase, onUseRecipe, onFatInfo) {
+export function renderProfileResults(result, targetProfile, fatsDatabase, lockedIndices, callbacks) {
     const resultsContainer = $(ELEMENT_IDS.profileResults);
     const suggestedRecipeDiv = $(ELEMENT_IDS.suggestedRecipe);
     const achievedComparisonDiv = $(ELEMENT_IDS.achievedComparison);
@@ -738,32 +746,44 @@ export function renderProfileResults(result, targetProfile, fatsDatabase, onUseR
     const matchPercent = $(ELEMENT_IDS.matchPercent);
     const useRecipeBtn = $(ELEMENT_IDS.useRecipeBtn);
 
+    // Abort any previous event listeners
+    if (suggestedRecipeDiv._abortController) {
+        suggestedRecipeDiv._abortController.abort();
+    }
+    suggestedRecipeDiv._abortController = new AbortController();
+    const signal = suggestedRecipeDiv._abortController.signal;
+
     resultsContainer.classList.remove(CSS_CLASSES.hidden);
 
     matchBarFill.style.width = `${result.matchQuality}%`;
     matchPercent.textContent = `${result.matchQuality}%`;
 
-    suggestedRecipeDiv.innerHTML = result.recipe.map(fat => {
+    // Use consistent itemRow component for fat list
+    const rows = result.recipe.map((fat, index) => {
         const fatData = fatsDatabase[fat.id];
-        const fatName = fatData ? fatData.name : fat.id;
-        return `
-            <div class="suggested-fat">
-                <span class="suggested-fat-name clickable" data-fat="${fat.id}" role="button" tabindex="0">${fatName}</span>
-                <span class="suggested-fat-percent">${fat.percentage}%</span>
-            </div>
-        `;
+        return renderItemRow({
+            id: fat.id,
+            name: fatData?.name || fat.id,
+            percentage: fat.percentage,
+            isPercentageLocked: lockedIndices.has(index)
+        }, index, {
+            showWeightInput: false,
+            showWeightLock: false,
+            showLockButton: true,
+            showPercentage: true,
+            showRemoveButton: false,
+            itemType: 'fat',
+            className: 'lockable-only'
+        });
     }).join('');
 
-    // Add click handlers for fat info
-    if (onFatInfo) {
-        delegate(suggestedRecipeDiv, '.suggested-fat-name[data-fat]', 'click', (_e, el) => {
-            onFatInfo(el.dataset.fat);
-        });
-        delegate(suggestedRecipeDiv, '.suggested-fat-name[data-fat]', 'keydown', onActivate((e) => {
-            const el = e.target.closest('.suggested-fat-name[data-fat]');
-            if (el) onFatInfo(el.dataset.fat);
-        }));
-    }
+    suggestedRecipeDiv.innerHTML = rows;
+
+    // Attach event handlers for fat info and lock toggle
+    attachRowEventHandlersWithSignal(suggestedRecipeDiv, {
+        onInfo: callbacks.onFatInfo,
+        onTogglePercentageLock: callbacks.onToggleLock
+    }, 'fat', signal);
 
     // Render achieved vs target comparison
     const comparisonItems = [];
@@ -798,7 +818,7 @@ export function renderProfileResults(result, targetProfile, fatsDatabase, onUseR
     }
 
     achievedComparisonDiv.innerHTML = comparisonItems.join('');
-    useRecipeBtn.onclick = () => onUseRecipe(result.recipe);
+    useRecipeBtn.onclick = () => callbacks.onUseRecipe(result.recipe);
 }
 
 /**
@@ -858,7 +878,7 @@ export function renderExcludedFats(excludedFats, fatsDatabase, onRemove) {
     if (!container) return;
 
     if (excludedFats.length === 0) {
-        container.innerHTML = '<span class="no-exclusions">None</span>';
+        container.innerHTML = '<span class="no-exclusions">No fats currently selected for exclusion</span>';
         return;
     }
 
@@ -901,6 +921,146 @@ export function clearProfileInputs() {
     });
 
     hideProfileResults();
+}
+
+// ============================================
+// Cupboard Cleaner
+// ============================================
+
+/**
+ * Render cupboard fats (user's fixed fats with weight inputs)
+ * @param {HTMLElement} container - Container element
+ * @param {Array} cupboardFats - Array of {id, weight}
+ * @param {Object} fatsDatabase - Fat database for name lookups
+ * @param {string} unit - Unit string (g or oz)
+ * @param {Set} lockedIndices - Set of locked fat indices
+ * @param {Object} callbacks - {onWeightChange, onToggleLock, onRemove, onInfo}
+ */
+export function renderCupboardFats(container, cupboardFats, fatsDatabase, unit, lockedIndices, callbacks) {
+    // Abort any previous event listeners on this container
+    if (container._abortController) {
+        container._abortController.abort();
+    }
+    container._abortController = new AbortController();
+    const signal = container._abortController.signal;
+
+    if (cupboardFats.length === 0) {
+        container.innerHTML = renderEmptyState(UI_MESSAGES.NO_CUPBOARD_FATS);
+        return;
+    }
+
+    const totalWeight = cupboardFats.reduce((sum, fat) => sum + fat.weight, 0);
+
+    const headerRow = `
+        <div class="fat-row header-row">
+            <span>Fat</span>
+            <span>Weight</span>
+            <span>%</span>
+            <span></span>
+        </div>
+    `;
+
+    const rows = cupboardFats.map((fat, i) => {
+        const fatData = fatsDatabase[fat.id];
+        return renderItemRow({
+            id: fat.id,
+            name: fatData?.name || fat.id,
+            weight: fat.weight,
+            percentage: totalWeight > 0 ? ((fat.weight / totalWeight) * 100).toFixed(1) : 0,
+            isWeightLocked: false,
+            isPercentageLocked: lockedIndices.has(i)
+        }, i, {
+            showWeightInput: true,
+            showWeightLock: false,
+            showLockButton: true,
+            showPercentage: true,
+            unit,
+            itemType: 'fat'
+        });
+    }).join('');
+
+    container.innerHTML = headerRow + rows + renderTotalsRow('Total', totalWeight, unit, 1);
+
+    // Attach event handlers with abort signal for cleanup
+    attachRowEventHandlersWithSignal(container, {
+        onWeightChange: callbacks.onWeightChange,
+        onTogglePercentageLock: callbacks.onToggleLock,
+        onRemove: callbacks.onRemove,
+        onInfo: callbacks.onInfo
+    }, 'fat', signal);
+}
+
+/**
+ * Render cupboard suggestions with lock buttons
+ * @param {HTMLElement} container - Container element
+ * @param {Array} suggestions - Array of {id, weight, percentage}
+ * @param {Set} lockedIndices - Set of locked suggestion indices
+ * @param {Object} fatsDatabase - Fat database for name lookups
+ * @param {string} unit - Unit string (g or oz)
+ * @param {Object} callbacks - {onWeightChange, onToggleLock, onRemove, onInfo}
+ */
+export function renderCupboardSuggestions(container, suggestions, lockedIndices, fatsDatabase, unit, callbacks) {
+    // Abort any previous event listeners on this container
+    if (container._abortController) {
+        container._abortController.abort();
+    }
+    container._abortController = new AbortController();
+    const signal = container._abortController.signal;
+
+    if (suggestions.length === 0) {
+        container.innerHTML = '';
+        return;
+    }
+
+    const totalWeight = suggestions.reduce((sum, s) => sum + s.weight, 0);
+
+    const headerRow = `
+        <div class="fat-row header-row">
+            <span>Suggested Fat</span>
+            <span>Weight</span>
+            <span>%</span>
+            <span></span>
+        </div>
+    `;
+
+    const rows = suggestions.map((sugg, i) => {
+        const fatData = fatsDatabase[sugg.id];
+        return renderItemRow({
+            id: sugg.id,
+            name: fatData?.name || sugg.id,
+            weight: sugg.weight,
+            percentage: sugg.percentage,
+            isWeightLocked: false,
+            isPercentageLocked: lockedIndices.has(i)
+        }, i, {
+            showWeightInput: true,
+            showWeightLock: false,
+            showLockButton: true,
+            showPercentage: true,
+            unit,
+            itemType: 'fat'
+        });
+    }).join('');
+
+    container.innerHTML = headerRow + rows + renderTotalsRow('Total Suggested', totalWeight, unit, 1);
+
+    // Attach event handlers with abort signal for cleanup
+    attachRowEventHandlersWithSignal(container, {
+        onWeightChange: callbacks.onWeightChange,
+        onTogglePercentageLock: callbacks.onToggleLock,
+        onRemove: callbacks.onRemove,
+        onInfo: callbacks.onInfo
+    }, 'fat', signal);
+}
+
+/**
+ * Populate cupboard fat select dropdown
+ * @param {HTMLSelectElement} selectElement - The select element
+ * @param {Object} fatsDatabase - Fat database object
+ * @param {Array} existingIds - IDs already in cupboard to exclude
+ */
+export function populateCupboardFatSelect(selectElement, fatsDatabase, existingIds = []) {
+    populateSelect(selectElement, fatsDatabase, existingIds);
 }
 
 // ============================================
@@ -1002,12 +1162,18 @@ export function renderAdditives(container, recipeAdditives, additivesDatabase, t
         </div>
     `;
 
-    // Attach event handlers using shared utility
-    attachRowEventHandlers(container, {
+    // Store callbacks on container for dynamic lookup
+    container._callbacks = {
         onWeightChange: callbacks.onWeightChange,
         onRemove: callbacks.onRemove,
         onInfo: callbacks.onInfo
-    }, 'additive');
+    };
+
+    // Only attach event handlers once per container
+    if (!container.dataset.handlersAttached) {
+        attachRowEventHandlers(container, container._callbacks, 'additive');
+        container.dataset.handlersAttached = 'true';
+    }
 
     return allWarnings;
 }
