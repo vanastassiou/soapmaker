@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "fatty-acids.schema.json",
+  "title": "Fatty Acids Database",
+  "description": "Schema for fatty acid definitions",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/definitions/FattyAcid"
+  },
+  "definitions": {
+    "FattyAcid": {
+      "type": "object",
+      "required": ["name", "formula", "carbonChain", "saturation", "meltingPoint", "soapProperties", "description", "commonSources"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Full name of the fatty acid"
+        },
+        "formula": {
+          "type": "string",
+          "description": "Chemical formula notation (e.g., C12:0, C18:1)"
+        },
+        "carbonChain": {
+          "type": "integer",
+          "description": "Number of carbon atoms",
+          "minimum": 1,
+          "maximum": 30
+        },
+        "saturation": {
+          "type": "string",
+          "description": "Saturation level",
+          "enum": ["saturated", "monounsaturated", "polyunsaturated", "monounsaturated (hydroxylated)"]
+        },
+        "meltingPoint": {
+          "type": "number",
+          "description": "Melting point in Celsius"
+        },
+        "soapProperties": {
+          "type": "object",
+          "description": "Qualitative soap property contributions",
+          "properties": {
+            "hardness": { "type": "string" },
+            "cleansing": { "type": "string" },
+            "lather": { "type": "string" },
+            "conditioning": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "description": {
+          "type": "string",
+          "description": "Additional notes about this fatty acid"
+        },
+        "commonSources": {
+          "type": "array",
+          "description": "Oils/fats that contain this fatty acid",
+          "items": { "type": "string" }
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": { "type": "string" },
+              "section": { "type": "string" },
+              "url": { "type": "string", "format": "uri" }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

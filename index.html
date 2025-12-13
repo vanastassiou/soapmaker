@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lye Calculator - Soap Making</title>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="container">
+        <header>
+            <h1>Soap Recipe Builder</h1>
+            <nav class="header-nav">
+                <a href="glossary.html" class="header-link">Glossary</a>
+            </nav>
+        </header>
+
+        <main id="main-content" class="main-grid">
+            <div class="left-column">
+                <!-- Build Recipe -->
+                <div class="card" id="buildRecipeCard">
+                    <div class="card-header">
+                        <h2 class="card-title">Build recipe</h2>
+                        <div class="recipe-actions">
+                            <button class="btn btn-secondary btn-small" id="clearRecipeBtn">Clear</button>
+                        </div>
+                    </div>
+
+                    <!-- Settings Subcontainer -->
+                    <div class="build-subcontainer">
+                        <h3 class="subcontainer-title">Recipe settings</h3>
+                        <div class="settings-row">
+                            <div class="form-group">
+                                <div class="label-row">
+                                    <label for="lyeType">Lye Type</label>
+                                    <span class="help-tip" id="lyeTypeHelp" data-term="lye-type" aria-label="More info about lye type">ⓘ</span>
+                                </div>
+                                <select id="lyeType" aria-describedby="lyeTypeHelp">
+                                    <option value="NaOH">NaOH (Sodium Hydroxide)</option>
+                                    <option value="KOH">KOH (Potassium Hydroxide)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="label-row">
+                                    <label for="superfat">Superfat %</label>
+                                    <span class="help-tip" id="superfatHelp" data-term="superfat" aria-label="More info about superfat">ⓘ</span>
+                                </div>
+                                <input type="number" id="superfat" value="5" min="0" max="20" step="1" aria-describedby="superfatHelp">
+                            </div>
+                            <div class="form-group">
+                                <div class="label-row">
+                                    <label for="waterRatio">Water : Lye Ratio</label>
+                                    <span class="help-tip" id="waterRatioHelp" data-term="lye-concentration" aria-label="More info about water ratio">ⓘ</span>
+                                </div>
+                                <input type="number" id="waterRatio" value="2" min="1.5" max="3" step="0.1" aria-describedby="waterRatioHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="unit">Unit</label>
+                                <select id="unit">
+                                    <option value="g">Grams</option>
+                                    <option value="oz">Ounces</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="dietary-filters" id="dietaryFiltersSection">
+                            <span class="filter-label">Exclude:</span>
+                            <label class="dietary-filter">
+                                <input type="checkbox" id="filterAnimalBased">
+                                <span>Animal based</span>
+                            </label>
+                            <label class="dietary-filter">
+                                <input type="checkbox" id="filterEthicalConcerns">
+                                <span>Ethical concerns</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Fats subcontainer -->
+                    <div class="build-subcontainer">
+                        <h3 class="subcontainer-title">Add fats</h3>
+
+                        <!-- Build Mode tabs -->
+                        <div class="tabs build-mode-tabs" role="tablist" aria-label="Recipe build mode">
+                            <button class="tab build-mode-tab active" data-mode="fats" role="tab" aria-selected="true" aria-controls="selectFatsMode" id="tab-fats">Select fats</button>
+                            <button class="tab build-mode-tab" data-mode="properties" role="tab" aria-selected="false" aria-controls="specifyPropertiesMode" id="tab-properties">Specify properties</button>
+                            <button class="tab build-mode-tab" data-mode="yolo" role="tab" aria-selected="false" aria-controls="yoloMode" id="tab-yolo">YOLO</button>
+                        </div>
+
+                        <!-- Mode helper text -->
+                        <p class="mode-description" id="fatsDescription">Choose fats to use in your recipe. You may lock a fat at its current weight.</p>
+                        <p class="mode-description hidden" id="propertiesDescription">Enter target soap properties and find fats to match.</p>
+                        <p class="mode-description hidden" id="yoloDescription">Lock fats you like and re-roll the rest.</p>
+
+                        <!-- Exclude Fats (visible in Properties and YOLO modes) -->
+                        <div class="mode-subcontainer hidden" id="excludeFatsSection">
+                            <h4 class="mode-subcontainer-title">Exclude specific fats <span class="optional-label">(optional)</span></h4>
+                            <div class="exclusion-add">
+                                <select id="excludeFatSelect">
+                                    <option value="">Select fat to exclude...</option>
+                                </select>
+                                <button class="btn btn-small" id="addExclusionBtn">Add</button>
+                            </div>
+                            <div class="excluded-fats-list" id="excludedFatsList">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Select Fats mode -->
+                        <div class="build-mode-content" id="selectFatsMode" role="tabpanel" aria-labelledby="tab-fats">
+                            <div class="fat-selector">
+                                <select id="fatSelect">
+                                    <option value="">Select fat to add...</option>
+                                </select>
+                                <button class="btn" id="addFatBtn">Add Fat</button>
+                            </div>
+
+                            <div class="recipe-fats" id="recipeFats">
+                                <div class="empty-state">
+                                    <p>No fats added yet</p>
+                                    <p>Select fats from the dropdown above to build your recipe</p>
+                                </div>
+                            </div>
+                            <div class="use-recipe-action hidden" id="useFatsAction">
+                                <button class="btn" id="useFatsBtn">Use these fats</button>
+                            </div>
+                        </div>
+
+                        <!-- Specify Properties mode -->
+                        <div class="build-mode-content hidden" id="specifyPropertiesMode" role="tabpanel" aria-labelledby="tab-properties">
+                            <!-- Target Properties subcontainer -->
+                            <div class="mode-subcontainer">
+                                <h4 class="mode-subcontainer-title">Target properties</h4>
+                                <div class="property-header">
+                                    <span class="help-tip" data-term="property-targets">ⓘ</span>
+                                    <div class="property-options">
+                                        <label for="maxFats">Max <select id="maxFats">
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5" selected>5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                        </select></label>
+                                        <label><input type="checkbox" id="includeCastor"> Castor</label>
+                                    </div>
+                                </div>
+
+                                <div class="property-list">
+                                    <div class="property-row">
+                                        <label for="targetHardness"><span class="info-link" data-term="hardness" role="button" tabindex="0">Hardness</span></label>
+                                        <input type="number" id="targetHardness" min="0" max="100" placeholder="29-54">
+                                    </div>
+                                    <div class="property-row">
+                                        <label for="targetCleansing"><span class="info-link" data-term="cleansing" role="button" tabindex="0">Cleansing</span></label>
+                                        <input type="number" id="targetCleansing" min="0" max="100" placeholder="12-22">
+                                    </div>
+                                    <div class="property-row">
+                                        <label for="targetConditioning"><span class="info-link" data-term="conditioning" role="button" tabindex="0">Conditioning</span></label>
+                                        <input type="number" id="targetConditioning" min="0" max="100" placeholder="44-69">
+                                    </div>
+                                    <div class="property-row">
+                                        <label for="targetBubbly"><span class="info-link" data-term="bubbly" role="button" tabindex="0">Bubbly</span></label>
+                                        <input type="number" id="targetBubbly" min="0" max="100" placeholder="14-46">
+                                    </div>
+                                    <div class="property-row">
+                                        <label for="targetCreamy"><span class="info-link" data-term="creamy" role="button" tabindex="0">Creamy</span></label>
+                                        <input type="number" id="targetCreamy" min="0" max="100" placeholder="16-48">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="generate-action">
+                                <button class="btn" id="generateRecipeBtn">Generate</button>
+                            </div>
+
+                            <div class="profile-results hidden" id="profileResults">
+                                <div class="match-quality" id="matchQuality">
+                                    <span class="match-label">Match Quality:</span>
+                                    <div class="match-bar">
+                                        <div class="match-bar-fill" id="matchBarFill"></div>
+                                    </div>
+                                    <span class="match-percent" id="matchPercent">0%</span>
+                                </div>
+
+                                <div class="suggested-recipe" id="suggestedRecipe">
+                                    <!-- Populated by JS -->
+                                </div>
+
+                                <div class="achieved-profile" id="achievedProfile">
+                                    <h4>Target vs achieved:</h4>
+                                    <div class="achieved-comparison" id="achievedComparison">
+                                        <!-- Populated by JS -->
+                                    </div>
+                                </div>
+
+                                <div class="use-recipe-action">
+                                    <button class="btn" id="useRecipeBtn">Use these fats</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- YOLO Mode -->
+                        <div class="build-mode-content hidden" id="yoloMode" role="tabpanel" aria-labelledby="tab-yolo">
+                            <div class="yolo-header">
+                                <button class="btn btn-small" id="yoloBtn" aria-describedby="yoloDescription">Surprise Me!</button>
+                            </div>
+                            <div class="recipe-fats" id="yoloRecipeFats">
+                                <!-- Populated by JS after generation -->
+                            </div>
+                            <div class="use-recipe-action hidden" id="useYoloRecipeAction">
+                                <button class="btn" id="useYoloRecipeBtn">Use these fats</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additives subcontainer -->
+                    <div class="build-subcontainer" id="additivesSubcontainer">
+                        <h3 class="subcontainer-title">Select additives <span class="optional-label">(optional)</span></h3>
+
+                        <div class="tabs additive-tabs" role="tablist" aria-label="Additive category">
+                            <button class="tab additive-tab active" data-category="essential-oil" role="tab" aria-selected="true">Essential Oils</button>
+                            <button class="tab additive-tab" data-category="colourant" role="tab" aria-selected="false">Colourants</button>
+                            <button class="tab additive-tab" data-category="functional" role="tab" aria-selected="false">Functional</button>
+                        </div>
+
+                        <div class="additive-selector">
+                            <select id="additiveSelect">
+                                <option value="">Select an additive...</option>
+                            </select>
+                            <button class="btn" id="addAdditiveBtn">Add</button>
+                        </div>
+
+                        <div class="recipe-additives" id="recipeAdditives">
+                            <div class="empty-state empty-state-small">
+                                <p>No additives added</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Create Recipe button -->
+                    <div class="create-recipe-section">
+                        <button class="btn btn-primary btn-large" id="createRecipeBtn">Create Recipe</button>
+                    </div>
+                </div>
+
+                <!-- Final recipe display -->
+                <div class="card hidden" id="finalRecipeCard">
+                    <div class="card-header">
+                        <h2 class="card-title">Your Recipe</h2>
+                    </div>
+                    <div class="final-recipe-content" id="finalRecipeContent">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <!-- Results -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title" id="results-heading">Results</h2>
+                    </div>
+                    <div class="results-grid" role="region" aria-labelledby="results-heading" aria-live="polite">
+                        <div class="result-item">
+                            <div class="result-label">Total Fats</div>
+                            <div class="result-value"><span id="totalFats">0</span><span class="result-unit" id="fatUnit">g</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Lye (<span id="lyeTypeLabel">NaOH</span>)</div>
+                            <div class="result-value"><span id="lyeAmount">0</span><span class="result-unit" id="lyeUnit">g</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Water</div>
+                            <div class="result-value"><span id="waterAmount">0</span><span class="result-unit" id="waterUnit">g</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Additives</div>
+                            <div class="result-value"><span id="additivesTotal">0</span><span class="result-unit" id="additivesUnit">g</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Total Batch</div>
+                            <div class="result-value"><span id="totalBatch">0</span><span class="result-unit" id="batchUnit">g</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Est. Volume <span class="help-tip" data-term="volume-estimate">ⓘ</span></div>
+                            <div class="result-value"><span id="volumeRange">0</span><span class="result-unit" id="volumeUnit">mL</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soap analysis -->
+                <div class="card" id="analysisCard">
+                    <div class="card-header">
+                        <h2 class="card-title">Soap analysis</h2>
+                    </div>
+
+                    <div class="analysis-grid">
+                    <!-- Properties Subcontainer -->
+                    <div class="analysis-subcontainer" id="propertiesView">
+                        <h3 class="subcontainer-title">Soap properties</h3>
+                        <p class="analysis-helper-text">Scores derived from your recipe's fatty acid profile.</p>
+                        <table class="analysis-table" aria-label="Soap properties analysis">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Property</th>
+                                    <th scope="col" class="range-col">Range</th>
+                                    <th scope="col" class="value-col">Recipe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="info-link" data-term="hardness" role="button" tabindex="0">Hardness</span></td>
+                                    <td class="range-col" id="rangeHardness">--</td>
+                                    <td class="value-col" id="propHardness">0</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="info-link" data-term="cleansing" role="button" tabindex="0">Cleansing</span></td>
+                                    <td class="range-col" id="rangeCleansing">--</td>
+                                    <td class="value-col" id="propCleansing">0</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="info-link" data-term="conditioning" role="button" tabindex="0">Conditioning</span></td>
+                                    <td class="range-col" id="rangeConditioning">--</td>
+                                    <td class="value-col" id="propConditioning">0</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="info-link" data-term="bubbly" role="button" tabindex="0">Bubbly</span></td>
+                                    <td class="range-col" id="rangeBubbly">--</td>
+                                    <td class="value-col" id="propBubbly">0</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="info-link" data-term="creamy" role="button" tabindex="0">Creamy</span></td>
+                                    <td class="range-col" id="rangeCreamy">--</td>
+                                    <td class="value-col" id="propCreamy">0</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="info-link" data-term="iodine" role="button" tabindex="0">Iodine</span></td>
+                                    <td class="range-col" id="rangeIodine">--</td>
+                                    <td class="value-col" id="propIodine">0</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="info-link" data-term="ins" role="button" tabindex="0">INS</span></td>
+                                    <td class="range-col" id="rangeINS">--</td>
+                                    <td class="value-col" id="propINS">0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Fatty Acids Subcontainer -->
+                    <div class="analysis-subcontainer" id="fattyAcidsView">
+                        <h3 class="subcontainer-title">Fatty acids</h3>
+                        <table class="analysis-table fa-table" aria-label="Fatty acid composition">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Fatty acid</th>
+                                    <th scope="col" class="fa-value">%</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="fa-link" data-acid="lauric" role="button" tabindex="0">Lauric</span></td>
+                                    <td class="fa-value" id="faLauric">0</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="fa-link" data-acid="myristic" role="button" tabindex="0">Myristic</span></td>
+                                    <td class="fa-value" id="faMyristic">0</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="fa-link" data-acid="palmitic" role="button" tabindex="0">Palmitic</span></td>
+                                    <td class="fa-value" id="faPalmitic">0</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="fa-link" data-acid="stearic" role="button" tabindex="0">Stearic</span></td>
+                                    <td class="fa-value" id="faStearic">0</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="fa-link" data-acid="ricinoleic" role="button" tabindex="0">Ricinoleic</span></td>
+                                    <td class="fa-value" id="faRicinoleic">0</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="fa-link" data-acid="oleic" role="button" tabindex="0">Oleic</span></td>
+                                    <td class="fa-value" id="faOleic">0</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="fa-link" data-acid="linoleic" role="button" tabindex="0">Linoleic</span></td>
+                                    <td class="fa-value" id="faLinoleic">0</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="fa-link" data-acid="linolenic" role="button" tabindex="0">Linolenic</span></td>
+                                    <td class="fa-value" id="faLinolenic">0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="sat-unsat-ratio">
+                            <span><span class="info-link" data-term="saturated" role="button" tabindex="0">Sat</span> : <span class="info-link" data-term="unsaturated" role="button" tabindex="0">Unsat</span></span>
+                            <span id="satUnsatRatio">0 : 0</span>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Recipe Notes (shared) -->
+                    <div class="recipe-notes" id="recipeNotes">
+                        <div class="recipe-notes-title">Recipe Notes</div>
+                        <p class="no-notes">Add fats to see recipe analysis</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Shared Panel Overlay -->
+    <div class="panel-overlay" id="panelOverlay"></div>
+
+    <!-- Glossary Info Panel -->
+    <div class="info-panel" id="glossaryPanel" role="dialog" aria-modal="true" aria-labelledby="glossaryPanelName">
+        <button class="close-panel" aria-label="Close panel">×</button>
+        <h3 class="panel-title" id="glossaryPanelName">Term</h3>
+        <div class="panel-subtitle" id="glossaryPanelCategory">category</div>
+
+        <div class="panel-section">
+            <h4>Description</h4>
+            <p class="panel-description" id="glossaryPanelDesc"></p>
+        </div>
+
+        <div class="panel-section" id="glossaryDetailsSection">
+            <h4>Details</h4>
+            <p class="panel-description" id="glossaryPanelDetails"></p>
+        </div>
+
+        <div class="panel-section" id="glossaryContributorsSection">
+            <h4>Contributing fats in recipe</h4>
+            <div class="fa-sources" id="glossaryPanelContributors"></div>
+        </div>
+
+        <div class="panel-section" id="glossaryRelatedSection">
+            <h4>Related</h4>
+            <div class="panel-tags" id="glossaryPanelRelated"></div>
+        </div>
+
+    </div>
+
+    <!-- Fat Info Panel -->
+    <div class="info-panel" id="fatInfoPanel" role="dialog" aria-modal="true" aria-labelledby="fatPanelName">
+        <button class="close-panel" aria-label="Close panel">×</button>
+        <h3 class="panel-title" id="fatPanelName">Fat Name</h3>
+        <div class="panel-subtitle" id="fatPanelSap">NaOH SAP: 0.000 | KOH SAP: 0.000</div>
+
+        <div class="panel-section">
+            <h4>Recommended usage</h4>
+            <span class="panel-usage" id="fatPanelUsage">0 to 0% of total recipe oils</span>
+        </div>
+
+        <div class="panel-section">
+            <h4>Description</h4>
+            <p class="panel-description" id="fatPanelDescription"></p>
+        </div>
+
+        <div class="panel-section">
+            <h4>Contributions to soap</h4>
+            <p class="panel-description" id="fatPanelProperties"></p>
+        </div>
+
+        <div class="panel-section">
+            <h4>Fatty acid composition</h4>
+            <div class="fa-sources" id="fatPanelFattyAcids"></div>
+        </div>
+
+    </div>
+
+    <!-- Fatty Acid Info Panel -->
+    <div class="info-panel" id="fattyAcidPanel" role="dialog" aria-modal="true" aria-labelledby="faName">
+        <button class="close-panel" id="closeFattyAcidPanel" aria-label="Close panel">×</button>
+        <h3 class="panel-title" id="faName">Fatty Acid Name</h3>
+        <div class="panel-subtitle" id="faFormula">C12:0 · Saturated</div>
+
+        <div class="panel-section">
+            <h4>Chemistry</h4>
+            <div class="fa-chemistry" id="faChemistry"></div>
+        </div>
+
+        <div class="panel-section">
+            <h4>Soap contribution</h4>
+            <p class="panel-description" id="faContribution"></p>
+        </div>
+
+        <div class="panel-section">
+            <h4>In your recipe</h4>
+            <div class="fa-sources" id="faRecipeSources">
+                <p class="no-sources">No fats in your recipe contain this fatty acid</p>
+            </div>
+        </div>
+
+        <div class="panel-section">
+            <h4>Common sources</h4>
+            <div class="fa-common-sources" id="faCommonSources"></div>
+        </div>
+
+    </div>
+
+    <!-- Additive Info Panel -->
+    <div class="info-panel" id="additiveInfoPanel" role="dialog" aria-modal="true" aria-labelledby="additivePanelName">
+        <button class="close-panel" aria-label="Close panel">×</button>
+        <h3 class="panel-title" id="additivePanelName">Additive Name</h3>
+        <div class="panel-subtitle" id="additivePanelCategory">Category</div>
+
+        <div class="panel-section">
+            <h4>Recommended usage</h4>
+            <span class="panel-usage" id="additivePanelUsage">0% to 0% of oil weight</span>
+        </div>
+
+        <div class="panel-section">
+            <h4>Description</h4>
+            <p class="panel-description" id="additivePanelDescription"></p>
+        </div>
+
+        <div class="panel-section" id="additivePanelSafetySection">
+            <h4>Safety</h4>
+            <div class="panel-safety" id="additivePanelSafety"></div>
+        </div>
+
+        <div class="panel-section" id="additivePanelExtraSection">
+            <div id="additivePanelExtra"></div>
+        </div>
+
+    </div>
+
+    <script src="./js/vendor/ajv.min.js"></script>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

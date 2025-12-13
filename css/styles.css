@@ -1,0 +1,2455 @@
+:root {
+    /* WCAG AA Compliant - Olive Green Theme */
+    /* Background colours - dark olive green */
+    --bg-primary: #1a2420;
+    --bg-secondary: #232d28;
+    --bg-card: #2a3530;
+    --bg-input: #1a2420;
+
+    /* Text colours - all meet 4.5:1 contrast */
+    --text-primary: #e8e8e0;
+    --text-secondary: #b0b8a8;
+    --text-muted: #808880;
+
+    /* Accent colours */
+    --accent-gold: #e0b050;       /* warm gold for buttons */
+    --accent-gold-20: rgba(224, 176, 80, 0.2);
+    --accent-gold-10: rgba(224, 176, 80, 0.1);
+    --accent-copper: #c89840;     /* darker gold for hover */
+    --accent-green: #80c080;      /* soft green for links/highlights */
+    --accent-green-20: rgba(128, 192, 128, 0.2);
+    --accent-cream: #e8e8e0;
+
+    /* Borders */
+    --border: #3a4540;
+    --border-30: rgba(58, 69, 64, 0.3);
+
+    /* Semantic colours */
+    --success: #60b890;
+    --warning: #e0b050;
+    --danger: #d07060;
+
+    /* Utilities */
+    --shadow-overlay: rgba(0, 0, 0, 0.6);
+    --font-mono: 'IBM Plex Mono', monospace;
+
+    /* Focus rings for accessibility */
+    --focus-ring: 0 0 0 3px rgba(128, 192, 128, 0.4);
+    --focus-ring-button: 0 0 0 3px rgba(224, 176, 80, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Utility class for hiding elements */
+.hidden {
+    display: none !important;
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-gold);
+    color: var(--bg-primary);
+    padding: 0.5rem 1rem;
+    z-index: 10000;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0 0 4px 0;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--accent-green);
+    outline-offset: 2px;
+}
+
+body {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--accent-cream);
+    letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.header-nav {
+    margin-top: 0.75rem;
+}
+
+.header-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.header-link:hover {
+    color: var(--text-primary);
+    border-color: var(--text-secondary);
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 2rem;
+}
+
+.main-grid > * {
+    min-width: 0;
+}
+
+@media (max-width: 1024px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analysis-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .property-header {
+        flex-wrap: wrap;
+    }
+
+    .property-options {
+        order: 1;
+        width: 100%;
+    }
+
+    .info-panel {
+        width: 100%;
+        right: -100%;
+    }
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+select, input, button {
+    max-width: 100%;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.card-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    color: var(--accent-cream);
+}
+
+.settings-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.settings-row .form-group {
+    min-width: 140px;
+    max-width: 180px;
+    flex: 0 1 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.field-helper {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: -0.2rem;
+}
+
+.label-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.label-row .help-tip {
+    font-size: 0.8rem;
+}
+
+input, select {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.6rem 0.8rem;
+    color: var(--text-primary);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    box-shadow: var(--focus-ring);
+}
+
+/* Global focus styles for keyboard accessibility */
+:focus-visible {
+    outline: 2px solid var(--accent-green);
+    outline-offset: 2px;
+}
+
+button:focus-visible,
+.btn:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring-button);
+}
+
+.tab:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+
+.fat-selector {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.fat-selector select {
+    flex: 1;
+}
+
+/* Property mode (matches fat-selector pattern) */
+.property-header {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    align-items: center;
+}
+
+.property-options {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    align-items: center;
+    flex: 1;
+}
+
+.property-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+
+.property-options select {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.85rem;
+}
+
+.property-options input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    accent-color: var(--accent-gold);
+}
+
+/* Mode Subcontainers (inside build-mode-content) */
+.mode-subcontainer {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-30);
+}
+
+.mode-subcontainer:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.mode-subcontainer-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.property-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.property-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.property-row label {
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+.property-row input {
+    width: 80px;
+    padding: 0.4rem 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.property-row input::placeholder {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.property-row.property-action {
+    justify-content: flex-end;
+    margin-top: 0.25rem;
+}
+
+/* YOLO mode */
+.yolo-header {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.yolo-description,
+.mode-description {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin: 0 0 0.75rem 0;
+}
+
+#yoloRecipeFats .fat-row {
+    grid-template-columns: 1fr 100px 40px;
+}
+
+.btn {
+    background: var(--accent-gold);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    background: var(--accent-copper);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--border);
+    color: var(--text-primary);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: #1a1714;  /* dark text for 5.5:1 contrast */
+    font-weight: 600;
+}
+
+.btn-small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+}
+
+.recipe-fats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.fat-row {
+    display: grid;
+    grid-template-columns: 1fr 130px 100px 40px;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.75rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.fat-row.locked {
+    border-color: var(--accent-gold);
+    background: var(--accent-gold-10);
+}
+
+.fat-row.header-row {
+    background: transparent;
+    border: none;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.fat-row.header-row span {
+    text-align: center;
+}
+
+.fat-row.header-row span:first-child {
+    text-align: left;
+}
+
+/* Weight and percentage cells with inline lock buttons */
+.weight-cell,
+.percentage-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.weight-cell input {
+    flex: 1;
+    min-width: 0;
+}
+
+.lock-weight,
+.lock-percentage {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.lock-weight:hover,
+.lock-percentage:hover {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+
+.lock-weight.locked,
+.lock-percentage.locked {
+    background: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: var(--bg-primary);
+}
+
+.lock-fat {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.lock-fat:hover {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+
+.lock-fat.locked {
+    background: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: var(--bg-primary);
+}
+
+.fat-name {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* Clickable text elements */
+.clickable {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.clickable:hover {
+    color: var(--accent-green);
+}
+
+.fat-row input {
+    text-align: right;
+}
+
+.fat-row input:disabled {
+    background: var(--bg-primary);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.fat-percentage {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.remove-fat {
+    background: transparent;
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: all 0.2s;
+}
+
+.remove-fat:hover {
+    background: var(--danger);
+    color: var(--bg-primary);  /* dark text for contrast */
+}
+
+.totals-row {
+    display: grid;
+    grid-template-columns: 1fr 130px 100px 40px;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid var(--border);
+    font-weight: 600;
+    margin-top: 0.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.result-item {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.result-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.result-value {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--accent-cream);
+}
+
+.result-unit {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-left: 0.25rem;
+}
+
+/* Generic Tab Styles */
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tab {
+    flex: 1;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.tab:hover {
+    border-color: var(--accent-gold);
+    color: var(--text-primary);
+}
+
+.tab.active {
+    background: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: var(--bg-primary);
+}
+
+/* Analysis Subcontainers */
+.analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.analysis-subcontainer {
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid var(--border);
+}
+
+.subcontainer-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin: 0 0 0.75rem 0;
+    font-weight: 400;
+}
+
+.analysis-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    table-layout: fixed;
+}
+
+.analysis-table th {
+    text-align: left;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.analysis-table td {
+    padding: 0.4rem 0.5rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-30);
+}
+
+.analysis-table tr:last-child td {
+    border-bottom: none;
+}
+
+.analysis-table .range-col {
+    text-align: center;
+    color: var(--text-secondary);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+}
+
+.analysis-table .value-col {
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    color: var(--accent-cream);
+}
+
+.analysis-table .value-col.in-range {
+    color: var(--success);
+}
+
+.analysis-table .value-col.in-range::before {
+    content: "✓ ";
+    font-size: 0.75em;
+}
+
+.analysis-table .value-col.out-range {
+    color: var(--warning);
+}
+
+.range-tip {
+    margin-left: 0.25rem;
+    color: var(--warning);
+}
+
+.fa-table td:first-child {
+    width: 70%;
+}
+
+.fa-table .fa-value {
+    text-align: right;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    color: var(--accent-cream);
+}
+
+.sat-unsat-ratio {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+}
+
+.sat-unsat-ratio span:first-child {
+    color: var(--text-secondary);
+}
+
+.sat-unsat-ratio span:last-child {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    color: var(--accent-gold);
+}
+
+/* Info links (data terms - open sidebar panels) */
+.info-link {
+    cursor: pointer;
+    transition: color 0.2s;
+    /* WCAG 2.2 Target Size: ensure adequate touch target */
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+}
+
+.info-link:hover {
+    color: var(--accent-green);
+}
+
+/* Help tips (UI metadata - show tooltips) */
+.help-tip {
+    cursor: help;
+    color: var(--text-muted);
+    font-size: 0.85em;
+    transition: color 0.2s;
+    /* WCAG 2.2 Target Size: minimum 24x24px touch target */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+.help-tip:hover {
+    color: var(--accent-green);
+}
+
+/* Panel tags for related terms */
+.panel-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.panel-tag {
+    padding: 0.375rem 0.75rem;
+    background: var(--bg-secondary);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    /* WCAG 2.2 Target Size: minimum 24x24px */
+    min-height: 24px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.panel-tag:hover {
+    background: var(--accent-green);
+    color: var(--bg-primary);
+}
+
+/* Panel references */
+.panel-references {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.reference-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.reference-item a {
+    color: var(--accent-green);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.reference-item a:hover {
+    text-decoration: underline;
+}
+
+.reference-section {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.glossary-tooltip {
+    position: absolute;
+    max-width: 320px;
+    background: var(--bg-primary);
+    border: 1px solid var(--accent-gold);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    font-size: 0.9rem;
+}
+
+.glossary-tooltip.visible {
+    display: block;
+}
+
+.tooltip-header {
+    font-weight: 600;
+    color: var(--accent-green);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.tooltip-category {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--bg-primary);
+    background: var(--text-secondary);
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+.tooltip-body {
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.tooltip-details {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background: var(--bg-secondary);
+    border-radius: 4px;
+}
+
+.tooltip-details strong {
+    color: var(--accent-cream);
+}
+
+.tooltip-related {
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+}
+
+.tooltip-related-label {
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.related-term {
+    display: inline-flex;
+    align-items: center;
+    color: var(--accent-cream);
+    background: var(--bg-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    margin: 0.2rem 0.25rem 0.2rem 0;
+    cursor: pointer;
+    transition: background 0.2s;
+    border: 1px solid var(--border);
+    /* WCAG 2.2 Target Size: minimum 24x24px */
+    min-height: 24px;
+}
+
+.related-term:hover {
+    background: var(--accent-green);
+    color: var(--bg-primary);
+    border-color: var(--accent-green);
+    font-weight: 500;
+}
+
+/* Recipe Notes */
+.recipe-notes {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.recipe-notes-title {
+    font-size: 0.85rem;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.recipe-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    background: var(--bg-secondary);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    border-left: 3px solid var(--border);
+}
+
+.recipe-note.info {
+    border-left-color: var(--accent-gold);
+}
+
+.recipe-note.warning {
+    border-left-color: var(--warning);
+}
+
+.recipe-note.success {
+    border-left-color: var(--success);
+}
+
+.recipe-note-icon {
+    flex-shrink: 0;
+    font-size: 1rem;
+}
+
+.recipe-note-text {
+    color: var(--text-primary);
+}
+
+.no-notes {
+    color: var(--text-secondary);
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+/* Properties Grid (legacy support) */
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.property-item {
+    background: var(--bg-secondary);
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.property-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.property-name {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.property-value {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    color: var(--accent-cream);
+}
+
+.property-bar {
+    height: 6px;
+    background: var(--bg-input);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.property-fill {
+    height: 100%;
+    background: var(--accent-gold);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.property-fill.low {
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--danger),
+        var(--danger) 3px,
+        transparent 3px,
+        transparent 6px
+    ),
+    var(--danger);
+}
+.property-fill.mid { background: var(--accent-gold); }
+.property-fill.high { background: var(--success); }
+
+.fatty-acids {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.fatty-acid-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.fatty-acid-name {
+    color: var(--text-secondary);
+}
+
+.fatty-acid-value {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--accent-cream);
+}
+
+/* Info Panel */
+.info-panel {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 450px;
+    height: 100vh;
+    background: var(--bg-card);
+    border-left: 1px solid var(--border);
+    padding: 2rem;
+    overflow-y: auto;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.info-panel.open {
+    right: 0;
+}
+
+.panel-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    color: var(--accent-cream);
+    margin-bottom: 0.5rem;
+    padding-right: 3rem;
+}
+
+.panel-subtitle {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
+}
+
+.panel-section {
+    margin-bottom: 1.5rem;
+}
+
+.panel-section h4 {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.panel-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.panel-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--shadow-overlay);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 999;
+}
+
+.panel-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* WCAG 2.2 Focus Not Obscured: visual indication of inert content */
+[inert] {
+    pointer-events: none;
+    user-select: none;
+}
+
+.close-panel {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.fat-detail-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    color: var(--accent-cream);
+    margin-bottom: 0.5rem;
+    padding-right: 3rem;
+}
+
+.fat-detail-sap {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
+}
+
+.fat-detail-section {
+    margin-bottom: 1.5rem;
+}
+
+.fat-detail-section h4 {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.fat-detail-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.usage-rate {
+    display: inline-block;
+    background: var(--accent-gold);
+    color: var(--bg-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.info-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+    transition: all 0.2s;
+}
+
+.info-btn:hover {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+
+/* Fatty Acid Panel */
+.fa-chemistry {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.fa-chem-item {
+    background: var(--bg-secondary);
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+
+.fa-chem-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.fa-chem-value {
+    font-family: var(--font-mono);
+    color: var(--accent-cream);
+    font-size: 1rem;
+}
+
+.fa-props-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.fa-prop-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-secondary);
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+}
+
+.fa-prop-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.fa-prop-value {
+    font-size: 0.85rem;
+    color: var(--accent-cream);
+}
+
+.fa-description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.fa-sources,
+.fa-common-sources {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.fa-source-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-secondary);
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+}
+
+.fa-source-name {
+    color: var(--text-primary);
+}
+
+.fa-source-percent {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--accent-gold);
+    font-size: 0.9rem;
+}
+
+.fa-common-sources .fa-source-item {
+    border: 1px dashed var(--border);
+    background: transparent;
+}
+
+.no-sources {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.fa-link {
+    cursor: pointer;
+    transition: color 0.2s;
+    /* WCAG 2.2 Target Size: ensure adequate touch target */
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+}
+
+.fa-link:hover {
+    color: var(--accent-green);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-muted);
+}
+
+.empty-state p {
+    margin-bottom: 1rem;
+}
+
+.recipe-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* Responsive - Mobile (480px) */
+@media (max-width: 480px) {
+    .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .card {
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    header p {
+        font-size: 0.95rem;
+    }
+
+    header {
+        margin-bottom: 2rem;
+        padding: 1.25rem 0;
+    }
+
+    .card-title {
+        font-size: 1.15rem;
+    }
+
+    .fat-row {
+        grid-template-columns: 1fr 95px 75px 28px;
+        gap: 0.4rem;
+        padding: 0.5rem;
+    }
+
+    #yoloRecipeFats .fat-row {
+        grid-template-columns: 1fr 75px 28px;
+    }
+
+    .totals-row {
+        grid-template-columns: 1fr 95px 75px 28px;
+    }
+
+    .lock-weight,
+    .lock-percentage {
+        width: 20px;
+        height: 20px;
+        font-size: 0.65rem;
+    }
+
+    .lock-fat {
+        width: 28px;
+        height: 28px;
+        font-size: 0.85rem;
+    }
+
+    .results-grid,
+    .properties-grid,
+    .fatty-acids {
+        grid-template-columns: 1fr;
+    }
+
+    .results-grid {
+        gap: 0.5rem;
+    }
+
+    .result-item {
+        padding: 0.75rem;
+    }
+
+    .fat-selector {
+        flex-wrap: wrap;
+    }
+
+    .fat-selector select {
+        width: 100%;
+        flex: none;
+    }
+
+    .exclusion-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .exclusion-add {
+        width: 100%;
+    }
+
+    .exclusion-add select {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tab {
+        width: 100%;
+        text-align: center;
+    }
+
+    .analysis-table {
+        font-size: 0.85rem;
+    }
+
+    .analysis-table th,
+    .analysis-table td {
+        padding: 0.35rem 0.3rem;
+    }
+
+    select, input {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.6rem;
+    }
+
+    .settings-row .form-group {
+        min-width: 0;
+        max-width: none;
+        flex: 1 1 100%;
+    }
+}
+
+/* Build Recipe Card */
+.build-subcontainer {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.build-subcontainer .subcontainer-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.build-mode-tabs {
+    margin-bottom: 1.25rem;
+}
+
+.build-mode-tab {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+}
+
+.build-mode-content {
+    margin-bottom: 1.25rem;
+}
+
+.build-mode-content.hidden {
+    display: none;
+}
+
+.analysis-helper-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+/* Fat Exclusions */
+.build-exclusions {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.exclusion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.exclusion-header > label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.exclusion-add {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.exclusion-add select {
+    flex: 1;
+}
+
+.excluded-fats-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    min-height: 1.5rem;
+}
+
+.excluded-fat-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-primary);
+}
+
+.excluded-fat-tag .remove-exclusion {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* WCAG 2.2 Target Size: minimum 24x24px */
+    min-width: 24px;
+    min-height: 24px;
+}
+
+.excluded-fat-tag .remove-exclusion:hover {
+    color: var(--danger);
+}
+
+.no-exclusions {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Dietary Filters */
+.dietary-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.25rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-30);
+}
+
+.dietary-filters .filter-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.dietary-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.dietary-filter:hover {
+    color: var(--text-primary);
+}
+
+.dietary-filter input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent-gold);
+    cursor: pointer;
+}
+
+.dietary-filter input[type="checkbox"]:checked + span {
+    color: var(--text-primary);
+}
+
+#generateRecipeBtn {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--accent-gold);
+    color: var(--bg-primary);
+}
+
+.btn-primary:hover {
+    background: var(--accent-copper);
+}
+
+/* Profile Results */
+.profile-results {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+}
+
+.profile-results.hidden {
+    display: none;
+}
+
+.match-quality {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.match-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.match-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--bg-input);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.match-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--danger), var(--warning), var(--success));
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.match-percent {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-cream);
+    min-width: 40px;
+    text-align: right;
+}
+
+/* Action Button Containers */
+.use-recipe-action,
+.generate-action {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.use-recipe-action .btn,
+.generate-action .btn {
+    width: 100%;
+}
+
+.suggested-recipe {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.suggested-fat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.suggested-fat-name {
+    color: var(--text-primary);
+}
+
+.suggested-fat-name.clickable {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.suggested-fat-name.clickable:hover {
+    color: var(--accent-green);
+}
+
+.suggested-fat-percent {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    color: var(--accent-gold);
+}
+
+.achieved-profile {
+    margin-bottom: 1rem;
+}
+
+.achieved-profile h4 {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.achieved-comparison {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    .achieved-comparison {
+        grid-template-columns: 1fr;
+    }
+}
+
+.achieved-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0.6rem;
+    background: var(--bg-secondary);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    border-left: 3px solid var(--border);
+}
+
+.achieved-item.good {
+    border-left-color: var(--success);
+    background: rgba(90, 154, 138, 0.1);
+}
+
+.achieved-item.close {
+    border-left-color: var(--warning);
+}
+
+.achieved-item.off {
+    border-left-color: var(--danger);
+    background: rgba(196, 122, 85, 0.1);
+}
+
+.achieved-acid {
+    color: var(--text-secondary);
+}
+
+.achieved-values {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--text-primary);
+}
+
+.achieved-values .target {
+    color: var(--text-muted);
+}
+
+.achieved-values .arrow {
+    color: var(--text-muted);
+    margin: 0 0.25rem;
+}
+
+.achieved-values .achieved {
+    color: var(--accent-cream);
+}
+
+.achieved-values .diff {
+    font-size: 0.75rem;
+    margin-left: 0.25rem;
+}
+
+.achieved-values .diff.positive {
+    color: var(--warning);
+}
+
+.achieved-values .diff.negative {
+    color: var(--success);
+}
+
+#useRecipeBtn {
+    width: 100%;
+}
+
+/* ============================================
+   Glossary Page
+   ============================================ */
+
+.glossary-container {
+    max-width: 900px;
+}
+
+.glossary-header {
+    text-align: center;
+}
+
+.glossary-header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.glossary-intro {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+
+.glossary-nav {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.glossary-filter {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.glossary-filter:hover {
+    border-color: var(--accent-gold);
+    color: var(--text-primary);
+}
+
+.glossary-filter.active {
+    background: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: var(--bg-primary);
+}
+
+.glossary-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.glossary-entry {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.glossary-entry.highlight {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 2px var(--accent-gold-20);
+}
+
+.glossary-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.glossary-term {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    color: var(--accent-cream);
+    margin: 0;
+}
+
+.glossary-category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--bg-primary);
+    background: var(--text-secondary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+}
+
+.glossary-desc {
+    color: var(--text-primary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.glossary-details {
+    margin-bottom: 1rem;
+}
+
+.glossary-details summary {
+    cursor: pointer;
+    color: var(--accent-green);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color 0.2s;
+}
+
+.glossary-details summary:hover {
+    color: var(--accent-cream);
+}
+
+.glossary-details-content {
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.glossary-related,
+.glossary-references {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.glossary-related {
+    margin-bottom: 0.75rem;
+}
+
+.glossary-related-label,
+.glossary-references-label {
+    color: var(--text-muted);
+}
+
+.glossary-related-link {
+    color: var(--accent-cream);
+    background: var(--bg-secondary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+}
+
+.glossary-related-link:hover {
+    background: var(--accent-green);
+    color: var(--bg-primary);
+    border-color: var(--accent-green);
+}
+
+.glossary-ref-link {
+    color: var(--accent-green);
+    text-decoration: none;
+}
+
+.glossary-ref-link:hover {
+    text-decoration: underline;
+}
+
+.no-results {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 3rem;
+    font-style: italic;
+}
+
+/* Optional label for subcontainer titles */
+.optional-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+.additive-tabs {
+    margin-bottom: 1rem;
+}
+
+.additive-tab {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+}
+
+.additive-selector {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.additive-selector select {
+    flex: 1;
+}
+
+.recipe-additives {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Additive rows - matches fat-row pattern */
+.additive-row {
+    display: grid;
+    grid-template-columns: 1fr 100px 80px 40px;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.75rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.additive-row.warning {
+    background: var(--accent-gold-10);
+    border-color: var(--warning);
+}
+
+.additive-row.danger {
+    background: rgba(217, 123, 108, 0.1);
+    border-color: var(--danger);
+}
+
+.additive-name {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.additive-row input {
+    text-align: right;
+}
+
+.additive-percentage {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.additive-totals {
+    grid-template-columns: 1fr 100px 80px 40px;
+}
+
+.remove-additive {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1.1rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.remove-additive:hover {
+    background: var(--danger);
+    border-color: var(--danger);
+    color: var(--bg-primary);
+}
+
+.empty-state-small {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.empty-state-small p {
+    margin: 0;
+}
+
+/* Additive Info Panel */
+.panel-safety {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.safety-item {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--border-30);
+}
+
+.safety-item:last-child {
+    border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+    .additive-row {
+        grid-template-columns: 1fr 60px 55px 28px;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .additive-amount-group input {
+        width: 40px;
+    }
+}
+
+/* ============================================
+   Create Recipe Section
+   ============================================ */
+
+.create-recipe-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.btn-large {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--accent-gold);
+    color: var(--bg-primary);
+}
+
+.btn-primary:hover {
+    background: var(--accent-copper);
+}
+
+/* ============================================
+   Final Recipe Display
+   ============================================ */
+
+#finalRecipeCard {
+    background: var(--bg-card);
+    border: 2px solid var(--accent-gold);
+}
+
+.final-recipe-content {
+    padding: 0.5rem 0;
+}
+
+.recipe-prose {
+    line-height: 1.7;
+}
+
+.recipe-section {
+    margin-bottom: 1.75rem;
+}
+
+.recipe-section h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    color: var(--accent-cream);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Ingredients List */
+.ingredients-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ingredients-list li {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-30);
+}
+
+.ingredients-list li:last-child {
+    border-bottom: none;
+}
+
+.ingredient-amount {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--accent-gold);
+    min-width: 80px;
+}
+
+.ingredient-name {
+    color: var(--text-primary);
+}
+
+/* Procedure List */
+.procedure-list {
+    padding-left: 1.25rem;
+    margin: 0;
+}
+
+.procedure-list li {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.procedure-list li:last-child {
+    margin-bottom: 0;
+}
+
+.procedure-list li strong {
+    color: var(--accent-cream);
+    font-weight: 600;
+}
+
+.recipe-summary {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.recipe-summary h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    color: var(--accent-cream);
+    margin-bottom: 1rem;
+}
+
+.recipe-summary ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recipe-summary li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border-30);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.recipe-summary li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 600px) {
+    .recipe-section h4 {
+        font-size: 1rem;
+    }
+
+    .ingredient-amount {
+        min-width: 70px;
+        font-size: 0.85rem;
+    }
+
+    .procedure-list li {
+        font-size: 0.9rem;
+    }
+
+    .recipe-summary {
+        padding: 1rem;
+    }
+
+    .recipe-summary h4 {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
+   Toast Notifications
+   ============================================ */
+
+.toast-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 400px;
+    pointer-events: none;
+}
+
+.toast {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.2s, transform 0.2s;
+    pointer-events: auto;
+}
+
+.toast-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast-hiding {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.toast-icon {
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.toast-message {
+    flex: 1;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--text-primary);
+}
+
+.toast-close {
+    flex-shrink: 0;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.toast-close:hover {
+    color: var(--text-primary);
+}
+
+/* Toast type variants */
+.toast-info {
+    border-left: 3px solid var(--accent-green);
+}
+
+.toast-success {
+    border-left: 3px solid var(--success);
+}
+
+.toast-success .toast-icon {
+    color: var(--success);
+}
+
+.toast-warning {
+    border-left: 3px solid var(--warning);
+}
+
+.toast-error {
+    border-left: 3px solid var(--danger);
+}
+
+.toast-error .toast-icon {
+    color: var(--danger);
+}
+
+@media (max-width: 480px) {
+    .toast-container {
+        left: 1rem;
+        right: 1rem;
+        max-width: none;
+    }
+
+    .toast {
+        transform: translateY(-100%);
+    }
+
+    .toast-visible {
+        transform: translateY(0);
+    }
+
+    .toast-hiding {
+        transform: translateY(-100%);
+    }
+}
