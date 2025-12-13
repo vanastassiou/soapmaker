@@ -1,8 +1,29 @@
-# Soap Calculator
+# Soapmaker recipe generator
 
-A single-page web app for soap makers to calculate lye amounts, water ratios, and analyze soap properties based on selected fats/oils.
+A web app for soap makers to calculate lye amounts, water ratios, and analyze soap properties based on selected fats/oils.
 
-## Quick Start
+<!-- toc -->
+
+- [Quick start](#quick-start)
+- [Architecture](#architecture)
+- [Project Structure](#project-structure)
+- [Data files](#data-files)
+  * [`fats.json`](#fatsjson)
+  * [`glossary.json`](#glossaryjson)
+  * [`fatty-acids.json`](#fatty-acidsjson)
+- [Adding a new fat](#adding-a-new-fat)
+- [Configuration](#configuration)
+  * [Property Ranges (`lib/constants.js`)](#property-ranges-libconstantsjs)
+  * [Recipe note thresholds](#recipe-note-thresholds)
+- [Key concepts](#key-concepts)
+  * [Fat locking](#fat-locking)
+  * [Profile builder](#profile-builder)
+  * [Pure calculations](#pure-calculations)
+- [No build system](#no-build-system)
+
+<!-- tocstop -->
+
+## Quick start
 
 ```bash
 # Requires HTTP server for ES6 modules
@@ -62,11 +83,11 @@ soap-generator/
     └── schemas/            # JSON validation schemas
 ```
 
-## Data Files
+## Data files
 
 Each file contains data derived from scientifically verified, publicly funded primary sources.
 
-### fats.json
+### `fats.json`
 
 Each fat entry contains:
 
@@ -90,15 +111,15 @@ Each fat entry contains:
 }
 ```
 
-### glossary.json
+### `glossary.json`
 
 Educational terms with categories, descriptions, and related terms.
 
-### fatty-acids.json
+### `fatty-acids.json`
 
 Chemistry data: formula, carbon chain, melting point, saturation.
 
-## Adding a New Fat
+## Adding a new fat
 
 1. Add entry to `data/fats.json`:
 
@@ -142,7 +163,7 @@ export const PROPERTY_RANGES = {
 
 These drive the UI range indicators and recipe notes.
 
-### Recipe Note Thresholds
+### Recipe note thresholds
 
 ```javascript
 export const NOTE_THRESHOLDS = {
@@ -156,21 +177,21 @@ export const NOTE_THRESHOLDS = {
 };
 ```
 
-## Key Concepts
+## Key concepts
 
-### Oil Locking
+### Fat locking
 
-When a fat is "locked", changing its weight scales all other fats proportionally. Useful for maintaining a specific amount of one fat while adjusting the recipe.
+When a fat is "locked", other fats are scaled around it. Useful to maintain a specific amount or proportion of one fat while adjusting the recipe.
 
-### Profile Builder
+### Profile builder
 
 The optimizer uses iterative gradient descent to find fat combinations matching target properties. Not globally optimal but produces practical results.
 
-### Pure Calculations
+### Pure calculations
 
 `calculator.js` has zero DOM dependencies. All functions are pure and can be unit tested independently.
 
-## No Build System
+## No build system
 
 This project intentionally avoids build tools:
 
@@ -180,10 +201,3 @@ This project intentionally avoids build tools:
 - Instant iteration: edit file, refresh browser
 
 Trade-off: Requires HTTP server for local development (CORS).
-
-## Browser DevTools
-
-- Console: validation errors, warnings
-- Network: check data file loading
-- Elements: inspect generated DOM
-- Sources: debug ES6 modules directly
