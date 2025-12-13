@@ -21,11 +21,13 @@ import { delegate, onActivate } from '../helpers.js';
 /**
  * @typedef {Object} RowOptions
  * @property {boolean} [showWeightInput=true] - Show weight input field
- * @property {boolean} [showLockButton=true] - Show lock/unlock button
+ * @property {boolean} [showWeightLock=true] - Show weight lock button (only when showWeightInput is true)
+ * @property {boolean} [showLockButton=true] - Show percentage lock button
  * @property {boolean} [showPercentage=true] - Show percentage display
+ * @property {boolean} [showRemoveButton=true] - Show remove button
  * @property {string} [unit='g'] - Unit for weight input aria-label
  * @property {string} [itemType='fat'] - Type for data attributes ('fat' or 'additive')
- * @property {string} [gridTemplate] - Custom grid template columns
+ * @property {string} [className=''] - Additional CSS class(es) for the row
  */
 
 /**
@@ -38,10 +40,13 @@ import { delegate, onActivate } from '../helpers.js';
 export function renderItemRow(config, index, options = {}) {
     const {
         showWeightInput = true,
+        showWeightLock = true,
         showLockButton = true,
         showPercentage = true,
+        showRemoveButton = true,
         unit = 'g',
-        itemType = 'fat'
+        itemType = 'fat',
+        className = ''
     } = options;
 
     const {
@@ -68,15 +73,18 @@ export function renderItemRow(config, index, options = {}) {
 
     const weightLockedClass = isWeightLocked ? CSS_CLASSES.locked : '';
     const disabledAttr = isWeightLocked ? 'disabled' : '';
+    const weightLockButton = showWeightLock
+        ? `<button class="lock-weight ${weightLockedClass}" data-action="lock-weight" data-index="${index}"
+               title="${isWeightLocked ? 'Unlock weight' : 'Lock weight'}"
+               aria-label="${isWeightLocked ? 'Unlock ' + name + ' weight' : 'Lock ' + name + ' weight'}"
+               aria-pressed="${isWeightLocked}">
+               ${isWeightLocked ? UI_ICONS.LOCK : UI_ICONS.UNLOCK}
+           </button>`
+        : '';
     const weightCell = showWeightInput
         ? `<div class="weight-cell">
                <input type="number" value="${weight}" min="0" step="1" data-action="weight" data-index="${index}" aria-label="${name} weight in ${unit}" ${disabledAttr}>
-               <button class="lock-weight ${weightLockedClass}" data-action="lock-weight" data-index="${index}"
-                   title="${isWeightLocked ? 'Unlock weight' : 'Lock weight'}"
-                   aria-label="${isWeightLocked ? 'Unlock ' + name + ' weight' : 'Lock ' + name + ' weight'}"
-                   aria-pressed="${isWeightLocked}">
-                   ${isWeightLocked ? UI_ICONS.LOCK : UI_ICONS.UNLOCK}
-               </button>
+               ${weightLockButton}
            </div>`
         : '';
 
@@ -93,14 +101,16 @@ export function renderItemRow(config, index, options = {}) {
            </div>`
         : '';
 
-    const removeCell = `
-        <button class="remove-${itemType}" data-action="remove" data-index="${index}" aria-label="Remove ${name}">
-            ${UI_ICONS.REMOVE}
-        </button>
-    `;
+    const removeCell = showRemoveButton
+        ? `<button class="remove-${itemType}" data-action="remove" data-index="${index}" aria-label="Remove ${name}">
+               ${UI_ICONS.REMOVE}
+           </button>`
+        : '';
+
+    const rowClasses = `${itemType}-row ${rowLockedClass} ${warningClass} ${className}`.trim().replace(/\s+/g, ' ');
 
     return `
-        <div class="${itemType}-row ${rowLockedClass} ${warningClass}" data-index="${index}">
+        <div class="${rowClasses}" data-index="${index}">
             ${nameCell}
             ${weightCell}
             ${percentageCell}
@@ -139,7 +149,7 @@ export function renderTotalsRow(label, total, unit, emptyCells = 2, className = 
  */
 export function renderEmptyState(message, subMessage = '', className = '') {
     return `
-        <div class="empty-state ${className}">
+        <div class="${CSS_CLASSES.emptyState} ${className}">
             <p>${message}</p>
             ${subMessage ? `<p>${subMessage}</p>` : ''}
         </div>
@@ -158,7 +168,6 @@ export function renderEmptyState(message, subMessage = '', className = '') {
  * @param {string} [itemType='fat'] - Item type for selectors
  */
 export function attachRowEventHandlers(container, callbacks, itemType = 'fat') {
-    const dataAttr = itemType === 'fat' ? 'data-fat' : 'data-additive';
     const nameSelector = `.${itemType}-name[data-action="info"]`;
 
     if (callbacks.onWeightChange) {
@@ -198,5 +207,68 @@ export function attachRowEventHandlers(container, callbacks, itemType = 'fat') {
                 callbacks.onInfo(id);
             }
         }));
+    }
+}
+
+/**
+ * Attach event handlers with AbortSignal support for cleanup
+ * @param {HTMLElement} container - Container element
+ * @param {Object} callbacks - Event callbacks
+ * @param {string} [itemType='fat'] - Item type for selectors
+ * @param {AbortSignal} signal - AbortSignal for cleanup
+ */
+export function attachRowEventHandlersWithSignal(container, callbacks, itemType = 'fat', signal) {
+    const nameSelector = `.${itemType}-name[data-action="info"]`;
+
+    // Helper to add delegated event listener with abort signal
+    const addDelegated = (selector, eventType, handler) => {
+        container.addEventListener(eventType, (e) => {
+            const target = e.target.closest(selector);
+            if (target && container.contains(target)) {
+                handler(e, target);
+            }
+        }, { signal });
+    };
+
+    if (callbacks.onWeightChange) {
+        addDelegated('input[data-action="weight"]', 'input', (_e, el) => {
+            callbacks.onWeightChange(parseInt(el.dataset.index, 10), el.value);
+        });
+    }
+
+    if (callbacks.onToggleWeightLock) {
+        addDelegated('button[data-action="lock-weight"]', 'click', (_e, el) => {
+            callbacks.onToggleWeightLock(parseInt(el.dataset.index, 10));
+        });
+    }
+
+    if (callbacks.onTogglePercentageLock) {
+        addDelegated('button[data-action="lock-percentage"]', 'click', (_e, el) => {
+            callbacks.onTogglePercentageLock(parseInt(el.dataset.index, 10));
+        });
+    }
+
+    if (callbacks.onRemove) {
+        addDelegated('button[data-action="remove"]', 'click', (_e, el) => {
+            callbacks.onRemove(parseInt(el.dataset.index, 10));
+        });
+    }
+
+    if (callbacks.onInfo) {
+        addDelegated(nameSelector, 'click', (_e, el) => {
+            const id = el.dataset[itemType] || el.dataset.fat || el.dataset.additive;
+            callbacks.onInfo(id);
+        });
+
+        addDelegated(nameSelector, 'keydown', (e, _el) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const el = e.target.closest(nameSelector);
+                if (el) {
+                    const id = el.dataset[itemType] || el.dataset.fat || el.dataset.additive;
+                    callbacks.onInfo(id);
+                }
+            }
+        });
     }
 }

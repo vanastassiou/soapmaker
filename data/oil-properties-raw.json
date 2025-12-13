@@ -1,19 +1,29 @@
 {
   "_description": "Properties of raw fats that do not survive saponification. For reference only - not relevant to finished soap.",
   "avocado-oil": {
-    "vitamins": ["A", "D", "E"],
-    "notes": "Vitamins largely destroyed during saponification"
-  },
-  "tamanu-oil": {
-    "traditionalUses": ["skin healing", "wound care"],
-    "notes": "Traditional medicinal uses for raw oil; not applicable to soap"
+    "notes": "Vitamins largely destroyed during saponification",
+    "vitamins": [
+      "A",
+      "D",
+      "E"
+    ]
   },
   "macadamia-nut-oil": {
-    "skinCompatibility": "Contains palmitoleic acid similar to human sebum",
-    "notes": "Relevant for leave-on products; less significant for rinse-off soap"
+    "notes": "Relevant for leave-on products; less significant for rinse-off soap",
+    "skinCompatibility": "Contains palmitoleic acid similar to human sebum"
   },
   "neem-oil": {
-    "traditionalUses": ["skin conditions", "insect repellent"],
-    "notes": "Traditional medicinal uses; scent persists in soap but therapeutic claims unsubstantiated"
+    "notes": "Traditional medicinal uses; scent persists in soap but therapeutic claims unsubstantiated",
+    "traditionalUses": [
+      "skin conditions",
+      "insect repellent"
+    ]
+  },
+  "tamanu-oil": {
+    "notes": "Traditional medicinal uses for raw oil; not applicable to soap",
+    "traditionalUses": [
+      "skin healing",
+      "wound care"
+    ]
   }
 }

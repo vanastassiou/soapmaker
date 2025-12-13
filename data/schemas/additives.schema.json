@@ -1,156 +1,192 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "additives.schema.json",
-  "title": "Soap Additives Database",
-  "description": "Schema for soap additives including essential oils, colourants, and functional additives",
-  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": {
     "$ref": "#/definitions/Additive"
   },
   "definitions": {
     "Additive": {
-      "type": "object",
-      "required": ["name", "category", "usage", "description", "references"],
+      "additionalProperties": false,
       "properties": {
-        "name": {
-          "type": "string",
-          "description": "Display name of the additive",
-          "minLength": 1
+        "anchoring": {
+          "description": "Additive IDs that help anchor this scent (essential oils only)",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         },
         "category": {
-          "type": "string",
-          "enum": ["essential-oil", "colourant", "functional"],
-          "description": "Primary additive category"
-        },
-        "subcategory": {
-          "type": "string",
-          "description": "Sub-classification (e.g., clay, mica, oxide, hardener)"
-        },
-        "usage": {
-          "type": "object",
-          "description": "Recommended usage range",
-          "required": ["min", "max", "basis"],
-          "properties": {
-            "min": {
-              "type": "number",
-              "minimum": 0,
-              "maximum": 100
-            },
-            "max": {
-              "type": "number",
-              "minimum": 0,
-              "maximum": 100
-            },
-            "basis": {
-              "type": "string",
-              "enum": ["oil-weight", "batch-weight"],
-              "description": "What the percentage is calculated from"
-            }
-          },
-          "additionalProperties": false
-        },
-        "safety": {
-          "type": "object",
-          "description": "Safety and regulatory information",
-          "properties": {
-            "ifraCategory9Limit": {
-              "type": "number",
-              "description": "IFRA max % for Category 9 (rinse-off products)",
-              "minimum": 0,
-              "maximum": 100
-            },
-            "majorConstituents": {
-              "type": "array",
-              "items": { "type": "string" },
-              "description": "Primary chemical constituents"
-            },
-            "flashPointC": {
-              "type": "number",
-              "description": "Flash point in Celsius"
-            },
-            "maxConcentration": {
-              "type": "number",
-              "description": "Maximum safe concentration %",
-              "minimum": 0,
-              "maximum": 100
-            },
-            "casNumber": {
-              "type": "string",
-              "description": "CAS registry number",
-              "pattern": "^[0-9]+-[0-9]+-[0-9]+$"
-            },
-            "fdaGras": {
-              "type": "boolean",
-              "description": "FDA Generally Recognized As Safe"
-            },
-            "fdaCfr": {
-              "type": "string",
-              "description": "FDA CFR reference (e.g., 21 CFR 73.2250)"
-            },
-            "cosIng": {
-              "type": "string",
-              "description": "EU CosIng CI number"
-            }
-          },
-          "additionalProperties": false
-        },
-        "scentNote": {
-          "type": "string",
-          "enum": ["top", "middle", "base"],
-          "description": "Fragrance note classification (essential oils only)"
-        },
-        "anchoring": {
-          "type": "array",
-          "items": { "type": "string" },
-          "description": "Additive IDs that help anchor this scent (essential oils only)"
+          "description": "Primary additive category",
+          "enum": [
+            "essential-oil",
+            "colourant",
+            "functional"
+          ],
+          "type": "string"
         },
         "color": {
-          "type": "string",
           "description": "Hex colour code for visual reference (colourants only)",
-          "pattern": "^#[0-9a-fA-F]{6}$"
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "type": "string"
         },
         "density": {
-          "type": "number",
           "description": "Density in g/mL",
+          "maximum": 6,
           "minimum": 0.5,
-          "maximum": 6
+          "type": "number"
         },
         "description": {
-          "type": "string",
           "description": "Factual description of the additive",
-          "minLength": 1
-        },
-        "references": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": ["source", "section", "url"],
-            "properties": {
-              "source": { "type": "string" },
-              "section": { "type": "string" },
-              "url": { "type": "string", "format": "uri" }
-            },
-            "additionalProperties": false
-          },
-          "minItems": 1
+          "minLength": 1,
+          "type": "string"
         },
         "dietary": {
-          "type": "object",
+          "additionalProperties": false,
           "description": "Dietary and ethical classification flags",
           "properties": {
             "animalBased": {
-              "type": "boolean",
-              "description": "True if derived from animal sources"
+              "description": "True if derived from animal sources",
+              "type": "boolean"
             },
             "ethicalConcerns": {
-              "type": "boolean",
-              "description": "True if there are significant ethical concerns"
+              "description": "True if there are significant ethical concerns",
+              "type": "boolean"
             }
           },
-          "additionalProperties": false
+          "type": "object"
+        },
+        "name": {
+          "description": "Display name of the additive",
+          "minLength": 1,
+          "type": "string"
+        },
+        "references": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "section": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              },
+              "url": {
+                "format": "uri",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source",
+              "section",
+              "url"
+            ],
+            "type": "object"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "safety": {
+          "additionalProperties": false,
+          "description": "Safety and regulatory information",
+          "properties": {
+            "casNumber": {
+              "description": "CAS registry number",
+              "pattern": "^[0-9]+-[0-9]+-[0-9]+$",
+              "type": "string"
+            },
+            "cosIng": {
+              "description": "EU CosIng CI number",
+              "type": "string"
+            },
+            "fdaCfr": {
+              "description": "FDA CFR reference (e.g., 21 CFR 73.2250)",
+              "type": "string"
+            },
+            "fdaGras": {
+              "description": "FDA Generally Recognized As Safe",
+              "type": "boolean"
+            },
+            "flashPointC": {
+              "description": "Flash point in Celsius",
+              "type": "number"
+            },
+            "ifraCategory9Limit": {
+              "description": "IFRA max % for Category 9 (rinse-off products)",
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "majorConstituents": {
+              "description": "Primary chemical constituents",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "maxConcentration": {
+              "description": "Maximum safe concentration %",
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "scentNote": {
+          "description": "Fragrance note classification (essential oils only)",
+          "enum": [
+            "top",
+            "middle",
+            "base"
+          ],
+          "type": "string"
+        },
+        "subcategory": {
+          "description": "Sub-classification (e.g., clay, mica, oxide, hardener)",
+          "type": "string"
+        },
+        "usage": {
+          "additionalProperties": false,
+          "description": "Recommended usage range",
+          "properties": {
+            "basis": {
+              "description": "What the percentage is calculated from",
+              "enum": [
+                "oil-weight",
+                "batch-weight"
+              ],
+              "type": "string"
+            },
+            "max": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "min": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "min",
+            "max",
+            "basis"
+          ],
+          "type": "object"
         }
       },
-      "additionalProperties": false
+      "required": [
+        "name",
+        "category",
+        "usage",
+        "description",
+        "references"
+      ],
+      "type": "object"
     }
-  }
+  },
+  "description": "Schema for soap additives including essential oils, colourants, and functional additives",
+  "title": "Soap Additives Database",
+  "type": "object"
 }

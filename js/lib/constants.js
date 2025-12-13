@@ -17,7 +17,10 @@ export const ELEMENT_IDS = {
     // Fat selection
     fatSelect: 'fatSelect',
     addFatBtn: 'addFatBtn',
-    clearRecipeBtn: 'clearRecipeBtn',
+    startOverBtn: 'startOverBtn',
+    resetSettingsBtn: 'resetSettingsBtn',
+    resetFatsBtn: 'resetFatsBtn',
+    resetAdditivesBtn: 'resetAdditivesBtn',
     recipeFats: 'recipeFats',
 
     // Results
@@ -115,10 +118,23 @@ export const ELEMENT_IDS = {
     addExclusionBtn: 'addExclusionBtn',
     excludedFatsList: 'excludedFatsList',
 
-    // Dietary Filters
+    // Cupboard cleaner mode
+    cupboardCleanerMode: 'cupboardCleanerMode',
+    cupboardFats: 'cupboardFats',
+    cupboardSuggestions: 'cupboardSuggestions',
+    cupboardCleanerBtn: 'cupboardCleanerBtn',
+    useCupboardBtn: 'useCupboardBtn',
+    useCupboardAction: 'useCupboardAction',
+    allowRatioSuggestions: 'allowRatioSuggestions',
+    cupboardFatSelect: 'cupboardFatSelect',
+    addCupboardFatBtn: 'addCupboardFatBtn',
+
+    // Dietary filters / Exclusions
+    exclusionsSection: 'exclusionsSection',
     dietaryFiltersSection: 'dietaryFiltersSection',
     filterAnimalBased: 'filterAnimalBased',
     filterEthicalConcerns: 'filterEthicalConcerns',
+    filterCommonAllergens: 'filterCommonAllergens',
 
     // Additives
     additivesSubcontainer: 'additivesSubcontainer',
@@ -129,14 +145,14 @@ export const ELEMENT_IDS = {
     additivesUnit: 'additivesUnit',
     additiveInfoPanel: 'additiveInfoPanel',
 
-    // Final Recipe
+    // Final recipe
     createRecipeBtn: 'createRecipeBtn',
     finalRecipeCard: 'finalRecipeCard',
     finalRecipeContent: 'finalRecipeContent'
 };
 
 // ============================================
-// Fatty Acid Constants
+// Fatty acid constants
 // ============================================
 
 export const FATTY_ACID_KEYS = [
@@ -167,7 +183,7 @@ export const FATTY_ACID_ELEMENT_IDS = {
 };
 
 // ============================================
-// Property Constants
+// Property constants
 // ============================================
 
 export const PROPERTY_KEYS = [
@@ -205,7 +221,7 @@ export const PROPERTY_RANGES = {
 };
 
 // ============================================
-// Calculation Thresholds
+// Calculation thresholds
 // ============================================
 
 // Volume calculation constants
@@ -278,7 +294,7 @@ export const PROPERTY_CONVERSION = {
 };
 
 // ============================================
-// UI Constants
+// UI constants
 // ============================================
 
 export const UI_ICONS = {
@@ -316,13 +332,15 @@ export const SPECIAL_FATS = {
 
 export const BUILD_MODES = {
     FATS: 'fats',
-    PROFILE: 'profile'
+    PROFILE: 'profile',
+    YOLO: 'yolo',
+    CUPBOARD: 'cupboard'
 };
 
 // Additive categories for UI tabs
 export const ADDITIVE_CATEGORIES = {
     ESSENTIAL_OIL: 'essential-oil',
-    COLORANT: 'colourant',
+    COLOURANT: 'colourant',
     FUNCTIONAL: 'functional'
 };
 
@@ -334,7 +352,7 @@ export const ADDITIVE_WARNING_TYPES = {
 };
 
 // ============================================
-// CSS Classes
+// CSS classes
 // ============================================
 
 export const CSS_CLASSES = {
@@ -365,29 +383,33 @@ export const CSS_CLASSES = {
     excludedFatTag: 'excluded-fat-tag',
     additiveRow: 'additive-row',
     additiveEmpty: 'additive-empty',
+    emptyState: 'empty-state',
     noResults: 'no-results',
     highlight: 'highlight',
     glossaryFilter: 'glossary-filter'
 };
 
 // ============================================
-// User-Facing Messages
+// User-facing messages
 // ============================================
 
 export const UI_MESSAGES = {
     FAT_ALREADY_EXISTS: 'This fat is already in your recipe',
     ADDITIVE_ALREADY_EXISTS: 'This additive is already in your recipe',
-    ENTER_PROPERTY_TARGET: 'Please enter at least one property target',
+    ENTER_PROPERTY_TARGET: 'Enter at least one property target',
     NO_FAT_COMBINATION: 'Could not find a suitable fat combination',
-    ADD_OIL_FIRST: 'Please add at least one oil to create a recipe',
-    NO_FATS_ADDED: 'No fats added yet',
-    SELECT_FATS_PROMPT: 'Select fats from the dropdown above to build your recipe',
-    NO_ADDITIVES_ADDED: 'No additives added',
-    YOLO_GENERATION_FAILED: 'Could not generate a valid recipe. Try removing some exclusions.'
+    ADD_FAT_FIRST: 'Add at least one fat to create a recipe',
+    NO_FATS_ADDED: 'No fats selected',
+    NO_ADDITIVES_ADDED: 'No additives selected',
+    YOLO_GENERATION_FAILED: 'Could not generate a valid recipe. Try removing some exclusions.',
+    // Cupboard cleaner messages
+    NO_CUPBOARD_FATS: 'Add fats you have on hand',
+    CUPBOARD_SUGGESTION_FAILED: 'Could not find fats to improve properties',
+    CUPBOARD_PROPERTIES_OK: 'Properties are already within recommended ranges'
 };
 
 // ============================================
-// Data Attributes
+// Data attributes
 // ============================================
 
 export const DATA_ATTRS = {
