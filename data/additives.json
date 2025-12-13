@@ -1,0 +1,374 @@
+{
+  "lavender-eo": {
+    "name": "Lavender Essential Oil",
+    "category": "essential-oil",
+    "usage": { "min": 2, "max": 3, "basis": "oil-weight" },
+    "safety": {
+      "ifraCategory9Limit": 5.5,
+      "majorConstituents": ["linalool", "linalyl-acetate"],
+      "flashPointC": 75,
+      "casNumber": "8000-28-0"
+    },
+    "scentNote": "middle",
+    "anchoring": ["cedarwood-eo", "patchouli-eo"],
+    "density": 0.88,
+    "description": "Steam-distilled from Lavandula angustifolia flowers. Primary constituents: linalool (25-45%), linalyl acetate (25-45%).",
+    "dietary": {
+      "animalBased": false,
+      "ethicalConcerns": false
+    },
+    "references": [
+      {
+        "source": "PubChem CID 6654",
+        "section": "Lavender oil compound summary",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6654"
+      }    ]
+  },
+  "peppermint-eo": {
+    "name": "Peppermint Essential Oil",
+    "category": "essential-oil",
+    "usage": { "min": 1, "max": 3, "basis": "oil-weight" },
+    "safety": {
+      "ifraCategory9Limit": 5.4,
+      "majorConstituents": ["menthol", "menthone"],
+      "flashPointC": 66,
+      "casNumber": "8006-90-4"
+    },
+    "scentNote": "top",
+    "density": 0.9,
+    "description": "Steam-distilled from Mentha piperita leaves. Primary constituents: menthol (30-55%), menthone (14-32%).",
+    "dietary": {
+      "animalBased": false,
+      "ethicalConcerns": false
+    },
+    "references": [
+      {
+        "source": "PubChem CID 16666",
+        "section": "Peppermint oil compound summary",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/16666"
+      }    ]
+  },
+  "tea-tree-eo": {
+    "name": "Tea Tree Essential Oil",
+    "category": "essential-oil",
+    "usage": { "min": 1, "max": 3, "basis": "oil-weight" },
+    "safety": {
+      "ifraCategory9Limit": 15,
+      "majorConstituents": ["terpinen-4-ol", "gamma-terpinene"],
+      "flashPointC": 57,
+      "casNumber": "68647-73-4"
+    },
+    "scentNote": "middle",
+    "density": 0.89,
+    "description": "Steam-distilled from Melaleuca alternifolia leaves. Primary constituents: terpinen-4-ol (30-48%), gamma-terpinene (10-28%).",
+    "dietary": {
+      "animalBased": false,
+      "ethicalConcerns": false
+    },
+    "references": [
+      {
+        "source": "ISO 4730:2017",
+        "section": "Essential oil of Melaleuca, terpinen-4-ol type (Tea Tree oil)",
+        "url": "https://www.iso.org/standard/69082.html"
+      }    ]
+  },
+  "cedarwood-eo": {
+    "name": "Cedarwood Essential Oil (Atlas)",
+    "category": "essential-oil",
+    "usage": { "min": 2, "max": 4, "basis": "oil-weight" },
+    "safety": {
+      "majorConstituents": ["alpha-cedrene", "beta-cedrene", "cedrol"],
+      "flashPointC": 93,
+      "casNumber": "8000-27-9"
+    },
+    "scentNote": "base",
+    "density": 0.94,
+    "description": "Steam-distilled from Cedrus atlantica wood. Primary constituents: alpha-cedrene, beta-cedrene, cedrol. Used to anchor lighter scents.",
+    "dietary": {
+      "animalBased": false,
+      "ethicalConcerns": false
+    },
+    "references": [
+      {
+        "source": "PubChem CID 6431015",
+        "section": "Cedar oil compound summary",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6431015"
+      }    ]
+  },
+  "patchouli-eo": {
+    "name": "Patchouli Essential Oil",
+    "category": "essential-oil",
+    "usage": { "min": 1, "max": 3, "basis": "oil-weight" },
+    "safety": {
+      "majorConstituents": ["patchoulol", "alpha-bulnesene"],
+      "flashPointC": 100,
+      "casNumber": "8014-09-3"
+    },
+    "scentNote": "base",
+    "density": 0.95,
+    "description": "Steam-distilled from Pogostemon cablin leaves. Primary constituent: patchoulol (25-35%). Used to anchor lighter scents.",
+    "dietary": {
+      "animalBased": false,
+      "ethicalConcerns": false
+    },
+    "references": [
+      {
+        "source": "PubChem CID 442384",
+        "section": "Patchoulol compound summary",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/442384"
+      }    ]
+  },
+  "kaolin-clay": {
+    "name": "Kaolin Clay (White)",
+    "category": "colourant",
+    "subcategory": "clay",
+    "usage": { "min": 0.5, "max": 1, "basis": "oil-weight" },
+    "safety": {
+      "cosIng": "CI 77004",
+      "maxConcentration": 15,
+      "casNumber": "1332-58-7"
+    },
+    "color": "#f5f5f0",
+    "density": 2.6,
+    "description": "Hydrated aluminum silicate (Al2Si2O5(OH)4). Particle size 0.1-4 micrometers. Cation exchange capacity 2-10 meq/100g. Can absorb essential oils.",
+    "dietary": {
+      "animalBased": false,
+      "ethicalConcerns": false
+    },
+    "references": [
+      {
+        "source": "WHO/INCHEM Environmental Health Criteria 231 (2005)",
+        "section": "Bentonite, Kaolin and Selected Clay Minerals, Section 2.1",
+        "url": "https://www.inchem.org/documents/ehc/ehc/ehc231.htm"
+      }    ]
+  },
+  "bentonite-clay": {
+    "name": "Bentonite Clay",
+    "category": "colourant",
+    "subcategory": "clay",
+    "usage": { "min": 0.5, "max": 1, "basis": "oil-weight" },
+    "safety": {
+      "cosIng": "CI 77004",
+      "maxConcentration": 15,
+      "casNumber": "1302-78-9"
+    },
+    "color": "#c9c5b8",
+    "density": 2.5,
+    "description": "Montmorillonite-rich clay. Swells 12-15x when wet. Cation exchange capacity ~100 meq/100g. Higher absorption than kaolin.",
+    "dietary": {
+      "animalBased": false,
+      "ethicalConcerns": false
+    },
+    "references": [
+      {
+        "source": "WHO/INCHEM Environmental Health Criteria 231 (2005)",
+        "section": "Bentonite, Kaolin and Selected Clay Minerals, Section 2.2",
+        "url": "https://www.inchem.org/documents/ehc/ehc/ehc231.htm"
+      }    ]
+  },
+  "french-green-clay": {
+    "name": "French Green Clay (Illite)",
+    "category": "colourant",
+    "subcategory": "clay",
+    "usage": { "min": 0.5, "max": 1, "basis": "oil-weight" },
+    "safety": {
+      "maxConcentration": 15,
+      "casNumber": "12173-60-3"
+    },
+    "color": "#8a9a5b",
+    "density": 2.6,
+    "description": "Illite clay. Green colour from iron oxides and decomposed plant matter. Similar absorption properties to kaolin.",
+    "dietary": {
+      "animalBased": false,
+      "ethicalConcerns": false
+    },
+    "references": [
+      {
+        "source": "WHO/INCHEM Environmental Health Criteria 231 (2005)",
+        "section": "Bentonite, Kaolin and Selected Clay Minerals, Section 2.3",
+        "url": "https://www.inchem.org/documents/ehc/ehc/ehc231.htm"
+      }    ]
+  },
+  "iron-oxide-red": {
+    "name": "Iron Oxide Red",
+    "category": "colourant",
+    "subcategory": "oxide",
+    "usage": { "min": 0.1, "max": 0.5, "basis": "oil-weight" },
+    "safety": {
+      "fdaCfr": "21 CFR 73.2250",
+      "casNumber": "1309-37-1"
+    },
+    "color": "#b22222",
+    "density": 5.2,
+    "description": "Iron(III) oxide (Fe2O3). FDA approved for cosmetics including eye area. Stable in high pH.",
+    "dietary": {
+      "animalBased": false,
+      "ethicalConcerns": false
+    },
+    "references": [
+      {
+        "source": "FDA 21 CFR 73.2250",
+        "section": "Iron oxides",
+        "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-73/subpart-C/section-73.2250"
+      }    ]
+  },
+  "iron-oxide-yellow": {
+    "name": "Iron Oxide Yellow",
+    "category": "colourant",
+    "subcategory": "oxide",
+    "usage": { "min": 0.1, "max": 0.5, "basis": "oil-weight" },
+    "safety": {
+      "fdaCfr": "21 CFR 73.2250",
+      "casNumber": "51274-00-1"
+    },
+    "color": "#e6b800",
+    "density": 4.0,
+    "description": "Iron(III) oxide hydroxide (FeO(OH)). FDA approved for cosmetics including eye area. Stable in high pH.",
+    "dietary": {
+      "animalBased": false,
+      "ethicalConcerns": false
+    },
+    "references": [
+      {
+        "source": "FDA 21 CFR 73.2250",
+        "section": "Iron oxides",
+        "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-73/subpart-C/section-73.2250"
+      }    ]
+  },
+  "iron-oxide-black": {
+    "name": "Iron Oxide Black",
+    "category": "colourant",
+    "subcategory": "oxide",
+    "usage": { "min": 0.05, "max": 0.3, "basis": "oil-weight" },
+    "safety": {
+      "fdaCfr": "21 CFR 73.2250",
+      "casNumber": "1317-61-9"
+    },
+    "color": "#1a1a1a",
+    "density": 5.2,
+    "description": "Iron(II,III) oxide (Fe3O4). FDA approved for cosmetics including eye area. Stable in high pH. Use sparingly.",
+    "dietary": {
+      "animalBased": false,
+      "ethicalConcerns": false
+    },
+    "references": [
+      {
+        "source": "FDA 21 CFR 73.2250",
+        "section": "Iron oxides",
+        "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-73/subpart-C/section-73.2250"
+      }    ]
+  },
+  "titanium-dioxide": {
+    "name": "Titanium Dioxide",
+    "category": "colourant",
+    "subcategory": "oxide",
+    "usage": { "min": 0.1, "max": 1, "basis": "oil-weight" },
+    "safety": {
+      "fdaCfr": "21 CFR 73.2575",
+      "casNumber": "13463-67-7"
+    },
+    "color": "#ffffff",
+    "density": 4.2,
+    "description": "Titanium(IV) oxide (TiO2). FDA approved for cosmetics. Creates opaque white. Stable in high pH.",
+    "dietary": {
+      "animalBased": false,
+      "ethicalConcerns": false
+    },
+    "references": [
+      {
+        "source": "FDA 21 CFR 73.2575",
+        "section": "Titanium dioxide",
+        "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-73/subpart-C/section-73.2575"
+      }    ]
+  },
+  "sodium-lactate": {
+    "name": "Sodium Lactate",
+    "category": "functional",
+    "subcategory": "hardener",
+    "usage": { "min": 1, "max": 3, "basis": "oil-weight" },
+    "safety": {
+      "casNumber": "72-17-3",
+      "fdaGras": true,
+      "maxConcentration": 5
+    },
+    "density": 1.32,
+    "description": "Sodium salt of lactic acid (C3H5NaO3). Add to cooled lye water before combining with oils. Reduces unmoulding time.",
+    "dietary": {
+      "animalBased": false,
+      "ethicalConcerns": false
+    },
+    "references": [
+      {
+        "source": "PubChem CID 23666456",
+        "section": "Sodium Lactate compound summary",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Sodium-Lactate"
+      }    ]
+  },
+  "table-salt": {
+    "name": "Salt (Sodium Chloride)",
+    "category": "functional",
+    "subcategory": "hardener",
+    "usage": { "min": 0.5, "max": 1, "basis": "oil-weight" },
+    "safety": {
+      "casNumber": "7647-14-5",
+      "fdaGras": true,
+      "maxConcentration": 3
+    },
+    "density": 2.16,
+    "description": "Sodium chloride (NaCl). Dissolve in water portion before adding lye. Increases hardness. Above 3% may inhibit lather.",
+    "dietary": {
+      "animalBased": false,
+      "ethicalConcerns": false
+    },
+    "references": [
+      {
+        "source": "PubChem CID 5234",
+        "section": "Sodium Chloride compound summary",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5234"
+      }    ]
+  },
+  "sugar": {
+    "name": "Sugar (Sucrose)",
+    "category": "functional",
+    "subcategory": "lather-enhancer",
+    "usage": { "min": 0.5, "max": 1, "basis": "oil-weight" },
+    "safety": {
+      "casNumber": "57-50-1",
+      "fdaGras": true
+    },
+    "density": 1.59,
+    "description": "Sucrose (C12H22O11). Dissolve in water portion before adding lye. Increases lather volume.",
+    "dietary": {
+      "animalBased": false,
+      "ethicalConcerns": false
+    },
+    "references": [
+      {
+        "source": "PubChem CID 5988",
+        "section": "Sucrose compound summary",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5988"
+      }    ]
+  },
+  "colloidal-oatmeal": {
+    "name": "Colloidal Oatmeal",
+    "category": "functional",
+    "subcategory": "exfoliant",
+    "usage": { "min": 1, "max": 3, "basis": "oil-weight" },
+    "safety": {
+      "fdaCfr": "21 CFR 347.10",
+      "maxConcentration": 5
+    },
+    "density": 0.5,
+    "description": "Finely ground Avena sativa. FDA approved skin protectant. Add at trace. Particle size under 100 micrometers.",
+    "dietary": {
+      "animalBased": false,
+      "ethicalConcerns": false
+    },
+    "references": [
+      {
+        "source": "FDA 21 CFR 347.10",
+        "section": "Skin protectant active ingredients - Colloidal oatmeal",
+        "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-347/subpart-B/section-347.10"
+      }    ]
+  }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossary - Soap Making</title>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="container glossary-container">
+        <header class="glossary-header">
+            <h1>Glossary</h1>
+            <nav class="header-nav">
+                <a href="index.html" class="header-link">Recipe builder</a>
+            </nav>
+        </header>
+
+        <nav class="glossary-nav" role="tablist" aria-label="Filter glossary by category">
+            <button class="glossary-filter active" data-category="all" role="tab" aria-selected="true" aria-controls="glossaryList" id="filter-all">All</button>
+            <button class="glossary-filter" data-category="property" role="tab" aria-selected="false" aria-controls="glossaryList" id="filter-property">Properties</button>
+            <button class="glossary-filter" data-category="concept" role="tab" aria-selected="false" aria-controls="glossaryList" id="filter-concept">Concepts</button>
+            <button class="glossary-filter" data-category="calculation" role="tab" aria-selected="false" aria-controls="glossaryList" id="filter-calculation">Calculations</button>
+            <button class="glossary-filter" data-category="additive" role="tab" aria-selected="false" aria-controls="glossaryList" id="filter-additive">Additives</button>
+        </nav>
+
+        <main id="main-content">
+            <div class="glossary-list" id="glossaryList" role="tabpanel" aria-live="polite">
+                <!-- Populated by JS -->
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="./js/glossary.js"></script>
+</body>
+</html>
