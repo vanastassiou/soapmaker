@@ -1,0 +1,10 @@
+# Editor/IDE
+.vscode*
+
+# Logs
+*.log
+
+# Local development
+.env
+.env.local
+.pre-commit-config*
