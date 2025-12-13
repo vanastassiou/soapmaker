@@ -3,6 +3,7 @@
     /* Background colours - dark olive green */
     --bg-primary: #1a2420;
     --bg-secondary: #232d28;
+    --bg-tertiary: #2d3832;
     --bg-card: #2a3530;
     --bg-input: #1a2420;
 
@@ -353,6 +354,10 @@ button:focus-visible,
     accent-color: var(--accent-gold);
 }
 
+.property-options .help-tip {
+    font-size: 0.8rem;
+}
+
 /* Mode Subcontainers (inside build-mode-content) */
 .mode-subcontainer {
     margin-bottom: 1rem;
@@ -373,6 +378,50 @@ button:focus-visible,
     margin-bottom: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.03em;
+}
+
+/* Collapsible sections */
+.collapsible .collapsible-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+}
+
+.collapsible .collapsible-header .mode-subcontainer-title {
+    margin-bottom: 0;
+}
+
+.collapsible .collapse-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: transform 0.2s ease;
+}
+
+.collapsible .collapse-icon::before {
+    content: '▼';
+    font-size: 0.6rem;
+}
+
+.collapsible .collapsible-header[aria-expanded="false"] .collapse-icon {
+    transform: rotate(-90deg);
+}
+
+.collapsible .collapsible-content {
+    margin-top: 0.75rem;
+}
+
+.collapsible .collapsible-header[aria-expanded="false"] + .collapsible-content {
+    display: none;
 }
 
 .property-list {
@@ -410,20 +459,13 @@ button:focus-visible,
     margin-top: 0.25rem;
 }
 
-/* YOLO mode */
-.yolo-header {
-    display: flex;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.yolo-description,
-.mode-description {
+.instructions {
     color: var(--text-secondary);
     font-size: 0.85rem;
-    margin: 0 0 0.75rem 0;
+    padding: 0.75rem 0;
+    margin: 0 0 1rem 0;
+    border-top: 1px solid var(--border-30);
+    border-bottom: 1px solid var(--border-30);
 }
 
 #yoloRecipeFats .fat-row {
@@ -493,6 +535,24 @@ button:focus-visible,
 .fat-row.locked {
     border-color: var(--accent-gold);
     background: var(--accent-gold-10);
+}
+
+/* Read-only rows (no weight input or remove button) */
+.fat-row.readonly {
+    grid-template-columns: 1fr 100px;
+}
+
+.fat-row.readonly .percentage-cell {
+    justify-content: flex-end;
+}
+
+/* Rows with lock button but no weight input or remove button */
+.fat-row.lockable-only {
+    grid-template-columns: 1fr 110px;
+}
+
+.fat-row.lockable-only .percentage-cell {
+    justify-content: flex-end;
 }
 
 .fat-row.header-row {
@@ -1560,24 +1620,91 @@ button:focus-visible,
     font-size: 1.1rem;
     font-weight: 400;
     color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+.subcontainer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 1rem;
 }
 
-.build-mode-tabs {
+.collapsible-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collapsible-header-row .collapsible-header {
+    flex: 1;
+}
+
+.btn-text {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.btn-text:hover {
+    color: var(--accent-green);
+}
+
+/* Unified build mode area */
+.build-mode-area {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
     margin-bottom: 1.25rem;
+}
+
+.build-mode-tabs {
+    margin-bottom: 0.75rem;
+    gap: 0.25rem;
 }
 
 .build-mode-tab {
-    padding: 0.75rem 1rem;
-    font-size: 0.95rem;
+    padding: 0.5rem 0.875rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
+}
+
+.build-mode-tab.active {
+    background: var(--accent-green-20);
+    border-color: var(--accent-green);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.build-mode-helper {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.build-mode-helper.hidden {
+    display: none;
 }
 
 .build-mode-content {
-    margin-bottom: 1.25rem;
+    /* No background/border - inherits from .build-mode-area */
 }
 
 .build-mode-content.hidden {
     display: none;
+}
+
+.build-mode-content .empty-state {
+    padding: 1rem;
+}
+
+.build-mode-content .empty-state p {
+    margin-bottom: 0;
 }
 
 .analysis-helper-text {
@@ -1604,6 +1731,17 @@ button:focus-visible,
 .exclusion-header > label {
     font-size: 0.85rem;
     color: var(--text-secondary);
+}
+
+.exclusion-specific {
+    margin-top: 0.75rem;
+}
+
+.exclusion-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.4rem;
 }
 
 .exclusion-add {
@@ -1698,6 +1836,10 @@ button:focus-visible,
 
 .dietary-filter input[type="checkbox"]:checked + span {
     color: var(--text-primary);
+}
+
+.dietary-filter .help-tip {
+    font-size: 0.8rem;
 }
 
 #generateRecipeBtn {
@@ -2086,19 +2228,46 @@ button:focus-visible,
     font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
+/* Unified additive mode area */
+.additive-mode-area {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
 .additive-tabs {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    gap: 0.25rem;
 }
 
 .additive-tab {
-    padding: 0.75rem 1rem;
-    font-size: 0.95rem;
+    padding: 0.5rem 0.875rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
+}
+
+.additive-tab.active {
+    background: var(--accent-green-20);
+    border-color: var(--accent-green);
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .additive-selector {
     display: flex;
     gap: 0.5rem;
-    margin-bottom: 1rem;
+}
+
+.additive-mode-area .empty-state,
+.additive-mode-area .empty-state-small {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.additive-mode-area .empty-state p,
+.additive-mode-area .empty-state-small p {
+    margin-bottom: 0;
 }
 
 .additive-selector select {
@@ -2490,5 +2659,167 @@ button:focus-visible,
 
     .toast-hiding {
         transform: translateY(-100%);
+    }
+}
+
+/* ============================================
+   Cupboard Cleaner Mode
+   ============================================ */
+
+.ratio-mode-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.ratio-mode-toggle input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+
+.cupboard-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.cupboard-actions .btn {
+    flex: 1;
+}
+
+/* Property comparison preview */
+.cupboard-property-preview {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: var(--bg-input);
+    border-radius: 8px;
+    border: 1px solid var(--border-30);
+}
+
+.property-comparison-header {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto auto;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-30);
+}
+
+.property-comparison-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto auto;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.35rem 0;
+    font-size: 0.9rem;
+}
+
+.prop-name {
+    color: var(--text-primary);
+}
+
+.prop-current,
+.prop-improved {
+    font-weight: 600;
+    min-width: 2rem;
+    text-align: right;
+}
+
+.prop-current.in-range,
+.prop-improved.in-range {
+    color: var(--success);
+}
+
+.prop-current.out-range,
+.prop-improved.out-range {
+    color: var(--danger);
+}
+
+.prop-arrow {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.prop-diff {
+    font-size: 0.8rem;
+    min-width: 3rem;
+}
+
+.prop-diff.positive {
+    color: var(--success);
+}
+
+.prop-diff.negative {
+    color: var(--danger);
+}
+
+.prop-range {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* Responsive adjustments for build mode */
+@media (max-width: 768px) {
+    .build-mode-area,
+    .additive-mode-area {
+        padding: 0.75rem;
+    }
+
+    .build-mode-tabs,
+    .additive-tabs {
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+
+    .build-mode-tab {
+        flex: 1 1 45%;
+        text-align: center;
+        padding: 0.5rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .additive-tab {
+        flex: 1 1 30%;
+        text-align: center;
+        padding: 0.5rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .property-comparison-header,
+    .property-comparison-row {
+        grid-template-columns: 1fr auto auto auto auto;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .build-mode-tab,
+    .additive-tab {
+        flex: 1 1 100%;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .cupboard-actions {
+        flex-direction: column;
+    }
+
+    .property-comparison-header,
+    .property-comparison-row {
+        grid-template-columns: 1fr auto auto;
+    }
+
+    .prop-arrow,
+    .prop-diff {
+        display: none;
     }
 }
