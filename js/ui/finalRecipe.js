@@ -3,8 +3,105 @@
  * Generates prose-format recipe with ingredients and procedure
  */
 
-import { CSS_CLASSES, ELEMENT_IDS } from '../lib/constants.js';
+import { CSS_CLASSES, ELEMENT_IDS, FATTY_ACID_KEYS, FATTY_ACID_NAMES, PROPERTY_RANGES } from '../lib/constants.js';
 import { $, formatProseList } from './helpers.js';
+
+// ============================================
+// Qualitative Summary
+// ============================================
+
+/**
+ * Generate a qualitative description of soap properties
+ * @param {Object} properties - {hardness, cleansing, conditioning, bubbly, creamy, iodine, ins}
+ * @param {Array} notes - Recipe notes array from calculator
+ * @returns {string} HTML for qualitative summary
+ */
+function buildQualitativeSummary(properties, notes = []) {
+    const R = PROPERTY_RANGES;
+
+    // Helper to classify a value relative to its range
+    const classify = (value, range) => {
+        if (value < range.min) return 'low';
+        if (value > range.max) return 'high';
+        return 'mid';
+    };
+
+    // Hardness description
+    const hardnessLevel = classify(properties.hardness, R.hardness);
+    const hardnessText = {
+        low: 'soft',
+        mid: 'firm',
+        high: 'very hard'
+    }[hardnessLevel];
+
+    // Cleansing description
+    const cleansingLevel = classify(properties.cleansing, R.cleansing);
+    const cleansingText = {
+        low: 'gentle',
+        mid: 'moderate',
+        high: 'strong'
+    }[cleansingLevel];
+
+    // Bubbly description
+    const bubblyLevel = classify(properties.bubbly, R.bubbly);
+    const bubblyText = {
+        low: 'minimal',
+        mid: 'good',
+        high: 'abundant'
+    }[bubblyLevel];
+
+    // Creamy description
+    const creamyLevel = classify(properties.creamy, R.creamy);
+    const creamyText = {
+        low: 'light',
+        mid: 'creamy',
+        high: 'rich'
+    }[creamyLevel];
+
+    // Build main description
+    let summary = `Produces a ${hardnessText} bar with ${cleansingText} cleansing ability. `;
+    summary += `Lather is ${bubblyText} with a ${creamyText} texture.`;
+
+    // Collect all warnings - start with calculator-generated notes
+    const warnings = notes.map(note => note.text);
+
+    // Add property-based warnings for out-of-range values
+    const iodineLevel = classify(properties.iodine, R.iodine);
+    if (iodineLevel === 'high') {
+        warnings.push('High iodine value means an increased risk of rancidity. Store in a cool, dark place, and consider adding an antioxidant like Vitamin E or rosemary oleoresin extract to help preserve the soap.');
+    } else if (iodineLevel === 'low') {
+        warnings.push('Low iodine value means excellent shelf stability, but the bar may feel less conditioning.');
+    }
+
+    const insLevel = classify(properties.ins, R.ins);
+    if (insLevel === 'high') {
+        warnings.push('High INS value may cause the soap to trace very quickly. Work at lower temperatures and have moulds ready.');
+    } else if (insLevel === 'low') {
+        warnings.push('Low INS value indicates the bar may be slow to trace and remain soft longer. Consider adding sodium lactate to aid hardening.');
+    }
+
+    if (hardnessLevel === 'low') {
+        warnings.push('This soft bar will benefit from an extended cure time of 6 to 8 weeks.');
+    } else if (hardnessLevel === 'high') {
+        warnings.push('Cut bars soon after unmoulding (12 to 24 hours) to prevent cracking.');
+    }
+
+    if (cleansingLevel === 'high') {
+        warnings.push('High cleansing is great for utility soap (e.g. garage, kitchen) but may be drying for frequent facial use.');
+    }
+
+    let html = `<p class="qualitative-summary">${summary}</p>`;
+
+    if (warnings.length > 0) {
+        html += `<ul class="qualitative-warnings">`;
+        warnings.forEach(w => {
+            html += `<li>${w}</li>`;
+        });
+        html += `</ul>`;
+    }
+
+    return html;
+}
 
 // ============================================
 // Formatting Helpers
@@ -21,14 +118,14 @@ function formatWeight(weight, unit) {
 }
 
 /**
- * Format oil list in prose
+ * Format fat list in prose
  * @param {Array} recipe - Recipe array of {id, weight}
  * @param {Object} fatsDatabase - Fat database
  * @param {string} unit - Unit string
- * @returns {string} Prose list of oils
+ * @returns {string} Prose list of fats
  */
-function formatOilsList(recipe, fatsDatabase, unit) {
-    if (recipe.length === 0) return 'No oils added';
+function formatFatsList(recipe, fatsDatabase, unit) {
+    if (recipe.length === 0) return 'No fats added';
 
     return formatProseList(recipe, fat => {
         const fatData = fatsDatabase[fat.id];
@@ -100,7 +197,7 @@ function buildIngredientsList(data) {
 
     let html = '<div class="recipe-section"><h4>Ingredients</h4><ul class="ingredients-list">';
 
-    // Oils
+    // Fats
     recipe.forEach(fat => {
         const fatData = fatsDatabase[fat.id];
         const name = fatData ? fatData.name : fat.id;
@@ -151,15 +248,15 @@ function buildProcedureList(hasAdditives) {
  */
 function buildRecipeSummary(data) {
     const { recipe, recipeAdditives, lyeAmount, waterAmount, lyeType, superfat, waterRatio, unit } = data;
-    const totalOilWeight = recipe.reduce((sum, fat) => sum + fat.weight, 0);
+    const totalFatWeight = recipe.reduce((sum, fat) => sum + fat.weight, 0);
     const additivesWeight = recipeAdditives.reduce((sum, item) => sum + item.weight, 0);
-    const totalBatch = totalOilWeight + lyeAmount + waterAmount + additivesWeight;
+    const totalBatch = totalFatWeight + lyeAmount + waterAmount + additivesWeight;
 
     let html = `
         <div class="recipe-summary">
-            <h4>Recipe Summary</h4>
+            <h4>Recipe summary</h4>
             <ul>
-                <li>Total oils: ${formatWeight(totalOilWeight, unit)}</li>
+                <li>Total fats: ${formatWeight(totalFatWeight, unit)}</li>
                 <li>${lyeType}: ${formatWeight(lyeAmount, unit)}</li>
                 <li>Water: ${formatWeight(waterAmount, unit)} (${waterRatio}:1 water to lye)</li>`;
 
@@ -174,6 +271,43 @@ function buildRecipeSummary(data) {
         </div>`;
 
     return html;
+}
+
+/**
+ * Build fatty acid profile HTML
+ * @param {Object} fattyAcids - Fatty acid percentages
+ * @returns {string} HTML for fatty acid profile section
+ */
+function buildFattyAcidProfile(fattyAcids) {
+    // Calculate sat:unsat ratio
+    const saturated = (fattyAcids.caprylic || 0) + (fattyAcids.capric || 0) +
+        fattyAcids.lauric + fattyAcids.myristic + fattyAcids.palmitic +
+        fattyAcids.stearic + (fattyAcids.arachidic || 0) + (fattyAcids.behenic || 0);
+    const unsaturated = (fattyAcids.palmitoleic || 0) + fattyAcids.oleic +
+        fattyAcids.ricinoleic + fattyAcids.linoleic + fattyAcids.linolenic +
+        (fattyAcids.erucic || 0);
+
+    // Build table rows for acids with values > 0
+    const rows = FATTY_ACID_KEYS
+        .filter(acid => (fattyAcids[acid] || 0) > 0)
+        .map(acid => `
+            <tr>
+                <td>${FATTY_ACID_NAMES[acid]}</td>
+                <td class="fa-value">${(fattyAcids[acid] || 0).toFixed(0)}%</td>
+            </tr>
+        `).join('');
+
+    return `
+        <div class="recipe-summary fatty-acid-profile">
+            <h4>Fatty acid profile</h4>
+            <table class="fa-profile-table">
+                <tbody>
+                    ${rows}
+                </tbody>
+            </table>
+            <p class="sat-unsat-summary">Saturated : Unsaturated = ${saturated.toFixed(0)} : ${unsaturated.toFixed(0)}</p>
+        </div>
+    `;
 }
 
 // ============================================
@@ -194,15 +328,22 @@ function buildRecipeSummary(data) {
  * @param {number} data.superfat - Superfat percentage
  * @param {number} data.waterRatio - Water to lye ratio
  * @param {string} data.unit - Unit string
+ * @param {Object} data.fattyAcids - Fatty acid percentages
+ * @param {Object} data.properties - Soap properties {hardness, cleansing, conditioning, bubbly, creamy, iodine, ins}
+ * @param {Array} data.notes - Recipe notes array
  */
 export function renderFinalRecipe(container, data) {
     const hasAdditives = data.recipeAdditives.length > 0;
 
     container.innerHTML = `
         <div class="recipe-prose">
+            ${buildQualitativeSummary(data.properties, data.notes)}
             ${buildIngredientsList(data)}
             ${buildProcedureList(hasAdditives)}
-            ${buildRecipeSummary(data)}
+            <div class="recipe-details-row">
+                ${buildRecipeSummary(data)}
+                ${buildFattyAcidProfile(data.fattyAcids)}
+            </div>
         </div>
     `;
 }

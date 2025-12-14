@@ -23,35 +23,6 @@ export const ELEMENT_IDS = {
     resetAdditivesBtn: 'resetAdditivesBtn',
     recipeFats: 'recipeFats',
 
-    // Results
-    totalFats: 'totalFats',
-    lyeAmount: 'lyeAmount',
-    waterAmount: 'waterAmount',
-    totalBatch: 'totalBatch',
-    lyeTypeLabel: 'lyeTypeLabel',
-    volumeRange: 'volumeRange',
-    volumeUnit: 'volumeUnit',
-
-    // Units
-    fatUnit: 'fatUnit',
-    lyeUnit: 'lyeUnit',
-    waterUnit: 'waterUnit',
-    batchUnit: 'batchUnit',
-
-    // Fatty acids
-    faLauric: 'faLauric',
-    faMyristic: 'faMyristic',
-    faPalmitic: 'faPalmitic',
-    faStearic: 'faStearic',
-    faRicinoleic: 'faRicinoleic',
-    faOleic: 'faOleic',
-    faLinoleic: 'faLinoleic',
-    faLinolenic: 'faLinolenic',
-    satUnsatRatio: 'satUnsatRatio',
-
-    // Notes
-    recipeNotes: 'recipeNotes',
-
     // Panels
     fatInfoPanel: 'fatInfoPanel',
     glossaryPanel: 'glossaryPanel',
@@ -133,7 +104,7 @@ export const ELEMENT_IDS = {
     exclusionsSection: 'exclusionsSection',
     dietaryFiltersSection: 'dietaryFiltersSection',
     filterAnimalBased: 'filterAnimalBased',
-    filterEthicalConcerns: 'filterEthicalConcerns',
+    filterSourcingConcerns: 'filterSourcingConcerns',
     filterCommonAllergens: 'filterCommonAllergens',
 
     // Additives
@@ -156,30 +127,26 @@ export const ELEMENT_IDS = {
 // ============================================
 
 export const FATTY_ACID_KEYS = [
-    'lauric', 'myristic', 'palmitic', 'stearic',
-    'ricinoleic', 'oleic', 'linoleic', 'linolenic'
+    'caprylic', 'capric', 'lauric', 'myristic', 'palmitic', 'palmitoleic',
+    'stearic', 'oleic', 'linoleic', 'linolenic', 'arachidic', 'behenic',
+    'erucic', 'ricinoleic'
 ];
 
 export const FATTY_ACID_NAMES = {
+    caprylic: 'Caprylic',
+    capric: 'Capric',
     lauric: 'Lauric',
     myristic: 'Myristic',
     palmitic: 'Palmitic',
+    palmitoleic: 'Palmitoleic',
     stearic: 'Stearic',
     oleic: 'Oleic',
     linoleic: 'Linoleic',
-    ricinoleic: 'Ricinoleic',
-    linolenic: 'Linolenic'
-};
-
-export const FATTY_ACID_ELEMENT_IDS = {
-    lauric: 'faLauric',
-    myristic: 'faMyristic',
-    palmitic: 'faPalmitic',
-    stearic: 'faStearic',
-    ricinoleic: 'faRicinoleic',
-    oleic: 'faOleic',
-    linoleic: 'faLinoleic',
-    linolenic: 'faLinolenic'
+    linolenic: 'Linolenic',
+    arachidic: 'Arachidic',
+    behenic: 'Behenic',
+    erucic: 'Erucic',
+    ricinoleic: 'Ricinoleic'
 };
 
 // ============================================
@@ -200,11 +167,40 @@ export const PROPERTY_NAMES = {
     ins: 'INS'
 };
 
+// Property element ID mappings (for DOM lookups)
+export const PROPERTY_ELEMENT_IDS = {
+    prop: {
+        hardness: 'propHardness',
+        cleansing: 'propCleansing',
+        conditioning: 'propConditioning',
+        bubbly: 'propBubbly',
+        creamy: 'propCreamy',
+        iodine: 'propIodine',
+        ins: 'propIns'
+    },
+    range: {
+        hardness: 'rangeHardness',
+        cleansing: 'rangeCleansing',
+        conditioning: 'rangeConditioning',
+        bubbly: 'rangeBubbly',
+        creamy: 'rangeCreamy',
+        iodine: 'rangeIodine',
+        ins: 'rangeIns'
+    },
+    target: {
+        hardness: 'targetHardness',
+        cleansing: 'targetCleansing',
+        conditioning: 'targetConditioning',
+        bubbly: 'targetBubbly',
+        creamy: 'targetCreamy'
+    }
+};
+
 // Which fatty acids contribute to each soap property
 export const PROPERTY_FATTY_ACIDS = {
-    hardness: ['lauric', 'myristic', 'palmitic', 'stearic'],
-    cleansing: ['lauric', 'myristic'],
-    conditioning: ['oleic', 'ricinoleic', 'linoleic', 'linolenic'],
+    hardness: ['caprylic', 'capric', 'lauric', 'myristic', 'palmitic', 'stearic', 'arachidic', 'behenic'],
+    cleansing: ['caprylic', 'capric', 'lauric', 'myristic'],
+    conditioning: ['palmitoleic', 'oleic', 'ricinoleic', 'linoleic', 'linolenic', 'erucic'],
     bubbly: ['lauric', 'myristic', 'ricinoleic'],
     creamy: ['palmitic', 'stearic', 'ricinoleic']
 };
@@ -428,15 +424,6 @@ export const DATA_ATTRS = {
 // ============================================
 // Utility
 // ============================================
-
-/**
- * Capitalize first letter of a string
- * @param {string} str - String to capitalize
- * @returns {string} Capitalized string
- */
-export function capitalize(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}
 
 /**
  * Create a fresh fatty acids object initialized to zeros

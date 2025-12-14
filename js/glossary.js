@@ -35,7 +35,10 @@ function renderGlossary() {
             <p class="glossary-desc">${data.desc}</p>
             ${data.details ? `
                 <details class="glossary-details">
-                    <summary>More details</summary>
+                    <summary>
+                        <span class="details-toggle">More details</span>
+                        <span class="details-hide">Hide details</span>
+                    </summary>
                     <div class="glossary-details-content">${data.details.replace(/\n/g, '<br>')}</div>
                 </details>
             ` : ''}

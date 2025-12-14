@@ -14,10 +14,11 @@
             <h1>Soap Recipe Builder</h1>
             <nav class="header-nav">
                 <a href="glossary.html" class="header-link">Glossary</a>
-                <a href="https://ko-fi.com/arkavia" target="_blank" rel="noopener" class="kofi-button" title="Buy me a slice of babka">
+                <a href="https://ko-fi.com/arkavia" target="_blank" rel="noopener" class="kofi-button" title="Ko-fi: Buy me a slice of babka?">
                     <svg class="kofi-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311z"/>
                     </svg>
+                    Buy me a slice of babka?
                 </a>
             </nav>
         </header>
@@ -39,11 +40,12 @@
                     </p>
 
                     <!-- Settings Subcontainer -->
-                    <div class="build-subcontainer">
-                        <div class="subcontainer-header">
+                    <div class="build-subcontainer collapsible" id="settingsSection">
+                        <button class="collapsible-header" aria-expanded="true" aria-controls="settingsContent">
                             <h3 class="subcontainer-title">Recipe settings</h3>
-                            <button class="btn btn-text btn-small" id="resetSettingsBtn">Reset</button>
-                        </div>
+                            <span class="collapse-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="collapsible-content" id="settingsContent">
                         <div class="settings-row">
                             <div class="form-group">
                                 <div class="label-row">
@@ -92,9 +94,9 @@
                                         <span class="help-tip" data-term="filter-animal" aria-label="More info about animal-based filter">ⓘ</span>
                                     </label>
                                     <label class="dietary-filter">
-                                        <input type="checkbox" id="filterEthicalConcerns">
-                                        <span>Ethical concerns</span>
-                                        <span class="help-tip" data-term="filter-ethical" aria-label="More info about ethical concerns filter">ⓘ</span>
+                                        <input type="checkbox" id="filterSourcingConcerns">
+                                        <span>Sourcing concerns</span>
+                                        <span class="help-tip" data-term="sourcing-concerns" aria-label="More info about sourcing concerns filter">ⓘ</span>
                                     </label>
                                     <label class="dietary-filter">
                                         <input type="checkbox" id="filterCommonAllergens">
@@ -116,23 +118,25 @@
                                 </div>
                             </div>
                         </div>
+                        <button class="btn btn-text btn-small reset-btn" id="resetSettingsBtn">Reset</button>
+                        </div>
                     </div>
 
                     <!-- Fats subcontainer -->
-                    <div class="build-subcontainer">
-                        <div class="subcontainer-header">
+                    <div class="build-subcontainer collapsible" id="fatsSection">
+                        <button class="collapsible-header" aria-expanded="true" aria-controls="fatsContent">
                             <h3 class="subcontainer-title">Add fats</h3>
-                            <button class="btn btn-text btn-small" id="resetFatsBtn">Reset</button>
-                        </div>
-
+                            <span class="collapse-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="collapsible-content" id="fatsContent">
                         <!-- Build Mode Area (unified container) -->
                         <div class="build-mode-area">
                             <!-- Build Mode tabs -->
                             <div class="tabs build-mode-tabs" role="tablist" aria-label="Recipe build mode">
                                 <button class="tab build-mode-tab active" data-mode="fats" role="tab" aria-selected="true" aria-controls="selectFatsMode" id="tab-fats">Select fats</button>
                                 <button class="tab build-mode-tab" data-mode="properties" role="tab" aria-selected="false" aria-controls="specifyPropertiesMode" id="tab-properties">Specify properties</button>
-                                <button class="tab build-mode-tab" data-mode="yolo" role="tab" aria-selected="false" aria-controls="yoloMode" id="tab-yolo">YOLO</button>
                                 <button class="tab build-mode-tab" data-mode="cupboard" role="tab" aria-selected="false" aria-controls="cupboardCleanerMode" id="tab-cupboard">Cupboard cleaner</button>
+                                <button class="tab build-mode-tab" data-mode="yolo" role="tab" aria-selected="false" aria-controls="yoloMode" id="tab-yolo">YOLO</button>
                             </div>
 
                             <!-- Mode helper text -->
@@ -182,24 +186,24 @@
 
                                 <div class="property-list">
                                     <div class="property-row">
-                                        <label for="targetHardness"><span class="info-link" data-term="hardness" role="button" tabindex="0">Hardness</span></label>
-                                        <input type="number" id="targetHardness" min="0" max="100" placeholder="29-54">
+                                        <button type="button" class="info-link" data-term="hardness" id="hardnessLabel">Hardness</button>
+                                        <input type="number" id="targetHardness" min="0" max="100" placeholder="29-54" aria-labelledby="hardnessLabel">
                                     </div>
                                     <div class="property-row">
-                                        <label for="targetCleansing"><span class="info-link" data-term="cleansing" role="button" tabindex="0">Cleansing</span></label>
-                                        <input type="number" id="targetCleansing" min="0" max="100" placeholder="12-22">
+                                        <button type="button" class="info-link" data-term="cleansing" id="cleansingLabel">Cleansing</button>
+                                        <input type="number" id="targetCleansing" min="0" max="100" placeholder="12-22" aria-labelledby="cleansingLabel">
                                     </div>
                                     <div class="property-row">
-                                        <label for="targetConditioning"><span class="info-link" data-term="conditioning" role="button" tabindex="0">Conditioning</span></label>
-                                        <input type="number" id="targetConditioning" min="0" max="100" placeholder="44-69">
+                                        <button type="button" class="info-link" data-term="conditioning" id="conditioningLabel">Conditioning</button>
+                                        <input type="number" id="targetConditioning" min="0" max="100" placeholder="44-69" aria-labelledby="conditioningLabel">
                                     </div>
                                     <div class="property-row">
-                                        <label for="targetBubbly"><span class="info-link" data-term="bubbly" role="button" tabindex="0">Bubbly</span></label>
-                                        <input type="number" id="targetBubbly" min="0" max="100" placeholder="14-46">
+                                        <button type="button" class="info-link" data-term="bubbly" id="bubblyLabel">Bubbly</button>
+                                        <input type="number" id="targetBubbly" min="0" max="100" placeholder="14-46" aria-labelledby="bubblyLabel">
                                     </div>
                                     <div class="property-row">
-                                        <label for="targetCreamy"><span class="info-link" data-term="creamy" role="button" tabindex="0">Creamy</span></label>
-                                        <input type="number" id="targetCreamy" min="0" max="100" placeholder="16-48">
+                                        <button type="button" class="info-link" data-term="creamy" id="creamyLabel">Creamy</button>
+                                        <input type="number" id="targetCreamy" min="0" max="100" placeholder="16-48" aria-labelledby="creamyLabel">
                                     </div>
                                 </div>
                             </div>
@@ -301,64 +305,63 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><span class="info-link" data-term="hardness" role="button" tabindex="0">Hardness</span></td>
+                                        <td><button type="button" class="info-link" data-term="hardness">Hardness</button></td>
                                         <td class="range-col" id="rangeHardness">--</td>
                                         <td class="value-col" id="propHardness">0</td>
                                     </tr>
                                     <tr>
-                                        <td><span class="info-link" data-term="cleansing" role="button" tabindex="0">Cleansing</span></td>
+                                        <td><button type="button" class="info-link" data-term="cleansing">Cleansing</button></td>
                                         <td class="range-col" id="rangeCleansing">--</td>
                                         <td class="value-col" id="propCleansing">0</td>
                                     </tr>
                                     <tr>
-                                        <td><span class="info-link" data-term="conditioning" role="button" tabindex="0">Conditioning</span></td>
+                                        <td><button type="button" class="info-link" data-term="conditioning">Conditioning</button></td>
                                         <td class="range-col" id="rangeConditioning">--</td>
                                         <td class="value-col" id="propConditioning">0</td>
                                     </tr>
                                     <tr>
-                                        <td><span class="info-link" data-term="bubbly" role="button" tabindex="0">Bubbly</span></td>
+                                        <td><button type="button" class="info-link" data-term="bubbly">Bubbly</button></td>
                                         <td class="range-col" id="rangeBubbly">--</td>
                                         <td class="value-col" id="propBubbly">0</td>
                                     </tr>
                                     <tr>
-                                        <td><span class="info-link" data-term="creamy" role="button" tabindex="0">Creamy</span></td>
+                                        <td><button type="button" class="info-link" data-term="creamy">Creamy</button></td>
                                         <td class="range-col" id="rangeCreamy">--</td>
                                         <td class="value-col" id="propCreamy">0</td>
                                     </tr>
                                     <tr>
-                                        <td><span class="info-link" data-term="iodine" role="button" tabindex="0">Iodine</span></td>
+                                        <td><button type="button" class="info-link" data-term="iodine">Iodine</button></td>
                                         <td class="range-col" id="rangeIodine">--</td>
                                         <td class="value-col" id="propIodine">0</td>
                                     </tr>
                                     <tr>
-                                        <td><span class="info-link" data-term="ins" role="button" tabindex="0">INS</span></td>
-                                        <td class="range-col" id="rangeINS">--</td>
-                                        <td class="value-col" id="propINS">0</td>
+                                        <td><button type="button" class="info-link" data-term="ins">INS</button></td>
+                                        <td class="range-col" id="rangeIns">--</td>
+                                        <td class="value-col" id="propIns">0</td>
                                     </tr>
                                 </tbody>
                                 </table>
                             </div>
                         </div>
+                        <button class="btn btn-text btn-small reset-btn" id="resetFatsBtn">Reset</button>
+                        </div>
                     </div>
 
                     <!-- Additives subcontainer -->
                     <div class="build-subcontainer collapsible" id="additivesSubcontainer">
-                        <div class="collapsible-header-row">
-                            <button class="collapsible-header" aria-expanded="true" aria-controls="additivesContent">
-                                <h3 class="subcontainer-title">Select additives <span class="optional-label">(optional)</span></h3>
-                                <span class="collapse-icon" aria-hidden="true"></span>
-                            </button>
-                            <button class="btn btn-text btn-small" id="resetAdditivesBtn">Reset</button>
-                        </div>
+                        <button class="collapsible-header" aria-expanded="true" aria-controls="additivesContent">
+                            <h3 class="subcontainer-title">Select additives <span class="optional-label">(optional)</span></h3>
+                            <span class="collapse-icon" aria-hidden="true"></span>
+                        </button>
                         <div class="collapsible-content" id="additivesContent">
                             <div class="additive-mode-area">
                                 <div class="tabs additive-tabs" role="tablist" aria-label="Additive category">
-                                    <button class="tab additive-tab active" data-category="essential-oil" role="tab" aria-selected="true">Essential oils</button>
-                                    <button class="tab additive-tab" data-category="colourant" role="tab" aria-selected="false">Colourants</button>
-                                    <button class="tab additive-tab" data-category="functional" role="tab" aria-selected="false">Functional</button>
+                                    <button class="tab additive-tab active" data-category="essential-oil" role="tab" aria-selected="true" aria-controls="additiveSelectorPanel">Essential oils</button>
+                                    <button class="tab additive-tab" data-category="colourant" role="tab" aria-selected="false" aria-controls="additiveSelectorPanel">Colourants</button>
+                                    <button class="tab additive-tab" data-category="functional" role="tab" aria-selected="false" aria-controls="additiveSelectorPanel">Functional</button>
                                 </div>
 
-                                <div class="additive-selector">
+                                <div class="additive-selector" id="additiveSelectorPanel" role="tabpanel" aria-label="Additive selection">
                                     <select id="additiveSelect">
                                         <option value="">Select an additive...</option>
                                     </select>
@@ -371,6 +374,7 @@
                                     </div>
                                 </div>
                             </div>
+                        <button class="btn btn-text btn-small reset-btn" id="resetAdditivesBtn">Reset</button>
                         </div>
                     </div>
 
@@ -383,111 +387,10 @@
                 <!-- Final recipe display -->
                 <div class="card hidden" id="finalRecipeCard">
                     <div class="card-header">
-                        <h2 class="card-title">Your Recipe</h2>
+                        <h2 class="card-title">Your recipe</h2>
                     </div>
                     <div class="final-recipe-content" id="finalRecipeContent">
                         <!-- Populated by JS -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="right-column">
-                <!-- Results -->
-                <div class="card">
-                    <div class="card-header">
-                        <h2 class="card-title" id="results-heading">Results</h2>
-                    </div>
-                    <div class="results-grid" role="region" aria-labelledby="results-heading" aria-live="polite">
-                        <div class="result-item">
-                            <div class="result-label">Total Fats</div>
-                            <div class="result-value"><span id="totalFats">0</span><span class="result-unit" id="fatUnit">g</span></div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-label">Lye (<span id="lyeTypeLabel">NaOH</span>)</div>
-                            <div class="result-value"><span id="lyeAmount">0</span><span class="result-unit" id="lyeUnit">g</span></div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-label">Water</div>
-                            <div class="result-value"><span id="waterAmount">0</span><span class="result-unit" id="waterUnit">g</span></div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-label">Additives</div>
-                            <div class="result-value"><span id="additivesTotal">0</span><span class="result-unit" id="additivesUnit">g</span></div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-label">Total Batch</div>
-                            <div class="result-value"><span id="totalBatch">0</span><span class="result-unit" id="batchUnit">g</span></div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-label">Est. Volume <span class="help-tip" data-term="volume-estimate">ⓘ</span></div>
-                            <div class="result-value"><span id="volumeRange">0</span><span class="result-unit" id="volumeUnit">mL</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Soap analysis -->
-                <div class="card" id="analysisCard">
-                    <div class="card-header">
-                        <h2 class="card-title">Soap analysis</h2>
-                    </div>
-
-                    <div class="analysis-grid">
-                    <!-- Fatty Acids Subcontainer -->
-                    <div class="analysis-subcontainer" id="fattyAcidsView">
-                        <h3 class="subcontainer-title">Fatty acid ratios</h3>
-                        <table class="analysis-table fa-table" aria-label="Fatty acid ratios">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Fatty acid</th>
-                                    <th scope="col" class="fa-value">%</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><span class="fa-link" data-acid="lauric" role="button" tabindex="0">Lauric</span></td>
-                                    <td class="fa-value" id="faLauric">0</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="fa-link" data-acid="myristic" role="button" tabindex="0">Myristic</span></td>
-                                    <td class="fa-value" id="faMyristic">0</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="fa-link" data-acid="palmitic" role="button" tabindex="0">Palmitic</span></td>
-                                    <td class="fa-value" id="faPalmitic">0</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="fa-link" data-acid="stearic" role="button" tabindex="0">Stearic</span></td>
-                                    <td class="fa-value" id="faStearic">0</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="fa-link" data-acid="ricinoleic" role="button" tabindex="0">Ricinoleic</span></td>
-                                    <td class="fa-value" id="faRicinoleic">0</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="fa-link" data-acid="oleic" role="button" tabindex="0">Oleic</span></td>
-                                    <td class="fa-value" id="faOleic">0</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="fa-link" data-acid="linoleic" role="button" tabindex="0">Linoleic</span></td>
-                                    <td class="fa-value" id="faLinoleic">0</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="fa-link" data-acid="linolenic" role="button" tabindex="0">Linolenic</span></td>
-                                    <td class="fa-value" id="faLinolenic">0</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="sat-unsat-ratio">
-                            <span><span class="info-link" data-term="saturated" role="button" tabindex="0">Sat</span> : <span class="info-link" data-term="unsaturated" role="button" tabindex="0">Unsat</span></span>
-                            <span id="satUnsatRatio">0 : 0</span>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!-- Recipe Notes (shared) -->
-                    <div class="recipe-notes" id="recipeNotes">
-                        <div class="recipe-notes-title">Recipe Notes</div>
-                        <p class="no-notes">Add fats to see recipe analysis</p>
                     </div>
                 </div>
             </div>
@@ -500,7 +403,7 @@
     <!-- Glossary Info Panel -->
     <div class="info-panel" id="glossaryPanel" role="dialog" aria-modal="true" aria-labelledby="glossaryPanelName">
         <button class="close-panel" aria-label="Close panel">×</button>
-        <h3 class="panel-title" id="glossaryPanelName">Term</h3>
+        <h3 class="panel-title" id="glossaryPanelName" tabindex="-1">Term</h3>
         <div class="panel-subtitle" id="glossaryPanelCategory">category</div>
 
         <div class="panel-section">
@@ -528,12 +431,12 @@
     <!-- Fat Info Panel -->
     <div class="info-panel" id="fatInfoPanel" role="dialog" aria-modal="true" aria-labelledby="fatPanelName">
         <button class="close-panel" aria-label="Close panel">×</button>
-        <h3 class="panel-title" id="fatPanelName">Fat Name</h3>
+        <h3 class="panel-title" id="fatPanelName" tabindex="-1">Fat Name</h3>
         <div class="panel-subtitle" id="fatPanelSap">NaOH SAP: 0.000 | KOH SAP: 0.000</div>
 
         <div class="panel-section">
             <h4>Recommended usage</h4>
-            <span class="panel-usage" id="fatPanelUsage">0 to 0% of total recipe oils</span>
+            <span class="panel-usage" id="fatPanelUsage">0 to 0% of total recipe fats</span>
         </div>
 
         <div class="panel-section">
@@ -556,7 +459,7 @@
     <!-- Fatty Acid Info Panel -->
     <div class="info-panel" id="fattyAcidPanel" role="dialog" aria-modal="true" aria-labelledby="faName">
         <button class="close-panel" id="closeFattyAcidPanel" aria-label="Close panel">×</button>
-        <h3 class="panel-title" id="faName">Fatty Acid Name</h3>
+        <h3 class="panel-title" id="faName" tabindex="-1">Fatty Acid Name</h3>
         <div class="panel-subtitle" id="faFormula">C12:0 · Saturated</div>
 
         <div class="panel-section">
@@ -586,12 +489,12 @@
     <!-- Additive Info Panel -->
     <div class="info-panel" id="additiveInfoPanel" role="dialog" aria-modal="true" aria-labelledby="additivePanelName">
         <button class="close-panel" aria-label="Close panel">×</button>
-        <h3 class="panel-title" id="additivePanelName">Additive Name</h3>
+        <h3 class="panel-title" id="additivePanelName" tabindex="-1">Additive Name</h3>
         <div class="panel-subtitle" id="additivePanelCategory">Category</div>
 
         <div class="panel-section">
             <h4>Recommended usage</h4>
-            <span class="panel-usage" id="additivePanelUsage">0% to 0% of oil weight</span>
+            <span class="panel-usage" id="additivePanelUsage">0% to 0% of fat weight</span>
         </div>
 
         <div class="panel-section">
