@@ -13,7 +13,6 @@ import {
     PROPERTY_RANGES,
     CALCULATION,
     initFattyAcids,
-    capitalize,
     isInRange
 } from '../lib/constants.js';
 
@@ -136,9 +135,9 @@ export function calculateINS(recipe, fatsDatabase) {
  */
 export function calculateProperties(fa) {
     return {
-        hardness: fa.lauric + fa.myristic + fa.palmitic + fa.stearic,
-        cleansing: fa.lauric + fa.myristic,
-        conditioning: fa.oleic + fa.ricinoleic + fa.linoleic + fa.linolenic,
+        hardness: (fa.caprylic || 0) + (fa.capric || 0) + fa.lauric + fa.myristic + fa.palmitic + fa.stearic + (fa.arachidic || 0) + (fa.behenic || 0),
+        cleansing: (fa.caprylic || 0) + (fa.capric || 0) + fa.lauric + fa.myristic,
+        conditioning: (fa.palmitoleic || 0) + fa.oleic + fa.ricinoleic + fa.linoleic + fa.linolenic + (fa.erucic || 0),
         bubbly: fa.lauric + fa.myristic + fa.ricinoleic,
         creamy: fa.palmitic + fa.stearic + fa.ricinoleic
     };
@@ -219,19 +218,18 @@ export function generateFatProperties(fat, fattyAcidsData) {
 
     // Combine similar levels
     if (hardnessLevel === cleansingLevel) {
-        parts.push(`${capitalize(hardnessLevel)} hardness and cleansing.`);
+        parts.push(`${hardnessLevel} hardness and cleansing.`);
     } else {
-        parts.push(`${capitalize(hardnessLevel)} hardness. ${capitalize(cleansingLevel)} cleansing.`);
+        parts.push(`${hardnessLevel} hardness. ${cleansingLevel} cleansing.`);
     }
 
     // Add lather description (pick most descriptive from dominant acids)
     if (latherDescriptions.length > 0) {
         const lather = latherDescriptions[0];
-        // Capitalize first letter of lather description
-        parts.push(lather.charAt(0).toUpperCase() + lather.slice(1) + ' lather.');
+        parts.push(lather + ' lather.');
     }
 
-    parts.push(`${capitalize(conditioningLevel)} conditioning.`);
+    parts.push(`${conditioningLevel} conditioning.`);
 
     return parts.join(' ');
 }
@@ -472,20 +470,20 @@ export function getRecipeNotes(properties, fa, recipe) {
 // ============================================
 
 /**
- * Calculate additive amount based on oil weight
+ * Calculate additive amount based on fat weight
  * @param {Object} additive - Additive data from database
  * @param {number} usagePercent - User-specified usage percentage
- * @param {number} totalOilWeight - Total weight of oils in recipe
+ * @param {number} totalFatWeight - Total weight of fats in recipe
  * @param {string} unit - 'g' or 'oz'
  * @returns {number} Calculated weight in specified unit
  */
-export function calculateAdditiveAmount(additive, usagePercent, totalOilWeight, unit) {
-    if (!additive || totalOilWeight <= 0) return 0;
+export function calculateAdditiveAmount(additive, usagePercent, totalFatWeight, unit) {
+    if (!additive || totalFatWeight <= 0) return 0;
 
-    // Currently all additives use oil-weight basis
+    // Currently all additives use fat-weight basis
     // If batch-weight is needed, extend logic here
     if (additive.usage.basis === 'oil-weight') {
-        return totalOilWeight * (usagePercent / 100);
+        return totalFatWeight * (usagePercent / 100);
     }
 
     return 0;
@@ -533,16 +531,16 @@ export function checkAdditiveWarnings(additive, usagePercent) {
  * Calculate total additives weight and breakdown
  * @param {Array} recipeAdditives - Array of {id, weight}
  * @param {Object} additivesDatabase - Additives data
- * @param {number} totalOilWeight - Total oil weight
+ * @param {number} totalFatWeight - Total fat weight
  * @param {string} unit - 'g' or 'oz'
  * @returns {{totalWeight: number, breakdown: Array}}
  */
-export function calculateAdditivesTotal(recipeAdditives, additivesDatabase, totalOilWeight, unit) {
+export function calculateAdditivesTotal(recipeAdditives, additivesDatabase, totalFatWeight, unit) {
     const breakdown = recipeAdditives.map(item => {
         const additive = additivesDatabase[item.id];
         if (!additive) return null;
 
-        const usagePercent = totalOilWeight > 0 ? (item.weight / totalOilWeight) * 100 : 0;
+        const usagePercent = totalFatWeight > 0 ? (item.weight / totalFatWeight) * 100 : 0;
         return {
             id: item.id,
             name: additive.name,
@@ -561,11 +559,11 @@ export function calculateAdditivesTotal(recipeAdditives, additivesDatabase, tota
  * Calculate additive volume contribution
  * @param {Array} recipeAdditives - Additives in recipe {id, weight}
  * @param {Object} additivesDatabase - Database
- * @param {number} totalOilWeight - Total oils weight (unused, kept for API compatibility)
+ * @param {number} totalFatWeight - Total fat weight (unused, kept for API compatibility)
  * @param {string} unit - 'g' or 'oz'
  * @returns {number} Volume in mL
  */
-export function calculateAdditiveVolume(recipeAdditives, additivesDatabase, totalOilWeight, unit) {
+export function calculateAdditiveVolume(recipeAdditives, additivesDatabase, totalFatWeight, unit) {
     const conversionFactor = unit === 'oz' ? VOLUME.G_PER_OZ : 1;
     return recipeAdditives.reduce((sum, item) => {
         const density = additivesDatabase[item.id]?.density ?? 1.0;

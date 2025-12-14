@@ -1,24 +1,72 @@
 {
+  "argan-oil": {
+    "density": 0.91,
+    "description": "Oil pressed from Argania spinosa kernels. High in oleic and linoleic acids.",
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
+      "lauric": 0,
+      "myristic": 0,
+      "palmitic": 12,
+      "palmitoleic": 0,
+      "stearic": 3,
+      "oleic": 46,
+      "linoleic": 33,
+      "linolenic": 0,
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
+    },
+    "ins": 94,
+    "iodine": 100,
+    "name": "Argan oil",
+    "references": [
+      {
+        "section": "Argan Oil: Chemical Composition, Extraction Process, and Quality Control",
+        "source": "Frontiers in Nutrition",
+        "url": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2021.804587/full"
+      }
+    ],
+    "sap": {
+      "koh": 0.191,
+      "naoh": 0.136
+    },
+    "usage": {
+      "max": 15,
+      "min": 5
+    }
+  },
   "apricot-kernel-oil": {
     "density": 0.91,
     "description": "Oil pressed from apricot kernels.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 6,
+      "palmitoleic": 0,
+      "stearic": 1,
+      "oleic": 66,
       "linoleic": 25,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 66,
-      "palmitic": 6,
-      "ricinoleic": 0,
-      "stearic": 1
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 90,
     "iodine": 100,
-    "name": "Apricot Kernel Oil",
+    "name": "Apricot kernel oil",
     "references": [
       {
         "section": "Apricot kernel characterization, oil extraction, and its utilization: a review",
@@ -40,21 +88,27 @@
     "description": "Oil pressed from avocado fruit.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 20,
+      "palmitoleic": 5,
+      "stearic": 2,
+      "oleic": 58,
       "linoleic": 12,
       "linolenic": 1,
-      "myristic": 0,
-      "oleic": 58,
-      "palmitic": 20,
-      "ricinoleic": 0,
-      "stearic": 2
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 101,
     "iodine": 86,
-    "name": "Avocado Oil",
+    "name": "Avocado oil",
     "references": [
       {
         "section": "Avocado Oil: Characteristics, Properties, and Applications",
@@ -76,21 +130,27 @@
     "description": "Oil from babassu palm nut.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 4,
+      "capric": 6,
       "lauric": 50,
+      "myristic": 20,
+      "palmitic": 8,
+      "palmitoleic": 0,
+      "stearic": 4,
+      "oleic": 12,
       "linoleic": 2,
       "linolenic": 0,
-      "myristic": 20,
-      "oleic": 12,
-      "palmitic": 8,
-      "ricinoleic": 0,
-      "stearic": 4
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 237,
     "iodine": 14,
-    "name": "Babassu Oil",
+    "name": "Babassu oil",
     "references": [
       {
         "section": "Section 2.1.2 Babassu Oil, Table 1 Fatty Acid Composition",
@@ -112,21 +172,27 @@
     "description": "Rendered beef fat.",
     "dietary": {
       "animalBased": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 4,
+      "palmitic": 25,
+      "palmitoleic": 0,
+      "stearic": 22,
+      "oleic": 38,
       "linoleic": 3,
       "linolenic": 1,
-      "myristic": 4,
-      "oleic": 38,
-      "palmitic": 25,
-      "ricinoleic": 0,
-      "stearic": 22
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 150,
     "iodine": 46,
-    "name": "Beef Tallow",
+    "name": "Beef tallow",
     "references": [
       {
         "section": "Section 2.4 Edible Tallow, Table 1 Fatty Acid Ranges",
@@ -143,26 +209,116 @@
       "min": 40
     }
   },
+  "black-cumin-seed-oil": {
+    "density": 0.92,
+    "description": "Oil from black cumin seeds (Nigella sativa). Rich in unsaturated fatty acids with potential therapeutic properties.",
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
+      "lauric": 0,
+      "myristic": 1,
+      "palmitic": 12,
+      "palmitoleic": 0,
+      "stearic": 3,
+      "oleic": 25,
+      "linoleic": 58,
+      "linolenic": 1,
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
+    },
+    "ins": 92,
+    "iodine": 122,
+    "name": "Black cumin seed oil (Nigella sativa)",
+    "references": [
+      {
+        "section": "Variation in the Composition and Quality of Nigella sativa L. Seed Oils",
+        "source": "PMC10975171",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10975171/"
+      }
+    ],
+    "sap": {
+      "koh": 0.214,
+      "naoh": 0.151
+    },
+    "usage": {
+      "max": 10,
+      "min": 3
+    }
+  },
+  "camellia-seed-oil": {
+    "density": 0.91,
+    "description": "Oil from camellia seeds. Similar to olive oil with high oleic acid. Called 'oriental olive oil'.",
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
+      "lauric": 0,
+      "myristic": 0,
+      "palmitic": 9,
+      "palmitoleic": 0,
+      "stearic": 2,
+      "oleic": 78,
+      "linoleic": 8,
+      "linolenic": 1,
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
+    },
+    "ins": 109,
+    "iodine": 83,
+    "name": "Camellia seed oil (tea seed oil)",
+    "references": [
+      {
+        "section": "Fatty acids and nutritional components of Camellia oleifera seed oil",
+        "source": "Scientific Reports Nature",
+        "url": "https://www.nature.com/articles/s41598-022-20576-y"
+      }
+    ],
+    "sap": {
+      "koh": 0.192,
+      "naoh": 0.136
+    },
+    "usage": {
+      "max": 30,
+      "min": 10
+    }
+  },
   "canola-oil-low-erucic-rapeseed": {
     "density": 0.91,
     "description": "Oil from low-erucic rapeseed.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 5,
+      "palmitoleic": 0,
+      "stearic": 2,
+      "oleic": 61,
       "linoleic": 22,
       "linolenic": 10,
-      "myristic": 0,
-      "oleic": 61,
-      "palmitic": 5,
-      "ricinoleic": 0,
-      "stearic": 2
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 72,
     "iodine": 116,
-    "name": "Canola Oil (Low Erucic Rapeseed)",
+    "name": "Canola oil (low erucic rapeseed)",
     "references": [
       {
         "section": "Section 2.1.12 Rapeseed Oil (Low Erucic Acid), Table 1",
@@ -184,21 +340,27 @@
     "description": "Oil from castor beans.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 1,
+      "palmitoleic": 0,
+      "stearic": 1,
+      "oleic": 4,
       "linoleic": 3,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 4,
-      "palmitic": 1,
-      "ricinoleic": 90,
-      "stearic": 1
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 90
     },
     "ins": 94,
     "iodine": 86,
-    "name": "Castor Oil",
+    "name": "Castor oil",
     "references": [
       {
         "section": "Castor Oil: Properties, Uses, and Optimization of Processing Parameters in Commercial Production",
@@ -225,21 +387,27 @@
     "description": "Butter from cocoa beans.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 26,
+      "palmitoleic": 0,
+      "stearic": 34,
+      "oleic": 35,
       "linoleic": 3,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 35,
-      "palmitic": 26,
-      "ricinoleic": 0,
-      "stearic": 34
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 157,
     "iodine": 37,
-    "name": "Cocoa Butter",
+    "name": "Cocoa butter",
     "references": [
       {
         "section": "Standard for Cocoa Butter",
@@ -262,21 +430,27 @@
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 7,
+      "capric": 6,
       "lauric": 49,
+      "myristic": 19,
+      "palmitic": 9,
+      "palmitoleic": 0,
+      "stearic": 3,
+      "oleic": 7,
       "linoleic": 2,
       "linolenic": 0,
-      "myristic": 19,
-      "oleic": 7,
-      "palmitic": 9,
-      "ricinoleic": 0,
-      "stearic": 3
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 249,
     "iodine": 8,
-    "name": "Coconut Oil (76)",
+    "name": "Coconut oil (76)",
     "references": [
       {
         "section": "Section 2.1.3 Coconut Oil, Table 1 Fatty Acid Composition",
@@ -299,21 +473,27 @@
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 7,
+      "capric": 6,
       "lauric": 49,
+      "myristic": 19,
+      "palmitic": 9,
+      "palmitoleic": 0,
+      "stearic": 3,
+      "oleic": 7,
       "linoleic": 2,
       "linolenic": 0,
-      "myristic": 19,
-      "oleic": 7,
-      "palmitic": 9,
-      "ricinoleic": 0,
-      "stearic": 3
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 249,
     "iodine": 8,
-    "name": "Coconut Oil (92)",
+    "name": "Coconut oil (92)",
     "references": [
       {
         "section": "Section 2.1.3 Coconut Oil (hydrogenated variant)",
@@ -335,21 +515,27 @@
     "description": "Butter from cupuacu tree seeds (Theobroma grandiflorum). Similar to cocoa butter but softer.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 11,
+      "palmitoleic": 0,
+      "stearic": 36,
+      "oleic": 40,
       "linoleic": 3,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 40,
-      "palmitic": 11,
-      "ricinoleic": 0,
-      "stearic": 36
+      "arachidic": 1,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 148,
     "iodine": 45,
-    "name": "Cupuacu Butter",
+    "name": "Cupuacu butter",
     "references": [
       {
         "section": "Composition of fatty acids of cupuaçu butter",
@@ -366,26 +552,74 @@
       "min": 5
     }
   },
+  "cottonseed-oil": {
+    "density": 0.92,
+    "description": "Oil from Gossypium seeds. Balanced fatty acid profile with natural stability.",
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
+      "lauric": 0,
+      "myristic": 1,
+      "palmitic": 23,
+      "palmitoleic": 0,
+      "stearic": 3,
+      "oleic": 19,
+      "linoleic": 52,
+      "linolenic": 1,
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
+    },
+    "ins": 83,
+    "iodine": 106,
+    "name": "Cottonseed oil",
+    "references": [
+      {
+        "section": "Cottonseed Oil: Extraction, Characterization, Health Benefits",
+        "source": "Food Analytical Methods - Springer",
+        "url": "https://link.springer.com/article/10.1007/s12161-022-02410-3"
+      }
+    ],
+    "sap": {
+      "koh": 0.189,
+      "naoh": 0.135
+    },
+    "usage": {
+      "max": 25,
+      "min": 10
+    }
+  },
   "deer-tallow": {
     "density": 0.9,
     "description": "Rendered deer fat.",
     "dietary": {
       "animalBased": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 3,
+      "palmitic": 24,
+      "palmitoleic": 0,
+      "stearic": 24,
+      "oleic": 38,
       "linoleic": 4,
       "linolenic": 1,
-      "myristic": 3,
-      "oleic": 38,
-      "palmitic": 24,
-      "ricinoleic": 0,
-      "stearic": 24
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 152,
     "iodine": 43,
-    "name": "Deer Tallow",
+    "name": "Deer tallow",
     "references": [
       {
         "section": "Extrapolated from Edible Tallow specifications",
@@ -407,21 +641,27 @@
     "description": "Rendered duck fat.",
     "dietary": {
       "animalBased": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 1,
+      "palmitic": 25,
+      "palmitoleic": 0,
+      "stearic": 7,
+      "oleic": 50,
       "linoleic": 13,
       "linolenic": 1,
-      "myristic": 1,
-      "oleic": 50,
-      "palmitic": 25,
-      "ricinoleic": 0,
-      "stearic": 7
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 122,
     "iodine": 68,
-    "name": "Duck Fat",
+    "name": "Duck fat",
     "references": [
       {
         "section": "Total Fatty Acid Composition of Duck Fatty Tissues (1976)",
@@ -438,26 +678,74 @@
       "min": 20
     }
   },
+  "emu-oil": {
+    "density": 0.91,
+    "description": "Rendered fat from Dromaius novaehollandiae (emu). High in oleic acid with good skin absorption.",
+    "dietary": {
+      "animalBased": true,
+      "sourcingConcerns": false
+    },
+    "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
+      "lauric": 0,
+      "myristic": 1,
+      "palmitic": 21,
+      "palmitoleic": 0,
+      "stearic": 10,
+      "oleic": 46,
+      "linoleic": 20,
+      "linolenic": 1,
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
+    },
+    "ins": 119,
+    "iodine": 75,
+    "name": "Emu oil",
+    "references": [
+      {
+        "section": "Chemical Characterization and In Vivo Toxicological Safety Evaluation of Emu Oil",
+        "source": "PMC9182831",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9182831/"
+      }
+    ],
+    "sap": {
+      "koh": 0.194,
+      "naoh": 0.135
+    },
+    "usage": {
+      "max": 15,
+      "min": 5
+    }
+  },
   "flaxseed-oil": {
     "density": 0.93,
     "description": "Oil from flax seeds. Extremely high in alpha-linolenic acid (omega-3).",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 7,
+      "palmitoleic": 0,
+      "stearic": 4,
+      "oleic": 18,
       "linoleic": 17,
       "linolenic": 53,
-      "myristic": 0,
-      "oleic": 18,
-      "palmitic": 7,
-      "ricinoleic": 0,
-      "stearic": 4
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 10,
     "iodine": 180,
-    "name": "Flaxseed Oil (Linseed)",
+    "name": "Flaxseed oil (linseed)",
     "references": [
       {
         "section": "Fatty acids composition and oil characteristics of linseed from Romania",
@@ -480,21 +768,27 @@
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 3,
+      "myristic": 1,
+      "palmitic": 0,
+      "palmitoleic": 0,
+      "stearic": 0,
+      "oleic": 0,
       "linoleic": 0,
       "linolenic": 0,
-      "myristic": 1,
-      "oleic": 0,
-      "palmitic": 0,
-      "ricinoleic": 0,
-      "stearic": 0
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 322,
     "iodine": 1,
-    "name": "Fractionated Coconut Oil (MCT)",
+    "name": "Fractionated coconut oil (MCT)",
     "references": [
       {
         "section": "Caprylic/Capric Triglyceride compound summary",
@@ -516,21 +810,27 @@
     "description": "Rendered goat fat.",
     "dietary": {
       "animalBased": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 4,
+      "palmitic": 26,
+      "palmitoleic": 0,
+      "stearic": 22,
+      "oleic": 38,
       "linoleic": 3,
       "linolenic": 0,
-      "myristic": 4,
-      "oleic": 38,
-      "palmitic": 26,
-      "ricinoleic": 0,
-      "stearic": 22
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 152,
     "iodine": 44,
-    "name": "Goat Tallow",
+    "name": "Goat tallow",
     "references": [
       {
         "section": "Extrapolated from Edible Tallow specifications",
@@ -552,21 +852,27 @@
     "description": "Rendered goose fat.",
     "dietary": {
       "animalBased": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 1,
+      "palmitic": 22,
+      "palmitoleic": 0,
+      "stearic": 7,
+      "oleic": 55,
       "linoleic": 11,
       "linolenic": 1,
-      "myristic": 1,
-      "oleic": 55,
-      "palmitic": 22,
-      "ricinoleic": 0,
-      "stearic": 7
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 120,
     "iodine": 70,
-    "name": "Goose Fat",
+    "name": "Goose fat",
     "references": [
       {
         "section": "Fatty acid composition of goose meat depending on genotype and sex",
@@ -588,21 +894,27 @@
     "description": "Oil from grape seeds.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 8,
+      "palmitoleic": 0,
+      "stearic": 5,
+      "oleic": 20,
       "linoleic": 68,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 20,
-      "palmitic": 8,
-      "ricinoleic": 0,
-      "stearic": 5
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 52,
     "iodine": 139,
-    "name": "Grapeseed Oil",
+    "name": "Grapeseed oil",
     "references": [
       {
         "section": "Section 2.1.5 Grapeseed Oil, Table 1 Fatty Acid Composition",
@@ -625,21 +937,27 @@
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 5,
+      "palmitoleic": 0,
+      "stearic": 2,
+      "oleic": 78,
       "linoleic": 10,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 78,
-      "palmitic": 5,
-      "ricinoleic": 0,
-      "stearic": 2
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 97,
     "iodine": 94,
-    "name": "Hazelnut Oil",
+    "name": "Hazelnut oil",
     "references": [
       {
         "section": "Quality Characteristics and Fatty Acid Profile of Cold-Pressed Hazelnut Oils",
@@ -661,21 +979,27 @@
     "description": "Oil from hemp seeds.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 6,
+      "palmitoleic": 0,
+      "stearic": 2,
+      "oleic": 12,
       "linoleic": 57,
       "linolenic": 19,
-      "myristic": 0,
-      "oleic": 12,
-      "palmitic": 6,
-      "ricinoleic": 0,
-      "stearic": 2
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 24,
     "iodine": 165,
-    "name": "Hemp Seed Oil",
+    "name": "Hemp seed oil",
     "references": [
       {
         "section": "Hempseed as a nutritional resource: An overview",
@@ -702,21 +1026,27 @@
     "description": "Oil from high-oleic sunflower seeds.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 4,
+      "palmitoleic": 0,
+      "stearic": 4,
+      "oleic": 83,
       "linoleic": 8,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 83,
-      "palmitic": 4,
-      "ricinoleic": 0,
-      "stearic": 4
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 107,
     "iodine": 84,
-    "name": "High Oleic Sunflower Oil",
+    "name": "High oleic sunflower oil",
     "references": [
       {
         "section": "Section 2.1.19 Sunflowerseed Oil (High Oleic Acid), Table 1",
@@ -733,40 +1063,46 @@
       "min": 15
     }
   },
-  "jojoba-oil": {
-    "density": 0.86,
-    "description": "Actually a liquid wax (~97% wax esters), not an oil. Very stable and skin-compatible.",
+  "illipe-butter": {
+    "density": 0.9,
+    "description": "Butter from Shorea stenoptera (Borneo illipe) seeds. Similar to cocoa butter with higher melting point.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
-      "linoleic": 0,
-      "linolenic": 0,
       "myristic": 0,
-      "oleic": 15,
-      "palmitic": 0,
-      "ricinoleic": 0,
-      "stearic": 0
+      "palmitic": 20,
+      "palmitoleic": 0,
+      "stearic": 38,
+      "oleic": 36,
+      "linoleic": 4,
+      "linolenic": 0,
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
-    "ins": 9,
-    "iodine": 83,
-    "name": "Jojoba Oil",
+    "ins": 157,
+    "iodine": 38,
+    "name": "Illipe butter",
     "references": [
       {
-        "section": "Jojoba Oil: An Updated Comprehensive Review on Chemistry, Pharmaceutical Uses, and Toxicity",
-        "source": "Polymers (PMC8197201)",
-        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8197201/"
+        "section": "Reduction of acidity and peroxide numbers of tengkawang butter",
+        "source": "ScienceDirect",
+        "url": "https://www.sciencedirect.com/science/article/pii/S2405844020325858"
       }
     ],
     "sap": {
-      "koh": 0.092,
-      "naoh": 0.066
+      "koh": 0.195,
+      "naoh": 0.138
     },
     "usage": {
-      "max": 7,
-      "min": 3
+      "max": 15,
+      "min": 5
     }
   },
   "kokum-butter": {
@@ -774,21 +1110,27 @@
     "description": "Butter from kokum tree seeds.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 3,
+      "palmitoleic": 0,
+      "stearic": 55,
+      "oleic": 38,
       "linoleic": 2,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 38,
-      "palmitic": 3,
-      "ricinoleic": 0,
-      "stearic": 55
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 150,
     "iodine": 38,
-    "name": "Kokum Butter",
+    "name": "Kokum butter",
     "references": [
       {
         "section": "Evaluation model for cocoa butter equivalents based on fatty acid compositions and triacylglycerol patterns",
@@ -805,27 +1147,75 @@
       "min": 5
     }
   },
+  "kukui-nut-oil": {
+    "density": 0.92,
+    "description": "Oil from Aleurites moluccanus nuts. High in linoleic and linolenic acids.",
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
+      "lauric": 0,
+      "myristic": 0,
+      "palmitic": 7,
+      "palmitoleic": 0,
+      "stearic": 3,
+      "oleic": 25,
+      "linoleic": 37,
+      "linolenic": 25,
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
+    },
+    "ins": 30,
+    "iodine": 160,
+    "name": "Kukui nut oil",
+    "references": [
+      {
+        "section": "Comprehensive Characterization of Kukui Nuts as Feedstock",
+        "source": "PMC10308387",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10308387/"
+      }
+    ],
+    "sap": {
+      "koh": 0.19,
+      "naoh": 0.135
+    },
+    "usage": {
+      "max": 20,
+      "min": 5
+    }
+  },
   "macadamia-nut-oil": {
     "density": 0.91,
     "description": "Oil pressed from macadamia nuts.",
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 1,
+      "palmitic": 9,
+      "palmitoleic": 18,
+      "stearic": 3,
+      "oleic": 60,
       "linoleic": 3,
       "linolenic": 0,
-      "myristic": 1,
-      "oleic": 60,
-      "palmitic": 9,
-      "ricinoleic": 0,
-      "stearic": 3
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 119,
     "iodine": 76,
-    "name": "Macadamia Nut Oil",
+    "name": "Macadamia nut oil",
     "references": [
       {
         "section": "Comparative Study of Chemical Compositions and Antioxidant Capacities of Oils Obtained from 15 Macadamia Cultivars in China",
@@ -847,21 +1237,27 @@
     "description": "Butter from mango seed kernels.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 1,
+      "palmitic": 9,
+      "palmitoleic": 0,
+      "stearic": 42,
+      "oleic": 42,
       "linoleic": 4,
       "linolenic": 0,
-      "myristic": 1,
-      "oleic": 42,
-      "palmitic": 9,
-      "ricinoleic": 0,
-      "stearic": 42
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 146,
     "iodine": 48,
-    "name": "Mango Butter",
+    "name": "Mango butter",
     "references": [
       {
         "section": "Mangifera sylvatica (Wild Mango): A new cocoa butter alternative",
@@ -883,21 +1279,27 @@
     "description": "Oil from meadowfoam seeds.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 0,
+      "palmitoleic": 0,
+      "stearic": 2,
+      "oleic": 2,
       "linoleic": 0,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 2,
-      "palmitic": 0,
-      "ricinoleic": 0,
-      "stearic": 2
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 97,
     "iodine": 92,
-    "name": "Meadowfoam Oil",
+    "name": "Meadowfoam oil",
     "references": [
       {
         "section": "Production of Fatty Acid Components of Meadowfoam Oil in Somatic Soybean Embryos",
@@ -921,24 +1323,30 @@
   },
   "moringa-oil": {
     "density": 0.9,
-    "description": "Oil from Moringa oleifera seeds. High in oleic acid (~72%) and behenic acid (~7%).",
+    "description": "Oil from Moringa oleifera seeds. Contains behenic acid (~7%, not tracked in profile).",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 6,
+      "palmitoleic": 0,
+      "stearic": 5,
+      "oleic": 72,
       "linoleic": 1,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 72,
-      "palmitic": 6,
-      "ricinoleic": 0,
-      "stearic": 5
+      "arachidic": 0,
+      "behenic": 7,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 117,
     "iodine": 70,
-    "name": "Moringa Oil (Ben Oil)",
+    "name": "Moringa oil (ben oil)",
     "references": [
       {
         "section": "Quality characteristics and stability of Moringa oleifera seed oil of Indian origin",
@@ -955,26 +1363,74 @@
       "min": 5
     }
   },
+  "mustard-seed-oil": {
+    "density": 0.91,
+    "description": "Oil from Brassica seeds. Contains erucic acid (not tracked in profile).",
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
+      "lauric": 0,
+      "myristic": 0,
+      "palmitic": 3,
+      "palmitoleic": 0,
+      "stearic": 1,
+      "oleic": 23,
+      "linoleic": 15,
+      "linolenic": 10,
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 35,
+      "ricinoleic": 0
+    },
+    "ins": 63,
+    "iodine": 110,
+    "name": "Mustard seed oil",
+    "references": [
+      {
+        "section": "Physicochemical properties of cold pressed mustard oil",
+        "source": "PMC6717124",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6717124/"
+      }
+    ],
+    "sap": {
+      "koh": 0.173,
+      "naoh": 0.123
+    },
+    "usage": {
+      "max": 15,
+      "min": 5
+    }
+  },
   "neem-oil": {
     "density": 0.92,
     "description": "Oil from neem tree seeds. Strong scent.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 18,
+      "palmitoleic": 0,
+      "stearic": 15,
+      "oleic": 50,
       "linoleic": 13,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 50,
-      "palmitic": 18,
-      "ricinoleic": 0,
-      "stearic": 15
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 124,
     "iodine": 70,
-    "name": "Neem Oil",
+    "name": "Neem oil",
     "references": [
       {
         "section": "Neem Oil: A Comprehensive Analysis of Quality and Identity Parameters",
@@ -1001,21 +1457,27 @@
     "description": "Oil pressed from olives.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 11,
+      "palmitoleic": 0,
+      "stearic": 3,
+      "oleic": 72,
       "linoleic": 10,
       "linolenic": 1,
-      "myristic": 0,
-      "oleic": 72,
-      "palmitic": 11,
-      "ricinoleic": 0,
-      "stearic": 3
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 103,
     "iodine": 85,
-    "name": "Olive Oil",
+    "name": "Olive oil",
     "references": [
       {
         "section": "Standard for Olive Oils and Olive Pomace Oils, Table Fatty Acid Composition",
@@ -1037,21 +1499,27 @@
     "description": "Oil extracted from olive pulp after first pressing.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 12,
+      "palmitoleic": 0,
+      "stearic": 3,
+      "oleic": 70,
       "linoleic": 11,
       "linolenic": 1,
-      "myristic": 0,
-      "oleic": 70,
-      "palmitic": 12,
-      "ricinoleic": 0,
-      "stearic": 3
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 101,
     "iodine": 87,
-    "name": "Olive Oil Pomace",
+    "name": "Olive oil pomace",
     "references": [
       {
         "section": "Standard for Olive Oils and Olive Pomace Oils",
@@ -1073,21 +1541,27 @@
     "description": "Oil from palm fruit seed.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": true
+      "sourcingConcerns": true
     },
     "fattyAcids": {
+      "caprylic": 4,
+      "capric": 4,
       "lauric": 50,
+      "myristic": 16,
+      "palmitic": 8,
+      "palmitoleic": 0,
+      "stearic": 2,
+      "oleic": 16,
       "linoleic": 3,
       "linolenic": 0,
-      "myristic": 16,
-      "oleic": 16,
-      "palmitic": 8,
-      "ricinoleic": 0,
-      "stearic": 2
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 224,
     "iodine": 18,
-    "name": "Palm Kernel Oil",
+    "name": "Palm kernel oil",
     "references": [
       {
         "section": "Section 2.1.9 Palm Kernel Oil, Table 1 Fatty Acid Composition",
@@ -1119,21 +1593,27 @@
     "description": "Oil from palm fruit pulp.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": true
+      "sourcingConcerns": true
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 1,
+      "palmitic": 44,
+      "palmitoleic": 0,
+      "stearic": 5,
+      "oleic": 40,
       "linoleic": 10,
       "linolenic": 0,
-      "myristic": 1,
-      "oleic": 40,
-      "palmitic": 44,
-      "ricinoleic": 0,
-      "stearic": 5
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 146,
     "iodine": 53,
-    "name": "Palm Oil",
+    "name": "Palm oil",
     "references": [
       {
         "section": "Section 2.1.8 Palm Oil, Table 1 Fatty Acid Composition",
@@ -1166,21 +1646,27 @@
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 10,
+      "palmitoleic": 0,
+      "stearic": 3,
+      "oleic": 48,
       "linoleic": 32,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 48,
-      "palmitic": 10,
-      "ricinoleic": 0,
-      "stearic": 3
+      "arachidic": 1.5,
+      "behenic": 3,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 96,
     "iodine": 95,
-    "name": "Peanut Oil (Groundnut)",
+    "name": "Peanut oil (groundnut)",
     "references": [
       {
         "section": "Section 2.1.1 Arachis Oil (Peanut/Groundnut Oil)",
@@ -1197,26 +1683,118 @@
       "min": 10
     }
   },
+  "pecan-oil": {
+    "density": 0.91,
+    "description": "Oil from Carya illinoinensis nuts. High in oleic and linoleic acids.",
+    "dietary": {
+      "animalBased": false,
+      "commonAllergen": true,
+      "sourcingConcerns": false
+    },
+    "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
+      "lauric": 0,
+      "myristic": 0,
+      "palmitic": 6,
+      "palmitoleic": 0,
+      "stearic": 2,
+      "oleic": 65,
+      "linoleic": 25,
+      "linolenic": 1,
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
+    },
+    "ins": 95,
+    "iodine": 95,
+    "name": "Pecan oil",
+    "references": [
+      {
+        "section": "Comparison of Oil Content and Fatty Acids Profile of Pecan Nuts",
+        "source": "PMC5827884",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5827884/"
+      }
+    ],
+    "sap": {
+      "koh": 0.19,
+      "naoh": 0.135
+    },
+    "usage": {
+      "max": 15,
+      "min": 5
+    }
+  },
+  "pistachio-oil": {
+    "density": 0.91,
+    "description": "Oil from Pistacia vera nuts. High in oleic acid.",
+    "dietary": {
+      "animalBased": false,
+      "commonAllergen": true,
+      "sourcingConcerns": false
+    },
+    "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
+      "lauric": 0,
+      "myristic": 0,
+      "palmitic": 11,
+      "palmitoleic": 0,
+      "stearic": 1,
+      "oleic": 54,
+      "linoleic": 32,
+      "linolenic": 1,
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
+    },
+    "ins": 94,
+    "iodine": 94,
+    "name": "Pistachio oil",
+    "references": [
+      {
+        "section": "Oil composition of pistachio nuts from Turkey",
+        "source": "Wiley Online Library",
+        "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/(SICI)1521-4133(199803)100:3%3C84::AID-LIPI84%3E3.0.CO;2-6"
+      }
+    ],
+    "sap": {
+      "koh": 0.188,
+      "naoh": 0.134
+    },
+    "usage": {
+      "max": 15,
+      "min": 5
+    }
+  },
   "pork-fat-rendered": {
     "density": 0.92,
     "description": "Rendered pork fat from any part of the animal.",
     "dietary": {
       "animalBased": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 2,
+      "palmitic": 25,
+      "palmitoleic": 0,
+      "stearic": 15,
+      "oleic": 45,
       "linoleic": 9,
       "linolenic": 1,
-      "myristic": 2,
-      "oleic": 45,
-      "palmitic": 25,
-      "ricinoleic": 0,
-      "stearic": 15
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 132,
     "iodine": 66,
-    "name": "Lard (All)",
+    "name": "Lard (all)",
     "references": [
       {
         "section": "Section 2.2 Rendered Pork Fat, Table 1 Fatty Acid Ranges",
@@ -1238,21 +1816,27 @@
     "description": "Pork fat from the visceral fat near the kidneys and loin.",
     "dietary": {
       "animalBased": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 2,
+      "palmitic": 25,
+      "palmitoleic": 0,
+      "stearic": 15,
+      "oleic": 45,
       "linoleic": 8,
       "linolenic": 1,
-      "myristic": 2,
-      "oleic": 45,
-      "palmitic": 25,
-      "ricinoleic": 0,
-      "stearic": 15
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 138,
     "iodine": 60,
-    "name": "Lard (Leaf)",
+    "name": "Lard (leaf)",
     "references": [
       {
         "section": "Section 2.1 Lard, Table 1 Fatty Acid Ranges",
@@ -1269,26 +1853,74 @@
       "min": 40
     }
   },
+  "pumpkin-seed-oil": {
+    "density": 0.92,
+    "description": "Oil from Cucurbita pepo seeds. High in linoleic acid. Dark green color.",
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
+      "lauric": 0,
+      "myristic": 0,
+      "palmitic": 12,
+      "palmitoleic": 0,
+      "stearic": 5,
+      "oleic": 28,
+      "linoleic": 53,
+      "linolenic": 0,
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
+    },
+    "ins": 74,
+    "iodine": 115,
+    "name": "Pumpkin seed oil",
+    "references": [
+      {
+        "section": "Comparative assessment of physicochemical properties of pumpkin seed oil",
+        "source": "PMC6906666",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6906666/"
+      }
+    ],
+    "sap": {
+      "koh": 0.189,
+      "naoh": 0.135
+    },
+    "usage": {
+      "max": 15,
+      "min": 5
+    }
+  },
   "rice-bran-oil": {
     "density": 0.92,
     "description": "Oil from rice bran.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 18,
+      "palmitoleic": 0,
+      "stearic": 2,
+      "oleic": 43,
       "linoleic": 32,
       "linolenic": 1,
-      "myristic": 0,
-      "oleic": 43,
-      "palmitic": 18,
-      "ricinoleic": 0,
-      "stearic": 2
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 87,
     "iodine": 103,
-    "name": "Rice Bran Oil",
+    "name": "Rice bran oil",
     "references": [
       {
         "section": "Section 2.1.13 Rice Bran Oil, Table 1 Fatty Acid Composition",
@@ -1305,26 +1937,74 @@
       "min": 10
     }
   },
+  "rosehip-seed-oil": {
+    "density": 0.92,
+    "description": "Oil from Rosa canina seeds. High in polyunsaturated fatty acids. Short shelf life.",
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
+      "lauric": 0,
+      "myristic": 0,
+      "palmitic": 5,
+      "palmitoleic": 0,
+      "stearic": 2,
+      "oleic": 17,
+      "linoleic": 51,
+      "linolenic": 20,
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
+    },
+    "ins": 29,
+    "iodine": 160,
+    "name": "Rosehip seed oil",
+    "references": [
+      {
+        "section": "Characterization of Rosehip Seed and Seed Oil",
+        "source": "Taylor & Francis Online",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/10942912.2013.777075"
+      }
+    ],
+    "sap": {
+      "koh": 0.189,
+      "naoh": 0.135
+    },
+    "usage": {
+      "max": 10,
+      "min": 3
+    }
+  },
   "safflower-oil-high-oleic": {
     "density": 0.92,
     "description": "Oil from high-oleic safflower seeds.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 5,
+      "palmitoleic": 0,
+      "stearic": 2,
+      "oleic": 77,
       "linoleic": 14,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 77,
-      "palmitic": 5,
-      "ricinoleic": 0,
-      "stearic": 2
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 102,
     "iodine": 90,
-    "name": "Safflower Oil (High Oleic)",
+    "name": "Safflower oil (high oleic)",
     "references": [
       {
         "section": "Section 2.1.15 Safflowerseed Oil (High Oleic Acid), Table 1",
@@ -1341,26 +2021,74 @@
       "min": 10
     }
   },
+  "sal-seed-butter": {
+    "density": 0.9,
+    "description": "Butter from Shorea robusta seeds. Similar to cocoa butter. High in stearic acid.",
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
+      "lauric": 0,
+      "myristic": 0,
+      "palmitic": 14,
+      "palmitoleic": 0,
+      "stearic": 42,
+      "oleic": 40,
+      "linoleic": 2,
+      "linolenic": 0,
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
+    },
+    "ins": 181,
+    "iodine": 8,
+    "name": "Sal seed butter",
+    "references": [
+      {
+        "section": "Exploration of Shorea robusta seeds, kernels and its oil",
+        "source": "Taylor & Francis Online",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/23311932.2016.1186140"
+      }
+    ],
+    "sap": {
+      "koh": 0.189,
+      "naoh": 0.135
+    },
+    "usage": {
+      "max": 15,
+      "min": 5
+    }
+  },
   "sea-buckthorn-oil": {
     "density": 0.92,
     "description": "Oil from sea buckthorn fruit pulp. Exceptionally high in palmitoleic acid (30-40%).",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 36,
+      "palmitoleic": 35,
+      "stearic": 1,
+      "oleic": 8,
       "linoleic": 6,
       "linolenic": 2,
-      "myristic": 0,
-      "oleic": 8,
-      "palmitic": 36,
-      "ricinoleic": 0,
-      "stearic": 1
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 111,
     "iodine": 75,
-    "name": "Sea Buckthorn Oil (Fruit)",
+    "name": "Sea buckthorn oil (fruit)",
     "references": [
       {
         "section": "Fatty Acid Composition of Developing Sea Buckthorn (Hippophae rhamnoides L.) Berry and the Transcriptome of the Mature Seed",
@@ -1377,26 +2105,74 @@
       "min": 3
     }
   },
+  "sesame-oil": {
+    "density": 0.92,
+    "description": "Oil from Sesamum indicum seeds. Contains natural antioxidants (sesamol, sesamin).",
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
+      "lauric": 0,
+      "myristic": 0,
+      "palmitic": 9,
+      "palmitoleic": 0,
+      "stearic": 5,
+      "oleic": 43,
+      "linoleic": 41,
+      "linolenic": 0,
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
+    },
+    "ins": 78,
+    "iodine": 113,
+    "name": "Sesame oil",
+    "references": [
+      {
+        "section": "Physicochemical and health properties of sesame seed oil: a review",
+        "source": "PMC10292629",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10292629/"
+      }
+    ],
+    "sap": {
+      "koh": 0.191,
+      "naoh": 0.136
+    },
+    "usage": {
+      "max": 25,
+      "min": 10
+    }
+  },
   "shea-butter": {
     "density": 0.9,
     "description": "Butter from shea tree nuts.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 5,
+      "palmitoleic": 0,
+      "stearic": 40,
+      "oleic": 46,
       "linoleic": 6,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 46,
-      "palmitic": 5,
-      "ricinoleic": 0,
-      "stearic": 40
+      "arachidic": 1,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 116,
     "iodine": 59,
-    "name": "Shea Butter",
+    "name": "Shea butter",
     "references": [
       {
         "section": "Shea Butter specifications in Table 1",
@@ -1423,21 +2199,27 @@
     "description": "Rendered sheep fat.",
     "dietary": {
       "animalBased": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 5,
+      "palmitic": 25,
+      "palmitoleic": 0,
+      "stearic": 26,
+      "oleic": 36,
       "linoleic": 3,
       "linolenic": 0,
-      "myristic": 5,
-      "oleic": 36,
-      "palmitic": 25,
-      "ricinoleic": 0,
-      "stearic": 26
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 156,
     "iodine": 40,
-    "name": "Sheep Tallow (Mutton)",
+    "name": "Sheep tallow (mutton)",
     "references": [
       {
         "section": "Section 2.4 Edible Tallow (includes sheep)",
@@ -1460,21 +2242,27 @@
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 11,
+      "palmitoleic": 0,
+      "stearic": 4,
+      "oleic": 24,
       "linoleic": 54,
       "linolenic": 7,
-      "myristic": 0,
-      "oleic": 24,
-      "palmitic": 11,
-      "ricinoleic": 0,
-      "stearic": 4
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 59,
     "iodine": 131,
-    "name": "Soybean Oil",
+    "name": "Soybean oil",
     "references": [
       {
         "section": "Section 2.1.17 Soyabean Oil, Table 1 Fatty Acid Composition",
@@ -1496,21 +2284,27 @@
     "description": "Pure stearic fatty acid.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 0,
+      "palmitoleic": 0,
+      "stearic": 100,
+      "oleic": 0,
       "linoleic": 0,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 0,
-      "palmitic": 0,
-      "ricinoleic": 0,
-      "stearic": 100
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 198,
     "iodine": 0,
-    "name": "Stearic Acid",
+    "name": "Stearic acid",
     "references": [
       {
         "section": "Stearic Acid compound summary",
@@ -1532,21 +2326,27 @@
     "description": "Oil from sunflower seeds.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 6,
+      "palmitoleic": 0,
+      "stearic": 5,
+      "oleic": 27,
       "linoleic": 61,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 27,
-      "palmitic": 6,
-      "ricinoleic": 0,
-      "stearic": 5
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 58,
     "iodine": 130,
-    "name": "Sunflower Oil",
+    "name": "Sunflower oil",
     "references": [
       {
         "section": "Section 2.1.18 Sunflowerseed Oil, Table 1 Fatty Acid Composition",
@@ -1569,21 +2369,27 @@
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 7,
+      "palmitoleic": 0,
+      "stearic": 2,
+      "oleic": 68,
       "linoleic": 18,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 68,
-      "palmitic": 7,
-      "ricinoleic": 0,
-      "stearic": 2
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 92,
     "iodine": 99,
-    "name": "Sweet Almond Oil",
+    "name": "Sweet almond oil",
     "references": [
       {
         "section": "Amygdalae oleum raffinatum monograph",
@@ -1610,21 +2416,27 @@
     "description": "Oil from tamanu tree nuts. Strong nutty scent.",
     "dietary": {
       "animalBased": false,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 13,
+      "palmitoleic": 0,
+      "stearic": 13,
+      "oleic": 40,
       "linoleic": 27,
       "linolenic": 0,
-      "myristic": 0,
-      "oleic": 40,
-      "palmitic": 13,
-      "ricinoleic": 0,
-      "stearic": 13
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 108,
     "iodine": 85,
-    "name": "Tamanu Oil",
+    "name": "Tamanu oil",
     "references": [
       {
         "section": "Tamanu oil and skin active properties: from traditional to modern cosmetic uses",
@@ -1652,21 +2464,27 @@
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
-      "ethicalConcerns": false
+      "sourcingConcerns": false
     },
     "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
       "lauric": 0,
+      "myristic": 0,
+      "palmitic": 7,
+      "palmitoleic": 0,
+      "stearic": 2,
+      "oleic": 19,
       "linoleic": 58,
       "linolenic": 12,
-      "myristic": 0,
-      "oleic": 19,
-      "palmitic": 7,
-      "ricinoleic": 0,
-      "stearic": 2
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
     },
     "ins": 44,
     "iodine": 145,
-    "name": "Walnut Oil",
+    "name": "Walnut oil",
     "references": [
       {
         "section": "Kernel oil content and oil composition in walnut accessions from north-eastern Italy",
@@ -1681,6 +2499,48 @@
     "usage": {
       "max": 10,
       "min": 5
+    }
+  },
+  "wheat-germ-oil": {
+    "density": 0.93,
+    "description": "Oil from Triticum aestivum germ. High in linoleic acid and vitamin E. Short shelf life.",
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "fattyAcids": {
+      "caprylic": 0,
+      "capric": 0,
+      "lauric": 0,
+      "myristic": 0,
+      "palmitic": 16,
+      "palmitoleic": 0,
+      "stearic": 1,
+      "oleic": 18,
+      "linoleic": 56,
+      "linolenic": 7,
+      "arachidic": 0,
+      "behenic": 0,
+      "erucic": 0,
+      "ricinoleic": 0
+    },
+    "ins": 65,
+    "iodine": 125,
+    "name": "Wheat germ oil",
+    "references": [
+      {
+        "section": "Comparative Physico-Chemical Properties of Wheat Germ Oil",
+        "source": "Iranian Journal of Chemical Engineering",
+        "url": "https://www.ijcce.ac.ir/article_34240.html"
+      }
+    ],
+    "sap": {
+      "koh": 0.19,
+      "naoh": 0.135
+    },
+    "usage": {
+      "max": 10,
+      "min": 3
     }
   }
 }

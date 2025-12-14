@@ -5,12 +5,11 @@
 
 import {
     ADDITIVE_WARNING_TYPES,
-    capitalize,
     CSS_CLASSES,
     ELEMENT_IDS,
-    FATTY_ACID_KEYS,
     FATTY_ACID_NAMES,
     MATCH_THRESHOLDS,
+    PROPERTY_ELEMENT_IDS,
     PROPERTY_FATTY_ACIDS,
     PROPERTY_KEYS,
     UI_MESSAGES
@@ -20,16 +19,19 @@ import { checkAdditiveWarnings, generateFatProperties } from '../core/calculator
 
 import {
     $,
-    batchUpdateNumbers,
-    closePanel,
     delegate,
     onActivate,
-    openPanel,
     parseFloatOr,
     parseIntOr,
     populateSelect,
-    positionNearAnchor
+    positionNearAnchor,
+    setupAbortSignal
 } from './helpers.js';
+
+import {
+    closeCurrentPanel,
+    openPanel
+} from './panelManager.js';
 
 import {
     attachRowEventHandlers,
@@ -71,12 +73,7 @@ export function populateFatSelect(selectElement, fatsDatabase, excludeIds = [], 
  * @param {Object} callbacks - {onWeightChange, onToggleWeightLock, onTogglePercentageLock, onRemove, onFatInfo}
  */
 export function renderRecipe(container, recipe, locks, unit, fatsDatabase, callbacks) {
-    // Abort any previous event listeners on this container
-    if (container._abortController) {
-        container._abortController.abort();
-    }
-    container._abortController = new AbortController();
-    const signal = container._abortController.signal;
+    const signal = setupAbortSignal(container);
 
     if (recipe.length === 0) {
         container.innerHTML = renderEmptyState(UI_MESSAGES.NO_FATS_ADDED);
@@ -130,105 +127,58 @@ export function renderRecipe(container, recipe, locks, unit, fatsDatabase, callb
 // ============================================
 
 /**
- * Update results display
- * @param {Object} results - {totalFats, lyeAmount, waterAmount, totalBatch, lyeType}
- */
-export function updateResults(results) {
-    batchUpdateNumbers([
-        [ELEMENT_IDS.totalFats, results.totalFats],
-        [ELEMENT_IDS.lyeAmount, results.lyeAmount],
-        [ELEMENT_IDS.waterAmount, results.waterAmount],
-        [ELEMENT_IDS.totalBatch, results.totalBatch]
-    ]);
-    const lyeLabel = $(ELEMENT_IDS.lyeTypeLabel);
-    if (lyeLabel) lyeLabel.textContent = results.lyeType;
-}
-
-/**
- * Update volume estimate display
- * @param {{min: number, max: number}} volume - Volume range
- * @param {string} unit - Volume unit (mL or fl oz)
- */
-export function updateVolume(volume, unit) {
-    const el = $(ELEMENT_IDS.volumeRange);
-    if (!el) return;
-
-    el.textContent = volume.min === 0 ? '0' : `${volume.min.toFixed(0)}-${volume.max.toFixed(0)}`;
-    const unitEl = $(ELEMENT_IDS.volumeUnit);
-    if (unitEl) unitEl.textContent = unit;
-}
-
-/**
- * Update fatty acid display
- * @param {Object} fa - Fatty acid values
- */
-export function updateFattyAcids(fa) {
-    FATTY_ACID_KEYS.forEach(acid => {
-        const el = $(`fa${capitalize(acid)}`);
-        if (el) el.textContent = fa[acid].toFixed(0);
-    });
-
-    // Update sat:unsat ratio
-    const saturated = fa.lauric + fa.myristic + fa.palmitic + fa.stearic;
-    const unsaturated = fa.ricinoleic + fa.oleic + fa.linoleic + fa.linolenic;
-    const ratioEl = $(ELEMENT_IDS.satUnsatRatio);
-    if (ratioEl) ratioEl.textContent = `${saturated.toFixed(0)} : ${unsaturated.toFixed(0)}`;
-}
-
-/**
  * Explanations for out-of-range property values
  */
 const RANGE_EXPLANATIONS = {
     hardness: {
-        low: 'Soft bar: may need longer cure time or additives like sodium lactate',
-        high: 'Very hard: may be brittle or waxy, cut soon after unmoulding'
+        low: 'Soft bar; may need a longer cure time or additives like sodium lactate',
+        high: 'Very hard; may be brittle or waxy, so cut soon after unmoulding to avoid cracking'
     },
     cleansing: {
-        low: 'Low cleansing: very gentle but may feel insufficient for some',
-        high: 'High cleansing: good for utility soap, may dry skin with daily use'
+        low: 'Low cleansing; very gentle on skn, but may feel insufficiently effective',
+        high: 'High cleansing; good for utility soap, but frequent use may dry skin'
     },
     conditioning: {
-        low: 'Low conditioning: less moisturising, may feel drying',
-        high: 'High conditioning: very moisturising but may reduce lather'
+        low: 'Low conditioning; less moisturizing, may feel drying',
+        high: 'High conditioning; very moisturizing, but may reduce lather'
     },
     bubbly: {
-        low: 'Low bubbly lather: soap will produce less fluffy foam',
-        high: 'High bubbly lather: lots of foam but may feel less creamy'
+        low: 'Lathering produces less foam',
+        high: 'Lathering produces lots of foam, but it may feel less creamy than desired'
     },
     creamy: {
-        low: 'Low creamy lather: less stable, lotion-like foam',
-        high: 'High creamy lather: dense foam but may reduce bubbles'
+        low: 'Lathering produces a stable, lotion-like foam',
+        high: 'Lathering produces a dense foam, but bubbliness may be reduced'
     },
     iodine: {
-        low: 'Low iodine: very stable but may lack skin-conditioning oils',
-        high: 'High iodine: prone to rancidity, add antioxidant and cure in cool dark place'
+        low: 'Low iodine; very stable but may lack skin-conditioning fats',
+        high: 'High iodine; prone to rancidity, so mitigate this by adding antioxidant and cure in cool dark place'
     },
     ins: {
-        low: 'Low INS: bar may be soft or slow to trace',
-        high: 'High INS: may trace quickly, work fast or use lower temperatures'
+        low: 'Low INS; bar may be soft or slow to trace',
+        high: 'High INS; may trace quickly, so use lower temperatures or work quickly'
     }
 };
 
 /**
  * Update a property display with in/out of range styling
- * @param {string} name - Property name (e.g., 'Hardness')
+ * @param {string} key - Property key (e.g., 'hardness')
  * @param {number} value - Property value
  * @param {number} min - Min range
  * @param {number} max - Max range
  */
-export function updateProperty(name, value, min, max) {
-    const elem = $('prop' + name.replace(' ', ''));
+export function updateProperty(key, value, min, max) {
+    const elem = $(PROPERTY_ELEMENT_IDS.prop[key]);
     if (!elem) return;
 
-    const inRange = value >= min && value <= max;
-    const key = name.toLowerCase().replace(' ', '');
+    const isInRange = value >= min && value <= max;
     const explanations = RANGE_EXPLANATIONS[key];
 
     elem.classList.remove(CSS_CLASSES.inRange, CSS_CLASSES.outRange);
-    elem.classList.add(inRange ? CSS_CLASSES.inRange : CSS_CLASSES.outRange);
+    elem.classList.add(isInRange ? CSS_CLASSES.inRange : CSS_CLASSES.outRange);
 
     // Show value with help icon for out-of-range
-    if (!inRange && explanations) {
+    if (!isInRange && explanations) {
         const explanation = value < min ? explanations.low : explanations.high;
         elem.innerHTML = `${value.toFixed(0)} <span class="help-tip range-tip" data-range-tip="${explanation}">ⓘ</span>`;
     } else {
@@ -242,7 +192,7 @@ export function updateProperty(name, value, min, max) {
  */
 export function populatePropertyRanges(ranges) {
     PROPERTY_KEYS.forEach(prop => {
-        const elem = $('range' + capitalize(prop));
+        const elem = $(PROPERTY_ELEMENT_IDS.range[prop]);
         if (elem && ranges[prop]) {
             elem.textContent = `${ranges[prop].min} - ${ranges[prop].max}`;
         }
@@ -251,23 +201,11 @@ export function populatePropertyRanges(ranges) {
     // Also populate profile builder input placeholders
     const profileProperties = ['hardness', 'cleansing', 'conditioning', 'bubbly', 'creamy'];
     profileProperties.forEach(prop => {
-        const input = $(`target${capitalize(prop)}`);
+        const input = $(PROPERTY_ELEMENT_IDS.target[prop]);
         if (input && ranges[prop]) {
             input.placeholder = `${ranges[prop].min}-${ranges[prop].max}`;
         }
     });
-}
-
-/**
- * Update unit labels throughout the UI
- * @param {string} unit - Unit string (g or oz)
- */
-export function updateUnits(unit) {
-    [ELEMENT_IDS.fatUnit, ELEMENT_IDS.lyeUnit, ELEMENT_IDS.waterUnit, ELEMENT_IDS.batchUnit]
-        .forEach(id => {
-            const el = $(id);
-            if (el) el.textContent = unit;
-        });
 }
 
 /**
@@ -295,41 +233,6 @@ export function updatePercentages(recipe, unit) {
         const spans = totalsRow.querySelectorAll('span');
         if (spans[1]) spans[1].textContent = `${totalWeight.toFixed(2)} ${unit}`;
     }
-}
-
-// ============================================
-// Recipe Notes
-// ============================================
-
-/**
- * Update recipe notes display
- * @param {Array} notes - Array of note objects {type, icon, text}
- * @param {number} recipeLength - Number of fats in recipe
- */
-export function updateRecipeNotes(notes, recipeLength) {
-    const container = $(ELEMENT_IDS.recipeNotes);
-    if (!container) return;
-
-    if (notes.length === 0) {
-        const message = recipeLength === 0
-            ? 'Add fats to see recipe analysis'
-            : 'No specific notes for this recipe';
-        container.innerHTML = `
-            <div class="recipe-notes-title">Recipe Notes</div>
-            <p class="no-notes">${message}</p>
-        `;
-        return;
-    }
-
-    container.innerHTML = `
-        <div class="recipe-notes-title">Recipe Notes</div>
-        ${notes.map(note => `
-            <div class="recipe-note ${note.type}">
-                <span class="recipe-note-icon">${note.icon}</span>
-                <span class="recipe-note-text">${note.text}</span>
-            </div>
-        `).join('')}
-    `;
 }
 
 // ============================================
@@ -389,7 +292,7 @@ export function showFatInfo(fatId, fatsDatabase, fattyAcidsData, onFattyAcidClic
         .sort((a, b) => b[1] - a[1])
         .map(([name, value]) => `
             <div class="fa-source-item">
-                <span class="fa-source-name fa-link" data-acid="${name}" role="button" tabindex="0">${capitalize(name)}</span>
+                <button type="button" class="fa-source-name fa-link" data-acid="${name}">${name}</button>
                 <span class="fa-source-percent">${value}%</span>
             </div>
         `).join('');
@@ -410,22 +313,11 @@ export function showFatInfo(fatId, fatsDatabase, fattyAcidsData, onFattyAcidClic
 }
 
 /**
- * Close all info panels - consolidated close function
+ * Close all info panels - uses panelManager to close current panel
  * Since only one panel can be open at a time, this closes whichever is open
  */
 export function closeAllInfoPanels() {
-    const panels = [
-        ELEMENT_IDS.fatInfoPanel,
-        'glossaryPanel',
-        'fattyAcidPanel',
-        ELEMENT_IDS.additiveInfoPanel
-    ];
-    panels.forEach(panelId => {
-        const panel = $(panelId);
-        if (panel?.classList.contains('open')) {
-            closePanel(panelId, ELEMENT_IDS.panelOverlay);
-        }
-    });
+    closeCurrentPanel();
 }
 
 /**
@@ -503,7 +395,7 @@ export function showGlossaryInfo(term, glossaryData, recipe, fatsDatabase, onTer
     if (data.related?.length > 0) {
         relatedEl.innerHTML = data.related
             .filter(r => glossaryData[r])
-            .map(r => `<span class="panel-tag" data-term="${r}" role="button" tabindex="0">${glossaryData[r].term}</span>`)
+            .map(r => `<button type="button" class="panel-tag" data-term="${r}">${glossaryData[r].term}</button>`)
             .join('');
         relatedSection.style.display = 'block';
 
@@ -622,9 +514,11 @@ function populateTooltipContent(tooltip, data, glossaryData) {
     tooltip.querySelector('.tooltip-body').textContent = data.desc;
 
     const detailsEl = tooltip.querySelector('.tooltip-details');
+    const detailsContentEl = tooltip.querySelector('.tooltip-details-content');
     if (data.details) {
-        detailsEl.innerHTML = data.details.replace(/\n/g, '<br>');
+        detailsContentEl.innerHTML = data.details.replace(/\n/g, '<br>');
         detailsEl.style.display = 'block';
+        detailsEl.open = false; // Start collapsed
     } else {
         detailsEl.style.display = 'none';
     }
@@ -652,7 +546,13 @@ export function initGlossaryTooltips(glossaryData) {
     tooltip.innerHTML = `
         <div class="tooltip-header"></div>
         <div class="tooltip-body"></div>
-        <div class="tooltip-details"></div>
+        <details class="tooltip-details">
+            <summary>
+                <span class="details-toggle">More details</span>
+                <span class="details-hide">Hide details</span>
+            </summary>
+            <div class="tooltip-details-content"></div>
+        </details>
         <div class="tooltip-related">
             <div class="tooltip-related-label">Related:</div>
             <div class="tooltip-related-terms"></div>
@@ -660,13 +560,10 @@ export function initGlossaryTooltips(glossaryData) {
     `;
     document.body.appendChild(tooltip);
 
-    let activeTooltipTerm = null;
-
     function showTooltip(term, anchorEl) {
         const data = glossaryData[term];
         if (!data) return;
 
-        activeTooltipTerm = term;
         populateTooltipContent(tooltip, data, glossaryData);
         tooltip.classList.add('visible');
         positionNearAnchor(tooltip, anchorEl);
@@ -675,11 +572,9 @@ export function initGlossaryTooltips(glossaryData) {
     function hideTooltip() {
         tooltip.classList.remove('visible');
         tooltip.style.display = '';
-        activeTooltipTerm = null;
     }
 
     function showRangeTip(text, anchorEl) {
-        activeTooltipTerm = '__range__';
         tooltip.querySelector('.tooltip-header').textContent = 'Out of range';
         tooltip.querySelector('.tooltip-body').textContent = text;
         tooltip.querySelector('.tooltip-details').style.display = 'none';
@@ -699,6 +594,11 @@ export function initGlossaryTooltips(glossaryData) {
         if (relatedEl && inTooltip) {
             showTooltip(relatedEl.dataset.term, relatedEl);
             activeTipEl = relatedEl;
+            return;
+        }
+
+        // Clicking inside tooltip (e.g., details toggle) - don't dismiss
+        if (inTooltip) {
             return;
         }
 
@@ -732,7 +632,7 @@ export function initGlossaryTooltips(glossaryData) {
 
 /**
  * Render profile builder results
- * @param {Object} result - Result from findOilsForProfile
+ * @param {Object} result - Result from findFatsForProfile
  * @param {Object} targetProfile - Original target profile
  * @param {Object} fatsDatabase - Fat database for name lookups
  * @param {Set} lockedIndices - Set of locked fat indices
@@ -745,13 +645,7 @@ export function renderProfileResults(result, targetProfile, fatsDatabase, locked
     const matchBarFill = $(ELEMENT_IDS.matchBarFill);
     const matchPercent = $(ELEMENT_IDS.matchPercent);
     const useRecipeBtn = $(ELEMENT_IDS.useRecipeBtn);
-
-    // Abort any previous event listeners
-    if (suggestedRecipeDiv._abortController) {
-        suggestedRecipeDiv._abortController.abort();
-    }
-    suggestedRecipeDiv._abortController = new AbortController();
-    const signal = suggestedRecipeDiv._abortController.signal;
+    const signal = setupAbortSignal(suggestedRecipeDiv);
 
     resultsContainer.classList.remove(CSS_CLASSES.hidden);
 
@@ -838,7 +732,7 @@ export function getPropertyTargets() {
     const properties = ['hardness', 'cleansing', 'conditioning', 'bubbly', 'creamy'];
 
     properties.forEach(prop => {
-        const input = $(`target${capitalize(prop)}`);
+        const input = $(PROPERTY_ELEMENT_IDS.target[prop]);
         if (input && input.value !== '') {
             targets[prop] = parseFloatOr(input.value);
         }
@@ -916,7 +810,7 @@ export function clearProfileInputs() {
     const properties = ['hardness', 'cleansing', 'conditioning', 'bubbly', 'creamy'];
 
     properties.forEach(prop => {
-        const input = $(`target${capitalize(prop)}`);
+        const input = $(PROPERTY_ELEMENT_IDS.target[prop]);
         if (input) input.value = '';
     });
 
@@ -937,12 +831,7 @@ export function clearProfileInputs() {
  * @param {Object} callbacks - {onWeightChange, onToggleLock, onRemove, onInfo}
  */
 export function renderCupboardFats(container, cupboardFats, fatsDatabase, unit, lockedIndices, callbacks) {
-    // Abort any previous event listeners on this container
-    if (container._abortController) {
-        container._abortController.abort();
-    }
-    container._abortController = new AbortController();
-    const signal = container._abortController.signal;
+    const signal = setupAbortSignal(container);
 
     if (cupboardFats.length === 0) {
         container.innerHTML = renderEmptyState(UI_MESSAGES.NO_CUPBOARD_FATS);
@@ -1000,12 +889,7 @@ export function renderCupboardFats(container, cupboardFats, fatsDatabase, unit, 
  * @param {Object} callbacks - {onWeightChange, onToggleLock, onRemove, onInfo}
  */
 export function renderCupboardSuggestions(container, suggestions, lockedIndices, fatsDatabase, unit, callbacks) {
-    // Abort any previous event listeners on this container
-    if (container._abortController) {
-        container._abortController.abort();
-    }
-    container._abortController = new AbortController();
-    const signal = container._abortController.signal;
+    const signal = setupAbortSignal(container);
 
     if (suggestions.length === 0) {
         container.innerHTML = '';
@@ -1100,12 +984,12 @@ export function populateAdditiveSelect(selectElement, additivesDatabase, categor
  * @param {HTMLElement} container - Container element
  * @param {Array} recipeAdditives - Array of {id, weight}
  * @param {Object} additivesDatabase - Additives database
- * @param {number} totalOilWeight - Total oil weight for percentage calculations
+ * @param {number} totalFatWeight - Total fat weight for percentage calculations
  * @param {string} unit - Unit string (g or oz)
  * @param {Object} callbacks - {onWeightChange, onRemove, onInfo}
  * @returns {Array} Array of warning objects from all additives
  */
-export function renderAdditives(container, recipeAdditives, additivesDatabase, totalOilWeight, unit, callbacks) {
+export function renderAdditives(container, recipeAdditives, additivesDatabase, totalFatWeight, unit, callbacks) {
     const allWarnings = [];
 
     if (recipeAdditives.length === 0) {
@@ -1123,7 +1007,7 @@ export function renderAdditives(container, recipeAdditives, additivesDatabase, t
         const additive = additivesDatabase[item.id];
         if (!additive) return '';
 
-        const percentage = totalOilWeight > 0 ? (item.weight / totalOilWeight) * 100 : 0;
+        const percentage = totalFatWeight > 0 ? (item.weight / totalFatWeight) * 100 : 0;
         const warnings = checkAdditiveWarnings(additive, percentage);
         allWarnings.push(...warnings.map(w => ({ ...w, additiveName: additive.name })));
 
@@ -1179,19 +1063,6 @@ export function renderAdditives(container, recipeAdditives, additivesDatabase, t
 }
 
 /**
- * Update additives total display
- * @param {number} total - Total additives weight
- * @param {string} unit - Unit string (g or oz)
- */
-export function updateAdditivesTotal(total, unit) {
-    const el = $(ELEMENT_IDS.additivesTotal);
-    if (el) el.textContent = total.toFixed(2);
-
-    const unitEl = $(ELEMENT_IDS.additivesUnit);
-    if (unitEl) unitEl.textContent = unit;
-}
-
-/**
  * Show additive info panel
  * @param {string} additiveId - Additive id (kebab-case key)
  * @param {Object} additivesDatabase - Additives database
@@ -1204,7 +1075,7 @@ export function showAdditiveInfo(additiveId, additivesDatabase) {
 
     $('additivePanelName').textContent = additive.name;
     $('additivePanelCategory').textContent = formatCategory(additive.category, additive.subcategory);
-    $('additivePanelUsage').textContent = `${additive.usage.min}% to ${additive.usage.max}% of oil weight`;
+    $('additivePanelUsage').textContent = `${additive.usage.min}% to ${additive.usage.max}% of fat weight`;
     $('additivePanelDescription').textContent = additive.description;
 
     // Safety info
@@ -1245,7 +1116,7 @@ export function showAdditiveInfo(additiveId, additivesDatabase) {
     const extraItems = [];
 
     if (additive.scentNote) {
-        extraItems.push(`<div class="extra-item"><span class="extra-label">Scent note:</span> ${capitalize(additive.scentNote)}</div>`);
+        extraItems.push(`<div class="extra-item"><span class="extra-label">Scent note:</span> ${additive.scentNote}</div>`);
     }
     if (additive.anchoring?.length > 0) {
         const anchorNames = additive.anchoring
@@ -1278,14 +1149,14 @@ export function showAdditiveInfo(additiveId, additivesDatabase) {
  */
 function formatCategory(category, subcategory) {
     const categoryNames = {
-        'essential-oil': 'Essential Oil',
-        'colourant': 'Colourant',
-        'functional': 'Functional Additive'
+        'essential-oil': 'essential oil',
+        'colourant': 'colourant',
+        'functional': 'functional additive'
     };
 
     const base = categoryNames[category] || category;
     if (subcategory) {
-        return `${base} (${capitalize(subcategory)})`;
+        return `${base} (${subcategory})`;
     }
     return base;
 }

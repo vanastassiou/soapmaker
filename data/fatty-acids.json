@@ -9,7 +9,7 @@
     "description": "Part of the unsaponifiable fraction in some fats.",
     "formula": "C20:0",
     "meltingPoint": 76,
-    "name": "Arachidic Acid",
+    "name": "arachidic acid",
     "references": [
       {
         "section": "Arachidic Acid compound summary",
@@ -35,7 +35,7 @@
     "description": "Long-chain saturated fatty acid.",
     "formula": "C22:0",
     "meltingPoint": 80,
-    "name": "Behenic Acid",
+    "name": "behenic acid",
     "references": [
       {
         "section": "Behenic Acid compound summary",
@@ -62,7 +62,7 @@
     "description": "Slightly milder than caprylic acid.",
     "formula": "C10:0",
     "meltingPoint": 31,
-    "name": "Capric Acid",
+    "name": "capric acid",
     "references": [
       {
         "section": "Decanoic Acid compound summary",
@@ -88,7 +88,7 @@
     "description": "Very water-soluble short-chain fatty acid.",
     "formula": "C8:0",
     "meltingPoint": 16,
-    "name": "Caprylic Acid",
+    "name": "caprylic acid",
     "references": [
       {
         "section": "Caprylic Acid compound summary",
@@ -104,6 +104,30 @@
       "lather": "thin, quick"
     }
   },
+  "erucic": {
+    "carbonChain": 22,
+    "commonSources": [
+      "mustard-seed-oil"
+    ],
+    "description": "Long-chain monounsaturated fatty acid. Bred out of food-grade rapeseed (canola) due to health concerns at high dietary intake.",
+    "formula": "C22:1",
+    "meltingPoint": 34,
+    "name": "erucic acid",
+    "references": [
+      {
+        "section": "Erucic Acid compound summary",
+        "source": "PubChem CID 5281116",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Erucic-acid"
+      }
+    ],
+    "saturation": "monounsaturated",
+    "soapProperties": {
+      "cleansing": "low",
+      "conditioning": "high",
+      "hardness": "moderate",
+      "lather": "mild, stable"
+    }
+  },
   "eicosenoic": {
     "carbonChain": 20,
     "commonSources": [
@@ -113,7 +137,7 @@
     "description": "Very stable to oxidation. Jojoba's eicosenoic acid (as wax ester) does not fully saponify.",
     "formula": "C20:1",
     "meltingPoint": 24,
-    "name": "Eicosenoic Acid (Gondoic Acid)",
+    "name": "eicosenoic acid (gondoic acid)",
     "references": [
       {
         "section": "Jojoba Oil: An Updated Comprehensive Review on Chemistry, Pharmaceutical Uses, and Toxicity",
@@ -140,7 +164,7 @@
     "description": "Primary lather-producing fatty acid among saturated fats.",
     "formula": "C12:0",
     "meltingPoint": 44,
-    "name": "Lauric Acid",
+    "name": "lauric acid",
     "references": [
       {
         "section": "Lauric Acid compound summary",
@@ -168,7 +192,7 @@
     "description": "High levels reduce shelf life due to oxidation (DOS).",
     "formula": "C18:2",
     "meltingPoint": -5,
-    "name": "Linoleic Acid",
+    "name": "linoleic acid",
     "references": [
       {
         "section": "Linoleic Acid compound summary",
@@ -195,7 +219,7 @@
     "description": "Very prone to rancidity. Shortened shelf life.",
     "formula": "C18:3",
     "meltingPoint": -11,
-    "name": "Alpha-Linolenic Acid",
+    "name": "alpha-linolenic acid",
     "references": [
       {
         "section": "Alpha-Linolenic Acid compound summary",
@@ -223,7 +247,7 @@
     "description": "Similar profile to lauric acid. Often accompanies lauric in tropical oils.",
     "formula": "C14:0",
     "meltingPoint": 54,
-    "name": "Myristic Acid",
+    "name": "myristic acid",
     "references": [
       {
         "section": "Myristic Acid compound summary",
@@ -251,7 +275,7 @@
     "description": "High oleic soaps harden during extended curing.",
     "formula": "C18:1",
     "meltingPoint": 13,
-    "name": "Oleic Acid",
+    "name": "oleic acid",
     "references": [
       {
         "section": "Oleic Acid compound summary",
@@ -278,7 +302,7 @@
     "description": "Creates long-lasting bars that don't dissolve quickly in water.",
     "formula": "C16:0",
     "meltingPoint": 63,
-    "name": "Palmitic Acid",
+    "name": "palmitic acid",
     "references": [
       {
         "section": "Palmitic Acid compound summary",
@@ -304,7 +328,7 @@
     "description": "Relatively rare monounsaturated fatty acid.",
     "formula": "C16:1",
     "meltingPoint": 0,
-    "name": "Palmitoleic Acid",
+    "name": "palmitoleic acid",
     "references": [
       {
         "section": "Palmitoleic Acid compound summary",
@@ -328,7 +352,7 @@
     "description": "High percentages can make soap sticky or draggy.",
     "formula": "C18:1-OH",
     "meltingPoint": 5,
-    "name": "Ricinoleic Acid",
+    "name": "ricinoleic acid",
     "references": [
       {
         "section": "Castor Oil: Properties, Uses, and Optimization of Processing Parameters in Commercial Production",
@@ -362,7 +386,7 @@
     "description": "Often used in shaving soaps for its dense lather.",
     "formula": "C18:0",
     "meltingPoint": 70,
-    "name": "Stearic Acid",
+    "name": "stearic acid",
     "references": [
       {
         "section": "Stearic Acid compound summary",

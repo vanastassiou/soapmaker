@@ -21,19 +21,19 @@
     "related": [
       "creamy"
     ],
-    "term": "Bubbly Lather"
+    "term": "Bubbly lather"
   },
   "butter": {
     "category": "concept",
     "desc": "A fat that is solid at room temperature but softens near body temperature. In soap making, usually refers to plant-derived fats like shea or cocoa butter.",
-    "details": "Plant butters are solid due to their saturated fatty acid content but have lower melting points than hard fats like tallow.\n\nCommon soap-making butters: shea (mp ~35°C), cocoa (mp ~34°C), mango, kokum.\n\nThey contribute hardness, conditioning, and stable lather.",
+    "details": "Plant butters are solid due to their saturated fatty acid content but have lower melting points than hard fats like tallow.\n\nCommon soap-making butters: shea (mp ~35\u00b0C), cocoa (mp ~34\u00b0C), mango, kokum.\n\nThey contribute hardness, conditioning, and stable lather.",
     "related": [
       "fat",
       "oil",
       "hardness",
       "conditioning"
     ],
-    "term": "Butter (Plant)"
+    "term": "Butter (plant)"
   },
   "castor-oil": {
     "category": "concept",
@@ -44,12 +44,12 @@
       "creamy",
       "conditioning"
     ],
-    "term": "Castor Oil"
+    "term": "Castor oil"
   },
   "clay": {
     "category": "additive",
     "desc": "Natural mineral colourants that also provide functional benefits. Used in soap for colour, slip, and oil absorption.",
-    "details": "Common clays:\n• Kaolin (white): gentle, good for sensitive skin, low absorption\n• Bentonite: high absorption, good for oily skin, swells when wet\n• French Green (illite): moderate absorption, natural green colour\n• Rose Clay: pink/terracotta colour, gentle\n\nUsage: 0.5-1% of oil weight. Mix with water or oil before adding at trace.",
+    "details": "Common clays:\n\u2022 Kaolin (white): gentle, good for sensitive skin, low absorption\n\u2022 Bentonite: high absorption, good for oily skin, swells when wet\n\u2022 French Green (illite): moderate absorption, natural green colour\n\u2022 Rose Clay: pink/terracotta colour, gentle\n\nUsage: 0.5-1% of oil weight. Mix with water or oil before adding at trace.",
     "related": [
       "colourant",
       "additive",
@@ -73,7 +73,7 @@
   "colourant": {
     "category": "additive",
     "desc": "Any ingredient added to soap to impart colour. Includes clays, oxides, micas, and natural colourants like herbs and spices.",
-    "details": "Colourants are typically dispersed in a small amount of oil before adding to soap at trace.\n\nCategories:\n• Clays: natural earth colours, also functional (absorb oils)\n• Oxides: synthetic or natural mineral pigments, stable in lye\n• Micas: shimmer/sparkle, may morph in high pH\n• Natural: herbs, spices, clays (may fade or change colour)\n\nUsage typically 0.1-1% of oil weight depending on intensity desired.",
+    "details": "Colourants are typically dispersed in a small amount of oil before adding to soap at trace.\n\nCategories:\n\u2022 Clays: natural earth colours, also functional (absorb oils)\n\u2022 Oxides: synthetic or natural mineral pigments, stable in lye\n\u2022 Micas: shimmer/sparkle, may morph in high pH\n\u2022 Natural: herbs, spices, clays (may fade or change colour)\n\nUsage typically 0.1-1% of oil weight depending on intensity desired.",
     "related": [
       "additive",
       "clay",
@@ -96,6 +96,15 @@
     ],
     "term": "Conditioning"
   },
+  "common-allergen": {
+    "category": "concept",
+    "desc": "Per FDA FALCPA and FASTER Act, the nine major food allergens are: milk, eggs, fish, shellfish, tree nuts, peanuts, wheat, soybeans, and sesame.",
+    "details": "In cosmetics, the EU Cosmetics Regulation (EC) No 1223/2009 Annex III lists 26 fragrance allergens requiring declaration, including limonene, linalool, citronellol, and eugenol.\n\nRelevant to soapmaking:\n\u2022 Milk proteins (goat milk, buttermilk)\n\u2022 Tree nut oils (almond, walnut, hazelnut)\n\u2022 Soy derivatives (soybean oil)\n\u2022 Wheat proteins (wheat germ oil)\n\u2022 Lanolin (wool allergy cross-reactivity)\n\nSaponification denatures most proteins, but trace compounds may remain.",
+    "related": [
+      "ifra"
+    ],
+    "term": "Common allergen"
+  },
   "creamy": {
     "category": "property",
     "desc": "Sum of palmitic + stearic + ricinoleic. Indicates density and stability of lather; rich, lotion-like feel.",
@@ -107,7 +116,7 @@
     "related": [
       "bubbly"
     ],
-    "term": "Creamy Lather"
+    "term": "Creamy lather"
   },
   "cure": {
     "category": "concept",
@@ -118,33 +127,42 @@
       "trace",
       "gel-phase"
     ],
-    "term": "Cure Time"
+    "term": "Cure time"
   },
   "dos": {
     "category": "concept",
     "desc": "Oxidative rancidity appearing as orange or yellow spots with an unpleasant smell. Caused by polyunsaturated fatty acids oxidizing over time.",
-    "details": "Prevention:\n• Use antioxidants (ROE at 0.02-0.05%, Vitamin E)\n• Cure in cool, dark place\n• Limit high-linoleic/linolenic oils\n• Use within 8-12 months for high-PUFA recipes",
+    "details": "Prevention:\n\u2022 Use antioxidants (ROE at 0.02-0.05%, Vitamin E)\n\u2022 Cure in cool, dark place\n\u2022 Limit high-linoleic/linolenic oils\n\u2022 Use within 8-12 months for high-PUFA recipes",
     "related": [
       "unsaturated",
       "cure"
     ],
-    "term": "DOS (Dreaded Orange Spots)"
+    "term": "DOS (dreaded orange spots)"
+  },
+  "sourcing-concerns": {
+    "category": "concept",
+    "desc": "Environmental or social issues associated with certain soapmaking ingredients, primarily palm oil and palm kernel oil.",
+    "details": "Palm oil production is linked to deforestation in Indonesia and Malaysia, threatening orangutan and tiger habitats. The RSPO (Roundtable on Sustainable Palm Oil) certifies sustainably sourced palm, though certification effectiveness is debated.\n\nOther concerns include:\n\u2022 High water usage crops (almond, avocado)\n\u2022 Labour practices in some supply chains\n\u2022 Long-distance transport carbon footprint\n\nAlternatives to palm: babassu oil offers similar fatty acid profile; combinations of coconut and other hard fats can replicate palm's bar hardness.",
+    "related": [
+      "palm-oil"
+    ],
+    "term": "Sourcing concerns"
   },
   "essential-oil": {
     "category": "concept",
     "desc": "Volatile aromatic compounds steam-distilled or expressed from plants. Used to scent soap naturally.",
-    "details": "Essential oils are complex mixtures of terpenes, alcohols, esters, and other compounds. Each has a characteristic scent and safety profile.\n\nScent notes:\n• Top: first detected, evaporate quickly (citrus, peppermint)\n• Middle: body of scent (lavender, rosemary)\n• Base: last to evaporate, anchor blends (cedarwood, patchouli)\n\nUsage typically 2-5% of oil weight. Some accelerate trace (clove) or may discolour soap (vanilla).",
+    "details": "Essential oils are complex mixtures of terpenes, alcohols, esters, and other compounds. Each has a characteristic scent and safety profile.\n\nScent notes:\n\u2022 Top: first detected, evaporate quickly (citrus, peppermint)\n\u2022 Middle: body of scent (lavender, rosemary)\n\u2022 Base: last to evaporate, anchor blends (cedarwood, patchouli)\n\nUsage typically 2-5% of oil weight. Some accelerate trace (clove) or may discolour soap (vanilla).",
     "related": [
       "additive",
       "ifra",
       "trace"
     ],
-    "term": "Essential Oil"
+    "term": "Essential oil"
   },
   "exfoliant": {
     "category": "additive",
     "desc": "Textured additives that provide gentle physical scrubbing action to remove dead skin cells.",
-    "details": "Common exfoliants:\n• Colloidal oatmeal: very gentle, also soothing\n• Poppy seeds: moderate texture\n• Coffee grounds: moderate to rough\n• Pumice: rough, for feet/hands\n• Loofah: embedded pieces\n\nAdd at trace. Usage varies by desired scrubiness; typically 1-3% of oil weight.\n\nNote: exfoliants sink in fluid soap; work at medium trace or suspend in layers.",
+    "details": "Common exfoliants:\n\u2022 Colloidal oatmeal: very gentle, also soothing\n\u2022 Poppy seeds: moderate texture\n\u2022 Coffee grounds: moderate to rough\n\u2022 Pumice: rough, for feet/hands\n\u2022 Loofah: embedded pieces\n\nAdd at trace. Usage varies by desired scrubiness; typically 1-3% of oil weight.\n\nNote: exfoliants sink in fluid soap; work at medium trace or suspend in layers.",
     "related": [
       "additive",
       "trace"
@@ -167,25 +185,15 @@
     "category": "concept",
     "desc": "Excludes fats derived from animals.",
     "details": "Compatible with philosophies that forbid use of improperly processed (or any) animal ingredients.",
-    "related": [
-    ],
-    "term": "Animal-Based Fats"
-  },
-  "filter-ethical": {
-    "category": "concept",
-    "desc": "Excludes fats with environmental or ethical sourcing concerns.",
-    "details": "Palm oil production is linked to deforestation and habitat destruction in tropical regions. This filter removes palm-derived oils from suggestions.\n\nIf this is a concern, you may also consider sourcing RSPO-certified sustainable palm oils.",
-    "related": [
-    ],
-    "term": "Ethical Concerns"
+    "related": [],
+    "term": "Animal-based fats"
   },
   "filter-allergens": {
     "category": "concept",
     "desc": "Excludes fats associated with common allergens.",
     "details": "Filters out oils from tree nuts (almond, hazelnut, macadamia, walnut), legumes (peanut, soy), and coconut (FDA-classified as tree nut).\n\nNote: While saponification may reduce allergenicity, those with severe allergies should exercise caution.",
-    "related": [
-    ],
-    "term": "Common Allergens"
+    "related": [],
+    "term": "Common allergens"
   },
   "gel-phase": {
     "category": "concept",
@@ -196,18 +204,18 @@
       "cure",
       "lye-concentration"
     ],
-    "term": "Gel Phase"
+    "term": "Gel phase"
   },
   "glycerin-rivers": {
     "category": "concept",
     "desc": "Veined visual pattern in soap. Despite the name, not actually glycerin; it's the first fatty acid soaps to solidify during extended gel phase cooling. Purely cosmetic.",
-    "details": "Occurs when soap in gel phase (a lyotropic liquid-crystalline phase) cools slowly. Pigments migrate away from solidifying areas, creating visible patterns.\n\nPrevention:\n• Water discount (10%+) speeds saponification\n• Lower temperatures\n• Avoid gel phase (freezer method)\n• Disperse pigments in oil, not water",
+    "details": "Occurs when soap in gel phase (a lyotropic liquid-crystalline phase) cools slowly. Pigments migrate away from solidifying areas, creating visible patterns.\n\nPrevention:\n\u2022 Water discount (10%+) speeds saponification\n\u2022 Lower temperatures\n\u2022 Avoid gel phase (freezer method)\n\u2022 Disperse pigments in oil, not water",
     "related": [
       "gel-phase",
       "lye-concentration",
       "trace"
     ],
-    "term": "Glycerin Rivers"
+    "term": "Glycerin rivers"
   },
   "hardener": {
     "category": "additive",
@@ -243,21 +251,32 @@
       "essential-oil",
       "additive"
     ],
-    "term": "IFRA (Fragrance Safety)"
+    "term": "IFRA (fragrance safety)"
   },
   "ins": {
     "category": "property",
-    "desc": "Calculated as Iodine Value subtracted from SAP value (INS = SAP × 1000 - Iodine). Attempts to predict overall soap quality.",
-    "details": "Originally developed by Dr. Robert McDaniel. Controversial; many excellent recipes fall outside this range.\n\nUse as a rough guide, not a rule.",
+    "desc": "Calculated as SAP value (mg KOH/g) minus Iodine Value. Originally intended to predict soap quality for commercial manufacturing.",
+    "details": "Formula: INS = Saponification Value - Iodine Value\n\nHistorical note: First defined by E.T. Webb in 'Soap and Glycerin Manufacture' (1927), later popularized by Dr. Robert McDaniel who suggested 160 as 'ideal'.\n\nWhy it's controversial:\n\u2022 100% olive oil (castile) has INS ~105, yet is a classic, beloved soap\n\u2022 100% cocoa butter has near-perfect INS but produces poor lather and slimy feel\n\u2022 Many excellent handmade soap recipes fall outside the 136-165 range\n\u2022 The metric was designed for industrial soap production, not artisan bars\n\u2022 G. Knothe (2002) noted iodine value alone poorly predicts oxidative stability; double bond position matters more\n\nUse as one data point among many, not a definitive quality indicator. Fatty acid balance and intended use matter far more than hitting an 'ideal' INS.",
     "ranges": {
       "max": 165,
       "min": 136
     },
+    "references": [
+      {
+        "source": "Journal of the American Oil Chemists' Society (Knothe, 2002)",
+        "section": "Structure Indices in FA Chemistry",
+        "url": "https://doi.org/10.1007/s11746-002-0569-4"
+      },
+      {
+        "source": "Webb, E.T. (1927). Soap and Glycerin Manufacture",
+        "section": "Original INS definition"
+      }
+    ],
     "related": [
       "iodine",
       "sap-value"
     ],
-    "term": "INS Value"
+    "term": "INS value"
   },
   "iodine": {
     "category": "property",
@@ -272,28 +291,28 @@
       "dos",
       "hardness"
     ],
-    "term": "Iodine Value"
+    "term": "Iodine value"
   },
   "iron-oxide": {
     "category": "additive",
     "desc": "Mineral pigments made from iron compounds. Create stable, reliable colours that won't fade or morph in high pH soap.",
-    "details": "FDA approved for cosmetics (21 CFR 73.2250), including eye area.\n\nColors:\n• Red (Fe₂O₃): terracotta to brick red\n• Yellow (FeOOH): gold to tan\n• Black (Fe₃O₄): grey to black, use sparingly\n• Brown: blend of red + yellow + black\n\nUsage: 0.1-0.5% of oil weight. Disperse in oil to prevent speckling.",
+    "details": "FDA approved for cosmetics (21 CFR 73.2250), including eye area.\n\nColors:\n\u2022 Red (Fe\u2082O\u2083): terracotta to brick red\n\u2022 Yellow (FeOOH): gold to tan\n\u2022 Black (Fe\u2083O\u2084): grey to black, use sparingly\n\u2022 Brown: blend of red + yellow + black\n\nUsage: 0.1-0.5% of oil weight. Disperse in oil to prevent speckling.",
     "related": [
       "colourant",
       "titanium-dioxide",
       "additive"
     ],
-    "term": "Iron Oxide"
+    "term": "Iron oxide"
   },
   "lather-enhancer": {
     "category": "additive",
     "desc": "Additives that increase lather volume or stability. Common examples include sugar and honey.",
-    "details": "Sugar (sucrose) dissolved in the water portion increases lather dramatically. The sugar caramelizes slightly during saponification.\n\nUsage: 0.5-1% of oil weight, dissolved in water before adding lye.\n\nOther lather enhancers:\n• Honey (also adds colour)\n• Beer (reduce first, use flat)\n• Milks (watch for overheating)\n\nCastor oil (2-5%) also boosts lather but is a fat, not an additive.",
+    "details": "Sugar (sucrose) dissolved in the water portion increases lather dramatically. The sugar caramelizes slightly during saponification.\n\nUsage: 0.5-1% of oil weight, dissolved in water before adding lye.\n\nOther lather enhancers:\n\u2022 Honey (also adds colour)\n\u2022 Beer (reduce first, use flat)\n\u2022 Milks (watch for overheating)\n\nCastor oil (2-5%) also boosts lather but is a fat, not an additive.",
     "related": [
       "additive",
       "bubbly"
     ],
-    "term": "Lather Enhancer"
+    "term": "Lather enhancer"
   },
   "lye-concentration": {
     "category": "concept",
@@ -305,7 +324,7 @@
       "gel-phase",
       "glycerin-rivers"
     ],
-    "term": "Lye Concentration / Water Ratio"
+    "term": "Lye concentration / water ratio"
   },
   "lye-type": {
     "category": "concept",
@@ -315,7 +334,18 @@
       "sap-value",
       "superfat"
     ],
-    "term": "Lye Type"
+    "term": "Lye type"
+  },
+  "hydroxylated": {
+    "category": "concept",
+    "desc": "Fatty acids containing a hydroxyl (-OH) group attached to the carbon chain. Unique soap properties.",
+    "details": "Ricinoleic acid (found only in castor oil) is the primary hydroxylated fatty acid in soapmaking.\n\nThe -OH group increases water solubility, making these acids exceptional lather boosters even in small amounts (2-5%).",
+    "related": [
+      "monounsaturated",
+      "castor-oil",
+      "bubbly"
+    ],
+    "term": "Hydroxylated fatty acids"
   },
   "max-fats": {
     "category": "concept",
@@ -324,7 +354,19 @@
     "related": [
       "property-targets"
     ],
-    "term": "Maximum Fats"
+    "term": "Maximum fats"
+  },
+  "monounsaturated": {
+    "category": "concept",
+    "desc": "Fatty acids with exactly one carbon-carbon double bond. Conditioning but more stable than polyunsaturated acids.",
+    "details": "Includes palmitoleic (C16:1), oleic (C18:1), ricinoleic (C18:1-OH), and erucic (C22:1).\n\nOne double bond = moderate oxidation risk, good balance of conditioning and stability.",
+    "related": [
+      "saturated",
+      "polyunsaturated",
+      "unsaturated",
+      "conditioning"
+    ],
+    "term": "Monounsaturated fatty acids (MUFAs)"
   },
   "oil": {
     "category": "concept",
@@ -337,10 +379,23 @@
     ],
     "term": "Oil"
   },
+  "polyunsaturated": {
+    "category": "concept",
+    "desc": "Fatty acids with two or more carbon-carbon double bonds. Highly conditioning but prone to oxidation (DOS).",
+    "details": "Includes linoleic (C18:2, omega-6) and linolenic (C18:3, omega-3).\n\nMultiple double bonds = sites for oxygen attack = rancidity risk. Limit to <15% total and use antioxidants.",
+    "related": [
+      "saturated",
+      "monounsaturated",
+      "unsaturated",
+      "dos",
+      "conditioning"
+    ],
+    "term": "Polyunsaturated fatty acids (PUFAs)"
+  },
   "property-targets": {
     "category": "concept",
     "desc": "Scores from 0-100 based on your fat blend's fatty acid composition. Higher values mean more of that quality. Only fill in properties that matter to you.",
-    "details": "The optimizer finds fat combinations matching your targets.\n\nEach property is calculated from fatty acid percentages:\n• Hardness: saturated fats\n• Cleansing: short-chain saturated (lauric, myristic)\n• Conditioning: unsaturated fats\n• Bubbly: lauric + myristic + ricinoleic\n• Creamy: palmitic + stearic + ricinoleic\n\nLeave fields empty if you don't have a preference.",
+    "details": "The optimizer finds fat combinations matching your targets.\n\nEach property is calculated from fatty acid percentages:\n\u2022 Hardness: saturated fats\n\u2022 Cleansing: short-chain saturated (lauric, myristic)\n\u2022 Conditioning: unsaturated fats\n\u2022 Bubbly: lauric + myristic + ricinoleic\n\u2022 Creamy: palmitic + stearic + ricinoleic\n\nLeave fields empty if you don't have a preference.",
     "related": [
       "hardness",
       "cleansing",
@@ -348,7 +403,7 @@
       "bubbly",
       "creamy"
     ],
-    "term": "Property Targets"
+    "term": "Property targets"
   },
   "sap-value": {
     "category": "concept",
@@ -358,17 +413,19 @@
       "ins",
       "superfat"
     ],
-    "term": "SAP Value"
+    "term": "SAP value"
   },
   "saturated": {
     "category": "concept",
     "desc": "Fatty acids with no double bonds (C:0). Solid at room temperature. Create harder bars with stable lather and excellent shelf life.",
-    "details": "Includes lauric (C12:0), myristic (C14:0), palmitic (C16:0), and stearic (C18:0).\n\nNo double bonds = no sites for oxygen to attack = resistant to rancidity.",
+    "details": "Includes caprylic (C8:0), capric (C10:0), lauric (C12:0), myristic (C14:0), palmitic (C16:0), stearic (C18:0), arachidic (C20:0), and behenic (C22:0).\n\nNo double bonds = no sites for oxygen to attack = resistant to rancidity.",
     "related": [
       "unsaturated",
+      "monounsaturated",
+      "polyunsaturated",
       "hardness"
     ],
-    "term": "Saturated Fatty Acids"
+    "term": "Saturated fatty acids"
   },
   "scent-note": {
     "category": "additive",
@@ -378,18 +435,18 @@
       "essential-oil",
       "additive"
     ],
-    "term": "Scent Notes"
+    "term": "Scent notes"
   },
   "sodium-lactate": {
     "category": "concept",
-    "desc": "Sodium salt of lactic acid (C₃H₅NaO₃). A functional additive that accelerates hardening and reduces unmoulding time.",
-    "details": "Added to cooled lye water (not hot lye). Typical usage 1-3% of oil weight.\n\nBenefits:\n• Harder bars (unmould 4-12 hours faster)\n• Improved bar release from silicone moulds\n• Slight humectant properties\n\nExcessive use (>5%) can cause brittle bars or glycerin rivers.",
+    "desc": "Sodium salt of lactic acid (C\u2083H\u2085NaO\u2083). A functional additive that accelerates hardening and reduces unmoulding time.",
+    "details": "Added to cooled lye water (not hot lye). Typical usage 1-3% of oil weight.\n\nBenefits:\n\u2022 Harder bars (unmould 4-12 hours faster)\n\u2022 Improved bar release from silicone moulds\n\u2022 Slight humectant properties\n\nExcessive use (>5%) can cause brittle bars or glycerin rivers.",
     "related": [
       "additive",
       "hardness",
       "cure"
     ],
-    "term": "Sodium Lactate"
+    "term": "Sodium lactate"
   },
   "superfat": {
     "category": "concept",
@@ -399,18 +456,18 @@
       "conditioning",
       "sap-value"
     ],
-    "term": "Superfat / Lye Discount"
+    "term": "Superfat / lye discount"
   },
   "titanium-dioxide": {
     "category": "additive",
-    "desc": "White mineral pigment (TiO₂) used to create opaque white soap or lighten other colours.",
-    "details": "FDA approved for cosmetics (21 CFR 73.2575).\n\nUses:\n• Pure white soap base\n• Lighten/pastel other colourants\n• Create base for swirls\n• Hide discolouration from vanilla or spices\n\nUsage: 0.1-1% of oil weight. Higher amounts can feel chalky. Disperse in oil to prevent clumping.",
+    "desc": "White mineral pigment (TiO\u2082) used to create opaque white soap or lighten other colours.",
+    "details": "FDA approved for cosmetics (21 CFR 73.2575).\n\nUses:\n\u2022 Pure white soap base\n\u2022 Lighten/pastel other colourants\n\u2022 Create base for swirls\n\u2022 Hide discolouration from vanilla or spices\n\nUsage: 0.1-1% of oil weight. Higher amounts can feel chalky. Disperse in oil to prevent clumping.",
     "related": [
       "colourant",
       "iron-oxide",
       "additive"
     ],
-    "term": "Titanium Dioxide"
+    "term": "Titanium dioxide"
   },
   "trace": {
     "category": "concept",
@@ -431,17 +488,17 @@
       "conditioning",
       "dos"
     ],
-    "term": "Unsaturated Fatty Acids"
+    "term": "Unsaturated fatty acids"
   },
   "volume-estimate": {
     "category": "calculation",
-    "desc": "Approximate volume range of your soap batch (±12%). Useful for mould sizing, not for precise measurement.",
-    "details": "Accuracy varies based on:\n• Air incorporation during mixing\n• Temperature changes during cooling\n• Water evaporation during cure (10-15% loss)\n• Actual oil density variations\n\nShown as a range to reflect this uncertainty. Fresh pour volume will shrink during the 4-6 week cure.",
+    "desc": "Approximate volume range of your soap batch (\u00b112%). Useful for mould sizing, not for precise measurement.",
+    "details": "Accuracy varies based on:\n\u2022 Air incorporation during mixing\n\u2022 Temperature changes during cooling\n\u2022 Water evaporation during cure (10-15% loss)\n\u2022 Actual oil density variations\n\nShown as a range to reflect this uncertainty. Fresh pour volume will shrink during the 4-6 week cure.",
     "related": [
       "cure",
       "lye-concentration"
     ],
-    "term": "Estimated Volume"
+    "term": "Estimated volume"
   },
   "wax": {
     "category": "concept",

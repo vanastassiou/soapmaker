@@ -55,6 +55,30 @@
           },
           "type": "object"
         },
+        "references": {
+          "description": "Source references for the term",
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "section": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              },
+              "url": {
+                "format": "uri",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source",
+              "section"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
         "related": {
           "description": "Keys of related glossary terms",
           "items": {

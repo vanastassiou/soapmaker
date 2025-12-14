@@ -21,7 +21,7 @@
         },
         "dietary": {
           "additionalProperties": false,
-          "description": "Dietary and ethical classification flags",
+          "description": "Dietary and sourcing classification flags",
           "properties": {
             "animalBased": {
               "description": "True if derived from animal sources",
@@ -31,8 +31,8 @@
               "description": "True if associated with common allergens (tree nuts, soy, etc.)",
               "type": "boolean"
             },
-            "ethicalConcerns": {
-              "description": "True if there are significant ethical concerns (e.g., palm oil deforestation)",
+            "sourcingConcerns": {
+              "description": "True if there are significant sourcing concerns (e.g., palm oil deforestation)",
               "type": "boolean"
             }
           },
@@ -42,7 +42,42 @@
           "additionalProperties": false,
           "description": "Fatty acid percentages (0-100)",
           "properties": {
+            "caprylic": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "capric": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
             "lauric": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "myristic": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "palmitic": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "palmitoleic": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "stearic": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "oleic": {
               "maximum": 100,
               "minimum": 0,
               "type": "number"
@@ -57,27 +92,22 @@
               "minimum": 0,
               "type": "number"
             },
-            "myristic": {
+            "arachidic": {
               "maximum": 100,
               "minimum": 0,
               "type": "number"
             },
-            "oleic": {
+            "behenic": {
               "maximum": 100,
               "minimum": 0,
               "type": "number"
             },
-            "palmitic": {
+            "erucic": {
               "maximum": 100,
               "minimum": 0,
               "type": "number"
             },
             "ricinoleic": {
-              "maximum": 100,
-              "minimum": 0,
-              "type": "number"
-            },
-            "stearic": {
               "maximum": 100,
               "minimum": 0,
               "type": "number"

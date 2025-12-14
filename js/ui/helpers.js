@@ -83,40 +83,23 @@ export function setOpen(id, open) {
     toggleClass(id, 'open', open);
 }
 
-/**
- * Open a panel and its overlay
- * WCAG 2.2 Focus Not Obscured: makes background content inert
- * @param {string} panelId - Panel element ID
- * @param {string} overlayId - Overlay element ID
- */
-export function openPanel(panelId, overlayId) {
-    setOpen(panelId, true);
-    setOpen(overlayId, true);
-    // Make main content inert to prevent focus moving behind panel
-    const mainContent = document.querySelector('main, .container');
-    if (mainContent) {
-        mainContent.setAttribute('inert', '');
-    }
-}
-
-/**
- * Close a panel and its overlay
- * @param {string} panelId - Panel element ID
- * @param {string} overlayId - Overlay element ID
- */
-export function closePanel(panelId, overlayId) {
-    setOpen(panelId, false);
-    setOpen(overlayId, false);
-    // Remove inert from main content
-    const mainContent = document.querySelector('main, .container');
-    if (mainContent) {
-        mainContent.removeAttribute('inert');
-    }
-}
+// Note: openPanel/closePanel moved to panelManager.js for enhanced focus management
 
 // ============================================
 // Event Delegation
 // ============================================
+
+/**
+ * Set up an AbortController for a container element
+ * Aborts any previous controller and returns a new signal
+ * @param {HTMLElement} container - Container element
+ * @returns {AbortSignal} Signal for the new AbortController
+ */
+export function setupAbortSignal(container) {
+    container._abortController?.abort();
+    container._abortController = new AbortController();
+    return container._abortController.signal;
+}
 
 /**
  * Set up event delegation on a container
