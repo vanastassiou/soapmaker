@@ -78,9 +78,9 @@ All interactive elements are keyboard accessible:
 | Element | Implementation |
 |---------|---------------|
 | Buttons | Native `<button>` elements |
-| Clickable spans (`.info-link`, `.fa-link`) | `role="button"` + `tabindex="0"` + Enter/Space handlers |
-| Fat name links in recipe | `role="button"` + `tabindex="0"` + keyboard handlers |
-| Panel tags | `role="button"` + `tabindex="0"` + keyboard handlers |
+| Info links (`.info-link`, `.fa-link`) | Native `<button>` elements with button reset CSS |
+| Fat/additive name links in recipe | Native `<button>` elements with button reset CSS |
+| Panel tags | Native `<button>` elements with button reset CSS |
 
 ### Focus Indicators
 
@@ -169,7 +169,7 @@ Property values use both colour AND text indicators for in-range/out-of-range st
 - Added ARIA roles to tab controls and panels
 - Added `aria-label` to icon buttons
 - Added `scope` attributes to table headers
-- Added `role="button"` and `tabindex="0"` to clickable spans
+- Converted clickable spans to native `<button>` elements with CSS resets
 
 ### CSS (`styles.css`)
 

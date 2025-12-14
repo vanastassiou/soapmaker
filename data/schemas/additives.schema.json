@@ -30,9 +30,9 @@
           "type": "string"
         },
         "density": {
-          "description": "Density in g/mL",
+          "description": "Density in g/mL (bulk density for powders)",
           "maximum": 6,
-          "minimum": 0.5,
+          "minimum": 0.1,
           "type": "number"
         },
         "description": {
@@ -42,14 +42,18 @@
         },
         "dietary": {
           "additionalProperties": false,
-          "description": "Dietary and ethical classification flags",
+          "description": "Dietary and sourcing classification flags",
           "properties": {
             "animalBased": {
               "description": "True if derived from animal sources",
               "type": "boolean"
             },
-            "ethicalConcerns": {
-              "description": "True if there are significant ethical concerns",
+            "commonAllergen": {
+              "description": "True if associated with common allergens",
+              "type": "boolean"
+            },
+            "sourcingConcerns": {
+              "description": "True if there are significant sourcing concerns",
               "type": "boolean"
             }
           },

@@ -91,6 +91,46 @@ function createReactiveState(initialState) {
 }
 
 // ============================================
+// State Helpers
+// ============================================
+
+/**
+ * Create a toggle lock function for a given state key
+ * @param {string} stateKey - The state property holding the Set of locks
+ * @returns {Function} Toggle function that takes an index
+ */
+function createToggleLock(stateKey) {
+    return (index) => {
+        const newLocks = new Set(state[stateKey]);
+        if (newLocks.has(index)) {
+            newLocks.delete(index);
+        } else {
+            newLocks.add(index);
+        }
+        state[stateKey] = newLocks;
+    };
+}
+
+/**
+ * Adjust lock indices after removing an item at a given index
+ * @param {Set} locksSet - Current set of locked indices
+ * @param {number} removedIndex - Index that was removed
+ * @returns {Set} New set with adjusted indices
+ */
+function adjustIndicesAfterRemoval(locksSet, removedIndex) {
+    const newLocks = new Set();
+    for (const lockedIndex of locksSet) {
+        if (lockedIndex < removedIndex) {
+            newLocks.add(lockedIndex);
+        } else if (lockedIndex > removedIndex) {
+            newLocks.add(lockedIndex - 1);
+        }
+        // If lockedIndex === removedIndex, it's removed (not added to new set)
+    }
+    return newLocks;
+}
+
+// ============================================
 // Application State
 // ============================================
 
@@ -153,29 +193,9 @@ export function removeFatFromRecipe(index) {
     newRecipe.splice(index, 1);
     state.recipe = newRecipe;
 
-    // Adjust weight locks - rebuild set with adjusted indices
-    const newWeightLocks = new Set();
-    for (const lockedIndex of state.weightLocks) {
-        if (lockedIndex < index) {
-            newWeightLocks.add(lockedIndex);
-        } else if (lockedIndex > index) {
-            newWeightLocks.add(lockedIndex - 1);
-        }
-        // If lockedIndex === index, it's removed (not added to new set)
-    }
-    state.weightLocks = newWeightLocks;
-
-    // Adjust percentage locks - rebuild set with adjusted indices
-    const newPercentageLocks = new Set();
-    for (const lockedIndex of state.percentageLocks) {
-        if (lockedIndex < index) {
-            newPercentageLocks.add(lockedIndex);
-        } else if (lockedIndex > index) {
-            newPercentageLocks.add(lockedIndex - 1);
-        }
-        // If lockedIndex === index, it's removed (not added to new set)
-    }
-    state.percentageLocks = newPercentageLocks;
+    // Adjust lock indices
+    state.weightLocks = adjustIndicesAfterRemoval(state.weightLocks, index);
+    state.percentageLocks = adjustIndicesAfterRemoval(state.percentageLocks, index);
 }
 
 /**
@@ -204,33 +224,11 @@ export function updateFatWeight(index, weight, scaleOthers = false) {
     state.recipe = newRecipe;
 }
 
-/**
- * Toggle weight lock on a fat (prevents editing weight)
- * @param {number} index - Fat index
- */
-export function toggleWeightLock(index) {
-    const newLocks = new Set(state.weightLocks);
-    if (newLocks.has(index)) {
-        newLocks.delete(index);
-    } else {
-        newLocks.add(index);
-    }
-    state.weightLocks = newLocks;
-}
+/** Toggle weight lock on a fat (prevents editing weight) */
+export const toggleWeightLock = createToggleLock('weightLocks');
 
-/**
- * Toggle percentage lock on a fat (keeps percentage constant when other fats change)
- * @param {number} index - Fat index
- */
-export function togglePercentageLock(index) {
-    const newLocks = new Set(state.percentageLocks);
-    if (newLocks.has(index)) {
-        newLocks.delete(index);
-    } else {
-        newLocks.add(index);
-    }
-    state.percentageLocks = newLocks;
-}
+/** Toggle percentage lock on a fat (keeps percentage constant when other fats change) */
+export const togglePercentageLock = createToggleLock('percentageLocks');
 
 /**
  * Clear the entire recipe
@@ -319,19 +317,8 @@ export function setYoloRecipe(recipe, preserveLockedIndices = null) {
     state.yoloLockedIndices = preserveLockedIndices || new Set();
 }
 
-/**
- * Toggle lock on a YOLO fat
- * @param {number} index - Fat index
- */
-export function toggleYoloLock(index) {
-    const newLocks = new Set(state.yoloLockedIndices);
-    if (newLocks.has(index)) {
-        newLocks.delete(index);
-    } else {
-        newLocks.add(index);
-    }
-    state.yoloLockedIndices = newLocks;
-}
+/** Toggle lock on a YOLO fat */
+export const toggleYoloLock = createToggleLock('yoloLockedIndices');
 
 /**
  * Remove a fat from the YOLO recipe by index
@@ -341,18 +328,7 @@ export function removeYoloFat(index) {
     const newRecipe = [...state.yoloRecipe];
     newRecipe.splice(index, 1);
     state.yoloRecipe = newRecipe;
-
-    // Adjust locked indices
-    const newLocks = new Set();
-    for (const lockedIndex of state.yoloLockedIndices) {
-        if (lockedIndex < index) {
-            newLocks.add(lockedIndex);
-        } else if (lockedIndex > index) {
-            newLocks.add(lockedIndex - 1);
-        }
-        // If lockedIndex === index, it's removed (not added to new set)
-    }
-    state.yoloLockedIndices = newLocks;
+    state.yoloLockedIndices = adjustIndicesAfterRemoval(state.yoloLockedIndices, index);
 }
 
 /**
@@ -385,19 +361,8 @@ export function setPropertiesRecipe(recipe, preserveLockedIndices = null) {
     state.propertiesLockedIndices = preserveLockedIndices || new Set();
 }
 
-/**
- * Toggle lock on a properties mode fat
- * @param {number} index - Fat index
- */
-export function togglePropertiesLock(index) {
-    const newLocks = new Set(state.propertiesLockedIndices);
-    if (newLocks.has(index)) {
-        newLocks.delete(index);
-    } else {
-        newLocks.add(index);
-    }
-    state.propertiesLockedIndices = newLocks;
-}
+/** Toggle lock on a properties mode fat */
+export const togglePropertiesLock = createToggleLock('propertiesLockedIndices');
 
 /**
  * Get locked fats from properties recipe
@@ -443,17 +408,7 @@ export function removeCupboardFat(index) {
     const newFats = [...state.cupboardFats];
     newFats.splice(index, 1);
     state.cupboardFats = newFats;
-
-    // Adjust locked indices
-    const newLocks = new Set();
-    for (const lockedIndex of state.cupboardFatLocks) {
-        if (lockedIndex < index) {
-            newLocks.add(lockedIndex);
-        } else if (lockedIndex > index) {
-            newLocks.add(lockedIndex - 1);
-        }
-    }
-    state.cupboardFatLocks = newLocks;
+    state.cupboardFatLocks = adjustIndicesAfterRemoval(state.cupboardFatLocks, index);
 }
 
 /**
@@ -477,19 +432,8 @@ export function clearCupboardFats() {
     state.cupboardLockedIndices = new Set();
 }
 
-/**
- * Toggle lock on a cupboard fat
- * @param {number} index - Fat index
- */
-export function toggleCupboardFatLock(index) {
-    const newLocks = new Set(state.cupboardFatLocks);
-    if (newLocks.has(index)) {
-        newLocks.delete(index);
-    } else {
-        newLocks.add(index);
-    }
-    state.cupboardFatLocks = newLocks;
-}
+/** Toggle lock on a cupboard fat */
+export const toggleCupboardFatLock = createToggleLock('cupboardFatLocks');
 
 /**
  * Set cupboard suggestions from optimizer
@@ -500,19 +444,8 @@ export function setCupboardSuggestions(suggestions) {
     state.cupboardLockedIndices = new Set();
 }
 
-/**
- * Toggle lock on a cupboard suggestion
- * @param {number} index - Suggestion index
- */
-export function toggleCupboardSuggestionLock(index) {
-    const newLocks = new Set(state.cupboardLockedIndices);
-    if (newLocks.has(index)) {
-        newLocks.delete(index);
-    } else {
-        newLocks.add(index);
-    }
-    state.cupboardLockedIndices = newLocks;
-}
+/** Toggle lock on a cupboard suggestion */
+export const toggleCupboardSuggestionLock = createToggleLock('cupboardLockedIndices');
 
 /**
  * Remove a suggestion from the cupboard suggestions by index
@@ -522,17 +455,7 @@ export function removeCupboardSuggestion(index) {
     const newSuggestions = [...state.cupboardSuggestions];
     newSuggestions.splice(index, 1);
     state.cupboardSuggestions = newSuggestions;
-
-    // Adjust locked indices
-    const newLocks = new Set();
-    for (const lockedIndex of state.cupboardLockedIndices) {
-        if (lockedIndex < index) {
-            newLocks.add(lockedIndex);
-        } else if (lockedIndex > index) {
-            newLocks.add(lockedIndex - 1);
-        }
-    }
-    state.cupboardLockedIndices = newLocks;
+    state.cupboardLockedIndices = adjustIndicesAfterRemoval(state.cupboardLockedIndices, index);
 }
 
 /**

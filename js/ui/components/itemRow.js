@@ -66,9 +66,9 @@ export function renderItemRow(config, index, options = {}) {
 
     // Build row content based on options
     const nameCell = `
-        <span class="${itemType}-name clickable" data-action="info" ${dataAttr}="${id}" role="button" tabindex="0">
+        <button type="button" class="${itemType}-name clickable" data-action="info" ${dataAttr}="${id}">
             ${name}${warningIcon}
-        </span>
+        </button>
     `;
 
     const weightLockedClass = isWeightLocked ? CSS_CLASSES.locked : '';

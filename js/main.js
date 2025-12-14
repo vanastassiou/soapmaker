@@ -5,7 +5,7 @@
 
 import * as calc from './core/calculator.js';
 import * as optimizer from './core/optimizer.js';
-import { ADDITIVE_CATEGORIES, ADDITIVE_WARNING_TYPES, CSS_CLASSES, DEFAULTS, ELEMENT_IDS, PROPERTY_KEYS, PROPERTY_RANGES, UI_MESSAGES, capitalize } from './lib/constants.js';
+import { ADDITIVE_CATEGORIES, ADDITIVE_WARNING_TYPES, CSS_CLASSES, DEFAULTS, ELEMENT_IDS, PROPERTY_KEYS, PROPERTY_RANGES, UI_MESSAGES } from './lib/constants.js';
 import * as validation from './lib/validation.js';
 import {
     addAdditiveToRecipe, addExclusion, addFatToRecipe, clearRecipe,
@@ -86,61 +86,19 @@ function calculate() {
     const fatsDatabase = state.fatsDatabase;
     const totalFats = recipe.reduce((sum, fat) => sum + fat.weight, 0);
 
-    const lyeAmount = calc.calculateLye(recipe, fatsDatabase, settings.lyeType, settings.superfat);
-    const waterAmount = calc.calculateWater(lyeAmount, settings.waterRatio);
-
-    // Calculate additives total
-    const additivesResult = calc.calculateAdditivesTotal(
-        state.recipeAdditives,
-        state.additivesDatabase,
-        totalFats,
-        settings.unit
-    );
-    const additivesTotal = additivesResult.totalWeight;
-
-    const totalBatch = totalFats + lyeAmount + waterAmount + additivesTotal;
-
-    // Volume includes additives
-    const additiveVolume = calc.calculateAdditiveVolume(
-        state.recipeAdditives,
-        state.additivesDatabase,
-        totalFats,
-        settings.unit
-    );
-    const baseVolume = calc.calculateVolume(recipe, fatsDatabase, lyeAmount, waterAmount, settings.unit);
-    const volume = {
-        min: baseVolume.min + additiveVolume,
-        max: baseVolume.max + additiveVolume
-    };
-
-    ui.updateResults({
-        totalFats: totalFats,
-        lyeAmount,
-        waterAmount,
-        totalBatch,
-        lyeType: settings.lyeType
-    });
-    ui.updateVolume(volume, settings.unit === 'g' ? 'mL' : 'fl oz');
-    ui.updateAdditivesTotal(additivesTotal, settings.unit);
-
     const fa = calc.calculateFattyAcids(recipe, fatsDatabase);
     const iodine = calc.calculateIodine(recipe, fatsDatabase);
     const ins = calc.calculateINS(recipe, fatsDatabase);
     const properties = calc.calculateProperties(fa);
 
-    ui.updateFattyAcids(fa);
-
     const allProperties = { ...properties, iodine, ins };
     PROPERTY_KEYS.forEach(key => {
         const range = PROPERTY_RANGES[key];
-        ui.updateProperty(capitalize(key), allProperties[key], range.min, range.max);
+        ui.updateProperty(key, allProperties[key], range.min, range.max);
     });
 
-    // Get base recipe notes and merge additive warnings
-    const notes = calc.getRecipeNotes({ ...properties, iodine, ins }, fa, recipe);
-    const additiveWarnings = renderAdditivesList();
-    const allNotes = mergeAdditiveWarningsIntoNotes(notes, additiveWarnings);
-    ui.updateRecipeNotes(allNotes, recipe.length);
+    // Render additives and update percentages
+    renderAdditivesList();
     ui.updatePercentages(recipe, settings.unit);
 }
 
@@ -178,13 +136,13 @@ function renderAdditivesList() {
     if (!container) return [];
 
     const settings = ui.getSettings();
-    const totalOilWeight = state.recipe.reduce((sum, fat) => sum + fat.weight, 0);
+    const totalFatWeight = state.recipe.reduce((sum, fat) => sum + fat.weight, 0);
 
     return ui.renderAdditives(
         container,
         state.recipeAdditives,
         state.additivesDatabase,
-        totalOilWeight,
+        totalFatWeight,
         settings.unit,
         {
             onWeightChange: handleAdditiveWeightChange,
@@ -409,10 +367,10 @@ function handleStartOver() {
 
     // Reset dietary filters
     const filterAnimal = $(ELEMENT_IDS.filterAnimalBased);
-    const filterEthical = $(ELEMENT_IDS.filterEthicalConcerns);
+    const filterSourcing = $(ELEMENT_IDS.filterSourcingConcerns);
     const filterAllergens = $(ELEMENT_IDS.filterCommonAllergens);
     if (filterAnimal) filterAnimal.checked = false;
-    if (filterEthical) filterEthical.checked = false;
+    if (filterSourcing) filterSourcing.checked = false;
     if (filterAllergens) filterAllergens.checked = false;
 
     // Update UI
@@ -421,7 +379,6 @@ function handleStartOver() {
     renderAdditivesList();
     updateExclusionUI();
     ui.hideProfileResults();
-    ui.updateUnits('g');
 
     // Reset button texts
     const generateBtn = $(ELEMENT_IDS.generateRecipeBtn);
@@ -445,17 +402,16 @@ function handleResetSettings() {
 
     // Reset dietary filters
     const filterAnimal = $(ELEMENT_IDS.filterAnimalBased);
-    const filterEthical = $(ELEMENT_IDS.filterEthicalConcerns);
+    const filterSourcing = $(ELEMENT_IDS.filterSourcingConcerns);
     const filterAllergens = $(ELEMENT_IDS.filterCommonAllergens);
     if (filterAnimal) filterAnimal.checked = false;
-    if (filterEthical) filterEthical.checked = false;
+    if (filterSourcing) filterSourcing.checked = false;
     if (filterAllergens) filterAllergens.checked = false;
 
     // Clear exclusions
     state.excludedFats = [];
     updateExclusionUI();
     updateFatSelectWithFilters();
-    ui.updateUnits('g');
     calculate();
 }
 
@@ -471,8 +427,9 @@ function handleResetAdditives() {
 }
 
 function handleUnitChange() {
-    ui.updateUnits(ui.getSettings().unit);
     renderRecipeList();
+    renderAdditivesList();
+    calculate();
 }
 
 function handleAddExclusion() {
@@ -547,12 +504,12 @@ function updateAdditiveSelect() {
 
 /**
  * Get the current dietary filter selections from the UI
- * @returns {Object} {animalBased, ethicalConcerns, commonAllergens}
+ * @returns {Object} {animalBased, sourcingConcerns, commonAllergens}
  */
 function getDietaryFilters() {
     return {
         animalBased: $(ELEMENT_IDS.filterAnimalBased)?.checked || false,
-        ethicalConcerns: $(ELEMENT_IDS.filterEthicalConcerns)?.checked || false,
+        sourcingConcerns: $(ELEMENT_IDS.filterSourcingConcerns)?.checked || false,
         commonAllergens: $(ELEMENT_IDS.filterCommonAllergens)?.checked || false
     };
 }
@@ -563,13 +520,13 @@ function getDietaryFilters() {
  */
 function createDietaryFilterFn() {
     const filters = getDietaryFilters();
-    if (!filters.animalBased && !filters.ethicalConcerns && !filters.commonAllergens) {
+    if (!filters.animalBased && !filters.sourcingConcerns && !filters.commonAllergens) {
         return null;
     }
     return (_id, data) => {
         const dietary = data.dietary || {};
         if (filters.animalBased && dietary.animalBased === true) return false;
-        if (filters.ethicalConcerns && dietary.ethicalConcerns === true) return false;
+        if (filters.sourcingConcerns && dietary.sourcingConcerns === true) return false;
         if (filters.commonAllergens && dietary.commonAllergen === true) return false;
         return true;
     };
@@ -857,7 +814,7 @@ function setupSettingsListeners() {
 
     // Dietary filter checkboxes - update fat select when toggled
     $(ELEMENT_IDS.filterAnimalBased)?.addEventListener('change', updateFatSelectWithFilters);
-    $(ELEMENT_IDS.filterEthicalConcerns)?.addEventListener('change', updateFatSelectWithFilters);
+    $(ELEMENT_IDS.filterSourcingConcerns)?.addEventListener('change', updateFatSelectWithFilters);
     $(ELEMENT_IDS.filterCommonAllergens)?.addEventListener('change', updateFatSelectWithFilters);
 }
 
@@ -1309,7 +1266,7 @@ function updatePropertiesFromFats(fats) {
     if (!fats || fats.length === 0) {
         // Clear properties to zero
         PROPERTY_KEYS.forEach(key => {
-            ui.updateProperty(capitalize(key), 0, PROPERTY_RANGES[key].min, PROPERTY_RANGES[key].max);
+            ui.updateProperty(key, 0, PROPERTY_RANGES[key].min, PROPERTY_RANGES[key].max);
         });
         return;
     }
@@ -1322,7 +1279,7 @@ function updatePropertiesFromFats(fats) {
     const allProperties = { ...properties, iodine, ins };
     PROPERTY_KEYS.forEach(key => {
         const range = PROPERTY_RANGES[key];
-        ui.updateProperty(capitalize(key), allProperties[key], range.min, range.max);
+        ui.updateProperty(key, allProperties[key], range.min, range.max);
     });
 }
 
@@ -1381,6 +1338,17 @@ function handleCreateRecipe() {
     const lyeAmount = calc.calculateLye(state.recipe, state.fatsDatabase, settings.lyeType, settings.superfat);
     const waterAmount = calc.calculateWater(lyeAmount, settings.waterRatio);
 
+    // Calculate fatty acids and properties for the final recipe
+    const fattyAcids = calc.calculateFattyAcids(state.recipe, state.fatsDatabase);
+    const iodine = calc.calculateIodine(state.recipe, state.fatsDatabase);
+    const ins = calc.calculateINS(state.recipe, state.fatsDatabase);
+    const properties = calc.calculateProperties(fattyAcids);
+
+    // Generate recipe notes including additive warnings
+    const baseNotes = calc.getRecipeNotes({ ...properties, iodine, ins }, fattyAcids, state.recipe);
+    const additiveWarnings = renderAdditivesList();
+    const notes = mergeAdditiveWarningsIntoNotes(baseNotes, additiveWarnings);
+
     const container = $(ELEMENT_IDS.finalRecipeContent);
     ui.renderFinalRecipe(container, {
         recipe: state.recipe,
@@ -1392,7 +1360,10 @@ function handleCreateRecipe() {
         lyeType: settings.lyeType,
         superfat: settings.superfat,
         waterRatio: settings.waterRatio,
-        unit: settings.unit
+        unit: settings.unit,
+        fattyAcids,
+        properties: { ...properties, iodine, ins },
+        notes
     });
 
     ui.showFinalRecipe();

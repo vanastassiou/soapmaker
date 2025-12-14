@@ -34,6 +34,18 @@
     --shadow-overlay: rgba(0, 0, 0, 0.6);
     --font-mono: 'IBM Plex Mono', monospace;
 
+    /* Standardized border-radius */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
+
+    /* Standardized sizes (WCAG 2.2 touch targets) */
+    --size-touch-min: 24px;
+    --size-btn-sm: 24px;
+    --size-btn-md: 32px;
+    --size-btn-lg: 40px;
+
     /* Focus rings for accessibility */
     --focus-ring: 0 0 0 3px rgba(128, 192, 128, 0.4);
     --focus-ring-button: 0 0 0 3px rgba(224, 176, 80, 0.4);
@@ -165,23 +177,13 @@ header p {
 }
 
 .main-grid {
-    display: grid;
-    grid-template-columns: 1fr 400px;
-    gap: 2rem;
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .main-grid > * {
     min-width: 0;
-}
-
-@media (max-width: 1024px) {
-    .main-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .analysis-grid {
-        grid-template-columns: 1fr 1fr;
-    }
 }
 
 @media (max-width: 768px) {
@@ -207,7 +209,7 @@ header p {
 .card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: var(--radius-xl);
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     overflow: hidden;
@@ -277,13 +279,14 @@ label {
 input, select {
     background: var(--bg-input);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     padding: 0.6rem 0.8rem;
     color: var(--text-primary);
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.95rem;
     transition: border-color 0.2s, box-shadow 0.2s;
     width: 100%;
+    min-height: var(--size-btn-md);
 }
 
 input:focus, select:focus {
@@ -476,13 +479,14 @@ button:focus-visible,
     background: var(--accent-gold);
     color: var(--bg-primary);
     border: none;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     padding: 0.6rem 1.2rem;
     font-family: 'Atkinson Hyperlegible', sans-serif;
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
     transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    min-height: var(--size-btn-md);
 }
 
 .btn:hover {
@@ -528,7 +532,7 @@ button:focus-visible,
     align-items: center;
     padding: 0.75rem;
     background: var(--bg-secondary);
-    border-radius: 8px;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--border);
 }
 
@@ -644,6 +648,12 @@ button:focus-visible,
 .fat-name {
     font-weight: 500;
     color: var(--text-primary);
+    /* Button reset for semantic button elements */
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    text-align: left;
 }
 
 /* Clickable text elements */
@@ -706,40 +716,6 @@ button:focus-visible,
     margin-top: 0.5rem;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.9rem;
-}
-
-.results-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.result-item {
-    background: var(--bg-secondary);
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-}
-
-.result-label {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.25rem;
-}
-
-.result-value {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--accent-cream);
-}
-
-.result-unit {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    margin-left: 0.25rem;
 }
 
 /* Generic Tab Styles */
@@ -893,6 +869,12 @@ button:focus-visible,
     display: inline-flex;
     align-items: center;
     min-height: 24px;
+    /* Button reset for semantic button elements */
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
 }
 
 .info-link:hover {
@@ -936,6 +918,9 @@ button:focus-visible,
     min-height: 24px;
     display: inline-flex;
     align-items: center;
+    /* Button reset for semantic button elements */
+    border: none;
+    font-family: inherit;
 }
 
 .panel-tag:hover {
@@ -1015,15 +1000,71 @@ button:focus-visible,
 }
 
 .tooltip-details {
+    margin-bottom: 0.5rem;
+}
+
+.tooltip-details summary,
+.glossary-details summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+.tooltip-details summary::-webkit-details-marker,
+.glossary-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.details-toggle,
+.details-hide {
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+}
+
+.details-toggle::before {
+    content: '›';
+    display: inline-block;
+    margin-right: 0.25rem;
+    transition: transform 0.2s;
+}
+
+.details-hide::before {
+    content: '›';
+    display: inline-block;
+    margin-right: 0.25rem;
+    transform: rotate(90deg);
+}
+
+.details-toggle:hover,
+.details-hide:hover {
+    text-decoration: underline;
+}
+
+.details-toggle {
+    display: inline;
+}
+
+.details-hide {
+    display: none;
+}
+
+details[open] .details-toggle {
+    display: none;
+}
+
+details[open] .details-hide {
+    display: inline;
+}
+
+.tooltip-details-content {
     font-size: 0.85rem;
     color: var(--text-secondary);
-    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
     padding: 0.5rem;
     background: var(--bg-secondary);
     border-radius: 4px;
 }
 
-.tooltip-details strong {
+.tooltip-details-content strong {
     color: var(--accent-cream);
 }
 
@@ -1058,60 +1099,6 @@ button:focus-visible,
     color: var(--bg-primary);
     border-color: var(--accent-green);
     font-weight: 500;
-}
-
-/* Recipe Notes */
-.recipe-notes {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border);
-}
-
-.recipe-notes-title {
-    font-size: 0.85rem;
-    color: var(--accent-gold);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
-}
-
-.recipe-note {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-    background: var(--bg-secondary);
-    border-radius: 4px;
-    font-size: 0.85rem;
-    border-left: 3px solid var(--border);
-}
-
-.recipe-note.info {
-    border-left-color: var(--accent-gold);
-}
-
-.recipe-note.warning {
-    border-left-color: var(--warning);
-}
-
-.recipe-note.success {
-    border-left-color: var(--success);
-}
-
-.recipe-note-icon {
-    flex-shrink: 0;
-    font-size: 1rem;
-}
-
-.recipe-note-text {
-    color: var(--text-primary);
-}
-
-.no-notes {
-    color: var(--text-secondary);
-    font-style: italic;
-    font-size: 0.85rem;
 }
 
 /* Properties Grid (legacy support) */
@@ -1452,6 +1439,12 @@ button:focus-visible,
     display: inline-flex;
     align-items: center;
     min-height: 24px;
+    /* Button reset for semantic button elements */
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
 }
 
 .fa-link:hover {
@@ -1527,9 +1520,9 @@ button:focus-visible,
 
     .lock-weight,
     .lock-percentage {
-        width: 20px;
-        height: 20px;
-        font-size: 0.65rem;
+        width: 24px;
+        height: 24px;
+        font-size: 0.7rem;
     }
 
     .lock-fat {
@@ -1538,18 +1531,9 @@ button:focus-visible,
         font-size: 0.85rem;
     }
 
-    .results-grid,
     .properties-grid,
     .fatty-acids {
         grid-template-columns: 1fr;
-    }
-
-    .results-grid {
-        gap: 0.5rem;
-    }
-
-    .result-item {
-        padding: 0.75rem;
     }
 
     .fat-selector {
@@ -1630,16 +1614,6 @@ button:focus-visible,
     margin-bottom: 1rem;
 }
 
-.collapsible-header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.collapsible-header-row .collapsible-header {
-    flex: 1;
-}
-
 .btn-text {
     background: transparent;
     border: none;
@@ -1651,6 +1625,12 @@ button:focus-visible,
 
 .btn-text:hover {
     color: var(--accent-green);
+}
+
+.reset-btn {
+    display: block;
+    margin-top: 1rem;
+    margin-left: auto;
 }
 
 /* Unified build mode area */
@@ -2103,9 +2083,13 @@ button:focus-visible,
 .glossary-entry {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
     transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.glossary-entry > *:last-child {
+    margin-bottom: 0;
 }
 
 .glossary-entry.highlight {
@@ -2117,7 +2101,10 @@ button:focus-visible,
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+    padding: 0 0 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
 }
 
 .glossary-term {
@@ -2133,18 +2120,18 @@ button:focus-visible,
     letter-spacing: 0.05em;
     color: var(--bg-primary);
     background: var(--text-secondary);
-    padding: 0.2rem 0.6rem;
+    padding: 0.1rem 0.4rem;
     border-radius: 4px;
 }
 
 .glossary-desc {
     color: var(--text-primary);
-    line-height: 1.7;
-    margin-bottom: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
 }
 
 .glossary-details {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .glossary-details summary {
@@ -2152,7 +2139,7 @@ button:focus-visible,
     color: var(--accent-green);
     font-size: 0.9rem;
     font-weight: 500;
-    padding: 0.5rem 0;
+    padding: 0.25rem 0;
     transition: color 0.2s;
 }
 
@@ -2305,6 +2292,12 @@ button:focus-visible,
 .additive-name {
     font-weight: 500;
     color: var(--text-primary);
+    /* Button reset for semantic button elements */
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    text-align: left;
 }
 
 .additive-row input {
@@ -2373,7 +2366,7 @@ button:focus-visible,
 }
 
 /* Responsive adjustments */
-@media (max-width: 1100px) {
+@media (max-width: 1024px) {
     .additive-row {
         grid-template-columns: 1fr 60px 55px 28px;
         gap: 0.5rem;
@@ -2401,15 +2394,6 @@ button:focus-visible,
     font-size: 1rem;
 }
 
-.btn-primary {
-    background: var(--accent-gold);
-    color: var(--bg-primary);
-}
-
-.btn-primary:hover {
-    background: var(--accent-copper);
-}
-
 /* ============================================
    Final Recipe Display
    ============================================ */
@@ -2425,6 +2409,29 @@ button:focus-visible,
 
 .recipe-prose {
     line-height: 1.7;
+}
+
+/* Qualitative Summary */
+.qualitative-summary {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.qualitative-warnings {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin: 0.75rem 0 1.5rem 0;
+}
+
+.qualitative-warnings li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.qualitative-warnings li:last-child {
+    margin-bottom: 0;
 }
 
 .recipe-section {
@@ -2515,8 +2522,7 @@ button:focus-visible,
 .recipe-summary li {
     padding: 0.4rem 0;
     border-bottom: 1px solid var(--border-30);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
 }
 
@@ -2524,7 +2530,55 @@ button:focus-visible,
     border-bottom: none;
 }
 
+/* Fatty acid profile table within recipe-summary */
+.fa-profile-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.fa-profile-table td {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border-30);
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.fa-profile-table tr:last-child td {
+    border-bottom: none;
+}
+
+.fa-profile-table .fa-value {
+    text-align: right;
+    width: 50px;
+}
+
+.sat-unsat-summary {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-30);
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* Side-by-side layout for recipe summary and fatty acid profile */
+.recipe-details-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.recipe-details-row .recipe-summary {
+    flex: 1;
+    margin-top: 0;
+}
+
 @media (max-width: 600px) {
+    .recipe-details-row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
     .recipe-section h4 {
         font-size: 1rem;
     }
