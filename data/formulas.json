@@ -62,11 +62,7 @@
         "section": "NaOH Solubility",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Sodium-Hydroxide#section=Solubility"
       }
-    ],
-    "learnMore": {
-      "text": "Wikipedia: Sodium hydroxide",
-      "url": "https://en.wikipedia.org/wiki/Sodium_hydroxide"
-    }
+    ]
   },
   "fatty-acid-profile": {
     "category": "core",
@@ -165,11 +161,7 @@
         "url": "https://pubs.acs.org/doi/10.1021/ed300589k",
         "note": "Peer-reviewed reference on soap chemistry and formulation"
       }
-    ],
-    "learnMore": {
-      "text": "Wikipedia: Fatty acid",
-      "url": "https://en.wikipedia.org/wiki/Fatty_acid"
-    }
+    ]
   },
   "cleansing": {
     "category": "properties",
@@ -205,11 +197,7 @@
         "section": "General reference",
         "note": "Peer-reviewed explanation of surfactant chemistry"
       }
-    ],
-    "learnMore": {
-      "text": "Wikipedia: Micelle",
-      "url": "https://en.wikipedia.org/wiki/Micelle"
-    }
+    ]
   },
   "conditioning": {
     "category": "properties",
@@ -285,11 +273,7 @@
         "url": "https://pubs.acs.org/doi/10.1021/ed300589k",
         "note": "Peer-reviewed reference on soap chemistry and foam formation"
       }
-    ],
-    "learnMore": {
-      "text": "Wikipedia: Foam",
-      "url": "https://en.wikipedia.org/wiki/Foam"
-    }
+    ]
   },
   "creamy": {
     "category": "properties",
@@ -326,11 +310,7 @@
         "url": "https://pubs.acs.org/doi/10.1021/ed300589k",
         "note": "Peer-reviewed reference on soap chemistry and foam stability"
       }
-    ],
-    "learnMore": {
-      "text": "Wikipedia: Surfactant",
-      "url": "https://en.wikipedia.org/wiki/Surfactant"
-    }
+    ]
   },
   "iodine-value": {
     "category": "properties",
@@ -365,11 +345,7 @@
         "section": "General reference",
         "url": "https://library.aocs.org/"
       }
-    ],
-    "learnMore": {
-      "text": "Wikipedia: Iodine value",
-      "url": "https://en.wikipedia.org/wiki/Iodine_value"
-    }
+    ]
   },
   "ins-value": {
     "category": "properties",
@@ -405,11 +381,7 @@
         "url": "https://doi.org/10.1007/s11746-002-0569-4",
         "note": "Peer-reviewed critique of iodine value as quality predictor"
       }
-    ],
-    "learnMore": {
-      "text": "Wikipedia: Soap",
-      "url": "https://en.wikipedia.org/wiki/Soap"
-    }
+    ]
   },
   "profile-error": {
     "category": "optimization",
