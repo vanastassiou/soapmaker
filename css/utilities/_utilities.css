@@ -1,0 +1,74 @@
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+/* Visibility */
+.hidden {
+    display: none !important;
+}
+
+.u-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Button reset - use for semantic buttons with custom styling */
+.btn-reset {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    text-align: inherit;
+}
+
+/* Text utilities */
+.u-text-muted {
+    color: var(--text-muted);
+}
+
+.u-text-mono {
+    font-family: var(--font-mono);
+}
+
+.u-uppercase {
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+}
+
+/* Layout utilities */
+.u-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.u-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ============================================
+   Reduced Motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

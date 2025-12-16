@@ -129,6 +129,16 @@
     ],
     "term": "Cure time"
   },
+  "density": {
+    "category": "property",
+    "desc": "Mass per unit volume of an oil or fat, typically expressed in g/mL. Used to estimate batch volume from weight.",
+    "details": "Most soap-making oils have densities between 0.91-0.97 g/mL.\n\nLighter oils (coconut ~0.92) give slightly more volume per gram than heavier oils (castor ~0.96).\n\nUsed with the volume estimate calculation to help size moulds.",
+    "related": [
+      "volume-estimate",
+      "fat"
+    ],
+    "term": "Density"
+  },
   "dos": {
     "category": "concept",
     "desc": "Oxidative rancidity appearing as orange or yellow spots with an unpleasant smell. Caused by polyunsaturated fatty acids oxidizing over time.",
@@ -138,15 +148,6 @@
       "cure"
     ],
     "term": "DOS (dreaded orange spots)"
-  },
-  "sourcing-concerns": {
-    "category": "concept",
-    "desc": "Environmental or social issues associated with certain soapmaking ingredients, primarily palm oil and palm kernel oil.",
-    "details": "Palm oil production is linked to deforestation in Indonesia and Malaysia, threatening orangutan and tiger habitats. The RSPO (Roundtable on Sustainable Palm Oil) certifies sustainably sourced palm, though certification effectiveness is debated.\n\nOther concerns include:\n\u2022 High water usage crops (almond, avocado)\n\u2022 Labour practices in some supply chains\n\u2022 Long-distance transport carbon footprint\n\nAlternatives to palm: babassu oil offers similar fatty acid profile; combinations of coconut and other hard fats can replicate palm's bar hardness.",
-    "related": [
-      "palm-oil"
-    ],
-    "term": "Sourcing concerns"
   },
   "essential-oil": {
     "category": "concept",
@@ -180,20 +181,6 @@
       "sap-value"
     ],
     "term": "Fat"
-  },
-  "filter-animal": {
-    "category": "concept",
-    "desc": "Excludes fats derived from animals.",
-    "details": "Compatible with philosophies that forbid use of improperly processed (or any) animal ingredients.",
-    "related": [],
-    "term": "Animal-based fats"
-  },
-  "filter-allergens": {
-    "category": "concept",
-    "desc": "Excludes fats associated with common allergens.",
-    "details": "Filters out oils from tree nuts (almond, hazelnut, macadamia, walnut), legumes (peanut, soy), and coconut (FDA-classified as tree nut).\n\nNote: While saponification may reduce allergenicity, those with severe allergies should exercise caution.",
-    "related": [],
-    "term": "Common allergens"
   },
   "gel-phase": {
     "category": "concept",
@@ -263,13 +250,10 @@
     },
     "references": [
       {
-        "source": "Journal of the American Oil Chemists' Society (Knothe, 2002)",
+        "sourceId": "journal-aocs",
         "section": "Structure Indices in FA Chemistry",
-        "url": "https://doi.org/10.1007/s11746-002-0569-4"
-      },
-      {
-        "source": "Webb, E.T. (1927). Soap and Glycerin Manufacture",
-        "section": "Original INS definition"
+        "url": "https://doi.org/10.1007/s11746-002-0569-4",
+        "note": "Modern analysis of fatty acid structure indices including INS"
       }
     ],
     "related": [
@@ -336,6 +320,17 @@
     ],
     "term": "Lye type"
   },
+  "melting-point": {
+    "category": "property",
+    "desc": "Temperature at which a fat transitions from solid to liquid. Indicates whether an oil is solid or liquid at room temperature.",
+    "details": "Fats with high melting points (coconut ~24°C, palm ~35°C, tallow ~45°C) are solid at room temperature and contribute to bar hardness.\n\nLow or no melting point means liquid at room temperature (olive, sunflower, etc.).\n\nMelting point correlates with saturated fatty acid content.",
+    "related": [
+      "hardness",
+      "saturated",
+      "butter"
+    ],
+    "term": "Melting point"
+  },
   "hydroxylated": {
     "category": "concept",
     "desc": "Fatty acids containing a hydroxyl (-OH) group attached to the carbon chain. Unique soap properties.",
@@ -346,15 +341,6 @@
       "bubbly"
     ],
     "term": "Hydroxylated fatty acids"
-  },
-  "max-fats": {
-    "category": "concept",
-    "desc": "Limits how many different fats the optimizer will use. Fewer fats means simpler recipes; more fats allows finer property tuning.",
-    "details": "3 to 4 fats: Simple recipes, easier to source ingredients.\n\n5 to 6 fats: Good balance of complexity and flexibility.\n\n7 - 8 fats: Maximum control over properties but more ingredients to manage.",
-    "related": [
-      "property-targets"
-    ],
-    "term": "Maximum fats"
   },
   "monounsaturated": {
     "category": "concept",
@@ -392,23 +378,10 @@
     ],
     "term": "Polyunsaturated fatty acids (PUFAs)"
   },
-  "property-targets": {
-    "category": "concept",
-    "desc": "Scores from 0-100 based on your fat blend's fatty acid composition. Higher values mean more of that quality. Only fill in properties that matter to you.",
-    "details": "The optimizer finds fat combinations matching your targets.\n\nEach property is calculated from fatty acid percentages:\n\u2022 Hardness: saturated fats\n\u2022 Cleansing: short-chain saturated (lauric, myristic)\n\u2022 Conditioning: unsaturated fats\n\u2022 Bubbly: lauric + myristic + ricinoleic\n\u2022 Creamy: palmitic + stearic + ricinoleic\n\nLeave fields empty if you don't have a preference.",
-    "related": [
-      "hardness",
-      "cleansing",
-      "conditioning",
-      "bubbly",
-      "creamy"
-    ],
-    "term": "Property targets"
-  },
   "sap-value": {
     "category": "concept",
     "desc": "Saponification value; the amount of alkali needed to convert a fat into soap. Each oil has a unique SAP based on its fatty acid composition.",
-    "details": "Expressed as mg KOH per gram of fat (Codex standard) or as NaOH coefficient. Shorter fatty acid chains = higher SAP (more molecules per gram). This calculator uses NaOH coefficients (g NaOH per g oil).",
+    "details": "Expressed as mg KOH per gram of fat (Codex standard) or as NaOH coefficient. Shorter fatty acid chains = higher SAP (more molecules per gram). This recipe builder uses NaOH coefficients (g NaOH per g oil).",
     "related": [
       "ins",
       "superfat"
@@ -489,6 +462,17 @@
       "dos"
     ],
     "term": "Unsaturated fatty acids"
+  },
+  "usage": {
+    "category": "property",
+    "desc": "Recommended percentage of total fats that a particular oil should comprise in a soap recipe. Staying within range helps achieve balanced soap properties.",
+    "details": "Usage limits exist because:\n\n• Some oils dominate recipes (coconut >30% can be drying)\n• Some oils weaken bars (soft oils >70% = soft bar)\n• Some have strong effects (castor >8% = sticky soap)\n\nLimits are guidelines, not rules. Experienced soapers adjust based on intended use and superfat level.",
+    "related": [
+      "superfat",
+      "hardness",
+      "conditioning"
+    ],
+    "term": "Usage range"
   },
   "volume-estimate": {
     "category": "calculation",

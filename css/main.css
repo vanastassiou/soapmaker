@@ -1,0 +1,26 @@
+/* ============================================
+   Soap Maker - Main Stylesheet
+   ============================================
+
+   This file imports all CSS modules in the correct order.
+   Using native CSS @import for simplicity (no build step required).
+
+   Structure:
+   1. Tokens (variables, design system)
+   2. Base (reset, typography fundamentals)
+   3. Components (reusable UI patterns)
+   4. Utilities (helper classes, overrides)
+
+   ============================================ */
+
+/* Design Tokens */
+@import 'tokens/_variables.css';
+
+/* Base Styles */
+@import 'base/_reset.css';
+
+/* Components - currently in styles.css, to be split incrementally */
+@import 'styles.css';
+
+/* Utilities */
+@import 'utilities/_utilities.css';

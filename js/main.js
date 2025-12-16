@@ -33,28 +33,40 @@ import * as ui from './ui/ui.js';
 
 async function loadData() {
     try {
-        const [fatsResponse, glossaryResponse, fattyAcidsResponse, additivesResponse,
-               fatsSchemaResponse, glossarySchemaResponse, fattyAcidsSchemaResponse, additivesSchemaResponse] = await Promise.all([
+        const [fatsResponse, glossaryResponse, fattyAcidsResponse, additivesResponse, tooltipsResponse, sourcesResponse, formulasResponse,
+               fatsSchemaResponse, glossarySchemaResponse, fattyAcidsSchemaResponse, additivesSchemaResponse, tooltipsSchemaResponse, sourcesSchemaResponse, formulasSchemaResponse] = await Promise.all([
             fetch('./data/fats.json'),
             fetch('./data/glossary.json'),
             fetch('./data/fatty-acids.json'),
             fetch('./data/additives.json'),
+            fetch('./data/tooltips.json'),
+            fetch('./data/sources.json'),
+            fetch('./data/formulas.json'),
             fetch('./data/schemas/fats.schema.json'),
             fetch('./data/schemas/glossary.schema.json'),
             fetch('./data/schemas/fatty-acids.schema.json'),
-            fetch('./data/schemas/additives.schema.json')
+            fetch('./data/schemas/additives.schema.json'),
+            fetch('./data/schemas/tooltips.schema.json'),
+            fetch('./data/schemas/sources.schema.json'),
+            fetch('./data/schemas/formulas.schema.json')
         ]);
 
         state.fatsDatabase = await fatsResponse.json();
         state.glossaryData = await glossaryResponse.json();
         state.fattyAcidsData = await fattyAcidsResponse.json();
         state.additivesDatabase = await additivesResponse.json();
+        state.tooltipsData = await tooltipsResponse.json();
+        state.sourcesData = await sourcesResponse.json();
+        state.formulasData = await formulasResponse.json();
 
         const schemas = {
             fats: await fatsSchemaResponse.json(),
             glossary: await glossarySchemaResponse.json(),
             fattyAcids: await fattyAcidsSchemaResponse.json(),
-            additives: await additivesSchemaResponse.json()
+            additives: await additivesSchemaResponse.json(),
+            tooltips: await tooltipsSchemaResponse.json(),
+            sources: await sourcesSchemaResponse.json(),
+            formulas: await formulasSchemaResponse.json()
         };
 
         validation.initValidation(schemas);
@@ -62,7 +74,10 @@ async function loadData() {
             fats: state.fatsDatabase,
             glossary: state.glossaryData,
             fattyAcids: state.fattyAcidsData,
-            additives: state.additivesDatabase
+            additives: state.additivesDatabase,
+            tooltips: state.tooltipsData,
+            sources: state.sourcesData,
+            formulas: state.formulasData
         });
     } catch (error) {
         console.error('Error loading or validating data:', error);
@@ -909,6 +924,20 @@ function setupPanelHandlers() {
         link.addEventListener('click', handler);
         link.addEventListener('keydown', (e) => handleKeyboardActivation(e, handler));
     });
+
+    // Event delegation for dynamically rendered fa-links (e.g., in final recipe)
+    document.addEventListener('click', (e) => {
+        const faLink = e.target.closest('.fa-link');
+        if (faLink && faLink.dataset.acid) {
+            lastFocusedElement = faLink;
+            ui.showFattyAcidInfo(faLink.dataset.acid, state.fattyAcidsData, state.recipe, state.fatsDatabase);
+            const panel = $('fattyAcidPanel');
+            if (panel) {
+                const closeBtn = panel.querySelector('.close-panel');
+                if (closeBtn) closeBtn.focus();
+            }
+        }
+    });
 }
 
 function setupBuildModeHandlers() {
@@ -1363,7 +1392,9 @@ function handleCreateRecipe() {
         unit: settings.unit,
         fattyAcids,
         properties: { ...properties, iodine, ins },
-        notes
+        notes,
+        formulas: state.formulasData,
+        sources: state.sourcesData
     });
 
     ui.showFinalRecipe();
@@ -1374,12 +1405,8 @@ function setupFinalRecipeHandlers() {
 }
 
 function setupCollapsibleSections() {
-    document.querySelectorAll('.collapsible-header').forEach(header => {
-        header.addEventListener('click', () => {
-            const expanded = header.getAttribute('aria-expanded') === 'true';
-            header.setAttribute('aria-expanded', !expanded);
-        });
-    });
+    // Native <details>/<summary> handles toggle behaviour
+    // This function is kept as a placeholder for any future animation hooks
 }
 
 // ============================================
@@ -1393,7 +1420,11 @@ async function init() {
     restoreState();
 
     updateFatSelectWithFilters();
-    ui.initGlossaryTooltips(state.glossaryData);
+    ui.initHelpPopup(state.glossaryData, state.tooltipsData, (term) => {
+        ui.showGlossaryInfo(term, state.glossaryData, state.recipe, state.fatsDatabase, (t) => {
+            ui.showGlossaryInfo(t, state.glossaryData, state.recipe, state.fatsDatabase);
+        });
+    });
     ui.populatePropertyRanges(PROPERTY_RANGES);
 
     setupSettingsListeners();
@@ -1411,6 +1442,32 @@ async function init() {
 
     renderRecipeList();
     calculate();
+
+    // Handle ?show= URL parameter for deep linking from references page
+    handleShowParameter();
+}
+
+/**
+ * Handle ?show= URL parameter to display info panels for fats/additives
+ */
+function handleShowParameter() {
+    const params = new URLSearchParams(window.location.search);
+    const showParam = params.get('show');
+    if (!showParam) return;
+
+    const [type, ...idParts] = showParam.split('-');
+    const id = idParts.join('-');
+
+    if (type === 'fat' && state.fatsDatabase[id]) {
+        ui.showFatInfo(id, state.fatsDatabase, state.fattyAcidsData, (acidKey) => {
+            ui.showGlossaryInfo(acidKey, state.glossaryData, state.recipe, state.fatsDatabase);
+        });
+    } else if (type === 'additive' && state.additivesDatabase[id]) {
+        ui.showAdditiveInfo(id, state.additivesDatabase);
+    }
+
+    // Clean URL without reloading
+    window.history.replaceState({}, '', window.location.pathname);
 }
 
 document.addEventListener('DOMContentLoaded', init);

@@ -4,6 +4,7 @@
  */
 
 import { CSS_CLASSES, ELEMENT_IDS, FATTY_ACID_KEYS, FATTY_ACID_NAMES, PROPERTY_RANGES } from '../lib/constants.js';
+import { resolveReference } from '../lib/references.js';
 import { $, formatProseList } from './helpers.js';
 
 // ============================================
@@ -292,7 +293,7 @@ function buildFattyAcidProfile(fattyAcids) {
         .filter(acid => (fattyAcids[acid] || 0) > 0)
         .map(acid => `
             <tr>
-                <td>${FATTY_ACID_NAMES[acid]}</td>
+                <td><button type="button" class="fa-link" data-acid="${acid}">${FATTY_ACID_NAMES[acid]}</button></td>
                 <td class="fa-value">${(fattyAcids[acid] || 0).toFixed(0)}%</td>
             </tr>
         `).join('');
@@ -307,6 +308,247 @@ function buildFattyAcidProfile(fattyAcids) {
             </table>
             <p class="sat-unsat-summary">Saturated : Unsaturated = ${saturated.toFixed(0)} : ${unsaturated.toFixed(0)}</p>
         </div>
+    `;
+}
+
+// ============================================
+// Science Section
+// ============================================
+
+/**
+ * Classify a value relative to its recommended range
+ * @param {number} value - The calculated value
+ * @param {Object} range - {min, max}
+ * @returns {string} 'below', 'within', or 'above'
+ */
+function classifyValue(value, range) {
+    // Round to match display precision
+    const rounded = Math.round(value);
+    if (rounded < range.min) return 'below';
+    if (rounded > range.max) return 'above';
+    return 'within';
+}
+
+/**
+ * Get human-readable classification text
+ * @param {string} classification - 'below', 'within', or 'above'
+ * @returns {string} Human-readable text
+ */
+function getClassificationText(classification) {
+    const texts = {
+        below: 'below',
+        within: 'within',
+        above: 'above'
+    };
+    return texts[classification] || 'within';
+}
+
+/**
+ * Build a single property explanation for the science section
+ * @param {string} propertyKey - Key like 'hardness', 'cleansing'
+ * @param {number} value - Calculated value
+ * @param {Object} formulas - Formulas database
+ * @param {Object} sources - Sources database
+ * @returns {string} HTML for the explanation
+ */
+function buildPropertyExplanation(propertyKey, value, formulas, sources) {
+    // Map property keys to formula keys
+    const formulaKeyMap = {
+        hardness: 'hardness',
+        cleansing: 'cleansing',
+        conditioning: 'conditioning',
+        bubbly: 'bubbly',
+        creamy: 'creamy',
+        iodine: 'iodine-value',
+        ins: 'ins-value'
+    };
+
+    const formulaKey = formulaKeyMap[propertyKey];
+    const formula = formulas?.[formulaKey];
+    if (!formula) return '';
+
+    const range = PROPERTY_RANGES[propertyKey];
+    const classification = classifyValue(value, range);
+    const classText = getClassificationText(classification);
+
+    // Get resolved reference if available
+    let citationHtml = '';
+    let learnMoreHtml = '';
+
+    if (formula.references && formula.references.length > 0) {
+        const resolved = resolveReference(formula.references[0], sources);
+        if (resolved.url) {
+            citationHtml = `
+                <p class="science-citation">
+                    Source: <a href="${resolved.url}" target="_blank" rel="noopener">${resolved.source}</a>
+                </p>`;
+        } else if (resolved.source) {
+            citationHtml = `<p class="science-citation">Source: ${resolved.source}</p>`;
+        }
+    }
+
+    if (formula.learnMore) {
+        learnMoreHtml = `
+            <p class="science-learn-more">
+                Want to learn more? <a href="${formula.learnMore.url}" target="_blank" rel="noopener">${formula.learnMore.text}</a>
+            </p>`;
+    }
+
+    return `
+        <div class="science-explanation">
+            <h5>${formula.name}: ${value.toFixed(0)}</h5>
+            <p>${formula.userFriendly}</p>
+            <p class="science-value-context">
+                Your value of <strong>${value.toFixed(0)}</strong> is ${classText} the recommended range of ${range.min}–${range.max}.
+            </p>
+            ${citationHtml}
+            ${learnMoreHtml}
+        </div>
+    `;
+}
+
+/**
+ * Build the lye calculation explanation
+ * @param {Object} data - Recipe data
+ * @param {Object} formulas - Formulas database
+ * @param {Object} sources - Sources database
+ * @returns {string} HTML for lye explanation
+ */
+function buildLyeExplanation(data, formulas, sources) {
+    const formula = formulas?.['lye-amount'];
+    if (!formula) return '';
+
+    const lyeFullName = data.lyeType === 'NaOH' ? 'sodium hydroxide' : 'potassium hydroxide';
+
+    // Get citation
+    let citationHtml = '';
+    if (formula.references && formula.references.length > 0) {
+        const resolved = resolveReference(formula.references[0], sources);
+        if (resolved.url) {
+            citationHtml = `
+                <p class="science-citation">
+                    Source: <a href="${resolved.url}" target="_blank" rel="noopener">${resolved.source}</a>
+                </p>`;
+        }
+    }
+
+    let learnMoreHtml = '';
+    if (formula.learnMore) {
+        learnMoreHtml = `
+            <p class="science-learn-more">
+                Want to learn more? <a href="${formula.learnMore.url}" target="_blank" rel="noopener">${formula.learnMore.text}</a>
+            </p>`;
+    }
+
+    return `
+        <div class="science-explanation">
+            <h5>Lye calculation</h5>
+            <p>${formula.userFriendly}</p>
+            <p class="science-value-context">
+                Your recipe requires <strong>${data.lyeAmount.toFixed(2)} ${data.unit}</strong> of ${lyeFullName} with a <strong>${data.superfat}% superfat</strong>.
+            </p>
+            ${citationHtml}
+            ${learnMoreHtml}
+        </div>
+    `;
+}
+
+/**
+ * Build the water ratio explanation
+ * @param {Object} data - Recipe data
+ * @param {Object} formulas - Formulas database
+ * @param {Object} sources - Sources database
+ * @returns {string} HTML for water explanation
+ */
+function buildWaterExplanation(data, formulas, sources) {
+    const formula = formulas?.['water-amount'];
+    if (!formula) return '';
+
+    // Calculate lye concentration
+    const lyeConcentration = (data.lyeAmount / (data.lyeAmount + data.waterAmount) * 100).toFixed(0);
+
+    // Get citation
+    let citationHtml = '';
+    if (formula.references && formula.references.length > 0) {
+        const resolved = resolveReference(formula.references[0], sources);
+        if (resolved.url) {
+            citationHtml = `
+                <p class="science-citation">
+                    Source: <a href="${resolved.url}" target="_blank" rel="noopener">${resolved.source}</a>
+                </p>`;
+        }
+    }
+
+    let learnMoreHtml = '';
+    if (formula.learnMore) {
+        learnMoreHtml = `
+            <p class="science-learn-more">
+                Want to learn more? <a href="${formula.learnMore.url}" target="_blank" rel="noopener">${formula.learnMore.text}</a>
+            </p>`;
+    }
+
+    return `
+        <div class="science-explanation">
+            <h5>Water and lye concentration</h5>
+            <p>${formula.userFriendly}</p>
+            <p class="science-value-context">
+                With a <strong>${data.waterRatio}:1</strong> water-to-lye ratio, your solution is approximately <strong>${lyeConcentration}%</strong> lye concentration.
+            </p>
+            ${citationHtml}
+            ${learnMoreHtml}
+        </div>
+    `;
+}
+
+/**
+ * Build all science explanations HTML
+ * @param {Object} data - Recipe data
+ * @returns {string} HTML for all explanations
+ */
+function buildScienceExplanations(data) {
+    const { properties, formulas, sources } = data;
+    if (!formulas || !sources) return '';
+
+    const explanations = [];
+
+    // Core calculations
+    explanations.push(buildLyeExplanation(data, formulas, sources));
+    explanations.push(buildWaterExplanation(data, formulas, sources));
+
+    // Soap properties
+    const propertyOrder = ['hardness', 'cleansing', 'conditioning', 'bubbly', 'creamy', 'iodine', 'ins'];
+    propertyOrder.forEach(key => {
+        if (properties[key] !== undefined) {
+            explanations.push(buildPropertyExplanation(key, properties[key], formulas, sources));
+        }
+    });
+
+    return explanations.filter(html => html).join('');
+}
+
+/**
+ * Build the science section with expandable details
+ * @param {Object} data - Recipe data
+ * @returns {string} HTML for science section
+ */
+function buildScienceSection(data) {
+    return `
+        <details class="science-section">
+            <summary class="science-toggle">
+                <span class="details-toggle">Give me the science!</span>
+                <span class="details-hide">Hide the science</span>
+            </summary>
+            <div class="science-content">
+                <h4>The science behind it</h4>
+                <div class="recipe-details-row">
+                    ${buildRecipeSummary(data)}
+                    ${buildFattyAcidProfile(data.fattyAcids)}
+                </div>
+                <div class="science-explanations">
+                    ${buildScienceExplanations(data)}
+                </div>
+            </div>
+        </details>
     `;
 }
 
@@ -340,10 +582,7 @@ export function renderFinalRecipe(container, data) {
             ${buildQualitativeSummary(data.properties, data.notes)}
             ${buildIngredientsList(data)}
             ${buildProcedureList(hasAdditives)}
-            <div class="recipe-details-row">
-                ${buildRecipeSummary(data)}
-                ${buildFattyAcidProfile(data.fattyAcids)}
-            </div>
+            ${buildScienceSection(data)}
         </div>
     `;
 }
