@@ -3,7 +3,7 @@
     "category": "colourant",
     "color": "#1a1a1a",
     "density": 2.1,
-    "description": "Activated carbon powder from plant sources. Creates deep black to gray colors. Add at trace.",
+    "description": "Activated carbon powder from plant sources. Creates deep black to grey colours. Add at trace.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -11,8 +11,8 @@
     "name": "Activated charcoal",
     "references": [
       {
+        "sourceId": "cosmetic-ingredient-review",
         "section": "Cosmetic use concentrations 0.001-10%",
-        "source": "CIR Safety Assessment of Charcoal Ingredients",
         "url": "https://www.cir-safety.org/sites/default/files/SLR_Charcoal_062023.pdf"
       }
     ],
@@ -38,8 +38,8 @@
     "name": "Aloe vera powder (200:1)",
     "references": [
       {
+        "sourceId": "cosmetic-ingredient-review",
         "section": "Safety Assessment of Aloe Barbadensis",
-        "source": "Cosmetic Ingredient Review",
         "url": "https://journals.sagepub.com/doi/pdf/10.1080/10915810701351186"
       }
     ],
@@ -66,8 +66,8 @@
     "name": "Annatto extract",
     "references": [
       {
+        "sourceId": "fda-cfr",
         "section": "Color additive for cosmetics including eye area",
-        "source": "FDA 21 CFR 73.2030",
         "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-73/subpart-C"
       }
     ],
@@ -94,9 +94,9 @@
     "name": "Apricot shell powder",
     "references": [
       {
-        "section": "Prunus Armeniaca Seed Powder",
-        "source": "INCI Beauty",
-        "url": "https://incibeauty.com/en/ingredients/9058-prunus-armeniaca-seed-powder"
+        "sourceId": "pmc",
+        "section": "Apricot Kernel: Bioactivity, Characterization, Applications, and Health Attributes",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9332734/"
       }
     ],
     "safety": {
@@ -113,7 +113,7 @@
   "beeswax": {
     "category": "functional",
     "density": 0.96,
-    "description": "Natural wax from Apis mellifera. Increases bar hardness. Melt into oils before adding lye. Melting point 62-64°C.",
+    "description": "Natural wax from Apis mellifera. Increases bar hardness. Melt into oils before adding lye. Melting point 62-64\u00b0C.",
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
@@ -121,8 +121,8 @@
     "name": "Beeswax (yellow)",
     "references": [
       {
+        "sourceId": "cosmetic-ingredient-review",
         "section": "Safety Assessment of Beeswax and Carnauba Wax",
-        "source": "Cosmetic Ingredient Review",
         "url": "https://www.cir-safety.org/sites/default/files/RR_Waxes.pdf"
       }
     ],
@@ -150,8 +150,8 @@
     "name": "Bentonite clay",
     "references": [
       {
+        "sourceId": "who-inchem",
         "section": "Bentonite, Kaolin and Selected Clay Minerals, Section 2.2",
-        "source": "WHO/INCHEM Environmental Health Criteria 231 (2005)",
         "url": "https://www.inchem.org/documents/ehc/ehc/ehc231.htm"
       }
     ],
@@ -178,8 +178,8 @@
     "name": "Bergamot essential oil (FCF)",
     "references": [
       {
+        "sourceId": "ifra",
         "section": "Bergamot oil expressed Amendment 49",
-        "source": "IFRA",
         "url": "https://ifrafragrance.org/standards/IFRA_STD_087.pdf"
       }
     ],
@@ -187,7 +187,11 @@
       "casNumber": "8007-75-8",
       "flashPointC": 57,
       "ifraCategory9Limit": 11.2,
-      "majorConstituents": ["linalyl-acetate", "limonene", "linalool"]
+      "majorConstituents": [
+        "linalyl-acetate",
+        "limonene",
+        "linalool"
+      ]
     },
     "scentNote": "top",
     "usage": {
@@ -208,9 +212,9 @@
     "name": "Buttermilk powder",
     "references": [
       {
-        "section": "Buttermilk Powder Product Info",
-        "source": "Wholesale Supplies Plus",
-        "url": "https://www.wholesalesuppliesplus.com/products/buttermilk-powder.aspx"
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Bovine Milk Proteins and Protein Derivatives as Used in Cosmetics",
+        "url": "https://www.cir-safety.org/sites/default/files/Milk%20Proteins.pdf"
       }
     ],
     "safety": {
@@ -227,7 +231,7 @@
     "category": "colourant",
     "color": "#ffa500",
     "density": 0.3,
-    "description": "Dried Calendula officinalis flowers. Only botanical that retains color in high pH soap. Use for decoration or oil infusion.",
+    "description": "Dried Calendula officinalis flowers. Only botanical that retains colour in high pH soap. Use for decoration or oil infusion.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -235,9 +239,9 @@
     "name": "Calendula petals (dried)",
     "references": [
       {
-        "section": "Calendula Officinalis Extract",
-        "source": "SpecialChem",
-        "url": "https://www.specialchem.com/cosmetics/inci-ingredients/calendula-officinalis-extract"
+        "sourceId": "ema",
+        "section": "European Union herbal monograph on Calendula officinalis L., flos (Revision 1)",
+        "url": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-calendula-officinalis-l-flos-revision-1_en.pdf"
       }
     ],
     "safety": {
@@ -254,7 +258,7 @@
   "candelilla-wax": {
     "category": "functional",
     "density": 0.99,
-    "description": "Plant-based wax from Euphorbiaceae species. Vegan alternative to beeswax. Melting point 68.5-72.5°C.",
+    "description": "Plant-based wax from Euphorbiaceae species. Vegan alternative to beeswax. Melting point 68.5-72.5\u00b0C.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -262,9 +266,9 @@
     "name": "Candelilla wax",
     "references": [
       {
-        "section": "Direct Food Substances GRAS",
-        "source": "FDA 21 CFR 184.1978",
-        "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRSearch.cfm?fr=184.1978"
+        "sourceId": "fda-cfr",
+        "section": "Direct Food Substances GRAS (21 CFR 184.1976)",
+        "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-184/subpart-B/section-184.1976"
       }
     ],
     "safety": {
@@ -282,7 +286,7 @@
   "carnauba-wax": {
     "category": "functional",
     "density": 0.99,
-    "description": "Hardest natural wax from Copernicia cerifera palm. Vegan. Brittle alone, combine with softer waxes. Melting point 82-85°C.",
+    "description": "Hardest natural wax from Copernicia cerifera palm. Vegan. Brittle alone, combine with softer waxes. Melting point 82-85\u00b0C.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -290,8 +294,8 @@
     "name": "Carnauba wax",
     "references": [
       {
+        "sourceId": "cosmetic-ingredient-review",
         "section": "Safety Assessment of Beeswax and Carnauba Wax",
-        "source": "Cosmetic Ingredient Review",
         "url": "https://www.cir-safety.org/sites/default/files/RR_Waxes.pdf"
       }
     ],
@@ -318,8 +322,8 @@
     "name": "Cedarwood essential oil (atlas)",
     "references": [
       {
-        "section": "Cedar oil compound summary",
-        "source": "PubChem CID 6431015",
+        "sourceId": "pubchem",
+        "section": "(-)-α-Cedrene (CID 6431015) - major constituent of cedarwood oil",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6431015"
       }
     ],
@@ -351,9 +355,9 @@
     "name": "Chamomile flowers (dried)",
     "references": [
       {
-        "section": "Natural Chamomile Soap Recipe",
-        "source": "Lovely Greens",
-        "url": "https://lovelygreens.com/natural-chamomile-soap-recipe-soap-making-instructions/"
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Amended Safety Assessment of Chamomilla recutita-Derived Ingredients as Used in Cosmetics",
+        "url": "https://www.cir-safety.org/sites/default/files/chamomilla%20recutita.pdf"
       }
     ],
     "safety": {
@@ -379,8 +383,8 @@
     "name": "Chromium oxide green",
     "references": [
       {
+        "sourceId": "fda-cfr",
         "section": "Chromium Oxide Greens",
-        "source": "FDA 21 CFR 73.2327",
         "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-73/subpart-C"
       }
     ],
@@ -398,7 +402,7 @@
   },
   "clary-sage-eo": {
     "category": "essential-oil",
-    "density": 0.90,
+    "density": 0.9,
     "description": "Steam-distilled from Salvia sclarea flowering tops. Primary constituents: linalyl acetate (56-78%), linalool (6.5-24%), sclareol.",
     "dietary": {
       "animalBased": false,
@@ -407,16 +411,20 @@
     "name": "Clary sage essential oil",
     "references": [
       {
-        "section": "Clary sage oil CAS 8016-63-5",
-        "source": "ChemicalBook",
-        "url": "https://www.chemicalbook.com/ChemicalProductProperty_EN_CB9340183.htm"
+        "sourceId": "pubchem",
+        "section": "Clary sage oil (CID 6850745)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850745"
       }
     ],
     "safety": {
       "casNumber": "8016-63-5",
       "flashPointC": 79,
       "ifraCategory9Limit": 3.8,
-      "majorConstituents": ["linalyl-acetate", "linalool", "sclareol"]
+      "majorConstituents": [
+        "linalyl-acetate",
+        "linalool",
+        "sclareol"
+      ]
     },
     "scentNote": "middle",
     "usage": {
@@ -428,7 +436,7 @@
   "coffee-grounds": {
     "category": "functional",
     "density": 0.4,
-    "description": "Spent Coffea arabica grounds. Used grounds preferred - softer, less color bleed. Dry thoroughly before adding at trace.",
+    "description": "Spent Coffea arabica grounds. Used grounds preferred - softer, less colour bleed. Dry thoroughly before adding at trace.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -436,9 +444,9 @@
     "name": "Coffee grounds (used)",
     "references": [
       {
-        "section": "Tips for Adding Coffee to Cold Process Soap",
-        "source": "Lovin Soap Studio",
-        "url": "https://lovinsoap.com/2021/07/tips-for-adding-coffee-to-your-cold-process-soap/"
+        "sourceId": "pmc",
+        "section": "Coffea arabica: An Emerging Active Ingredient in Dermato-Cosmetic Applications",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11858793/"
       }
     ],
     "safety": {
@@ -464,8 +472,8 @@
     "name": "Colloidal oatmeal",
     "references": [
       {
+        "sourceId": "fda-cfr",
         "section": "Skin protectant active ingredients - Colloidal oatmeal",
-        "source": "FDA 21 CFR 347.10",
         "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-347/subpart-B/section-347.10"
       }
     ],
@@ -491,16 +499,20 @@
     "name": "Eucalyptus essential oil (globulus)",
     "references": [
       {
-        "section": "Eucalyptus oil CAS 8000-48-4",
-        "source": "ChemicalBook",
-        "url": "https://www.chemicalbook.com/ChemicalProductProperty_EN_CB9727874.htm"
+        "sourceId": "pubchem",
+        "section": "Eucalyptus oil compound summary",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Eucalyptus-Oil"
       }
     ],
     "safety": {
       "casNumber": "8000-48-4",
       "flashPointC": 49,
       "ifraCategory9Limit": 2.5,
-      "majorConstituents": ["eucalyptol", "1,8-cineole", "alpha-pinene"]
+      "majorConstituents": [
+        "eucalyptol",
+        "1,8-cineole",
+        "alpha-pinene"
+      ]
     },
     "scentNote": "top",
     "usage": {
@@ -520,16 +532,20 @@
     "name": "Frankincense essential oil (Boswellia carterii)",
     "references": [
       {
-        "section": "frankincense oil CAS 8016-36-2",
-        "source": "The Good Scents Company",
-        "url": "https://www.thegoodscentscompany.com/data/es1004051.html"
+        "sourceId": "pmc",
+        "section": "Review of the Chemical Composition, Pharmacological Effects, Pharmacokinetics, and Quality Control of Boswellia carterii",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8776457/"
       }
     ],
     "safety": {
       "casNumber": "8016-36-2",
       "flashPointC": 51,
       "ifraCategory9Limit": 4.0,
-      "majorConstituents": ["alpha-pinene", "limonene", "alpha-thujene"]
+      "majorConstituents": [
+        "alpha-pinene",
+        "limonene",
+        "alpha-thujene"
+      ]
     },
     "scentNote": "base",
     "usage": {
@@ -550,8 +566,8 @@
     "name": "French green clay (illite)",
     "references": [
       {
+        "sourceId": "who-inchem",
         "section": "Bentonite, Kaolin and Selected Clay Minerals, Section 2.3",
-        "source": "WHO/INCHEM Environmental Health Criteria 231 (2005)",
         "url": "https://www.inchem.org/documents/ehc/ehc/ehc231.htm"
       }
     ],
@@ -577,8 +593,8 @@
     "name": "Geranium essential oil (rose)",
     "references": [
       {
+        "sourceId": "pubmed",
         "section": "Chemical composition and biological activities of Pelargonium graveolens",
-        "source": "PubMed",
         "url": "https://pubmed.ncbi.nlm.nih.gov/23027699/"
       }
     ],
@@ -586,7 +602,11 @@
       "casNumber": "8000-46-2",
       "flashPointC": 80,
       "ifraCategory9Limit": 1.1,
-      "majorConstituents": ["citronellol", "geraniol", "linalool"]
+      "majorConstituents": [
+        "citronellol",
+        "geraniol",
+        "linalool"
+      ]
     },
     "scentNote": "middle",
     "usage": {
@@ -607,9 +627,9 @@
     "name": "Goat milk powder",
     "references": [
       {
-        "section": "Goat Milk Powder Cosmetic Grade",
-        "source": "Lotioncrafter",
-        "url": "https://lotioncrafter.com/products/goat-milk-powder"
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Bovine Milk Proteins and Protein Derivatives as Used in Cosmetics",
+        "url": "https://www.cir-safety.org/sites/default/files/Milk%20Proteins.pdf"
       }
     ],
     "safety": {
@@ -633,8 +653,8 @@
     "name": "Grapefruit essential oil (pink)",
     "references": [
       {
+        "sourceId": "pmc",
         "section": "Chemical Profiling and Anti-Inflammatory Activities of Grapefruit Essential Oils",
-        "source": "PMC8199889",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8199889/"
       }
     ],
@@ -642,7 +662,11 @@
       "casNumber": "8016-20-4",
       "flashPointC": 45,
       "ifraCategory9Limit": 4.0,
-      "majorConstituents": ["d-limonene", "beta-myrcene", "gamma-terpinene"]
+      "majorConstituents": [
+        "d-limonene",
+        "beta-myrcene",
+        "gamma-terpinene"
+      ]
     },
     "scentNote": "top",
     "usage": {
@@ -662,8 +686,8 @@
     "name": "Grapefruit seed extract (GSE)",
     "references": [
       {
+        "sourceId": "pubmed",
         "section": "Antimicrobial Efficacy of Grapefruit Seed Extract",
-        "source": "PubMed",
         "url": "https://pubmed.ncbi.nlm.nih.gov/10399191/"
       }
     ],
@@ -689,8 +713,8 @@
     "name": "Honey",
     "references": [
       {
+        "sourceId": "cosmetic-ingredient-review",
         "section": "Safety Assessment of Honey-Derived Ingredients",
-        "source": "Cosmetic Ingredient Review",
         "url": "https://www.cir-safety.org/sites/default/files/honey062020FR.pdf"
       }
     ],
@@ -718,9 +742,9 @@
     "name": "Indigo powder",
     "references": [
       {
-        "section": "Indigofera Tinctoria Powder",
-        "source": "EWG Skin Deep",
-        "url": "https://www.ewg.org/skindeep/ingredients/726797-INDIGOFERA_TINCTORIA_INDIGO_POWDER/"
+        "sourceId": "sccs",
+        "section": "Opinion on hair dye Indigofera tinctoria (SCCS/1615/20)",
+        "url": "https://health.ec.europa.eu/document/download/22957d7f-574c-4956-a2d4-fb18ee00ac65_en"
       }
     ],
     "safety": {
@@ -746,8 +770,8 @@
     "name": "Iron oxide black",
     "references": [
       {
+        "sourceId": "fda-cfr",
         "section": "Iron oxides",
-        "source": "FDA 21 CFR 73.2250",
         "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-73/subpart-C/section-73.2250"
       }
     ],
@@ -774,8 +798,8 @@
     "name": "Iron oxide red",
     "references": [
       {
+        "sourceId": "fda-cfr",
         "section": "Iron oxides",
-        "source": "FDA 21 CFR 73.2250",
         "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-73/subpart-C/section-73.2250"
       }
     ],
@@ -802,8 +826,8 @@
     "name": "Iron oxide yellow",
     "references": [
       {
+        "sourceId": "fda-cfr",
         "section": "Iron oxides",
-        "source": "FDA 21 CFR 73.2250",
         "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-73/subpart-C/section-73.2250"
       }
     ],
@@ -829,8 +853,8 @@
     "name": "Jojoba oil",
     "references": [
       {
+        "sourceId": "pmc",
         "section": "Jojoba Oil: An Updated Comprehensive Review on Chemistry, Pharmaceutical Uses, and Toxicity",
-        "source": "Polymers (PMC8197201)",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8197201/"
       }
     ],
@@ -856,8 +880,8 @@
     "name": "Kaolin clay (white)",
     "references": [
       {
+        "sourceId": "who-inchem",
         "section": "Bentonite, Kaolin and Selected Clay Minerals, Section 2.1",
-        "source": "WHO/INCHEM Environmental Health Criteria 231 (2005)",
         "url": "https://www.inchem.org/documents/ehc/ehc/ehc231.htm"
       }
     ],
@@ -884,8 +908,8 @@
     "name": "Lanolin (anhydrous)",
     "references": [
       {
+        "sourceId": "cosmetic-ingredient-review",
         "section": "Safety Assessment of Lanolin-Derived Ingredients",
-        "source": "Cosmetic Ingredient Review",
         "url": "https://www.cir-safety.org/sites/default/files/Lanolin.pdf"
       }
     ],
@@ -916,8 +940,8 @@
     "name": "Lavender essential oil",
     "references": [
       {
-        "section": "Lavender oil compound summary",
-        "source": "PubChem CID 6654",
+        "sourceId": "pubchem",
+        "section": "Lavender oil (CID 6654)",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6654"
       }
     ],
@@ -948,16 +972,20 @@
     "name": "Lemongrass essential oil",
     "references": [
       {
-        "section": "Oil of lemongrass specification",
-        "source": "ISO 3217:1974",
-        "url": "https://www.iso.org/standard/8421.html"
+        "sourceId": "pubchem",
+        "section": "Lemongrass oil (CID 6850740)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850740"
       }
     ],
     "safety": {
       "casNumber": "8007-02-1",
       "flashPointC": 74,
       "ifraCategory9Limit": 0.6,
-      "majorConstituents": ["citral", "geranial", "neral"]
+      "majorConstituents": [
+        "citral",
+        "geranial",
+        "neral"
+      ]
     },
     "scentNote": "top",
     "usage": {
@@ -977,16 +1005,20 @@
     "name": "Lime essential oil (distilled)",
     "references": [
       {
-        "section": "Lime oil CAS 8008-26-2",
-        "source": "ChemicalBook",
-        "url": "https://www.chemicalbook.com/ChemicalProductProperty_EN_CB1324891.htm"
+        "sourceId": "pubchem",
+        "section": "Lime oil (CID 6850737)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850737"
       }
     ],
     "safety": {
       "casNumber": "8008-26-2",
       "flashPointC": 50,
       "ifraCategory9Limit": 3.0,
-      "majorConstituents": ["d-limonene", "gamma-terpinene", "alpha-pinene"]
+      "majorConstituents": [
+        "d-limonene",
+        "gamma-terpinene",
+        "alpha-pinene"
+      ]
     },
     "scentNote": "top",
     "usage": {
@@ -1006,16 +1038,21 @@
     "name": "May chang essential oil (Litsea cubeba)",
     "references": [
       {
-        "section": "Litsea cubeba oil CAS 68855-99-2",
-        "source": "ChemicalBook",
-        "url": "https://www.chemicalbook.com/ChemicalProductProperty_EN_CB5157013.htm"
+        "sourceId": "pubchem",
+        "section": "Litsea cubeba oil (CID 101306076)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/101306076"
       }
     ],
     "safety": {
       "casNumber": "68855-99-2",
       "flashPointC": 54,
       "ifraCategory9Limit": 0.6,
-      "majorConstituents": ["citral", "geranial", "neral", "limonene"]
+      "majorConstituents": [
+        "citral",
+        "geranial",
+        "neral",
+        "limonene"
+      ]
     },
     "scentNote": "top",
     "usage": {
@@ -1028,7 +1065,7 @@
     "category": "colourant",
     "color": "#b87333",
     "density": 3.2,
-    "description": "Mica coated with iron oxides (≤55% by weight). Creates bronze, copper, gold effects. Color-stable in high pH soap.",
+    "description": "Mica coated with iron oxides (\u226455% by weight). Creates bronze, copper, gold effects. Color-stable in high pH soap.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1036,8 +1073,8 @@
     "name": "Mica (iron oxide coated)",
     "references": [
       {
+        "sourceId": "fda-cfr",
         "section": "Mica-Based Pearlescent Pigments",
-        "source": "FDA 21 CFR 73.2496",
         "url": "https://hfpappexternal.fda.gov/scripts/fdcc/index.cfm?set=ColorAdditives&id=MicaBasedPearlescentPigments"
       }
     ],
@@ -1065,8 +1102,8 @@
     "name": "Mica pearl (titanium dioxide)",
     "references": [
       {
+        "sourceId": "federal-register",
         "section": "Mica-Based Pearlescent Pigments",
-        "source": "Federal Register 2015",
         "url": "https://www.federalregister.gov/documents/2015/09/30/2015-24795/listing-of-color-additives-exempt-from-certification-mica-based-pearlescent-pigments"
       }
     ],
@@ -1093,8 +1130,8 @@
     "name": "Patchouli essential oil",
     "references": [
       {
-        "section": "Patchoulol compound summary",
-        "source": "PubChem CID 442384",
+        "sourceId": "pubchem",
+        "section": "Patchoulol (CID 442384)",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/442384"
       }
     ],
@@ -1124,8 +1161,8 @@
     "name": "Peppermint essential oil",
     "references": [
       {
-        "section": "Peppermint oil compound summary",
-        "source": "PubChem CID 16666",
+        "sourceId": "pubchem",
+        "section": "Peppermint oil (CID 16666)",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/16666"
       }
     ],
@@ -1156,9 +1193,9 @@
     "name": "Poppy seeds",
     "references": [
       {
-        "section": "Poppy Seeds Natural Exfoliant",
-        "source": "Natural Bulk Supplies",
-        "url": "https://naturalbulksupplies.com/poppy-seeds/"
+        "sourceId": "pubchem",
+        "section": "Papaver somniferum (opium poppy) taxonomy",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/Papaver-somniferum"
       }
     ],
     "safety": {
@@ -1184,9 +1221,9 @@
     "name": "Pumice powder (fine)",
     "references": [
       {
-        "section": "Pumice Stone Properties",
-        "source": "Chemical Book",
-        "url": "https://www.chemicalbook.com/ChemicalProductProperty_EN_CB6442655.htm"
+        "sourceId": "usgs",
+        "section": "Pumite and Pumicite Statistics",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-pumice.pdf"
       }
     ],
     "safety": {
@@ -1212,9 +1249,9 @@
     "name": "Rose petals (dried)",
     "references": [
       {
-        "section": "Rose Petal Soap Making Tips",
-        "source": "Soap Legacy",
-        "url": "https://soaplegacy.com/soap-making-with-rose-petals/"
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Rosa damascena-Derived Ingredients as Used in Cosmetics",
+        "url": "https://www.cir-safety.org/sites/default/files/Rosa%20damascena_0.pdf"
       }
     ],
     "safety": {
@@ -1239,8 +1276,8 @@
     "name": "Rosemary essential oil",
     "references": [
       {
+        "sourceId": "pmc",
         "section": "Evaluation of Marketed Rosemary Essential Oils",
-        "source": "PMC10445223",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10445223/"
       }
     ],
@@ -1248,7 +1285,11 @@
       "casNumber": "8000-25-7",
       "flashPointC": 43,
       "ifraCategory9Limit": 4.1,
-      "majorConstituents": ["1,8-cineole", "camphor", "alpha-pinene"]
+      "majorConstituents": [
+        "1,8-cineole",
+        "camphor",
+        "alpha-pinene"
+      ]
     },
     "scentNote": "middle",
     "usage": {
@@ -1268,8 +1309,8 @@
     "name": "Rosemary oleoresin extract (ROE)",
     "references": [
       {
+        "sourceId": "fda-cfr",
         "section": "GRAS - Essential Oils and Oleoresins",
-        "source": "FDA 21 CFR 182.10 & 182.20",
         "url": "https://hfpappexternal.fda.gov/scripts/fdcc/index.cfm?set=FoodSubstances&id=ROSEMARYOILROSEMARINUSOFFICINALIS"
       }
     ],
@@ -1296,8 +1337,8 @@
     "name": "Sandalwood essential oil (East Indian)",
     "references": [
       {
+        "sourceId": "pmc",
         "section": "Sandalwood Album Oil as Botanical Therapeutic in Dermatology",
-        "source": "PMC5749697",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5749697/"
       }
     ],
@@ -1305,7 +1346,11 @@
       "casNumber": "8006-87-9",
       "flashPointC": 92,
       "ifraCategory9Limit": 5.0,
-      "majorConstituents": ["alpha-santalol", "beta-santalol", "santalene"]
+      "majorConstituents": [
+        "alpha-santalol",
+        "beta-santalol",
+        "santalene"
+      ]
     },
     "scentNote": "base",
     "usage": {
@@ -1325,9 +1370,9 @@
     "name": "Sea salt (fine grain)",
     "references": [
       {
-        "section": "Sea Salt Benefits for Skin",
-        "source": "Bloom In Soap",
-        "url": "https://www.bloominsoap.co.uk/blogs/news/sea-salt-soap-benefits-for-skin"
+        "sourceId": "pubchem",
+        "section": "Sodium chloride (CID 5234)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5234"
       }
     ],
     "safety": {
@@ -1353,8 +1398,8 @@
     "name": "Silk amino acids (hydrolyzed silk)",
     "references": [
       {
+        "sourceId": "cosmetic-ingredient-review",
         "section": "Safety Assessment of Silk Protein Ingredients",
-        "source": "Cosmetic Ingredient Review",
         "url": "https://www.cir-safety.org/sites/default/files/silk%20proteins.pdf"
       }
     ],
@@ -1380,16 +1425,20 @@
     "name": "Spearmint essential oil",
     "references": [
       {
-        "section": "Spearmint oil CAS 8008-79-5",
-        "source": "ChemicalBook",
-        "url": "https://www.chemicalbook.com/ChemicalProductProperty_EN_CB0722780.htm"
+        "sourceId": "pubchem",
+        "section": "Spearmint oil (CID 6850653)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850653"
       }
     ],
     "safety": {
       "casNumber": "8008-79-5",
       "flashPointC": 88,
       "ifraCategory9Limit": 1.6,
-      "majorConstituents": ["carvone", "limonene", "menthol"]
+      "majorConstituents": [
+        "carvone",
+        "limonene",
+        "menthol"
+      ]
     },
     "scentNote": "top",
     "usage": {
@@ -1402,7 +1451,7 @@
     "category": "colourant",
     "color": "#3a7d7c",
     "density": 0.4,
-    "description": "Dried blue-green algae (Limnospira spp.) powder. pH-stable natural colorant. Rich in phycocyanin.",
+    "description": "Dried blue-green algae (Limnospira spp.) powder. pH-stable natural colourant. Rich in phycocyanin.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1410,8 +1459,8 @@
     "name": "Spirulina powder",
     "references": [
       {
+        "sourceId": "pmc",
         "section": "Spirulina as Key Ingredient in Eco-Friendly Cosmetics",
-        "source": "PMC12190513",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12190513/"
       }
     ],
@@ -1437,8 +1486,8 @@
     "name": "Sodium lactate",
     "references": [
       {
-        "section": "Sodium Lactate compound summary",
-        "source": "PubChem CID 23666456",
+        "sourceId": "pubchem",
+        "section": "Sodium lactate (CID 23666456)",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Sodium-Lactate"
       }
     ],
@@ -1465,8 +1514,8 @@
     "name": "Sugar (sucrose)",
     "references": [
       {
-        "section": "Sucrose compound summary",
-        "source": "PubChem CID 5988",
+        "sourceId": "pubchem",
+        "section": "Sucrose (CID 5988)",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5988"
       }
     ],
@@ -1492,8 +1541,8 @@
     "name": "Sweet orange essential oil",
     "references": [
       {
+        "sourceId": "cosmetic-ingredient-review",
         "section": "Safety Assessment of Citrus-Derived Peel Oils",
-        "source": "CIR Safety",
         "url": "https://www.cir-safety.org/sites/default/files/cpeelo092014FR.pdf"
       }
     ],
@@ -1501,7 +1550,12 @@
       "casNumber": "8008-57-9",
       "flashPointC": 48,
       "ifraCategory9Limit": 3.4,
-      "majorConstituents": ["d-limonene", "octanal", "decanal", "citral"]
+      "majorConstituents": [
+        "d-limonene",
+        "octanal",
+        "decanal",
+        "citral"
+      ]
     },
     "scentNote": "top",
     "usage": {
@@ -1521,8 +1575,8 @@
     "name": "Salt (sodium chloride)",
     "references": [
       {
-        "section": "Sodium Chloride compound summary",
-        "source": "PubChem CID 5234",
+        "sourceId": "pubchem",
+        "section": "Sodium chloride (CID 5234)",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5234"
       }
     ],
@@ -1549,9 +1603,9 @@
     "name": "Tea tree essential oil",
     "references": [
       {
-        "section": "Essential oil of Melaleuca, terpinen-4-ol type (Tea Tree oil)",
-        "source": "ISO 4730:2017",
-        "url": "https://www.iso.org/standard/69082.html"
+        "sourceId": "pubchem",
+        "section": "Tea tree oil (CID 11093217)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/11093217"
       }
     ],
     "safety": {
@@ -1573,7 +1627,7 @@
   "tussah-silk": {
     "category": "functional",
     "density": 1.25,
-    "description": "Natural silk fibers from wild Antheraea moths. Dissolves in hot lye water (170-190°F). Increases lather creaminess.",
+    "description": "Natural silk fibers from wild Antheraea moths. Dissolves in hot lye water (170-190\u00b0F). Increases lather creaminess.",
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
@@ -1581,9 +1635,9 @@
     "name": "Tussah silk fibers",
     "references": [
       {
-        "section": "Liquid Silk & Tussah Silk Fibers",
-        "source": "Soap Queen",
-        "url": "https://soapqueen.com/bramble-berry-news/sunday-night-spotlight-liquid-silk-tussah-silk-fibers/"
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Silk Protein Ingredients as Used in Cosmetics",
+        "url": "https://www.cir-safety.org/sites/default/files/silk%20proteins.pdf"
       }
     ],
     "safety": {
@@ -1609,8 +1663,8 @@
     "name": "Titanium dioxide",
     "references": [
       {
+        "sourceId": "fda-cfr",
         "section": "Titanium dioxide",
-        "source": "FDA 21 CFR 73.2575",
         "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-73/subpart-C/section-73.2575"
       }
     ],
@@ -1637,8 +1691,8 @@
     "name": "Turmeric powder",
     "references": [
       {
+        "sourceId": "fda-cfr",
         "section": "Color additive exempt from certification for food use",
-        "source": "FDA 21 CFR 73.600",
         "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-73/subpart-A/section-73.600"
       }
     ],
@@ -1666,8 +1720,8 @@
     "name": "Ultramarine blue",
     "references": [
       {
+        "sourceId": "fda-cfr",
         "section": "Ultramarines",
-        "source": "FDA 21 CFR 73.2725",
         "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-73/subpart-C/section-73.2725"
       }
     ],
@@ -1695,8 +1749,8 @@
     "name": "Ultramarine pink",
     "references": [
       {
+        "sourceId": "fda-cfr",
         "section": "Ultramarines",
-        "source": "FDA 21 CFR 73.2725",
         "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-73/subpart-C/section-73.2725"
       }
     ],
@@ -1723,16 +1777,20 @@
     "name": "Vetiver essential oil",
     "references": [
       {
-        "section": "Vetivert oil CAS 8016-96-4",
-        "source": "ChemicalBook",
-        "url": "https://www.chemicalbook.com/ChemicalProductProperty_EN_CB6304461.htm"
+        "sourceId": "pubchem",
+        "section": "Vetiver oil (CID 102265069)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/102265069"
       }
     ],
     "safety": {
       "casNumber": "8016-96-4",
       "flashPointC": 110,
       "ifraCategory9Limit": 5.0,
-      "majorConstituents": ["khusimol", "alpha-vetivone", "beta-vetivone"]
+      "majorConstituents": [
+        "khusimol",
+        "alpha-vetivone",
+        "beta-vetivone"
+      ]
     },
     "scentNote": "base",
     "usage": {
@@ -1752,8 +1810,8 @@
     "name": "Vitamin E (mixed tocopherols)",
     "references": [
       {
+        "sourceId": "fda-cfr",
         "section": "GRAS - Tocopherols",
-        "source": "FDA 21 CFR 182.3890",
         "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRSearch.cfm?fr=182.8892"
       }
     ],
@@ -1780,8 +1838,8 @@
     "name": "Ylang ylang essential oil (complete)",
     "references": [
       {
+        "sourceId": "echa",
         "section": "Registration Dossier ylang ylang flower oil",
-        "source": "ECHA",
         "url": "https://echa.europa.eu/registration-dossier/-/registered-dossier/22736"
       }
     ],
@@ -1789,7 +1847,12 @@
       "casNumber": "8006-81-3",
       "flashPointC": 88,
       "ifraCategory9Limit": 0.8,
-      "majorConstituents": ["linalool", "benzyl-acetate", "benzyl-benzoate", "geraniol"]
+      "majorConstituents": [
+        "linalool",
+        "benzyl-acetate",
+        "benzyl-benzoate",
+        "geraniol"
+      ]
     },
     "scentNote": "base",
     "usage": {
@@ -1810,8 +1873,8 @@
     "name": "Zinc oxide",
     "references": [
       {
+        "sourceId": "fda-cfr",
         "section": "Zinc Oxide",
-        "source": "FDA 21 CFR 73.2991",
         "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=73.2991"
       }
     ],

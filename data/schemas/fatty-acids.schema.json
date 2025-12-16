@@ -41,17 +41,29 @@
           "items": {
             "additionalProperties": false,
             "properties": {
-              "section": {
-                "type": "string"
+              "sourceId": {
+                "type": "string",
+                "minLength": 1,
+                "description": "ID of source in sources.json"
               },
-              "source": {
-                "type": "string"
+              "section": {
+                "type": "string",
+                "description": "Specific section, chapter, or article identifier"
               },
               "url": {
+                "type": "string",
                 "format": "uri",
-                "type": "string"
+                "description": "Direct URL to the referenced content"
+              },
+              "note": {
+                "type": "string",
+                "description": "Additional context about this specific reference"
               }
             },
+            "required": [
+              "sourceId",
+              "section"
+            ],
             "type": "object"
           },
           "type": "array"

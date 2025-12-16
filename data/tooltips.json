@@ -1,0 +1,23 @@
+{
+  "property-targets": {
+    "title": "Property targets",
+    "desc": "Scores from 0-100 based on your fat blend's fatty acid composition. Only fill in properties you care about.",
+    "glossaryLink": "hardness"
+  },
+  "max-fats": {
+    "title": "Maximum fats",
+    "desc": "Limits how many different fats the optimizer will use. Fewer = simpler recipes."
+  },
+  "filter-animal": {
+    "title": "Animal-based fats",
+    "desc": "Excludes fats derived from animals (tallow, lard, etc)."
+  },
+  "filter-allergens": {
+    "title": "Common allergens",
+    "desc": "Excludes tree nuts, legumes, and coconut."
+  },
+  "sourcing-concerns": {
+    "title": "Sourcing concerns",
+    "desc": "Excludes palm oil and palm kernel oil due to environmental concerns."
+  }
+}

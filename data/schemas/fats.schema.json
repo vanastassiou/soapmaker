@@ -127,6 +127,12 @@
           "minimum": 0,
           "type": "number"
         },
+        "meltingPoint": {
+          "description": "Melting point in °C",
+          "maximum": 80,
+          "minimum": -30,
+          "type": "number"
+        },
         "name": {
           "description": "Display name of the oil/fat",
           "minLength": 1,
@@ -136,21 +142,28 @@
           "items": {
             "additionalProperties": false,
             "properties": {
-              "section": {
-                "type": "string"
+              "sourceId": {
+                "type": "string",
+                "minLength": 1,
+                "description": "ID of source in sources.json"
               },
-              "source": {
-                "type": "string"
+              "section": {
+                "type": "string",
+                "description": "Specific section, chapter, or article identifier"
               },
               "url": {
+                "type": "string",
                 "format": "uri",
-                "type": "string"
+                "description": "Direct URL to the referenced content"
+              },
+              "note": {
+                "type": "string",
+                "description": "Additional context about this specific reference"
               }
             },
             "required": [
-              "source",
-              "section",
-              "url"
+              "sourceId",
+              "section"
             ],
             "type": "object"
           },

@@ -1,66 +1,12 @@
-:root {
-    /* WCAG AA Compliant - Olive Green Theme */
-    /* Background colours - dark olive green */
-    --bg-primary: #1a2420;
-    --bg-secondary: #232d28;
-    --bg-tertiary: #2d3832;
-    --bg-card: #2a3530;
-    --bg-input: #1a2420;
+/* ============================================
+   Soap Maker - Component Styles
+   ============================================
 
-    /* Text colours - all meet 4.5:1 contrast */
-    --text-primary: #e8e8e0;
-    --text-secondary: #b0b8a8;
-    --text-muted: #808880;
+   Note: This file is imported by main.css
+   Variables are defined in tokens/_variables.css
+   Utilities are defined in utilities/_utilities.css
 
-    /* Accent colours */
-    --accent-gold: #e0b050;       /* warm gold for buttons */
-    --accent-gold-20: rgba(224, 176, 80, 0.2);
-    --accent-gold-10: rgba(224, 176, 80, 0.1);
-    --accent-copper: #c89840;     /* darker gold for hover */
-    --accent-green: #80c080;      /* soft green for links/highlights */
-    --accent-green-20: rgba(128, 192, 128, 0.2);
-    --accent-cream: #e8e8e0;
-
-    /* Borders */
-    --border: #3a4540;
-    --border-30: rgba(58, 69, 64, 0.3);
-
-    /* Semantic colours */
-    --success: #60b890;
-    --warning: #e0b050;
-    --danger: #d07060;
-
-    /* Utilities */
-    --shadow-overlay: rgba(0, 0, 0, 0.6);
-    --font-mono: 'IBM Plex Mono', monospace;
-
-    /* Standardized border-radius */
-    --radius-sm: 4px;
-    --radius-md: 6px;
-    --radius-lg: 8px;
-    --radius-xl: 12px;
-
-    /* Standardized sizes (WCAG 2.2 touch targets) */
-    --size-touch-min: 24px;
-    --size-btn-sm: 24px;
-    --size-btn-md: 32px;
-    --size-btn-lg: 40px;
-
-    /* Focus rings for accessibility */
-    --focus-ring: 0 0 0 3px rgba(128, 192, 128, 0.4);
-    --focus-ring-button: 0 0 0 3px rgba(224, 176, 80, 0.4);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Utility class for hiding elements */
-.hidden {
-    display: none !important;
-}
+   ============================================ */
 
 /* Skip link for keyboard navigation */
 .skip-link {
@@ -69,11 +15,11 @@
     left: 0;
     background: var(--accent-gold);
     color: var(--bg-primary);
-    padding: 0.5rem 1rem;
+    padding: var(--space-2) var(--space-4);
     z-index: 10000;
     font-weight: 600;
     text-decoration: none;
-    border-radius: 0 0 4px 0;
+    border-radius: 0 0 var(--radius-sm) 0;
     transition: top 0.2s;
 }
 
@@ -84,7 +30,7 @@
 }
 
 body {
-    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-family: var(--font-body);
     background: var(--bg-primary);
     color: var(--text-primary);
     min-height: 100vh;
@@ -95,51 +41,57 @@ body {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
+    padding-top: var(--space-14);
+    padding-bottom: var(--space-14);
     padding-left: 2rem;
     padding-right: 2rem;
 }
 
 header {
     text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem 0;
+    margin-bottom: var(--space-12);
+    padding: var(--space-8) 0;
     border-bottom: 1px solid var(--border);
 }
 
 h1 {
-    font-family: 'Fraunces', serif;
-    font-size: 3rem;
+    font-family: var(--font-display);
+    font-size: var(--text-7xl);
     font-weight: 400;
     color: var(--accent-cream);
     letter-spacing: 0.02em;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
 }
 
 header p {
     color: var(--text-secondary);
-    font-size: 1.1rem;
+    font-size: var(--text-3xl);
 }
 
 .header-nav {
-    margin-top: 0.75rem;
+    margin-top: var(--space-3);
 }
 
 .header-link {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: var(--text-base);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    padding: 0.5rem 1rem;
+    padding: var(--space-2) var(--space-4);
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     transition: all 0.2s;
 }
 
 .header-link:hover {
     color: var(--text-primary);
+    border-color: var(--text-secondary);
+}
+
+.header-link[aria-current="page"] {
+    color: var(--text-primary);
+    background: var(--bg-secondary);
     border-color: var(--text-secondary);
 }
 
@@ -151,14 +103,14 @@ header p {
     z-index: 100;
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: var(--space-2);
     background: var(--accent-gold);
     color: var(--bg-primary);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: var(--text-md);
     font-weight: 600;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
     transition: all 0.2s;
 }
 
@@ -201,8 +153,10 @@ header p {
     }
 
     .info-panel {
-        width: 100%;
+        width: 85%;
+        max-width: 360px;
         right: -100%;
+        padding: var(--space-5);
     }
 }
 
@@ -210,8 +164,8 @@ header p {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-xl);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding: var(--space-5);
+    margin-bottom: var(--space-6);
     overflow: hidden;
     max-width: 100%;
 }
@@ -224,22 +178,22 @@ select, input, button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.75rem;
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-3);
     border-bottom: 1px solid var(--border);
 }
 
 .card-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1.4rem;
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
     color: var(--accent-cream);
 }
 
 .settings-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
 }
 
 .settings-row .form-group {
@@ -251,17 +205,17 @@ select, input, button {
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: var(--space-2);
 }
 
 label {
-    font-size: 0.85rem;
+    font-size: var(--text-md);
     color: var(--text-secondary);
     font-weight: 500;
 }
 
 .field-helper {
-    font-size: 0.75rem;
+    font-size: var(--text-sm);
     color: var(--text-muted);
     margin-top: -0.2rem;
 }
@@ -269,11 +223,11 @@ label {
 .label-row {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: var(--space-2);
 }
 
 .label-row .help-tip {
-    font-size: 0.8rem;
+    font-size: var(--text-base);
 }
 
 input, select {
@@ -282,8 +236,8 @@ input, select {
     border-radius: var(--radius-md);
     padding: 0.6rem 0.8rem;
     color: var(--text-primary);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.95rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-xl);
     transition: border-color 0.2s, box-shadow 0.2s;
     width: 100%;
     min-height: var(--size-btn-md);
@@ -314,8 +268,8 @@ button:focus-visible,
 
 .fat-selector {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
 }
 
 .fat-selector select {
@@ -325,15 +279,15 @@ button:focus-visible,
 /* Property mode (matches fat-selector pattern) */
 .property-header {
     display: flex;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
     align-items: center;
 }
 
 .property-options {
     display: flex;
-    gap: 1rem;
-    font-size: 0.85rem;
+    gap: var(--space-4);
+    font-size: var(--text-md);
     color: var(--text-secondary);
     align-items: center;
     flex: 1;
@@ -342,13 +296,13 @@ button:focus-visible,
 .property-options label {
     display: flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: var(--space-1);
     cursor: pointer;
 }
 
 .property-options select {
     padding: 0.3rem 0.4rem;
-    font-size: 0.85rem;
+    font-size: var(--text-md);
 }
 
 .property-options input[type="checkbox"] {
@@ -358,13 +312,13 @@ button:focus-visible,
 }
 
 .property-options .help-tip {
-    font-size: 0.8rem;
+    font-size: var(--text-base);
 }
 
 /* Mode Subcontainers (inside build-mode-content) */
 .mode-subcontainer {
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-4);
     border-bottom: 1px solid var(--border-30);
 }
 
@@ -375,32 +329,47 @@ button:focus-visible,
 }
 
 .mode-subcontainer-title {
-    font-size: 0.85rem;
+    font-size: var(--text-md);
     font-weight: 600;
     color: var(--text-secondary);
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--space-3);
     text-transform: uppercase;
     letter-spacing: 0.03em;
 }
 
-/* Collapsible sections */
-.collapsible .collapsible-header {
+/* Collapsible sections - native <details>/<summary> */
+details.build-subcontainer > summary,
+details.mode-subcontainer > summary {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: var(--space-2);
     width: 100%;
     background: transparent;
     border: none;
     padding: 0;
     cursor: pointer;
     text-align: left;
+    list-style: none;
 }
 
-.collapsible .collapsible-header .mode-subcontainer-title {
+details.build-subcontainer > summary::-webkit-details-marker,
+details.mode-subcontainer > summary::-webkit-details-marker {
+    display: none;
+}
+
+details.build-subcontainer > summary .subcontainer-title,
+details.mode-subcontainer > summary .mode-subcontainer-title {
+    flex-grow: 1;
     margin-bottom: 0;
 }
 
-.collapsible .collapse-icon {
+details.build-subcontainer > summary .reset-btn,
+details.mode-subcontainer > summary .reset-btn {
+    flex-shrink: 0;
+}
+
+details.build-subcontainer > summary .collapse-icon,
+details.mode-subcontainer > summary .collapse-icon {
     width: 20px;
     height: 20px;
     display: flex;
@@ -410,65 +379,69 @@ button:focus-visible,
     transition: transform 0.2s ease;
 }
 
-.collapsible .collapse-icon::before {
-    content: '▼';
-    font-size: 0.6rem;
+details.build-subcontainer > summary .collapse-icon::before,
+details.mode-subcontainer > summary .collapse-icon::before {
+    content: '▶';
+    font-size: var(--text-2xs);
 }
 
-.collapsible .collapsible-header[aria-expanded="false"] .collapse-icon {
-    transform: rotate(-90deg);
+details.build-subcontainer[open] > summary .collapse-icon,
+details.mode-subcontainer[open] > summary .collapse-icon {
+    transform: rotate(90deg);
 }
 
-.collapsible .collapsible-content {
-    margin-top: 0.75rem;
-}
-
-.collapsible .collapsible-header[aria-expanded="false"] + .collapsible-content {
-    display: none;
+details.build-subcontainer > .collapsible-content,
+details.mode-subcontainer > .collapsible-content {
+    margin-top: var(--space-3);
 }
 
 .property-list {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
 }
 
 .property-row {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: var(--space-3);
 }
 
 .property-row label {
     flex: 1;
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
 }
 
 .property-row input {
     width: 80px;
-    padding: 0.4rem 0.5rem;
+    padding: var(--space-2) var(--space-2);
     text-align: center;
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
 }
 
 .property-row input::placeholder {
     color: var(--text-muted);
-    font-size: 0.75rem;
+    font-size: var(--text-sm);
 }
 
 .property-row.property-action {
     justify-content: flex-end;
-    margin-top: 0.25rem;
+    margin-top: var(--space-1);
 }
 
-.instructions {
+ol.instructions {
     color: var(--text-secondary);
-    font-size: 0.85rem;
-    padding: 0.75rem 0;
+    padding-left: 1.25rem;
     margin: 0 0 1rem 0;
-    border-top: 1px solid var(--border-30);
-    border-bottom: 1px solid var(--border-30);
+}
+
+ol.instructions li {
+    margin-bottom: var(--space-1);
+}
+
+ol.instructions li:last-child {
+    margin-bottom: 0;
 }
 
 #yoloRecipeFats .fat-row {
@@ -481,9 +454,9 @@ button:focus-visible,
     border: none;
     border-radius: var(--radius-md);
     padding: 0.6rem 1.2rem;
-    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-family: var(--font-body);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
     cursor: pointer;
     transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
     min-height: var(--size-btn-md);
@@ -516,21 +489,21 @@ button:focus-visible,
 
 .btn-small {
     padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
+    font-size: var(--text-base);
 }
 
 .recipe-fats {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: var(--space-3);
 }
 
 .fat-row {
     display: grid;
     grid-template-columns: 1fr 130px 100px 40px;
-    gap: 0.75rem;
+    gap: var(--space-3);
     align-items: center;
-    padding: 0.75rem;
+    padding: var(--space-3);
     background: var(--bg-secondary);
     border-radius: var(--radius-lg);
     border: 1px solid var(--border);
@@ -562,8 +535,8 @@ button:focus-visible,
 .fat-row.header-row {
     background: transparent;
     border: none;
-    padding: 0.25rem 0.75rem;
-    font-size: 0.85rem;
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-md);
     color: var(--text-muted);
     font-weight: 500;
 }
@@ -581,7 +554,7 @@ button:focus-visible,
 .percentage-cell {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: var(--space-1);
 }
 
 .weight-cell input {
@@ -596,12 +569,12 @@ button:focus-visible,
     color: var(--text-muted);
     width: 24px;
     height: 24px;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.75rem;
+    font-size: var(--text-sm);
     transition: all 0.2s;
     flex-shrink: 0;
 }
@@ -625,12 +598,12 @@ button:focus-visible,
     color: var(--text-secondary);
     width: 32px;
     height: 32px;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: var(--text-2xl);
     transition: all 0.2s;
 }
 
@@ -678,9 +651,9 @@ button:focus-visible,
 }
 
 .fat-percentage {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
     text-align: right;
 }
 
@@ -690,9 +663,9 @@ button:focus-visible,
     color: var(--danger);
     width: 32px;
     height: 32px;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: var(--text-4xl);
     line-height: 1;
     transition: all 0.2s;
 }
@@ -705,36 +678,36 @@ button:focus-visible,
 .totals-row {
     display: grid;
     grid-template-columns: 1fr 130px 100px 40px;
-    gap: 0.75rem;
-    padding: 0.75rem;
+    gap: var(--space-3);
+    padding: var(--space-3);
     background: var(--bg-primary);
     color: var(--text-secondary);
     border-radius: 0;
     border: none;
     border-top: 1px solid var(--border);
     font-weight: 600;
-    margin-top: 0.5rem;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.9rem;
+    margin-top: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
 }
 
 /* Generic Tab Styles */
 .tabs {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
 }
 
 .tab {
     flex: 1;
     background: var(--bg-secondary);
     border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 0.6rem 1rem;
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-4);
     color: var(--text-secondary);
     cursor: pointer;
-    font-family: 'Atkinson Hyperlegible', sans-serif;
-    font-size: 0.9rem;
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
     font-weight: 500;
     transition: all 0.2s;
 }
@@ -754,20 +727,20 @@ button:focus-visible,
 .analysis-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
 }
 
 .analysis-subcontainer {
     background: var(--bg-secondary);
-    border-radius: 8px;
-    padding: 1rem;
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
     border: 1px solid var(--border);
 }
 
 .subcontainer-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1rem;
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
     color: var(--text-primary);
     margin: 0 0 0.75rem 0;
     font-weight: 400;
@@ -776,7 +749,7 @@ button:focus-visible,
 .analysis-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
     table-layout: fixed;
 }
 
@@ -784,13 +757,13 @@ button:focus-visible,
     text-align: left;
     color: var(--text-secondary);
     font-weight: 500;
-    font-size: 0.8rem;
-    padding: 0.4rem 0.5rem;
+    font-size: var(--text-base);
+    padding: var(--space-2) var(--space-2);
     border-bottom: 1px solid var(--border);
 }
 
 .analysis-table td {
-    padding: 0.4rem 0.5rem;
+    padding: var(--space-2) var(--space-2);
     color: var(--text-primary);
     border-bottom: 1px solid var(--border-30);
 }
@@ -802,13 +775,13 @@ button:focus-visible,
 .analysis-table .range-col {
     text-align: center;
     color: var(--text-secondary);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
 }
 
 .analysis-table .value-col {
     text-align: center;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-weight: 600;
     color: var(--accent-cream);
 }
@@ -837,7 +810,7 @@ button:focus-visible,
 
 .fa-table .fa-value {
     text-align: right;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-weight: 500;
     color: var(--accent-cream);
 }
@@ -845,10 +818,10 @@ button:focus-visible,
 .sat-unsat-ratio {
     display: flex;
     justify-content: space-between;
-    margin-top: 0.75rem;
-    padding-top: 0.75rem;
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
     border-top: 1px solid var(--border);
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
 }
 
 .sat-unsat-ratio span:first-child {
@@ -856,7 +829,7 @@ button:focus-visible,
 }
 
 .sat-unsat-ratio span:last-child {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-weight: 600;
     color: var(--accent-gold);
 }
@@ -903,14 +876,14 @@ button:focus-visible,
 .panel-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: var(--space-2);
 }
 
 .panel-tag {
     padding: 0.375rem 0.75rem;
     background: var(--bg-secondary);
-    border-radius: 4px;
-    font-size: 0.85rem;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-md);
     color: var(--text-secondary);
     cursor: pointer;
     transition: all 0.2s;
@@ -932,19 +905,19 @@ button:focus-visible,
 .panel-references {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: var(--space-3);
 }
 
 .reference-item {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: var(--space-1);
 }
 
 .reference-item a {
     color: var(--accent-green);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
 }
 
 .reference-item a:hover {
@@ -952,7 +925,7 @@ button:focus-visible,
 }
 
 .reference-section {
-    font-size: 0.8rem;
+    font-size: var(--text-base);
     color: var(--text-muted);
 }
 
@@ -961,12 +934,12 @@ button:focus-visible,
     max-width: 320px;
     background: var(--bg-primary);
     border: 1px solid var(--accent-gold);
-    border-radius: 8px;
-    padding: 1rem;
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     display: none;
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
 }
 
 .glossary-tooltip.visible {
@@ -976,19 +949,19 @@ button:focus-visible,
 .tooltip-header {
     font-weight: 600;
     color: var(--accent-green);
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
+    margin-bottom: var(--space-2);
+    font-size: var(--text-xl);
 }
 
 .tooltip-category {
     display: inline-block;
-    font-size: 0.7rem;
+    font-size: var(--text-xs);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--bg-primary);
     background: var(--text-secondary);
     padding: 0.1rem 0.4rem;
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
     margin-left: 0.5rem;
     vertical-align: middle;
 }
@@ -996,41 +969,40 @@ button:focus-visible,
 .tooltip-body {
     color: var(--text-primary);
     line-height: 1.5;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
 }
 
 .tooltip-details {
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
 }
 
-.tooltip-details summary,
-.glossary-details summary {
+.entry-details summary {
     list-style: none;
     cursor: pointer;
 }
 
 .tooltip-details summary::-webkit-details-marker,
-.glossary-details summary::-webkit-details-marker {
+.entry-details summary::-webkit-details-marker {
     display: none;
 }
 
 .details-toggle,
 .details-hide {
-    font-size: 0.8rem;
+    font-size: var(--text-base);
     color: var(--accent-gold);
 }
 
-.details-toggle::before {
-    content: '›';
+.details-toggle::before,
+.details-hide::before {
+    content: '▶';
     display: inline-block;
-    margin-right: 0.25rem;
+    margin-right: 0.4rem;
+    font-size: 0.6em;
     transition: transform 0.2s;
 }
 
+details[open] .details-toggle::before,
 .details-hide::before {
-    content: '›';
-    display: inline-block;
-    margin-right: 0.25rem;
     transform: rotate(90deg);
 }
 
@@ -1056,12 +1028,12 @@ details[open] .details-hide {
 }
 
 .tooltip-details-content {
-    font-size: 0.85rem;
+    font-size: var(--text-md);
     color: var(--text-secondary);
-    margin-top: 0.5rem;
-    padding: 0.5rem;
+    margin-top: var(--space-2);
+    padding: var(--space-2);
     background: var(--bg-secondary);
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
 }
 
 .tooltip-details-content strong {
@@ -1069,14 +1041,14 @@ details[open] .details-hide {
 }
 
 .tooltip-related {
-    padding-top: 0.5rem;
+    padding-top: var(--space-2);
     border-top: 1px solid var(--border);
-    font-size: 0.8rem;
+    font-size: var(--text-base);
 }
 
 .tooltip-related-label {
     color: var(--text-secondary);
-    margin-bottom: 0.25rem;
+    margin-bottom: var(--space-1);
 }
 
 .related-term {
@@ -1084,8 +1056,8 @@ details[open] .details-hide {
     align-items: center;
     color: var(--accent-cream);
     background: var(--bg-secondary);
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
     margin: 0.2rem 0.25rem 0.2rem 0;
     cursor: pointer;
     transition: background 0.2s;
@@ -1101,17 +1073,87 @@ details[open] .details-hide {
     font-weight: 500;
 }
 
+/* UI Tips (question mark icons for site usage help) */
+.ui-tip {
+    cursor: help;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    transition: color 0.2s, border-color 0.2s;
+    /* WCAG 2.2 Target Size: minimum 24x24px */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    min-height: 24px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    vertical-align: middle;
+    margin-left: 0.25rem;
+}
+
+.ui-tip:hover {
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+/* Help Popup (shared by glossary and tooltips) */
+.help-popup {
+    position: absolute;
+    max-width: 280px;
+    background: var(--bg-primary);
+    border: 1px solid var(--accent-gold);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: none;
+    font-size: var(--text-md);
+}
+
+.help-popup.visible {
+    display: block;
+}
+
+.help-popup-title {
+    font-weight: 600;
+    color: var(--accent-green);
+    margin-bottom: var(--space-1);
+    font-size: var(--text-lg);
+}
+
+.help-popup-body {
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin-bottom: var(--space-2);
+}
+
+.help-popup-link {
+    display: none;
+    font-size: var(--text-base);
+    color: var(--accent-gold);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.help-popup-link:hover {
+    text-decoration: underline;
+}
+
 /* Properties Grid (legacy support) */
 .properties-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    gap: var(--space-3);
 }
 
 .property-item {
     background: var(--bg-secondary);
-    padding: 0.75rem;
-    border-radius: 8px;
+    padding: var(--space-3);
+    border-radius: var(--radius-lg);
     border: 1px solid var(--border);
 }
 
@@ -1119,16 +1161,16 @@ details[open] .details-hide {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
 }
 
 .property-name {
-    font-size: 0.85rem;
+    font-size: var(--text-md);
     color: var(--text-secondary);
 }
 
 .property-value {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-weight: 600;
     color: var(--accent-cream);
 }
@@ -1136,14 +1178,14 @@ details[open] .details-hide {
 .property-bar {
     height: 6px;
     background: var(--bg-input);
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
     overflow: hidden;
 }
 
 .property-fill {
     height: 100%;
     background: var(--accent-gold);
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
     transition: width 0.3s ease;
 }
 
@@ -1163,16 +1205,16 @@ details[open] .details-hide {
 .fatty-acids {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+    gap: var(--space-2);
 }
 
 .fatty-acid-item {
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 0.75rem;
+    padding: var(--space-2) var(--space-3);
     background: var(--bg-secondary);
-    border-radius: 6px;
-    font-size: 0.9rem;
+    border-radius: var(--radius-md);
+    font-size: var(--text-lg);
 }
 
 .fatty-acid-name {
@@ -1180,7 +1222,7 @@ details[open] .details-hide {
 }
 
 .fatty-acid-value {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     color: var(--accent-cream);
 }
 
@@ -1193,7 +1235,7 @@ details[open] .details-hide {
     height: 100vh;
     background: var(--bg-card);
     border-left: 1px solid var(--border);
-    padding: 2rem;
+    padding: var(--space-8);
     overflow-y: auto;
     transition: right 0.3s ease;
     z-index: 1000;
@@ -1204,29 +1246,29 @@ details[open] .details-hide {
 }
 
 .panel-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1.6rem;
+    font-family: var(--font-display);
+    font-size: var(--text-5xl);
     color: var(--accent-cream);
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
     padding-right: 3rem;
 }
 
 .panel-subtitle {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     color: var(--accent-gold);
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-6);
 }
 
 .panel-section {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-6);
 }
 
 .panel-section h4 {
-    font-size: 0.85rem;
+    font-size: var(--text-md);
     color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--space-3);
 }
 
 .panel-description {
@@ -1267,35 +1309,35 @@ details[open] .details-hide {
     color: var(--text-secondary);
     width: 36px;
     height: 36px;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: var(--text-4xl);
 }
 
 .fat-detail-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1.6rem;
+    font-family: var(--font-display);
+    font-size: var(--text-5xl);
     color: var(--accent-cream);
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
     padding-right: 3rem;
 }
 
 .fat-detail-sap {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     color: var(--accent-gold);
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-6);
 }
 
 .fat-detail-section {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-6);
 }
 
 .fat-detail-section h4 {
-    font-size: 0.85rem;
+    font-size: var(--text-md);
     color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--space-3);
 }
 
 .fat-detail-description {
@@ -1307,9 +1349,9 @@ details[open] .details-hide {
     display: inline-block;
     background: var(--accent-gold);
     color: var(--bg-primary);
-    padding: 0.25rem 0.75rem;
-    border-radius: 4px;
-    font-size: 0.85rem;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-md);
     font-weight: 600;
 }
 
@@ -1319,9 +1361,9 @@ details[open] .details-hide {
     color: var(--text-muted);
     width: 28px;
     height: 28px;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
-    font-size: 0.85rem;
+    font-size: var(--text-md);
     margin-left: 0.5rem;
     transition: all 0.2s;
 }
@@ -1335,35 +1377,35 @@ details[open] .details-hide {
 .fa-chemistry {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
+    gap: var(--space-3);
 }
 
 .fa-chem-item {
     background: var(--bg-secondary);
-    padding: 0.75rem;
-    border-radius: 6px;
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
     border: 1px solid var(--border);
 }
 
 .fa-chem-label {
-    font-size: 0.75rem;
+    font-size: var(--text-sm);
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 0.25rem;
+    margin-bottom: var(--space-1);
 }
 
 .fa-chem-value {
     font-family: var(--font-mono);
     color: var(--accent-cream);
-    font-size: 1rem;
+    font-size: var(--text-2xl);
 }
 
 .fa-props-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
 }
 
 .fa-prop-item {
@@ -1371,26 +1413,25 @@ details[open] .details-hide {
     justify-content: space-between;
     align-items: center;
     background: var(--bg-secondary);
-    padding: 0.5rem 0.75rem;
-    border-radius: 4px;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
     border: 1px solid var(--border);
 }
 
 .fa-prop-label {
-    font-size: 0.8rem;
+    font-size: var(--text-base);
     color: var(--text-muted);
 }
 
 .fa-prop-value {
-    font-size: 0.85rem;
+    font-size: var(--text-md);
     color: var(--accent-cream);
 }
 
 .fa-description {
     color: var(--text-secondary);
-    font-size: 0.9rem;
     margin: 0;
-    padding-top: 0.5rem;
+    padding-top: var(--space-2);
     border-top: 1px solid var(--border);
 }
 
@@ -1398,7 +1439,7 @@ details[open] .details-hide {
 .fa-common-sources {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--space-2);
 }
 
 .fa-source-item {
@@ -1406,8 +1447,8 @@ details[open] .details-hide {
     justify-content: space-between;
     align-items: center;
     background: var(--bg-secondary);
-    padding: 0.5rem 0.75rem;
-    border-radius: 4px;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
     border: 1px solid var(--border);
 }
 
@@ -1416,9 +1457,9 @@ details[open] .details-hide {
 }
 
 .fa-source-percent {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     color: var(--accent-gold);
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
 }
 
 .fa-common-sources .fa-source-item {
@@ -1429,7 +1470,7 @@ details[open] .details-hide {
 .no-sources {
     color: var(--text-muted);
     font-style: italic;
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
 }
 
 .fa-link {
@@ -1453,24 +1494,24 @@ details[open] .details-hide {
 
 .empty-state {
     text-align: center;
-    padding: 3rem;
+    padding: var(--space-12);
     color: var(--text-muted);
 }
 
 .empty-state p {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-4);
 }
 
 .recipe-actions {
     display: flex;
-    gap: 0.5rem;
+    gap: var(--space-2);
     flex-wrap: wrap;
 }
 
 /* Responsive - Mobile (480px) */
 @media (max-width: 480px) {
     .kofi-button {
-        font-size: 0.75rem;
+        font-size: var(--text-sm);
         padding: 0.4rem 0.75rem;
         top: 0.5rem;
     }
@@ -1478,36 +1519,36 @@ details[open] .details-hide {
     .container {
         padding-left: 0.75rem;
         padding-right: 0.75rem;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
+        padding-top: var(--space-12);
+        padding-bottom: var(--space-12);
     }
 
     .card {
-        padding: 1rem;
-        border-radius: 8px;
+        padding: var(--space-4);
+        border-radius: var(--radius-lg);
     }
 
     h1 {
-        font-size: 1.75rem;
+        font-size: var(--text-6xl);
     }
 
     header p {
-        font-size: 0.95rem;
+        font-size: var(--text-xl);
     }
 
     header {
-        margin-bottom: 2rem;
+        margin-bottom: var(--space-8);
         padding: 1.25rem 0;
     }
 
     .card-title {
-        font-size: 1.15rem;
+        font-size: var(--text-3xl);
     }
 
     .fat-row {
         grid-template-columns: 1fr 95px 75px 28px;
-        gap: 0.4rem;
-        padding: 0.5rem;
+        gap: var(--space-2);
+        padding: var(--space-2);
     }
 
     #yoloRecipeFats .fat-row {
@@ -1522,13 +1563,13 @@ details[open] .details-hide {
     .lock-percentage {
         width: 24px;
         height: 24px;
-        font-size: 0.7rem;
+        font-size: var(--text-xs);
     }
 
     .lock-fat {
         width: 28px;
         height: 28px;
-        font-size: 0.85rem;
+        font-size: var(--text-md);
     }
 
     .properties-grid,
@@ -1548,7 +1589,7 @@ details[open] .details-hide {
     .exclusion-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.5rem;
+        gap: var(--space-2);
     }
 
     .exclusion-add {
@@ -1570,7 +1611,7 @@ details[open] .details-hide {
     }
 
     .analysis-table {
-        font-size: 0.85rem;
+        font-size: var(--text-md);
     }
 
     .analysis-table th,
@@ -1579,7 +1620,7 @@ details[open] .details-hide {
     }
 
     select, input {
-        font-size: 0.9rem;
+        font-size: var(--text-lg);
         padding: 0.5rem 0.6rem;
     }
 
@@ -1594,14 +1635,14 @@ details[open] .details-hide {
 .build-subcontainer {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.25rem;
-    margin-bottom: 1.25rem;
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    margin-bottom: var(--space-5);
 }
 
 .build-subcontainer .subcontainer-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1.1rem;
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
     font-weight: 400;
     color: var(--text-secondary);
     margin-bottom: 0;
@@ -1611,15 +1652,15 @@ details[open] .details-hide {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-4);
 }
 
 .btn-text {
     background: transparent;
     border: none;
     color: var(--text-muted);
-    font-size: 0.8rem;
-    padding: 0.25rem 0.5rem;
+    font-size: var(--text-base);
+    padding: var(--space-1) var(--space-2);
     cursor: pointer;
 }
 
@@ -1627,30 +1668,26 @@ details[open] .details-hide {
     color: var(--accent-green);
 }
 
-.reset-btn {
-    display: block;
-    margin-top: 1rem;
-    margin-left: auto;
-}
+/* Reset button positioning handled by flex layout in summary */
 
 /* Unified build mode area */
 .build-mode-area {
     background: var(--bg-tertiary);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1.25rem;
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    margin-bottom: var(--space-5);
 }
 
 .build-mode-tabs {
-    margin-bottom: 0.75rem;
-    gap: 0.25rem;
+    margin-bottom: var(--space-3);
+    gap: var(--space-1);
 }
 
 .build-mode-tab {
     padding: 0.5rem 0.875rem;
-    font-size: 0.85rem;
-    border-radius: 4px;
+    font-size: var(--text-md);
+    border-radius: var(--radius-sm);
 }
 
 .build-mode-tab.active {
@@ -1661,10 +1698,8 @@ details[open] .details-hide {
 }
 
 .build-mode-helper {
-    font-size: 0.85rem;
     color: var(--text-secondary);
-    margin-bottom: 1rem;
-    line-height: 1.5;
+    margin-bottom: var(--space-4);
 }
 
 .build-mode-helper.hidden {
@@ -1680,7 +1715,7 @@ details[open] .details-hide {
 }
 
 .build-mode-content .empty-state {
-    padding: 1rem;
+    padding: var(--space-4);
 }
 
 .build-mode-content .empty-state p {
@@ -1688,16 +1723,15 @@ details[open] .details-hide {
 }
 
 .analysis-helper-text {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-bottom: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-3);
     line-height: 1.5;
 }
 
 /* Fat Exclusions */
 .build-exclusions {
-    margin-top: 1rem;
-    padding-top: 1rem;
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
     border-top: 1px solid var(--border);
 }
 
@@ -1705,28 +1739,28 @@ details[open] .details-hide {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
 }
 
 .exclusion-header > label {
-    font-size: 0.85rem;
+    font-size: var(--text-md);
     color: var(--text-secondary);
 }
 
 .exclusion-specific {
-    margin-top: 0.75rem;
+    margin-top: var(--space-3);
 }
 
 .exclusion-label {
     display: block;
-    font-size: 0.85rem;
+    font-size: var(--text-md);
     color: var(--text-secondary);
-    margin-bottom: 0.4rem;
+    margin-bottom: var(--space-2);
 }
 
 .exclusion-add {
     display: flex;
-    gap: 0.5rem;
+    gap: var(--space-2);
 }
 
 .exclusion-add select {
@@ -1736,19 +1770,19 @@ details[open] .details-hide {
 .excluded-fats-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
+    gap: var(--space-2);
     min-height: 1.5rem;
 }
 
 .excluded-fat-tag {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: var(--space-2);
     background: var(--bg-input);
     border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 0.25rem 0.5rem;
-    font-size: 0.8rem;
+    border-radius: var(--radius-sm);
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--text-base);
     color: var(--text-primary);
 }
 
@@ -1758,7 +1792,7 @@ details[open] .details-hide {
     color: var(--text-muted);
     cursor: pointer;
     padding: 0;
-    font-size: 1rem;
+    font-size: var(--text-2xl);
     line-height: 1;
     display: flex;
     align-items: center;
@@ -1772,34 +1806,28 @@ details[open] .details-hide {
     color: var(--danger);
 }
 
-.no-exclusions {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    font-style: italic;
-}
-
 /* Dietary Filters */
 .dietary-filters {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 0.75rem 1.25rem;
-    margin-top: 0.75rem;
-    padding-top: 0.75rem;
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
     border-top: 1px solid var(--border-30);
 }
 
 .dietary-filters .filter-label {
-    font-size: 0.85rem;
+    font-size: var(--text-md);
     color: var(--text-muted);
 }
 
 .dietary-filter {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: var(--space-2);
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
     color: var(--text-secondary);
 }
 
@@ -1819,13 +1847,13 @@ details[open] .details-hide {
 }
 
 .dietary-filter .help-tip {
-    font-size: 0.8rem;
+    font-size: var(--text-base);
 }
 
 #generateRecipeBtn {
     width: 100%;
-    padding: 0.75rem;
-    font-size: 1rem;
+    padding: var(--space-3);
+    font-size: var(--text-2xl);
 }
 
 .btn-primary {
@@ -1839,8 +1867,8 @@ details[open] .details-hide {
 
 /* Profile Results */
 .profile-results {
-    margin-top: 1.25rem;
-    padding-top: 1.25rem;
+    margin-top: var(--space-5);
+    padding-top: var(--space-5);
     border-top: 1px solid var(--border);
 }
 
@@ -1851,12 +1879,12 @@ details[open] .details-hide {
 .match-quality {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
 }
 
 .match-label {
-    font-size: 0.85rem;
+    font-size: var(--text-md);
     color: var(--text-secondary);
     white-space: nowrap;
 }
@@ -1865,20 +1893,20 @@ details[open] .details-hide {
     flex: 1;
     height: 8px;
     background: var(--bg-input);
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     overflow: hidden;
 }
 
 .match-bar-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--danger), var(--warning), var(--success));
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     transition: width 0.3s ease;
 }
 
 .match-percent {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
     font-weight: 600;
     color: var(--accent-cream);
     min-width: 40px;
@@ -1888,8 +1916,8 @@ details[open] .details-hide {
 /* Action Button Containers */
 .use-recipe-action,
 .generate-action {
-    margin-top: 1rem;
-    padding-top: 1rem;
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
     border-top: 1px solid var(--border);
 }
 
@@ -1901,19 +1929,19 @@ details[open] .details-hide {
 .suggested-recipe {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
 }
 
 .suggested-fat {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 0.75rem;
+    padding: var(--space-2) var(--space-3);
     background: var(--bg-secondary);
-    border-radius: 6px;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-2);
+    font-size: var(--text-lg);
 }
 
 .suggested-fat-name {
@@ -1930,25 +1958,25 @@ details[open] .details-hide {
 }
 
 .suggested-fat-percent {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     font-weight: 600;
     color: var(--accent-gold);
 }
 
 .achieved-profile {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-4);
 }
 
 .achieved-profile h4 {
-    font-size: 0.85rem;
+    font-size: var(--text-md);
     color: var(--text-secondary);
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
 }
 
 .achieved-comparison {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+    gap: var(--space-2);
 }
 
 @media (max-width: 480px) {
@@ -1963,8 +1991,8 @@ details[open] .details-hide {
     align-items: center;
     padding: 0.4rem 0.6rem;
     background: var(--bg-secondary);
-    border-radius: 4px;
-    font-size: 0.85rem;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-md);
     border-left: 3px solid var(--border);
 }
 
@@ -1987,7 +2015,7 @@ details[open] .details-hide {
 }
 
 .achieved-values {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     color: var(--text-primary);
 }
 
@@ -2005,7 +2033,7 @@ details[open] .details-hide {
 }
 
 .achieved-values .diff {
-    font-size: 0.75rem;
+    font-size: var(--text-sm);
     margin-left: 0.25rem;
 }
 
@@ -2022,216 +2050,458 @@ details[open] .details-hide {
 }
 
 /* ============================================
-   Glossary Page
+   Shared Page Layout Components
    ============================================ */
 
-.glossary-container {
+/* Page container - narrow width for content pages */
+.page-container {
     max-width: 900px;
 }
 
-.glossary-header {
+/* Page header - centred with consistent spacing */
+.page-header {
     text-align: center;
 }
 
-.glossary-header h1 {
-    margin-bottom: 0.5rem;
+.page-header h1 {
+    margin-bottom: var(--space-2);
 }
 
-.glossary-intro {
+/* Page intro text */
+.page-intro {
     color: var(--text-secondary);
-    font-size: 1.1rem;
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-6);
 }
 
+/* Page summary (counts/stats below header) */
+.page-summary {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border);
+}
 
-.glossary-nav {
+/* Filter navigation */
+.page-nav {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
+    gap: var(--space-2);
+    margin-bottom: var(--space-8);
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.glossary-filter {
+/* Filter buttons */
+.page-filter {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-4);
     color: var(--text-secondary);
     cursor: pointer;
-    font-family: 'Atkinson Hyperlegible', sans-serif;
-    font-size: 0.9rem;
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
     transition: all 0.2s;
 }
 
-.glossary-filter:hover {
+.page-filter:hover {
     border-color: var(--accent-gold);
     color: var(--text-primary);
 }
 
-.glossary-filter.active {
+.page-filter.active {
     background: var(--accent-gold);
     border-color: var(--accent-gold);
     color: var(--bg-primary);
 }
 
-.glossary-list {
+/* Entry list container */
+.page-list {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--space-4);
 }
 
-.glossary-entry {
+/* Entry card base */
+.entry-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
+    border-radius: var(--radius-lg);
+    padding: var(--space-2) var(--space-4);
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.glossary-entry > *:last-child {
+.entry-card > *:last-child {
     margin-bottom: 0;
 }
 
-.glossary-entry.highlight {
+.entry-card.highlight {
     border-color: var(--accent-gold);
     box-shadow: 0 0 0 2px var(--accent-gold-20);
 }
 
-.glossary-entry-header {
+/* Entry header */
+.entry-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
     padding: 0 0 0.5rem 0;
     border-bottom: 1px solid var(--border);
-    text-align: left;
 }
 
-.glossary-term {
-    font-family: 'Fraunces', serif;
-    font-size: 1.3rem;
+/* Entry title */
+.entry-title {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
     color: var(--accent-cream);
     margin: 0;
 }
 
-.glossary-category {
-    font-size: 0.75rem;
+/* Entry category badge */
+.entry-category {
+    font-size: var(--text-sm);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--bg-primary);
     background: var(--text-secondary);
     padding: 0.1rem 0.4rem;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
 }
 
-.glossary-desc {
+/* Entry description */
+.entry-desc {
     color: var(--text-primary);
     line-height: 1.6;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-3);
 }
 
-.glossary-details {
-    margin-bottom: 0.5rem;
+/* Entry expandable details */
+.entry-details {
+    margin-bottom: var(--space-2);
 }
 
-.glossary-details summary {
+.entry-details summary {
     cursor: pointer;
     color: var(--accent-green);
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
     font-weight: 500;
     padding: 0.25rem 0;
     transition: color 0.2s;
 }
 
-.glossary-details summary:hover {
+.entry-details summary:hover {
     color: var(--accent-cream);
 }
 
-.glossary-details-content {
+.entry-details-content {
     background: var(--bg-secondary);
-    border-radius: 6px;
-    padding: 1rem;
-    margin-top: 0.5rem;
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+    margin-top: var(--space-2);
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
     line-height: 1.7;
 }
 
-.glossary-related,
-.glossary-references {
+/* Related terms/links */
+.entry-related {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
+    gap: var(--space-2);
+    font-size: var(--text-md);
+    margin-bottom: var(--space-3);
 }
 
-.glossary-related {
-    margin-bottom: 0.75rem;
-}
-
-.glossary-related-label,
-.glossary-references-label {
+.entry-related-label {
     color: var(--text-muted);
 }
 
-.glossary-related-link {
+.entry-related-link {
     color: var(--accent-cream);
     background: var(--bg-secondary);
     padding: 0.2rem 0.6rem;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     text-decoration: none;
     border: 1px solid var(--border);
     transition: all 0.2s;
 }
 
-.glossary-related-link:hover {
+.entry-related-link:hover {
     background: var(--accent-green);
     color: var(--bg-primary);
     border-color: var(--accent-green);
 }
 
-.glossary-ref-link {
+/* Entry title as link */
+a.entry-title,
+.entry-title-link {
+    color: var(--accent-green);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+a.entry-title:hover,
+.entry-title-link:hover {
+    text-decoration: underline;
+}
+
+.entry-title .external-icon,
+.entry-title-link .external-icon {
+    font-size: var(--text-base);
+}
+
+/* Entry metadata */
+.entry-meta {
+    font-size: var(--text-md);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.entry-meta-label {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Unified reference styling for all entry types */
+.entry-references {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--border-30);
+    font-size: var(--text-md);
+}
+
+.references-label {
+    color: var(--text-muted);
+}
+
+.reference-link {
     color: var(--accent-green);
     text-decoration: none;
 }
 
-.glossary-ref-link:hover {
+.reference-link:hover {
+    text-decoration: underline;
+}
+
+/* Learn more link */
+.entry-learn-more {
+    margin-top: var(--space-2);
+}
+
+.learn-more-link {
+    color: var(--accent-green);
+    font-size: var(--text-md);
+    text-decoration: none;
+}
+
+.learn-more-link:hover {
     text-decoration: underline;
 }
 
 .no-results {
     text-align: center;
     color: var(--text-muted);
-    padding: 3rem;
+    padding: var(--space-12);
     font-style: italic;
+}
+
+/* ============================================
+   Fats Page - Entry Styles
+   ============================================ */
+
+/* Fat-specific: header override for flex-start alignment */
+.fat-entry-header { align-items: flex-start; gap: var(--space-3); }
+
+/* Fat-specific: badge container and variants */
+.fat-badges { display: flex; gap: var(--space-2); flex-wrap: wrap; flex-shrink: 0; }
+.fat-category { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em; padding: 0.15rem 0.5rem; border-radius: var(--radius-sm); }
+.fat-category-plant { color: var(--bg-primary); background: var(--accent-green); }
+.fat-category-animal { color: var(--bg-primary); background: var(--accent-gold); }
+.fat-badge { font-size: var(--text-2xs); text-transform: uppercase; letter-spacing: 0.03em; padding: 0.15rem 0.4rem; border-radius: var(--radius-sm); }
+.fat-badge-allergen { color: var(--bg-primary); background: var(--danger); }
+.fat-badge-sourcing { color: var(--text-primary); background: var(--bg-tertiary); border: 1px solid var(--border); }
+
+/* Fat-specific: stats grid */
+.fat-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: var(--space-2); padding: var(--space-3) var(--space-4); background: var(--bg-secondary); border-radius: var(--radius-md); }
+.fat-stat { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.fat-stat-label { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: var(--space-1); }
+a.fat-stat-label { text-decoration: none; border-bottom: 1px dotted var(--text-muted); transition: color 0.15s, border-color 0.15s; }
+a.fat-stat-label:hover { color: var(--accent-gold); border-bottom-color: var(--accent-gold); }
+.fat-stat-value { font-family: var(--font-mono); font-size: var(--text-xl); color: var(--text-primary); }
+
+/* Fat-specific: fatty acid display */
+.fatty-acid-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.fatty-acid-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 0.25rem 0.75rem;
+    align-items: center;
+}
+
+.fatty-acid-name {
+    font-size: var(--text-md);
+    color: var(--text-secondary);
+}
+
+.fatty-acid-value {
+    font-family: var(--font-mono);
+    font-size: var(--text-md);
+    color: var(--text-primary);
+    text-align: right;
+}
+
+.fatty-acid-bar {
+    grid-column: 1 / -1;
+    height: 4px;
+    background: var(--accent-green);
+    border-radius: var(--radius-sm);
+    opacity: 0.6;
+}
+
+.fat-no-data {
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 0;
+}
+
+/* ============================================
+   Formulas Page - Entry Styles
+   ============================================ */
+
+/* Formula-specific: equation display */
+.formula-equation { background: var(--bg-secondary); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); margin-bottom: var(--space-3); text-align: center; }
+.formula-equation code { font-family: var(--font-mono); font-size: var(--text-3xl); color: var(--accent-gold); }
+.formula-user-friendly { color: var(--text-secondary); margin-bottom: var(--space-3); }
+
+/* Formula-specific: section boxes with tab-style headings */
+.formula-variables,
+.formula-example { margin-bottom: var(--space-3); }
+.formula-section-heading { font-size: var(--text-xs); color: var(--text-muted); margin: 0; text-transform: uppercase; letter-spacing: 0.05em; background: var(--bg-secondary); display: inline-block; padding: 0.3rem 0.75rem; border-radius: var(--radius-md) var(--radius-md) 0 0; }
+.formula-section-box { background: var(--bg-secondary); border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md); padding: var(--space-3) var(--space-4); font-size: var(--text-md); color: var(--text-secondary); }
+.formula-section-box:last-child { margin-bottom: 0; }
+.formula-variables dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.25rem 1rem; }
+.formula-variables dt { font-family: var(--font-mono); color: var(--accent-cream); }
+.formula-variables dd { margin: 0; }
+.example-scenario { font-weight: 500; color: var(--accent-cream); margin-bottom: var(--space-2); }
+.example-steps { font-family: var(--font-mono); display: flex; flex-direction: column; gap: var(--space-1); }
+.example-step { color: var(--text-primary); }
+
+/* Formula-specific: range and technical */
+.formula-range { display: inline-flex; gap: var(--space-2); background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 0.35rem 0.75rem; font-size: var(--text-md); margin-bottom: var(--space-3); }
+.formula-range .range-values { font-family: var(--font-mono); color: var(--accent-green); }
+.formula-technical { margin: 0.75rem 0; }
+.formula-technical-content { margin-top: var(--space-2); line-height: 1.7; }
+
+/* ============================================
+   References Page - Citation Styles
+   ============================================ */
+
+/* Citations details styling (uses .entry-details as base) */
+.citations-details .entry-details-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+/* Citation items */
+.citation-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+}
+
+.citation-title {
+    font-size: var(--text-xl);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+}
+
+a.citation-title {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: var(--accent-green);
+    text-decoration: none;
+}
+
+a.citation-title:hover {
+    text-decoration: underline;
+}
+
+a.citation-title .external-icon {
+    font-size: var(--text-sm);
+}
+
+.citation-note {
+    font-size: var(--text-md);
+    color: var(--text-secondary);
+    margin-top: var(--space-1);
+}
+
+.cited-by {
+    font-size: var(--text-md);
+    color: var(--text-secondary);
+}
+
+.cited-by-label {
+    color: var(--text-muted);
+    margin-right: 0.25rem;
+}
+
+.cited-by-link {
+    color: var(--accent-gold);
+    text-decoration: none;
+}
+
+.cited-by-link:hover {
+    text-decoration: underline;
 }
 
 /* Optional label for subcontainer titles */
 .optional-label {
-    font-size: 0.8rem;
+    font-size: var(--text-base);
     color: var(--text-muted);
     font-weight: 400;
-    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-family: var(--font-body);
 }
 
 /* Unified additive mode area */
 .additive-mode-area {
     background: var(--bg-tertiary);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1rem;
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
 }
 
 .additive-tabs {
-    margin-bottom: 0.75rem;
-    gap: 0.25rem;
+    margin-bottom: var(--space-3);
+    gap: var(--space-1);
 }
 
 .additive-tab {
     padding: 0.5rem 0.875rem;
-    font-size: 0.85rem;
-    border-radius: 4px;
+    font-size: var(--text-md);
+    border-radius: var(--radius-sm);
 }
 
 .additive-tab.active {
@@ -2243,13 +2513,13 @@ details[open] .details-hide {
 
 .additive-selector {
     display: flex;
-    gap: 0.5rem;
+    gap: var(--space-2);
 }
 
 .additive-mode-area .empty-state,
 .additive-mode-area .empty-state-small {
-    padding: 0.5rem;
-    margin-top: 0.5rem;
+    padding: var(--space-2);
+    margin-top: var(--space-2);
 }
 
 .additive-mode-area .empty-state p,
@@ -2264,18 +2534,18 @@ details[open] .details-hide {
 .recipe-additives {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: var(--space-3);
 }
 
 /* Additive rows - matches fat-row pattern */
 .additive-row {
     display: grid;
     grid-template-columns: 1fr 100px 80px 40px;
-    gap: 0.75rem;
+    gap: var(--space-3);
     align-items: center;
-    padding: 0.75rem;
+    padding: var(--space-3);
     background: var(--bg-secondary);
-    border-radius: 8px;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--border);
 }
 
@@ -2305,9 +2575,9 @@ details[open] .details-hide {
 }
 
 .additive-percentage {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
     text-align: right;
 }
 
@@ -2320,10 +2590,10 @@ details[open] .details-hide {
     border: 1px solid var(--border);
     color: var(--text-muted);
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: var(--text-3xl);
     width: 28px;
     height: 28px;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2337,8 +2607,7 @@ details[open] .details-hide {
 }
 
 .empty-state-small {
-    padding: 0.75rem;
-    font-size: 0.85rem;
+    padding: var(--space-3);
     text-align: center;
     color: var(--text-muted);
 }
@@ -2351,11 +2620,11 @@ details[open] .details-hide {
 .panel-safety {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--space-2);
 }
 
 .safety-item {
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
     color: var(--text-secondary);
     padding: 0.35rem 0;
     border-bottom: 1px solid var(--border-30);
@@ -2369,8 +2638,8 @@ details[open] .details-hide {
 @media (max-width: 1024px) {
     .additive-row {
         grid-template-columns: 1fr 60px 55px 28px;
-        gap: 0.5rem;
-        padding: 0.5rem;
+        gap: var(--space-2);
+        padding: var(--space-2);
     }
 
     .additive-amount-group input {
@@ -2383,15 +2652,15 @@ details[open] .details-hide {
    ============================================ */
 
 .create-recipe-section {
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
+    margin-top: var(--space-6);
+    padding-top: var(--space-6);
     border-top: 1px solid var(--border);
     text-align: center;
 }
 
 .btn-large {
     padding: 0.9rem 2rem;
-    font-size: 1rem;
+    font-size: var(--text-2xl);
 }
 
 /* ============================================
@@ -2414,7 +2683,7 @@ details[open] .details-hide {
 /* Qualitative Summary */
 .qualitative-summary {
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-6);
     line-height: 1.6;
 }
 
@@ -2425,7 +2694,7 @@ details[open] .details-hide {
 }
 
 .qualitative-warnings li {
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
     color: var(--text-secondary);
     line-height: 1.5;
 }
@@ -2435,15 +2704,15 @@ details[open] .details-hide {
 }
 
 .recipe-section {
-    margin-bottom: 1.75rem;
+    margin-bottom: var(--space-6);
 }
 
 .recipe-section h4 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.1rem;
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
     color: var(--accent-cream);
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-2);
     border-bottom: 1px solid var(--border);
 }
 
@@ -2456,7 +2725,7 @@ details[open] .details-hide {
 
 .ingredients-list li {
     display: flex;
-    gap: 0.75rem;
+    gap: var(--space-3);
     padding: 0.5rem 0;
     border-bottom: 1px solid var(--border-30);
 }
@@ -2466,8 +2735,8 @@ details[open] .details-hide {
 }
 
 .ingredient-amount {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
     color: var(--accent-gold);
     min-width: 80px;
 }
@@ -2483,7 +2752,7 @@ details[open] .details-hide {
 }
 
 .procedure-list li {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-4);
     padding-left: 0.5rem;
     color: var(--text-secondary);
     line-height: 1.6;
@@ -2499,18 +2768,18 @@ details[open] .details-hide {
 }
 
 .recipe-summary {
-    margin-top: 1.5rem;
-    padding: 1.25rem;
+    margin-top: var(--space-6);
+    padding: var(--space-5);
     background: var(--bg-secondary);
-    border-radius: 8px;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--border);
 }
 
 .recipe-summary h4 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.1rem;
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
     color: var(--accent-cream);
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-4);
 }
 
 .recipe-summary ul {
@@ -2522,7 +2791,7 @@ details[open] .details-hide {
 .recipe-summary li {
     padding: 0.4rem 0;
     border-bottom: 1px solid var(--border-30);
-    font-size: 0.95rem;
+    font-size: var(--text-xl);
     color: var(--text-secondary);
 }
 
@@ -2539,7 +2808,7 @@ details[open] .details-hide {
 .fa-profile-table td {
     padding: 0.4rem 0;
     border-bottom: 1px solid var(--border-30);
-    font-size: 0.95rem;
+    font-size: var(--text-xl);
     color: var(--text-secondary);
 }
 
@@ -2553,18 +2822,18 @@ details[open] .details-hide {
 }
 
 .sat-unsat-summary {
-    margin-top: 0.75rem;
-    padding-top: 0.75rem;
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
     border-top: 1px solid var(--border-30);
-    font-size: 0.95rem;
+    font-size: var(--text-xl);
     color: var(--text-secondary);
 }
 
 /* Side-by-side layout for recipe summary and fatty acid profile */
 .recipe-details-row {
     display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
 }
 
 .recipe-details-row .recipe-summary {
@@ -2572,32 +2841,190 @@ details[open] .details-hide {
     margin-top: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .recipe-details-row {
         flex-direction: column;
     }
-}
 
-@media (max-width: 768px) {
     .recipe-section h4 {
-        font-size: 1rem;
+        font-size: var(--text-2xl);
     }
 
     .ingredient-amount {
         min-width: 70px;
-        font-size: 0.85rem;
+        font-size: var(--text-md);
     }
 
     .procedure-list li {
-        font-size: 0.9rem;
+        font-size: var(--text-lg);
     }
 
     .recipe-summary {
-        padding: 1rem;
+        padding: var(--space-4);
     }
 
     .recipe-summary h4 {
-        font-size: 1rem;
+        font-size: var(--text-2xl);
+    }
+}
+
+/* ============================================
+   Science Section (Expandable)
+   ============================================ */
+
+.science-section {
+    margin-top: var(--space-6);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--bg-secondary);
+}
+
+.science-section summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1rem 1.25rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.science-section summary::-webkit-details-marker {
+    display: none;
+}
+
+.science-section .details-toggle,
+.science-section .details-hide {
+    font-size: var(--text-2xl);
+    color: var(--accent-gold);
+}
+
+.science-section .details-toggle::before {
+    content: '▶';
+    display: inline-block;
+    margin-right: 0.5rem;
+    transition: transform 0.2s;
+    font-size: 0.6em;
+}
+
+.science-section[open] .details-toggle::before {
+    transform: rotate(90deg);
+}
+
+.science-section .details-toggle:hover,
+.science-section .details-hide:hover {
+    text-decoration: underline;
+}
+
+.science-section .details-toggle {
+    display: inline;
+}
+
+.science-section .details-hide {
+    display: none;
+}
+
+.science-section[open] .details-toggle {
+    display: none;
+}
+
+.science-section[open] .details-hide {
+    display: inline;
+}
+
+.science-content {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--border);
+}
+
+.science-content h4 {
+    margin: 0 0 1rem 0;
+    color: var(--text-primary);
+    font-size: var(--text-3xl);
+}
+
+.science-content .recipe-details-row {
+    margin-top: 0;
+    margin-bottom: var(--space-6);
+}
+
+.science-explanations {
+    border-top: 1px solid var(--border);
+    padding-top: var(--space-4);
+}
+
+.science-explanation {
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border-30);
+}
+
+.science-explanation:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.science-explanation h5 {
+    margin: 0 0 0.5rem 0;
+    color: var(--accent-gold);
+    font-size: var(--text-2xl);
+}
+
+.science-explanation p {
+    margin: 0 0 0.5rem 0;
+    line-height: 1.6;
+}
+
+.science-explanation p:last-child {
+    margin-bottom: 0;
+}
+
+.science-value-context {
+    color: var(--text-secondary);
+    font-size: var(--text-xl);
+}
+
+.science-citation {
+    font-size: var(--text-md);
+    color: var(--text-muted);
+    margin-top: var(--space-3);
+}
+
+.science-citation a {
+    color: var(--accent-green);
+    text-decoration: none;
+}
+
+.science-citation a:hover {
+    text-decoration: underline;
+}
+
+.science-learn-more {
+    font-size: var(--text-md);
+    color: var(--text-muted);
+    margin-top: var(--space-2);
+}
+
+.science-learn-more a {
+    color: var(--accent-cream);
+    text-decoration: none;
+}
+
+.science-learn-more a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .science-section summary {
+        padding: var(--space-3) var(--space-4);
+    }
+
+    .science-content {
+        padding: var(--space-3) var(--space-4);
+    }
+
+    .science-explanation h5 {
+        font-size: var(--text-xl);
     }
 }
 
@@ -2612,7 +3039,7 @@ details[open] .details-hide {
     z-index: 10000;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--space-2);
     max-width: 400px;
     pointer-events: none;
 }
@@ -2620,11 +3047,11 @@ details[open] .details-hide {
 .toast {
     display: flex;
     align-items: flex-start;
-    gap: 0.75rem;
+    gap: var(--space-3);
     padding: 0.875rem 1rem;
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: var(--radius-lg);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     opacity: 0;
     transform: translateX(100%);
@@ -2644,13 +3071,13 @@ details[open] .details-hide {
 
 .toast-icon {
     flex-shrink: 0;
-    font-size: 1.1rem;
+    font-size: var(--text-3xl);
     line-height: 1.4;
 }
 
 .toast-message {
     flex: 1;
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
     line-height: 1.4;
     color: var(--text-primary);
 }
@@ -2660,7 +3087,7 @@ details[open] .details-hide {
     background: transparent;
     border: none;
     color: var(--text-muted);
-    font-size: 1.2rem;
+    font-size: var(--text-4xl);
     cursor: pointer;
     padding: 0;
     line-height: 1;
@@ -2723,9 +3150,9 @@ details[open] .details-hide {
 .ratio-mode-toggle {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+    font-size: var(--text-lg);
     cursor: pointer;
 }
 
@@ -2737,7 +3164,7 @@ details[open] .details-hide {
 
 .cupboard-actions {
     display: flex;
-    gap: 0.5rem;
+    gap: var(--space-2);
 }
 
 .cupboard-actions .btn {
@@ -2747,33 +3174,33 @@ details[open] .details-hide {
 /* Property comparison preview */
 .cupboard-property-preview {
     margin: 1rem 0;
-    padding: 1rem;
+    padding: var(--space-4);
     background: var(--bg-input);
-    border-radius: 8px;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--border-30);
 }
 
 .property-comparison-header {
     display: grid;
     grid-template-columns: 1fr auto auto auto auto;
-    gap: 0.75rem;
-    font-size: 0.75rem;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
     font-weight: 600;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
+    padding-bottom: var(--space-2);
     border-bottom: 1px solid var(--border-30);
 }
 
 .property-comparison-row {
     display: grid;
     grid-template-columns: 1fr auto auto auto auto;
-    gap: 0.75rem;
+    gap: var(--space-3);
     align-items: center;
     padding: 0.35rem 0;
-    font-size: 0.9rem;
+    font-size: var(--text-lg);
 }
 
 .prop-name {
@@ -2799,11 +3226,11 @@ details[open] .details-hide {
 
 .prop-arrow {
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: var(--text-base);
 }
 
 .prop-diff {
-    font-size: 0.8rem;
+    font-size: var(--text-base);
     min-width: 3rem;
 }
 
@@ -2817,41 +3244,41 @@ details[open] .details-hide {
 
 .prop-range {
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: var(--text-base);
 }
 
 /* Responsive adjustments for build mode */
 @media (max-width: 768px) {
     .build-mode-area,
     .additive-mode-area {
-        padding: 0.75rem;
+        padding: var(--space-3);
     }
 
     .build-mode-tabs,
     .additive-tabs {
         flex-wrap: wrap;
-        gap: 0.25rem;
+        gap: var(--space-1);
     }
 
     .build-mode-tab {
         flex: 1 1 45%;
         text-align: center;
         padding: 0.5rem 0.5rem;
-        font-size: 0.8rem;
+        font-size: var(--text-base);
     }
 
     .additive-tab {
         flex: 1 1 30%;
         text-align: center;
         padding: 0.5rem 0.5rem;
-        font-size: 0.8rem;
+        font-size: var(--text-base);
     }
 
     .property-comparison-header,
     .property-comparison-row {
         grid-template-columns: 1fr auto auto auto auto;
-        gap: 0.5rem;
-        font-size: 0.85rem;
+        gap: var(--space-2);
+        font-size: var(--text-md);
     }
 }
 
@@ -2859,8 +3286,8 @@ details[open] .details-hide {
     .build-mode-tab,
     .additive-tab {
         flex: 1 1 100%;
-        padding: 0.5rem 0.75rem;
-        font-size: 0.8rem;
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--text-base);
     }
 
     .cupboard-actions {

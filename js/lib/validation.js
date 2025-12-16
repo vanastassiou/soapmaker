@@ -8,7 +8,7 @@ let validators = {};
 
 /**
  * Initialize Ajv and compile schemas
- * @param {Object} schemas - {fats: schema, glossary: schema, fattyAcids: schema, additives: schema}
+ * @param {Object} schemas - {fats, glossary, fattyAcids, additives, tooltips, sources}
  */
 export function initValidation(schemas) {
     if (typeof Ajv === 'undefined') {
@@ -21,7 +21,9 @@ export function initValidation(schemas) {
         fats: ajvInstance.compile(schemas.fats),
         glossary: ajvInstance.compile(schemas.glossary),
         fattyAcids: ajvInstance.compile(schemas.fattyAcids),
-        additives: ajvInstance.compile(schemas.additives)
+        additives: ajvInstance.compile(schemas.additives),
+        tooltips: ajvInstance.compile(schemas.tooltips),
+        sources: ajvInstance.compile(schemas.sources)
     };
 }
 
@@ -58,7 +60,7 @@ export function formatErrors(errors) {
 
 /**
  * Validate all data files and throw on failure (strict mode)
- * @param {Object} data - {fats, glossary, fattyAcids, additives}
+ * @param {Object} data - {fats, glossary, fattyAcids, additives, tooltips, sources}
  * @throws {Error} If any validation fails
  */
 export function validateAllStrict(data) {
@@ -66,7 +68,9 @@ export function validateAllStrict(data) {
         fats: validate('fats', data.fats),
         glossary: validate('glossary', data.glossary),
         fattyAcids: validate('fattyAcids', data.fattyAcids),
-        additives: validate('additives', data.additives)
+        additives: validate('additives', data.additives),
+        tooltips: validate('tooltips', data.tooltips),
+        sources: validate('sources', data.sources)
     };
 
     const failures = Object.entries(results)

@@ -1,5 +1,5 @@
 /**
- * UI rendering functions for the soap calculator
+ * UI rendering functions for the soap recipe builder
  * Handles all DOM manipulation and rendering
  */
 
@@ -502,127 +502,138 @@ export function showFattyAcidInfo(acidKey, fattyAcidsData, recipe, fatsDatabase)
 }
 
 // ============================================
-// Glossary Tooltips
+// Help Popup System (shared by glossary and tooltips)
 // ============================================
 
 /**
- * Populate tooltip content
+ * Initialize unified help popup system for both glossary and tooltips
+ * @param {Object} glossaryData - Glossary data (soapmaking knowledge)
+ * @param {Object} tooltipsData - Tooltips data (UI help)
+ * @param {Function} onOpenPanel - Callback to open glossary panel: (term) => void
  */
-function populateTooltipContent(tooltip, data, glossaryData) {
-    tooltip.querySelector('.tooltip-header').innerHTML =
-        `${data.term} <span class="tooltip-category">${data.category}</span>`;
-    tooltip.querySelector('.tooltip-body').textContent = data.desc;
-
-    const detailsEl = tooltip.querySelector('.tooltip-details');
-    const detailsContentEl = tooltip.querySelector('.tooltip-details-content');
-    if (data.details) {
-        detailsContentEl.innerHTML = data.details.replace(/\n/g, '<br>');
-        detailsEl.style.display = 'block';
-        detailsEl.open = false; // Start collapsed
-    } else {
-        detailsEl.style.display = 'none';
-    }
-
-    const relatedContainer = tooltip.querySelector('.tooltip-related-terms');
-    const relatedSection = tooltip.querySelector('.tooltip-related');
-    if (data.related?.length > 0) {
-        relatedContainer.innerHTML = data.related
-            .filter(r => glossaryData[r])
-            .map(r => `<span class="related-term" data-term="${r}">${glossaryData[r].term.split(' (')[0]}</span>`)
-            .join('');
-        relatedSection.style.display = 'block';
-    } else {
-        relatedSection.style.display = 'none';
-    }
-}
-
-/**
- * Initialize glossary tooltip system
- * @param {Object} glossaryData - Glossary data object
- */
-export function initGlossaryTooltips(glossaryData) {
-    const tooltip = document.createElement('div');
-    tooltip.className = 'glossary-tooltip';
-    tooltip.innerHTML = `
-        <div class="tooltip-header"></div>
-        <div class="tooltip-body"></div>
-        <details class="tooltip-details">
-            <summary>
-                <span class="details-toggle">More details</span>
-                <span class="details-hide">Hide details</span>
-            </summary>
-            <div class="tooltip-details-content"></div>
-        </details>
-        <div class="tooltip-related">
-            <div class="tooltip-related-label">Related:</div>
-            <div class="tooltip-related-terms"></div>
-        </div>
+export function initHelpPopup(glossaryData, tooltipsData, onOpenPanel) {
+    const popup = document.createElement('div');
+    popup.className = 'help-popup';
+    popup.innerHTML = `
+        <div class="help-popup-title"></div>
+        <div class="help-popup-body"></div>
+        <a href="#" class="help-popup-link"></a>
     `;
-    document.body.appendChild(tooltip);
+    document.body.appendChild(popup);
 
-    function showTooltip(term, anchorEl) {
-        const data = glossaryData[term];
-        if (!data) return;
+    let activeTipEl = null;
+    let currentLinkAction = null;
 
-        populateTooltipContent(tooltip, data, glossaryData);
-        tooltip.classList.add('visible');
-        positionNearAnchor(tooltip, anchorEl);
+    function hidePopup() {
+        popup.classList.remove('visible');
+        activeTipEl = null;
+        currentLinkAction = null;
     }
 
-    function hideTooltip() {
-        tooltip.classList.remove('visible');
-        tooltip.style.display = '';
+    function showPopup(anchorEl, { title, desc, linkText, linkAction }) {
+        popup.querySelector('.help-popup-title').textContent = title;
+        popup.querySelector('.help-popup-body').textContent = desc;
+
+        const linkEl = popup.querySelector('.help-popup-link');
+        if (linkText && linkAction) {
+            linkEl.textContent = linkText + ' →';
+            linkEl.style.display = 'block';
+            currentLinkAction = linkAction;
+        } else {
+            linkEl.style.display = 'none';
+            currentLinkAction = null;
+        }
+
+        popup.classList.add('visible');
+        positionNearAnchor(popup, anchorEl);
     }
 
     function showRangeTip(text, anchorEl) {
-        tooltip.querySelector('.tooltip-header').textContent = 'Out of range';
-        tooltip.querySelector('.tooltip-body').textContent = text;
-        tooltip.querySelector('.tooltip-details').style.display = 'none';
-        tooltip.querySelector('.tooltip-related').style.display = 'none';
-        tooltip.classList.add('visible');
-        positionNearAnchor(tooltip, anchorEl);
+        showPopup(anchorEl, {
+            title: 'Out of range',
+            desc: text,
+            linkText: null,
+            linkAction: null
+        });
     }
 
-    let activeTipEl = null;
-
     document.addEventListener('click', (e) => {
-        const tipEl = e.target.closest('.help-tip');
-        const relatedEl = e.target.closest('.related-term');
-        const inTooltip = e.target.closest('.glossary-tooltip');
+        const glossaryTip = e.target.closest('.help-tip[data-term]');
+        const uiTip = e.target.closest('.ui-tip[data-tooltip]');
+        const rangeTip = e.target.closest('.help-tip[data-range-tip]');
+        const linkEl = e.target.closest('.help-popup-link');
+        const inPopup = e.target.closest('.help-popup');
 
-        // Clicking related term in tooltip - navigate to that term
-        if (relatedEl && inTooltip) {
-            showTooltip(relatedEl.dataset.term, relatedEl);
-            activeTipEl = relatedEl;
-            return;
-        }
-
-        // Clicking inside tooltip (e.g., details toggle) - don't dismiss
-        if (inTooltip) {
-            return;
-        }
-
-        // Clicking a help tip icon - toggle if same, show if different
-        if (tipEl) {
-            // Prevent label from toggling checkbox when clicking help-tip inside it
+        // Clicking the "More details" / "Learn more" link
+        if (linkEl && currentLinkAction) {
             e.preventDefault();
-            if (tipEl === activeTipEl) {
-                hideTooltip();
-                activeTipEl = null;
+            hidePopup();
+            currentLinkAction();
+            return;
+        }
+
+        // Clicking inside popup - don't dismiss
+        if (inPopup) {
+            return;
+        }
+
+        // Clicking a glossary help tip (ⓘ)
+        if (glossaryTip) {
+            e.preventDefault();
+            if (glossaryTip === activeTipEl) {
+                hidePopup();
             } else {
-                if (tipEl.dataset.rangeTip) {
-                    showRangeTip(tipEl.dataset.rangeTip, tipEl);
-                } else if (tipEl.dataset.term) {
-                    showTooltip(tipEl.dataset.term, tipEl);
+                const term = glossaryTip.dataset.term;
+                const data = glossaryData[term];
+                if (data) {
+                    showPopup(glossaryTip, {
+                        title: data.term,
+                        desc: data.desc,
+                        linkText: 'More details',
+                        linkAction: () => onOpenPanel(term)
+                    });
+                    activeTipEl = glossaryTip;
                 }
-                activeTipEl = tipEl;
             }
             return;
         }
 
-        // Any other click dismisses tooltip
-        hideTooltip();
-        activeTipEl = null;
+        // Clicking a UI tooltip (?)
+        if (uiTip) {
+            e.preventDefault();
+            if (uiTip === activeTipEl) {
+                hidePopup();
+            } else {
+                const key = uiTip.dataset.tooltip;
+                const data = tooltipsData[key];
+                if (data) {
+                    const glossaryLink = data.glossaryLink;
+                    showPopup(uiTip, {
+                        title: data.title,
+                        desc: data.desc,
+                        linkText: glossaryLink ? 'Learn more' : null,
+                        linkAction: glossaryLink ? () => onOpenPanel(glossaryLink) : null
+                    });
+                    activeTipEl = uiTip;
+                }
+            }
+            return;
+        }
+
+        // Clicking a range tip (out of range warning)
+        if (rangeTip) {
+            e.preventDefault();
+            if (rangeTip === activeTipEl) {
+                hidePopup();
+            } else {
+                showRangeTip(rangeTip.dataset.rangeTip, rangeTip);
+                activeTipEl = rangeTip;
+            }
+            return;
+        }
+
+        // Any other click dismisses popup
+        hidePopup();
     });
 }
 
@@ -772,7 +783,7 @@ export function renderExcludedFats(excludedFats, fatsDatabase, onRemove) {
     if (!container) return;
 
     if (excludedFats.length === 0) {
-        container.innerHTML = '<span class="no-exclusions">No fats currently selected for exclusion</span>';
+        container.innerHTML = '<div class="empty-state-small"><p>No fats selected for exclusion</p></div>';
         return;
     }
 
@@ -1125,7 +1136,7 @@ export function showAdditiveInfo(additiveId, additivesDatabase) {
         extraItems.push(`<div class="extra-item"><span class="extra-label">Anchors well with:</span> ${anchorNames}</div>`);
     }
     if (additive.color) {
-        extraItems.push(`<div class="extra-item"><span class="extra-label">Color:</span> <span class="color-swatch" style="background-color: ${additive.color}"></span></div>`);
+        extraItems.push(`<div class="extra-item"><span class="extra-label">Colour:</span> <span class="color-swatch" style="background-color: ${additive.color}"></span></div>`);
     }
     if (additive.density) {
         extraItems.push(`<div class="extra-item"><span class="extra-label">Density:</span> ${additive.density} g/mL</div>`);

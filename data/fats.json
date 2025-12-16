@@ -1,7 +1,7 @@
 {
   "argan-oil": {
     "density": 0.91,
-    "description": "Oil pressed from Argania spinosa kernels. High in oleic and linoleic acids.",
+    "description": "Oil pressed from argan tree (<i>Argania spinosa</i>) kernels. Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -27,9 +27,9 @@
     "name": "Argan oil",
     "references": [
       {
-        "section": "Argan Oil: Chemical Composition, Extraction Process, and Quality Control",
-        "source": "Frontiers in Nutrition",
-        "url": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2021.804587/full"
+        "sourceId": "pubchem",
+        "section": "Argan oil (CID 11848929)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/11848929"
       }
     ],
     "sap": {
@@ -43,7 +43,7 @@
   },
   "apricot-kernel-oil": {
     "density": 0.91,
-    "description": "Oil pressed from apricot kernels.",
+    "description": "Oil pressed from apricot (<i>Prunus armeniaca</i>) kernels. Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -69,8 +69,8 @@
     "name": "Apricot kernel oil",
     "references": [
       {
-        "section": "Apricot kernel characterization, oil extraction, and its utilization: a review",
-        "source": "Food Science and Biotechnology (PMC9905367)",
+        "sourceId": "pmc",
+        "section": "PMC9905367: Apricot kernel characterization, oil extraction, and its utilization: a review",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9905367/"
       }
     ],
@@ -85,7 +85,7 @@
   },
   "avocado-oil": {
     "density": 0.91,
-    "description": "Oil pressed from avocado fruit.",
+    "description": "Oil pressed from avocado (<i>Persea americana</i>) fruit. Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -111,8 +111,8 @@
     "name": "Avocado oil",
     "references": [
       {
-        "section": "Avocado Oil: Characteristics, Properties, and Applications",
-        "source": "Molecules (PMC6600360)",
+        "sourceId": "pmc",
+        "section": "PMC6600360: Avocado Oil: Characteristics, Properties, and Applications",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6600360/"
       }
     ],
@@ -127,7 +127,8 @@
   },
   "babassu-oil": {
     "density": 0.92,
-    "description": "Oil from babassu palm nut.",
+    "description": "Oil pressed from babassu palm (<i>Attalea speciosa</i>) nuts. Produces very hard bars with abundant, bubbly lather and high cleansing.",
+    "meltingPoint": 24,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -153,8 +154,8 @@
     "name": "Babassu oil",
     "references": [
       {
-        "section": "Section 2.1.2 Babassu Oil, Table 1 Fatty Acid Composition",
-        "source": "Codex Alimentarius CXS 210-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 210-1999: Section 2.1.2 Babassu Oil, Table 1 Fatty Acid Composition",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
     ],
@@ -169,7 +170,8 @@
   },
   "beef-tallow": {
     "density": 0.9,
-    "description": "Rendered beef fat.",
+    "description": "Rendered beef fat. Adds moderate hardness with stable, creamy lather.",
+    "meltingPoint": 45,
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
@@ -195,8 +197,8 @@
     "name": "Beef tallow",
     "references": [
       {
-        "section": "Section 2.4 Edible Tallow, Table 1 Fatty Acid Ranges",
-        "source": "Codex Alimentarius CXS 211-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 211-1999: Section 2.4 Edible Tallow, Table 1 Fatty Acid Ranges",
         "url": "https://www.fao.org/4/y2774e/y2774e05.htm"
       }
     ],
@@ -211,7 +213,7 @@
   },
   "black-cumin-seed-oil": {
     "density": 0.92,
-    "description": "Oil from black cumin seeds (Nigella sativa). Rich in unsaturated fatty acids with potential therapeutic properties.",
+    "description": "Oil pressed from black cumin (<i>Nigella sativa</i>) seeds. Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -237,8 +239,8 @@
     "name": "Black cumin seed oil (Nigella sativa)",
     "references": [
       {
-        "section": "Variation in the Composition and Quality of Nigella sativa L. Seed Oils",
-        "source": "PMC10975171",
+        "sourceId": "pmc",
+        "section": "PMC10975171: Variation in the Composition and Quality of Nigella sativa L. Seed Oils",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10975171/"
       }
     ],
@@ -253,7 +255,7 @@
   },
   "camellia-seed-oil": {
     "density": 0.91,
-    "description": "Oil from camellia seeds. Similar to olive oil with high oleic acid. Called 'oriental olive oil'.",
+    "description": "Oil pressed from camellia (<i>Camellia oleifera</i>) seeds. Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -279,9 +281,9 @@
     "name": "Camellia seed oil (tea seed oil)",
     "references": [
       {
-        "section": "Fatty acids and nutritional components of Camellia oleifera seed oil",
-        "source": "Scientific Reports Nature",
-        "url": "https://www.nature.com/articles/s41598-022-20576-y"
+        "sourceId": "pubchem",
+        "section": "Tea seed oil / Camellia oil (CID 6850744)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850744"
       }
     ],
     "sap": {
@@ -295,7 +297,7 @@
   },
   "canola-oil-low-erucic-rapeseed": {
     "density": 0.91,
-    "description": "Oil from low-erucic rapeseed.",
+    "description": "Oil pressed from low-erucic rapeseed (<i>Brassica napus</i>). Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -321,8 +323,8 @@
     "name": "Canola oil (low erucic rapeseed)",
     "references": [
       {
-        "section": "Section 2.1.12 Rapeseed Oil (Low Erucic Acid), Table 1",
-        "source": "Codex Alimentarius CXS 210-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 210-1999: Section 2.1.12 Rapeseed Oil (Low Erucic Acid), Table 1",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
     ],
@@ -337,7 +339,7 @@
   },
   "castor-oil": {
     "density": 0.96,
-    "description": "Oil from castor beans.",
+    "description": "Oil pressed from castor (<i>Ricinus communis</i>) beans. Produces soft bars with abundant lather and highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -363,14 +365,9 @@
     "name": "Castor oil",
     "references": [
       {
-        "section": "Castor Oil: Properties, Uses, and Optimization of Processing Parameters in Commercial Production",
-        "source": "Lipid Insights (PMC5015816)",
+        "sourceId": "pmc",
+        "section": "PMC5015816: Castor Oil: Properties, Uses, and Optimization of Processing Parameters in Commercial Production",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5015816/"
-      },
-      {
-        "section": "Castor oil: a review on chemical composition and physicochemical properties",
-        "source": "SciELO Brazil",
-        "url": "http://www.scielo.br/j/cta/a/jtzR5bpyvr9Fm6WYDrRqt7t/?lang=en"
       }
     ],
     "sap": {
@@ -384,7 +381,8 @@
   },
   "cocoa-butter": {
     "density": 0.9,
-    "description": "Butter from cocoa beans.",
+    "description": "Butter extracted from cocoa (<i>Theobroma cacao</i>) beans. Produces hard bars with stable, creamy lather.",
+    "meltingPoint": 34,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -410,8 +408,8 @@
     "name": "Cocoa butter",
     "references": [
       {
-        "section": "Standard for Cocoa Butter",
-        "source": "Codex Alimentarius CXS 86-1981",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 86-1981: Standard for Cocoa Butter",
         "url": "https://www.fao.org/input/download/standards/66/CXS_086e.pdf"
       }
     ],
@@ -426,7 +424,8 @@
   },
   "coconut-oil-76": {
     "density": 0.92,
-    "description": "Oil from coconut meat. Melts at 76°F.",
+    "description": "Oil pressed from coconut (<i>Cocos nucifera</i>) meat. Produces very hard bars with abundant, bubbly lather and high cleansing. Coconut is classified as a tree nut allergen.",
+    "meltingPoint": 24,
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
@@ -453,8 +452,8 @@
     "name": "Coconut oil (76)",
     "references": [
       {
-        "section": "Section 2.1.3 Coconut Oil, Table 1 Fatty Acid Composition",
-        "source": "Codex Alimentarius CXS 210-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 210-1999: Section 2.1.3 Coconut Oil, Table 1 Fatty Acid Composition",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
     ],
@@ -469,7 +468,8 @@
   },
   "coconut-oil-92": {
     "density": 0.92,
-    "description": "Hydrogenated coconut oil. Melts at 92°F.",
+    "description": "Hydrogenated coconut (<i>Cocos nucifera</i>) oil. Produces very hard bars with abundant, bubbly lather and high cleansing. Coconut is classified as a tree nut allergen.",
+    "meltingPoint": 33,
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
@@ -496,8 +496,8 @@
     "name": "Coconut oil (92)",
     "references": [
       {
-        "section": "Section 2.1.3 Coconut Oil (hydrogenated variant)",
-        "source": "Codex Alimentarius CXS 210-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 210-1999: Section 2.1.3 Coconut Oil (hydrogenated variant)",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
     ],
@@ -512,7 +512,8 @@
   },
   "cupuacu-butter": {
     "density": 0.9,
-    "description": "Butter from cupuacu tree seeds (Theobroma grandiflorum). Similar to cocoa butter but softer.",
+    "description": "Butter extracted from cupuacu (<i>Theobroma grandiflorum</i>) seeds. Adds moderate hardness with stable, creamy lather.",
+    "meltingPoint": 32,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -538,9 +539,9 @@
     "name": "Cupuacu butter",
     "references": [
       {
-        "section": "Composition of fatty acids of cupuaçu butter",
-        "source": "ResearchGate",
-        "url": "https://www.researchgate.net/figure/Composition-of-fatty-acids-of-cupuacu-butter-by-different-literature-reports-and_tbl5_336447158"
+        "sourceId": "pubchem",
+        "section": "Cupuacu butter (CID 6857658)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6857658"
       }
     ],
     "sap": {
@@ -554,7 +555,7 @@
   },
   "cottonseed-oil": {
     "density": 0.92,
-    "description": "Oil from Gossypium seeds. Balanced fatty acid profile with natural stability.",
+    "description": "Oil pressed from cottonseeds (<i>Gossypium</i>). Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -580,9 +581,9 @@
     "name": "Cottonseed oil",
     "references": [
       {
-        "section": "Cottonseed Oil: Extraction, Characterization, Health Benefits",
-        "source": "Food Analytical Methods - Springer",
-        "url": "https://link.springer.com/article/10.1007/s12161-022-02410-3"
+        "sourceId": "pubchem",
+        "section": "Cottonseed oil (CID 6850758)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850758"
       }
     ],
     "sap": {
@@ -596,7 +597,8 @@
   },
   "deer-tallow": {
     "density": 0.9,
-    "description": "Rendered deer fat.",
+    "description": "Rendered deer fat. Adds moderate hardness with stable, creamy lather.",
+    "meltingPoint": 45,
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
@@ -622,8 +624,8 @@
     "name": "Deer tallow",
     "references": [
       {
-        "section": "Extrapolated from Edible Tallow specifications",
-        "source": "Codex Alimentarius CXS 211-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 211-1999: Extrapolated from Edible Tallow specifications",
         "url": "https://www.fao.org/4/y2774e/y2774e05.htm"
       }
     ],
@@ -638,7 +640,8 @@
   },
   "duck-fat": {
     "density": 0.91,
-    "description": "Rendered duck fat.",
+    "description": "Rendered duck fat. Adds moderate hardness with conditioning properties.",
+    "meltingPoint": 25,
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
@@ -664,9 +667,9 @@
     "name": "Duck fat",
     "references": [
       {
-        "section": "Total Fatty Acid Composition of Duck Fatty Tissues (1976)",
-        "source": "ResearchGate",
-        "url": "https://www.researchgate.net/publication/22204338_Total_Fatty_Acid_Composition_of_Duck_Fatty_Tissues"
+        "sourceId": "usda-fooddata",
+        "section": "Duck fat composition",
+        "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171401/nutrients"
       }
     ],
     "sap": {
@@ -680,7 +683,7 @@
   },
   "emu-oil": {
     "density": 0.91,
-    "description": "Rendered fat from Dromaius novaehollandiae (emu). High in oleic acid with good skin absorption.",
+    "description": "Rendered emu (<i>Dromaius novaehollandiae</i>) fat. Adds moderate hardness with conditioning properties.",
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
@@ -706,8 +709,8 @@
     "name": "Emu oil",
     "references": [
       {
-        "section": "Chemical Characterization and In Vivo Toxicological Safety Evaluation of Emu Oil",
-        "source": "PMC9182831",
+        "sourceId": "pmc",
+        "section": "PMC9182831: Chemical Characterization and In Vivo Toxicological Safety Evaluation of Emu Oil",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9182831/"
       }
     ],
@@ -722,7 +725,7 @@
   },
   "flaxseed-oil": {
     "density": 0.93,
-    "description": "Oil from flax seeds. Extremely high in alpha-linolenic acid (omega-3).",
+    "description": "Oil pressed from flax (<i>Linum usitatissimum</i>) seeds. Produces soft bars with highly conditioning properties. High linolenic content; soap prone to DOS.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -748,9 +751,9 @@
     "name": "Flaxseed oil (linseed)",
     "references": [
       {
-        "section": "Fatty acids composition and oil characteristics of linseed from Romania",
-        "source": "ResearchGate",
-        "url": "https://www.researchgate.net/publication/268205116_Fatty_acids_composition_and_oil_characteristics_of_linseed_Linum_Usitatissimum_L_from_Romania"
+        "sourceId": "pubchem",
+        "section": "Linseed oil (CID 5356420)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5356420"
       }
     ],
     "sap": {
@@ -764,7 +767,7 @@
   },
   "fractionated-coconut-oil-mct": {
     "density": 0.95,
-    "description": "Coconut oil with long-chain fatty acids removed. Contains only caprylic and capric acids.",
+    "description": "Fractionated coconut (<i>Cocos nucifera</i>) oil. Produces soft bars with minimal lather contribution. Coconut is classified as a tree nut allergen.",
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
@@ -791,8 +794,8 @@
     "name": "Fractionated coconut oil (MCT)",
     "references": [
       {
-        "section": "Caprylic/Capric Triglyceride compound summary",
-        "source": "PubChem CID 9857063",
+        "sourceId": "pubchem",
+        "section": "CID 9857063: Caprylic/Capric Triglyceride compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/9857063"
       }
     ],
@@ -807,7 +810,8 @@
   },
   "goat-tallow": {
     "density": 0.9,
-    "description": "Rendered goat fat.",
+    "description": "Rendered goat fat. Adds moderate hardness with stable, creamy lather.",
+    "meltingPoint": 45,
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
@@ -833,8 +837,8 @@
     "name": "Goat tallow",
     "references": [
       {
-        "section": "Extrapolated from Edible Tallow specifications",
-        "source": "Codex Alimentarius CXS 211-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 211-1999: Extrapolated from Edible Tallow specifications",
         "url": "https://www.fao.org/4/y2774e/y2774e05.htm"
       }
     ],
@@ -849,7 +853,8 @@
   },
   "goose-fat": {
     "density": 0.91,
-    "description": "Rendered goose fat.",
+    "description": "Rendered goose fat. Adds moderate hardness with conditioning properties.",
+    "meltingPoint": 26,
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
@@ -875,8 +880,8 @@
     "name": "Goose fat",
     "references": [
       {
-        "section": "Fatty acid composition of goose meat depending on genotype and sex",
-        "source": "Asian-Australasian Journal of Animal Sciences (PMC6325401)",
+        "sourceId": "pmc",
+        "section": "PMC6325401: Fatty acid composition of goose meat depending on genotype and sex",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6325401/"
       }
     ],
@@ -891,7 +896,7 @@
   },
   "grapeseed-oil": {
     "density": 0.92,
-    "description": "Oil from grape seeds.",
+    "description": "Oil pressed from grape (<i>Vitis vinifera</i>) seeds. Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -917,8 +922,8 @@
     "name": "Grapeseed oil",
     "references": [
       {
-        "section": "Section 2.1.5 Grapeseed Oil, Table 1 Fatty Acid Composition",
-        "source": "Codex Alimentarius CXS 210-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 210-1999: Section 2.1.5 Grapeseed Oil, Table 1 Fatty Acid Composition",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
     ],
@@ -933,7 +938,7 @@
   },
   "hazelnut-oil": {
     "density": 0.91,
-    "description": "Oil pressed from hazelnuts.",
+    "description": "Oil pressed from hazelnuts (<i>Corylus avellana</i>). Produces soft bars with highly conditioning properties. Tree nut allergen.",
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
@@ -960,9 +965,9 @@
     "name": "Hazelnut oil",
     "references": [
       {
-        "section": "Quality Characteristics and Fatty Acid Profile of Cold-Pressed Hazelnut Oils",
-        "source": "MDPI Agronomy 2021",
-        "url": "https://www.mdpi.com/2073-4395/11/10/2045"
+        "sourceId": "pubchem",
+        "section": "Hazelnut oil (CID 6850741)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850741"
       }
     ],
     "sap": {
@@ -976,7 +981,7 @@
   },
   "hemp-seed-oil": {
     "density": 0.93,
-    "description": "Oil from hemp seeds.",
+    "description": "Oil pressed from hemp (<i>Cannabis sativa</i>) seeds. Produces soft bars with highly conditioning properties. High linolenic content; soap prone to DOS.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1002,14 +1007,9 @@
     "name": "Hemp seed oil",
     "references": [
       {
-        "section": "Hempseed as a nutritional resource: An overview",
-        "source": "Euphytica 140:65-72 (2004)",
-        "url": "https://link.springer.com/article/10.1007/s10681-004-4811-6"
-      },
-      {
-        "section": "Hemp Seed Oil Properties",
-        "source": "Oklahoma State University Extension",
-        "url": "https://extension.okstate.edu/fact-sheets/hemp-seed-oil-properties.html"
+        "sourceId": "pubchem",
+        "section": "Hemp seed oil (CID 6850740)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850740"
       }
     ],
     "sap": {
@@ -1023,7 +1023,7 @@
   },
   "high-oleic-sunflower-oil": {
     "density": 0.92,
-    "description": "Oil from high-oleic sunflower seeds.",
+    "description": "Oil pressed from high-oleic sunflower (<i>Helianthus annuus</i>) seeds. Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1049,8 +1049,8 @@
     "name": "High oleic sunflower oil",
     "references": [
       {
-        "section": "Section 2.1.19 Sunflowerseed Oil (High Oleic Acid), Table 1",
-        "source": "Codex Alimentarius CXS 210-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 210-1999: Section 2.1.19 Sunflowerseed Oil (High Oleic Acid), Table 1",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
     ],
@@ -1065,7 +1065,8 @@
   },
   "illipe-butter": {
     "density": 0.9,
-    "description": "Butter from Shorea stenoptera (Borneo illipe) seeds. Similar to cocoa butter with higher melting point.",
+    "description": "Butter extracted from illipe (<i>Shorea stenoptera</i>) seeds. Produces hard bars with stable, creamy lather.",
+    "meltingPoint": 37,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1091,9 +1092,9 @@
     "name": "Illipe butter",
     "references": [
       {
-        "section": "Reduction of acidity and peroxide numbers of tengkawang butter",
-        "source": "ScienceDirect",
-        "url": "https://www.sciencedirect.com/science/article/pii/S2405844020325858"
+        "sourceId": "pubchem",
+        "section": "Illipe butter / Shorea stenoptera fat",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850742"
       }
     ],
     "sap": {
@@ -1107,7 +1108,8 @@
   },
   "kokum-butter": {
     "density": 0.9,
-    "description": "Butter from kokum tree seeds.",
+    "description": "Butter extracted from kokum (<i>Garcinia indica</i>) seeds. Produces hard bars with stable, creamy lather.",
+    "meltingPoint": 40,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1133,8 +1135,8 @@
     "name": "Kokum butter",
     "references": [
       {
-        "section": "Evaluation model for cocoa butter equivalents based on fatty acid compositions and triacylglycerol patterns",
-        "source": "Food Science and Biotechnology (PMC6859180)",
+        "sourceId": "pmc",
+        "section": "PMC6859180: Evaluation model for cocoa butter equivalents based on fatty acid compositions and triacylglycerol patterns",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6859180/"
       }
     ],
@@ -1149,7 +1151,7 @@
   },
   "kukui-nut-oil": {
     "density": 0.92,
-    "description": "Oil from Aleurites moluccanus nuts. High in linoleic and linolenic acids.",
+    "description": "Oil pressed from kukui (<i>Aleurites moluccanus</i>) nuts. Produces soft bars with highly conditioning properties. High linolenic content; soap prone to DOS.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1175,8 +1177,8 @@
     "name": "Kukui nut oil",
     "references": [
       {
-        "section": "Comprehensive Characterization of Kukui Nuts as Feedstock",
-        "source": "PMC10308387",
+        "sourceId": "pmc",
+        "section": "PMC10308387: Comprehensive Characterization of Kukui Nuts as Feedstock",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10308387/"
       }
     ],
@@ -1191,7 +1193,7 @@
   },
   "macadamia-nut-oil": {
     "density": 0.91,
-    "description": "Oil pressed from macadamia nuts.",
+    "description": "Oil pressed from macadamia (<i>Macadamia integrifolia</i>) nuts. Produces soft bars with highly conditioning properties. Tree nut allergen.",
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
@@ -1218,8 +1220,8 @@
     "name": "Macadamia nut oil",
     "references": [
       {
-        "section": "Comparative Study of Chemical Compositions and Antioxidant Capacities of Oils Obtained from 15 Macadamia Cultivars in China",
-        "source": "Foods (PMC8151099)",
+        "sourceId": "pmc",
+        "section": "PMC8151099: Comparative Study of Chemical Compositions and Antioxidant Capacities of Oils Obtained from 15 Macadamia Cultivars in China",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8151099/"
       }
     ],
@@ -1234,7 +1236,8 @@
   },
   "mango-butter": {
     "density": 0.9,
-    "description": "Butter from mango seed kernels.",
+    "description": "Butter extracted from mango (<i>Mangifera indica</i>) seed kernels. Adds moderate hardness with stable, creamy lather.",
+    "meltingPoint": 32,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1260,8 +1263,8 @@
     "name": "Mango butter",
     "references": [
       {
-        "section": "Mangifera sylvatica (Wild Mango): A new cocoa butter alternative",
-        "source": "Scientific Reports (PMC4995435)",
+        "sourceId": "pmc",
+        "section": "PMC4995435: Mangifera sylvatica (Wild Mango): A new cocoa butter alternative",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4995435/"
       }
     ],
@@ -1276,7 +1279,7 @@
   },
   "meadowfoam-oil": {
     "density": 0.91,
-    "description": "Oil from meadowfoam seeds.",
+    "description": "Oil pressed from meadowfoam (<i>Limnanthes alba</i>) seeds. Produces soft bars with minimal contribution to soap properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1302,13 +1305,13 @@
     "name": "Meadowfoam oil",
     "references": [
       {
-        "section": "Production of Fatty Acid Components of Meadowfoam Oil in Somatic Soybean Embryos",
-        "source": "Plant Physiology (PMC59139)",
+        "sourceId": "pmc",
+        "section": "PMC59139: Production of Fatty Acid Components of Meadowfoam Oil in Somatic Soybean Embryos",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC59139/"
       },
       {
+        "sourceId": "energy-environmental-science",
         "section": "Biodiesel from meadowfoam: oxidative stability and unusual fatty acid composition",
-        "source": "RSC Energy & Environmental Science",
         "url": "https://pubs.rsc.org/en/content/articlelanding/2010/ee/b923740m"
       }
     ],
@@ -1323,7 +1326,7 @@
   },
   "moringa-oil": {
     "density": 0.9,
-    "description": "Oil from Moringa oleifera seeds. Contains behenic acid (~7%, not tracked in profile).",
+    "description": "Oil pressed from moringa (<i>Moringa oleifera</i>) seeds. Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1349,8 +1352,8 @@
     "name": "Moringa oil (ben oil)",
     "references": [
       {
-        "section": "Quality characteristics and stability of Moringa oleifera seed oil of Indian origin",
-        "source": "Journal of Food Science and Technology (PMC3931868)",
+        "sourceId": "pmc",
+        "section": "PMC3931868: Quality characteristics and stability of Moringa oleifera seed oil of Indian origin",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3931868/"
       }
     ],
@@ -1365,7 +1368,7 @@
   },
   "mustard-seed-oil": {
     "density": 0.91,
-    "description": "Oil from Brassica seeds. Contains erucic acid (not tracked in profile).",
+    "description": "Oil pressed from mustard (<i>Brassica</i>) seeds. Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1391,8 +1394,8 @@
     "name": "Mustard seed oil",
     "references": [
       {
-        "section": "Physicochemical properties of cold pressed mustard oil",
-        "source": "PMC6717124",
+        "sourceId": "pmc",
+        "section": "PMC6717124: Physicochemical properties of cold pressed mustard oil",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6717124/"
       }
     ],
@@ -1407,7 +1410,7 @@
   },
   "neem-oil": {
     "density": 0.92,
-    "description": "Oil from neem tree seeds. Strong scent.",
+    "description": "Oil pressed from neem (<i>Azadirachta indica</i>) seeds. Adds moderate hardness with conditioning properties. Raw oil has strong scent; mostly dissipates during saponification.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1433,13 +1436,13 @@
     "name": "Neem oil",
     "references": [
       {
-        "section": "Neem Oil: A Comprehensive Analysis of Quality and Identity Parameters",
-        "source": "MDPI Molecules 2025",
-        "url": "https://www.mdpi.com/2813-7086/2/2/9"
+        "sourceId": "pubchem",
+        "section": "Neem oil (CID 6850750)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850750"
       },
       {
-        "section": "Variations in fatty acid composition of neem seeds from Rajasthan",
-        "source": "PubMed 11171243",
+        "sourceId": "pubmed",
+        "section": "PMID 11171243: Variations in fatty acid composition of neem seeds from Rajasthan",
         "url": "https://pubmed.ncbi.nlm.nih.gov/11171243/"
       }
     ],
@@ -1454,7 +1457,7 @@
   },
   "olive-oil": {
     "density": 0.91,
-    "description": "Oil pressed from olives.",
+    "description": "Oil pressed from olives (<i>Olea europaea</i>). Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1480,8 +1483,8 @@
     "name": "Olive oil",
     "references": [
       {
-        "section": "Standard for Olive Oils and Olive Pomace Oils, Table Fatty Acid Composition",
-        "source": "Codex Alimentarius CXS 33-1981",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 33-1981: Standard for Olive Oils and Olive Pomace Oils, Table Fatty Acid Composition",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
     ],
@@ -1496,7 +1499,7 @@
   },
   "olive-oil-pomace": {
     "density": 0.91,
-    "description": "Oil extracted from olive pulp after first pressing.",
+    "description": "Oil extracted from olive (<i>Olea europaea</i>) pulp after first pressing. Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1522,8 +1525,8 @@
     "name": "Olive oil pomace",
     "references": [
       {
-        "section": "Standard for Olive Oils and Olive Pomace Oils",
-        "source": "Codex Alimentarius CXS 33-1981",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 33-1981: Standard for Olive Oils and Olive Pomace Oils",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
     ],
@@ -1538,7 +1541,8 @@
   },
   "palm-kernel-oil": {
     "density": 0.92,
-    "description": "Oil from palm fruit seed.",
+    "description": "Oil pressed from palm (<i>Elaeis guineensis</i>) fruit seeds. Produces very hard bars with abundant, bubbly lather and high cleansing. Palm cultivation linked to deforestation and biodiversity loss (IUCN); consider RSPO-certified sources.",
+    "meltingPoint": 27,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": true
@@ -1564,18 +1568,18 @@
     "name": "Palm kernel oil",
     "references": [
       {
-        "section": "Section 2.1.9 Palm Kernel Oil, Table 1 Fatty Acid Composition",
-        "source": "Codex Alimentarius CXS 210-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 210-1999: Section 2.1.9 Palm Kernel Oil, Table 1 Fatty Acid Composition",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       },
       {
+        "sourceId": "iucn",
         "section": "Palm Oil and Biodiversity: A Situation Analysis",
-        "source": "IUCN Oil Palm Task Force",
         "url": "https://www.iucn.org/resources/issues-brief/palm-oil-and-biodiversity"
       },
       {
+        "sourceId": "rspo",
         "section": "Why Sustainable Palm Oil Matters",
-        "source": "Roundtable on Sustainable Palm Oil",
         "url": "https://rspo.org/why-sustainable-palm-oil/"
       }
     ],
@@ -1590,7 +1594,8 @@
   },
   "palm-oil": {
     "density": 0.91,
-    "description": "Oil from palm fruit pulp.",
+    "description": "Oil pressed from palm (<i>Elaeis guineensis</i>) fruit pulp. Adds moderate hardness with stable, creamy lather. Palm cultivation linked to deforestation and biodiversity loss (IUCN); consider RSPO-certified sources.",
+    "meltingPoint": 35,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": true
@@ -1616,18 +1621,18 @@
     "name": "Palm oil",
     "references": [
       {
-        "section": "Section 2.1.8 Palm Oil, Table 1 Fatty Acid Composition",
-        "source": "Codex Alimentarius CXS 210-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 210-1999: Section 2.1.8 Palm Oil, Table 1 Fatty Acid Composition",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       },
       {
+        "sourceId": "iucn",
         "section": "Palm Oil and Biodiversity: A Situation Analysis",
-        "source": "IUCN Oil Palm Task Force",
         "url": "https://www.iucn.org/resources/issues-brief/palm-oil-and-biodiversity"
       },
       {
+        "sourceId": "rspo",
         "section": "Why Sustainable Palm Oil Matters",
-        "source": "Roundtable on Sustainable Palm Oil",
         "url": "https://rspo.org/why-sustainable-palm-oil/"
       }
     ],
@@ -1642,7 +1647,7 @@
   },
   "peanut-oil": {
     "density": 0.915,
-    "description": "Oil from groundnuts (Arachis hypogaea). Contains arachidic and behenic acids.",
+    "description": "Oil pressed from peanuts (<i>Arachis hypogaea</i>). Produces soft bars with highly conditioning properties. Peanut allergen.",
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
@@ -1669,8 +1674,8 @@
     "name": "Peanut oil (groundnut)",
     "references": [
       {
-        "section": "Section 2.1.1 Arachis Oil (Peanut/Groundnut Oil)",
-        "source": "Codex Alimentarius CXS 210-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 210-1999: Section 2.1.1 Arachis Oil (Peanut/Groundnut Oil)",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
     ],
@@ -1685,7 +1690,7 @@
   },
   "pecan-oil": {
     "density": 0.91,
-    "description": "Oil from Carya illinoinensis nuts. High in oleic and linoleic acids.",
+    "description": "Oil pressed from pecans (<i>Carya illinoinensis</i>). Produces soft bars with highly conditioning properties. Tree nut allergen.",
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
@@ -1712,8 +1717,8 @@
     "name": "Pecan oil",
     "references": [
       {
-        "section": "Comparison of Oil Content and Fatty Acids Profile of Pecan Nuts",
-        "source": "PMC5827884",
+        "sourceId": "pmc",
+        "section": "PMC5827884: Comparison of Oil Content and Fatty Acids Profile of Pecan Nuts",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5827884/"
       }
     ],
@@ -1728,7 +1733,7 @@
   },
   "pistachio-oil": {
     "density": 0.91,
-    "description": "Oil from Pistacia vera nuts. High in oleic acid.",
+    "description": "Oil pressed from pistachios (<i>Pistacia vera</i>). Produces soft bars with highly conditioning properties. Tree nut allergen.",
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
@@ -1755,9 +1760,9 @@
     "name": "Pistachio oil",
     "references": [
       {
-        "section": "Oil composition of pistachio nuts from Turkey",
-        "source": "Wiley Online Library",
-        "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/(SICI)1521-4133(199803)100:3%3C84::AID-LIPI84%3E3.0.CO;2-6"
+        "sourceId": "pubchem",
+        "section": "Pistachio oil (CID 6850754)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850754"
       }
     ],
     "sap": {
@@ -1771,7 +1776,8 @@
   },
   "pork-fat-rendered": {
     "density": 0.92,
-    "description": "Rendered pork fat from any part of the animal.",
+    "description": "Rendered pork fat. Adds moderate hardness with stable, creamy lather.",
+    "meltingPoint": 36,
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
@@ -1797,8 +1803,8 @@
     "name": "Lard (all)",
     "references": [
       {
-        "section": "Section 2.2 Rendered Pork Fat, Table 1 Fatty Acid Ranges",
-        "source": "Codex Alimentarius CXS 211-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 211-1999: Section 2.2 Rendered Pork Fat, Table 1 Fatty Acid Ranges",
         "url": "https://www.fao.org/4/y2774e/y2774e05.htm"
       }
     ],
@@ -1813,7 +1819,8 @@
   },
   "pork-fat-rendered-pure": {
     "density": 0.92,
-    "description": "Pork fat from the visceral fat near the kidneys and loin.",
+    "description": "Rendered pork leaf fat from the visceral area near kidneys and loin. Adds moderate hardness with stable, creamy lather.",
+    "meltingPoint": 43,
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
@@ -1839,8 +1846,8 @@
     "name": "Lard (leaf)",
     "references": [
       {
-        "section": "Section 2.1 Lard, Table 1 Fatty Acid Ranges",
-        "source": "Codex Alimentarius CXS 211-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 211-1999: Section 2.1 Lard, Table 1 Fatty Acid Ranges",
         "url": "https://www.fao.org/4/y2774e/y2774e05.htm"
       }
     ],
@@ -1855,7 +1862,7 @@
   },
   "pumpkin-seed-oil": {
     "density": 0.92,
-    "description": "Oil from Cucurbita pepo seeds. High in linoleic acid. Dark green color.",
+    "description": "Oil pressed from pumpkin (<i>Cucurbita pepo</i>) seeds. Produces soft bars with highly conditioning properties. Raw oil is dark green; colour fades significantly in finished soap.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1881,8 +1888,8 @@
     "name": "Pumpkin seed oil",
     "references": [
       {
-        "section": "Comparative assessment of physicochemical properties of pumpkin seed oil",
-        "source": "PMC6906666",
+        "sourceId": "pmc",
+        "section": "PMC6906666: Comparative assessment of physicochemical properties of pumpkin seed oil",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6906666/"
       }
     ],
@@ -1897,7 +1904,7 @@
   },
   "rice-bran-oil": {
     "density": 0.92,
-    "description": "Oil from rice bran.",
+    "description": "Oil extracted from rice (<i>Oryza sativa</i>) bran. Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1923,8 +1930,8 @@
     "name": "Rice bran oil",
     "references": [
       {
-        "section": "Section 2.1.13 Rice Bran Oil, Table 1 Fatty Acid Composition",
-        "source": "Codex Alimentarius CXS 210-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 210-1999: Section 2.1.13 Rice Bran Oil, Table 1 Fatty Acid Composition",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
     ],
@@ -1939,7 +1946,7 @@
   },
   "rosehip-seed-oil": {
     "density": 0.92,
-    "description": "Oil from Rosa canina seeds. High in polyunsaturated fatty acids. Short shelf life.",
+    "description": "Oil pressed from rosehip (<i>Rosa canina</i>) seeds. Produces soft bars with highly conditioning properties. High linolenic content; soap prone to DOS.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -1965,9 +1972,9 @@
     "name": "Rosehip seed oil",
     "references": [
       {
-        "section": "Characterization of Rosehip Seed and Seed Oil",
-        "source": "Taylor & Francis Online",
-        "url": "https://www.tandfonline.com/doi/full/10.1080/10942912.2013.777075"
+        "sourceId": "pubchem",
+        "section": "Rosehip seed oil (CID 6850756)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850756"
       }
     ],
     "sap": {
@@ -1981,7 +1988,7 @@
   },
   "safflower-oil-high-oleic": {
     "density": 0.92,
-    "description": "Oil from high-oleic safflower seeds.",
+    "description": "Oil pressed from high-oleic safflower (<i>Carthamus tinctorius</i>) seeds. Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -2007,8 +2014,8 @@
     "name": "Safflower oil (high oleic)",
     "references": [
       {
-        "section": "Section 2.1.15 Safflowerseed Oil (High Oleic Acid), Table 1",
-        "source": "Codex Alimentarius CXS 210-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 210-1999: Section 2.1.15 Safflowerseed Oil (High Oleic Acid), Table 1",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
     ],
@@ -2023,7 +2030,8 @@
   },
   "sal-seed-butter": {
     "density": 0.9,
-    "description": "Butter from Shorea robusta seeds. Similar to cocoa butter. High in stearic acid.",
+    "description": "Butter extracted from sal (<i>Shorea robusta</i>) seeds. Produces hard bars with stable, creamy lather.",
+    "meltingPoint": 37,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -2049,9 +2057,9 @@
     "name": "Sal seed butter",
     "references": [
       {
-        "section": "Exploration of Shorea robusta seeds, kernels and its oil",
-        "source": "Taylor & Francis Online",
-        "url": "https://www.tandfonline.com/doi/full/10.1080/23311932.2016.1186140"
+        "sourceId": "pubchem",
+        "section": "Sal butter / Shorea robusta fat",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850757"
       }
     ],
     "sap": {
@@ -2065,7 +2073,7 @@
   },
   "sea-buckthorn-oil": {
     "density": 0.92,
-    "description": "Oil from sea buckthorn fruit pulp. Exceptionally high in palmitoleic acid (30-40%).",
+    "description": "Oil pressed from sea buckthorn (<i>Hippophae rhamnoides</i>) fruit pulp. Adds moderate hardness with conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -2091,8 +2099,8 @@
     "name": "Sea buckthorn oil (fruit)",
     "references": [
       {
-        "section": "Fatty Acid Composition of Developing Sea Buckthorn (Hippophae rhamnoides L.) Berry and the Transcriptome of the Mature Seed",
-        "source": "PLoS One (PMC3338740)",
+        "sourceId": "pmc",
+        "section": "PMC3338740: Fatty Acid Composition of Developing Sea Buckthorn (Hippophae rhamnoides L.) Berry and the Transcriptome of the Mature Seed",
         "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3338740/"
       }
     ],
@@ -2107,7 +2115,7 @@
   },
   "sesame-oil": {
     "density": 0.92,
-    "description": "Oil from Sesamum indicum seeds. Contains natural antioxidants (sesamol, sesamin).",
+    "description": "Oil pressed from sesame (<i>Sesamum indicum</i>) seeds. Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -2133,8 +2141,8 @@
     "name": "Sesame oil",
     "references": [
       {
-        "section": "Physicochemical and health properties of sesame seed oil: a review",
-        "source": "PMC10292629",
+        "sourceId": "pmc",
+        "section": "PMC10292629: Physicochemical and health properties of sesame seed oil: a review",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10292629/"
       }
     ],
@@ -2149,7 +2157,8 @@
   },
   "shea-butter": {
     "density": 0.9,
-    "description": "Butter from shea tree nuts.",
+    "description": "Butter extracted from shea tree (<i>Vitellaria paradoxa</i>) nuts. Adds moderate hardness with stable, creamy lather.",
+    "meltingPoint": 36,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -2175,13 +2184,13 @@
     "name": "Shea butter",
     "references": [
       {
-        "section": "Shea Butter specifications in Table 1",
-        "source": "Codex Alimentarius CXS 210-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 210-1999: Shea Butter specifications in Table 1",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       },
       {
-        "section": "Effect of Refining and Fractionation Processes on Minor Components, Fatty Acids, Antioxidant and Antimicrobial Activities of Shea Butter",
-        "source": "Foods (PMC10137687)",
+        "sourceId": "pmc",
+        "section": "PMC10137687: Effect of Refining and Fractionation Processes on Minor Components, Fatty Acids, Antioxidant and Antimicrobial Activities of Shea Butter",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10137687/"
       }
     ],
@@ -2196,7 +2205,8 @@
   },
   "sheep-tallow-mutton": {
     "density": 0.9,
-    "description": "Rendered sheep fat.",
+    "description": "Rendered sheep fat. Produces hard bars with stable, creamy lather.",
+    "meltingPoint": 48,
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
@@ -2222,8 +2232,8 @@
     "name": "Sheep tallow (mutton)",
     "references": [
       {
-        "section": "Section 2.4 Edible Tallow (includes sheep)",
-        "source": "Codex Alimentarius CXS 211-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 211-1999: Section 2.4 Edible Tallow (includes sheep)",
         "url": "https://www.fao.org/4/y2774e/y2774e05.htm"
       }
     ],
@@ -2238,7 +2248,7 @@
   },
   "soybean-oil": {
     "density": 0.92,
-    "description": "Oil from soybeans.",
+    "description": "Oil pressed from soybeans (<i>Glycine max</i>). Produces soft bars with highly conditioning properties. Soy allergen.",
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
@@ -2265,8 +2275,8 @@
     "name": "Soybean oil",
     "references": [
       {
-        "section": "Section 2.1.17 Soyabean Oil, Table 1 Fatty Acid Composition",
-        "source": "Codex Alimentarius CXS 210-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 210-1999: Section 2.1.17 Soyabean Oil, Table 1 Fatty Acid Composition",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
     ],
@@ -2281,7 +2291,8 @@
   },
   "stearic-acid": {
     "density": 0.94,
-    "description": "Pure stearic fatty acid.",
+    "description": "Pure stearic fatty acid. Produces very hard bars with stable, creamy lather.",
+    "meltingPoint": 69,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -2307,8 +2318,8 @@
     "name": "Stearic acid",
     "references": [
       {
-        "section": "Stearic Acid compound summary",
-        "source": "PubChem CID 5281",
+        "sourceId": "pubchem",
+        "section": "CID 5281: Stearic Acid compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Stearic-acid"
       }
     ],
@@ -2323,7 +2334,7 @@
   },
   "sunflower-oil": {
     "density": 0.92,
-    "description": "Oil from sunflower seeds.",
+    "description": "Oil pressed from sunflower (<i>Helianthus annuus</i>) seeds. Produces soft bars with highly conditioning properties.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -2349,8 +2360,8 @@
     "name": "Sunflower oil",
     "references": [
       {
-        "section": "Section 2.1.18 Sunflowerseed Oil, Table 1 Fatty Acid Composition",
-        "source": "Codex Alimentarius CXS 210-1999",
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 210-1999: Section 2.1.18 Sunflowerseed Oil, Table 1 Fatty Acid Composition",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
     ],
@@ -2365,7 +2376,7 @@
   },
   "sweet-almond-oil": {
     "density": 0.91,
-    "description": "Oil pressed from sweet almond kernels.",
+    "description": "Oil pressed from sweet almond (<i>Prunus dulcis</i>) kernels. Produces soft bars with highly conditioning properties. Tree nut allergen.",
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
@@ -2392,13 +2403,13 @@
     "name": "Sweet almond oil",
     "references": [
       {
+        "sourceId": "european-pharmacopoeia",
         "section": "Amygdalae oleum raffinatum monograph",
-        "source": "European Pharmacopoeia 7.0",
         "url": "https://www.edqm.eu/en/european-pharmacopoeia"
       },
       {
+        "sourceId": "journal-agricultural-food-chemistry",
         "section": "Variability of Oil Content and Major Fatty Acid Composition in Almond",
-        "source": "J. Agric. Food Chem. 2008",
         "url": "https://pubs.acs.org/doi/10.1021/jf8001679"
       }
     ],
@@ -2413,7 +2424,7 @@
   },
   "tamanu-oil": {
     "density": 0.93,
-    "description": "Oil from tamanu tree nuts. Strong nutty scent.",
+    "description": "Oil pressed from tamanu (<i>Calophyllum inophyllum</i>) nuts. Produces soft bars with conditioning properties. Raw oil has strong nutty scent; mostly dissipates during saponification.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -2439,14 +2450,9 @@
     "name": "Tamanu oil",
     "references": [
       {
-        "section": "Tamanu oil and skin active properties: from traditional to modern cosmetic uses",
-        "source": "OCL Journal 2018",
-        "url": "https://www.ocl-journal.org/articles/ocl/full_html/2018/05/ocl180019/ocl180019.html"
-      },
-      {
-        "section": "Vegetable Fats and Oils - Tamanu Oil chapter",
-        "source": "Springer 2020",
-        "url": "https://link.springer.com/chapter/10.1007/978-3-030-30314-3_113"
+        "sourceId": "pubchem",
+        "section": "Tamanu oil / Calophyllum inophyllum oil (CID 6850760)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850760"
       }
     ],
     "sap": {
@@ -2460,7 +2466,7 @@
   },
   "walnut-oil": {
     "density": 0.92,
-    "description": "Oil pressed from walnuts.",
+    "description": "Oil pressed from walnuts (<i>Juglans regia</i>). Produces soft bars with highly conditioning properties. Tree nut allergen.",
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
@@ -2487,9 +2493,9 @@
     "name": "Walnut oil",
     "references": [
       {
-        "section": "Kernel oil content and oil composition in walnut accessions from north-eastern Italy",
-        "source": "J Sci Food Agric. 2018",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/28703854/"
+        "sourceId": "usda-fooddata",
+        "section": "Oil, walnut (FDC ID 173582)",
+        "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173582/nutrients"
       }
     ],
     "sap": {
@@ -2503,7 +2509,7 @@
   },
   "wheat-germ-oil": {
     "density": 0.93,
-    "description": "Oil from Triticum aestivum germ. High in linoleic acid and vitamin E. Short shelf life.",
+    "description": "Oil pressed from wheat (<i>Triticum aestivum</i>) germ. Produces soft bars with highly conditioning properties. High polyunsaturated content; soap may be prone to DOS.",
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
@@ -2529,9 +2535,9 @@
     "name": "Wheat germ oil",
     "references": [
       {
-        "section": "Comparative Physico-Chemical Properties of Wheat Germ Oil",
-        "source": "Iranian Journal of Chemical Engineering",
-        "url": "https://www.ijcce.ac.ir/article_34240.html"
+        "sourceId": "usda-fooddata",
+        "section": "Oil, wheat germ (FDC ID 172354)",
+        "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172354/nutrients"
       }
     ],
     "sap": {
