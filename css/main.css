@@ -14,13 +14,13 @@
    ============================================ */
 
 /* Design Tokens */
-@import 'tokens/_variables.css';
+@import './tokens/_variables.css';
 
 /* Base Styles */
-@import 'base/_reset.css';
+@import './base/_reset.css';
 
 /* Components - currently in styles.css, to be split incrementally */
-@import 'styles.css';
+@import './styles.css';
 
 /* Utilities */
-@import 'utilities/_utilities.css';
+@import './utilities/_utilities.css';
