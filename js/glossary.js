@@ -4,14 +4,33 @@
 
 import { $ } from './ui/helpers.js';
 import { TIMING } from './lib/constants.js';
+import { resolveReferences } from './lib/references.js';
 
 let glossaryData = {};
+let sourcesData = {};
 let currentCategory = 'all';
 
 async function loadGlossary() {
-    const response = await fetch('./data/glossary.json');
-    glossaryData = await response.json();
+    const [glossaryResponse, sourcesResponse] = await Promise.all([
+        fetch('./data/glossary.json'),
+        fetch('./data/sources.json')
+    ]);
+    glossaryData = await glossaryResponse.json();
+    sourcesData = await sourcesResponse.json();
     renderGlossary();
+}
+
+function renderReferencesHtml(references) {
+    if (!references || references.length === 0) return '';
+    const refs = resolveReferences(references, sourcesData);
+    return `
+        <div class="entry-references">
+            <span class="references-label">References:</span>
+            ${refs.map(ref => `
+                <a href="${ref.url}" target="_blank" rel="noopener noreferrer" class="reference-link">${ref.source}</a>
+            `).join('')}
+        </div>
+    `;
 }
 
 function renderGlossary() {
@@ -27,43 +46,36 @@ function renderGlossary() {
     }
 
     container.innerHTML = entries.map(([key, data]) => `
-        <article class="glossary-entry" data-key="${key}">
-            <header class="glossary-entry-header">
-                <h2 class="glossary-term">${data.term}</h2>
-                <span class="glossary-category">${data.category}</span>
+        <article class="entry-card" data-key="${key}">
+            <header class="entry-header">
+                <h2 class="entry-title">${data.term}</h2>
+                <span class="entry-category">${data.category}</span>
             </header>
-            <p class="glossary-desc">${data.desc}</p>
+            <p class="entry-desc">${data.desc}</p>
             ${data.details ? `
-                <details class="glossary-details">
+                <details class="entry-details">
                     <summary>
                         <span class="details-toggle">More details</span>
                         <span class="details-hide">Hide details</span>
                     </summary>
-                    <div class="glossary-details-content">${data.details.replace(/\n/g, '<br>')}</div>
+                    <div class="entry-details-content">${data.details.replace(/\n/g, '<br>')}</div>
                 </details>
             ` : ''}
             ${data.related?.length > 0 ? `
-                <div class="glossary-related">
-                    <span class="glossary-related-label">Related:</span>
+                <div class="entry-related">
+                    <span class="entry-related-label">Related:</span>
                     ${data.related
                         .filter(r => glossaryData[r])
-                        .map(r => `<a href="#${r}" class="glossary-related-link" data-term="${r}">${glossaryData[r].term}</a>`)
+                        .map(r => `<a href="#${r}" class="entry-related-link" data-term="${r}">${glossaryData[r].term}</a>`)
                         .join('')}
                 </div>
             ` : ''}
-            ${data.references?.length > 0 ? `
-                <div class="glossary-references">
-                    <span class="glossary-references-label">References:</span>
-                    ${data.references.map(ref => `
-                        <a href="${ref.url}" target="_blank" rel="noopener noreferrer" class="glossary-ref-link">${ref.source}</a>
-                    `).join('')}
-                </div>
-            ` : ''}
+            ${renderReferencesHtml(data.references)}
         </article>
     `).join('');
 
     // Handle related term clicks
-    container.querySelectorAll('.glossary-related-link').forEach(link => {
+    container.querySelectorAll('.entry-related-link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const termKey = link.dataset.term;
@@ -78,9 +90,9 @@ function renderGlossary() {
 }
 
 function initFilters() {
-    document.querySelectorAll('.glossary-filter').forEach(btn => {
+    document.querySelectorAll('.page-filter').forEach(btn => {
         btn.addEventListener('click', () => {
-            document.querySelectorAll('.glossary-filter').forEach(b => {
+            document.querySelectorAll('.page-filter').forEach(b => {
                 b.classList.remove('active');
                 b.setAttribute('aria-selected', 'false');
             });

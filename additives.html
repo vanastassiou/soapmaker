@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glossary - Soap Making</title>
+    <title>Additives - Soap Making</title>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -11,13 +11,13 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="container page-container">
         <header class="page-header">
-            <h1>Glossary</h1>
-            <p class="page-intro">Definitions of soap making terms, properties, and concepts.</p>
+            <h1>Additives</h1>
+            <p class="page-intro">Colourants, essential oils, and functional ingredients for soap making.</p>
             <nav class="header-nav">
                 <a href="index.html" class="header-link">Recipe builder</a>
                 <a href="fats.html" class="header-link">Fats</a>
-                <a href="additives.html" class="header-link">Additives</a>
-                <a href="glossary.html" class="header-link" aria-current="page">Glossary</a>
+                <a href="additives.html" class="header-link" aria-current="page">Additives</a>
+                <a href="glossary.html" class="header-link">Glossary</a>
                 <a href="formulas.html" class="header-link">Formulas</a>
                 <a href="references.html" class="header-link">References</a>
                 <a href="https://ko-fi.com/arkavia" target="_blank" rel="noopener" class="kofi-button" title="Ko-fi: Buy me a slice of babka?">
@@ -29,20 +29,20 @@
             </nav>
         </header>
 
-        <nav class="page-nav" role="tablist" aria-label="Filter glossary by category">
-            <button class="page-filter active" data-category="all" role="tab" aria-selected="true" aria-controls="glossaryList" id="filter-all">All</button>
-            <button class="page-filter" data-category="property" role="tab" aria-selected="false" aria-controls="glossaryList" id="filter-property">Properties</button>
-            <button class="page-filter" data-category="concept" role="tab" aria-selected="false" aria-controls="glossaryList" id="filter-concept">Concepts</button>
-            <button class="page-filter" data-category="calculation" role="tab" aria-selected="false" aria-controls="glossaryList" id="filter-calculation">Calculations</button>
+        <nav class="page-nav" role="tablist" aria-label="Filter additives by category">
+            <button class="page-filter active" data-category="all" role="tab" aria-selected="true" aria-controls="additivesList" id="filter-all">All</button>
+            <button class="page-filter" data-category="colourant" role="tab" aria-selected="false" aria-controls="additivesList" id="filter-colourant">Colourants</button>
+            <button class="page-filter" data-category="essential-oil" role="tab" aria-selected="false" aria-controls="additivesList" id="filter-essential-oil">Essential oils</button>
+            <button class="page-filter" data-category="functional" role="tab" aria-selected="false" aria-controls="additivesList" id="filter-functional">Functional</button>
         </nav>
 
         <main id="main-content">
-            <div class="page-list" id="glossaryList" role="tabpanel" aria-live="polite">
+            <div class="page-list" id="additivesList" role="tabpanel" aria-live="polite">
                 <!-- Populated by JS -->
             </div>
         </main>
     </div>
 
-    <script type="module" src="./js/glossary.js"></script>
+    <script type="module" src="./js/additives.js"></script>
 </body>
 </html>

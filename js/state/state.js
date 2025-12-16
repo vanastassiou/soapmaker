@@ -151,9 +151,11 @@ export const state = createReactiveState({
 
     // Data (loaded from JSON)
     fatsDatabase: {},        // Fat data with SAP values, fatty acids
-    glossaryData: {},        // Educational definitions
+    glossaryData: {},        // Educational definitions (soapmaking knowledge)
+    tooltipsData: {},        // UI help text (site usage)
     fattyAcidsData: {},      // Fatty acid information
     additivesDatabase: {},   // Additive data (EOs, colourants, functional)
+    sourcesData: {},         // Reference sources data
 
     // UI state
     excludedFats: [],        // Fats excluded from profile builder

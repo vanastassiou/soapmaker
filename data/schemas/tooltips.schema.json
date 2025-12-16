@@ -1,0 +1,33 @@
+{
+  "$id": "tooltips.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UI Tooltips",
+  "description": "Schema for UI help tooltips",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/definitions/Tooltip"
+  },
+  "definitions": {
+    "Tooltip": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Display title for the tooltip"
+        },
+        "desc": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Help text explaining the UI feature"
+        },
+        "glossaryLink": {
+          "type": "string",
+          "description": "Key of related glossary entry for 'Learn more' link"
+        }
+      },
+      "required": ["title", "desc"],
+      "additionalProperties": false
+    }
+  }
+}

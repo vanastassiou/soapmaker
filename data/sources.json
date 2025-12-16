@@ -1,0 +1,184 @@
+{
+  "pubchem": {
+    "name": "PubChem",
+    "description": "Open chemistry database with compound, substance, and bioassay data.",
+    "baseUrl": "https://pubchem.ncbi.nlm.nih.gov",
+    "publisher": "National Center for Biotechnology Information (NCBI)",
+    "fundedBy": "US National Institutes of Health (NIH)"
+  },
+  "pmc": {
+    "name": "PubMed Central",
+    "description": "Free full-text archive of biomedical and life sciences journal literature.",
+    "baseUrl": "https://www.ncbi.nlm.nih.gov/pmc",
+    "publisher": "National Center for Biotechnology Information (NCBI)",
+    "fundedBy": "US National Institutes of Health (NIH)"
+  },
+  "pubmed": {
+    "name": "PubMed",
+    "description": "Biomedical literature database with abstracts and citations.",
+    "baseUrl": "https://pubmed.ncbi.nlm.nih.gov",
+    "publisher": "National Center for Biotechnology Information (NCBI)",
+    "fundedBy": "US National Institutes of Health (NIH)"
+  },
+  "fda-cfr": {
+    "name": "US Code of Federal Regulations Title 21 (FDA CFR)",
+    "description": "Federal regulations governing food, drugs, and cosmetics in the United States.",
+    "baseUrl": "https://www.ecfr.gov",
+    "publisher": "US Food and Drug Administration (FDA)",
+    "fundedBy": "US federal government"
+  },
+  "cosmetic-ingredient-review": {
+    "name": "Cosmetic Ingredient Review",
+    "description": "Independent expert panel assessing cosmetic ingredient safety.",
+    "baseUrl": "https://www.cir-safety.org",
+    "publisher": "Cosmetic Ingredient Review (CIR)",
+    "fundedBy": "Personal Care Products Council (industry association)"
+  },
+  "codex-alimentarius": {
+    "name": "Codex Alimentarius",
+    "description": "International food standards collection.",
+    "baseUrl": "https://www.fao.org/fao-who-codexalimentarius",
+    "publisher": "Codex Alimentarius Commission",
+    "fundedBy": "Food and Agriculture Organization (FAO) and World Health Organization (WHO)"
+  },
+  "who-inchem": {
+    "name": "International Programme on Chemical Safety (WHO/INCHEM)",
+    "description": "Chemical safety information database providing toxicological and safety data.",
+    "baseUrl": "https://www.inchem.org",
+    "publisher": "World Health Organization (WHO)",
+    "fundedBy": "WHO, International Labour Organization (ILO), and United Nations Environment Programme (UNEP)"
+  },
+  "ifra": {
+    "name": "International Fragrance Association (IFRA)",
+    "description": "Fragrance industry safety standards and guidelines.",
+    "baseUrl": "https://ifrafragrance.org",
+    "publisher": "International Fragrance Association (IFRA)",
+    "fundedBy": "Global fragrance industry"
+  },
+  "usda-fooddata": {
+    "name": "USDA FoodData Central",
+    "description": "Comprehensive nutrient database for foods.",
+    "baseUrl": "https://fdc.nal.usda.gov",
+    "publisher": "US Department of Agriculture (USDA)",
+    "fundedBy": "US federal government"
+  },
+  "usgs": {
+    "name": "United States Geological Survey (USGS)",
+    "description": "Federal science agency providing information about natural resources, hazards, and the environment.",
+    "baseUrl": "https://www.usgs.gov",
+    "publisher": "United States Geological Survey (USGS)",
+    "fundedBy": "US Department of the Interior"
+  },
+  "ema": {
+    "name": "European Medicines Agency",
+    "description": "EU regulatory body for scientific evaluation of medicines and herbal products.",
+    "baseUrl": "https://www.ema.europa.eu",
+    "publisher": "European Medicines Agency (EMA)",
+    "fundedBy": "European Union"
+  },
+  "echa": {
+    "name": "European Chemicals Agency (ECHA)",
+    "description": "EU regulatory body for chemical safety, implementing REACH regulation.",
+    "baseUrl": "https://echa.europa.eu",
+    "publisher": "European Chemicals Agency (ECHA)",
+    "fundedBy": "European Union"
+  },
+  "sccs": {
+    "name": "Scientific Committee on Consumer Safety (SCCS)",
+    "description": "EU scientific opinions on health and safety risks of cosmetics and consumer products.",
+    "baseUrl": "https://ec.europa.eu/health/scientific_committees",
+    "publisher": "Scientific Committee on Consumer Safety (SCCS)",
+    "fundedBy": "European Commission"
+  },
+  "european-pharmacopoeia": {
+    "name": "European Pharmacopoeia",
+    "description": "Official standards for pharmaceutical substances in Europe. Note: Some content requires subscription, but monograph summaries are freely available.",
+    "baseUrl": "https://pheur.edqm.eu",
+    "publisher": "European Directorate for the Quality of Medicines (EDQM)",
+    "fundedBy": "Council of Europe member states"
+  },
+  "federal-register": {
+    "name": "Federal Register",
+    "description": "Official journal of the United States federal government.",
+    "baseUrl": "https://www.federalregister.gov",
+    "publisher": "Office of the Federal Register",
+    "fundedBy": "US federal government"
+  },
+  "nist": {
+    "name": "National Institute of Standards and Technology (NIST)",
+    "description": "Measurement standards and reference data for science and industry.",
+    "baseUrl": "https://www.nist.gov",
+    "publisher": "National Institute of Standards and Technology (NIST)",
+    "fundedBy": "US Department of Commerce"
+  },
+  "crc-handbook": {
+    "name": "CRC Handbook",
+    "description": "Authoritative reference for chemical and physical data. Note: Commercial publication; data cited here is from publicly available excerpts and academic citations.",
+    "baseUrl": "https://hbcp.chemnetbase.com",
+    "publisher": "CRC Press / Taylor & Francis",
+    "fundedBy": "Commercial (publishing revenue)"
+  },
+  "aocs": {
+    "name": "American Oil Chemists' Society (AOCS)",
+    "description": "Official analytical methods for fats, oils, and lipids. Note: Method details cited are from open-access summaries.",
+    "baseUrl": "https://www.aocs.org",
+    "publisher": "American Oil Chemists' Society (AOCS)",
+    "fundedBy": "Member dues and industry sponsorship"
+  },
+  "iucn": {
+    "name": "International Union for Conservation of Nature (IUCN)",
+    "description": "Conservation status assessments and environmental data.",
+    "baseUrl": "https://www.iucn.org",
+    "publisher": "International Union for Conservation of Nature (IUCN)",
+    "fundedBy": "Member governments, NGOs, and conservation foundations"
+  },
+  "rspo": {
+    "name": "Roundtable on Sustainable Palm Oil (RSPO)",
+    "description": "Sustainable palm oil certification standards and guidance.",
+    "baseUrl": "https://rspo.org",
+    "publisher": "Roundtable on Sustainable Palm Oil (RSPO)",
+    "fundedBy": "Member companies, retailers, NGOs, and certification fees"
+  },
+  "journal-agricultural-food-chemistry": {
+    "name": "Journal of Agricultural and Food Chemistry",
+    "description": "Peer-reviewed journal covering agricultural and food chemistry. Articles cited are open-access or freely available.",
+    "baseUrl": "https://pubs.acs.org",
+    "publisher": "American Chemical Society (ACS)",
+    "fundedBy": "Member dues and publishing revenue"
+  },
+  "energy-environmental-science": {
+    "name": "Energy & Environmental Science",
+    "description": "Peer-reviewed journal on energy and environmental research. Articles cited are open-access or freely available.",
+    "baseUrl": "https://pubs.rsc.org",
+    "publisher": "Royal Society of Chemistry (RSC)",
+    "fundedBy": "Member dues and publishing revenue"
+  },
+  "nist-handbook": {
+    "name": "NIST/SEMATECH e-Handbook of Statistical Methods",
+    "description": "Comprehensive resource for statistical methods maintained by NIST. Covers regression, model fitting, and error analysis.",
+    "baseUrl": "https://www.itl.nist.gov/div898/handbook",
+    "publisher": "National Institute of Standards and Technology (NIST)",
+    "fundedBy": "US Department of Commerce"
+  },
+  "journal-chemical-education": {
+    "name": "Journal of Chemical Education",
+    "description": "Peer-reviewed chemistry education journal. Cited: Friedman, M. (2013) \"Chemistry of Soaps and Detergents.\" Open-access.",
+    "baseUrl": "https://pubs.acs.org",
+    "publisher": "American Chemical Society (ACS)",
+    "fundedBy": "Author's institution"
+  },
+  "journal-aocs": {
+    "name": "Journal of the American Oil Chemists' Society",
+    "description": "Peer-reviewed lipid science journal published by Wiley on behalf of AOCS.",
+    "baseUrl": "https://aocs.onlinelibrary.wiley.com",
+    "publisher": "Wiley / American Oil Chemists' Society (AOCS)",
+    "fundedBy": "Publishing revenue and AOCS membership"
+  },
+  "mathematical-programming": {
+    "name": "Mathematical Programming",
+    "description": "Peer-reviewed optimization journal. Cited: Wright, S.J. (2015) \"Coordinate Descent Algorithms.\" Preprint freely available.",
+    "baseUrl": "https://arxiv.org",
+    "publisher": "Springer",
+    "fundedBy": "US National Science Foundation and Department of Energy"
+  }
+}
