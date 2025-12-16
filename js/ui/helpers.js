@@ -1,5 +1,5 @@
 /**
- * DOM utility functions for the soap calculator UI
+ * DOM utility functions for the soap recipe builder UI
  * Provides safe element access, batch updates, and event delegation
  */
 

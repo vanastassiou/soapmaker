@@ -1,0 +1,43 @@
+{
+  "$id": "sources.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Reference Sources Database",
+  "description": "Schema for reference source definitions used across all data files",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/definitions/Source"
+  },
+  "definitions": {
+    "Source": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Display name of the source, using 'Full Name (acronym)' format where applicable"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Brief description of the publication's scope and content"
+        },
+        "baseUrl": {
+          "type": ["string", "null"],
+          "description": "Base URL for the source (null for print-only sources)"
+        },
+        "publisher": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Organization that publishes this source"
+        },
+        "fundedBy": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Organization(s) or funding model that supports this source"
+        }
+      },
+      "required": ["name", "description", "publisher", "fundedBy"],
+      "additionalProperties": false
+    }
+  }
+}

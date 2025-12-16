@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soap Recipe Builder</title>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -13,7 +13,12 @@
         <header>
             <h1>Soap Recipe Builder</h1>
             <nav class="header-nav">
+                <a href="index.html" class="header-link" aria-current="page">Recipe builder</a>
+                <a href="fats.html" class="header-link">Fats</a>
+                <a href="additives.html" class="header-link">Additives</a>
                 <a href="glossary.html" class="header-link">Glossary</a>
+                <a href="formulas.html" class="header-link">Formulas</a>
+                <a href="references.html" class="header-link">References</a>
                 <a href="https://ko-fi.com/arkavia" target="_blank" rel="noopener" class="kofi-button" title="Ko-fi: Buy me a slice of babka?">
                     <svg class="kofi-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311z"/>
@@ -33,18 +38,19 @@
                             <button class="btn btn-secondary btn-small" id="startOverBtn">Start over</button>
                         </div>
                     </div>
-                    <p class="instructions">
-                        1. Adjust settings<br>
-                        2. Add fats<br>
-                        3. Create recipe
-                    </p>
+                    <ol class="instructions">
+                        <li>Adjust settings</li>
+                        <li>Add fats</li>
+                        <li>Click <strong>Create Recipe</strong> below</li>
+                    </ol>
 
                     <!-- Settings Subcontainer -->
-                    <div class="build-subcontainer collapsible" id="settingsSection">
-                        <button class="collapsible-header" aria-expanded="true" aria-controls="settingsContent">
-                            <h3 class="subcontainer-title">Recipe settings</h3>
+                    <details class="build-subcontainer" id="settingsSection" open>
+                        <summary class="collapsible-header">
                             <span class="collapse-icon" aria-hidden="true"></span>
-                        </button>
+                            <h3 class="subcontainer-title">Recipe settings</h3>
+                            <button class="btn btn-text btn-small reset-btn" id="resetSettingsBtn">Reset</button>
+                        </summary>
                         <div class="collapsible-content" id="settingsContent">
                         <div class="settings-row">
                             <div class="form-group">
@@ -81,27 +87,27 @@
                         </div>
 
                         <!-- Exclusions nested subcontainer -->
-                        <div class="mode-subcontainer collapsible" id="exclusionsSection">
-                            <button class="collapsible-header" aria-expanded="true" aria-controls="exclusionsContent">
-                                <h4 class="mode-subcontainer-title">Exclusions <span class="optional-label">(optional)</span></h4>
+                        <details class="mode-subcontainer" id="exclusionsSection" open>
+                            <summary class="collapsible-header">
                                 <span class="collapse-icon" aria-hidden="true"></span>
-                            </button>
+                                <h4 class="mode-subcontainer-title">Exclusions <span class="optional-label">(optional)</span></h4>
+                            </summary>
                             <div class="collapsible-content" id="exclusionsContent">
                                 <div class="dietary-filters" id="dietaryFiltersSection">
                                     <label class="dietary-filter">
                                         <input type="checkbox" id="filterAnimalBased">
                                         <span>Animal based</span>
-                                        <span class="help-tip" data-term="filter-animal" aria-label="More info about animal-based filter">ⓘ</span>
+                                        <span class="ui-tip" data-tooltip="filter-animal" aria-label="What does this filter?">?</span>
                                     </label>
                                     <label class="dietary-filter">
                                         <input type="checkbox" id="filterSourcingConcerns">
                                         <span>Sourcing concerns</span>
-                                        <span class="help-tip" data-term="sourcing-concerns" aria-label="More info about sourcing concerns filter">ⓘ</span>
+                                        <span class="ui-tip" data-tooltip="sourcing-concerns" aria-label="What does this filter?">?</span>
                                     </label>
                                     <label class="dietary-filter">
                                         <input type="checkbox" id="filterCommonAllergens">
                                         <span>Common allergens</span>
-                                        <span class="help-tip" data-term="filter-allergens" aria-label="More info about common allergens filter">ⓘ</span>
+                                        <span class="ui-tip" data-tooltip="filter-allergens" aria-label="What does this filter?">?</span>
                                     </label>
                                 </div>
                                 <div class="exclusion-specific">
@@ -117,17 +123,17 @@
                                     </div>
                                 </div>
                             </div>
+                        </details>
                         </div>
-                        <button class="btn btn-text btn-small reset-btn" id="resetSettingsBtn">Reset</button>
-                        </div>
-                    </div>
+                    </details>
 
                     <!-- Fats subcontainer -->
-                    <div class="build-subcontainer collapsible" id="fatsSection">
-                        <button class="collapsible-header" aria-expanded="true" aria-controls="fatsContent">
-                            <h3 class="subcontainer-title">Add fats</h3>
+                    <details class="build-subcontainer" id="fatsSection" open>
+                        <summary class="collapsible-header">
                             <span class="collapse-icon" aria-hidden="true"></span>
-                        </button>
+                            <h3 class="subcontainer-title">Add fats</h3>
+                            <button class="btn btn-text btn-small reset-btn" id="resetFatsBtn">Reset</button>
+                        </summary>
                         <div class="collapsible-content" id="fatsContent">
                         <!-- Build Mode Area (unified container) -->
                         <div class="build-mode-area">
@@ -140,9 +146,9 @@
                             </div>
 
                             <!-- Mode helper text -->
-                            <p class="build-mode-helper" id="fatsDescription">Choose fats to use in your recipe. You may lock a fat at its current weight.</p>
-                            <p class="build-mode-helper hidden" id="propertiesDescription">Enter target soap properties and find fats to match.</p>
-                            <p class="build-mode-helper hidden" id="yoloDescription">Lock fats you like and re-roll the rest.</p>
+                            <p class="build-mode-helper" id="fatsDescription">Choose fats to use in your recipe. Lock a fat to keep its weight or percentage fixed during optimization.</p>
+                            <p class="build-mode-helper hidden" id="propertiesDescription">Enter target soap properties (see placeholder ranges for guidance) and find fats to match.</p>
+                            <p class="build-mode-helper hidden" id="yoloDescription">Lock fats you like and generate new ones for the rest.</p>
                             <p class="build-mode-helper hidden" id="cupboardDescription">Enter fats you have. Get suggestions to improve your soap.</p>
 
                         <!-- Select Fats mode -->
@@ -170,7 +176,7 @@
                             <div class="mode-subcontainer">
                                 <h4 class="mode-subcontainer-title">Target properties</h4>
                                 <div class="property-header">
-                                    <span class="help-tip" data-term="property-targets" aria-label="More info about property targets">ⓘ</span>
+                                    <span class="ui-tip" data-tooltip="property-targets" aria-label="How do property targets work?">?</span>
                                     <div class="property-options">
                                         <label for="maxFats">Max different fats <select id="maxFats">
                                             <option value="3">3</option>
@@ -179,7 +185,7 @@
                                             <option value="6">6</option>
                                             <option value="7">7</option>
                                             <option value="8">8</option>
-                                        </select><span class="help-tip" data-term="max-fats" aria-label="More info about max fats">ⓘ</span></label>
+                                        </select><span class="ui-tip" data-tooltip="max-fats" aria-label="What does max fats do?">?</span></label>
                                         <label><input type="checkbox" id="includeCastor">Include castor oil<span class="help-tip" data-term="castor-oil" aria-label="More info about castor oil">ⓘ</span></label>
                                     </div>
                                 </div>
@@ -288,13 +294,13 @@
                         </div><!-- End build-mode-area -->
 
                         <!-- Properties display (visible in all build modes) -->
-                        <div class="mode-subcontainer collapsible" id="buildModeProperties">
-                            <button class="collapsible-header" aria-expanded="true" aria-controls="propertiesContent">
-                                <h4 class="mode-subcontainer-title">Qualitative properties</h4>
+                        <details class="mode-subcontainer" id="buildModeProperties" open>
+                            <summary class="collapsible-header">
                                 <span class="collapse-icon" aria-hidden="true"></span>
-                            </button>
+                                <h4 class="mode-subcontainer-title">Qualitative properties</h4>
+                            </summary>
                             <div class="collapsible-content" id="propertiesContent">
-                                <p class="analysis-helper-text">Derived from the recipe's fatty acid profile.</p>
+                                <p class="analysis-helper-text">These numbers predict how your soap will feel and perform.</p>
                                 <table class="analysis-table properties-table" aria-label="Soap properties analysis">
                                 <thead>
                                     <tr>
@@ -342,17 +348,17 @@
                                 </tbody>
                                 </table>
                             </div>
+                        </details>
                         </div>
-                        <button class="btn btn-text btn-small reset-btn" id="resetFatsBtn">Reset</button>
-                        </div>
-                    </div>
+                    </details>
 
                     <!-- Additives subcontainer -->
-                    <div class="build-subcontainer collapsible" id="additivesSubcontainer">
-                        <button class="collapsible-header" aria-expanded="true" aria-controls="additivesContent">
-                            <h3 class="subcontainer-title">Select additives <span class="optional-label">(optional)</span></h3>
+                    <details class="build-subcontainer" id="additivesSubcontainer" open>
+                        <summary class="collapsible-header">
                             <span class="collapse-icon" aria-hidden="true"></span>
-                        </button>
+                            <h3 class="subcontainer-title">Select additives <span class="optional-label">(optional)</span></h3>
+                            <button class="btn btn-text btn-small reset-btn" id="resetAdditivesBtn">Reset</button>
+                        </summary>
                         <div class="collapsible-content" id="additivesContent">
                             <div class="additive-mode-area">
                                 <div class="tabs additive-tabs" role="tablist" aria-label="Additive category">
@@ -374,9 +380,8 @@
                                     </div>
                                 </div>
                             </div>
-                        <button class="btn btn-text btn-small reset-btn" id="resetAdditivesBtn">Reset</button>
                         </div>
-                    </div>
+                    </details>
 
                     <!-- Create Recipe button -->
                     <div class="create-recipe-section">
@@ -431,7 +436,7 @@
     <!-- Fat Info Panel -->
     <div class="info-panel" id="fatInfoPanel" role="dialog" aria-modal="true" aria-labelledby="fatPanelName">
         <button class="close-panel" aria-label="Close panel">×</button>
-        <h3 class="panel-title" id="fatPanelName" tabindex="-1">Fat Name</h3>
+        <h3 class="panel-title" id="fatPanelName" tabindex="-1">Fat name</h3>
         <div class="panel-subtitle" id="fatPanelSap">NaOH SAP: 0.000 | KOH SAP: 0.000</div>
 
         <div class="panel-section">
@@ -459,7 +464,7 @@
     <!-- Fatty Acid Info Panel -->
     <div class="info-panel" id="fattyAcidPanel" role="dialog" aria-modal="true" aria-labelledby="faName">
         <button class="close-panel" id="closeFattyAcidPanel" aria-label="Close panel">×</button>
-        <h3 class="panel-title" id="faName" tabindex="-1">Fatty Acid Name</h3>
+        <h3 class="panel-title" id="faName" tabindex="-1">Fatty acid name</h3>
         <div class="panel-subtitle" id="faFormula">C12:0 · Saturated</div>
 
         <div class="panel-section">
@@ -489,7 +494,7 @@
     <!-- Additive Info Panel -->
     <div class="info-panel" id="additiveInfoPanel" role="dialog" aria-modal="true" aria-labelledby="additivePanelName">
         <button class="close-panel" aria-label="Close panel">×</button>
-        <h3 class="panel-title" id="additivePanelName" tabindex="-1">Additive Name</h3>
+        <h3 class="panel-title" id="additivePanelName" tabindex="-1">Additive name</h3>
         <div class="panel-subtitle" id="additivePanelCategory">Category</div>
 
         <div class="panel-section">

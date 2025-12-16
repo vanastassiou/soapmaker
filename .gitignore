@@ -8,3 +8,5 @@
 .env
 .env.local
 .pre-commit-config*
+
+node_modules/

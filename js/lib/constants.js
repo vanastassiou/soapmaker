@@ -1,5 +1,5 @@
 /**
- * Centralized constants for the soap calculator
+ * Centralized constants for the soap recipe builder
  * Single source of truth for IDs, mappings, and thresholds
  */
 
@@ -382,7 +382,7 @@ export const CSS_CLASSES = {
     emptyState: 'empty-state',
     noResults: 'no-results',
     highlight: 'highlight',
-    glossaryFilter: 'glossary-filter'
+    pageFilter: 'page-filter'
 };
 
 // ============================================
