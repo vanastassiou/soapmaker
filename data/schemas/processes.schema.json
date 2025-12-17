@@ -1,0 +1,176 @@
+{
+  "$id": "processes.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": {
+    "$ref": "#/definitions/Process"
+  },
+  "definitions": {
+    "Process": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "description": "Display name of the process",
+          "minLength": 1,
+          "type": "string"
+        },
+        "summary": {
+          "description": "Brief one-line description",
+          "minLength": 1,
+          "type": "string"
+        },
+        "description": {
+          "description": "Detailed explanation of the process",
+          "minLength": 1,
+          "type": "string"
+        },
+        "difficulty": {
+          "description": "Skill level required",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "advanced"
+          ],
+          "type": "string"
+        },
+        "steps": {
+          "description": "Ordered steps to complete the process",
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "description": "Step title",
+                "minLength": 1,
+                "type": "string"
+              },
+              "description": {
+                "description": "Step instructions",
+                "minLength": 1,
+                "type": "string"
+              },
+              "tips": {
+                "description": "Helpful tips for this step",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "warnings": {
+                "description": "Safety warnings for this step",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "title",
+              "description"
+            ],
+            "type": "object"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "equipment": {
+          "description": "Equipment IDs required for this process",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "timing": {
+          "description": "Time expectations for the process",
+          "additionalProperties": false,
+          "properties": {
+            "activeTime": {
+              "description": "Hands-on time required",
+              "type": "string"
+            },
+            "totalTime": {
+              "description": "Total time including waiting",
+              "type": "string"
+            },
+            "cureTime": {
+              "description": "Curing period if applicable",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "advantages": {
+          "description": "Benefits of this process",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "disadvantages": {
+          "description": "Drawbacks or challenges of this process",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "related": {
+          "description": "IDs of related processes or glossary terms",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "references": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "sourceId": {
+                "type": "string",
+                "minLength": 1,
+                "description": "ID of source in sources.json"
+              },
+              "section": {
+                "type": "string",
+                "description": "Specific section, chapter, or article identifier"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "Direct URL to the referenced content"
+              },
+              "note": {
+                "type": "string",
+                "description": "Additional context about this specific reference"
+              }
+            },
+            "required": [
+              "sourceId",
+              "section"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "domain": {
+          "description": "Knowledge section(s) where this process appears",
+          "items": {
+            "enum": ["craft", "calculator"],
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "summary",
+        "description",
+        "difficulty",
+        "steps",
+        "domain"
+      ],
+      "type": "object"
+    }
+  },
+  "description": "Schema for soapmaking processes and techniques",
+  "title": "Soapmaking Processes",
+  "type": "object"
+}

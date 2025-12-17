@@ -1,0 +1,257 @@
+{
+  "cold-process": {
+    "name": "Cold process",
+    "domain": ["craft"],
+    "summary": "The most popular method for handmade soap. Oils and lye react at low temperatures, preserving beneficial compounds.",
+    "description": "Cold process (CP) soap making combines oils with lye solution at relatively low temperatures (typically 100-130°F / 38-54°C). The saponification reaction generates its own heat but doesn't require external heating.\n\nThis method preserves heat-sensitive compounds in oils and allows for creative designs like swirls and layers. The trade-off is a required 4-6 week cure time before use.",
+    "difficulty": "beginner",
+    "steps": [
+      {
+        "title": "Prepare workspace and equipment",
+        "description": "Set up all equipment and measure out ingredients before starting. Ensure good ventilation and put on safety gear (goggles and gloves).",
+        "tips": [
+          "Line moulds with freezer paper if needed",
+          "Have vinegar nearby to neutralize lye spills",
+          "Clear workspace of clutter"
+        ],
+        "warnings": [
+          "Always wear safety goggles and gloves when handling lye",
+          "Work in a well-ventilated area"
+        ]
+      },
+      {
+        "title": "Measure oils and fats",
+        "description": "Weigh solid fats and liquid oils separately into your soap pot. Melt solid fats over low heat, then add liquid oils and allow to cool to target temperature.",
+        "tips": [
+          "Weigh directly into container using tare function",
+          "Melt solid fats first, then add liquid oils",
+          "Target oil temperature: 100-130°F (38-54°C)"
+        ]
+      },
+      {
+        "title": "Prepare lye solution",
+        "description": "Weigh water into a heat-resistant container. Weigh lye separately. Slowly add lye to water (never water to lye), stirring until fully dissolved.",
+        "tips": [
+          "Always add lye to water, not water to lye",
+          "Stir until all crystals dissolve",
+          "Solution will heat to 200°F+ (93°C+); let cool"
+        ],
+        "warnings": [
+          "Lye solution releases caustic fumes; work in ventilation",
+          "Container will become very hot",
+          "Never use aluminium containers"
+        ]
+      },
+      {
+        "title": "Combine oils and lye",
+        "description": "When both mixtures are within 10°F (5°C) of each other and at target temperature, slowly pour lye solution into oils while stirring.",
+        "tips": [
+          "Pour in a thin stream while stirring",
+          "Temperatures between 100-130°F (38-54°C) work well",
+          "Exact temperature match less critical than often stated"
+        ]
+      },
+      {
+        "title": "Blend to trace",
+        "description": "Alternate stick blending (2-3 second bursts) with hand stirring until mixture reaches trace. At trace, a drizzle of batter leaves a visible trail on the surface.",
+        "tips": [
+          "Keep blender submerged to avoid air bubbles",
+          "Light trace: thin pudding, best for swirls",
+          "Medium trace: thick pudding, good for most designs"
+        ],
+        "warnings": [
+          "Don't over-blend; trace can accelerate quickly"
+        ]
+      },
+      {
+        "title": "Add extras at trace",
+        "description": "Stir in essential oils, colourants, and other additives at light to medium trace. Work quickly if recipe accelerates trace.",
+        "tips": [
+          "Pre-disperse colourants in oil to prevent speckling",
+          "Add fragrance last to preserve scent",
+          "Reserve some batter before colouring for swirl designs"
+        ]
+      },
+      {
+        "title": "Pour into mould",
+        "description": "Pour soap batter into prepared mould. Tap mould gently to release air bubbles. Create textured top or smooth with spatula.",
+        "tips": [
+          "Pour from low height to minimize air bubbles",
+          "Work quickly with fast-moving recipes",
+          "Tap mould firmly on counter to settle batter"
+        ]
+      },
+      {
+        "title": "Insulate or refrigerate",
+        "description": "For gel phase: cover and insulate mould with towels. For non-gel: leave uncovered or refrigerate. Gel produces brighter colours and faster unmoulding.",
+        "tips": [
+          "Gel phase: wrap in towels, leave 24 hours",
+          "Non-gel: refrigerate for 24 hours",
+          "Partial gel creates darker ring in center"
+        ]
+      },
+      {
+        "title": "Unmould and cut",
+        "description": "After 24-48 hours, soap should be firm enough to unmould. Cut loaves into bars with soap cutter or knife.",
+        "tips": [
+          "Soap should be firm but give slightly when pressed",
+          "High-olive recipes may need 48-72 hours",
+          "Cut within a few days before soap hardens"
+        ]
+      },
+      {
+        "title": "Cure",
+        "description": "Place bars on curing rack with space between each. Cure for 4-6 weeks in a cool, dry area with good airflow.",
+        "tips": [
+          "Turn bars weekly for even curing",
+          "Cure longer for harder, milder bars",
+          "High-olive castile benefits from 6-12 month cure"
+        ]
+      }
+    ],
+    "equipment": [
+      "digital-scale",
+      "stick-blender",
+      "mixing-containers",
+      "thermometer",
+      "silicone-mould",
+      "safety-goggles",
+      "rubber-gloves",
+      "soap-cutter",
+      "curing-rack"
+    ],
+    "timing": {
+      "activeTime": "45-90 minutes",
+      "totalTime": "24-48 hours until unmoulding",
+      "cureTime": "4-6 weeks"
+    },
+    "advantages": [
+      "Preserves beneficial compounds in oils",
+      "Allows creative designs (swirls, layers)",
+      "Lower energy requirements",
+      "Smooth, professional finish"
+    ],
+    "disadvantages": [
+      "4-6 week cure time required",
+      "Must work with caustic raw soap",
+      "Less forgiving of recipe errors"
+    ],
+    "related": [
+      "trace",
+      "gel-phase",
+      "cure",
+      "superfat"
+    ]
+  },
+  "hot-process": {
+    "name": "Hot process",
+    "domain": ["craft"],
+    "summary": "Soap is cooked until saponification completes. Ready to use sooner than cold process but with a rustic appearance.",
+    "description": "Hot process (HP) soap making uses external heat to accelerate and complete saponification during the cooking phase. This produces soap that's safe to use within days rather than weeks, though curing still improves the bar.\n\nThe trade-off is a more rustic, textured appearance and less opportunity for intricate designs. Hot process is excellent for salvaging batches that separated or accelerated too quickly.",
+    "difficulty": "intermediate",
+    "steps": [
+      {
+        "title": "Prepare workspace and equipment",
+        "description": "Set up slow cooker or double boiler. Prepare all ingredients and safety equipment as for cold process.",
+        "tips": [
+          "Slow cooker on low works well",
+          "Have spatula ready for stirring",
+          "Ensure mould is ready before cooking completes"
+        ],
+        "warnings": [
+          "Same safety precautions as cold process",
+          "Hot soap can splatter during cook"
+        ]
+      },
+      {
+        "title": "Combine oils and lye",
+        "description": "Follow cold process steps to combine oils and lye solution. Bring to light trace with stick blender.",
+        "tips": [
+          "Temperature less critical than cold process",
+          "Light trace is sufficient before cooking"
+        ]
+      },
+      {
+        "title": "Cook the soap",
+        "description": "Cover and cook on low heat. Soap will go through stages: separation, applesauce, mashed potato, vaseline. Stir every 15-20 minutes.",
+        "tips": [
+          "Total cook time: 1-3 hours depending on recipe",
+          "Soap may climb sides of cooker; push down",
+          "Done when soap is translucent and doesn't zap tongue"
+        ],
+        "warnings": [
+          "Soap can volcano if heat is too high",
+          "Don't taste-test until soap looks done"
+        ]
+      },
+      {
+        "title": "Test for completion",
+        "description": "Soap is done when a small amount touched to tongue doesn't zap (no tingle). Soap should be translucent and vaseline-like in texture.",
+        "tips": [
+          "Zap test: touch tiny amount to tongue tip",
+          "No zap = saponification complete",
+          "If it zaps, cook longer and retest"
+        ]
+      },
+      {
+        "title": "Add extras after cook",
+        "description": "Remove from heat. Stir in essential oils, colourants, and additives quickly while soap is still workable.",
+        "tips": [
+          "Work quickly; soap thickens as it cools",
+          "Add 1-2 tbsp water if too thick",
+          "Fragrance may flash off if soap is too hot"
+        ]
+      },
+      {
+        "title": "Mould and unmould",
+        "description": "Glop soap into mould, pressing firmly to eliminate air pockets. Tap mould to settle. Unmould after 24 hours; no cutting needed for individual cavities.",
+        "tips": [
+          "Press firmly to avoid air pockets",
+          "Wet hands help with pressing",
+          "Texture will be rustic, not smooth"
+        ]
+      },
+      {
+        "title": "Cure (optional but recommended)",
+        "description": "While technically usable immediately, curing for 2-4 weeks improves bar hardness and mildness.",
+        "tips": [
+          "Shorter cure needed than cold process",
+          "2-4 weeks produces much nicer bar",
+          "Water still needs to evaporate for hardness"
+        ]
+      }
+    ],
+    "equipment": [
+      "digital-scale",
+      "stick-blender",
+      "mixing-containers",
+      "thermometer",
+      "silicone-mould",
+      "safety-goggles",
+      "rubber-gloves",
+      "curing-rack"
+    ],
+    "timing": {
+      "activeTime": "2-4 hours",
+      "totalTime": "24 hours until unmoulding",
+      "cureTime": "2-4 weeks (optional but recommended)"
+    },
+    "advantages": [
+      "Usable much sooner than cold process",
+      "Can salvage failed cold process batches",
+      "More forgiving of recipe errors",
+      "Superfat oils added after cook stay unsaponified"
+    ],
+    "disadvantages": [
+      "Rustic, textured appearance",
+      "Limited design options",
+      "More hands-on during cooking",
+      "Harder to work into moulds"
+    ],
+    "related": [
+      "trace",
+      "cure",
+      "superfat"
+    ]
+  }
+}
