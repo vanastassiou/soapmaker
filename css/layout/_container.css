@@ -1,0 +1,27 @@
+/* ============================================
+   Container Layout
+   ============================================ */
+
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: var(--space-14);
+    padding-bottom: var(--space-14);
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+}
+
+/* Page container - narrow width for content pages */
+.page-container {
+    max-width: 900px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding-left: var(--space-3);
+        padding-right: var(--space-3);
+        padding-top: var(--space-12);
+        padding-bottom: var(--space-12);
+    }
+}

@@ -1,0 +1,13 @@
+/* ============================================
+   Main Grid Layout
+   ============================================ */
+
+.main-grid {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.main-grid > * {
+    min-width: 0;
+}

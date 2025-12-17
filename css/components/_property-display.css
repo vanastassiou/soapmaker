@@ -1,0 +1,94 @@
+/* ============================================
+   Property Display Components
+   ============================================ */
+
+/* Properties Grid */
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+}
+
+.property-item {
+    background: var(--bg-secondary);
+    padding: var(--space-3);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+}
+
+.property-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-2);
+}
+
+.property-name {
+    font-size: var(--text-md);
+    color: var(--text-secondary);
+}
+
+.property-value {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--accent-cream);
+}
+
+.property-bar {
+    height: 6px;
+    background: var(--bg-input);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.property-fill {
+    height: 100%;
+    background: var(--accent-gold);
+    border-radius: var(--radius-sm);
+    transition: width var(--transition-slow);
+}
+
+.property-fill.low {
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--danger),
+        var(--danger) 3px,
+        transparent 3px,
+        transparent 6px
+    ),
+    var(--danger);
+}
+.property-fill.mid { background: var(--accent-gold); }
+.property-fill.high { background: var(--success); }
+
+/* Fatty acids display */
+.fatty-acids {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+}
+
+.fatty-acid-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-2) var(--space-3);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    font-size: var(--text-lg);
+}
+
+.fatty-acid-name {
+    color: var(--text-secondary);
+}
+
+.fatty-acid-value {
+    font-family: var(--font-mono);
+    color: var(--accent-cream);
+}
+
+@media (max-width: 480px) {
+    .properties-grid,
+    .fatty-acids {
+        grid-template-columns: 1fr;
+    }
+}

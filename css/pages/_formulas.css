@@ -1,0 +1,27 @@
+/* ============================================
+   Formulas Page - Entry Styles
+   ============================================ */
+
+/* Formula-specific: equation display */
+.formula-equation { background: var(--bg-secondary); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); margin-bottom: var(--space-3); text-align: center; }
+.formula-equation code { font-family: var(--font-mono); font-size: var(--text-3xl); color: var(--accent-gold); }
+.formula-user-friendly { color: var(--text-secondary); margin-bottom: var(--space-3); }
+
+/* Formula-specific: section boxes with tab-style headings */
+.formula-variables,
+.formula-example { margin-bottom: var(--space-3); }
+.formula-section-heading { font-size: var(--text-xs); color: var(--text-muted); margin: 0; text-transform: uppercase; letter-spacing: 0.05em; background: var(--bg-secondary); display: inline-block; padding: var(--space-1) var(--space-3); border-radius: var(--radius-md) var(--radius-md) 0 0; }
+.formula-section-box { background: var(--bg-secondary); border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md); padding: var(--space-3) var(--space-4); font-size: var(--text-md); color: var(--text-secondary); }
+.formula-section-box:last-child { margin-bottom: 0; }
+.formula-variables dl { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-1) var(--space-4); }
+.formula-variables dt { font-family: var(--font-mono); color: var(--accent-cream); }
+.formula-variables dd { margin: 0; }
+.example-scenario { font-weight: 500; color: var(--accent-cream); margin-bottom: var(--space-2); }
+.example-steps { font-family: var(--font-mono); display: flex; flex-direction: column; gap: var(--space-1); }
+.example-step { color: var(--text-primary); }
+
+/* Formula-specific: range and technical */
+.formula-range { display: inline-flex; gap: var(--space-2); background: var(--bg-secondary); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-3); font-size: var(--text-md); margin-bottom: var(--space-3); }
+.formula-range .range-values { font-family: var(--font-mono); color: var(--accent-green); }
+.formula-technical { margin: var(--space-3) 0; }
+.formula-technical-content { margin-top: var(--space-2); line-height: 1.7; }

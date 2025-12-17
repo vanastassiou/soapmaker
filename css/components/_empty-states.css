@@ -1,0 +1,30 @@
+/* ============================================
+   Empty State Components
+   ============================================ */
+
+.empty-state {
+    text-align: center;
+    padding: var(--space-12);
+    color: var(--text-muted);
+}
+
+.empty-state p {
+    margin-bottom: var(--space-4);
+}
+
+.empty-state-small {
+    padding: var(--space-3);
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.empty-state-small p {
+    margin: 0;
+}
+
+/* No results state */
+.no-results {
+    text-align: center;
+    padding: var(--space-6);
+    color: var(--text-muted);
+}

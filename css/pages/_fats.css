@@ -1,0 +1,164 @@
+/* ============================================
+   Fats Page - Entry Styles
+   ============================================ */
+
+/* Fat-specific: header override for flex-start alignment */
+.fat-entry-header { align-items: flex-start; gap: var(--space-3); }
+
+/* Fat-specific: badge container and variants */
+.fat-badges { display: flex; gap: var(--space-2); flex-wrap: wrap; flex-shrink: 0; }
+.fat-category { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em; padding: 0.15rem 0.5rem; border-radius: var(--radius-sm); }
+.fat-category-plant { color: var(--bg-primary); background: var(--accent-green); }
+.fat-category-animal { color: var(--bg-primary); background: var(--accent-gold); }
+.fat-badge { font-size: var(--text-2xs); text-transform: uppercase; letter-spacing: 0.03em; padding: 0.15rem 0.4rem; border-radius: var(--radius-sm); }
+.fat-badge-allergen { color: var(--bg-primary); background: var(--danger); }
+.fat-badge-sourcing { color: var(--text-primary); background: var(--bg-tertiary); border: 1px solid var(--border); }
+
+/* Fat-specific: stats grid */
+.fat-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: var(--space-2); padding: var(--space-3) var(--space-4); background: var(--bg-secondary); border-radius: var(--radius-md); }
+.fat-stat { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.fat-stat-label { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: var(--space-1); }
+a.fat-stat-label { text-decoration: none; border-bottom: 1px dotted var(--text-muted); transition: color var(--transition-fast), border-color var(--transition-fast); }
+a.fat-stat-label:hover { color: var(--accent-gold); border-bottom-color: var(--accent-gold); }
+.fat-stat-value { font-family: var(--font-mono); font-size: var(--text-xl); color: var(--text-primary); }
+
+/* Fat-specific: fatty acid display */
+.fatty-acid-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.fatty-acid-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: var(--space-1) var(--space-3);
+    align-items: center;
+}
+
+.fatty-acid-name {
+    font-size: var(--text-md);
+    color: var(--text-secondary);
+}
+
+.fatty-acid-value {
+    font-family: var(--font-mono);
+    font-size: var(--text-md);
+    color: var(--text-primary);
+    text-align: right;
+}
+
+.fatty-acid-bar {
+    grid-column: 1 / -1;
+    height: 4px;
+    background: var(--accent-green);
+    border-radius: var(--radius-sm);
+    opacity: 0.6;
+}
+
+.fat-no-data {
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 0;
+}
+
+/* Fatty Acid Detail Panel Styles */
+.fa-chemistry {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+}
+
+.fa-chem-item {
+    background: var(--bg-secondary);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+}
+
+.fa-chem-label {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-1);
+}
+
+.fa-chem-value {
+    font-family: var(--font-mono);
+    color: var(--accent-cream);
+    font-size: var(--text-2xl);
+}
+
+.fa-props-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.fa-prop-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-secondary);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+}
+
+.fa-prop-label {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+}
+
+.fa-prop-value {
+    font-size: var(--text-md);
+    color: var(--accent-cream);
+}
+
+.fa-description {
+    color: var(--text-secondary);
+    margin: 0;
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border);
+}
+
+.fa-sources,
+.fa-common-sources {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.fa-source-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-secondary);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+}
+
+.fa-source-name {
+    color: var(--text-primary);
+}
+
+.fa-source-percent {
+    font-family: var(--font-mono);
+    color: var(--accent-gold);
+    font-size: var(--text-lg);
+}
+
+.fa-common-sources .fa-source-item {
+    border: 1px dashed var(--border);
+    background: transparent;
+}
+
+.no-sources {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: var(--text-lg);
+}

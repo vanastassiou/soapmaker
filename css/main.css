@@ -8,19 +8,46 @@
    Structure:
    1. Tokens (variables, design system)
    2. Base (reset, typography fundamentals)
-   3. Components (reusable UI patterns)
-   4. Utilities (helper classes, overrides)
+   3. Layout (container, header, grid)
+   4. Components (reusable UI patterns)
+   5. Pages (page-specific styles)
+   6. Utilities (helper classes, overrides)
 
    ============================================ */
 
-/* Design Tokens */
-@import 'tokens/_variables.css';
+/* 1. Tokens */
+@import './tokens/_variables.css';
 
-/* Base Styles */
-@import 'base/_reset.css';
+/* 2. Base */
+@import './base/_reset.css';
 
-/* Components - currently in styles.css, to be split incrementally */
-@import 'styles.css';
+/* 3. Layout */
+@import './layout/_container.css';
+@import './layout/_header.css';
+@import './layout/_main-grid.css';
 
-/* Utilities */
-@import 'utilities/_utilities.css';
+/* 4. Components (alphabetical) */
+@import './components/_accessibility.css';
+@import './components/_buttons.css';
+@import './components/_cards.css';
+@import './components/_empty-states.css';
+@import './components/_forms.css';
+@import './components/_item-rows.css';
+@import './components/_panels.css';
+@import './components/_property-display.css';
+@import './components/_tables.css';
+@import './components/_tabs.css';
+@import './components/_tags.css';
+@import './components/_toasts.css';
+@import './components/_tooltips.css';
+
+/* 5. Pages */
+@import './pages/_entry-cards.css';
+@import './pages/_recipe-builder.css';
+@import './pages/_recipe-display.css';
+@import './pages/_fats.css';
+@import './pages/_formulas.css';
+@import './pages/_references.css';
+
+/* 6. Utilities */
+@import './utilities/_utilities.css';

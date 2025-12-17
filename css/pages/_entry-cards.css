@@ -1,0 +1,266 @@
+/* ============================================
+   Shared Entry Card Styles
+   ============================================ */
+
+/* Page container - narrow width for content pages */
+.page-container {
+    max-width: 900px;
+}
+
+/* Page header - centred with consistent spacing */
+.page-header {
+    text-align: center;
+}
+
+.page-header h1 {
+    margin-bottom: var(--space-2);
+}
+
+/* Page intro text */
+.page-intro {
+    color: var(--text-secondary);
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-6);
+}
+
+/* Page summary (counts/stats below header) */
+.page-summary {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Filter navigation */
+.page-nav {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-8);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Filter buttons */
+.page-filter {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-4);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    transition: all var(--transition-base);
+}
+
+.page-filter:hover {
+    border-color: var(--accent-gold);
+    color: var(--text-primary);
+}
+
+.page-filter.active {
+    background: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: var(--bg-primary);
+}
+
+/* Entry list container */
+.page-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+/* Entry card base */
+.entry-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2) var(--space-4);
+    transition: border-color var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.entry-card > *:last-child {
+    margin-bottom: 0;
+}
+
+.entry-card.highlight {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 2px var(--accent-gold-20);
+}
+
+/* Entry header */
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-2);
+    padding: 0 0 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Entry title - margin reset */
+.entry-title {
+    margin: 0;
+}
+
+/* Entry category badge */
+.entry-category {
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--bg-primary);
+    background: var(--text-secondary);
+    padding: 0.1rem 0.4rem;
+    border-radius: var(--radius-sm);
+}
+
+/* Entry description */
+.entry-desc {
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: var(--space-3);
+}
+
+/* Entry expandable details */
+.entry-details {
+    margin-bottom: var(--space-2);
+}
+
+.entry-details summary {
+    cursor: pointer;
+    color: var(--accent-green);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    padding: var(--space-1) 0;
+    transition: color var(--transition-base);
+    list-style: none;
+}
+
+.entry-details summary:hover {
+    color: var(--accent-cream);
+}
+
+.entry-details-content {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+    margin-top: var(--space-2);
+    color: var(--text-secondary);
+    font-size: var(--text-lg);
+    line-height: 1.7;
+}
+
+/* Related terms/links */
+.entry-related {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-md);
+    margin-bottom: var(--space-3);
+}
+
+.entry-related-label {
+    color: var(--text-muted);
+}
+
+.entry-related-link {
+    color: var(--accent-cream);
+    background: var(--bg-secondary);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: all var(--transition-base);
+}
+
+.entry-related-link:hover {
+    background: var(--accent-green);
+    color: var(--bg-primary);
+    border-color: var(--accent-green);
+}
+
+/* Entry title as link */
+a.entry-title,
+.entry-title-link {
+    color: var(--accent-green);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+a.entry-title:hover,
+.entry-title-link:hover {
+    text-decoration: underline;
+}
+
+.entry-title .external-icon,
+.entry-title-link .external-icon {
+    font-size: var(--text-base);
+}
+
+/* Entry metadata */
+.entry-meta {
+    font-size: var(--text-md);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.entry-meta-label {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Unified reference styling for all entry types */
+.entry-references {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--border-30);
+    font-size: var(--text-md);
+}
+
+.references-label {
+    color: var(--text-muted);
+}
+
+.reference-link {
+    color: var(--accent-green);
+    text-decoration: none;
+}
+
+.reference-link:hover {
+    text-decoration: underline;
+}
+
+/* Learn more link */
+.entry-learn-more {
+    margin-top: var(--space-2);
+}
+
+.learn-more-link {
+    color: var(--accent-green);
+    font-size: var(--text-md);
+    text-decoration: none;
+}
+
+.learn-more-link:hover {
+    text-decoration: underline;
+}
+
+.no-results {
+    text-align: center;
+    color: var(--text-muted);
+    padding: var(--space-12);
+    font-style: italic;
+}

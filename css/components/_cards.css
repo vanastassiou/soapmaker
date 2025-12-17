@@ -1,0 +1,41 @@
+/* ============================================
+   Card Components
+   ============================================ */
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+    margin-bottom: var(--space-6);
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Display titles (cards and entry pages) */
+.card-title,
+.entry-title {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    color: var(--accent-cream);
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: var(--space-4);
+        margin-bottom: var(--space-4);
+    }
+
+    .card-title {
+        font-size: var(--text-3xl);
+    }
+}
