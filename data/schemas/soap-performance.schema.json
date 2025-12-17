@@ -1,0 +1,52 @@
+{
+  "$id": "soap-performance.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Soap Performance Additives Database",
+  "description": "Schema for soap performance additives (hardeners, lather enhancers, antioxidants)",
+  "additionalProperties": {
+    "$ref": "#/definitions/SoapPerformanceAdditive"
+  },
+  "definitions": {
+    "SoapPerformanceAdditive": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "description": "Display name of the additive",
+          "minLength": 1,
+          "type": "string"
+        },
+        "subcategory": {
+          "description": "Functional sub-classification",
+          "enum": ["hardener", "lather-enhancer", "antioxidant"],
+          "type": "string"
+        },
+        "description": {
+          "description": "Factual description of the additive",
+          "minLength": 1,
+          "type": "string"
+        },
+        "density": {
+          "description": "Density in g/mL",
+          "maximum": 6,
+          "minimum": 0.1,
+          "type": "number"
+        },
+        "dietary": {
+          "$ref": "common-definitions.schema.json#/definitions/dietary"
+        },
+        "safety": {
+          "$ref": "common-definitions.schema.json#/definitions/safety"
+        },
+        "usage": {
+          "$ref": "common-definitions.schema.json#/definitions/usage"
+        },
+        "references": {
+          "$ref": "common-definitions.schema.json#/definitions/references"
+        }
+      },
+      "required": ["name", "subcategory", "description", "usage", "references"],
+      "type": "object"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,313 @@
+{
+  "beeswax": {
+    "name": "Beeswax (yellow)",
+    "subcategory": "hardener",
+    "description": "Natural wax from Apis mellifera. Increases bar hardness. Melt into oils before adding lye. Melting point 62-64\u00b0C.",
+    "density": 0.96,
+    "dietary": {
+      "animalBased": true,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8012-89-3",
+      "maxConcentration": 56
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.5,
+      "max": 5
+    },
+    "references": [
+      {
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Beeswax and Carnauba Wax",
+        "url": "https://www.cir-safety.org/sites/default/files/RR_Waxes.pdf"
+      }
+    ]
+  },
+  "candelilla-wax": {
+    "name": "Candelilla wax",
+    "subcategory": "hardener",
+    "description": "Plant-based wax from Euphorbiaceae species. Vegan alternative to beeswax. Melting point 68.5-72.5\u00b0C.",
+    "density": 0.99,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8006-44-8",
+      "maxConcentration": 40
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.5,
+      "max": 3
+    },
+    "references": [
+      {
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Cosmetic Waxes (Beeswax, Carnauba, Candelilla)",
+        "url": "https://www.cir-safety.org/sites/default/files/RR_Waxes.pdf"
+      }
+    ]
+  },
+  "carnauba-wax": {
+    "name": "Carnauba wax",
+    "subcategory": "hardener",
+    "description": "Hardest natural wax from Copernicia cerifera palm. Vegan. Brittle alone, combine with softer waxes. Melting point 82-85\u00b0C.",
+    "density": 0.99,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8015-86-9",
+      "maxConcentration": 40
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.5,
+      "max": 3
+    },
+    "references": [
+      {
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Beeswax and Carnauba Wax",
+        "url": "https://www.cir-safety.org/sites/default/files/RR_Waxes.pdf"
+      }
+    ]
+  },
+  "grapefruit-seed-extract": {
+    "name": "Grapefruit seed extract (GSE)",
+    "subcategory": "antioxidant",
+    "description": "Extract from Citrus paradisi seeds. Antioxidant, extends shelf life. Not a broad-spectrum preservative. Verify purity.",
+    "density": 1.0,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "90045-43-5",
+      "maxConcentration": 3
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.1,
+      "max": 1
+    },
+    "references": [
+      {
+        "sourceId": "pubmed",
+        "section": "Antimicrobial Efficacy of Grapefruit Seed Extract",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10399191/"
+      }
+    ]
+  },
+  "honey": {
+    "name": "Honey",
+    "subcategory": "lather-enhancer",
+    "description": "Natural humectant from Apis mellifera. Increases lather, adds natural sugars. Heats soap significantly - freeze after moulding.",
+    "density": 1.42,
+    "dietary": {
+      "animalBased": true,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "91052-92-5",
+      "maxConcentration": 3
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.5,
+      "max": 1
+    },
+    "references": [
+      {
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Honey-Derived Ingredients",
+        "url": "https://www.cir-safety.org/sites/default/files/honey062020FR.pdf"
+      }
+    ]
+  },
+  "rosemary-oleoresin": {
+    "name": "Rosemary oleoresin extract (ROE)",
+    "subcategory": "antioxidant",
+    "description": "Oil-soluble extract from Rosmarinus officinalis leaves. Retards rancidity. Rich in carnosic acid (7%+). Add to oils before mixing.",
+    "density": 0.95,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "84604-14-8",
+      "maxConcentration": 1
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.02,
+      "max": 0.1
+    },
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "Rosemary (Rosmarinus officinalis L.) extract: antiproliferative and antioxidant properties",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770414/"
+      }
+    ]
+  },
+  "silk-amino-acids": {
+    "name": "Silk amino acids (hydrolyzed silk)",
+    "subcategory": "lather-enhancer",
+    "description": "Hydrolyzed silk protein peptides (MW ~300-1000 Da). Enhances lather creaminess. Rich in glycine, alanine, serine. Add to cooled lye water.",
+    "density": 1.0,
+    "dietary": {
+      "animalBased": true,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "96690-41-4",
+      "maxConcentration": 10
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 5
+    },
+    "references": [
+      {
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Silk Protein Ingredients",
+        "url": "https://www.cir-safety.org/sites/default/files/silk%20proteins.pdf"
+      }
+    ]
+  },
+  "sodium-lactate": {
+    "name": "Sodium lactate",
+    "subcategory": "hardener",
+    "description": "Sodium salt of lactic acid (C3H5NaO3). Add to cooled lye water before combining with oils. Reduces unmoulding time.",
+    "density": 1.32,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "72-17-3",
+      "maxConcentration": 5
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 3
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Sodium lactate (CID 23666456)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Sodium-Lactate"
+      }
+    ]
+  },
+  "sugar": {
+    "name": "Sugar (sucrose)",
+    "subcategory": "lather-enhancer",
+    "description": "Sucrose (C12H22O11). Dissolve in water portion before adding lye. Increases lather volume.",
+    "density": 1.59,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "57-50-1"
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.5,
+      "max": 1
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Sucrose (CID 5988)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5988"
+      }
+    ]
+  },
+  "table-salt": {
+    "name": "Salt (sodium chloride)",
+    "subcategory": "hardener",
+    "description": "Sodium chloride (NaCl). Dissolve in water portion before adding lye. Increases hardness. Above 3% may inhibit lather.",
+    "density": 2.16,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "7647-14-5",
+      "maxConcentration": 3
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.5,
+      "max": 1
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Sodium chloride (CID 5234)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5234"
+      }
+    ]
+  },
+  "tussah-silk": {
+    "name": "Tussah silk fibers",
+    "subcategory": "lather-enhancer",
+    "description": "Natural silk fibers from wild Antheraea moths. Dissolves in hot lye water (170-190\u00b0F). Increases lather creaminess.",
+    "density": 1.25,
+    "dietary": {
+      "animalBased": true,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "96690-41-4",
+      "maxConcentration": 5
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.1,
+      "max": 0.5
+    },
+    "references": [
+      {
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Silk Protein Ingredients as Used in Cosmetics",
+        "url": "https://www.cir-safety.org/sites/default/files/silk%20proteins.pdf"
+      }
+    ]
+  },
+  "vitamin-e-tocopherol": {
+    "name": "Vitamin E (mixed tocopherols)",
+    "subcategory": "antioxidant",
+    "description": "Mixed tocopherols (alpha, beta, gamma, delta). Antioxidant to prevent oil oxidation. Add to oils before mixing.",
+    "density": 0.95,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "1406-18-4",
+      "maxConcentration": 1
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.01,
+      "max": 0.05
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Tocopherol (Vitamin E) (CID 14986)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/14986"
+      }
+    ]
+  }
+}
