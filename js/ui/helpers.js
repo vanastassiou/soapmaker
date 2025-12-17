@@ -214,10 +214,12 @@ export function positionNearAnchor(element, anchor, options = {}) {
     const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
     // Make visible to measure
+    const originalDisplay = element.style.display;
     element.style.visibility = 'hidden';
     element.style.display = 'block';
     const elementRect = element.getBoundingClientRect();
     element.style.visibility = '';
+    element.style.display = originalDisplay;
 
     // Calculate position
     let top = preferBelow

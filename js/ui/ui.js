@@ -526,6 +526,7 @@ export function initHelpPopup(glossaryData, tooltipsData, onOpenPanel) {
 
     function hidePopup() {
         popup.classList.remove('visible');
+        popup.style.display = '';  // Clear inline style from positionNearAnchor
         activeTipEl = null;
         currentLinkAction = null;
     }
