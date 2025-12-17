@@ -946,11 +946,11 @@ function renderYoloRecipe() {
             id: item.id,
             name: fat?.name || item.id,
             percentage: item.percentage,
-            isPercentageLocked: state.yoloLockedIndices.has(index)
+            isLocked: state.yoloLockedIndices.has(index)
         }, index, {
-            showWeightInput: false,
-            showLockButton: true,
+            showWeight: false,
             showPercentage: true,
+            lockableField: 'percentage',
             itemType: 'fat'
         });
     }).join('');

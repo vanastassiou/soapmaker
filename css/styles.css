@@ -413,24 +413,30 @@ details.mode-subcontainer > .collapsible-content {
 .property-list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--space-3);
     margin-bottom: var(--space-3);
 }
 
 .property-row {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr auto;
     gap: var(--space-3);
+    align-items: center;
+    padding: var(--space-3);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
 }
 
-.property-row label {
-    flex: 1;
+.property-row .info-link {
     font-size: var(--text-lg);
 }
 
 .property-row input {
     width: 80px;
-    padding: var(--space-2) var(--space-2);
+    height: var(--size-icon-btn);
+    min-height: var(--size-icon-btn);
+    padding: var(--space-1) var(--space-2);
     text-align: center;
     font-size: var(--text-lg);
 }
@@ -459,16 +465,12 @@ ol.instructions li:last-child {
     margin-bottom: 0;
 }
 
-#yoloRecipeFats .fat-row {
-    grid-template-columns: 1fr 100px 40px;
-}
-
 .btn {
     background: var(--accent-gold);
     color: var(--bg-primary);
     border: none;
     border-radius: var(--radius-md);
-    padding: 0.6rem 1.2rem;
+    padding: var(--space-2) var(--space-4);
     font-family: var(--font-body);
     font-weight: 600;
     font-size: var(--text-lg);
@@ -503,20 +505,33 @@ ol.instructions li:last-child {
 }
 
 .btn-small {
-    padding: 0.4rem 0.8rem;
-    font-size: var(--text-base);
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-md);
+    min-height: var(--size-btn-sm);
 }
 
-.recipe-fats {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-}
-
-.fat-row {
+.recipe-fats,
+.recipe-additives {
     display: grid;
-    grid-template-columns: 1fr 130px 100px 40px;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: var(--space-3);
+}
+
+/* Full-width rows in grid containers */
+.recipe-fats > .header-row,
+.recipe-fats > .totals-row,
+.recipe-fats > .empty-state,
+.recipe-additives > .header-row,
+.recipe-additives > .totals-row,
+.recipe-additives > .empty-state {
+    grid-column: 1 / -1;
+}
+
+/* Item rows - base styles */
+.item-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    gap: var(--space-2);
     align-items: center;
     padding: var(--space-3);
     background: var(--bg-secondary);
@@ -524,30 +539,25 @@ ol.instructions li:last-child {
     border: 1px solid var(--border);
 }
 
-.fat-row.locked {
+/* Column layout variants */
+.item-row.cols-4 {
+    grid-template-columns: 1fr auto auto auto;
+}
+
+.item-row.cols-3 {
+    grid-template-columns: 1fr auto auto;
+}
+
+.item-row.cols-2 {
+    grid-template-columns: 1fr auto;
+}
+
+.item-row.locked {
     border-color: var(--accent-gold);
     background: var(--accent-gold-10);
 }
 
-/* Read-only rows (no weight input or remove button) */
-.fat-row.readonly {
-    grid-template-columns: 1fr 100px;
-}
-
-.fat-row.readonly .percentage-cell {
-    justify-content: flex-end;
-}
-
-/* Rows with lock button but no weight input or remove button */
-.fat-row.lockable-only {
-    grid-template-columns: 1fr 110px;
-}
-
-.fat-row.lockable-only .percentage-cell {
-    justify-content: flex-end;
-}
-
-.fat-row.header-row {
+.item-row.header-row {
     background: transparent;
     border: none;
     padding: var(--space-1) var(--space-3);
@@ -556,11 +566,11 @@ ol.instructions li:last-child {
     font-weight: 500;
 }
 
-.fat-row.header-row span {
+.item-row.header-row span {
     text-align: center;
 }
 
-.fat-row.header-row span:first-child {
+.item-row.header-row span:first-child {
     text-align: left;
 }
 
@@ -569,71 +579,54 @@ ol.instructions li:last-child {
 .percentage-cell {
     display: flex;
     align-items: center;
-    gap: var(--space-1);
+    justify-content: flex-end;
+    justify-self: end;
+    gap: var(--space-2);
 }
 
-.weight-cell input {
+.weight-cell input,
+.percentage-cell input {
     flex: 1;
     min-width: 0;
+    max-width: 5rem;
 }
 
-.lock-weight,
-.lock-percentage {
+/* Icon buttons - shared base (lock, remove) */
+.icon-btn {
     background: transparent;
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    width: 24px;
-    height: 24px;
+    width: var(--size-icon-btn);
+    height: var(--size-icon-btn);
     border-radius: var(--radius-sm);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--text-sm);
+    font-size: var(--text-xl);
+    line-height: 1;
     transition: all 0.2s;
     flex-shrink: 0;
 }
 
-.lock-weight:hover,
-.lock-percentage:hover {
-    border-color: var(--accent-green);
-    color: var(--accent-green);
-}
-
-.lock-weight.locked,
-.lock-percentage.locked {
-    background: var(--accent-gold);
-    border-color: var(--accent-gold);
-    color: var(--bg-primary);
-}
-
-.lock-fat {
+/* Lock buttons */
+.lock-btn {
     background: transparent;
     border: 1px solid var(--border);
-    color: var(--text-secondary);
-    width: 32px;
-    height: 32px;
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--text-2xl);
-    transition: all 0.2s;
+    color: var(--text-muted);
 }
 
-.lock-fat:hover {
+.lock-btn:hover {
     border-color: var(--accent-green);
     color: var(--accent-green);
 }
 
-.lock-fat.locked {
+.lock-btn.locked {
     background: var(--accent-gold);
     border-color: var(--accent-gold);
     color: var(--bg-primary);
 }
 
-.fat-name {
+/* Item name buttons */
+.item-name {
     font-weight: 500;
     color: var(--text-primary);
     /* Button reset for semantic button elements */
@@ -654,46 +647,48 @@ ol.instructions li:last-child {
     color: var(--accent-green);
 }
 
-.fat-row input {
+/* Item row inputs and percentages */
+.item-row input {
+    width: 5rem;
+    height: var(--size-icon-btn);
+    min-height: var(--size-icon-btn);
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--text-lg);
     text-align: right;
 }
 
-.fat-row input:disabled {
+.item-row input:disabled {
     background: var(--bg-primary);
     color: var(--text-muted);
     cursor: not-allowed;
     opacity: 0.7;
 }
 
-.fat-percentage {
+.item-percentage {
     font-family: var(--font-mono);
     color: var(--text-secondary);
     font-size: var(--text-lg);
     text-align: right;
 }
 
-.remove-fat {
+/* Remove buttons */
+.remove-btn {
+    justify-self: end;
     background: transparent;
     border: 1px solid var(--danger);
     color: var(--danger);
-    width: 32px;
-    height: 32px;
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    font-size: var(--text-4xl);
-    line-height: 1;
-    transition: all 0.2s;
 }
 
-.remove-fat:hover {
+.remove-btn:hover {
     background: var(--danger);
-    color: var(--bg-primary);  /* dark text for contrast */
+    border-color: var(--danger);
+    color: var(--bg-primary);
 }
 
 .totals-row {
     display: grid;
-    grid-template-columns: 1fr 130px 100px 40px;
-    gap: var(--space-3);
+    grid-template-columns: 1fr auto auto auto;
+    gap: var(--space-2);
     padding: var(--space-3);
     background: var(--bg-primary);
     color: var(--text-secondary);
@@ -704,6 +699,11 @@ ol.instructions li:last-child {
     margin-top: var(--space-2);
     font-family: var(--font-mono);
     font-size: var(--text-lg);
+}
+
+.totals-row span:nth-child(2),
+.totals-row span:nth-child(3) {
+    text-align: right;
 }
 
 /* Generic Tab Styles */
@@ -725,6 +725,7 @@ ol.instructions li:last-child {
     font-size: var(--text-lg);
     font-weight: 500;
     transition: all 0.2s;
+    min-height: var(--size-btn-md);
 }
 
 .tab:hover {
@@ -1560,30 +1561,18 @@ details[open] .details-hide {
         font-size: var(--text-3xl);
     }
 
-    .fat-row {
-        grid-template-columns: 1fr 95px 75px 28px;
-        gap: var(--space-2);
+    .item-row,
+    .totals-row {
+        gap: var(--space-1);
         padding: var(--space-2);
     }
 
-    #yoloRecipeFats .fat-row {
-        grid-template-columns: 1fr 75px 28px;
+    .item-row input {
+        width: 4rem;
     }
 
-    .totals-row {
-        grid-template-columns: 1fr 95px 75px 28px;
-    }
-
-    .lock-weight,
-    .lock-percentage {
-        width: 24px;
-        height: 24px;
-        font-size: var(--text-xs);
-    }
-
-    .lock-fat {
-        width: 28px;
-        height: 28px;
+    .icon-btn {
+        --size-icon-btn: 24px;
         font-size: var(--text-md);
     }
 
@@ -1695,14 +1684,15 @@ details[open] .details-hide {
 }
 
 .build-mode-tabs {
-    margin-bottom: var(--space-3);
-    gap: var(--space-1);
+    margin-bottom: var(--space-4);
+    gap: var(--space-2);
 }
 
 .build-mode-tab {
-    padding: 0.5rem 0.875rem;
-    font-size: var(--text-md);
-    border-radius: var(--radius-sm);
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-lg);
+    border-radius: var(--radius-md);
+    min-height: var(--size-btn-md);
 }
 
 .build-mode-tab.active {
@@ -1785,19 +1775,20 @@ details[open] .details-hide {
 .excluded-fats-list {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-2);
+    align-items: center;
+    gap: 0.75rem 1.25rem;
     min-height: 1.5rem;
 }
 
 .excluded-fat-tag {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: var(--space-2);
-    background: var(--bg-input);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: var(--space-1) var(--space-2);
-    font-size: var(--text-base);
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+}
+
+.excluded-fat-tag:hover {
     color: var(--text-primary);
 }
 
@@ -2509,14 +2500,15 @@ a.citation-title .external-icon {
 }
 
 .additive-tabs {
-    margin-bottom: var(--space-3);
-    gap: var(--space-1);
+    margin-bottom: var(--space-4);
+    gap: var(--space-2);
 }
 
 .additive-tab {
-    padding: 0.5rem 0.875rem;
-    font-size: var(--text-md);
-    border-radius: var(--radius-sm);
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-lg);
+    border-radius: var(--radius-md);
+    min-height: var(--size-btn-md);
 }
 
 .additive-tab.active {
@@ -2529,12 +2521,12 @@ a.citation-title .external-icon {
 .additive-selector {
     display: flex;
     gap: var(--space-2);
+    margin-bottom: var(--space-4);
 }
 
 .additive-mode-area .empty-state,
 .additive-mode-area .empty-state-small {
-    padding: var(--space-2);
-    margin-top: var(--space-2);
+    padding: var(--space-4);
 }
 
 .additive-mode-area .empty-state p,
@@ -2546,79 +2538,15 @@ a.citation-title .external-icon {
     flex: 1;
 }
 
-.recipe-additives {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-}
-
-/* Additive rows - matches fat-row pattern */
-.additive-row {
-    display: grid;
-    grid-template-columns: 1fr 100px 80px 40px;
-    gap: var(--space-3);
-    align-items: center;
-    padding: var(--space-3);
-    background: var(--bg-secondary);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border);
-}
-
-.additive-row.warning {
+/* Item row warning variants */
+.item-row.warning {
     background: var(--accent-gold-10);
     border-color: var(--warning);
 }
 
-.additive-row.danger {
+.item-row.danger {
     background: rgba(217, 123, 108, 0.1);
     border-color: var(--danger);
-}
-
-.additive-name {
-    font-weight: 500;
-    color: var(--text-primary);
-    /* Button reset for semantic button elements */
-    background: none;
-    border: none;
-    padding: 0;
-    font: inherit;
-    text-align: left;
-}
-
-.additive-row input {
-    text-align: right;
-}
-
-.additive-percentage {
-    font-family: var(--font-mono);
-    color: var(--text-secondary);
-    font-size: var(--text-lg);
-    text-align: right;
-}
-
-.additive-totals {
-    grid-template-columns: 1fr 100px 80px 40px;
-}
-
-.remove-additive {
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    cursor: pointer;
-    font-size: var(--text-3xl);
-    width: 28px;
-    height: 28px;
-    border-radius: var(--radius-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-}
-
-.remove-additive:hover {
-    background: var(--danger);
-    border-color: var(--danger);
-    color: var(--bg-primary);
 }
 
 .empty-state-small {
@@ -2649,19 +2577,6 @@ a.citation-title .external-icon {
     border-bottom: none;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .additive-row {
-        grid-template-columns: 1fr 60px 55px 28px;
-        gap: var(--space-2);
-        padding: var(--space-2);
-    }
-
-    .additive-amount-group input {
-        width: 40px;
-    }
-}
-
 /* ============================================
    Create Recipe Section
    ============================================ */
@@ -2674,8 +2589,9 @@ a.citation-title .external-icon {
 }
 
 .btn-large {
-    padding: 0.9rem 2rem;
-    font-size: var(--text-2xl);
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-xl);
+    min-height: var(--size-btn-lg);
 }
 
 /* ============================================

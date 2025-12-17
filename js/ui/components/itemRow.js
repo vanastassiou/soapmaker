@@ -64,7 +64,7 @@ export function renderItemRow(config, index, options = {}) {
 
     // Build row content based on options
     const nameCell = `
-        <button type="button" class="${itemType}-name clickable" data-action="info" ${dataAttr}="${id}">
+        <button type="button" class="item-name clickable" data-action="info" ${dataAttr}="${id}">
             ${name}${warningIcon}
         </button>
     `;
@@ -73,7 +73,7 @@ export function renderItemRow(config, index, options = {}) {
     const renderLockButton = (field) => {
         if (lockableField !== field) return '';
         const lockedClass = isLocked ? CSS_CLASSES.locked : '';
-        return `<button class="lock-${field} ${lockedClass}" data-action="lock" data-index="${index}"
+        return `<button class="icon-btn lock-btn ${lockedClass}" data-action="lock" data-index="${index}"
                    title="${isLocked ? 'Unlock ' + field : 'Lock ' + field}"
                    aria-label="${isLocked ? 'Unlock ' + name + ' ' + field : 'Lock ' + name + ' ' + field}"
                    aria-pressed="${isLocked}">
@@ -116,19 +116,23 @@ export function renderItemRow(config, index, options = {}) {
         } else {
             // Display-only percentage
             percentageCell = `<div class="percentage-cell">
-                   <span class="${itemType}-percentage" aria-label="${name} percentage">${percentage}%</span>
+                   <span class="item-percentage" aria-label="${name} percentage">${percentage}%</span>
                    ${lockBtn}
                </div>`;
         }
     }
 
     const removeCell = showRemoveButton
-        ? `<button class="remove-${itemType}" data-action="remove" data-index="${index}" aria-label="Remove ${name}">
+        ? `<button class="icon-btn remove-btn" data-action="remove" data-index="${index}" aria-label="Remove ${name}">
                ${UI_ICONS.REMOVE}
            </button>`
         : '';
 
-    const rowClasses = `${itemType}-row ${rowLockedClass} ${warningClass} ${className}`.trim().replace(/\s+/g, ' ');
+    // Determine column layout class based on visible columns
+    const colCount = 1 + (showWeight ? 1 : 0) + (showPercentage ? 1 : 0) + (showRemoveButton ? 1 : 0);
+    const colClass = `cols-${colCount}`;
+
+    const rowClasses = `item-row ${colClass} ${rowLockedClass} ${warningClass} ${className}`.trim().replace(/\s+/g, ' ');
 
     return `
         <div class="${rowClasses}" data-index="${index}">
@@ -189,7 +193,7 @@ export function renderEmptyState(message, subMessage = '', className = '') {
  * @param {string} [itemType='fat'] - Item type for selectors
  */
 export function attachRowEventHandlers(container, callbacks, itemType = 'fat') {
-    const nameSelector = `.${itemType}-name[data-action="info"]`;
+    const nameSelector = '.item-name[data-action="info"]';
 
     if (callbacks.onWeightChange) {
         delegate(container, 'input[data-action="weight"]', 'input', (_e, el) => {
@@ -239,7 +243,7 @@ export function attachRowEventHandlers(container, callbacks, itemType = 'fat') {
  * @param {AbortSignal} signal - AbortSignal for cleanup
  */
 export function attachRowEventHandlersWithSignal(container, callbacks, itemType = 'fat', signal) {
-    const nameSelector = `.${itemType}-name[data-action="info"]`;
+    const nameSelector = '.item-name[data-action="info"]';
 
     // Helper to add delegated event listener with abort signal
     const addDelegated = (selector, eventType, handler) => {

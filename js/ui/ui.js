@@ -83,7 +83,7 @@ export function renderRecipe(container, recipe, locks, fatsDatabase, callbacks) 
     const totalPercentage = recipe.reduce((sum, fat) => sum + fat.percentage, 0);
 
     const headerRow = `
-        <div class="fat-row header-row">
+        <div class="item-row header-row">
             <span>Fat</span>
             <span>%</span>
             <span></span>
@@ -224,10 +224,10 @@ export function updatePercentages(recipe, unit) {
     const totalWeight = recipe.reduce((sum, fat) => sum + fat.weight, 0);
 
     recipe.forEach((fat, i) => {
-        const row = container.querySelector(`.fat-row[data-index="${i}"]`);
+        const row = container.querySelector(`.item-row[data-index="${i}"]`);
         if (row) {
             const percentage = totalWeight > 0 ? ((fat.weight / totalWeight) * 100).toFixed(1) : 0;
-            const percentSpan = row.querySelector('.fat-percentage');
+            const percentSpan = row.querySelector('.item-percentage');
             if (percentSpan) percentSpan.textContent = `${percentage}%`;
         }
     });
@@ -676,15 +676,13 @@ export function renderProfileResults(result, targetProfile, fatsDatabase, locked
             id: fat.id,
             name: fatData?.name || fat.id,
             percentage: fat.percentage,
-            isPercentageLocked: lockedIndices.has(index)
+            isLocked: lockedIndices.has(index)
         }, index, {
-            showWeightInput: false,
-            showWeightLock: false,
-            showLockButton: true,
+            showWeight: false,
             showPercentage: true,
+            lockableField: 'percentage',
             showRemoveButton: false,
-            itemType: 'fat',
-            className: 'lockable-only'
+            itemType: 'fat'
         });
     }).join('');
 
@@ -858,7 +856,7 @@ export function renderCupboardFats(container, cupboardFats, fatsDatabase, unit, 
     const totalWeight = cupboardFats.reduce((sum, fat) => sum + fat.weight, 0);
 
     const headerRow = `
-        <div class="fat-row header-row">
+        <div class="item-row header-row">
             <span>Fat</span>
             <span>Weight</span>
             <span>%</span>
@@ -914,7 +912,7 @@ export function renderCupboardSuggestions(container, suggestions, fatsDatabase, 
     const totalWeight = suggestions.reduce((sum, s) => sum + s.weight, 0);
 
     const headerRow = `
-        <div class="fat-row header-row">
+        <div class="item-row header-row">
             <span>Suggested fat</span>
             <span>Weight</span>
             <span>%</span>
@@ -1042,9 +1040,10 @@ export function renderAdditives(container, recipeAdditives, additivesDatabase, t
             hasWarning: !!warningClass,
             warningClass
         }, i, {
-            showWeightInput: true,
-            showLockButton: false,
+            inputType: 'weight',
+            showWeight: true,
             showPercentage: true,
+            lockableField: null,
             unit,
             itemType: 'additive'
         });
