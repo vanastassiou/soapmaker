@@ -29,14 +29,6 @@
     outline-offset: 2px;
 }
 
-body {
-    font-family: var(--font-body);
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    min-height: 100vh;
-    line-height: 1.6;
-}
-
 .container {
     max-width: 1200px;
     margin-left: auto;
@@ -198,7 +190,9 @@ select, input, button {
     border-bottom: 1px solid var(--border);
 }
 
-.card-title {
+/* Display titles (cards and entry pages) */
+.card-title,
+.entry-title {
     font-family: var(--font-display);
     font-size: var(--text-4xl);
     color: var(--accent-cream);
@@ -853,14 +847,15 @@ ol.instructions li:last-child {
     color: var(--accent-gold);
 }
 
-/* Info links (data terms - open sidebar panels) */
-.info-link {
+/* Data links (info-link: panels, fa-link: fatty acid panels) */
+.info-link,
+.fa-link {
     cursor: pointer;
     transition: color var(--transition-base);
     /* WCAG 2.2 Target Size: ensure adequate touch target */
     display: inline-flex;
     align-items: center;
-    min-height: 24px;
+    min-height: var(--size-touch-min);
     /* Button reset for semantic button elements */
     background: none;
     border: none;
@@ -869,12 +864,14 @@ ol.instructions li:last-child {
     color: inherit;
 }
 
-.info-link:hover {
+.info-link:hover,
+.fa-link:hover {
     color: var(--accent-green);
 }
 
-/* Help tips (UI metadata - show tooltips) */
-.help-tip {
+/* Tip icons (help-tip: data tooltips, ui-tip: UI help) */
+.help-tip,
+.ui-tip {
     cursor: help;
     color: var(--text-muted);
     font-size: 0.85em;
@@ -883,11 +880,12 @@ ol.instructions li:last-child {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 24px;
-    min-height: 24px;
+    min-width: var(--size-touch-min);
+    min-height: var(--size-touch-min);
 }
 
-.help-tip:hover {
+.help-tip:hover,
+.ui-tip:hover {
     color: var(--accent-green);
 }
 
@@ -1090,24 +1088,6 @@ details[open] .details-hide {
     color: var(--bg-primary);
     border-color: var(--accent-green);
     font-weight: 500;
-}
-
-/* UI Tips (info icons for site usage help) */
-.ui-tip {
-    cursor: help;
-    color: var(--text-muted);
-    font-size: 0.85em;
-    transition: color var(--transition-base);
-    /* WCAG 2.2 Target Size: minimum 24x24px touch target */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 24px;
-    min-height: 24px;
-}
-
-.ui-tip:hover {
-    color: var(--accent-green);
 }
 
 /* Help Popup (shared by glossary and tooltips) */
@@ -1324,37 +1304,6 @@ details[open] .details-hide {
     font-size: var(--text-4xl);
 }
 
-.fat-detail-title {
-    font-family: var(--font-display);
-    font-size: var(--text-5xl);
-    color: var(--accent-cream);
-    margin-bottom: var(--space-2);
-    padding-right: 3rem;
-}
-
-.fat-detail-sap {
-    font-family: var(--font-mono);
-    color: var(--accent-gold);
-    margin-bottom: var(--space-6);
-}
-
-.fat-detail-section {
-    margin-bottom: var(--space-6);
-}
-
-.fat-detail-section h4 {
-    font-size: var(--text-md);
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--space-3);
-}
-
-.fat-detail-description {
-    color: var(--text-secondary);
-    line-height: 1.7;
-}
-
 .usage-rate {
     display: inline-block;
     background: var(--accent-gold);
@@ -1481,25 +1430,6 @@ details[open] .details-hide {
     color: var(--text-muted);
     font-style: italic;
     font-size: var(--text-lg);
-}
-
-.fa-link {
-    cursor: pointer;
-    transition: color var(--transition-base);
-    /* WCAG 2.2 Target Size: ensure adequate touch target */
-    display: inline-flex;
-    align-items: center;
-    min-height: 24px;
-    /* Button reset for semantic button elements */
-    background: none;
-    border: none;
-    padding: 0;
-    font: inherit;
-    color: inherit;
-}
-
-.fa-link:hover {
-    color: var(--accent-green);
 }
 
 .empty-state {
@@ -1706,12 +1636,8 @@ details[open] .details-hide {
 
 /* Reset button positioning handled by flex layout in summary */
 
-/* Unified build mode area */
-.build-mode-area {
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-4);
+/* Build mode area spacing */
+#fatsContent > .mode-area {
     margin-bottom: var(--space-5);
 }
 
@@ -1744,7 +1670,7 @@ details[open] .details-hide {
 }
 
 .build-mode-content {
-    /* No background/border - inherits from .build-mode-area */
+    /* No background/border - inherits from .mode-area */
 }
 
 .build-mode-content.hidden {
@@ -2190,11 +2116,8 @@ details[open] .details-hide {
     border-bottom: 1px solid var(--border);
 }
 
-/* Entry title */
+/* Entry title - margin reset */
 .entry-title {
-    font-family: var(--font-display);
-    font-size: var(--text-4xl);
-    color: var(--accent-cream);
     margin: 0;
 }
 
@@ -2523,14 +2446,6 @@ a.citation-title .external-icon {
     font-family: var(--font-body);
 }
 
-/* Unified additive mode area */
-.additive-mode-area {
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-4);
-}
-
 .additive-tabs {
     margin-bottom: var(--space-4);
     gap: var(--space-2);
@@ -2556,13 +2471,13 @@ a.citation-title .external-icon {
     margin-bottom: var(--space-4);
 }
 
-.additive-mode-area .empty-state,
-.additive-mode-area .empty-state-small {
+#additivesContent .mode-area .empty-state,
+#additivesContent .mode-area .empty-state-small {
     padding: var(--space-4);
 }
 
-.additive-mode-area .empty-state p,
-.additive-mode-area .empty-state-small p {
+#additivesContent .mode-area .empty-state p,
+#additivesContent .mode-area .empty-state-small p {
     margin-bottom: 0;
 }
 
@@ -3212,8 +3127,7 @@ a.citation-title .external-icon {
 
 /* Responsive adjustments for build mode */
 @media (max-width: 768px) {
-    .build-mode-area,
-    .additive-mode-area {
+    .mode-area {
         padding: var(--space-3);
     }
 

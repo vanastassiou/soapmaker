@@ -59,6 +59,36 @@
 }
 
 /* ============================================
+   Touch Targets (WCAG 2.2)
+   ============================================ */
+
+.touch-target {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--size-touch-min);
+}
+
+.touch-target-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--size-touch-min);
+    min-height: var(--size-touch-min);
+}
+
+/* ============================================
+   Component Patterns
+   ============================================ */
+
+/* Mode area container */
+.mode-area {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+}
+
+/* ============================================
    Reduced Motion
    ============================================ */
 
