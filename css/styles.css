@@ -205,22 +205,16 @@ select, input, button {
 }
 
 .settings-row {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 180px));
     gap: var(--space-4);
     margin-bottom: var(--space-4);
-}
-
-.settings-row .form-group {
-    min-width: 140px;
-    max-width: 180px;
-    flex: 0 1 auto;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--space-1);
 }
 
 label {
@@ -313,6 +307,7 @@ button:focus-visible,
     align-items: center;
     gap: var(--space-1);
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .property-options select {
@@ -1667,10 +1662,8 @@ details[open] .details-hide {
         padding: 0.5rem 0.6rem;
     }
 
-    .settings-row .form-group {
-        min-width: 0;
-        max-width: none;
-        flex: 1 1 100%;
+    .settings-row {
+        grid-template-columns: 1fr;
     }
 }
 
