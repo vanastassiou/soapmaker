@@ -378,6 +378,26 @@
     ],
     "term": "Polyunsaturated fatty acids (PUFAs)"
   },
+  "rancidity": {
+    "category": "concept",
+    "desc": "Degradation of fats through oxidation or hydrolysis, producing off-odours, discolouration, and reduced quality. Rancid oils can still saponify but produce inferior soap.",
+    "details": "Two types:\n\n• Oxidative rancidity: Free-radical chain reaction where oxygen attacks double bonds in unsaturated fatty acids. Produces peroxides that break down into aldehydes and ketones (the characteristic rancid smell).\n\n• Hydrolytic rancidity: Water and enzymes (lipases) break triglycerides into free fatty acids. Common in improperly stored or contaminated fats.\n\nUsing rancid oils in soap:\n• May cause dreaded orange spots (DOS)\n• Reduced cleaning performance\n• Off-colours and lingering odour\n• Hot process with 0% superfat can salvage mildly rancid oils\n\nPrevention: Store oils in cool, dark conditions. Use antioxidants (ROE, vitamin E). Limit polyunsaturated fats to <15% of recipe.",
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6827023",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6827023/",
+        "note": "Comprehensive review of lipid oxidation mechanisms"
+      }
+    ],
+    "related": [
+      "dos",
+      "polyunsaturated",
+      "iodine",
+      "superfat"
+    ],
+    "term": "Rancidity"
+  },
   "sap-value": {
     "category": "concept",
     "desc": "Saponification value; the amount of alkali needed to convert a fat into soap. Each oil has a unique SAP based on its fatty acid composition.",
