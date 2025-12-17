@@ -1,0 +1,57 @@
+{
+  "$id": "colourants.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Soap Colourants Database",
+  "description": "Schema for soap colourants including natural pigments, minerals, oxides, micas, clays, and botanicals",
+  "additionalProperties": {
+    "$ref": "#/definitions/Colourant"
+  },
+  "definitions": {
+    "Colourant": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "description": "Display name of the colourant",
+          "minLength": 1,
+          "type": "string"
+        },
+        "subcategory": {
+          "description": "Colourant type classification",
+          "enum": ["natural", "mineral", "oxide", "mica", "clay", "botanical"],
+          "type": "string"
+        },
+        "color": {
+          "description": "Hex colour code for visual reference",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "type": "string"
+        },
+        "description": {
+          "description": "Factual description of the colourant",
+          "minLength": 1,
+          "type": "string"
+        },
+        "density": {
+          "description": "Density in g/mL (bulk density for powders)",
+          "maximum": 6,
+          "minimum": 0.1,
+          "type": "number"
+        },
+        "dietary": {
+          "$ref": "common-definitions.schema.json#/definitions/dietary"
+        },
+        "safety": {
+          "$ref": "common-definitions.schema.json#/definitions/safety"
+        },
+        "usage": {
+          "$ref": "common-definitions.schema.json#/definitions/usage"
+        },
+        "references": {
+          "$ref": "common-definitions.schema.json#/definitions/references"
+        }
+      },
+      "required": ["name", "subcategory", "color", "description", "usage", "references"],
+      "type": "object"
+    }
+  },
+  "type": "object"
+}

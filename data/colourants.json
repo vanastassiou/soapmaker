@@ -1,0 +1,564 @@
+{
+  "activated-charcoal": {
+    "name": "Activated charcoal",
+    "subcategory": "natural",
+    "color": "#1a1a1a",
+    "description": "Activated carbon powder from plant sources. Creates deep black to grey colours. Add at trace.",
+    "density": 2.1,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "7440-44-0",
+      "maxConcentration": 5
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.5,
+      "max": 2
+    },
+    "references": [
+      {
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Cosmetic use concentrations 0.001-10%",
+        "url": "https://www.cir-safety.org/sites/default/files/SLR_Charcoal_062023.pdf"
+      }
+    ]
+  },
+  "annatto-extract": {
+    "name": "Annatto extract",
+    "subcategory": "natural",
+    "color": "#ff6600",
+    "description": "Extract from Bixa orellana seeds. Contains bixin (oil-soluble) and norbixin (water-soluble). FDA-approved for cosmetics including eyes.",
+    "density": 1.1,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "1393-63-1",
+      "maxConcentration": 3
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.1,
+      "max": 1
+    },
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "Phytochemistry, biological activities and potential of annatto in natural colorant production",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4856788/"
+      }
+    ]
+  },
+  "bentonite-clay": {
+    "name": "Bentonite clay",
+    "subcategory": "clay",
+    "color": "#c9c5b8",
+    "description": "Montmorillonite-rich clay. Swells 12-15x when wet. Cation exchange capacity ~100 meq/100g. Higher absorption than kaolin.",
+    "density": 2.5,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "1302-78-9",
+      "maxConcentration": 15
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.5,
+      "max": 1
+    },
+    "references": [
+      {
+        "sourceId": "who-inchem",
+        "section": "Bentonite, Kaolin and Selected Clay Minerals, Section 2.2",
+        "url": "https://www.inchem.org/documents/ehc/ehc/ehc231.htm"
+      }
+    ]
+  },
+  "calendula-petals": {
+    "name": "Calendula petals (dried)",
+    "subcategory": "botanical",
+    "color": "#ffa500",
+    "description": "Dried Calendula officinalis flowers. Only botanical that retains colour in high pH soap. Use for decoration or oil infusion.",
+    "density": 0.3,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "84776-23-8",
+      "maxConcentration": 10
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.1,
+      "max": 1
+    },
+    "references": [
+      {
+        "sourceId": "ema",
+        "section": "European Union herbal monograph on Calendula officinalis L., flos (Revision 1)",
+        "url": "https://www.ema.europa.eu/en/documents/herbal-monograph/final-european-union-herbal-monograph-calendula-officinalis-l-flos-revision-1_en.pdf"
+      }
+    ]
+  },
+  "chamomile-flowers": {
+    "name": "Chamomile flowers (dried)",
+    "subcategory": "botanical",
+    "color": "#d4a574",
+    "description": "Dried Matricaria chamomilla flowers. Use for decoration (crispy-dry only) or tea infusion for lye. Turn brown over time in soap.",
+    "density": 0.15,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "84082-60-0",
+      "maxConcentration": 5
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.1,
+      "max": 1
+    },
+    "references": [
+      {
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Amended Safety Assessment of Chamomilla recutita-Derived Ingredients as Used in Cosmetics",
+        "url": "https://www.cir-safety.org/sites/default/files/chamomilla%20recutita.pdf"
+      }
+    ]
+  },
+  "chromium-oxide-green": {
+    "name": "Chromium oxide green",
+    "subcategory": "mineral",
+    "color": "#4a7c59",
+    "description": "Chromium(III) oxide (Cr2O3). FDA-approved for cosmetics including eye area. Not approved for lips. Stable at high pH.",
+    "density": 5.2,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "1308-38-9",
+      "maxConcentration": 3
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.05,
+      "max": 0.3
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Chromium(III) oxide (CID 517277)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/517277"
+      }
+    ]
+  },
+  "french-green-clay": {
+    "name": "French green clay (illite)",
+    "subcategory": "clay",
+    "color": "#8a9a5b",
+    "description": "Illite clay. Green colour from iron oxides and decomposed plant matter. Similar absorption properties to kaolin.",
+    "density": 2.6,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "12173-60-3",
+      "maxConcentration": 15
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.5,
+      "max": 1
+    },
+    "references": [
+      {
+        "sourceId": "who-inchem",
+        "section": "Bentonite, Kaolin and Selected Clay Minerals, Section 2.3",
+        "url": "https://www.inchem.org/documents/ehc/ehc/ehc231.htm"
+      }
+    ]
+  },
+  "indigo-powder": {
+    "name": "Indigo powder",
+    "subcategory": "natural",
+    "color": "#4b0082",
+    "description": "Natural indigo from Indigofera tinctoria. Contains indigotin. Not approved for eyes, lips, or nails.",
+    "density": 0.6,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "482-89-3",
+      "maxConcentration": 2
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.25,
+      "max": 1
+    },
+    "references": [
+      {
+        "sourceId": "sccs",
+        "section": "Opinion on hair dye Indigofera tinctoria (SCCS/1615/20)",
+        "url": "https://health.ec.europa.eu/document/download/22957d7f-574c-4956-a2d4-fb18ee00ac65_en"
+      }
+    ]
+  },
+  "iron-oxide-black": {
+    "name": "Iron oxide black",
+    "subcategory": "oxide",
+    "color": "#1a1a1a",
+    "description": "Iron(II,III) oxide (Fe3O4). FDA approved for cosmetics including eye area. Stable in high pH. Use sparingly.",
+    "density": 5.2,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "1317-61-9"
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.05,
+      "max": 0.3
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Iron(II,III) oxide Fe3O4 (CID 16211978)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/16211978"
+      }
+    ]
+  },
+  "iron-oxide-red": {
+    "name": "Iron oxide red",
+    "subcategory": "oxide",
+    "color": "#b22222",
+    "description": "Iron(III) oxide (Fe2O3). FDA approved for cosmetics including eye area. Stable in high pH.",
+    "density": 5.2,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "1309-37-1"
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.1,
+      "max": 0.5
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Iron(III) oxide Fe2O3 (CID 518696)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/518696"
+      }
+    ]
+  },
+  "iron-oxide-yellow": {
+    "name": "Iron oxide yellow",
+    "subcategory": "oxide",
+    "color": "#e6b800",
+    "description": "Iron(III) oxide hydroxide (FeO(OH)). FDA approved for cosmetics including eye area. Stable in high pH.",
+    "density": 4.0,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "51274-00-1"
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.1,
+      "max": 0.5
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Iron oxide hydroxide FeOOH - Pigment Yellow 42 (CID 23320441)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/23320441"
+      }
+    ]
+  },
+  "kaolin-clay": {
+    "name": "Kaolin clay (white)",
+    "subcategory": "clay",
+    "color": "#f5f5f0",
+    "description": "Hydrated aluminum silicate (Al2Si2O5(OH)4). Particle size 0.1-4 micrometers. Cation exchange capacity 2-10 meq/100g. Can absorb essential oils.",
+    "density": 2.6,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "1332-58-7",
+      "maxConcentration": 15
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.5,
+      "max": 1
+    },
+    "references": [
+      {
+        "sourceId": "who-inchem",
+        "section": "Bentonite, Kaolin and Selected Clay Minerals, Section 2.1",
+        "url": "https://www.inchem.org/documents/ehc/ehc/ehc231.htm"
+      }
+    ]
+  },
+  "mica-iron-oxide": {
+    "name": "Mica (iron oxide coated)",
+    "subcategory": "mica",
+    "color": "#b87333",
+    "description": "Mica coated with iron oxides (\u226455% by weight). Creates bronze, copper, gold effects. Color-stable in high pH soap.",
+    "density": 3.2,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "12001-26-2",
+      "maxConcentration": 50
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.25,
+      "max": 2
+    },
+    "references": [
+      {
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Mica as Used in Cosmetics",
+        "url": "https://www.cir-safety.org/sites/default/files/mica.pdf"
+      }
+    ]
+  },
+  "mica-pearl-titanium": {
+    "name": "Mica pearl (titanium dioxide)",
+    "subcategory": "mica",
+    "color": "#f5f5f5",
+    "description": "Natural or synthetic mica coated with titanium dioxide (TiO2). Creates interference/pearl effects. Color-stable in CP soap.",
+    "density": 2.8,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "12001-26-2",
+      "maxConcentration": 50
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.25,
+      "max": 2
+    },
+    "references": [
+      {
+        "sourceId": "federal-register",
+        "section": "Mica-Based Pearlescent Pigments",
+        "url": "https://www.federalregister.gov/documents/2015/09/30/2015-24795/listing-of-color-additives-exempt-from-certification-mica-based-pearlescent-pigments"
+      }
+    ]
+  },
+  "rose-petals": {
+    "name": "Rose petals (dried)",
+    "subcategory": "botanical",
+    "color": "#8b4513",
+    "description": "Dried Rosa spp. petals. Turn brown in CP soap due to high pH. Add only to top of cured soap for decoration.",
+    "density": 0.2,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "90106-38-0",
+      "maxConcentration": 5
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.1,
+      "max": 0.5
+    },
+    "references": [
+      {
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Rosa damascena-Derived Ingredients as Used in Cosmetics",
+        "url": "https://www.cir-safety.org/sites/default/files/Rosa%20damascena_0.pdf"
+      }
+    ]
+  },
+  "spirulina-powder": {
+    "name": "Spirulina powder",
+    "subcategory": "natural",
+    "color": "#3a7d7c",
+    "description": "Dried blue-green algae (Limnospira spp.) powder. pH-stable natural colourant. Rich in phycocyanin.",
+    "density": 0.4,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "724424-92-4",
+      "maxConcentration": 5
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.5,
+      "max": 2
+    },
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "Spirulina as Key Ingredient in Eco-Friendly Cosmetics",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12190513/"
+      }
+    ]
+  },
+  "titanium-dioxide": {
+    "name": "Titanium dioxide",
+    "subcategory": "oxide",
+    "color": "#ffffff",
+    "description": "Titanium(IV) oxide (TiO2). FDA approved for cosmetics. Creates opaque white. Stable in high pH.",
+    "density": 4.2,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "13463-67-7"
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.1,
+      "max": 1
+    },
+    "references": [
+      {
+        "sourceId": "sccs",
+        "section": "Opinion on Titanium Dioxide (TiO2) used in cosmetic products (SCCS/1516/13)",
+        "url": "https://health.ec.europa.eu/system/files/2021-11/sccs_o_238.pdf"
+      }
+    ]
+  },
+  "turmeric-powder": {
+    "name": "Turmeric powder",
+    "subcategory": "natural",
+    "color": "#ffa500",
+    "description": "Ground rhizome of Curcuma longa. Contains curcumin (90%+ curcuminoids). FDA-approved for food but not cosmetics.",
+    "density": 0.8,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "458-37-7",
+      "maxConcentration": 3
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.25,
+      "max": 1
+    },
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "Potential of Curcumin in Skin Disorders",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6770633/"
+      }
+    ]
+  },
+  "ultramarine-blue": {
+    "name": "Ultramarine blue",
+    "subcategory": "mineral",
+    "color": "#0033cc",
+    "description": "Synthetic sodium aluminum sulfosilicate. FDA-approved for cosmetics including eye area. Stable at high pH.",
+    "density": 2.4,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "57455-37-5",
+      "maxConcentration": 5
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.1,
+      "max": 0.5
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Ultramarine Blue - C.I. Pigment Blue 29 (CID 71587188)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/71587188"
+      }
+    ]
+  },
+  "ultramarine-pink": {
+    "name": "Ultramarine pink",
+    "subcategory": "mineral",
+    "color": "#e6a8d7",
+    "description": "Sodium aluminum sulfosilicate violet/pink. FDA-approved for cosmetics including eyes. Not permitted in lip products.",
+    "density": 2.4,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "12769-96-9",
+      "maxConcentration": 5
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.1,
+      "max": 0.5
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Sodium aluminosilicate Violet (CID 91667813)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/91667813"
+      }
+    ]
+  },
+  "zinc-oxide": {
+    "name": "Zinc oxide",
+    "subcategory": "mineral",
+    "color": "#ffffff",
+    "description": "Zinc oxide (ZnO). FDA-approved for cosmetics including eye area. Creates opaque white.",
+    "density": 5.6,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "1314-13-2"
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.5,
+      "max": 5
+    },
+    "references": [
+      {
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Zinc Salts as Used in Cosmetics",
+        "url": "https://www.cir-safety.org/sites/default/files/zinc%20salts_0.pdf"
+      }
+    ]
+  }
+}
