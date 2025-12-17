@@ -93,10 +93,21 @@ header p {
     border-color: var(--text-secondary);
 }
 
+.header-link:active {
+    color: var(--text-primary);
+    border-color: var(--text-secondary);
+    background: transparent;
+}
+
 .header-link[aria-current="page"] {
     color: var(--text-primary);
     background: var(--bg-secondary);
     border-color: var(--text-secondary);
+}
+
+/* Prevent mobile tap highlight from persisting */
+.header-link {
+    -webkit-tap-highlight-color: transparent;
 }
 
 .kofi-button {

@@ -187,6 +187,24 @@ function initFilters() {
     });
 }
 
+function resetFilters() {
+    // Reset to 'all' category
+    currentCategory = 'all';
+    document.querySelectorAll('.page-filter').forEach(btn => {
+        const isAll = btn.dataset.category === 'all';
+        btn.classList.toggle('active', isAll);
+        btn.setAttribute('aria-selected', isAll ? 'true' : 'false');
+    });
+    renderAdditives();
+}
+
+// Reset state when page is restored from bfcache (back/forward navigation)
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+        resetFilters();
+    }
+});
+
 // Initialize
 loadAdditives();
 initFilters();
