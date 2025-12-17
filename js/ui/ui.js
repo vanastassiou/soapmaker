@@ -880,7 +880,7 @@ export function renderCupboardFats(container, cupboardFats, fatsDatabase, unit, 
         });
     }).join('');
 
-    container.innerHTML = headerRow + rows + renderTotalsRow('Total', totalWeight, unit, 0);
+    container.innerHTML = headerRow + rows + renderTotalsRow('Total Fats', totalWeight, unit, 0);
 
     // Attach event handlers with abort signal for cleanup
     attachRowEventHandlersWithSignal(container, {

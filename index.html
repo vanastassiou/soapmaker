@@ -117,17 +117,14 @@
                                         <span class="ui-tip" data-tooltip="filter-allergens" aria-label="What does this filter?">ⓘ</span>
                                     </label>
                                 </div>
-                                <div class="exclusion-specific">
-                                    <label class="exclusion-label">Exclude specific fats:</label>
-                                    <div class="exclusion-add">
-                                        <select id="excludeFatSelect">
-                                            <option value="">Select fat to exclude...</option>
-                                        </select>
-                                        <button class="btn btn-small" id="addExclusionBtn">Add</button>
-                                    </div>
-                                    <div class="excluded-fats-list" id="excludedFatsList">
-                                        <!-- Populated by JS -->
-                                    </div>
+                                <div class="fat-selector">
+                                    <select id="excludeFatSelect">
+                                        <option value="">Select fat to exclude...</option>
+                                    </select>
+                                    <button class="btn" id="addExclusionBtn">Add</button>
+                                </div>
+                                <div class="excluded-fats-list" id="excludedFatsList">
+                                    <!-- Populated by JS -->
                                 </div>
                             </div>
                         </details>
@@ -164,12 +161,12 @@
                                 <select id="fatSelect">
                                     <option value="">Select a fat to add...</option>
                                 </select>
-                                <button class="btn" id="addFatBtn">Add fat</button>
+                                <button class="btn" id="addFatBtn">Add</button>
                             </div>
 
                             <div class="recipe-fats" id="recipeFats">
-                                <div class="empty-state">
-                                    <p>No fats</p>
+                                <div class="empty-state-small">
+                                    <p>No fats added</p>
                                 </div>
                             </div>
                             <div class="use-recipe-action hidden" id="useFatsAction">
@@ -277,10 +274,10 @@
                                     <select id="cupboardFatSelect">
                                         <option value="">Select fat you have...</option>
                                     </select>
-                                    <button class="btn" id="addCupboardFatBtn">Add fat</button>
+                                    <button class="btn" id="addCupboardFatBtn">Add</button>
                                 </div>
                                 <div class="recipe-fats" id="cupboardFats">
-                                    <div class="empty-state">
+                                    <div class="empty-state-small">
                                         <p>No fats added</p>
                                     </div>
                                 </div>
@@ -301,14 +298,10 @@
                         </div><!-- End mode-area -->
 
                         <!-- Properties display (visible in all build modes) -->
-                        <details class="mode-subcontainer" id="buildModeProperties" open>
-                            <summary class="collapsible-header">
-                                <span class="collapse-icon" aria-hidden="true"></span>
-                                <h4 class="mode-subcontainer-title">Qualitative properties</h4>
-                            </summary>
-                            <div class="collapsible-content" id="propertiesContent">
-                                <p class="analysis-helper-text">These numbers predict how your soap will feel and perform.</p>
-                                <table class="analysis-table properties-table" aria-label="Soap properties analysis">
+                        <div class="mode-area" id="buildModeProperties">
+                            <h4 class="mode-area-title">Qualitative properties</h4>
+                            <p class="analysis-helper-text">These numbers predict how your soap will feel and perform.</p>
+                            <table class="analysis-table properties-table" aria-label="Soap properties analysis">
                                 <thead>
                                     <tr>
                                         <th scope="col">Property</th>
@@ -354,8 +347,7 @@
                                     </tr>
                                 </tbody>
                                 </table>
-                            </div>
-                        </details>
+                        </div><!-- End properties mode-area -->
                         </div>
                     </details>
 

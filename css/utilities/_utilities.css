@@ -89,6 +89,15 @@
     margin-bottom: var(--space-5);
 }
 
+.mode-area-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 0 0 var(--space-3) 0;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
 /* ============================================
    Reduced Motion
    ============================================ */
