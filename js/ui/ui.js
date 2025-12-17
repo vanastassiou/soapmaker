@@ -981,12 +981,12 @@ export function getSettings() {
 /**
  * Populate additive select dropdown
  * @param {HTMLSelectElement} selectElement - The select element
- * @param {Object} additivesDatabase - Additives database object
- * @param {string} category - Category to filter by (essential-oil, colourant, functional)
+ * @param {Object} database - Pre-filtered database for the category
  * @param {Array} existingIds - IDs already in recipe to exclude
+ * @param {Function|null} filterFn - Optional filter function (id, data) => boolean
  */
-export function populateAdditiveSelect(selectElement, additivesDatabase, category, existingIds = []) {
-    populateSelect(selectElement, additivesDatabase, existingIds, (_id, data) => data.category === category);
+export function populateAdditiveSelect(selectElement, database, existingIds = [], filterFn = null) {
+    populateSelect(selectElement, database, existingIds, filterFn);
 }
 
 /**
@@ -1092,8 +1092,22 @@ export function showAdditiveInfo(additiveId, additivesDatabase) {
     const additive = additivesDatabase[additiveId];
     const panel = $(ELEMENT_IDS.additiveInfoPanel);
 
+    // Infer category from item properties (separate files don't have category field)
+    let category = additive.category;
+    if (!category) {
+        if (additive.scentNote) {
+            category = 'fragrance';
+        } else if (additive.color) {
+            category = 'colourant';
+        } else if (['hardener', 'lather-enhancer', 'antioxidant'].includes(additive.subcategory)) {
+            category = 'soap-performance';
+        } else if (['emollient', 'exfoliant'].includes(additive.subcategory)) {
+            category = 'skin-care';
+        }
+    }
+
     $('additivePanelName').textContent = additive.name;
-    $('additivePanelCategory').textContent = formatCategory(additive.category, additive.subcategory);
+    $('additivePanelCategory').textContent = formatCategory(category, additive.subcategory);
     $('additivePanelUsage').textContent = `${additive.usage.min}% to ${additive.usage.max}% of fat weight`;
     $('additivePanelDescription').textContent = additive.description;
 
@@ -1168,12 +1182,13 @@ export function showAdditiveInfo(additiveId, additivesDatabase) {
  */
 function formatCategory(category, subcategory) {
     const categoryNames = {
-        'essential-oil': 'essential oil',
+        'fragrance': 'fragrance',
         'colourant': 'colourant',
-        'functional': 'functional additive'
+        'soap-performance': 'soap performance',
+        'skin-care': 'skin care'
     };
 
-    const base = categoryNames[category] || category;
+    const base = categoryNames[category] || category || 'additive';
     if (subcategory) {
         return `${base} (${subcategory})`;
     }

@@ -501,7 +501,8 @@ function updateAdditiveSelect() {
 
     const existingIds = state.recipeAdditives.map(a => a.id);
     const database = getAdditiveDatabaseForCategory(currentAdditiveCategory);
-    ui.populateAdditiveSelect(select, database, existingIds);
+    const filterFn = createDietaryFilterFn();
+    ui.populateAdditiveSelect(select, database, existingIds, filterFn);
 }
 
 // ============================================
@@ -823,10 +824,14 @@ function setupSettingsListeners() {
     $(ELEMENT_IDS.waterRatio).addEventListener('input', calculate);
     $(ELEMENT_IDS.unit).addEventListener('change', handleUnitChange);
 
-    // Dietary filter checkboxes - update fat select when toggled
-    $(ELEMENT_IDS.filterAnimalBased)?.addEventListener('change', updateFatSelectWithFilters);
-    $(ELEMENT_IDS.filterSourcingConcerns)?.addEventListener('change', updateFatSelectWithFilters);
-    $(ELEMENT_IDS.filterCommonAllergens)?.addEventListener('change', updateFatSelectWithFilters);
+    // Dietary filter checkboxes - update all ingredient selects when toggled
+    const handleDietaryFilterChange = () => {
+        updateFatSelectWithFilters();
+        updateAdditiveSelect();
+    };
+    $(ELEMENT_IDS.filterAnimalBased)?.addEventListener('change', handleDietaryFilterChange);
+    $(ELEMENT_IDS.filterSourcingConcerns)?.addEventListener('change', handleDietaryFilterChange);
+    $(ELEMENT_IDS.filterCommonAllergens)?.addEventListener('change', handleDietaryFilterChange);
 }
 
 function setupRecipeListeners() {
