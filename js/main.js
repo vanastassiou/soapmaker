@@ -1155,9 +1155,8 @@ function renderCupboardFatsList() {
 
     const settings = ui.getSettings();
 
-    ui.renderCupboardFats(container, state.cupboardFats, state.fatsDatabase, settings.unit, state.cupboardLocks, {
+    ui.renderCupboardFats(container, state.cupboardFats, state.fatsDatabase, settings.unit, {
         onWeightChange: handleCupboardWeightChange,
-        onToggleLock: handleToggleCupboardLock,
         onRemove: handleRemoveCupboardFat,
         onInfo: (fatId) => {
             if (fatId && state.fatsDatabase[fatId]) {

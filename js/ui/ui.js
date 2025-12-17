@@ -837,15 +837,14 @@ export function clearProfileInputs() {
 // ============================================
 
 /**
- * Render cupboard fats (weight input with weight locks)
+ * Render cupboard fats (weight input, no locks)
  * @param {HTMLElement} container - Container element
  * @param {Array} cupboardFats - Array of {id, weight}
  * @param {Object} fatsDatabase - Fat database for name lookups
  * @param {string} unit - Unit string (g or oz)
- * @param {Set} lockedIndices - Set of locked fat indices (weight locks)
- * @param {Object} callbacks - {onWeightChange, onToggleLock, onRemove, onInfo}
+ * @param {Object} callbacks - {onWeightChange, onRemove, onInfo}
  */
-export function renderCupboardFats(container, cupboardFats, fatsDatabase, unit, lockedIndices, callbacks) {
+export function renderCupboardFats(container, cupboardFats, fatsDatabase, unit, callbacks) {
     const signal = setupAbortSignal(container);
 
     if (cupboardFats.length === 0) {
@@ -856,11 +855,10 @@ export function renderCupboardFats(container, cupboardFats, fatsDatabase, unit, 
     const totalWeight = cupboardFats.reduce((sum, fat) => sum + fat.weight, 0);
 
     const headerRow = `
-        <div class="item-row header-row">
+        <div class="item-row header-row cols-3">
             <span>Fat</span>
             <span>Weight</span>
             <span>%</span>
-            <span></span>
         </div>
     `;
 
@@ -870,24 +868,23 @@ export function renderCupboardFats(container, cupboardFats, fatsDatabase, unit, 
             id: fat.id,
             name: fatData?.name || fat.id,
             weight: fat.weight,
-            percentage: totalWeight > 0 ? ((fat.weight / totalWeight) * 100).toFixed(1) : 0,
-            isLocked: lockedIndices.has(i)
+            percentage: totalWeight > 0 ? ((fat.weight / totalWeight) * 100).toFixed(1) : 0
         }, i, {
             inputType: 'weight',
             showWeight: true,
             showPercentage: true,
-            lockableField: 'weight',
+            lockableField: null,
+            showRemoveButton: true,
             unit,
             itemType: 'fat'
         });
     }).join('');
 
-    container.innerHTML = headerRow + rows + renderTotalsRow('Total', totalWeight, unit, 1);
+    container.innerHTML = headerRow + rows + renderTotalsRow('Total', totalWeight, unit, 0);
 
     // Attach event handlers with abort signal for cleanup
     attachRowEventHandlersWithSignal(container, {
         onWeightChange: callbacks.onWeightChange,
-        onToggleLock: callbacks.onToggleLock,
         onRemove: callbacks.onRemove,
         onInfo: callbacks.onInfo
     }, 'fat', signal);
