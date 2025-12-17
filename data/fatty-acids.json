@@ -1,5 +1,6 @@
 {
   "arachidic": {
+    "domain": ["craft", "calculator"],
     "carbonChain": 20,
     "commonSources": [
       "shea-butter",
@@ -26,6 +27,7 @@
     }
   },
   "behenic": {
+    "domain": ["craft", "calculator"],
     "carbonChain": 22,
     "commonSources": [
       "moringa-oil",
@@ -52,6 +54,7 @@
     }
   },
   "capric": {
+    "domain": ["craft", "calculator"],
     "carbonChain": 10,
     "commonSources": [
       "fractionated-coconut-oil-mct",
@@ -79,6 +82,7 @@
     }
   },
   "caprylic": {
+    "domain": ["craft", "calculator"],
     "carbonChain": 8,
     "commonSources": [
       "fractionated-coconut-oil-mct",
@@ -105,6 +109,7 @@
     }
   },
   "erucic": {
+    "domain": ["craft", "calculator"],
     "carbonChain": 22,
     "commonSources": [
       "mustard-seed-oil"
@@ -129,6 +134,7 @@
     }
   },
   "eicosenoic": {
+    "domain": ["craft", "calculator"],
     "carbonChain": 20,
     "commonSources": [
       "jojoba-oil",
@@ -154,6 +160,7 @@
     }
   },
   "lauric": {
+    "domain": ["craft", "calculator"],
     "carbonChain": 12,
     "commonSources": [
       "coconut-oil-76",
@@ -181,6 +188,7 @@
     }
   },
   "linoleic": {
+    "domain": ["craft", "calculator"],
     "carbonChain": 18,
     "commonSources": [
       "grapeseed-oil",
@@ -209,6 +217,7 @@
     }
   },
   "linolenic": {
+    "domain": ["craft", "calculator"],
     "carbonChain": 18,
     "commonSources": [
       "hemp-seed-oil",
@@ -236,6 +245,7 @@
     }
   },
   "myristic": {
+    "domain": ["craft", "calculator"],
     "carbonChain": 14,
     "commonSources": [
       "coconut-oil-76",
@@ -264,6 +274,7 @@
     }
   },
   "oleic": {
+    "domain": ["craft", "calculator"],
     "carbonChain": 18,
     "commonSources": [
       "olive-oil",
@@ -292,6 +303,7 @@
     }
   },
   "palmitic": {
+    "domain": ["craft", "calculator"],
     "carbonChain": 16,
     "commonSources": [
       "palm-oil",
@@ -319,6 +331,7 @@
     }
   },
   "palmitoleic": {
+    "domain": ["craft", "calculator"],
     "carbonChain": 16,
     "commonSources": [
       "macadamia-nut-oil",
@@ -345,6 +358,7 @@
     }
   },
   "ricinoleic": {
+    "domain": ["craft", "calculator"],
     "carbonChain": 18,
     "commonSources": [
       "castor-oil"
@@ -374,6 +388,7 @@
     }
   },
   "stearic": {
+    "domain": ["craft", "calculator"],
     "carbonChain": 18,
     "commonSources": [
       "shea-butter",

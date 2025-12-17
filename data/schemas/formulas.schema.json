@@ -128,9 +128,18 @@
           },
           "required": ["text", "url"],
           "additionalProperties": false
+        },
+        "domain": {
+          "type": "array",
+          "description": "Knowledge section(s) where this formula appears",
+          "items": {
+            "type": "string",
+            "enum": ["craft", "calculator"]
+          },
+          "minItems": 1
         }
       },
-      "required": ["category", "name", "summary", "userFriendly", "formula", "variables"],
+      "required": ["category", "name", "summary", "userFriendly", "formula", "variables", "domain"],
       "additionalProperties": false
     }
   }

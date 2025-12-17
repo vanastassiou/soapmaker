@@ -1,6 +1,7 @@
 {
   "lye-amount": {
     "category": "core",
+    "domain": ["calculator"],
     "name": "Lye amount",
     "summary": "Calculates how much lye (sodium hydroxide or potassium hydroxide) is needed to saponify your fats.",
     "userFriendly": "Every fat requires a specific amount of lye to turn into soap. This amount is determined by the fat's SAP (saponification) value. We multiply each fat's weight by its SAP value, add them all up, then reduce the total based on your superfat percentage to leave some oils unsaponified for skin conditioning.",
@@ -37,6 +38,7 @@
   },
   "water-amount": {
     "category": "core",
+    "domain": ["calculator"],
     "name": "Water amount",
     "summary": "Calculates the water needed to dissolve your lye.",
     "userFriendly": "Lye must be dissolved in water before mixing with oils. The water-to-lye ratio determines your lye concentration. A 2:1 ratio (twice as much water as lye) gives a 33% lye solution, which is standard for most recipes.",
@@ -66,6 +68,7 @@
   },
   "fatty-acid-profile": {
     "category": "core",
+    "domain": ["calculator"],
     "name": "Fatty acid profile",
     "summary": "Calculates the weighted average of fatty acids across all fats in your recipe.",
     "userFriendly": "Each fat is made up of different fatty acids (like lauric, oleic, palmitic). Your soap's properties depend on which fatty acids dominate. We calculate the overall fatty acid profile by taking a weighted average based on how much of each fat you're using.",
@@ -97,6 +100,7 @@
   },
   "volume-estimate": {
     "category": "core",
+    "domain": ["calculator"],
     "name": "Volume estimate",
     "summary": "Estimates the final volume of your soap batch for mold sizing.",
     "userFriendly": "Knowing your soap's volume helps you choose the right mold size. We calculate the volumes of fats, water, and lye separately using their densities, then account for approximately 5% volume reduction during saponification.",
@@ -131,6 +135,7 @@
   },
   "hardness": {
     "category": "properties",
+    "domain": ["calculator"],
     "name": "Hardness",
     "summary": "Predicts how hard your soap bar will be.",
     "userFriendly": "Hardness measures how firm your soap bar will be. Hard soaps last longer and unmold faster. Saturated fatty acids (those with no double bonds) create harder bars because they pack together tightly. The saturated fatty acids are summed to estimate hardness.",
@@ -165,6 +170,7 @@
   },
   "cleansing": {
     "category": "properties",
+    "domain": ["calculator"],
     "name": "Cleansing",
     "summary": "Predicts how effectively your soap will remove dirt and oils.",
     "userFriendly": "Cleansing measures how well your soap strips away oils and dirt. Short-chain saturated fatty acids (lauric and myristic, found in coconut and palm kernel oils) create soaps with strong cleansing action. High cleansing values are great for laundry or kitchen soap but can be drying for skin.",
@@ -201,6 +207,7 @@
   },
   "conditioning": {
     "category": "properties",
+    "domain": ["calculator"],
     "name": "Conditioning",
     "summary": "Predicts how moisturizing your soap will feel.",
     "userFriendly": "Conditioning measures how gentle and moisturizing your soap feels on skin. Unsaturated fatty acids (oleic, linoleic) create softer soaps that are less stripping and more conditioning. Olive oil, with its high oleic acid content, is prized for conditioning bars.",
@@ -240,6 +247,7 @@
   },
   "bubbly": {
     "category": "properties",
+    "domain": ["calculator"],
     "name": "Bubbly lather",
     "summary": "Predicts how much fluffy, bubbly lather your soap produces.",
     "userFriendly": "Bubbly measures the volume and lightness of your soap's lather\u2014those fluffy, airy bubbles. Lauric and myristic acids (from coconut oil) are the primary drivers of bubbles. Ricinoleic acid (from castor oil) acts as a lather booster and stabilizer.",
@@ -277,6 +285,7 @@
   },
   "creamy": {
     "category": "properties",
+    "domain": ["calculator"],
     "name": "Creamy lather",
     "summary": "Predicts how dense, stable, and lotion-like your lather will be.",
     "userFriendly": "Creamy measures the density and stability of your lather\u2014that rich, thick, lotion-like foam. Palmitic and stearic acids (from palm oil, tallow, shea butter) create stable, creamy lather. Ricinoleic acid from castor oil also contributes to lather creaminess.",
@@ -314,6 +323,7 @@
   },
   "iodine-value": {
     "category": "properties",
+    "domain": ["calculator"],
     "name": "Iodine value",
     "summary": "Measures the degree of unsaturation in your recipe, predicting shelf stability.",
     "userFriendly": "Iodine value indicates how much unsaturated fat is in your recipe. Lower values mean more saturated fats (harder, more stable bars). Higher values mean more unsaturated fats (softer, more conditioning bars but shorter shelf life). It's a weighted average of each fat's iodine value.",
@@ -349,6 +359,7 @@
   },
   "ins-value": {
     "category": "properties",
+    "domain": ["calculator"],
     "name": "INS value",
     "summary": "A combined index originally intended to predict overall soap quality.",
     "userFriendly": "INS combines saponification value and iodine value into a single number. It was originally suggested that values around 160 produce 'ideal' soap, but this is controversial. Many excellent soaps fall outside this range. Use it as one data point, not a definitive quality measure.",
@@ -385,6 +396,7 @@
   },
   "profile-error": {
     "category": "optimization",
+    "domain": ["calculator"],
     "name": "Profile error (optimization)",
     "summary": "Measures how close the current recipe is to your target fatty acid profile.",
     "userFriendly": "When you specify target properties, we convert them to target fatty acid percentages. The profile error measures how far off the current recipe is from those targets. We square each difference so that large errors are penalized more heavily, then sum them up.",
@@ -416,6 +428,7 @@
   },
   "weight-optimization": {
     "category": "optimization",
+    "domain": ["calculator"],
     "name": "Weight optimization algorithm",
     "summary": "Iteratively adjusts fat percentages to minimize the profile error.",
     "userFriendly": "Once fats are selected, we need to find the best percentages. The optimizer starts with equal portions, then repeatedly tests small adjustments (shifting 2% between pairs of fats). If an adjustment reduces the error, we keep it. This continues until no improvement is found or 100 iterations pass.",
@@ -449,6 +462,7 @@
   },
   "match-quality": {
     "category": "optimization",
+    "domain": ["calculator"],
     "name": "Match quality score",
     "summary": "Converts the profile error into a user-friendly percentage score.",
     "userFriendly": "After optimization, we calculate how well the recipe matches your targets. The match quality is shown as a percentage: 100% means perfect match, lower values mean some targets couldn't be fully achieved. It's based on the average deviation from targets.",
@@ -481,6 +495,7 @@
   },
   "property-to-fatty-acid": {
     "category": "optimization",
+    "domain": ["calculator"],
     "name": "Property to fatty acid conversion",
     "summary": "Converts your target soap properties into target fatty acid percentages.",
     "userFriendly": "When you enter targets like 'hardness: 40, cleansing: 18', we need to convert these to fatty acid targets for the optimizer. We use fixed ratios based on how each fatty acid contributes to each property.",
@@ -520,6 +535,7 @@
   },
   "additive-amount": {
     "category": "core",
+    "domain": ["calculator"],
     "name": "Additive amount",
     "summary": "Calculates additive weights as a percentage of your oil weight.",
     "userFriendly": "Additives like essential oils, clays, and colourants are measured as a percentage of your total fat weight. For example, if an essential oil is used at 3% and you have 500g of oils, you'd add 15g of essential oil.",
@@ -549,6 +565,7 @@
   },
   "unit-conversion": {
     "category": "core",
+    "domain": ["calculator"],
     "name": "Unit conversions",
     "summary": "Converts between grams, ounces, milliliters, and fluid ounces.",
     "userFriendly": "The recipe builder supports both metric (grams, mL) and imperial (ounces, fl oz) units. All internal calculations use metric, then convert for display if needed.",
@@ -577,6 +594,7 @@
   },
   "density-constants": {
     "category": "core",
+    "domain": ["calculator"],
     "name": "Density constants",
     "summary": "Material densities used for volume calculations.",
     "userFriendly": "Different materials have different densities (weight per unit volume). We use these to convert between weight and volume measurements.",

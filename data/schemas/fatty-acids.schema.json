@@ -96,6 +96,15 @@
             }
           },
           "type": "object"
+        },
+        "domain": {
+          "description": "Knowledge section(s) where this fatty acid appears",
+          "items": {
+            "enum": ["craft", "calculator"],
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
         }
       },
       "required": [
@@ -106,7 +115,8 @@
         "meltingPoint",
         "soapProperties",
         "description",
-        "commonSources"
+        "commonSources",
+        "domain"
       ],
       "type": "object"
     }

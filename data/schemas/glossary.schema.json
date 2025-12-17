@@ -98,12 +98,22 @@
           "description": "Display name for the term",
           "minLength": 1,
           "type": "string"
+        },
+        "domain": {
+          "description": "Knowledge section(s) where this term appears",
+          "items": {
+            "enum": ["craft", "calculator"],
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
         }
       },
       "required": [
         "term",
         "category",
-        "desc"
+        "desc",
+        "domain"
       ],
       "type": "object"
     }

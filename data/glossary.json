@@ -1,6 +1,7 @@
 {
   "additive": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "Any ingredient added to soap beyond the base oils and lye. Includes essential oils, colourants (clays, micas, oxides), and functional additives (sodium lactate, salt, sugar).",
     "details": "Additives are typically added at trace or mixed into oils before combining with lye, depending on type.\n\nUsage rates are given as percentage of oil weight. For example, 3% essential oil in a 500g oil batch = 15g essential oil.\n\nSome additives have safety limits (IFRA for fragrances, FDA for colourants).",
     "related": [
@@ -12,6 +13,7 @@
   },
   "bubbly": {
     "category": "property",
+    "domain": ["craft", "calculator"],
     "desc": "Sum of lauric + myristic + ricinoleic. Indicates volume and size of lather bubbles; big, fluffy, airy lather.",
     "details": "Low bubbly: dense, creamy lather only.\nHigh bubbly: lots of fluffy foam.\n\nCastor oil (ricinoleic) boosts bubble stability even with small amounts.",
     "ranges": {
@@ -25,6 +27,7 @@
   },
   "butter": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "A fat that is solid at room temperature but softens near body temperature. In soap making, usually refers to plant-derived fats like shea or cocoa butter.",
     "details": "Plant butters are solid due to their saturated fatty acid content but have lower melting points than hard fats like tallow.\n\nCommon soap-making butters: shea (mp ~35\u00b0C), cocoa (mp ~34\u00b0C), mango, kokum.\n\nThey contribute hardness, conditioning, and stable lather.",
     "related": [
@@ -37,6 +40,7 @@
   },
   "castor-oil": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "Unique oil containing ~90% ricinoleic acid. Small amounts (2-5%) dramatically improve lather.",
     "details": "Castor oil is the only common source of ricinoleic acid, which improves lather by stabilizing bubbles and increasing foam volume.\n\nTypical usage: 2 - 5% of recipe. Higher amounts can make soap sticky or reduce hardness.",
     "related": [
@@ -48,6 +52,7 @@
   },
   "clay": {
     "category": "additive",
+    "domain": ["craft"],
     "desc": "Natural mineral colourants that also provide functional benefits. Used in soap for colour, slip, and oil absorption.",
     "details": "Common clays:\n\u2022 Kaolin (white): gentle, good for sensitive skin, low absorption\n\u2022 Bentonite: high absorption, good for oily skin, swells when wet\n\u2022 French Green (illite): moderate absorption, natural green colour\n\u2022 Rose Clay: pink/terracotta colour, gentle\n\nUsage: 0.5-1% of oil weight. Mix with water or oil before adding at trace.",
     "related": [
@@ -59,6 +64,7 @@
   },
   "cleansing": {
     "category": "property",
+    "domain": ["craft", "calculator"],
     "desc": "Sum of short-chain saturated acids (lauric + myristic). Indicates how effectively the soap removes oils and dirt from skin.",
     "details": "Below 12: very gentle, may feel like it doesn't 'clean'.\n\nAbove 22: can strip skin's natural oils, may be drying for face/daily use.\n\nHigher levels good for kitchen or mechanic's soap.",
     "ranges": {
@@ -72,6 +78,7 @@
   },
   "colourant": {
     "category": "additive",
+    "domain": ["craft"],
     "desc": "Any ingredient added to soap to impart colour. Includes clays, oxides, micas, and natural colourants like herbs and spices.",
     "details": "Colourants are typically dispersed in a small amount of oil before adding to soap at trace.\n\nCategories:\n\u2022 Clays: natural earth colours, also functional (absorb oils)\n\u2022 Oxides: synthetic or natural mineral pigments, stable in lye\n\u2022 Micas: shimmer/sparkle, may morph in high pH\n\u2022 Natural: herbs, spices, clays (may fade or change colour)\n\nUsage typically 0.1-1% of oil weight depending on intensity desired.",
     "related": [
@@ -84,6 +91,7 @@
   },
   "conditioning": {
     "category": "property",
+    "domain": ["craft", "calculator"],
     "desc": "Sum of unsaturated fatty acids (oleic + ricinoleic + linoleic + linolenic). Indicates how moisturizing and gentle the soap feels on skin.",
     "details": "Below 44: may feel stripping or drying.\n\nAbove 69: very moisturizing but bar will be soft and may not last long.\n\nBalance with hardness.",
     "ranges": {
@@ -98,6 +106,7 @@
   },
   "common-allergen": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "Per FDA FALCPA and FASTER Act, the nine major food allergens are: milk, eggs, fish, shellfish, tree nuts, peanuts, wheat, soybeans, and sesame.",
     "details": "In cosmetics, the EU Cosmetics Regulation (EC) No 1223/2009 Annex III lists 26 fragrance allergens requiring declaration, including limonene, linalool, citronellol, and eugenol.\n\nRelevant to soapmaking:\n\u2022 Milk proteins (goat milk, buttermilk)\n\u2022 Tree nut oils (almond, walnut, hazelnut)\n\u2022 Soy derivatives (soybean oil)\n\u2022 Wheat proteins (wheat germ oil)\n\u2022 Lanolin (wool allergy cross-reactivity)\n\nSaponification denatures most proteins, but trace compounds may remain.",
     "related": [
@@ -107,6 +116,7 @@
   },
   "creamy": {
     "category": "property",
+    "domain": ["craft", "calculator"],
     "desc": "Sum of palmitic + stearic + ricinoleic. Indicates density and stability of lather; rich, lotion-like feel.",
     "details": "High creamy: dense, stable lather that doesn't disappear.\n\nWorks best in balance with bubbly; both create satisfying lather experience.",
     "ranges": {
@@ -120,6 +130,7 @@
   },
   "cure": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "4-6 week rest period after unmoulding. Water evaporates, crystal structure completes, bar becomes milder and harder.",
     "details": "Soap is technically safe after 24-48hrs (saponification complete) but improves dramatically with cure.\n\nCured soap: harder, milder lather, longer lasting.\n\nSome recipes (castile, high-olive) benefit from 6-12 month cure.",
     "related": [
@@ -131,6 +142,7 @@
   },
   "density": {
     "category": "property",
+    "domain": ["craft", "calculator"],
     "desc": "Mass per unit volume of an oil or fat, typically expressed in g/mL. Used to estimate batch volume from weight.",
     "details": "Most soap-making oils have densities between 0.91-0.97 g/mL.\n\nLighter oils (coconut ~0.92) give slightly more volume per gram than heavier oils (castor ~0.96).\n\nUsed with the volume estimate calculation to help size moulds.",
     "related": [
@@ -141,6 +153,7 @@
   },
   "dos": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "Oxidative rancidity appearing as orange or yellow spots with an unpleasant smell. Caused by polyunsaturated fatty acids oxidizing over time.",
     "details": "Prevention:\n\u2022 Use antioxidants (ROE at 0.02-0.05%, Vitamin E)\n\u2022 Cure in cool, dark place\n\u2022 Limit high-linoleic/linolenic oils\n\u2022 Use within 8-12 months for high-PUFA recipes",
     "related": [
@@ -151,6 +164,7 @@
   },
   "essential-oil": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "Volatile aromatic compounds steam-distilled or expressed from plants. Used to scent soap naturally.",
     "details": "Essential oils are complex mixtures of terpenes, alcohols, esters, and other compounds. Each has a characteristic scent and safety profile.\n\nScent notes:\n\u2022 Top: first detected, evaporate quickly (citrus, peppermint)\n\u2022 Middle: body of scent (lavender, rosemary)\n\u2022 Base: last to evaporate, anchor blends (cedarwood, patchouli)\n\nUsage typically 2-5% of oil weight. Some accelerate trace (clove) or may discolour soap (vanilla).",
     "related": [
@@ -162,6 +176,7 @@
   },
   "exfoliant": {
     "category": "additive",
+    "domain": ["craft"],
     "desc": "Textured additives that provide gentle physical scrubbing action to remove dead skin cells.",
     "details": "Common exfoliants:\n\u2022 Colloidal oatmeal: very gentle, also soothing\n\u2022 Poppy seeds: moderate texture\n\u2022 Coffee grounds: moderate to rough\n\u2022 Pumice: rough, for feet/hands\n\u2022 Loofah: embedded pieces\n\nAdd at trace. Usage varies by desired scrubiness; typically 1-3% of oil weight.\n\nNote: exfoliants sink in fluid soap; work at medium trace or suspend in layers.",
     "related": [
@@ -172,6 +187,7 @@
   },
   "fat": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "A triglyceride: three fatty acids bonded to a glycerol backbone. The general term for saponifiable lipids used in soap making.",
     "details": "Fats react with lye (NaOH or KOH) to produce soap and glycerin. The fatty acid composition determines the soap's properties.\n\nIn common usage, 'fat' often refers to lipids solid at room temperature, while 'oil' refers to liquid ones, but chemically they're the same class of compounds.",
     "related": [
@@ -184,6 +200,7 @@
   },
   "gel-phase": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "Heating stage during saponification where soap becomes translucent and gel-like. Results in brighter colours and harder finished bar.",
     "details": "Forcing gel: insulate mould, use CPOP (cold process oven process)\nPreventing gel: refrigerate/freeze mould, use individual cavities\n\nPartial gel creates darker center ring. Glycerin rivers more likely with low water + gel.",
     "related": [
@@ -195,6 +212,7 @@
   },
   "glycerin-rivers": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "Veined visual pattern in soap. Despite the name, not actually glycerin; it's the first fatty acid soaps to solidify during extended gel phase cooling. Purely cosmetic.",
     "details": "Occurs when soap in gel phase (a lyotropic liquid-crystalline phase) cools slowly. Pigments migrate away from solidifying areas, creating visible patterns.\n\nPrevention:\n\u2022 Water discount (10%+) speeds saponification\n\u2022 Lower temperatures\n\u2022 Avoid gel phase (freezer method)\n\u2022 Disperse pigments in oil, not water",
     "related": [
@@ -206,6 +224,7 @@
   },
   "hardener": {
     "category": "additive",
+    "domain": ["craft"],
     "desc": "Functional additives that speed up unmoulding time by making bars firmer faster. Examples include sodium lactate and salt.",
     "details": "Sodium lactate: 1-3% of oil weight, added to cooled lye water. Most effective option.\n\nSalt (NaCl): 0.5-1% of oil weight, dissolved in water before adding lye. Above 3% can inhibit lather.\n\nBoth work by affecting the crystal structure of the soap.\n\nNote: high amounts of either can cause glycerin rivers if combined with gel phase.",
     "related": [
@@ -218,6 +237,7 @@
   },
   "hardness": {
     "category": "property",
+    "domain": ["craft", "calculator"],
     "desc": "Sum of saturated fatty acids (lauric + myristic + palmitic + stearic). Affects bar firmness, unmoulding time, and how long the bar lasts in the shower.",
     "details": "Below 29: soft bar, may need 48-72hrs to unmould.\n\nAbove 54: very hard, potentially brittle or waxy, can be difficult to cut if left too long.",
     "ranges": {
@@ -232,6 +252,7 @@
   },
   "ifra": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "International Fragrance Association. Sets usage limits for fragrance materials based on safety testing. Category 9 covers rinse-off products like soap.",
     "details": "IFRA limits are based on sensitization potential, phototoxicity, and other safety concerns.\n\nCategory 9 (rinse-off) typically allows higher concentrations than leave-on products because exposure time is shorter.\n\nLimits apply to specific constituents (e.g., linalool, citral) not just the essential oil itself. Complex blends may require constituent-level calculations.\n\nSee: ifrafragrance.org/standards/library",
     "related": [
@@ -242,6 +263,7 @@
   },
   "ins": {
     "category": "property",
+    "domain": ["craft", "calculator"],
     "desc": "Calculated as SAP value (mg KOH/g) minus Iodine Value. Originally intended to predict soap quality for commercial manufacturing.",
     "details": "Formula: INS = Saponification Value - Iodine Value\n\nHistorical note: First defined by E.T. Webb in 'Soap and Glycerin Manufacture' (1927), later popularized by Dr. Robert McDaniel who suggested 160 as 'ideal'.\n\nWhy it's controversial:\n\u2022 100% olive oil (castile) has INS ~105, yet is a classic, beloved soap\n\u2022 100% cocoa butter has near-perfect INS but produces poor lather and slimy feel\n\u2022 Many excellent handmade soap recipes fall outside the 136-165 range\n\u2022 The metric was designed for industrial soap production, not artisan bars\n\u2022 G. Knothe (2002) noted iodine value alone poorly predicts oxidative stability; double bond position matters more\n\nUse as one data point among many, not a definitive quality indicator. Fatty acid balance and intended use matter far more than hitting an 'ideal' INS.",
     "ranges": {
@@ -264,6 +286,7 @@
   },
   "iodine": {
     "category": "property",
+    "domain": ["craft", "calculator"],
     "desc": "Measures total unsaturation of the oil blend. Higher = more unsaturated = softer bar, more conditioning, but higher rancidity risk.",
     "details": "Below 41: very hard, stable bar but potentially less conditioning.\n\nAbove 70: soft bar, shorter shelf life, consider antioxidants.",
     "ranges": {
@@ -279,6 +302,7 @@
   },
   "iron-oxide": {
     "category": "additive",
+    "domain": ["craft"],
     "desc": "Mineral pigments made from iron compounds. Create stable, reliable colours that won't fade or morph in high pH soap.",
     "details": "FDA approved for cosmetics (21 CFR 73.2250), including eye area.\n\nColors:\n\u2022 Red (Fe\u2082O\u2083): terracotta to brick red\n\u2022 Yellow (FeOOH): gold to tan\n\u2022 Black (Fe\u2083O\u2084): grey to black, use sparingly\n\u2022 Brown: blend of red + yellow + black\n\nUsage: 0.1-0.5% of oil weight. Disperse in oil to prevent speckling.",
     "related": [
@@ -290,6 +314,7 @@
   },
   "lather-enhancer": {
     "category": "additive",
+    "domain": ["craft"],
     "desc": "Additives that increase lather volume or stability. Common examples include sugar and honey.",
     "details": "Sugar (sucrose) dissolved in the water portion increases lather dramatically. The sugar caramelizes slightly during saponification.\n\nUsage: 0.5-1% of oil weight, dissolved in water before adding lye.\n\nOther lather enhancers:\n\u2022 Honey (also adds colour)\n\u2022 Beer (reduce first, use flat)\n\u2022 Milks (watch for overheating)\n\nCastor oil (2-5%) also boosts lather but is a fat, not an additive.",
     "related": [
@@ -300,6 +325,7 @@
   },
   "lye-concentration": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "Amount of water relative to lye. Affects trace speed, cure time, and visual effects like glycerin rivers.",
     "details": "2.5 to 1 or higher: slower trace and more time to work the mixture, with a longer cure time.\n\n1.5 to 1: quick to reach trace and solidify, but can cause glycerin rivers in gel phase\n\nBeginners should aim for 2 to 1 to 2.5 to 1. Intricate designs may need more than 2.5 to 1.",
     "related": [
@@ -312,6 +338,7 @@
   },
   "lye-type": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "The alkali used to saponify oils. NaOH (sodium hydroxide) produces hard bar soap. KOH (potassium hydroxide) produces liquid or soft soap. They are not interchangeable.",
     "details": "NaOH: Creates solid bars with less solubility.\n\nKOH: Creates liquid/gel/soft soap with more solubility that cuts through grease faster.\n\nThe chemistry determines the final form; you cannot make bar soap with KOH or liquid soap with NaOH.",
     "related": [
@@ -322,6 +349,7 @@
   },
   "melting-point": {
     "category": "property",
+    "domain": ["craft", "calculator"],
     "desc": "Temperature at which a fat transitions from solid to liquid. Indicates whether an oil is solid or liquid at room temperature.",
     "details": "Fats with high melting points (coconut ~24°C, palm ~35°C, tallow ~45°C) are solid at room temperature and contribute to bar hardness.\n\nLow or no melting point means liquid at room temperature (olive, sunflower, etc.).\n\nMelting point correlates with saturated fatty acid content.",
     "related": [
@@ -333,6 +361,7 @@
   },
   "hydroxylated": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "Fatty acids containing a hydroxyl (-OH) group attached to the carbon chain. Unique soap properties.",
     "details": "Ricinoleic acid (found only in castor oil) is the primary hydroxylated fatty acid in soapmaking.\n\nThe -OH group increases water solubility, making these acids exceptional lather boosters even in small amounts (2-5%).",
     "related": [
@@ -344,6 +373,7 @@
   },
   "monounsaturated": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "Fatty acids with exactly one carbon-carbon double bond. Conditioning but more stable than polyunsaturated acids.",
     "details": "Includes palmitoleic (C16:1), oleic (C18:1), ricinoleic (C18:1-OH), and erucic (C22:1).\n\nOne double bond = moderate oxidation risk, good balance of conditioning and stability.",
     "related": [
@@ -356,6 +386,7 @@
   },
   "oil": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "A fat (triglyceride) that is liquid at room temperature. Typically high in unsaturated fatty acids.",
     "details": "Oils are liquid because unsaturated fatty acids have kinked chains that don't pack together tightly.\n\nExamples: olive oil, sunflower oil, castor oil.\n\nIn soap making, 'oil' and 'fat' are often used interchangeably to mean any saponifiable lipid.",
     "related": [
@@ -367,6 +398,7 @@
   },
   "polyunsaturated": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "Fatty acids with two or more carbon-carbon double bonds. Highly conditioning but prone to oxidation (DOS).",
     "details": "Includes linoleic (C18:2, omega-6) and linolenic (C18:3, omega-3).\n\nMultiple double bonds = sites for oxygen attack = rancidity risk. Limit to <15% total and use antioxidants.",
     "related": [
@@ -380,6 +412,7 @@
   },
   "rancidity": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "Degradation of fats through oxidation or hydrolysis, producing off-odours, discolouration, and reduced quality. Rancid oils can still saponify but produce inferior soap.",
     "details": "Two types:\n\n• Oxidative rancidity: Free-radical chain reaction where oxygen attacks double bonds in unsaturated fatty acids. Produces peroxides that break down into aldehydes and ketones (the characteristic rancid smell).\n\n• Hydrolytic rancidity: Water and enzymes (lipases) break triglycerides into free fatty acids. Common in improperly stored or contaminated fats.\n\nUsing rancid oils in soap:\n• May cause dreaded orange spots (DOS)\n• Reduced cleaning performance\n• Off-colours and lingering odour\n• Hot process with 0% superfat can salvage mildly rancid oils\n\nPrevention: Store oils in cool, dark conditions. Use antioxidants (ROE, vitamin E). Limit polyunsaturated fats to <15% of recipe.",
     "references": [
@@ -400,6 +433,7 @@
   },
   "sap-value": {
     "category": "concept",
+    "domain": ["craft", "calculator"],
     "desc": "Saponification value; the amount of alkali needed to convert a fat into soap. Each oil has a unique SAP based on its fatty acid composition.",
     "details": "Expressed as mg KOH per gram of fat (Codex standard) or as NaOH coefficient. Shorter fatty acid chains = higher SAP (more molecules per gram). This recipe builder uses NaOH coefficients (g NaOH per g oil).",
     "related": [
@@ -410,6 +444,7 @@
   },
   "saturated": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "Fatty acids with no double bonds (C:0). Solid at room temperature. Create harder bars with stable lather and excellent shelf life.",
     "details": "Includes caprylic (C8:0), capric (C10:0), lauric (C12:0), myristic (C14:0), palmitic (C16:0), stearic (C18:0), arachidic (C20:0), and behenic (C22:0).\n\nNo double bonds = no sites for oxygen to attack = resistant to rancidity.",
     "related": [
@@ -422,6 +457,7 @@
   },
   "scent-note": {
     "category": "additive",
+    "domain": ["craft"],
     "desc": "Classification of fragrance evaporation rates. Top notes evaporate first, base notes last. Blending across notes creates complex, lasting scents.",
     "details": "Top notes (first 15-30 min):\nCitrus, peppermint, eucalyptus. Fresh and bright but fade quickly.\n\nMiddle/heart notes (30 min - 4 hrs):\nLavender, rosemary, tea tree. Body of the fragrance.\n\nBase notes (4+ hrs):\nCedarwood, patchouli, vanilla. Anchor the blend, last longest.\n\nBlending tip: Use 30% top, 50% middle, 20% base for balanced scent.",
     "related": [
@@ -432,6 +468,7 @@
   },
   "sodium-lactate": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "Sodium salt of lactic acid (C\u2083H\u2085NaO\u2083). A functional additive that accelerates hardening and reduces unmoulding time.",
     "details": "Added to cooled lye water (not hot lye). Typical usage 1-3% of oil weight.\n\nBenefits:\n\u2022 Harder bars (unmould 4-12 hours faster)\n\u2022 Improved bar release from silicone moulds\n\u2022 Slight humectant properties\n\nExcessive use (>5%) can cause brittle bars or glycerin rivers.",
     "related": [
@@ -443,6 +480,7 @@
   },
   "superfat": {
     "category": "concept",
+    "domain": ["craft", "calculator"],
     "desc": "Percentage of oils left unsaponified in the final soap. Adds conditioning and ensures no excess lye remains.",
     "details": "0 - 3%: laundry/cleaning soap\n5 - 8%: typical for body bars\n8 - 15%: luxury/shampoo bars\n\nToo high a value makes a soft, potentially greasy-feeling bar that may go rancid faster.",
     "related": [
@@ -453,6 +491,7 @@
   },
   "titanium-dioxide": {
     "category": "additive",
+    "domain": ["craft"],
     "desc": "White mineral pigment (TiO\u2082) used to create opaque white soap or lighten other colours.",
     "details": "FDA approved for cosmetics (21 CFR 73.2575).\n\nUses:\n\u2022 Pure white soap base\n\u2022 Lighten/pastel other colourants\n\u2022 Create base for swirls\n\u2022 Hide discolouration from vanilla or spices\n\nUsage: 0.1-1% of oil weight. Higher amounts can feel chalky. Disperse in oil to prevent clumping.",
     "related": [
@@ -464,6 +503,7 @@
   },
   "trace": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "The point when oil and lye solution have emulsified and begun saponification. Soap mixture thickens and a drizzle leaves a 'trace' on the surface.",
     "details": "Light trace: thin pudding, good for swirls/layers\nMedium trace: thick pudding, holds peaks\nHeavy trace: nearly solid, work fast\n\nFactors: temperature, water amount, oil composition, stick blending.",
     "related": [
@@ -474,6 +514,7 @@
   },
   "unsaturated": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "Fatty acids with one or more double bonds. Liquid at room temperature. More conditioning but prone to oxidation over time.",
     "details": "Monounsaturated (1 double bond): oleic, ricinoleic; relatively stable.\n\nPolyunsaturated (2+ double bonds): linoleic, linolenic; reactive, prone to DOS.",
     "related": [
@@ -485,6 +526,7 @@
   },
   "usage": {
     "category": "property",
+    "domain": ["craft", "calculator"],
     "desc": "Recommended percentage of total fats that a particular oil should comprise in a soap recipe. Staying within range helps achieve balanced soap properties.",
     "details": "Usage limits exist because:\n\n• Some oils dominate recipes (coconut >30% can be drying)\n• Some oils weaken bars (soft oils >70% = soft bar)\n• Some have strong effects (castor >8% = sticky soap)\n\nLimits are guidelines, not rules. Experienced soapers adjust based on intended use and superfat level.",
     "related": [
@@ -496,6 +538,7 @@
   },
   "recipe-weight": {
     "category": "calculation",
+    "domain": ["calculator"],
     "term": "Recipe weight",
     "desc": "Total weight of fats in your recipe. Final soap weight and volume differ due to chemical changes during saponification and water loss during curing.",
     "details": "During saponification (18-24 hours), fats react with lye to form soap and glycerol, causing approximately 5% volume reduction. During the 3-4 week curing period, water evaporates from the bar, typically reducing weight by 10-25% depending on the water content used. The final cured bar will be firmer, lighter, and more durable than the freshly poured soap.",
@@ -515,6 +558,7 @@
   },
   "volume-estimate": {
     "category": "calculation",
+    "domain": ["calculator"],
     "desc": "Approximate volume range of your soap batch (\u00b112%). Useful for mould sizing, not for precise measurement.",
     "details": "Accuracy varies based on:\n\u2022 Air incorporation during mixing\n\u2022 Temperature changes during cooling\n\u2022 Water evaporation during cure (10-15% loss)\n\u2022 Actual oil density variations\n\nShown as a range to reflect this uncertainty. Fresh pour volume will shrink during the 4-6 week cure.",
     "related": [
@@ -525,6 +569,7 @@
   },
   "wax": {
     "category": "concept",
+    "domain": ["craft"],
     "desc": "Esters of long-chain fatty acids with long-chain alcohols (not glycerol). Most waxes do not saponify like fats.",
     "details": "Unlike triglycerides, waxes are fatty acid + fatty alcohol esters. They don't react with lye the same way.\n\nJojoba 'oil' is actually a liquid wax (~97% wax esters). It partially saponifies, leaving some free jojoba in the soap.\n\nBeeswax is sometimes added to soap for hardness but doesn't contribute to lather.",
     "related": [
