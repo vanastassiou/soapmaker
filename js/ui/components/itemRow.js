@@ -10,22 +10,21 @@ import { delegate, onActivate } from '../helpers.js';
  * @typedef {Object} RowConfig
  * @property {string} id - Item ID (fat-id or additive-id)
  * @property {string} name - Display name
- * @property {number} [weight] - Weight value (for input mode)
+ * @property {number} [weight] - Weight value
  * @property {number} [percentage] - Percentage value
- * @property {boolean} [isWeightLocked] - Whether weight is locked (prevents editing)
- * @property {boolean} [isPercentageLocked] - Whether percentage is locked (scales other fats)
+ * @property {boolean} [isLocked] - Whether the lockable field is locked
  * @property {boolean} [hasWarning] - Whether to show warning icon
  * @property {string} [warningClass] - CSS class for warning styling
  */
 
 /**
  * @typedef {Object} RowOptions
- * @property {boolean} [showWeightInput=true] - Show weight input field
- * @property {boolean} [showWeightLock=true] - Show weight lock button (only when showWeightInput is true)
- * @property {boolean} [showLockButton=true] - Show percentage lock button
- * @property {boolean} [showPercentage=true] - Show percentage display
+ * @property {'weight'|'percentage'} [inputType='weight'] - Which field user edits
+ * @property {boolean} [showWeight=true] - Show weight column
+ * @property {boolean} [showPercentage=true] - Show percentage column
+ * @property {'weight'|'percentage'|null} [lockableField=null] - Which field can be locked
  * @property {boolean} [showRemoveButton=true] - Show remove button
- * @property {string} [unit='g'] - Unit for weight input aria-label
+ * @property {string} [unit='g'] - Unit for weight display/input
  * @property {string} [itemType='fat'] - Type for data attributes ('fat' or 'additive')
  * @property {string} [className=''] - Additional CSS class(es) for the row
  */
@@ -39,10 +38,10 @@ import { delegate, onActivate } from '../helpers.js';
  */
 export function renderItemRow(config, index, options = {}) {
     const {
-        showWeightInput = true,
-        showWeightLock = true,
-        showLockButton = true,
+        inputType = 'weight',
+        showWeight = true,
         showPercentage = true,
+        lockableField = null,
         showRemoveButton = true,
         unit = 'g',
         itemType = 'fat',
@@ -54,13 +53,12 @@ export function renderItemRow(config, index, options = {}) {
         name,
         weight = 0,
         percentage = 0,
-        isWeightLocked = false,
-        isPercentageLocked = false,
+        isLocked = false,
         hasWarning = false,
         warningClass = ''
     } = config;
 
-    const rowLockedClass = isPercentageLocked ? CSS_CLASSES.locked : '';
+    const rowLockedClass = isLocked ? CSS_CLASSES.locked : '';
     const warningIcon = hasWarning ? '<span class="item-warning-icon" title="See recipe notes">⚠️</span>' : '';
     const dataAttr = itemType === 'fat' ? 'data-fat' : 'data-additive';
 
@@ -71,35 +69,58 @@ export function renderItemRow(config, index, options = {}) {
         </button>
     `;
 
-    const weightLockedClass = isWeightLocked ? CSS_CLASSES.locked : '';
-    const disabledAttr = isWeightLocked ? 'disabled' : '';
-    const weightLockButton = showWeightLock
-        ? `<button class="lock-weight ${weightLockedClass}" data-action="lock-weight" data-index="${index}"
-               title="${isWeightLocked ? 'Unlock weight' : 'Lock weight'}"
-               aria-label="${isWeightLocked ? 'Unlock ' + name + ' weight' : 'Lock ' + name + ' weight'}"
-               aria-pressed="${isWeightLocked}">
-               ${isWeightLocked ? UI_ICONS.LOCK : UI_ICONS.UNLOCK}
-           </button>`
-        : '';
-    const weightCell = showWeightInput
-        ? `<div class="weight-cell">
-               <input type="number" value="${weight}" min="0" step="1" data-action="weight" data-index="${index}" aria-label="${name} weight in ${unit}" ${disabledAttr}>
-               ${weightLockButton}
-           </div>`
-        : '';
+    // Lock button helper
+    const renderLockButton = (field) => {
+        if (lockableField !== field) return '';
+        const lockedClass = isLocked ? CSS_CLASSES.locked : '';
+        return `<button class="lock-${field} ${lockedClass}" data-action="lock" data-index="${index}"
+                   title="${isLocked ? 'Unlock ' + field : 'Lock ' + field}"
+                   aria-label="${isLocked ? 'Unlock ' + name + ' ' + field : 'Lock ' + name + ' ' + field}"
+                   aria-pressed="${isLocked}">
+                   ${isLocked ? UI_ICONS.LOCK : UI_ICONS.UNLOCK}
+               </button>`;
+    };
 
-    const percentageLockedClass = isPercentageLocked ? CSS_CLASSES.locked : '';
-    const percentageCell = showPercentage
-        ? `<div class="percentage-cell">
-               <span class="${itemType}-percentage" aria-label="${name} percentage">${percentage}%</span>
-               ${showLockButton ? `<button class="lock-percentage ${percentageLockedClass}" data-action="lock-percentage" data-index="${index}"
-                   title="${isPercentageLocked ? 'Unlock percentage' : 'Lock percentage'}"
-                   aria-label="${isPercentageLocked ? 'Unlock ' + name + ' percentage' : 'Lock ' + name + ' percentage'}"
-                   aria-pressed="${isPercentageLocked}">
-                   ${isPercentageLocked ? UI_ICONS.LOCK : UI_ICONS.UNLOCK}
-               </button>` : ''}
-           </div>`
-        : '';
+    // Weight cell - can be input or display depending on inputType
+    let weightCell = '';
+    if (showWeight) {
+        const isWeightInput = inputType === 'weight';
+        const disabledAttr = isWeightInput && isLocked && lockableField === 'weight' ? 'disabled' : '';
+        const lockBtn = renderLockButton('weight');
+
+        if (isWeightInput) {
+            weightCell = `<div class="weight-cell">
+                   <input type="number" value="${weight}" min="0" step="1" data-action="weight" data-index="${index}" aria-label="${name} weight in ${unit}" ${disabledAttr}>
+                   ${lockBtn}
+               </div>`;
+        } else {
+            // Display-only weight (calculated from percentage)
+            weightCell = `<div class="weight-cell">
+                   <span class="${itemType}-weight" aria-label="${name} weight">${weight} ${unit}</span>
+               </div>`;
+        }
+    }
+
+    // Percentage cell - can be input or display depending on inputType
+    let percentageCell = '';
+    if (showPercentage) {
+        const isPercentageInput = inputType === 'percentage';
+        const disabledAttr = isPercentageInput && isLocked && lockableField === 'percentage' ? 'disabled' : '';
+        const lockBtn = renderLockButton('percentage');
+
+        if (isPercentageInput) {
+            percentageCell = `<div class="percentage-cell">
+                   <input type="number" value="${percentage}" min="0" max="100" step="0.1" data-action="percentage" data-index="${index}" aria-label="${name} percentage" ${disabledAttr}>
+                   ${lockBtn}
+               </div>`;
+        } else {
+            // Display-only percentage
+            percentageCell = `<div class="percentage-cell">
+                   <span class="${itemType}-percentage" aria-label="${name} percentage">${percentage}%</span>
+                   ${lockBtn}
+               </div>`;
+        }
+    }
 
     const removeCell = showRemoveButton
         ? `<button class="remove-${itemType}" data-action="remove" data-index="${index}" aria-label="Remove ${name}">
@@ -161,8 +182,8 @@ export function renderEmptyState(message, subMessage = '', className = '') {
  * @param {HTMLElement} container - Container element
  * @param {Object} callbacks - Event callbacks
  * @param {Function} [callbacks.onWeightChange] - Weight input handler (index, value)
- * @param {Function} [callbacks.onToggleWeightLock] - Weight lock toggle handler (index)
- * @param {Function} [callbacks.onTogglePercentageLock] - Percentage lock toggle handler (index)
+ * @param {Function} [callbacks.onPercentageChange] - Percentage input handler (index, value)
+ * @param {Function} [callbacks.onToggleLock] - Unified lock toggle handler (index)
  * @param {Function} [callbacks.onRemove] - Remove handler (index)
  * @param {Function} [callbacks.onInfo] - Info click handler (id)
  * @param {string} [itemType='fat'] - Item type for selectors
@@ -176,15 +197,15 @@ export function attachRowEventHandlers(container, callbacks, itemType = 'fat') {
         });
     }
 
-    if (callbacks.onToggleWeightLock) {
-        delegate(container, 'button[data-action="lock-weight"]', 'click', (_e, el) => {
-            callbacks.onToggleWeightLock(parseInt(el.dataset.index, 10));
+    if (callbacks.onPercentageChange) {
+        delegate(container, 'input[data-action="percentage"]', 'input', (_e, el) => {
+            callbacks.onPercentageChange(parseInt(el.dataset.index, 10), el.value);
         });
     }
 
-    if (callbacks.onTogglePercentageLock) {
-        delegate(container, 'button[data-action="lock-percentage"]', 'click', (_e, el) => {
-            callbacks.onTogglePercentageLock(parseInt(el.dataset.index, 10));
+    if (callbacks.onToggleLock) {
+        delegate(container, 'button[data-action="lock"]', 'click', (_e, el) => {
+            callbacks.onToggleLock(parseInt(el.dataset.index, 10));
         });
     }
 
@@ -236,15 +257,15 @@ export function attachRowEventHandlersWithSignal(container, callbacks, itemType 
         });
     }
 
-    if (callbacks.onToggleWeightLock) {
-        addDelegated('button[data-action="lock-weight"]', 'click', (_e, el) => {
-            callbacks.onToggleWeightLock(parseInt(el.dataset.index, 10));
+    if (callbacks.onPercentageChange) {
+        addDelegated('input[data-action="percentage"]', 'input', (_e, el) => {
+            callbacks.onPercentageChange(parseInt(el.dataset.index, 10), el.value);
         });
     }
 
-    if (callbacks.onTogglePercentageLock) {
-        addDelegated('button[data-action="lock-percentage"]', 'click', (_e, el) => {
-            callbacks.onTogglePercentageLock(parseInt(el.dataset.index, 10));
+    if (callbacks.onToggleLock) {
+        addDelegated('button[data-action="lock"]', 'click', (_e, el) => {
+            callbacks.onToggleLock(parseInt(el.dataset.index, 10));
         });
     }
 

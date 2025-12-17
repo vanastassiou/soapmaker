@@ -13,6 +13,7 @@ export const ELEMENT_IDS = {
     superfat: 'superfat',
     waterRatio: 'waterRatio',
     unit: 'unit',
+    recipeWeight: 'recipeWeight',
 
     // Fat selection
     fatSelect: 'fatSelect',
@@ -264,7 +265,7 @@ export const NOTE_THRESHOLDS = {
 export const DEFAULTS = {
     FAT_WEIGHT: 100,              // Default weight when adding a fat
     ADDITIVE_WEIGHT: 10,          // Default weight when adding an additive
-    BASE_RECIPE_WEIGHT: 1000,     // Base weight for percentage-to-weight conversions
+    BASE_RECIPE_WEIGHT: 500,      // Default recipe weight in grams
     YOLO_MIN_FATS: 3,             // Minimum fats in YOLO recipe
     YOLO_MAX_FATS: 5              // Maximum fats in YOLO recipe
 };

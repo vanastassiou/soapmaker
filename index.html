@@ -84,6 +84,13 @@
                                     <option value="oz">Ounces</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <div class="label-row">
+                                    <label for="recipeWeight">Recipe weight</label>
+                                    <span class="help-tip" id="recipeWeightHelp" data-term="recipe-weight" aria-label="More info about recipe weight">ⓘ</span>
+                                </div>
+                                <input type="number" id="recipeWeight" value="500" min="100" step="10" aria-describedby="recipeWeightHelp">
+                            </div>
                         </div>
 
                         <!-- Exclusions nested subcontainer -->
@@ -146,16 +153,16 @@
                             </div>
 
                             <!-- Mode helper text -->
-                            <p class="build-mode-helper" id="fatsDescription">Choose fats to use in your recipe. Lock a fat to keep its weight or percentage fixed during optimization.</p>
-                            <p class="build-mode-helper hidden" id="propertiesDescription">Enter target soap properties (see placeholder ranges for guidance) and find fats to match.</p>
-                            <p class="build-mode-helper hidden" id="yoloDescription">Lock fats you like and generate new ones for the rest.</p>
-                            <p class="build-mode-helper hidden" id="cupboardDescription">Enter fats you have. Get suggestions to improve your soap.</p>
+                            <p class="build-mode-helper" id="fatsDescription">Choose fats to use in your recipe. You can lock fats at specified percentages while you tweak others around it.</p>
+                            <p class="build-mode-helper hidden" id="propertiesDescription">Enter the soap properties you want to aim for and find fats to match.</p>
+                            <p class="build-mode-helper hidden" id="yoloDescription">Lock fats you like and regenerate the rest for new ideas and inspiration.</p>
+                            <p class="build-mode-helper hidden" id="cupboardDescription">Enter the quantities of the fats you have on hand. Get suggestions to come up with a usable soap. It might not be perfect, but you probably won't mind it.</p>
 
                         <!-- Select Fats mode -->
                         <div class="build-mode-content" id="selectFatsMode" role="tabpanel" aria-labelledby="tab-fats">
                             <div class="fat-selector">
                                 <select id="fatSelect">
-                                    <option value="">Select fat to add...</option>
+                                    <option value="">Select a fat to add...</option>
                                 </select>
                                 <button class="btn" id="addFatBtn">Add fat</button>
                             </div>
@@ -174,7 +181,7 @@
                         <div class="build-mode-content hidden" id="specifyPropertiesMode" role="tabpanel" aria-labelledby="tab-properties">
                             <!-- Target Properties subcontainer -->
                             <div class="mode-subcontainer">
-                                <h4 class="mode-subcontainer-title">Target properties</h4>
+                                <h4 class="mode-subcontainer-title">Target soap properties</h4>
                                 <div class="property-header">
                                     <span class="ui-tip" data-tooltip="property-targets" aria-label="How do property targets work?">?</span>
                                     <div class="property-options">

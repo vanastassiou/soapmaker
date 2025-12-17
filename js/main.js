@@ -5,22 +5,21 @@
 
 import * as calc from './core/calculator.js';
 import * as optimizer from './core/optimizer.js';
-import { ADDITIVE_CATEGORIES, ADDITIVE_WARNING_TYPES, CSS_CLASSES, DEFAULTS, ELEMENT_IDS, PROPERTY_KEYS, PROPERTY_RANGES, UI_MESSAGES } from './lib/constants.js';
+import { ADDITIVE_CATEGORIES, ADDITIVE_WARNING_TYPES, CSS_CLASSES, DEFAULTS, ELEMENT_IDS, PROPERTY_KEYS, PROPERTY_RANGES, UI_MESSAGES, VOLUME } from './lib/constants.js';
 import * as validation from './lib/validation.js';
 import {
     addAdditiveToRecipe, addExclusion, addFatToRecipe, clearRecipe,
     clearYoloRecipe, clearCupboardFats,
     getYoloLockedFats, removeAdditiveFromRecipe, removeExclusion,
     removeFatFromRecipe, removeYoloFat, restoreState, saveState,
-    setYoloRecipe, state, togglePercentageLock, toggleWeightLock,
-    toggleYoloLock, updateAdditiveWeight, updateFatWeight,
+    setYoloRecipe, state, toggleRecipeLock, updateFatPercentage,
+    toggleYoloLock, updateAdditiveWeight, getTotalPercentage,
     // Properties mode state functions
     setPropertiesRecipe, togglePropertiesLock, getPropertiesLockedFats, clearPropertiesRecipe,
     // Cupboard cleaner state functions
     addCupboardFat, removeCupboardFat, updateCupboardFatWeight,
-    toggleCupboardFatLock, setCupboardSuggestions, toggleCupboardSuggestionLock,
-    removeCupboardSuggestion, getCupboardLockedSuggestions,
-    updateCupboardSuggestionWeight, setAllowRatioMode
+    toggleCupboardLock, setCupboardSuggestions,
+    removeCupboardSuggestion, updateCupboardSuggestionWeight, setAllowRatioMode
 } from './state/state.js';
 import { attachRowEventHandlers, renderItemRow } from './ui/components/itemRow.js';
 import { toast } from './ui/components/toast.js';
@@ -99,11 +98,16 @@ function calculate() {
     const settings = ui.getSettings();
     const recipe = state.recipe;
     const fatsDatabase = state.fatsDatabase;
-    const totalFats = recipe.reduce((sum, fat) => sum + fat.weight, 0);
 
-    const fa = calc.calculateFattyAcids(recipe, fatsDatabase);
-    const iodine = calc.calculateIodine(recipe, fatsDatabase);
-    const ins = calc.calculateINS(recipe, fatsDatabase);
+    // Convert percentage-based recipe to weights for calculations
+    const recipeAsWeights = recipe.map(fat => ({
+        id: fat.id,
+        weight: fat.percentage  // Use percentage as weight (total=100%)
+    }));
+
+    const fa = calc.calculateFattyAcids(recipeAsWeights, fatsDatabase);
+    const iodine = calc.calculateIodine(recipeAsWeights, fatsDatabase);
+    const ins = calc.calculateINS(recipeAsWeights, fatsDatabase);
     const properties = calc.calculateProperties(fa);
 
     const allProperties = { ...properties, iodine, ins };
@@ -112,24 +116,17 @@ function calculate() {
         ui.updateProperty(key, allProperties[key], range.min, range.max);
     });
 
-    // Render additives and update percentages
+    // Render additives
     renderAdditivesList();
-    ui.updatePercentages(recipe, settings.unit);
 }
 
 function renderRecipeList() {
     const container = $(ELEMENT_IDS.recipeFats);
     const useFatsAction = $(ELEMENT_IDS.useFatsAction);
-    const settings = ui.getSettings();
 
-    const locks = {
-        weightLocks: state.weightLocks,
-        percentageLocks: state.percentageLocks
-    };
-    ui.renderRecipe(container, state.recipe, locks, settings.unit, state.fatsDatabase, {
-        onWeightChange: handleWeightChange,
-        onToggleWeightLock: handleToggleWeightLock,
-        onTogglePercentageLock: handleTogglePercentageLock,
+    ui.renderRecipe(container, state.recipe, state.recipeLocks, state.fatsDatabase, {
+        onPercentageChange: handlePercentageChange,
+        onToggleLock: handleToggleRecipeLock,
         onRemove: handleRemoveFat,
         onFatInfo: (fatId) => ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, (acidKey) => {
             ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, state.recipe, state.fatsDatabase);
@@ -151,7 +148,7 @@ function renderAdditivesList() {
     if (!container) return [];
 
     const settings = ui.getSettings();
-    const totalFatWeight = state.recipe.reduce((sum, fat) => sum + fat.weight, 0);
+    const totalFatWeight = settings.recipeWeight;
 
     return ui.renderAdditives(
         container,
@@ -202,74 +199,16 @@ function mergeAdditiveWarningsIntoNotes(notes, warnings) {
 // Event Handlers
 // ============================================
 
-/**
- * Calculate percentages for all locked fats
- * @returns {Map<number, number>} Map of index to percentage
- */
-function getLockedPercentages() {
-    const lockedPercentages = new Map();
-    if (state.percentageLocks.size > 0 && state.recipe.length > 0) {
-        const total = state.recipe.reduce((sum, fat) => sum + fat.weight, 0);
-        if (total > 0) {
-            for (const index of state.percentageLocks) {
-                if (index < state.recipe.length) {
-                    lockedPercentages.set(index, state.recipe[index].weight / total);
-                }
-            }
-        }
-    }
-    return lockedPercentages;
-}
-
-/**
- * Adjust weights of locked fats to maintain their percentages
- * @param {Map<number, number>} lockedPercentages - Map of index to target percentage
- */
-function maintainLockedPercentages(lockedPercentages) {
-    if (lockedPercentages.size === 0 || state.recipe.length === 0) return;
-
-    // Calculate total weight of unlocked fats
-    const unlockedTotal = state.recipe.reduce((sum, fat, i) =>
-        state.percentageLocks.has(i) ? sum : sum + fat.weight, 0);
-
-    if (unlockedTotal <= 0) return;
-
-    // Calculate total percentage that should be locked
-    let totalLockedPercentage = 0;
-    for (const pct of lockedPercentages.values()) {
-        totalLockedPercentage += pct;
-    }
-
-    if (totalLockedPercentage >= 1) return; // Can't maintain if locked >= 100%
-
-    // Adjust each locked fat's weight to maintain its percentage
-    for (const [index, targetPercentage] of lockedPercentages) {
-        if (index < state.recipe.length && targetPercentage > 0) {
-            // newWeight / (newWeight + othersTotal) = targetPercentage
-            // where othersTotal = unlockedTotal + sum of other locked fats' new weights
-            // Simplified: newWeight = targetPercentage * unlockedTotal / (1 - totalLockedPercentage)
-            const newWeight = Math.round((targetPercentage * unlockedTotal) / (1 - totalLockedPercentage) * 10) / 10;
-            updateFatWeight(index, newWeight, false);
-        }
-    }
-}
-
 function handleAddFat() {
     const select = $(ELEMENT_IDS.fatSelect);
     const fatId = select.value;
 
     if (!fatId) return;
 
-    // Calculate locked fats' percentages before adding new fat
-    const lockedPercentages = getLockedPercentages();
-
     if (!addFatToRecipe(fatId)) {
         toast.warning(UI_MESSAGES.FAT_ALREADY_EXISTS);
         return;
     }
-
-    // Maintain locked fats' percentages after adding new fat
-    maintainLockedPercentages(lockedPercentages);
 
     renderRecipeList();
     updateFatSelectWithFilters();
@@ -277,73 +216,19 @@ function handleAddFat() {
 }
 
 function handleRemoveFat(index) {
-    // Calculate locked fats' percentages before removing (excluding the one being removed)
-    const lockedPercentages = new Map();
-    if (state.percentageLocks.size > 0 && state.recipe.length > 1) {
-        const total = state.recipe.reduce((sum, fat) => sum + fat.weight, 0);
-        if (total > 0) {
-            for (const lockedIndex of state.percentageLocks) {
-                if (lockedIndex !== index && lockedIndex < state.recipe.length) {
-                    // Adjust index for items that will shift down
-                    const newIndex = lockedIndex > index ? lockedIndex - 1 : lockedIndex;
-                    lockedPercentages.set(newIndex, state.recipe[lockedIndex].weight / total);
-                }
-            }
-        }
-    }
-
     removeFatFromRecipe(index);
-
-    // Maintain locked fats' percentages after removing
-    maintainLockedPercentages(lockedPercentages);
-
     renderRecipeList();
     updateFatSelectWithFilters();
     calculate();
 }
 
-function handleWeightChange(index, weight) {
-    const isChangingLockedFat = state.percentageLocks.has(index);
-
-    // Calculate locked fats' percentages BEFORE any weight changes (excluding the one being changed)
-    const lockedPercentages = new Map();
-    if (state.percentageLocks.size > 0 && state.recipe.length > 1) {
-        const totalBefore = state.recipe.reduce((sum, fat) => sum + fat.weight, 0);
-        if (totalBefore > 0) {
-            for (const lockedIndex of state.percentageLocks) {
-                if (lockedIndex !== index && lockedIndex < state.recipe.length) {
-                    lockedPercentages.set(lockedIndex, state.recipe[lockedIndex].weight / totalBefore);
-                }
-            }
-        }
-    }
-
-    updateFatWeight(index, weight, isChangingLockedFat);
-
-    // Maintain locked fats' percentages after changing weight
-    maintainLockedPercentages(lockedPercentages);
-
-    // Update input values for all fats that may have changed
-    const container = $(ELEMENT_IDS.recipeFats);
-    state.recipe.forEach((fat, i) => {
-        if (i !== index) {
-            const input = container.querySelector(`input[data-index="${i}"]`);
-            if (input && parseFloat(input.value) !== fat.weight) {
-                input.value = fat.weight;
-            }
-        }
-    });
-
+function handlePercentageChange(index, percentage) {
+    updateFatPercentage(index, percentage);
     calculate();
 }
 
-function handleToggleWeightLock(index) {
-    toggleWeightLock(index);
-    renderRecipeList();
-}
-
-function handleTogglePercentageLock(index) {
-    togglePercentageLock(index);
+function handleToggleRecipeLock(index) {
+    toggleRecipeLock(index);
     renderRecipeList();
 }
 
@@ -375,10 +260,13 @@ function handleStartOver() {
     const superfat = $(ELEMENT_IDS.superfat);
     const waterRatio = $(ELEMENT_IDS.waterRatio);
     const unit = $(ELEMENT_IDS.unit);
+    const recipeWeight = $(ELEMENT_IDS.recipeWeight);
     if (lyeType) lyeType.value = 'NaOH';
     if (superfat) superfat.value = '5';
     if (waterRatio) waterRatio.value = '2';
     if (unit) unit.value = 'g';
+    if (recipeWeight) recipeWeight.value = String(DEFAULTS.BASE_RECIPE_WEIGHT);
+    previousUnit = 'g';
 
     // Reset dietary filters
     const filterAnimal = $(ELEMENT_IDS.filterAnimalBased);
@@ -410,10 +298,13 @@ function handleResetSettings() {
     const superfat = $(ELEMENT_IDS.superfat);
     const waterRatio = $(ELEMENT_IDS.waterRatio);
     const unit = $(ELEMENT_IDS.unit);
+    const recipeWeight = $(ELEMENT_IDS.recipeWeight);
     if (lyeType) lyeType.value = 'NaOH';
     if (superfat) superfat.value = '5';
     if (waterRatio) waterRatio.value = '2';
     if (unit) unit.value = 'g';
+    if (recipeWeight) recipeWeight.value = String(DEFAULTS.BASE_RECIPE_WEIGHT);
+    previousUnit = 'g';
 
     // Reset dietary filters
     const filterAnimal = $(ELEMENT_IDS.filterAnimalBased);
@@ -442,6 +333,32 @@ function handleResetAdditives() {
 }
 
 function handleUnitChange() {
+    const unitSelect = $(ELEMENT_IDS.unit);
+    const recipeWeightInput = $(ELEMENT_IDS.recipeWeight);
+    const newUnit = unitSelect?.value || 'g';
+
+    // Convert recipe weight if unit changed
+    if (recipeWeightInput && previousUnit !== newUnit) {
+        const currentWeight = parseFloat(recipeWeightInput.value) || 0;
+        let convertedWeight;
+
+        if (previousUnit === 'g' && newUnit === 'oz') {
+            // Grams to ounces
+            convertedWeight = currentWeight / VOLUME.G_PER_OZ;
+        } else if (previousUnit === 'oz' && newUnit === 'g') {
+            // Ounces to grams
+            convertedWeight = currentWeight * VOLUME.G_PER_OZ;
+        } else {
+            convertedWeight = currentWeight;
+        }
+
+        // Round to reasonable precision
+        recipeWeightInput.value = newUnit === 'oz'
+            ? convertedWeight.toFixed(1)
+            : Math.round(convertedWeight);
+    }
+
+    previousUnit = newUnit;
     renderRecipeList();
     renderAdditivesList();
     calculate();
@@ -650,12 +567,12 @@ function handleTogglePropertiesLock(index) {
 }
 
 function handleUseGeneratedRecipe(generatedRecipe) {
+    // Transfer percentages directly to main recipe
     state.recipe = generatedRecipe.map(fat => ({
         id: fat.id,
-        weight: Math.round(DEFAULTS.BASE_RECIPE_WEIGHT * fat.percentage / 100)
+        percentage: fat.percentage
     }));
-    state.weightLocks = new Set();
-    state.percentageLocks = new Set();
+    state.recipeLocks = new Set();
 
     switchBuildMode('fats', true); // Skip warning - intentionally transferring recipe
     renderRecipeList();
@@ -670,6 +587,7 @@ function handleUseGeneratedRecipe(generatedRecipe) {
 // ============================================
 
 let currentBuildMode = 'fats';
+let previousUnit = 'g'; // Track for unit conversion
 
 function updateTabStates(tabSelector, dataAttr, activeValue) {
     document.querySelectorAll(tabSelector).forEach(tab => {
@@ -791,9 +709,13 @@ function updatePropertiesForMode(mode) {
     switch (mode) {
         case 'fats':
         case 'properties':
-            // Use main recipe
+            // Use main recipe (convert percentages to weights for calculation)
             if (state.recipe.length > 0) {
-                updatePropertiesFromFats(state.recipe);
+                const recipeAsWeights = state.recipe.map(f => ({
+                    id: f.id,
+                    weight: f.percentage  // Use percentage as weight (total=100%)
+                }));
+                updatePropertiesFromFats(recipeAsWeights);
             } else {
                 updatePropertiesFromFats([]);
             }
@@ -811,7 +733,7 @@ function updatePropertiesForMode(mode) {
             }
             break;
         case 'cupboard':
-            // Use cupboard fats + suggestions
+            // Use cupboard fats + suggestions (already weight-based)
             updatePropertiesFromFats([...state.cupboardFats, ...state.cupboardSuggestions]);
             break;
     }
@@ -1065,13 +987,12 @@ function renderYoloRecipe() {
 function handleUseYoloRecipe() {
     if (state.yoloRecipe.length === 0) return;
 
-    // Convert YOLO recipe (percentages) to main recipe (weights)
+    // Transfer percentages directly to main recipe
     state.recipe = state.yoloRecipe.map(fat => ({
         id: fat.id,
-        weight: Math.round(DEFAULTS.BASE_RECIPE_WEIGHT * fat.percentage / 100)
+        percentage: fat.percentage
     }));
-    state.weightLocks = new Set();
-    state.percentageLocks = new Set();
+    state.recipeLocks = new Set();
 
     // Clear YOLO state since we're transferring the recipe
     clearYoloRecipe();
@@ -1150,12 +1071,10 @@ function handleGetCupboardSuggestions() {
     }
 
     const excludedFats = getCombinedExclusions();
-    const lockedSuggestions = getCupboardLockedSuggestions();
 
     const result = optimizer.suggestFatsForCupboard(state.cupboardFats, state.fatsDatabase, {
         excludeFats: excludedFats,
         maxSuggestions: 3,
-        lockedSuggestions: lockedSuggestions.map(s => ({ id: s.id, percentage: s.percentage })),
         allowRatioAdjustments: state.allowRatioMode
     });
 
@@ -1182,11 +1101,6 @@ function handleGetCupboardSuggestions() {
     if (cupboardBtn) cupboardBtn.textContent = 'Re-roll';
 }
 
-function handleToggleCupboardSuggestionLock(index) {
-    toggleCupboardSuggestionLock(index);
-    renderCupboardSuggestionsList();
-}
-
 function handleRemoveCupboardSuggestion(index) {
     removeCupboardSuggestion(index);
     renderCupboardSuggestionsList();
@@ -1201,15 +1115,18 @@ function handleCupboardSuggestionWeightChange(index, value) {
 function handleUseCupboardRecipe() {
     if (state.cupboardFats.length === 0) return;
 
-    // Combine cupboard fats and suggestions into main recipe
-    const combinedRecipe = [
+    // Combine cupboard fats and suggestions, then convert weights to percentages
+    const allFats = [
         ...state.cupboardFats.map(f => ({ id: f.id, weight: f.weight })),
         ...state.cupboardSuggestions.map(s => ({ id: s.id, weight: s.weight }))
     ];
+    const totalWeight = allFats.reduce((sum, f) => sum + f.weight, 0);
 
-    state.recipe = combinedRecipe;
-    state.weightLocks = new Set();
-    state.percentageLocks = new Set();
+    state.recipe = allFats.map(f => ({
+        id: f.id,
+        percentage: totalWeight > 0 ? Math.round((f.weight / totalWeight) * 1000) / 10 : 0
+    }));
+    state.recipeLocks = new Set();
 
     // Clear cupboard state since we're transferring the recipe
     clearCupboardFats();
@@ -1227,8 +1144,8 @@ function handleRatioModeToggle() {
     setAllowRatioMode(checkbox?.checked || false);
 }
 
-function handleToggleCupboardFatLock(index) {
-    toggleCupboardFatLock(index);
+function handleToggleCupboardLock(index) {
+    toggleCupboardLock(index);
     renderCupboardFatsList();
 }
 
@@ -1238,9 +1155,9 @@ function renderCupboardFatsList() {
 
     const settings = ui.getSettings();
 
-    ui.renderCupboardFats(container, state.cupboardFats, state.fatsDatabase, settings.unit, state.cupboardFatLocks, {
+    ui.renderCupboardFats(container, state.cupboardFats, state.fatsDatabase, settings.unit, state.cupboardLocks, {
         onWeightChange: handleCupboardWeightChange,
-        onToggleLock: handleToggleCupboardFatLock,
+        onToggleLock: handleToggleCupboardLock,
         onRemove: handleRemoveCupboardFat,
         onInfo: (fatId) => {
             if (fatId && state.fatsDatabase[fatId]) {
@@ -1263,12 +1180,10 @@ function renderCupboardSuggestionsList() {
     ui.renderCupboardSuggestions(
         container,
         state.cupboardSuggestions,
-        state.cupboardLockedIndices,
         state.fatsDatabase,
         settings.unit,
         {
             onWeightChange: handleCupboardSuggestionWeightChange,
-            onToggleLock: handleToggleCupboardSuggestionLock,
             onRemove: handleRemoveCupboardSuggestion,
             onInfo: (fatId) => {
                 if (fatId && state.fatsDatabase[fatId]) {
@@ -1351,10 +1266,10 @@ function handleCreateRecipe() {
     // Check if in YOLO mode with a recipe - auto-transfer to main recipe
     const activeTab = document.querySelector('.build-mode-tab.active');
     if (activeTab?.dataset.mode === 'yolo' && state.yoloRecipe.length > 0) {
-        // Convert YOLO percentages to weights
+        // Transfer YOLO percentages directly
         state.recipe = state.yoloRecipe.map(fat => ({
             id: fat.id,
-            weight: Math.round(DEFAULTS.BASE_RECIPE_WEIGHT * fat.percentage / 100)
+            percentage: fat.percentage
         }));
     }
 
@@ -1364,23 +1279,30 @@ function handleCreateRecipe() {
     }
 
     const settings = ui.getSettings();
-    const lyeAmount = calc.calculateLye(state.recipe, state.fatsDatabase, settings.lyeType, settings.superfat);
+
+    // Convert percentages to actual weights using recipe weight setting
+    const recipeWithWeights = state.recipe.map(fat => ({
+        id: fat.id,
+        weight: Math.round(settings.recipeWeight * fat.percentage / 100)
+    }));
+
+    const lyeAmount = calc.calculateLye(recipeWithWeights, state.fatsDatabase, settings.lyeType, settings.superfat);
     const waterAmount = calc.calculateWater(lyeAmount, settings.waterRatio);
 
     // Calculate fatty acids and properties for the final recipe
-    const fattyAcids = calc.calculateFattyAcids(state.recipe, state.fatsDatabase);
-    const iodine = calc.calculateIodine(state.recipe, state.fatsDatabase);
-    const ins = calc.calculateINS(state.recipe, state.fatsDatabase);
+    const fattyAcids = calc.calculateFattyAcids(recipeWithWeights, state.fatsDatabase);
+    const iodine = calc.calculateIodine(recipeWithWeights, state.fatsDatabase);
+    const ins = calc.calculateINS(recipeWithWeights, state.fatsDatabase);
     const properties = calc.calculateProperties(fattyAcids);
 
     // Generate recipe notes including additive warnings
-    const baseNotes = calc.getRecipeNotes({ ...properties, iodine, ins }, fattyAcids, state.recipe);
+    const baseNotes = calc.getRecipeNotes({ ...properties, iodine, ins }, fattyAcids, recipeWithWeights);
     const additiveWarnings = renderAdditivesList();
     const notes = mergeAdditiveWarningsIntoNotes(baseNotes, additiveWarnings);
 
     const container = $(ELEMENT_IDS.finalRecipeContent);
     ui.renderFinalRecipe(container, {
-        recipe: state.recipe,
+        recipe: recipeWithWeights,
         recipeAdditives: state.recipeAdditives,
         fatsDatabase: state.fatsDatabase,
         additivesDatabase: state.additivesDatabase,
@@ -1418,6 +1340,9 @@ async function init() {
 
     // Restore saved state before rendering
     restoreState();
+
+    // Sync previousUnit with restored/default unit value
+    previousUnit = $(ELEMENT_IDS.unit)?.value || 'g';
 
     updateFatSelectWithFilters();
     ui.initHelpPopup(state.glossaryData, state.tooltipsData, (term) => {

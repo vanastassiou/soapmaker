@@ -494,6 +494,25 @@
     ],
     "term": "Usage range"
   },
+  "recipe-weight": {
+    "category": "calculation",
+    "term": "Recipe weight",
+    "desc": "Total weight of fats in your recipe. Final soap weight and volume differ due to chemical changes during saponification and water loss during curing.",
+    "details": "During saponification (18-24 hours), fats react with lye to form soap and glycerol, causing approximately 5% volume reduction. During the 3-4 week curing period, water evaporates from the bar, typically reducing weight by 10-25% depending on the water content used. The final cured bar will be firmer, lighter, and more durable than the freshly poured soap.",
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Cold saponification takes 18-24h; curing requires 3-4 weeks"
+      }
+    ],
+    "related": [
+      "superfat",
+      "lye-concentration",
+      "volume-estimate"
+    ]
+  },
   "volume-estimate": {
     "category": "calculation",
     "desc": "Approximate volume range of your soap batch (\u00b112%). Useful for mould sizing, not for precise measurement.",

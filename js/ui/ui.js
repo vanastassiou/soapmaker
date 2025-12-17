@@ -6,6 +6,7 @@
 import {
     ADDITIVE_WARNING_TYPES,
     CSS_CLASSES,
+    DEFAULTS,
     ELEMENT_IDS,
     FATTY_ACID_NAMES,
     MATCH_THRESHOLDS,
@@ -64,15 +65,14 @@ export function populateFatSelect(selectElement, fatsDatabase, excludeIds = [], 
 // ============================================
 
 /**
- * Render the recipe fats list
+ * Render the recipe fats list (Select fats mode - percentage input)
  * @param {HTMLElement} container - Container element
- * @param {Array} recipe - Recipe array of {id, weight}
- * @param {Object} locks - {weightLocks: Set, percentageLocks: Set}
- * @param {string} unit - Unit string (g or oz)
+ * @param {Array} recipe - Array of {id, percentage}
+ * @param {Set} locks - Set of locked indices
  * @param {Object} fatsDatabase - Fat database for name lookups
- * @param {Object} callbacks - {onWeightChange, onToggleWeightLock, onTogglePercentageLock, onRemove, onFatInfo}
+ * @param {Object} callbacks - {onPercentageChange, onToggleLock, onRemove, onFatInfo}
  */
-export function renderRecipe(container, recipe, locks, unit, fatsDatabase, callbacks) {
+export function renderRecipe(container, recipe, locks, fatsDatabase, callbacks) {
     const signal = setupAbortSignal(container);
 
     if (recipe.length === 0) {
@@ -80,13 +80,11 @@ export function renderRecipe(container, recipe, locks, unit, fatsDatabase, callb
         return;
     }
 
-    const totalWeight = recipe.reduce((sum, fat) => sum + fat.weight, 0);
-    const { weightLocks = new Set(), percentageLocks = new Set() } = locks || {};
+    const totalPercentage = recipe.reduce((sum, fat) => sum + fat.percentage, 0);
 
     const headerRow = `
         <div class="fat-row header-row">
             <span>Fat</span>
-            <span>Weight</span>
             <span>%</span>
             <span></span>
         </div>
@@ -97,26 +95,32 @@ export function renderRecipe(container, recipe, locks, unit, fatsDatabase, callb
         return renderItemRow({
             id: fat.id,
             name: fatData?.name || fat.id,
-            weight: fat.weight,
-            percentage: totalWeight > 0 ? ((fat.weight / totalWeight) * 100).toFixed(1) : 0,
-            isWeightLocked: weightLocks.has(i),
-            isPercentageLocked: percentageLocks.has(i)
+            percentage: fat.percentage,
+            isLocked: locks.has(i)
         }, i, {
-            showWeightInput: true,
-            showLockButton: true,
+            inputType: 'percentage',
+            showWeight: false,
             showPercentage: true,
-            unit,
+            lockableField: 'percentage',
             itemType: 'fat'
         });
     }).join('');
 
-    container.innerHTML = headerRow + rows + renderTotalsRow('Total Fats', totalWeight, unit, 1);
+    // Show total percentage (should be 100%)
+    const totalsRow = `
+        <div class="totals-row">
+            <span>Total</span>
+            <span class="${Math.abs(totalPercentage - 100) > 0.1 ? 'percentage-warning' : ''}">${totalPercentage.toFixed(1)}%</span>
+            <span></span>
+        </div>
+    `;
+
+    container.innerHTML = headerRow + rows + totalsRow;
 
     // Attach event handlers with abort signal for cleanup
     attachRowEventHandlersWithSignal(container, {
-        onWeightChange: callbacks.onWeightChange,
-        onToggleWeightLock: callbacks.onToggleWeightLock,
-        onTogglePercentageLock: callbacks.onTogglePercentageLock,
+        onPercentageChange: callbacks.onPercentageChange,
+        onToggleLock: callbacks.onToggleLock,
         onRemove: callbacks.onRemove,
         onInfo: callbacks.onFatInfo
     }, 'fat', signal);
@@ -835,12 +839,12 @@ export function clearProfileInputs() {
 // ============================================
 
 /**
- * Render cupboard fats (user's fixed fats with weight inputs)
+ * Render cupboard fats (weight input with weight locks)
  * @param {HTMLElement} container - Container element
  * @param {Array} cupboardFats - Array of {id, weight}
  * @param {Object} fatsDatabase - Fat database for name lookups
  * @param {string} unit - Unit string (g or oz)
- * @param {Set} lockedIndices - Set of locked fat indices
+ * @param {Set} lockedIndices - Set of locked fat indices (weight locks)
  * @param {Object} callbacks - {onWeightChange, onToggleLock, onRemove, onInfo}
  */
 export function renderCupboardFats(container, cupboardFats, fatsDatabase, unit, lockedIndices, callbacks) {
@@ -869,13 +873,12 @@ export function renderCupboardFats(container, cupboardFats, fatsDatabase, unit, 
             name: fatData?.name || fat.id,
             weight: fat.weight,
             percentage: totalWeight > 0 ? ((fat.weight / totalWeight) * 100).toFixed(1) : 0,
-            isWeightLocked: false,
-            isPercentageLocked: lockedIndices.has(i)
+            isLocked: lockedIndices.has(i)
         }, i, {
-            showWeightInput: true,
-            showWeightLock: false,
-            showLockButton: true,
+            inputType: 'weight',
+            showWeight: true,
             showPercentage: true,
+            lockableField: 'weight',
             unit,
             itemType: 'fat'
         });
@@ -886,22 +889,21 @@ export function renderCupboardFats(container, cupboardFats, fatsDatabase, unit, 
     // Attach event handlers with abort signal for cleanup
     attachRowEventHandlersWithSignal(container, {
         onWeightChange: callbacks.onWeightChange,
-        onTogglePercentageLock: callbacks.onToggleLock,
+        onToggleLock: callbacks.onToggleLock,
         onRemove: callbacks.onRemove,
         onInfo: callbacks.onInfo
     }, 'fat', signal);
 }
 
 /**
- * Render cupboard suggestions with lock buttons
+ * Render cupboard suggestions (display only, no locks)
  * @param {HTMLElement} container - Container element
  * @param {Array} suggestions - Array of {id, weight, percentage}
- * @param {Set} lockedIndices - Set of locked suggestion indices
  * @param {Object} fatsDatabase - Fat database for name lookups
  * @param {string} unit - Unit string (g or oz)
- * @param {Object} callbacks - {onWeightChange, onToggleLock, onRemove, onInfo}
+ * @param {Object} callbacks - {onWeightChange, onRemove, onInfo}
  */
-export function renderCupboardSuggestions(container, suggestions, lockedIndices, fatsDatabase, unit, callbacks) {
+export function renderCupboardSuggestions(container, suggestions, fatsDatabase, unit, callbacks) {
     const signal = setupAbortSignal(container);
 
     if (suggestions.length === 0) {
@@ -913,7 +915,7 @@ export function renderCupboardSuggestions(container, suggestions, lockedIndices,
 
     const headerRow = `
         <div class="fat-row header-row">
-            <span>Suggested Fat</span>
+            <span>Suggested fat</span>
             <span>Weight</span>
             <span>%</span>
             <span></span>
@@ -927,24 +929,22 @@ export function renderCupboardSuggestions(container, suggestions, lockedIndices,
             name: fatData?.name || sugg.id,
             weight: sugg.weight,
             percentage: sugg.percentage,
-            isWeightLocked: false,
-            isPercentageLocked: lockedIndices.has(i)
+            isLocked: false
         }, i, {
-            showWeightInput: true,
-            showWeightLock: false,
-            showLockButton: true,
+            inputType: 'weight',
+            showWeight: true,
             showPercentage: true,
+            lockableField: null,  // No locks for suggestions
             unit,
             itemType: 'fat'
         });
     }).join('');
 
-    container.innerHTML = headerRow + rows + renderTotalsRow('Total Suggested', totalWeight, unit, 1);
+    container.innerHTML = headerRow + rows + renderTotalsRow('Total suggested', totalWeight, unit, 1);
 
     // Attach event handlers with abort signal for cleanup
     attachRowEventHandlersWithSignal(container, {
         onWeightChange: callbacks.onWeightChange,
-        onTogglePercentageLock: callbacks.onToggleLock,
         onRemove: callbacks.onRemove,
         onInfo: callbacks.onInfo
     }, 'fat', signal);
@@ -973,7 +973,8 @@ export function getSettings() {
         lyeType: $(ELEMENT_IDS.lyeType)?.value || 'NaOH',
         superfat: parseFloatOr($(ELEMENT_IDS.superfat)?.value, 0),
         waterRatio: parseFloatOr($(ELEMENT_IDS.waterRatio)?.value, 2),
-        unit: $(ELEMENT_IDS.unit)?.value || 'g'
+        unit: $(ELEMENT_IDS.unit)?.value || 'g',
+        recipeWeight: parseFloatOr($(ELEMENT_IDS.recipeWeight)?.value, DEFAULTS.BASE_RECIPE_WEIGHT)
     };
 }
 
