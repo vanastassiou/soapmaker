@@ -65,6 +65,16 @@
                             </div>
                             <div class="form-group">
                                 <div class="label-row">
+                                    <label for="processType">Process</label>
+                                    <span class="help-tip" id="processTypeHelp" data-term="process-type" aria-label="More info about soap process">ⓘ</span>
+                                </div>
+                                <select id="processType" aria-describedby="processTypeHelp">
+                                    <option value="cold">Cold process</option>
+                                    <option value="hot">Hot process</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="label-row">
                                     <label for="superfat">Superfat %</label>
                                     <span class="help-tip" id="superfatHelp" data-term="superfat" aria-label="More info about superfat">ⓘ</span>
                                 </div>
@@ -93,41 +103,43 @@
                             </div>
                         </div>
 
-                        <!-- Exclusions nested subcontainer -->
-                        <details class="mode-subcontainer" id="exclusionsSection" open>
-                            <summary class="collapsible-header">
-                                <span class="collapse-icon" aria-hidden="true"></span>
-                                <h4 class="mode-subcontainer-title">Exclusions <span class="optional-label">(optional)</span></h4>
-                            </summary>
-                            <div class="collapsible-content" id="exclusionsContent">
-                                <div class="dietary-filters" id="dietaryFiltersSection">
-                                    <label class="dietary-filter">
-                                        <input type="checkbox" id="filterAnimalBased">
-                                        <span>Animal based</span>
-                                        <span class="ui-tip" data-tooltip="filter-animal" aria-label="What does this filter?">ⓘ</span>
-                                    </label>
-                                    <label class="dietary-filter">
-                                        <input type="checkbox" id="filterSourcingConcerns">
-                                        <span>Sourcing concerns</span>
-                                        <span class="ui-tip" data-tooltip="sourcing-concerns" aria-label="What does this filter?">ⓘ</span>
-                                    </label>
-                                    <label class="dietary-filter">
-                                        <input type="checkbox" id="filterCommonAllergens">
-                                        <span>Common allergens</span>
-                                        <span class="ui-tip" data-tooltip="filter-allergens" aria-label="What does this filter?">ⓘ</span>
-                                    </label>
-                                </div>
-                                <div class="fat-selector">
-                                    <select id="excludeFatSelect">
-                                        <option value="">Select fat to exclude...</option>
-                                    </select>
-                                    <button class="btn" id="addExclusionBtn">Add</button>
-                                </div>
-                                <div class="excluded-fats-list" id="excludedFatsList">
-                                    <!-- Populated by JS -->
-                                </div>
+                        </div>
+                    </details>
+
+                    <!-- Exclusions Subcontainer -->
+                    <details class="build-subcontainer" id="exclusionsSection">
+                        <summary class="collapsible-header">
+                            <span class="collapse-icon" aria-hidden="true"></span>
+                            <h3 class="subcontainer-title">Exclusions <span class="optional-label">(optional)</span></h3>
+                            <button class="btn btn-text btn-small reset-btn" id="resetExclusionsBtn">Reset</button>
+                        </summary>
+                        <div class="collapsible-content" id="exclusionsContent">
+                            <div class="dietary-filters" id="dietaryFiltersSection">
+                                <label class="dietary-filter">
+                                    <input type="checkbox" id="filterAnimalBased">
+                                    <span>Animal based</span>
+                                    <span class="ui-tip" data-tooltip="filter-animal" aria-label="What does this filter?">ⓘ</span>
+                                </label>
+                                <label class="dietary-filter">
+                                    <input type="checkbox" id="filterSourcingConcerns">
+                                    <span>Sourcing concerns</span>
+                                    <span class="ui-tip" data-tooltip="sourcing-concerns" aria-label="What does this filter?">ⓘ</span>
+                                </label>
+                                <label class="dietary-filter">
+                                    <input type="checkbox" id="filterCommonAllergens">
+                                    <span>Common allergens</span>
+                                    <span class="ui-tip" data-tooltip="filter-allergens" aria-label="What does this filter?">ⓘ</span>
+                                </label>
                             </div>
-                        </details>
+                            <div class="fat-selector">
+                                <select id="excludeFatSelect">
+                                    <option value="">Select fat to exclude...</option>
+                                </select>
+                                <button class="btn" id="addExclusionBtn">Add</button>
+                            </div>
+                            <div class="excluded-fats-list" id="excludedFatsList">
+                                <!-- Populated by JS -->
+                            </div>
                         </div>
                     </details>
 

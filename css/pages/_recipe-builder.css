@@ -399,10 +399,7 @@ ol.instructions li:last-child {
     flex-wrap: wrap;
     align-items: center;
     gap: var(--space-3) var(--space-5);
-    margin-top: var(--space-3);
     margin-bottom: var(--space-4);
-    padding-top: var(--space-3);
-    border-top: 1px solid var(--border-30);
 }
 
 .dietary-filters .filter-label {
@@ -707,6 +704,19 @@ ol.instructions li:last-child {
         flex: 1 1 45%;
     }
 
+    .exclusion-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+    }
+
+    .achieved-comparison {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Selector rows wrap only at very narrow widths */
+@media (max-width: 400px) {
     .fat-selector,
     .additive-selector {
         flex-wrap: wrap;
@@ -716,15 +726,5 @@ ol.instructions li:last-child {
     .additive-selector select {
         width: 100%;
         flex: none;
-    }
-
-    .exclusion-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--space-2);
-    }
-
-    .achieved-comparison {
-        grid-template-columns: 1fr;
     }
 }

@@ -10,6 +10,7 @@
 export const ELEMENT_IDS = {
     // Settings
     lyeType: 'lyeType',
+    processType: 'processType',
     superfat: 'superfat',
     waterRatio: 'waterRatio',
     unit: 'unit',
@@ -22,6 +23,7 @@ export const ELEMENT_IDS = {
     resetSettingsBtn: 'resetSettingsBtn',
     resetFatsBtn: 'resetFatsBtn',
     resetAdditivesBtn: 'resetAdditivesBtn',
+    resetExclusionsBtn: 'resetExclusionsBtn',
     recipeFats: 'recipeFats',
 
     // Panels

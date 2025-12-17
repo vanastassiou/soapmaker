@@ -966,6 +966,7 @@ export function populateCupboardFatSelect(selectElement, fatsDatabase, existingI
 export function getSettings() {
     return {
         lyeType: $(ELEMENT_IDS.lyeType)?.value || 'NaOH',
+        processType: $(ELEMENT_IDS.processType)?.value || 'cold',
         superfat: parseFloatOr($(ELEMENT_IDS.superfat)?.value, 0),
         waterRatio: parseFloatOr($(ELEMENT_IDS.waterRatio)?.value, 2),
         unit: $(ELEMENT_IDS.unit)?.value || 'g',

@@ -332,6 +332,23 @@ function handleResetAdditives() {
     calculate();
 }
 
+function handleResetExclusions() {
+    // Clear dietary filter checkboxes
+    const filterAnimal = $(ELEMENT_IDS.filterAnimalBased);
+    const filterSourcing = $(ELEMENT_IDS.filterSourcingConcerns);
+    const filterAllergens = $(ELEMENT_IDS.filterCommonAllergens);
+    if (filterAnimal) filterAnimal.checked = false;
+    if (filterSourcing) filterSourcing.checked = false;
+    if (filterAllergens) filterAllergens.checked = false;
+
+    // Clear excluded fats list
+    state.excludedFats = [];
+
+    // Update UI
+    updateExclusionUI();
+    updateFatSelectWithFilters();
+}
+
 function handleUnitChange() {
     const unitSelect = $(ELEMENT_IDS.unit);
     const recipeWeightInput = $(ELEMENT_IDS.recipeWeight);
@@ -761,6 +778,7 @@ function setupRecipeListeners() {
     $(ELEMENT_IDS.resetSettingsBtn)?.addEventListener('click', handleResetSettings);
     $(ELEMENT_IDS.resetFatsBtn)?.addEventListener('click', handleResetFats);
     $(ELEMENT_IDS.resetAdditivesBtn)?.addEventListener('click', handleResetAdditives);
+    $(ELEMENT_IDS.resetExclusionsBtn)?.addEventListener('click', handleResetExclusions);
     $(ELEMENT_IDS.useFatsBtn)?.addEventListener('click', handleUseFats);
 }
 
@@ -1308,6 +1326,7 @@ function handleCreateRecipe() {
         lyeAmount,
         waterAmount,
         lyeType: settings.lyeType,
+        processType: settings.processType,
         superfat: settings.superfat,
         waterRatio: settings.waterRatio,
         unit: settings.unit,

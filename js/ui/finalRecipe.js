@@ -153,13 +153,13 @@ function formatAdditivesList(recipeAdditives, additivesDatabase, unit) {
 }
 
 // ============================================
-// Recipe Procedure Template
+// Recipe Procedure Templates
 // ============================================
 
-const RECIPE_PROCEDURE = [
+const COLD_PROCESS_PROCEDURE = [
     {
         title: 'Prepare fats',
-        text: 'Combine fats in a heat-safe, non-reactive container (avoid aluminum). Heat gently until all solid fats are melted, then let cool target soaping temperature (typically 100-130°F / 38-54°C).'
+        text: 'Combine fats in a heat-safe, non-reactive container (avoid aluminum). Heat gently until all solid fats are melted, then let cool to target soaping temperature (typically 100-130°F / 38-54°C).'
     },
     {
         title: 'Prepare lye solution',
@@ -179,8 +179,40 @@ const RECIPE_PROCEDURE = [
         text: 'Pour mixture into prepared moulds and tap them gently to release air bubbles.'
     },
     {
-        title: 'Unmold and cure',
+        title: 'Unmould and cure',
         text: 'Let mixture saponify for 24 to 48 hours, then unmould and cut into bars if needed. Cure soap on a rack in a cool, dry place for 4 to 6 weeks before use.'
+    }
+];
+
+const HOT_PROCESS_PROCEDURE = [
+    {
+        title: 'Prepare fats',
+        text: 'Combine fats in a slow cooker or double boiler. Heat gently until all solid fats are melted.'
+    },
+    {
+        title: 'Prepare lye solution',
+        text: 'Working in a well-ventilated area, slowly add lye to cold water (NEVER add water to lye) and stir until fully dissolved. The solution will heat up significantly.'
+    },
+    {
+        title: 'Combine',
+        text: 'Slowly pour lye solution into fats, stirring to combine. Use an immersion blender to blend the mixture until it reaches trace.'
+    },
+    {
+        title: 'Cook',
+        text: 'Cover and cook on low heat, stirring every 15-20 minutes. The soap will go through various stages (separation, gel, mashed potato texture). Cook until it reaches a translucent, vaseline-like consistency and tests neutral with pH strips (typically 1-3 hours).'
+    },
+    {
+        title: 'Add additives',
+        text: 'Remove from heat and let cool slightly. Add fragrance, colourants, and other additives. Stir thoroughly to incorporate.',
+        conditional: 'additives'
+    },
+    {
+        title: 'Mould',
+        text: 'Working quickly while soap is still pliable, spoon or press mixture into prepared moulds. Tap firmly to remove air pockets.'
+    },
+    {
+        title: 'Unmould',
+        text: 'Let soap cool completely and harden (usually overnight), then unmould and cut into bars if needed. Hot process soap is safe to use immediately, though a 1-2 week cure will improve hardness.'
     }
 ];
 
@@ -226,12 +258,16 @@ function buildIngredientsList(data) {
 /**
  * Build procedure list HTML
  * @param {boolean} hasAdditives - Whether recipe has additives
+ * @param {string} processType - 'cold' or 'hot'
  * @returns {string} HTML for procedure section
  */
-function buildProcedureList(hasAdditives) {
-    let html = '<div class="recipe-section"><h4>Procedure</h4><ol class="procedure-list">';
+function buildProcedureList(hasAdditives, processType = 'cold') {
+    const procedure = processType === 'hot' ? HOT_PROCESS_PROCEDURE : COLD_PROCESS_PROCEDURE;
+    const processLabel = processType === 'hot' ? 'Hot process' : 'Cold process';
 
-    RECIPE_PROCEDURE.forEach(step => {
+    let html = `<div class="recipe-section"><h4>Procedure <span class="process-type-label">(${processLabel})</span></h4><ol class="procedure-list">`;
+
+    procedure.forEach(step => {
         // Skip conditional steps if condition not met
         if (step.conditional === 'additives' && !hasAdditives) return;
 
@@ -567,6 +603,7 @@ function buildScienceSection(data) {
  * @param {number} data.lyeAmount - Lye amount
  * @param {number} data.waterAmount - Water amount
  * @param {string} data.lyeType - Lye type (NaOH or KOH)
+ * @param {string} data.processType - Process type (cold or hot)
  * @param {number} data.superfat - Superfat percentage
  * @param {number} data.waterRatio - Water to lye ratio
  * @param {string} data.unit - Unit string
@@ -581,7 +618,7 @@ export function renderFinalRecipe(container, data) {
         <div class="recipe-prose">
             ${buildQualitativeSummary(data.properties, data.notes)}
             ${buildIngredientsList(data)}
-            ${buildProcedureList(hasAdditives)}
+            ${buildProcedureList(hasAdditives, data.processType)}
             ${buildScienceSection(data)}
         </div>
     `;
