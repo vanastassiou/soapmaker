@@ -1,0 +1,110 @@
+{
+  "$id": "common-definitions.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Common Schema Definitions",
+  "description": "Shared definitions for soap additive schemas",
+  "definitions": {
+    "dietary": {
+      "additionalProperties": false,
+      "description": "Dietary and sourcing classification flags",
+      "properties": {
+        "animalBased": {
+          "description": "True if derived from animal sources",
+          "type": "boolean"
+        },
+        "commonAllergen": {
+          "description": "True if associated with common allergens",
+          "type": "boolean"
+        },
+        "sourcingConcerns": {
+          "description": "True if there are significant sourcing concerns",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "usage": {
+      "additionalProperties": false,
+      "description": "Recommended usage range",
+      "properties": {
+        "basis": {
+          "description": "What the percentage is calculated from",
+          "enum": ["oil-weight", "batch-weight"],
+          "type": "string"
+        },
+        "min": {
+          "description": "Minimum recommended percentage",
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        },
+        "max": {
+          "description": "Maximum recommended percentage",
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "required": ["min", "max", "basis"],
+      "type": "object"
+    },
+    "reference": {
+      "additionalProperties": false,
+      "description": "Reference to a source document",
+      "properties": {
+        "sourceId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "ID of source in sources.json"
+        },
+        "section": {
+          "type": "string",
+          "description": "Specific section, chapter, or article identifier"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Direct URL to the referenced content"
+        },
+        "note": {
+          "type": "string",
+          "description": "Additional context about this specific reference"
+        }
+      },
+      "required": ["sourceId", "section"],
+      "type": "object"
+    },
+    "references": {
+      "description": "Array of source references",
+      "items": {
+        "$ref": "#/definitions/reference"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "casNumber": {
+      "description": "CAS registry number",
+      "pattern": "^[0-9]+-[0-9]+-[0-9]+$",
+      "type": "string"
+    },
+    "maxConcentration": {
+      "description": "Maximum safe concentration %",
+      "maximum": 100,
+      "minimum": 0,
+      "type": "number"
+    },
+    "safety": {
+      "additionalProperties": false,
+      "description": "Safety information",
+      "properties": {
+        "casNumber": {
+          "$ref": "#/definitions/casNumber"
+        },
+        "maxConcentration": {
+          "$ref": "#/definitions/maxConcentration"
+        }
+      },
+      "type": "object"
+    }
+  }
+}
