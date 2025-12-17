@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soap Recipe Builder</title>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -188,45 +188,40 @@
 
                         <!-- Specify Properties mode -->
                         <div class="build-mode-content hidden" id="specifyPropertiesMode" role="tabpanel" aria-labelledby="tab-properties">
-                            <!-- Target Properties subcontainer -->
-                            <div class="mode-subcontainer">
-                                <h4 class="mode-subcontainer-title">Target soap properties</h4>
-                                <div class="property-header">
-                                    <span class="ui-tip" data-tooltip="property-targets" aria-label="How do property targets work?">ⓘ</span>
-                                    <div class="property-options">
-                                        <label for="maxFats">Max different fats <select id="maxFats">
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5" selected>5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                        </select><span class="ui-tip" data-tooltip="max-fats" aria-label="What does max fats do?">ⓘ</span></label>
-                                        <label><input type="checkbox" id="includeCastor">Include castor oil<span class="help-tip" data-term="castor-oil" aria-label="More info about castor oil">ⓘ</span></label>
-                                    </div>
+                            <div class="property-header">
+                                <div class="property-options">
+                                    <label for="maxFats">Max different fats <select id="maxFats">
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5" selected>5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                    </select><span class="ui-tip" data-tooltip="max-fats" aria-label="What does max fats do?">ⓘ</span></label>
+                                    <label><input type="checkbox" id="includeCastor">Include castor oil<span class="help-tip" data-term="castor-oil" aria-label="More info about castor oil">ⓘ</span></label>
                                 </div>
+                            </div>
 
-                                <div class="property-list">
-                                    <div class="property-row">
-                                        <button type="button" class="info-link" data-term="hardness" id="hardnessLabel">Hardness</button>
-                                        <input type="number" id="targetHardness" min="0" max="100" placeholder="29-54" aria-labelledby="hardnessLabel">
-                                    </div>
-                                    <div class="property-row">
-                                        <button type="button" class="info-link" data-term="cleansing" id="cleansingLabel">Cleansing</button>
-                                        <input type="number" id="targetCleansing" min="0" max="100" placeholder="12-22" aria-labelledby="cleansingLabel">
-                                    </div>
-                                    <div class="property-row">
-                                        <button type="button" class="info-link" data-term="conditioning" id="conditioningLabel">Conditioning</button>
-                                        <input type="number" id="targetConditioning" min="0" max="100" placeholder="44-69" aria-labelledby="conditioningLabel">
-                                    </div>
-                                    <div class="property-row">
-                                        <button type="button" class="info-link" data-term="bubbly" id="bubblyLabel">Bubbly</button>
-                                        <input type="number" id="targetBubbly" min="0" max="100" placeholder="14-46" aria-labelledby="bubblyLabel">
-                                    </div>
-                                    <div class="property-row">
-                                        <button type="button" class="info-link" data-term="creamy" id="creamyLabel">Creamy</button>
-                                        <input type="number" id="targetCreamy" min="0" max="100" placeholder="16-48" aria-labelledby="creamyLabel">
-                                    </div>
+                            <div class="property-list">
+                                <div class="property-row">
+                                    <button type="button" class="info-link" data-term="hardness" id="hardnessLabel">Hardness</button>
+                                    <input type="number" id="targetHardness" min="0" max="100" placeholder="29-54" aria-labelledby="hardnessLabel">
+                                </div>
+                                <div class="property-row">
+                                    <button type="button" class="info-link" data-term="cleansing" id="cleansingLabel">Cleansing</button>
+                                    <input type="number" id="targetCleansing" min="0" max="100" placeholder="12-22" aria-labelledby="cleansingLabel">
+                                </div>
+                                <div class="property-row">
+                                    <button type="button" class="info-link" data-term="conditioning" id="conditioningLabel">Conditioning</button>
+                                    <input type="number" id="targetConditioning" min="0" max="100" placeholder="44-69" aria-labelledby="conditioningLabel">
+                                </div>
+                                <div class="property-row">
+                                    <button type="button" class="info-link" data-term="bubbly" id="bubblyLabel">Bubbly</button>
+                                    <input type="number" id="targetBubbly" min="0" max="100" placeholder="14-46" aria-labelledby="bubblyLabel">
+                                </div>
+                                <div class="property-row">
+                                    <button type="button" class="info-link" data-term="creamy" id="creamyLabel">Creamy</button>
+                                    <input type="number" id="targetCreamy" min="0" max="100" placeholder="16-48" aria-labelledby="creamyLabel">
                                 </div>
                             </div>
 

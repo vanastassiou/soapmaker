@@ -1013,6 +1013,14 @@ export function renderAdditives(container, recipeAdditives, additivesDatabase, t
 
     const totalAdditiveWeight = recipeAdditives.reduce((sum, item) => sum + item.weight, 0);
 
+    const headerRow = `
+        <div class="item-row header-row cols-3">
+            <span>Additive</span>
+            <span>${unit}</span>
+            <span></span>
+        </div>
+    `;
+
     const rows = recipeAdditives.map((item, i) => {
         const additive = additivesDatabase[item.id];
         if (!additive) return '';
@@ -1040,22 +1048,22 @@ export function renderAdditives(container, recipeAdditives, additivesDatabase, t
         }, i, {
             inputType: 'weight',
             showWeight: true,
-            showPercentage: true,
+            showPercentage: false,
             lockableField: null,
             unit,
             itemType: 'additive'
         });
     }).join('');
 
-    container.innerHTML = `
-        ${rows}
-        <div class="totals-row additive-totals">
-            <span>Total Additives</span>
-            <span>${totalAdditiveWeight.toFixed(2)} ${unit}</span>
-            <span></span>
+    const totalsRow = `
+        <div class="totals-row">
+            <span>Total</span>
+            <span>${totalAdditiveWeight.toFixed(1)} ${unit}</span>
             <span></span>
         </div>
     `;
+
+    container.innerHTML = headerRow + rows + totalsRow;
 
     // Store callbacks on container for dynamic lookup
     container._callbacks = {
