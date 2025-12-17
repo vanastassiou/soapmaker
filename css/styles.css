@@ -1097,31 +1097,22 @@ details[open] .details-hide {
     font-weight: 500;
 }
 
-/* UI Tips (question mark icons for site usage help) */
+/* UI Tips (info icons for site usage help) */
 .ui-tip {
     cursor: help;
     color: var(--text-muted);
-    font-size: var(--text-sm);
-    font-weight: 600;
-    transition: color 0.2s, border-color 0.2s;
-    /* WCAG 2.2 Target Size: minimum 24x24px */
+    font-size: 0.85em;
+    transition: color 0.2s;
+    /* WCAG 2.2 Target Size: minimum 24x24px touch target */
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-width: 24px;
     min-height: 24px;
-    width: 18px;
-    height: 18px;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    background: var(--bg-secondary);
-    vertical-align: middle;
-    margin-left: 0.25rem;
 }
 
 .ui-tip:hover {
-    color: var(--accent-gold);
-    border-color: var(--accent-gold);
+    color: var(--accent-green);
 }
 
 /* Help Popup (shared by glossary and tooltips) */
