@@ -649,12 +649,16 @@ ol.instructions li:last-child {
 
 /* Item row inputs and percentages */
 .item-row input {
-    width: 5rem;
+    width: 4rem;
     height: var(--size-icon-btn);
     min-height: var(--size-icon-btn);
     padding: var(--space-1) var(--space-2);
     font-size: var(--text-lg);
     text-align: right;
+}
+
+.item-row input[data-action="percentage"] {
+    width: 3rem;
 }
 
 .item-row input:disabled {
@@ -1567,8 +1571,19 @@ details[open] .details-hide {
         padding: var(--space-2);
     }
 
+    /* Collapse item rows to 2 columns with name spanning full width */
+    .item-row.cols-4,
+    .item-row.cols-3 {
+        grid-template-columns: 1fr auto;
+    }
+
+    .item-row.cols-4 .item-name,
+    .item-row.cols-3 .item-name {
+        grid-column: 1 / -1;
+    }
+
     .item-row input {
-        width: 4rem;
+        width: 3.5rem;
     }
 
     .icon-btn {
