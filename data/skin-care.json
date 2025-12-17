@@ -1,0 +1,286 @@
+{
+  "aloe-vera-powder": {
+    "name": "Aloe vera powder (200:1)",
+    "subcategory": "emollient",
+    "description": "Concentrated Aloe barbadensis leaf juice powder (200:1). Moisturizing, anti-inflammatory. Low anthraquinone content (<50 ppm).",
+    "density": 0.6,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "85507-69-3",
+      "maxConcentration": 20
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.1,
+      "max": 1
+    },
+    "references": [
+      {
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Aloe Barbadensis",
+        "url": "https://journals.sagepub.com/doi/pdf/10.1080/10915810701351186"
+      }
+    ]
+  },
+  "apricot-shell-powder": {
+    "name": "Apricot shell powder",
+    "subcategory": "exfoliant",
+    "description": "Finely ground Prunus armeniaca seed shells. Particle size 10-177 microns.",
+    "density": 0.65,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "68650-44-2",
+      "maxConcentration": 50
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 10
+    },
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "Apricot Kernel: Bioactivity, Characterization, Applications, and Health Attributes",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9332734/"
+      }
+    ]
+  },
+  "buttermilk-powder": {
+    "name": "Buttermilk powder",
+    "subcategory": "emollient",
+    "description": "Dried cultured buttermilk. Creates creamy lather. Lactic acid provides gentle exfoliation.",
+    "density": 0.5,
+    "dietary": {
+      "animalBased": true,
+      "commonAllergen": true,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "maxConcentration": 100
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 3,
+      "max": 10
+    },
+    "references": [
+      {
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Bovine Milk Proteins and Protein Derivatives as Used in Cosmetics",
+        "url": "https://www.cir-safety.org/sites/default/files/Milk%20Proteins.pdf"
+      }
+    ]
+  },
+  "coffee-grounds": {
+    "name": "Coffee grounds (used)",
+    "subcategory": "exfoliant",
+    "description": "Spent Coffea arabica grounds. Used grounds preferred - softer, less colour bleed. Dry thoroughly before adding at trace.",
+    "density": 0.4,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8001-67-0",
+      "maxConcentration": 10
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.5,
+      "max": 2
+    },
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "Coffea arabica: An Emerging Active Ingredient in Dermato-Cosmetic Applications",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11858793/"
+      }
+    ]
+  },
+  "colloidal-oatmeal": {
+    "name": "Colloidal oatmeal",
+    "subcategory": "exfoliant",
+    "description": "Finely ground Avena sativa. FDA approved skin protectant. Add at trace. Particle size under 100 micrometers.",
+    "density": 0.5,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "maxConcentration": 5
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 3
+    },
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "Safety and efficacy of personal care products containing colloidal oatmeal",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3508548/"
+      }
+    ]
+  },
+  "goat-milk-powder": {
+    "name": "Goat milk powder",
+    "subcategory": "emollient",
+    "description": "Full-cream powder from Capra aegagrus hircus. Rich in vitamins A, B6, B12, E. Reconstitute 8:1 water:powder.",
+    "density": 0.55,
+    "dietary": {
+      "animalBased": true,
+      "commonAllergen": true,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "maxConcentration": 100
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 5,
+      "max": 10
+    },
+    "references": [
+      {
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Bovine Milk Proteins and Protein Derivatives as Used in Cosmetics",
+        "url": "https://www.cir-safety.org/sites/default/files/Milk%20Proteins.pdf"
+      }
+    ]
+  },
+  "jojoba-oil": {
+    "name": "Jojoba oil",
+    "subcategory": "emollient",
+    "description": "Liquid wax ester (~97%) from Simmondsia chinensis seeds. Does not saponify. Add at trace as superfat for conditioning and stability.",
+    "density": 0.86,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "61789-91-1"
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 3,
+      "max": 7
+    },
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "Jojoba Oil: An Updated Comprehensive Review on Chemistry, Pharmaceutical Uses, and Toxicity",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8197201/"
+      }
+    ]
+  },
+  "lanolin": {
+    "name": "Lanolin (anhydrous)",
+    "subcategory": "emollient",
+    "description": "Wool wax from sheep (Ovis aries). Creates protective barrier. Add at trace or as superfat. May cause sensitivity in some users.",
+    "density": 0.94,
+    "dietary": {
+      "animalBased": true,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8006-54-0",
+      "maxConcentration": 50
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 5
+    },
+    "references": [
+      {
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Lanolin-Derived Ingredients",
+        "url": "https://www.cir-safety.org/sites/default/files/Lanolin.pdf"
+      }
+    ]
+  },
+  "poppy-seeds": {
+    "name": "Poppy seeds",
+    "subcategory": "exfoliant",
+    "description": "Whole seeds from Papaver somniferum. Does not create micro-tears.",
+    "density": 0.53,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8002-64-0",
+      "maxConcentration": 5
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.25,
+      "max": 2
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Papaver somniferum (opium poppy) taxonomy",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/taxonomy/Papaver-somniferum"
+      }
+    ]
+  },
+  "pumice-powder": {
+    "name": "Pumice powder (fine)",
+    "subcategory": "exfoliant",
+    "description": "Volcanic rock powder (amorphous aluminum silicate). 80-200 mesh size. Non-crystalline structure, no respirable silite.",
+    "density": 0.64,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "1332-09-8",
+      "maxConcentration": 50
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 10
+    },
+    "references": [
+      {
+        "sourceId": "usgs",
+        "section": "Pumite and Pumicite Statistics",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-pumice.pdf"
+      }
+    ]
+  },
+  "sea-salt-fine": {
+    "name": "Sea salt (fine grain)",
+    "subcategory": "exfoliant",
+    "description": "Fine-grain sea salt. Rich in minerals (magnesium, calcium, potassium). Above 3% may inhibit lather.",
+    "density": 2.16,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "7647-14-5",
+      "maxConcentration": 50
+    },
+    "usage": {
+      "basis": "oil-weight",
+      "min": 3,
+      "max": 50
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Sodium chloride (CID 5234)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5234"
+      }
+    ]
+  }
+}
