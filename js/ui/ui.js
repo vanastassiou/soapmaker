@@ -567,8 +567,9 @@ export function initHelpPopup(glossaryData, tooltipsData, onOpenPanel) {
         // Clicking the "More details" / "Learn more" link
         if (linkEl && currentLinkAction) {
             e.preventDefault();
+            const callback = currentLinkAction;
             hidePopup();
-            currentLinkAction();
+            callback();
             return;
         }
 
