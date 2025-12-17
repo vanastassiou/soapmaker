@@ -20,7 +20,7 @@
     font-weight: 600;
     text-decoration: none;
     border-radius: 0 0 var(--radius-sm) 0;
-    transition: top 0.2s;
+    transition: top var(--transition-base);
 }
 
 .skip-link:focus {
@@ -43,8 +43,8 @@ body {
     margin-right: auto;
     padding-top: var(--space-14);
     padding-bottom: var(--space-14);
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
 }
 
 header {
@@ -85,7 +85,7 @@ header p {
     padding: var(--space-2) var(--space-4);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
-    transition: all 0.2s;
+    transition: all var(--transition-base);
 }
 
 .header-link:hover {
@@ -126,7 +126,7 @@ header p {
     font-weight: 600;
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-md);
-    transition: all 0.2s;
+    transition: all var(--transition-base);
 }
 
 .kofi-button:hover {
@@ -243,11 +243,11 @@ input, select {
     background: var(--bg-input);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    padding: 0.6rem 0.8rem;
+    padding: var(--space-2) var(--space-3);
     color: var(--text-primary);
     font-family: var(--font-mono);
     font-size: var(--text-xl);
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
     width: 100%;
     min-height: var(--size-btn-md);
 }
@@ -311,7 +311,7 @@ button:focus-visible,
 }
 
 .property-options select {
-    padding: 0.3rem 0.4rem;
+    padding: var(--space-1) var(--space-1);
     font-size: var(--text-md);
 }
 
@@ -386,7 +386,7 @@ details.mode-subcontainer > summary .collapse-icon {
     align-items: center;
     justify-content: center;
     color: var(--text-muted);
-    transition: transform 0.2s ease;
+    transition: transform var(--transition-base);
 }
 
 details.build-subcontainer > summary .collapse-icon::before,
@@ -448,7 +448,7 @@ details.mode-subcontainer > .collapsible-content {
 
 ol.instructions {
     color: var(--text-secondary);
-    padding-left: 1.25rem;
+    padding-left: var(--space-5);
     margin: 0 0 1rem 0;
 }
 
@@ -470,7 +470,7 @@ ol.instructions li:last-child {
     font-weight: 600;
     font-size: var(--text-lg);
     cursor: pointer;
-    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    transition: background var(--transition-base), transform 0.1s, box-shadow var(--transition-base);
     min-height: var(--size-btn-md);
 }
 
@@ -598,7 +598,7 @@ ol.instructions li:last-child {
     justify-content: center;
     font-size: var(--text-xl);
     line-height: 1;
-    transition: all 0.2s;
+    transition: all var(--transition-base);
     flex-shrink: 0;
 }
 
@@ -635,7 +635,7 @@ ol.instructions li:last-child {
 /* Clickable text elements */
 .clickable {
     cursor: pointer;
-    transition: color 0.2s;
+    transition: color var(--transition-base);
 }
 
 .clickable:hover {
@@ -723,7 +723,7 @@ ol.instructions li:last-child {
     font-family: var(--font-body);
     font-size: var(--text-lg);
     font-weight: 500;
-    transition: all 0.2s;
+    transition: all var(--transition-base);
     min-height: var(--size-btn-md);
 }
 
@@ -819,7 +819,7 @@ ol.instructions li:last-child {
 }
 
 .range-tip {
-    margin-left: 0.25rem;
+    margin-left: var(--space-1);
     color: var(--warning);
 }
 
@@ -856,7 +856,7 @@ ol.instructions li:last-child {
 /* Info links (data terms - open sidebar panels) */
 .info-link {
     cursor: pointer;
-    transition: color 0.2s;
+    transition: color var(--transition-base);
     /* WCAG 2.2 Target Size: ensure adequate touch target */
     display: inline-flex;
     align-items: center;
@@ -878,7 +878,7 @@ ol.instructions li:last-child {
     cursor: help;
     color: var(--text-muted);
     font-size: 0.85em;
-    transition: color 0.2s;
+    transition: color var(--transition-base);
     /* WCAG 2.2 Target Size: minimum 24x24px touch target */
     display: inline-flex;
     align-items: center;
@@ -899,13 +899,13 @@ ol.instructions li:last-child {
 }
 
 .panel-tag {
-    padding: 0.375rem 0.75rem;
+    padding: var(--space-1) var(--space-3);
     background: var(--bg-secondary);
     border-radius: var(--radius-sm);
     font-size: var(--text-md);
     color: var(--text-secondary);
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all var(--transition-base);
     /* WCAG 2.2 Target Size: minimum 24x24px */
     min-height: 24px;
     display: inline-flex;
@@ -955,7 +955,7 @@ ol.instructions li:last-child {
     border: 1px solid var(--accent-gold);
     border-radius: var(--radius-lg);
     padding: var(--space-4);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow-xl);
     z-index: 1000;
     display: none;
     font-size: var(--text-lg);
@@ -981,7 +981,7 @@ ol.instructions li:last-child {
     background: var(--text-secondary);
     padding: 0.1rem 0.4rem;
     border-radius: var(--radius-sm);
-    margin-left: 0.5rem;
+    margin-left: var(--space-2);
     vertical-align: middle;
 }
 
@@ -1015,9 +1015,9 @@ ol.instructions li:last-child {
 .details-hide::before {
     content: '▶';
     display: inline-block;
-    margin-right: 0.4rem;
+    margin-right: var(--space-1);
     font-size: 0.6em;
-    transition: transform 0.2s;
+    transition: transform var(--transition-base);
 }
 
 details[open] .details-toggle::before,
@@ -1077,9 +1077,9 @@ details[open] .details-hide {
     background: var(--bg-secondary);
     padding: var(--space-1) var(--space-2);
     border-radius: var(--radius-sm);
-    margin: 0.2rem 0.25rem 0.2rem 0;
+    margin: var(--space-1) var(--space-1) var(--space-1) 0;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background var(--transition-base);
     border: 1px solid var(--border);
     /* WCAG 2.2 Target Size: minimum 24x24px */
     min-height: 24px;
@@ -1097,7 +1097,7 @@ details[open] .details-hide {
     cursor: help;
     color: var(--text-muted);
     font-size: 0.85em;
-    transition: color 0.2s;
+    transition: color var(--transition-base);
     /* WCAG 2.2 Target Size: minimum 24x24px touch target */
     display: inline-flex;
     align-items: center;
@@ -1118,7 +1118,7 @@ details[open] .details-hide {
     border: 1px solid var(--accent-gold);
     border-radius: var(--radius-md);
     padding: var(--space-3);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--shadow-lg);
     z-index: 1000;
     display: none;
     font-size: var(--text-md);
@@ -1196,7 +1196,7 @@ details[open] .details-hide {
     height: 100%;
     background: var(--accent-gold);
     border-radius: var(--radius-sm);
-    transition: width 0.3s ease;
+    transition: width var(--transition-slow);
 }
 
 .property-fill.low {
@@ -1247,7 +1247,7 @@ details[open] .details-hide {
     border-left: 1px solid var(--border);
     padding: var(--space-8);
     overflow-y: auto;
-    transition: right 0.3s ease;
+    transition: right var(--transition-slow);
     z-index: 1000;
 }
 
@@ -1295,7 +1295,7 @@ details[open] .details-hide {
     background: var(--shadow-overlay);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s;
+    transition: opacity var(--transition-slow);
     z-index: 999;
 }
 
@@ -1374,8 +1374,8 @@ details[open] .details-hide {
     border-radius: var(--radius-sm);
     cursor: pointer;
     font-size: var(--text-md);
-    margin-left: 0.5rem;
-    transition: all 0.2s;
+    margin-left: var(--space-2);
+    transition: all var(--transition-base);
 }
 
 .info-btn:hover {
@@ -1485,7 +1485,7 @@ details[open] .details-hide {
 
 .fa-link {
     cursor: pointer;
-    transition: color 0.2s;
+    transition: color var(--transition-base);
     /* WCAG 2.2 Target Size: ensure adequate touch target */
     display: inline-flex;
     align-items: center;
@@ -1522,13 +1522,13 @@ details[open] .details-hide {
 @media (max-width: 480px) {
     .kofi-button {
         font-size: var(--text-sm);
-        padding: 0.4rem 0.75rem;
+        padding: var(--space-1) var(--space-3);
         top: 0.5rem;
     }
 
     .container {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
+        padding-left: var(--space-3);
+        padding-right: var(--space-3);
         padding-top: var(--space-12);
         padding-bottom: var(--space-12);
     }
@@ -1548,7 +1548,7 @@ details[open] .details-hide {
 
     header {
         margin-bottom: var(--space-8);
-        padding: 1.25rem 0;
+        padding: var(--space-5) 0;
     }
 
     .card-title {
@@ -1654,12 +1654,12 @@ details[open] .details-hide {
 
     .analysis-table th,
     .analysis-table td {
-        padding: 0.35rem 0.3rem;
+        padding: var(--space-1) var(--space-1);
     }
 
     select, input {
         font-size: var(--text-lg);
-        padding: 0.5rem 0.6rem;
+        padding: var(--space-2) var(--space-2);
     }
 
     .settings-row {
@@ -1808,7 +1808,7 @@ details[open] .details-hide {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.75rem 1.25rem;
+    gap: var(--space-3) var(--space-5);
     min-height: 1.5rem;
 }
 
@@ -1849,7 +1849,7 @@ details[open] .details-hide {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.75rem 1.25rem;
+    gap: var(--space-3) var(--space-5);
     margin-top: var(--space-3);
     padding-top: var(--space-3);
     border-top: 1px solid var(--border-30);
@@ -1939,7 +1939,7 @@ details[open] .details-hide {
     height: 100%;
     background: linear-gradient(90deg, var(--danger), var(--warning), var(--success));
     border-radius: var(--radius-sm);
-    transition: width 0.3s ease;
+    transition: width var(--transition-slow);
 }
 
 .match-percent {
@@ -1988,7 +1988,7 @@ details[open] .details-hide {
 
 .suggested-fat-name.clickable {
     cursor: pointer;
-    transition: color 0.2s;
+    transition: color var(--transition-base);
 }
 
 .suggested-fat-name.clickable:hover {
@@ -2027,7 +2027,7 @@ details[open] .details-hide {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.4rem 0.6rem;
+    padding: var(--space-1) var(--space-2);
     background: var(--bg-secondary);
     border-radius: var(--radius-sm);
     font-size: var(--text-md);
@@ -2072,7 +2072,7 @@ details[open] .details-hide {
 
 .achieved-values .diff {
     font-size: var(--text-sm);
-    margin-left: 0.25rem;
+    margin-left: var(--space-1);
 }
 
 .achieved-values .diff.positive {
@@ -2141,7 +2141,7 @@ details[open] .details-hide {
     cursor: pointer;
     font-family: var(--font-body);
     font-size: var(--text-lg);
-    transition: all 0.2s;
+    transition: all var(--transition-base);
 }
 
 .page-filter:hover {
@@ -2168,7 +2168,7 @@ details[open] .details-hide {
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     padding: var(--space-2) var(--space-4);
-    transition: border-color 0.3s, box-shadow 0.3s;
+    transition: border-color var(--transition-slow), box-shadow var(--transition-slow);
 }
 
 .entry-card > *:last-child {
@@ -2226,8 +2226,8 @@ details[open] .details-hide {
     color: var(--accent-green);
     font-size: var(--text-lg);
     font-weight: 500;
-    padding: 0.25rem 0;
-    transition: color 0.2s;
+    padding: var(--space-1) 0;
+    transition: color var(--transition-base);
 }
 
 .entry-details summary:hover {
@@ -2261,11 +2261,11 @@ details[open] .details-hide {
 .entry-related-link {
     color: var(--accent-cream);
     background: var(--bg-secondary);
-    padding: 0.2rem 0.6rem;
+    padding: var(--space-1) var(--space-2);
     border-radius: var(--radius-sm);
     text-decoration: none;
     border: 1px solid var(--border);
-    transition: all 0.2s;
+    transition: all var(--transition-base);
 }
 
 .entry-related-link:hover {
@@ -2376,7 +2376,7 @@ a.entry-title:hover,
 .fat-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: var(--space-2); padding: var(--space-3) var(--space-4); background: var(--bg-secondary); border-radius: var(--radius-md); }
 .fat-stat { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .fat-stat-label { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: var(--space-1); }
-a.fat-stat-label { text-decoration: none; border-bottom: 1px dotted var(--text-muted); transition: color 0.15s, border-color 0.15s; }
+a.fat-stat-label { text-decoration: none; border-bottom: 1px dotted var(--text-muted); transition: color var(--transition-fast), border-color var(--transition-fast); }
 a.fat-stat-label:hover { color: var(--accent-gold); border-bottom-color: var(--accent-gold); }
 .fat-stat-value { font-family: var(--font-mono); font-size: var(--text-xl); color: var(--text-primary); }
 
@@ -2391,7 +2391,7 @@ a.fat-stat-label:hover { color: var(--accent-gold); border-bottom-color: var(--a
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto;
-    gap: 0.25rem 0.75rem;
+    gap: var(--space-1) var(--space-3);
     align-items: center;
 }
 
@@ -2433,10 +2433,10 @@ a.fat-stat-label:hover { color: var(--accent-gold); border-bottom-color: var(--a
 /* Formula-specific: section boxes with tab-style headings */
 .formula-variables,
 .formula-example { margin-bottom: var(--space-3); }
-.formula-section-heading { font-size: var(--text-xs); color: var(--text-muted); margin: 0; text-transform: uppercase; letter-spacing: 0.05em; background: var(--bg-secondary); display: inline-block; padding: 0.3rem 0.75rem; border-radius: var(--radius-md) var(--radius-md) 0 0; }
+.formula-section-heading { font-size: var(--text-xs); color: var(--text-muted); margin: 0; text-transform: uppercase; letter-spacing: 0.05em; background: var(--bg-secondary); display: inline-block; padding: var(--space-1) var(--space-3); border-radius: var(--radius-md) var(--radius-md) 0 0; }
 .formula-section-box { background: var(--bg-secondary); border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md); padding: var(--space-3) var(--space-4); font-size: var(--text-md); color: var(--text-secondary); }
 .formula-section-box:last-child { margin-bottom: 0; }
-.formula-variables dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.25rem 1rem; }
+.formula-variables dl { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-1) var(--space-4); }
 .formula-variables dt { font-family: var(--font-mono); color: var(--accent-cream); }
 .formula-variables dd { margin: 0; }
 .example-scenario { font-weight: 500; color: var(--accent-cream); margin-bottom: var(--space-2); }
@@ -2444,9 +2444,9 @@ a.fat-stat-label:hover { color: var(--accent-gold); border-bottom-color: var(--a
 .example-step { color: var(--text-primary); }
 
 /* Formula-specific: range and technical */
-.formula-range { display: inline-flex; gap: var(--space-2); background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 0.35rem 0.75rem; font-size: var(--text-md); margin-bottom: var(--space-3); }
+.formula-range { display: inline-flex; gap: var(--space-2); background: var(--bg-secondary); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-3); font-size: var(--text-md); margin-bottom: var(--space-3); }
 .formula-range .range-values { font-family: var(--font-mono); color: var(--accent-green); }
-.formula-technical { margin: 0.75rem 0; }
+.formula-technical { margin: var(--space-3) 0; }
 .formula-technical-content { margin-top: var(--space-2); line-height: 1.7; }
 
 /* ============================================
@@ -2503,7 +2503,7 @@ a.citation-title .external-icon {
 
 .cited-by-label {
     color: var(--text-muted);
-    margin-right: 0.25rem;
+    margin-right: var(--space-1);
 }
 
 .cited-by-link {
@@ -2601,7 +2601,7 @@ a.citation-title .external-icon {
 .safety-item {
     font-size: var(--text-lg);
     color: var(--text-secondary);
-    padding: 0.35rem 0;
+    padding: var(--space-1) 0;
     border-bottom: 1px solid var(--border-30);
 }
 
@@ -2636,7 +2636,7 @@ a.citation-title .external-icon {
 }
 
 .final-recipe-content {
-    padding: 0.5rem 0;
+    padding: var(--space-2) 0;
 }
 
 .recipe-prose {
@@ -2652,8 +2652,8 @@ a.citation-title .external-icon {
 
 .qualitative-warnings {
     list-style: disc;
-    padding-left: 1.25rem;
-    margin: 0.75rem 0 1.5rem 0;
+    padding-left: var(--space-5);
+    margin: var(--space-3) 0 var(--space-6) 0;
 }
 
 .qualitative-warnings li {
@@ -2689,7 +2689,7 @@ a.citation-title .external-icon {
 .ingredients-list li {
     display: flex;
     gap: var(--space-3);
-    padding: 0.5rem 0;
+    padding: var(--space-2) 0;
     border-bottom: 1px solid var(--border-30);
 }
 
@@ -2710,13 +2710,13 @@ a.citation-title .external-icon {
 
 /* Procedure List */
 .procedure-list {
-    padding-left: 1.25rem;
+    padding-left: var(--space-5);
     margin: 0;
 }
 
 .procedure-list li {
     margin-bottom: var(--space-4);
-    padding-left: 0.5rem;
+    padding-left: var(--space-2);
     color: var(--text-secondary);
     line-height: 1.6;
 }
@@ -2752,7 +2752,7 @@ a.citation-title .external-icon {
 }
 
 .recipe-summary li {
-    padding: 0.4rem 0;
+    padding: var(--space-1) 0;
     border-bottom: 1px solid var(--border-30);
     font-size: var(--text-xl);
     color: var(--text-secondary);
@@ -2769,7 +2769,7 @@ a.citation-title .external-icon {
 }
 
 .fa-profile-table td {
-    padding: 0.4rem 0;
+    padding: var(--space-1) 0;
     border-bottom: 1px solid var(--border-30);
     font-size: var(--text-xl);
     color: var(--text-secondary);
@@ -2845,7 +2845,7 @@ a.citation-title .external-icon {
 .science-section summary {
     list-style: none;
     cursor: pointer;
-    padding: 1rem 1.25rem;
+    padding: var(--space-4) var(--space-5);
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -2864,8 +2864,8 @@ a.citation-title .external-icon {
 .science-section .details-toggle::before {
     content: '▶';
     display: inline-block;
-    margin-right: 0.5rem;
-    transition: transform 0.2s;
+    margin-right: var(--space-2);
+    transition: transform var(--transition-base);
     font-size: 0.6em;
 }
 
@@ -2895,7 +2895,7 @@ a.citation-title .external-icon {
 }
 
 .science-content {
-    padding: 1rem 1.25rem;
+    padding: var(--space-4) var(--space-5);
     border-top: 1px solid var(--border);
 }
 
@@ -3011,14 +3011,14 @@ a.citation-title .external-icon {
     display: flex;
     align-items: flex-start;
     gap: var(--space-3);
-    padding: 0.875rem 1rem;
+    padding: var(--space-3) var(--space-4);
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-md);
     opacity: 0;
     transform: translateX(100%);
-    transition: opacity 0.2s, transform 0.2s;
+    transition: opacity var(--transition-base), transform var(--transition-base);
     pointer-events: auto;
 }
 
@@ -3054,7 +3054,7 @@ a.citation-title .external-icon {
     cursor: pointer;
     padding: 0;
     line-height: 1;
-    transition: color 0.2s;
+    transition: color var(--transition-base);
 }
 
 .toast-close:hover {
@@ -3136,7 +3136,7 @@ a.citation-title .external-icon {
 
 /* Property comparison preview */
 .cupboard-property-preview {
-    margin: 1rem 0;
+    margin: var(--space-4) 0;
     padding: var(--space-4);
     background: var(--bg-input);
     border-radius: var(--radius-lg);
@@ -3162,7 +3162,7 @@ a.citation-title .external-icon {
     grid-template-columns: 1fr auto auto auto auto;
     gap: var(--space-3);
     align-items: center;
-    padding: 0.35rem 0;
+    padding: var(--space-1) 0;
     font-size: var(--text-lg);
 }
 
@@ -3226,14 +3226,14 @@ a.citation-title .external-icon {
     .build-mode-tab {
         flex: 1 1 45%;
         text-align: center;
-        padding: 0.5rem 0.5rem;
+        padding: var(--space-2) var(--space-2);
         font-size: var(--text-base);
     }
 
     .additive-tab {
         flex: 1 1 30%;
         text-align: center;
-        padding: 0.5rem 0.5rem;
+        padding: var(--space-2) var(--space-2);
         font-size: var(--text-base);
     }
 
