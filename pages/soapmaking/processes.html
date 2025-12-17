@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>References - Soap Making</title>
+    <title>Processes - Soapmaking</title>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="container page-container">
         <header class="page-header">
-            <h1>References</h1>
-            <p class="page-intro">All sources cited by this recipe builder, grouped by publication.</p>
+            <h1>Processes</h1>
+            <p class="page-intro">Step-by-step methods for cold and hot process soap.</p>
             <nav class="header-nav">
-                <a href="../index.html" class="header-link">Recipe builder</a>
-                <a href="soapmaking/" class="header-link">Soapmaking</a>
-                <a href="how-it-works/" class="header-link">How it works</a>
-                <a href="references.html" class="header-link" aria-current="page">References</a>
+                <a href="../../index.html" class="header-link">Recipe builder</a>
+                <a href="../soapmaking/" class="header-link" aria-current="page">Soapmaking</a>
+                <a href="../how-it-works/" class="header-link">How it works</a>
+                <a href="../references.html" class="header-link">References</a>
                 <a href="https://ko-fi.com/arkavia" target="_blank" rel="noopener" class="kofi-button" title="Ko-fi: Buy me a slice of babka?">
                     <svg class="kofi-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311z"/>
@@ -27,17 +27,19 @@
             </nav>
         </header>
 
-        <div class="page-summary" id="referencesSummary">
-            <!-- Populated by JS: "X publications cited" -->
-        </div>
+        <nav class="page-nav" role="tablist" aria-label="Filter processes by difficulty">
+            <button class="page-filter active" data-category="all" role="tab" aria-selected="true" aria-controls="processesList" id="filter-all">All</button>
+            <button class="page-filter" data-category="beginner" role="tab" aria-selected="false" aria-controls="processesList" id="filter-beginner">Beginner</button>
+            <button class="page-filter" data-category="intermediate" role="tab" aria-selected="false" aria-controls="processesList" id="filter-intermediate">Intermediate</button>
+        </nav>
 
         <main id="main-content">
-            <div class="page-list" id="referencesList" aria-live="polite">
+            <div class="page-list" id="processesList" role="tabpanel" aria-live="polite">
                 <!-- Populated by JS -->
             </div>
         </main>
     </div>
 
-    <script type="module" src="./js/references.js"></script>
+    <script type="module" src="./js/processes.js"></script>
 </body>
 </html>
