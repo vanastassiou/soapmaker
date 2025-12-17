@@ -1,0 +1,643 @@
+{
+  "bergamot-eo": {
+    "name": "Bergamot essential oil (FCF)",
+    "description": "Cold-pressed from Citrus bergamia peel, furocoumarin-free (FCF). Primary constituents: linalyl acetate (30-60%), limonene (25-50%).",
+    "density": 0.88,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8007-75-8",
+      "flashPointC": 57,
+      "ifraCategory9Limit": 11.2,
+      "majorConstituents": [
+        "linalyl-acetate",
+        "limonene",
+        "linalool"
+      ]
+    },
+    "scentNote": "top",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1.5,
+      "max": 4
+    },
+    "references": [
+      {
+        "sourceId": "ifra",
+        "section": "Bergamot oil expressed Amendment 49",
+        "url": "https://ifrafragrance.org/standards/IFRA_STD_087.pdf"
+      }
+    ]
+  },
+  "cedarwood-eo": {
+    "name": "Cedarwood essential oil (atlas)",
+    "description": "Steam-distilled from Cedrus atlantica wood. Primary constituents: alpha-cedrene, beta-cedrene, cedrol. Used to anchor lighter scents.",
+    "density": 0.94,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8000-27-9",
+      "flashPointC": 93,
+      "majorConstituents": [
+        "alpha-cedrene",
+        "beta-cedrene",
+        "cedrol"
+      ]
+    },
+    "scentNote": "base",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 2,
+      "max": 4
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "(-)-alpha-Cedrene (CID 6431015) - major constituent of cedarwood oil",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6431015"
+      }
+    ]
+  },
+  "clary-sage-eo": {
+    "name": "Clary sage essential oil",
+    "description": "Steam-distilled from Salvia sclarea flowering tops. Primary constituents: linalyl acetate (56-78%), linalool (6.5-24%), sclareol.",
+    "density": 0.9,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8016-63-5",
+      "flashPointC": 79,
+      "ifraCategory9Limit": 3.8,
+      "majorConstituents": [
+        "linalyl-acetate",
+        "linalool",
+        "sclareol"
+      ]
+    },
+    "scentNote": "middle",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 3
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Clary sage oil (CID 6850745)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850745"
+      }
+    ]
+  },
+  "eucalyptus-eo": {
+    "name": "Eucalyptus essential oil (globulus)",
+    "description": "Steam-distilled from Eucalyptus globulus leaves. Primary constituents: eucalyptol/1,8-cineole (70-90%), alpha-pinene (1-5%).",
+    "density": 0.92,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8000-48-4",
+      "flashPointC": 49,
+      "ifraCategory9Limit": 2.5,
+      "majorConstituents": [
+        "eucalyptol",
+        "1,8-cineole",
+        "alpha-pinene"
+      ]
+    },
+    "scentNote": "top",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 3
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Eucalyptus oil compound summary",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Eucalyptus-Oil"
+      }
+    ]
+  },
+  "frankincense-eo": {
+    "name": "Frankincense essential oil (Boswellia carterii)",
+    "description": "Steam-distilled from Boswellia carterii resin. Primary constituents: alpha-pinene, limonene, alpha-thujene.",
+    "density": 0.88,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8016-36-2",
+      "flashPointC": 51,
+      "ifraCategory9Limit": 4.0,
+      "majorConstituents": [
+        "alpha-pinene",
+        "limonene",
+        "alpha-thujene"
+      ]
+    },
+    "scentNote": "base",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 3
+    },
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "Review of the Chemical Composition, Pharmacological Effects, Pharmacokinetics, and Quality Control of Boswellia carterii",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8776457/"
+      }
+    ]
+  },
+  "geranium-eo": {
+    "name": "Geranium essential oil (rose)",
+    "description": "Steam-distilled from Pelargonium graveolens leaves. Primary constituents: citronellol (21.9%), geraniol (11.1%), linalool (5.6%). Accelerates trace.",
+    "density": 0.89,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8000-46-2",
+      "flashPointC": 80,
+      "ifraCategory9Limit": 1.1,
+      "majorConstituents": [
+        "citronellol",
+        "geraniol",
+        "linalool"
+      ]
+    },
+    "scentNote": "middle",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 2.5
+    },
+    "references": [
+      {
+        "sourceId": "pubmed",
+        "section": "Chemical composition and biological activities of Pelargonium graveolens",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23027699/"
+      }
+    ]
+  },
+  "grapefruit-eo": {
+    "name": "Grapefruit essential oil (pink)",
+    "description": "Cold-pressed from Citrus paradisi peel. Primary constituent: d-limonene (90-96%). Phototoxic in leave-on products; safe for rinse-off soap.",
+    "density": 0.85,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8016-20-4",
+      "flashPointC": 45,
+      "ifraCategory9Limit": 4.0,
+      "majorConstituents": [
+        "d-limonene",
+        "beta-myrcene",
+        "gamma-terpinene"
+      ]
+    },
+    "scentNote": "top",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 2,
+      "max": 4
+    },
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "Chemical Profiling and Anti-Inflammatory Activities of Grapefruit Essential Oils",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8199889/"
+      }
+    ]
+  },
+  "lavender-eo": {
+    "name": "Lavender essential oil",
+    "description": "Steam-distilled from Lavandula angustifolia flowers. Primary constituents: linalool (25-45%), linalyl acetate (25-45%).",
+    "density": 0.88,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8000-28-0",
+      "flashPointC": 75,
+      "ifraCategory9Limit": 5.5,
+      "majorConstituents": [
+        "linalool",
+        "linalyl-acetate"
+      ]
+    },
+    "scentNote": "middle",
+    "anchoring": [
+      "cedarwood-eo",
+      "patchouli-eo"
+    ],
+    "usage": {
+      "basis": "oil-weight",
+      "min": 2,
+      "max": 3
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Lavender oil (CID 6654)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6654"
+      }
+    ]
+  },
+  "lemongrass-eo": {
+    "name": "Lemongrass essential oil",
+    "description": "Steam-distilled from Cymbopogon flexuosus or C. citratus. Primary constituent: citral (70-85%).",
+    "density": 0.89,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8007-02-1",
+      "flashPointC": 74,
+      "ifraCategory9Limit": 0.6,
+      "majorConstituents": [
+        "citral",
+        "geranial",
+        "neral"
+      ]
+    },
+    "scentNote": "top",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 2.5
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Lemongrass oil (CID 6850740)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850740"
+      }
+    ]
+  },
+  "lime-eo": {
+    "name": "Lime essential oil (distilled)",
+    "description": "Steam-distilled from Citrus aurantifolia peel. Primary constituent: d-limonene (~50%). Distilled version is non-phototoxic.",
+    "density": 0.86,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8008-26-2",
+      "flashPointC": 50,
+      "ifraCategory9Limit": 3.0,
+      "majorConstituents": [
+        "d-limonene",
+        "gamma-terpinene",
+        "alpha-pinene"
+      ]
+    },
+    "scentNote": "top",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 2,
+      "max": 4
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Lime oil (CID 6850737)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850737"
+      }
+    ]
+  },
+  "may-chang-eo": {
+    "name": "May chang essential oil (Litsea cubeba)",
+    "description": "Steam-distilled from Litsea cubeba fruits. Primary constituent: citral (>75%). Better scent retention than lemongrass.",
+    "density": 0.88,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "68855-99-2",
+      "flashPointC": 54,
+      "ifraCategory9Limit": 0.6,
+      "majorConstituents": [
+        "citral",
+        "geranial",
+        "neral",
+        "limonene"
+      ]
+    },
+    "scentNote": "top",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 2.5
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Litsea cubeba oil (CID 101306076)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/101306076"
+      }
+    ]
+  },
+  "patchouli-eo": {
+    "name": "Patchouli essential oil",
+    "description": "Steam-distilled from Pogostemon cablin leaves. Primary constituent: patchoulol (25-35%). Used to anchor lighter scents.",
+    "density": 0.95,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8014-09-3",
+      "flashPointC": 100,
+      "majorConstituents": [
+        "patchoulol",
+        "alpha-bulnesene"
+      ]
+    },
+    "scentNote": "base",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 3
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Patchoulol (CID 442384)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/442384"
+      }
+    ]
+  },
+  "peppermint-eo": {
+    "name": "Peppermint essential oil",
+    "description": "Steam-distilled from Mentha piperita leaves. Primary constituents: menthol (30-55%), menthone (14-32%).",
+    "density": 0.9,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8006-90-4",
+      "flashPointC": 66,
+      "ifraCategory9Limit": 5.4,
+      "majorConstituents": [
+        "menthol",
+        "menthone"
+      ]
+    },
+    "scentNote": "top",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 3
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Peppermint oil (CID 16666)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/16666"
+      }
+    ]
+  },
+  "rosemary-eo": {
+    "name": "Rosemary essential oil",
+    "description": "Steam-distilled from Rosmarinus officinalis leaves and flowering tops. Primary constituents: 1,8-cineole, camphor, alpha-pinene.",
+    "density": 0.91,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8000-25-7",
+      "flashPointC": 43,
+      "ifraCategory9Limit": 4.1,
+      "majorConstituents": [
+        "1,8-cineole",
+        "camphor",
+        "alpha-pinene"
+      ]
+    },
+    "scentNote": "middle",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 3
+    },
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "Evaluation of Marketed Rosemary Essential Oils",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10445223/"
+      }
+    ]
+  },
+  "sandalwood-eo": {
+    "name": "Sandalwood essential oil (East Indian)",
+    "description": "Steam-distilled from Santalum album heartwood. Primary constituents: alpha-santalol, beta-santalol (>90%). Sustainable sourcing critical.",
+    "density": 0.97,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": true
+    },
+    "safety": {
+      "casNumber": "8006-87-9",
+      "flashPointC": 92,
+      "ifraCategory9Limit": 5.0,
+      "majorConstituents": [
+        "alpha-santalol",
+        "beta-santalol",
+        "santalene"
+      ]
+    },
+    "scentNote": "base",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 3
+    },
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "Sandalwood Album Oil as Botanical Therapeutic in Dermatology",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5749697/"
+      }
+    ]
+  },
+  "spearmint-eo": {
+    "name": "Spearmint essential oil",
+    "description": "Steam-distilled from Mentha spicata leaves. Primary constituent: R-(-)-carvone (50-80%). Less intense than peppermint.",
+    "density": 0.92,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8008-79-5",
+      "flashPointC": 88,
+      "ifraCategory9Limit": 1.6,
+      "majorConstituents": [
+        "carvone",
+        "limonene",
+        "menthol"
+      ]
+    },
+    "scentNote": "top",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 3
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Spearmint oil (CID 6850653)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850653"
+      }
+    ]
+  },
+  "sweet-orange-eo": {
+    "name": "Sweet orange essential oil",
+    "description": "Cold-pressed from Citrus sinensis peel. Primary constituent: d-limonene (93-96%). Oxidizes readily; use with antioxidants.",
+    "density": 0.84,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8008-57-9",
+      "flashPointC": 48,
+      "ifraCategory9Limit": 3.4,
+      "majorConstituents": [
+        "d-limonene",
+        "octanal",
+        "decanal",
+        "citral"
+      ]
+    },
+    "scentNote": "top",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 2,
+      "max": 4
+    },
+    "references": [
+      {
+        "sourceId": "cosmetic-ingredient-review",
+        "section": "Safety Assessment of Citrus-Derived Peel Oils",
+        "url": "https://www.cir-safety.org/sites/default/files/cpeelo092014FR.pdf"
+      }
+    ]
+  },
+  "tea-tree-eo": {
+    "name": "Tea tree essential oil",
+    "description": "Steam-distilled from Melaleuca alternifolia leaves. Primary constituents: terpinen-4-ol (30-48%), gamma-terpinene (10-28%).",
+    "density": 0.89,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "68647-73-4",
+      "flashPointC": 57,
+      "ifraCategory9Limit": 15,
+      "majorConstituents": [
+        "terpinen-4-ol",
+        "gamma-terpinene"
+      ]
+    },
+    "scentNote": "middle",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 1,
+      "max": 3
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Tea tree oil (CID 11093217)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/11093217"
+      }
+    ]
+  },
+  "vetiver-eo": {
+    "name": "Vetiver essential oil",
+    "description": "Steam-distilled from Vetiveria zizanioides roots. Primary constituents: khusimol, alpha-vetivone, beta-vetivone. Anchors lighter scents.",
+    "density": 0.99,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8016-96-4",
+      "flashPointC": 110,
+      "ifraCategory9Limit": 5.0,
+      "majorConstituents": [
+        "khusimol",
+        "alpha-vetivone",
+        "beta-vetivone"
+      ]
+    },
+    "scentNote": "base",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.5,
+      "max": 2
+    },
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Vetiver oil (CID 102265069)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/102265069"
+      }
+    ]
+  },
+  "ylang-ylang-eo": {
+    "name": "Ylang ylang essential oil (complete)",
+    "description": "Steam-distilled from Cananga odorata flowers. Primary constituents: linalool, benzyl acetate, benzyl benzoate. Moderate sensitization risk.",
+    "density": 0.94,
+    "dietary": {
+      "animalBased": false,
+      "sourcingConcerns": false
+    },
+    "safety": {
+      "casNumber": "8006-81-3",
+      "flashPointC": 88,
+      "ifraCategory9Limit": 0.8,
+      "majorConstituents": [
+        "linalool",
+        "benzyl-acetate",
+        "benzyl-benzoate",
+        "geraniol"
+      ]
+    },
+    "scentNote": "base",
+    "usage": {
+      "basis": "oil-weight",
+      "min": 0.5,
+      "max": 2
+    },
+    "references": [
+      {
+        "sourceId": "echa",
+        "section": "Registration Dossier ylang ylang flower oil",
+        "url": "https://echa.europa.eu/registration-dossier/-/registered-dossier/22736"
+      }
+    ]
+  }
+}
