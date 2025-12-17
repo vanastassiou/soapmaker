@@ -32,40 +32,59 @@ import * as ui from './ui/ui.js';
 
 async function loadData() {
     try {
-        const [fatsResponse, glossaryResponse, fattyAcidsResponse, additivesResponse, tooltipsResponse, sourcesResponse, formulasResponse,
-               fatsSchemaResponse, glossarySchemaResponse, fattyAcidsSchemaResponse, additivesSchemaResponse, tooltipsSchemaResponse, sourcesSchemaResponse, formulasSchemaResponse] = await Promise.all([
+        // Additive databases (4 separate files by category)
+        const additiveFiles = ['fragrances', 'colourants', 'soap-performance', 'skin-care'];
+
+        const [fatsResponse, glossaryResponse, fattyAcidsResponse, tooltipsResponse, sourcesResponse, formulasResponse,
+               ...additiveResponses] = await Promise.all([
             fetch('./data/fats.json'),
             fetch('./data/glossary.json'),
             fetch('./data/fatty-acids.json'),
-            fetch('./data/additives.json'),
             fetch('./data/tooltips.json'),
             fetch('./data/sources.json'),
             fetch('./data/formulas.json'),
+            ...additiveFiles.map(f => fetch(`./data/${f}.json`))
+        ]);
+
+        const [fatsSchemaResponse, glossarySchemaResponse, fattyAcidsSchemaResponse, tooltipsSchemaResponse, sourcesSchemaResponse, formulasSchemaResponse,
+               commonDefinitionsSchemaResponse, ...additiveSchemaResponses] = await Promise.all([
             fetch('./data/schemas/fats.schema.json'),
             fetch('./data/schemas/glossary.schema.json'),
             fetch('./data/schemas/fatty-acids.schema.json'),
-            fetch('./data/schemas/additives.schema.json'),
             fetch('./data/schemas/tooltips.schema.json'),
             fetch('./data/schemas/sources.schema.json'),
-            fetch('./data/schemas/formulas.schema.json')
+            fetch('./data/schemas/formulas.schema.json'),
+            fetch('./data/schemas/common-definitions.schema.json'),
+            ...additiveFiles.map(f => fetch(`./data/schemas/${f}.schema.json`))
         ]);
 
         state.fatsDatabase = await fatsResponse.json();
         state.glossaryData = await glossaryResponse.json();
         state.fattyAcidsData = await fattyAcidsResponse.json();
-        state.additivesDatabase = await additivesResponse.json();
         state.tooltipsData = await tooltipsResponse.json();
         state.sourcesData = await sourcesResponse.json();
         state.formulasData = await formulasResponse.json();
 
+        // Load additive databases into state
+        const additiveData = await Promise.all(additiveResponses.map(r => r.json()));
+        state.fragrancesDatabase = additiveData[0];
+        state.colourantsDatabase = additiveData[1];
+        state.soapPerformanceDatabase = additiveData[2];
+        state.skinCareDatabase = additiveData[3];
+
+        const additiveSchemas = await Promise.all(additiveSchemaResponses.map(r => r.json()));
         const schemas = {
             fats: await fatsSchemaResponse.json(),
             glossary: await glossarySchemaResponse.json(),
             fattyAcids: await fattyAcidsSchemaResponse.json(),
-            additives: await additivesSchemaResponse.json(),
             tooltips: await tooltipsSchemaResponse.json(),
             sources: await sourcesSchemaResponse.json(),
-            formulas: await formulasSchemaResponse.json()
+            formulas: await formulasSchemaResponse.json(),
+            commonDefinitions: await commonDefinitionsSchemaResponse.json(),
+            fragrances: additiveSchemas[0],
+            colourants: additiveSchemas[1],
+            soapPerformance: additiveSchemas[2],
+            skinCare: additiveSchemas[3]
         };
 
         validation.initValidation(schemas);
@@ -73,10 +92,13 @@ async function loadData() {
             fats: state.fatsDatabase,
             glossary: state.glossaryData,
             fattyAcids: state.fattyAcidsData,
-            additives: state.additivesDatabase,
             tooltips: state.tooltipsData,
             sources: state.sourcesData,
-            formulas: state.formulasData
+            formulas: state.formulasData,
+            fragrances: state.fragrancesDatabase,
+            colourants: state.colourantsDatabase,
+            soapPerformance: state.soapPerformanceDatabase,
+            skinCare: state.skinCareDatabase
         });
     } catch (error) {
         console.error('Error loading or validating data:', error);
@@ -149,17 +171,18 @@ function renderAdditivesList() {
 
     const settings = ui.getSettings();
     const totalFatWeight = settings.recipeWeight;
+    const allAdditives = getAllAdditivesDatabase();
 
     return ui.renderAdditives(
         container,
         state.recipeAdditives,
-        state.additivesDatabase,
+        allAdditives,
         totalFatWeight,
         settings.unit,
         {
             onWeightChange: handleAdditiveWeightChange,
             onRemove: handleRemoveAdditive,
-            onInfo: (additiveId) => ui.showAdditiveInfo(additiveId, state.additivesDatabase)
+            onInfo: (additiveId) => ui.showAdditiveInfo(additiveId, allAdditives)
         }
     );
 }
@@ -405,7 +428,40 @@ function updateExclusionUI() {
 // Additive Event Handlers
 // ============================================
 
-let currentAdditiveCategory = ADDITIVE_CATEGORIES.ESSENTIAL_OIL;
+let currentAdditiveCategory = ADDITIVE_CATEGORIES.FRAGRANCE;
+
+/**
+ * Mapping from category to state database property
+ */
+const ADDITIVE_DATABASES = {
+    [ADDITIVE_CATEGORIES.FRAGRANCE]: 'fragrancesDatabase',
+    [ADDITIVE_CATEGORIES.COLOURANT]: 'colourantsDatabase',
+    [ADDITIVE_CATEGORIES.SOAP_PERFORMANCE]: 'soapPerformanceDatabase',
+    [ADDITIVE_CATEGORIES.SKIN_CARE]: 'skinCareDatabase'
+};
+
+/**
+ * Get the database for a specific additive category
+ * @param {string} category - The category (fragrance, colourant, soap-performance, skin-care)
+ * @returns {Object} The appropriate database
+ */
+function getAdditiveDatabaseForCategory(category) {
+    const dbName = ADDITIVE_DATABASES[category];
+    return dbName ? state[dbName] : {};
+}
+
+/**
+ * Get combined database for looking up any additive by ID
+ * @returns {Object} Combined database of all additives
+ */
+function getAllAdditivesDatabase() {
+    return {
+        ...state.fragrancesDatabase,
+        ...state.colourantsDatabase,
+        ...state.soapPerformanceDatabase,
+        ...state.skinCareDatabase
+    };
+}
 
 function handleAddAdditive() {
     const select = $(ELEMENT_IDS.additiveSelect);
@@ -444,7 +500,8 @@ function updateAdditiveSelect() {
     if (!select) return;
 
     const existingIds = state.recipeAdditives.map(a => a.id);
-    ui.populateAdditiveSelect(select, state.additivesDatabase, currentAdditiveCategory, existingIds);
+    const database = getAdditiveDatabaseForCategory(currentAdditiveCategory);
+    ui.populateAdditiveSelect(select, database, existingIds);
 }
 
 // ============================================
@@ -1405,8 +1462,11 @@ function handleShowParameter() {
         ui.showFatInfo(id, state.fatsDatabase, state.fattyAcidsData, (acidKey) => {
             ui.showGlossaryInfo(acidKey, state.glossaryData, state.recipe, state.fatsDatabase);
         });
-    } else if (type === 'additive' && state.additivesDatabase[id]) {
-        ui.showAdditiveInfo(id, state.additivesDatabase);
+    } else if (type === 'additive') {
+        const allAdditives = getAllAdditivesDatabase();
+        if (allAdditives[id]) {
+            ui.showAdditiveInfo(id, allAdditives);
+        }
     }
 
     // Clean URL without reloading

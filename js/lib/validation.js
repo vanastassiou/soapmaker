@@ -8,7 +8,7 @@ let validators = {};
 
 /**
  * Initialize Ajv and compile schemas
- * @param {Object} schemas - {fats, glossary, fattyAcids, additives, tooltips, sources}
+ * @param {Object} schemas - Schema objects including commonDefinitions for shared refs
  */
 export function initValidation(schemas) {
     if (typeof Ajv === 'undefined') {
@@ -17,19 +17,28 @@ export function initValidation(schemas) {
 
     ajvInstance = new Ajv({ allErrors: true, strict: false });
 
+    // Register common definitions schema first for cross-file $ref support
+    if (schemas.commonDefinitions) {
+        ajvInstance.addSchema(schemas.commonDefinitions, 'common-definitions.schema.json');
+    }
+
     validators = {
         fats: ajvInstance.compile(schemas.fats),
         glossary: ajvInstance.compile(schemas.glossary),
         fattyAcids: ajvInstance.compile(schemas.fattyAcids),
-        additives: ajvInstance.compile(schemas.additives),
         tooltips: ajvInstance.compile(schemas.tooltips),
-        sources: ajvInstance.compile(schemas.sources)
+        sources: ajvInstance.compile(schemas.sources),
+        formulas: ajvInstance.compile(schemas.formulas),
+        fragrances: ajvInstance.compile(schemas.fragrances),
+        colourants: ajvInstance.compile(schemas.colourants),
+        soapPerformance: ajvInstance.compile(schemas.soapPerformance),
+        skinCare: ajvInstance.compile(schemas.skinCare)
     };
 }
 
 /**
  * Validate data against schema
- * @param {string} schemaName - 'fats', 'glossary', 'fattyAcids', or 'additives'
+ * @param {string} schemaName - Schema name (e.g., 'fats', 'glossary', 'fragrances')
  * @param {Object} data - Data to validate
  * @returns {{valid: boolean, errors: Array|null}}
  */
@@ -60,18 +69,14 @@ export function formatErrors(errors) {
 
 /**
  * Validate all data files and throw on failure (strict mode)
- * @param {Object} data - {fats, glossary, fattyAcids, additives, tooltips, sources}
+ * @param {Object} data - All data objects to validate against their schemas
  * @throws {Error} If any validation fails
  */
 export function validateAllStrict(data) {
-    const results = {
-        fats: validate('fats', data.fats),
-        glossary: validate('glossary', data.glossary),
-        fattyAcids: validate('fattyAcids', data.fattyAcids),
-        additives: validate('additives', data.additives),
-        tooltips: validate('tooltips', data.tooltips),
-        sources: validate('sources', data.sources)
-    };
+    const results = {};
+    for (const [name, dataset] of Object.entries(data)) {
+        results[name] = validate(name, dataset);
+    }
 
     const failures = Object.entries(results)
         .filter(([_, result]) => !result.valid);
