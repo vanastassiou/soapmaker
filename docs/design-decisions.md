@@ -2,14 +2,8 @@
 
 This document describes the architectural decisions and patterns used in the Soap Recipe Builder application.
 
-## Table of Contents
-
-- [Module Architecture](#module-architecture)
-- [Reusable Components](#reusable-components)
-- [State Management](#state-management)
-- [Error Handling](#error-handling)
-- [Accessibility Patterns](#accessibility-patterns)
-- [Constants Organization](#constants-organization)
+<!-- toc -->
+<!-- tocstop -->
 
 ---
 
