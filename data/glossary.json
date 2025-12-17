@@ -25,10 +25,24 @@
       "max": 46,
       "min": 14
     },
+    "references": [
+      {
+        "sourceId": "soapcalc",
+        "section": "Soap Qualities",
+        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "note": "Empirically derived formula from soapmaking community practice; not peer-reviewed"
+      },
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Scientific context: fatty acid composition affects lather properties"
+      }
+    ],
     "related": [
       "creamy"
     ],
-    "term": "Bubbly lather"
+    "term": "Lather volume"
   },
   "butter": {
     "category": "concept",
@@ -85,6 +99,20 @@
       "max": 22,
       "min": 12
     },
+    "references": [
+      {
+        "sourceId": "soapcalc",
+        "section": "Soap Qualities",
+        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "note": "Empirically derived formula; measures water solubility rather than cleaning ability"
+      },
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Scientific context: short-chain saturated fatty acids affect soap solubility"
+      }
+    ],
     "related": [
       "conditioning"
     ],
@@ -117,6 +145,20 @@
       "max": 69,
       "min": 44
     },
+    "references": [
+      {
+        "sourceId": "soapcalc",
+        "section": "Soap Qualities",
+        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "note": "Empirically derived formula from soapmaking community practice; not peer-reviewed"
+      },
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Scientific context: unsaturated fatty acids provide moisturizing properties"
+      }
+    ],
     "related": [
       "unsaturated",
       "hardness"
@@ -130,6 +172,18 @@
     ],
     "desc": "Per FDA FALCPA and FASTER Act, the nine major food allergens are: milk, eggs, fish, shellfish, tree nuts, peanuts, wheat, soybeans, and sesame.",
     "details": "In cosmetics, the EU Cosmetics Regulation (EC) No 1223/2009 Annex III lists 26 fragrance allergens requiring declaration, including limonene, linalool, citronellol, and eugenol.\n\nRelevant to soapmaking:\n\u2022 Milk proteins (goat milk, buttermilk)\n\u2022 Tree nut oils (almond, walnut, hazelnut)\n\u2022 Soy derivatives (soybean oil)\n\u2022 Wheat proteins (wheat germ oil)\n\u2022 Lanolin (wool allergy cross-reactivity)\n\nSaponification denatures most proteins, but trace compounds may remain.",
+    "references": [
+      {
+        "sourceId": "fda-allergens",
+        "section": "Food Allergen Labeling and Consumer Protection Act (FALCPA) and FASTER Act",
+        "url": "https://www.fda.gov/food/food-allergensgluten-free-guidance-documents-regulatory-information/food-allergen-labeling-and-consumer-protection-act-2004-falcpa"
+      },
+      {
+        "sourceId": "eu-cosmetics-regulation",
+        "section": "Regulation (EC) No 1223/2009, Annex III",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02009R1223-20231201"
+      }
+    ],
     "related": [
       "ifra"
     ],
@@ -147,10 +201,24 @@
       "max": 48,
       "min": 16
     },
+    "references": [
+      {
+        "sourceId": "soapcalc",
+        "section": "Soap Qualities",
+        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "note": "Empirically derived formula from soapmaking community practice; not peer-reviewed"
+      },
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Scientific context: palmitic and stearic acids contribute to stable lather"
+      }
+    ],
     "related": [
       "bubbly"
     ],
-    "term": "Creamy lather"
+    "term": "Lather stability"
   },
   "cure": {
     "category": "concept",
@@ -159,6 +227,14 @@
     ],
     "desc": "4-6 week rest period after unmoulding. Water evaporates, crystal structure completes, bar becomes milder and harder.",
     "details": "Soap is technically safe after 24-48hrs (saponification complete) but improves dramatically with cure.\n\nCured soap: harder, milder lather, longer lasting.\n\nSome recipes (castile, high-olive) benefit from 6-12 month cure.",
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Cold saponification takes 18-24h; curing requires 3-4 weeks for water evaporation"
+      }
+    ],
     "related": [
       "hardness",
       "trace",
@@ -174,6 +250,13 @@
     ],
     "desc": "Mass per unit volume of an oil or fat, typically expressed in g/mL. Used to estimate batch volume from weight.",
     "details": "Most soap-making oils have densities between 0.91-0.97 g/mL.\n\nLighter oils (coconut ~0.92) give slightly more volume per gram than heavier oils (castor ~0.96).\n\nUsed with the volume estimate calculation to help size moulds.",
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Physical properties",
+        "note": "Density values from compound pages; see individual fat entries for sources"
+      }
+    ],
     "related": [
       "volume-estimate",
       "fat"
@@ -187,6 +270,14 @@
     ],
     "desc": "Oxidative rancidity appearing as orange or yellow spots with an unpleasant smell. Caused by polyunsaturated fatty acids oxidizing over time.",
     "details": "Prevention:\n\u2022 Use antioxidants (ROE at 0.02-0.05%, Vitamin E)\n\u2022 Cure in cool, dark place\n\u2022 Limit high-linoleic/linolenic oils\n\u2022 Use within 8-12 months for high-PUFA recipes",
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6827023",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6827023/",
+        "note": "Lipid oxidation mechanisms causing dreaded orange spots"
+      }
+    ],
     "related": [
       "unsaturated",
       "cure"
@@ -227,6 +318,13 @@
     ],
     "desc": "A triglyceride: three fatty acids bonded to a glycerol backbone. The general term for saponifiable lipids used in soapmaking.",
     "details": "Fats react with lye (NaOH or KOH) to produce soap and glycerin. The fatty acid composition determines the soap's properties.\n\nIn common usage, 'fat' often refers to lipids solid at room temperature, while 'oil' refers to liquid ones, but chemically they're the same class of compounds.",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Triacylglycerols (T06411)",
+        "url": "https://goldbook.iupac.org/terms/view/T06411"
+      }
+    ],
     "related": [
       "oil",
       "butter",
@@ -242,6 +340,14 @@
     ],
     "desc": "When soap batter appears thick like trace but hasn't truly emulsified. Caused by saturated fats solidifying on contact with cooler lye solution.",
     "details": "False trace occurs when hard fats (coconut oil, palm, butters) cool and solidify before proper emulsification. The batter looks thick but oils and lye haven't combined.\n\nCauses:\n\u2022 Large temperature difference between oils and lye\n\u2022 High percentage of saturated fats\n\u2022 Insufficient stick blending before fats solidify\n\nRisks: separation in mould, pockets of unsaponified oil or lye.\n\nPrevention: ensure oils and lye are within 10\u00b0F/5\u00b0C of each other, blend thoroughly before fats can resolidify, work at warmer temperatures with high-saturated recipes.",
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Saponification process and temperature effects on emulsification"
+      }
+    ],
     "related": [
       "trace",
       "saturated",
@@ -256,6 +362,14 @@
     ],
     "desc": "Heating stage during saponification where soap becomes translucent and gel-like. Results in brighter colours and harder finished bar.",
     "details": "Forcing gel: insulate mould, use CPOP (cold process oven process)\nPreventing gel: refrigerate/freeze mould, use individual cavities\n\nPartial gel creates darker center ring. Glycerin rivers more likely with low water + gel.",
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Saponification reaction generates heat causing gel phase transition"
+      }
+    ],
     "related": [
       "trace",
       "cure",
@@ -270,6 +384,14 @@
     ],
     "desc": "Veined visual pattern in soap. Despite the name, not actually glycerin; it's the first fatty acid soaps to solidify during extended gel phase cooling. Purely cosmetic.",
     "details": "Occurs when soap in gel phase (a lyotropic liquid-crystalline phase) cools slowly. Pigments migrate away from solidifying areas, creating visible patterns.\n\nPrevention:\n\u2022 Water discount (10%+) speeds saponification\n\u2022 Lower temperatures\n\u2022 Avoid gel phase (freezer method)\n\u2022 Disperse pigments in oil, not water",
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Lyotropic liquid-crystalline phase behaviour during saponification"
+      }
+    ],
     "related": [
       "gel-phase",
       "lye-concentration",
@@ -304,6 +426,20 @@
       "max": 54,
       "min": 29
     },
+    "references": [
+      {
+        "sourceId": "soapcalc",
+        "section": "Soap Qualities",
+        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "note": "Empirically derived formula from soapmaking community practice; not peer-reviewed"
+      },
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Scientific context: saturated fatty acids contribute to soap hardness"
+      }
+    ],
     "related": [
       "saturated",
       "cure"
@@ -317,6 +453,13 @@
     ],
     "desc": "International Fragrance Association. Sets usage limits for fragrance materials based on safety testing. Category 9 covers rinse-off products like soap.",
     "details": "IFRA limits are based on sensitization potential, phototoxicity, and other safety concerns.\n\nCategory 9 (rinse-off) typically allows higher concentrations than leave-on products because exposure time is shorter.\n\nLimits apply to specific constituents (e.g., linalool, citral) not just the essential oil itself. Complex blends may require constituent-level calculations.\n\nSee: ifrafragrance.org/standards/library",
+    "references": [
+      {
+        "sourceId": "ifra",
+        "section": "IFRA Standards Library",
+        "url": "https://ifrafragrance.org/safe-use/library"
+      }
+    ],
     "related": [
       "essential-oil",
       "additive"
@@ -361,6 +504,19 @@
       "max": 70,
       "min": 41
     },
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Iodine value (I03082)",
+        "url": "https://goldbook.iupac.org/terms/view/I03082"
+      },
+      {
+        "sourceId": "soapcalc",
+        "section": "Soap Qualities",
+        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "note": "Recommended ranges are empirically derived from soapmaking practice"
+      }
+    ],
     "related": [
       "unsaturated",
       "dos",
@@ -375,6 +531,13 @@
     ],
     "desc": "Mineral pigments made from iron compounds. Create stable, reliable colours that won't fade or morph in high pH soap.",
     "details": "FDA approved for cosmetics (21 CFR 73.2250), including eye area.\n\nColors:\n\u2022 Red (Fe\u2082O\u2083): terracotta to brick red\n\u2022 Yellow (FeOOH): gold to tan\n\u2022 Black (Fe\u2083O\u2084): grey to black, use sparingly\n\u2022 Brown: blend of red + yellow + black\n\nUsage: 0.1-0.5% of oil weight. Disperse in oil to prevent speckling.",
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Iron(III) oxide (CID 518696)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/518696"
+      }
+    ],
     "related": [
       "colourant",
       "titanium-dioxide",
@@ -402,6 +565,14 @@
     ],
     "desc": "Amount of water relative to lye. Affects trace speed, cure time, and visual effects like glycerin rivers.",
     "details": "2.5 to 1 or higher: slower trace and more time to work the mixture, with a longer cure time.\n\n1.5 to 1: quick to reach trace and solidify, but can cause glycerin rivers in gel phase\n\nBeginners should aim for 2 to 1 to 2.5 to 1. Intricate designs may need more than 2.5 to 1.",
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Water content affects saponification rate and final soap properties"
+      }
+    ],
     "related": [
       "trace",
       "cure",
@@ -417,6 +588,18 @@
     ],
     "desc": "The alkali used to saponify oils. NaOH (sodium hydroxide) produces hard bar soap. KOH (potassium hydroxide) produces liquid or soft soap. They are not interchangeable.",
     "details": "NaOH: Creates solid bars with less solubility.\n\nKOH: Creates liquid/gel/soft soap with more solubility that cuts through grease faster.\n\nThe chemistry determines the final form; you cannot make bar soap with KOH or liquid soap with NaOH.",
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Sodium hydroxide (CID 14798)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/14798"
+      },
+      {
+        "sourceId": "pubchem",
+        "section": "Potassium hydroxide (CID 14797)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/14797"
+      }
+    ],
     "related": [
       "sap-value",
       "superfat"
@@ -430,7 +613,14 @@
       "calculator"
     ],
     "desc": "Temperature at which a fat transitions from solid to liquid. Indicates whether an oil is solid or liquid at room temperature.",
-    "details": "Fats with high melting points (coconut ~24°C, palm ~35°C, tallow ~45°C) are solid at room temperature and contribute to bar hardness.\n\nLow or no melting point means liquid at room temperature (olive, sunflower, etc.).\n\nMelting point correlates with saturated fatty acid content.",
+    "details": "Fats with high melting points (coconut ~24\u00b0C, palm ~35\u00b0C, tallow ~45\u00b0C) are solid at room temperature and contribute to bar hardness.\n\nLow or no melting point means liquid at room temperature (olive, sunflower, etc.).\n\nMelting point correlates with saturated fatty acid content.",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Melting point (M03821)",
+        "url": "https://goldbook.iupac.org/terms/view/M03821"
+      }
+    ],
     "related": [
       "hardness",
       "saturated",
@@ -445,6 +635,13 @@
     ],
     "desc": "Fatty acids containing a hydroxyl (-OH) group attached to the carbon chain. Unique soap properties.",
     "details": "Ricinoleic acid (found only in castor oil) is the primary hydroxylated fatty acid in soapmaking.\n\nThe -OH group increases water solubility, making these acids exceptional lather boosters even in small amounts (2-5%).",
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Ricinoleic acid (CID 643684)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/643684"
+      }
+    ],
     "related": [
       "monounsaturated",
       "castor-oil",
@@ -459,6 +656,13 @@
     ],
     "desc": "Fatty acids with exactly one carbon-carbon double bond. Conditioning but more stable than polyunsaturated acids.",
     "details": "Includes palmitoleic (C16:1), oleic (C18:1), ricinoleic (C18:1-OH), and erucic (C22:1).\n\nOne double bond = moderate oxidation risk, good balance of conditioning and stability.",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Monounsaturated fatty acids (M04006)",
+        "url": "https://goldbook.iupac.org/terms/view/M04006"
+      }
+    ],
     "related": [
       "saturated",
       "polyunsaturated",
@@ -474,6 +678,13 @@
     ],
     "desc": "A fat (triglyceride) that is liquid at room temperature. Typically high in unsaturated fatty acids.",
     "details": "Oils are liquid because unsaturated fatty acids have kinked chains that don't pack together tightly.\n\nExamples: olive oil, sunflower oil, castor oil.\n\nIn soapmaking, 'oil' and 'fat' are often used interchangeably to mean any saponifiable lipid.",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Oils (O04248)",
+        "url": "https://goldbook.iupac.org/terms/view/O04248"
+      }
+    ],
     "related": [
       "fat",
       "butter",
@@ -488,6 +699,13 @@
     ],
     "desc": "Fatty acids with two or more carbon-carbon double bonds. Highly conditioning but prone to oxidation (DOS).",
     "details": "Includes linoleic (C18:2, omega-6) and linolenic (C18:3, omega-3).\n\nMultiple double bonds = sites for oxygen attack = rancidity risk. Limit to <15% total and use antioxidants.",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Polyunsaturated fatty acids (P04733)",
+        "url": "https://goldbook.iupac.org/terms/view/P04733"
+      }
+    ],
     "related": [
       "saturated",
       "monounsaturated",
@@ -503,7 +721,7 @@
       "craft"
     ],
     "desc": "Degradation of fats through oxidation or hydrolysis, producing off-odours, discolouration, and reduced quality. Rancid oils can still saponify but produce inferior soap.",
-    "details": "Two types:\n\n• Oxidative rancidity: Free-radical chain reaction where oxygen attacks double bonds in unsaturated fatty acids. Produces peroxides that break down into aldehydes and ketones (the characteristic rancid smell).\n\n• Hydrolytic rancidity: Water and enzymes (lipases) break triglycerides into free fatty acids. Common in improperly stored or contaminated fats.\n\nUsing rancid oils in soap:\n• May cause dreaded orange spots (DOS)\n• Reduced cleaning performance\n• Off-colours and lingering odour\n• Hot process with 0% superfat can salvage mildly rancid oils\n\nPrevention: Store oils in cool, dark conditions. Use antioxidants (ROE, vitamin E). Limit polyunsaturated fats to <15% of recipe.",
+    "details": "Two types:\n\n\u2022 Oxidative rancidity: Free-radical chain reaction where oxygen attacks double bonds in unsaturated fatty acids. Produces peroxides that break down into aldehydes and ketones (the characteristic rancid smell).\n\n\u2022 Hydrolytic rancidity: Water and enzymes (lipases) break triglycerides into free fatty acids. Common in improperly stored or contaminated fats.\n\nUsing rancid oils in soap:\n\u2022 May cause dreaded orange spots (DOS)\n\u2022 Reduced cleaning performance\n\u2022 Off-colours and lingering odour\n\u2022 Hot process with 0% superfat can salvage mildly rancid oils\n\nPrevention: Store oils in cool, dark conditions. Use antioxidants (ROE, vitamin E). Limit polyunsaturated fats to <15% of recipe.",
     "references": [
       {
         "sourceId": "pmc",
@@ -528,6 +746,18 @@
     ],
     "desc": "Saponification value; the amount of alkali needed to convert a fat into soap. Each oil has a unique SAP based on its fatty acid composition.",
     "details": "Expressed as mg KOH per gram of fat (Codex standard) or as NaOH coefficient. Shorter fatty acid chains = higher SAP (more molecules per gram). The recipe builder uses NaOH coefficients (g NaOH per g oil).",
+    "references": [
+      {
+        "sourceId": "codex-alimentarius",
+        "section": "CXS 210-1999: Saponification Value definition",
+        "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
+      },
+      {
+        "sourceId": "iupac",
+        "section": "Saponification value (S05397)",
+        "url": "https://goldbook.iupac.org/terms/view/S05397"
+      }
+    ],
     "related": [
       "ins",
       "superfat"
@@ -541,6 +771,13 @@
     ],
     "desc": "Fatty acids with no double bonds (C:0). Solid at room temperature. Create harder bars with stable lather and excellent shelf life.",
     "details": "Includes caprylic (C8:0), capric (C10:0), lauric (C12:0), myristic (C14:0), palmitic (C16:0), stearic (C18:0), arachidic (C20:0), and behenic (C22:0).\n\nNo double bonds = no sites for oxygen to attack = resistant to rancidity.",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Saturated (S02155)",
+        "url": "https://goldbook.iupac.org/terms/view/S02155"
+      }
+    ],
     "related": [
       "unsaturated",
       "monounsaturated",
@@ -569,6 +806,13 @@
     ],
     "desc": "Sodium salt of lactic acid (C\u2083H\u2085NaO\u2083). A functional additive that accelerates hardening and reduces unmoulding time.",
     "details": "Added to cooled lye water (not hot lye). Typical usage 1-3% of oil weight.\n\nBenefits:\n\u2022 Harder bars (unmould 4-12 hours faster)\n\u2022 Improved bar release from silicone moulds\n\u2022 Slight humectant properties\n\nExcessive use (>5%) can cause brittle bars or glycerin rivers.",
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Sodium lactate (CID 23666441)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/23666441"
+      }
+    ],
     "related": [
       "additive",
       "hardness",
@@ -584,6 +828,14 @@
     ],
     "desc": "Percentage of oils left unsaponified in the final soap. Adds conditioning and ensures no excess lye remains.",
     "details": "0 - 3%: laundry/cleaning soap\n5 - 8%: typical for body bars\n8 - 15%: luxury/shampoo bars\n\nToo high a value makes a soft, potentially greasy-feeling bar that may go rancid faster.",
+    "references": [
+      {
+        "sourceId": "soapcalc",
+        "section": "Soap Qualities",
+        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "note": "Recommended superfat ranges are empirically derived from soapmaking practice"
+      }
+    ],
     "related": [
       "conditioning",
       "sap-value"
@@ -597,6 +849,13 @@
     ],
     "desc": "White mineral pigment (TiO\u2082) used to create opaque white soap or lighten other colours.",
     "details": "FDA approved for cosmetics (21 CFR 73.2575).\n\nUses:\n\u2022 Pure white soap base\n\u2022 Lighten/pastel other colourants\n\u2022 Create base for swirls\n\u2022 Hide discolouration from vanilla or spices\n\nUsage: 0.1-1% of oil weight. Higher amounts can feel chalky. Disperse in oil to prevent clumping.",
+    "references": [
+      {
+        "sourceId": "sccs",
+        "section": "Opinion on Titanium Dioxide (TiO2) used in cosmetic products",
+        "url": "https://health.ec.europa.eu/system/files/2021-11/sccs_o_238.pdf"
+      }
+    ],
     "related": [
       "colourant",
       "iron-oxide",
@@ -611,6 +870,14 @@
     ],
     "desc": "The point when oil and lye solution have emulsified and begun saponification. Soap mixture thickens and a drizzle leaves a 'trace' on the surface.",
     "details": "Light trace: thin pudding, good for swirls/layers\nMedium trace: thick pudding, holds peaks\nHeavy trace: nearly solid, work fast\n\nFactors: temperature, water amount, oil composition, stick blending.",
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Emulsification stage of saponification process"
+      }
+    ],
     "related": [
       "false-trace",
       "lye-concentration",
@@ -625,6 +892,13 @@
     ],
     "desc": "Fatty acids with one or more double bonds. Liquid at room temperature. More conditioning but prone to oxidation over time.",
     "details": "Monounsaturated (1 double bond): oleic, ricinoleic; relatively stable.\n\nPolyunsaturated (2+ double bonds): linoleic, linolenic; reactive, prone to DOS.",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Unsaturated (U06569)",
+        "url": "https://goldbook.iupac.org/terms/view/U06569"
+      }
+    ],
     "related": [
       "saturated",
       "conditioning",
@@ -639,7 +913,7 @@
       "calculator"
     ],
     "desc": "Recommended percentage of total fats that a particular oil should comprise in a soap recipe. Staying within range helps achieve balanced soap properties.",
-    "details": "Usage limits exist because:\n\n• Some oils dominate recipes (coconut >30% can be drying)\n• Some oils weaken bars (soft oils >70% = soft bar)\n• Some have strong effects (castor >8% = sticky soap)\n\nLimits are guidelines, not rules. Experienced soapers adjust based on intended use and superfat level.",
+    "details": "Usage limits exist because:\n\n\u2022 Some oils dominate recipes (coconut >30% can be drying)\n\u2022 Some oils weaken bars (soft oils >70% = soft bar)\n\u2022 Some have strong effects (castor >8% = sticky soap)\n\nLimits are guidelines, not rules. Experienced soapers adjust based on intended use and superfat level.",
     "related": [
       "superfat",
       "hardness",
@@ -689,6 +963,13 @@
     ],
     "desc": "Esters of long-chain fatty acids with long-chain alcohols (not glycerol). Most waxes do not saponify like fats.",
     "details": "Unlike triglycerides, waxes are fatty acid + fatty alcohol esters. They don't react with lye the same way.\n\nJojoba 'oil' is actually a liquid wax (~97% wax esters). It partially saponifies, leaving some free jojoba in the soap.\n\nBeeswax is sometimes added to soap for hardness but doesn't contribute to lather.",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Waxes (W06687)",
+        "url": "https://goldbook.iupac.org/terms/view/W06687"
+      }
+    ],
     "related": [
       "fat",
       "oil"

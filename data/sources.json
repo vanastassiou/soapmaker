@@ -20,13 +20,6 @@
     "publisher": "National Center for Biotechnology Information (NCBI)",
     "fundedBy": "US National Institutes of Health (NIH)"
   },
-  "fda-cfr": {
-    "name": "US Code of Federal Regulations Title 21 (FDA CFR)",
-    "description": "Federal regulations governing food, drugs, and cosmetics in the United States.",
-    "baseUrl": "https://www.ecfr.gov",
-    "publisher": "US Food and Drug Administration (FDA)",
-    "fundedBy": "US federal government"
-  },
   "cosmetic-ingredient-review": {
     "name": "Cosmetic Ingredient Review",
     "description": "Independent expert panel assessing cosmetic ingredient safety.",
@@ -180,5 +173,46 @@
     "baseUrl": "https://arxiv.org",
     "publisher": "Springer",
     "fundedBy": "US National Science Foundation and Department of Energy"
+  },
+  "eu-cosmetics-regulation": {
+    "name": "EU Cosmetics Regulation",
+    "description": "Regulation (EC) No 1223/2009 on cosmetic products, including Annex III fragrance allergen labelling requirements.",
+    "baseUrl": "https://eur-lex.europa.eu",
+    "publisher": "European Commission",
+    "fundedBy": "European Union"
+  },
+  "fda-allergens": {
+    "name": "FDA Food Allergen Labeling",
+    "description": "FALCPA (2004) and FASTER Act (2021) requirements for major food allergen labelling.",
+    "baseUrl": "https://www.fda.gov/food/food-allergensgluten-free-guidance-documents-regulatory-information",
+    "publisher": "US Food and Drug Administration (FDA)",
+    "fundedBy": "US federal government"
+  },
+  "iupac": {
+    "name": "IUPAC Gold Book",
+    "description": "Compendium of Chemical Terminology maintained by the International Union of Pure and Applied Chemistry.",
+    "baseUrl": "https://goldbook.iupac.org",
+    "publisher": "International Union of Pure and Applied Chemistry (IUPAC)",
+    "fundedBy": "Member national chemistry organizations"
+  },
+  "soapcalc": {
+    "name": "SoapCalc",
+    "description": "Community soapmaking calculator. Soap quality formulas are empirically derived from soapmaking practice, not peer-reviewed research.",
+    "baseUrl": "https://www.soapcalc.net",
+    "publisher": "SoapCalc.net",
+    "fundedBy": "Independent"
+  },
+  "scientific-soapmaking": {
+    "name": "Scientific Soapmaking (Dunn)",
+    "description": "Kevin Dunn (2010). Clavicula Press. ISBN 978-1935652090. Academic chemist's guide to soapmaking science.",
+    "publisher": "Clavicula Press",
+    "fundedBy": "Author / publisher"
+  },
+  "ansi": {
+    "name": "American National Standards Institute",
+    "description": "US standards organization coordinating voluntary consensus standards.",
+    "baseUrl": "https://www.ansi.org",
+    "publisher": "American National Standards Institute (ANSI)",
+    "fundedBy": "Member organizations and fees"
   }
 }
