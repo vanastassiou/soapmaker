@@ -799,8 +799,12 @@ ol.instructions li:last-child {
     font-size: var(--text-base);
 }
 
+.analysis-table th.value-col {
+    text-align: right;
+}
+
 .analysis-table .value-col {
-    text-align: center;
+    text-align: right;
     font-family: var(--font-mono);
     font-weight: 600;
     color: var(--accent-cream);
@@ -1571,15 +1575,44 @@ details[open] .details-hide {
         padding: var(--space-2);
     }
 
-    /* Collapse item rows to 2 columns with name spanning full width */
+    /* Mobile item rows: name on left, controls stacked on right */
     .item-row.cols-4,
     .item-row.cols-3 {
         grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
     }
 
     .item-row.cols-4 .item-name,
     .item-row.cols-3 .item-name {
-        grid-column: 1 / -1;
+        grid-column: 1;
+        grid-row: 1 / -1;
+        align-self: center;
+    }
+
+    .item-row.cols-3 .weight-cell,
+    .item-row.cols-3 .percentage-cell,
+    .item-row.cols-4 .weight-cell {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+    }
+
+    .item-row.cols-4 .percentage-cell {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: end;
+    }
+
+    .item-row.cols-3 .remove-btn {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: end;
+    }
+
+    .item-row.cols-4 .remove-btn {
+        grid-column: 2;
+        grid-row: 3;
+        justify-self: end;
     }
 
     .item-row input {
