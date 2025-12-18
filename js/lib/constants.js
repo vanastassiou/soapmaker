@@ -157,16 +157,16 @@ export const FATTY_ACID_NAMES = {
 // ============================================
 
 export const PROPERTY_KEYS = [
-    'hardness', 'cleansing', 'conditioning', 'bubbly', 'creamy', 'iodine', 'ins'
+    'hardness', 'degreasing', 'moisturizing', 'lather-volume', 'lather-density', 'iodine', 'ins'
 ];
 
 export const PROPERTY_NAMES = {
     hardness: 'Hardness',
-    cleansing: 'Cleansing',
-    conditioning: 'Conditioning',
-    bubbly: 'Bubbly',
-    creamy: 'Creamy',
-    iodine: 'Iodine',
+    degreasing: 'Grease removing',
+    moisturizing: 'Skin conditioning',
+    'lather-volume': 'Lather volume',
+    'lather-density': 'Lather density',
+    iodine: 'Iodine value',
     ins: 'INS'
 };
 
@@ -174,47 +174,47 @@ export const PROPERTY_NAMES = {
 export const PROPERTY_ELEMENT_IDS = {
     prop: {
         hardness: 'propHardness',
-        cleansing: 'propCleansing',
-        conditioning: 'propConditioning',
-        bubbly: 'propBubbly',
-        creamy: 'propCreamy',
+        degreasing: 'propDegreasing',
+        moisturizing: 'propMoisturizing',
+        'lather-volume': 'propLatherVolume',
+        'lather-density': 'propLatherDensity',
         iodine: 'propIodine',
         ins: 'propIns'
     },
     range: {
         hardness: 'rangeHardness',
-        cleansing: 'rangeCleansing',
-        conditioning: 'rangeConditioning',
-        bubbly: 'rangeBubbly',
-        creamy: 'rangeCreamy',
+        degreasing: 'rangeDegreasing',
+        moisturizing: 'rangeMoisturizing',
+        'lather-volume': 'rangeLatherVolume',
+        'lather-density': 'rangeLatherDensity',
         iodine: 'rangeIodine',
         ins: 'rangeIns'
     },
     target: {
         hardness: 'targetHardness',
-        cleansing: 'targetCleansing',
-        conditioning: 'targetConditioning',
-        bubbly: 'targetBubbly',
-        creamy: 'targetCreamy'
+        degreasing: 'targetDegreasing',
+        moisturizing: 'targetMoisturizing',
+        'lather-volume': 'targetLatherVolume',
+        'lather-density': 'targetLatherDensity'
     }
 };
 
 // Which fatty acids contribute to each soap property
 export const PROPERTY_FATTY_ACIDS = {
     hardness: ['caprylic', 'capric', 'lauric', 'myristic', 'palmitic', 'stearic', 'arachidic', 'behenic'],
-    cleansing: ['caprylic', 'capric', 'lauric', 'myristic'],
-    conditioning: ['palmitoleic', 'oleic', 'ricinoleic', 'linoleic', 'linolenic', 'erucic'],
-    bubbly: ['lauric', 'myristic', 'ricinoleic'],
-    creamy: ['palmitic', 'stearic', 'ricinoleic']
+    degreasing: ['caprylic', 'capric', 'lauric', 'myristic'],
+    moisturizing: ['palmitoleic', 'oleic', 'ricinoleic', 'linoleic', 'linolenic', 'erucic'],
+    'lather-volume': ['lauric', 'myristic', 'ricinoleic'],
+    'lather-density': ['palmitic', 'stearic', 'ricinoleic']
 };
 
 // Recommended ranges for soap properties
 export const PROPERTY_RANGES = {
     hardness: { min: 29, max: 54 },
-    cleansing: { min: 12, max: 22 },
-    conditioning: { min: 44, max: 69 },
-    bubbly: { min: 14, max: 46 },
-    creamy: { min: 16, max: 48 },
+    degreasing: { min: 12, max: 22 },
+    moisturizing: { min: 44, max: 69 },
+    'lather-volume': { min: 14, max: 46 },
+    'lather-density': { min: 16, max: 48 },
     iodine: { min: 41, max: 70 },
     ins: { min: 136, max: 165 }
 };
@@ -254,12 +254,12 @@ export const MATCH_THRESHOLDS = {
 
 // Recipe note thresholds
 export const NOTE_THRESHOLDS = {
-    HIGH_CLEANSING: 20,
-    LOW_CLEANSING: 10,
+    HIGH_DEGREASING: 20,
+    LOW_DEGREASING: 10,
     HIGH_POLYUNSATURATED: 15,
     HIGH_LINOLENIC: 5,
-    LOW_BUBBLY: 20,
-    HIGH_CONDITIONING: 65,
+    LOW_LATHER_VOLUME: 20,
+    HIGH_MOISTURIZING: 65,
     LOW_HARDNESS: 35
 };
 
@@ -279,17 +279,17 @@ export const CALCULATION = {
 
 // Property-to-fatty-acid conversion assumptions
 export const PROPERTY_CONVERSION = {
-    // Cleansing split between lauric and myristic
-    CLEANSING_LAURIC_RATIO: 0.7,
-    CLEANSING_MYRISTIC_RATIO: 0.3,
+    // Degreasing split between lauric and myristic
+    DEGREASING_LAURIC_RATIO: 0.7,
+    DEGREASING_MYRISTIC_RATIO: 0.3,
     // Hardness remaining split between palmitic and stearic
     HARDNESS_PALMITIC_RATIO: 0.6,
     HARDNESS_STEARIC_RATIO: 0.4,
-    // Conditioning distribution
-    CONDITIONING_OLEIC_RATIO: 0.8,
-    CONDITIONING_RICINOLEIC_RATIO: 0.05,
-    CONDITIONING_LINOLEIC_RATIO: 0.12,
-    CONDITIONING_LINOLENIC_RATIO: 0.03
+    // Moisturizing distribution
+    MOISTURIZING_OLEIC_RATIO: 0.8,
+    MOISTURIZING_RICINOLEIC_RATIO: 0.05,
+    MOISTURIZING_LINOLEIC_RATIO: 0.12,
+    MOISTURIZING_LINOLENIC_RATIO: 0.03
 };
 
 // ============================================
@@ -462,7 +462,7 @@ export function isInRange(value, min, max) {
  * @param {Array<string>} propertyKeys - Keys to check (defaults to main soap properties)
  * @returns {boolean} True if all properties are in range
  */
-export function allPropertiesInRange(properties, propertyKeys = ['hardness', 'cleansing', 'conditioning', 'bubbly', 'creamy']) {
+export function allPropertiesInRange(properties, propertyKeys = ['hardness', 'degreasing', 'moisturizing', 'lather-volume', 'lather-density']) {
     return propertyKeys.every(key => {
         const range = PROPERTY_RANGES[key];
         return range && isInRange(properties[key], range.min, range.max);

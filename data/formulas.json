@@ -93,8 +93,8 @@
     "technical": "Fatty acid profiles are stored in the fats database as percentages that add up to about 100% (with very minor variances due to margins of error). The weighted average calculation preserves this property. Fourteen fatty acids are tracked: caprylic (C8:0), capric (C10:0), lauric (C12:0), myristic (C14:0), palmitic (C16:0), palmitoleic (C16:1), stearic (C18:0), oleic (C18:1), ricinoleic (C18:1-OH), linoleic (C18:2), linolenic (C18:3), arachidic (C20:0), behenic (C22:0), and erucic (C22:1).",
     "related": [
       "hardness",
-      "cleansing",
-      "conditioning"
+      "degreasing",
+      "moisturizing"
     ],
     "references": [
       {
@@ -178,15 +178,15 @@
       }
     ]
   },
-  "cleansing": {
+  "degreasing": {
     "category": "properties",
     "domain": [
       "calculator"
     ],
-    "name": "Cleansing",
+    "name": "Grease removing",
     "summary": "Predicts how effectively your soap will remove dirt and oils.",
-    "userFriendly": "Cleansing measures how well your soap strips away oils and dirt. Short-chain saturated fatty acids (lauric and myristic, found in coconut and palm kernel oils) create soaps with strong cleansing action. High cleansing values are great for laundry or kitchen soap but can be drying for skin.",
-    "formula": "Cleansing = caprylic + capric + lauric + myristic",
+    "userFriendly": "Degreasing measures how well your soap strips away oils and grease. Short-chain saturated fatty acids (lauric and myristic, found in coconut and palm kernel oils) create soaps with strong degreasing action. High degreasing values are great for laundry or kitchen soap but can be drying for skin.",
+    "formula": "Degreasing = caprylic + capric + lauric + myristic",
     "variables": {
       "caprylic": "C8:0 - found in coconut, palm kernel",
       "capric": "C10:0 - found in coconut, palm kernel",
@@ -197,7 +197,7 @@
       "scenario": "20% coconut oil in recipe",
       "steps": [
         "Coconut contributes: 8% caprylic/capric + 49% lauric + 18% myristic",
-        "At 20% of recipe: 0.20 \u00d7 (8 + 49 + 18) = 15 cleansing"
+        "At 20% of recipe: 0.20 \u00d7 (8 + 49 + 18) = 15 degreasing"
       ]
     },
     "technical": "Short-chain fatty acids (C8-C14) produce sodium salts that are highly soluble and create micelles more readily, leading to stronger detergent action. The trade-off is increased skin irritation potential at high levels.",
@@ -206,8 +206,8 @@
       "max": 22
     },
     "related": [
-      "cleansing",
-      "bubbly"
+      "degreasing",
+      "lather-volume"
     ],
     "references": [
       {
@@ -218,15 +218,15 @@
       }
     ]
   },
-  "conditioning": {
+  "moisturizing": {
     "category": "properties",
     "domain": [
       "calculator"
     ],
-    "name": "Conditioning",
+    "name": "Skin conditioning",
     "summary": "Predicts how moisturizing your soap will feel.",
-    "userFriendly": "Conditioning measures how gentle and moisturizing your soap feels on skin. Unsaturated fatty acids (oleic, linoleic) create softer soaps that are less stripping and more conditioning.",
-    "formula": "Conditioning = palmitoleic + oleic + ricinoleic + linoleic + linolenic + erucic",
+    "userFriendly": "Moisturizing measures how gentle and conditioning your soap feels on skin. Unsaturated fatty acids (oleic, linoleic) create softer soaps that are less stripping and more moisturizing.",
+    "formula": "Moisturizing = palmitoleic + oleic + ricinoleic + linoleic + linolenic + erucic",
     "variables": {
       "oleic": "C18:1 - abundant in olive (71%), avocado, sweet almond",
       "linoleic": "C18:2 - found in sunflower, safflower, hemp",
@@ -236,7 +236,7 @@
       "scenario": "60% olive oil in recipe",
       "steps": [
         "Olive contributes 71% oleic acid",
-        "At 60% of recipe: 0.60 \u00d7 71 = 42.6 conditioning"
+        "At 60% of recipe: 0.60 \u00d7 71 = 42.6 moisturizing"
       ]
     },
     "technical": "Unsaturated fatty acids produce sodium salts with kinked carbon chains that don't pack as tightly, resulting in softer bars that don't strip oils as completely. Ricinoleic acid, which is present in castor oil in uniquely high proporitons, has a hydroxyl group that adds humectant properties.",
@@ -245,7 +245,7 @@
       "max": 69
     },
     "related": [
-      "conditioning",
+      "moisturizing",
       "unsaturated"
     ],
     "references": [
@@ -260,15 +260,15 @@
       "url": "https://chem.libretexts.org/Bookshelves/Biological_Chemistry/Supplemental_Modules_(Biological_Chemistry)/Lipids"
     }
   },
-  "bubbly": {
+  "lather-volume": {
     "category": "properties",
     "domain": [
       "calculator"
     ],
-    "name": "Bubbly lather",
+    "name": "Lather volume",
     "summary": "Predicts how much fluffy, bubbly lather your soap produces.",
-    "userFriendly": "Bubbliness refer to the volume and lightness of your soap's lather. Lauric and myristic acids are the primary contributors, while ricinoleic acid boosts and stabilizes lather.",
-    "formula": "Bubbly = lauric + myristic + ricinoleic",
+    "userFriendly": "Lather volume refers to the volume and lightness of your soap's lather. Lauric and myristic acids are the primary contributors, while ricinoleic acid boosts and stabilizes lather.",
+    "formula": "Lather volume = lauric + myristic + ricinoleic",
     "variables": {
       "lauric": "C12:0 - the primary bubble-maker",
       "myristic": "C14:0 - contributes to lather",
@@ -279,7 +279,7 @@
       "steps": [
         "Coconut: 0.25 \u00d7 (49 + 18) = 16.75",
         "Castor: 0.05 \u00d7 90 = 4.5",
-        "Bubbly = 16.75 + 4.5 = 21.25"
+        "Lather volume = 16.75 + 4.5 = 21.25"
       ]
     },
     "technical": "Sodium laurate and myristate have optimal hydrophilic-lipophilic balance (HLB) for foam formation. Ricinoleic acid's hydroxyl group increases water solubility while maintaining surfactant properties, creating more stable foam structures.",
@@ -288,7 +288,7 @@
       "max": 46
     },
     "related": [
-      "bubbly",
+      "lather-volume",
       "castor-oil"
     ],
     "references": [
@@ -300,15 +300,15 @@
       }
     ]
   },
-  "creamy": {
+  "lather-density": {
     "category": "properties",
     "domain": [
       "calculator"
     ],
-    "name": "Creamy lather",
+    "name": "Lather density",
     "summary": "Predicts how dense, stable, and lotion-like your lather will be.",
-    "userFriendly": "Creamy measures the density and stability of your lather\u2014that rich, thick, lotion-like foam. Palmitic and stearic acids (from palm oil, tallow, shea butter) create stable, creamy lather. Ricinoleic acid from castor oil also contributes to lather creaminess.",
-    "formula": "Creamy = palmitic + stearic + ricinoleic",
+    "userFriendly": "Lather density measures the density and stability of your lather\u2014that rich, thick, lotion-like foam. Palmitic and stearic acids (from palm oil, tallow, shea butter) create stable, dense lather. Ricinoleic acid from castor oil also contributes to lather density.",
+    "formula": "Lather density = palmitic + stearic + ricinoleic",
     "variables": {
       "palmitic": "C16:0 - found in palm (44%), tallow, lard",
       "stearic": "C18:0 - found in shea (45%), cocoa butter",
@@ -320,16 +320,16 @@
         "Palm: 0.15 \u00d7 44 = 6.6 (palmitic)",
         "Shea: 0.10 \u00d7 45 = 4.5 (stearic)",
         "Castor: 0.05 \u00d7 90 = 4.5 (ricinoleic)",
-        "Creamy = 6.6 + 4.5 + 4.5 = 15.6"
+        "Lather density = 6.6 + 4.5 + 4.5 = 15.6"
       ]
     },
-    "technical": "Sodium palmitate and stearate form larger, more stable micelles than short-chain fatty acids, producing denser foam with smaller, more uniform bubbles. The combination of bubbly and creamy values determines overall lather character.",
+    "technical": "Sodium palmitate and stearate form larger, more stable micelles than short-chain fatty acids, producing denser foam with smaller, more uniform bubbles. The combination of lather volume and lather density values determines overall lather character.",
     "recommendedRange": {
       "min": 16,
       "max": 48
     },
     "related": [
-      "creamy"
+      "lather-density"
     ],
     "references": [
       {
@@ -530,18 +530,18 @@
     ],
     "name": "Property to fatty acid conversion",
     "summary": "Converts your target soap properties into target fatty acid percentages.",
-    "userFriendly": "When you enter targets like 'hardness: 40, cleansing: 18', we need to convert these to fatty acid targets for the optimizer. The recipe builder uses fixed ratios based on how each fatty acid contributes to each property.",
-    "formula": "lauric = cleansing \u00d7 0.7, myristic = cleansing \u00d7 0.3, etc.",
+    "userFriendly": "When you enter targets like 'hardness: 40, degreasing: 18', we need to convert these to fatty acid targets for the optimizer. The recipe builder uses fixed ratios based on how each fatty acid contributes to each property.",
+    "formula": "lauric = degreasing \u00d7 0.7, myristic = degreasing \u00d7 0.3, etc.",
     "variables": {
-      "Cleansing \u2192 Lauric": "70% of cleansing target",
-      "Cleansing \u2192 Myristic": "30% of cleansing target",
+      "Degreasing \u2192 Lauric": "70% of degreasing target",
+      "Degreasing \u2192 Myristic": "30% of degreasing target",
       "Remaining hardness \u2192 Palmitic": "60%",
       "Remaining hardness \u2192 Stearic": "40%",
-      "Conditioning \u2192 Oleic": "80%",
-      "Conditioning \u2192 Others": "Linoleic 12%, ricinoleic 5%, linolenic 3%"
+      "Moisturizing \u2192 Oleic": "80%",
+      "Moisturizing \u2192 Others": "Linoleic 12%, ricinoleic 5%, linolenic 3%"
     },
     "example": {
-      "scenario": "Target cleansing: 18, hardness: 40",
+      "scenario": "Target degreasing: 18, hardness: 40",
       "steps": [
         "Lauric = 18 \u00d7 0.7 = 12.6%",
         "Myristic = 18 \u00d7 0.3 = 5.4%",
@@ -551,11 +551,11 @@
         "Stearic = 22 \u00d7 0.4 = 8.8%"
       ]
     },
-    "technical": "These ratios are heuristics based on typical fat compositions and property correlations. They're not exact chemistry but provide reasonable starting points for the optimizer. The conversion handles property dependencies (e.g., cleansing is a subset of hardness).",
+    "technical": "These ratios are heuristics based on typical fat compositions and property correlations. They're not exact chemistry but provide reasonable starting points for the optimizer. The conversion handles property dependencies (e.g., degreasing is a subset of hardness).",
     "related": [
       "hardness",
-      "cleansing",
-      "conditioning"
+      "degreasing",
+      "moisturizing"
     ],
     "references": [
       {

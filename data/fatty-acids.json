@@ -20,8 +20,8 @@
     ],
     "saturation": "saturated",
     "soapProperties": {
-      "cleansing": "very low",
-      "conditioning": "moderate",
+      "degreasing": "very low",
+      "moisturizing": "moderate",
       "hardness": "very high",
       "lather": "minimal contribution"
     }
@@ -47,8 +47,8 @@
     ],
     "saturation": "saturated",
     "soapProperties": {
-      "cleansing": "very low",
-      "conditioning": "moderate",
+      "degreasing": "very low",
+      "moisturizing": "moderate",
       "hardness": "very high",
       "lather": "minimal contribution"
     }
@@ -75,8 +75,8 @@
     ],
     "saturation": "saturated",
     "soapProperties": {
-      "cleansing": "high",
-      "conditioning": "low",
+      "degreasing": "high",
+      "moisturizing": "low",
       "hardness": "moderate",
       "lather": "bubbly"
     }
@@ -102,8 +102,8 @@
     ],
     "saturation": "saturated",
     "soapProperties": {
-      "cleansing": "very high",
-      "conditioning": "very low",
+      "degreasing": "very high",
+      "moisturizing": "very low",
       "hardness": "moderate",
       "lather": "thin, quick"
     }
@@ -127,8 +127,8 @@
     ],
     "saturation": "monounsaturated",
     "soapProperties": {
-      "cleansing": "low",
-      "conditioning": "high",
+      "degreasing": "low",
+      "moisturizing": "high",
       "hardness": "moderate",
       "lather": "mild, stable"
     }
@@ -153,8 +153,8 @@
     ],
     "saturation": "monounsaturated",
     "soapProperties": {
-      "cleansing": "low",
-      "conditioning": "high",
+      "degreasing": "low",
+      "moisturizing": "high",
       "hardness": "moderate",
       "lather": "mild, stable"
     }
@@ -181,8 +181,8 @@
     ],
     "saturation": "saturated",
     "soapProperties": {
-      "cleansing": "high",
-      "conditioning": "low",
+      "degreasing": "high",
+      "moisturizing": "low",
       "hardness": "high",
       "lather": "big fluffy bubbles"
     }
@@ -210,8 +210,8 @@
     ],
     "saturation": "polyunsaturated",
     "soapProperties": {
-      "cleansing": "low",
-      "conditioning": "very high",
+      "degreasing": "low",
+      "moisturizing": "very high",
       "hardness": "low",
       "lather": "silky"
     }
@@ -238,8 +238,8 @@
     ],
     "saturation": "polyunsaturated",
     "soapProperties": {
-      "cleansing": "low",
-      "conditioning": "very high",
+      "degreasing": "low",
+      "moisturizing": "very high",
       "hardness": "very low",
       "lather": "silky"
     }
@@ -267,8 +267,8 @@
     ],
     "saturation": "saturated",
     "soapProperties": {
-      "cleansing": "high",
-      "conditioning": "low",
+      "degreasing": "high",
+      "moisturizing": "low",
       "hardness": "high",
       "lather": "creamy with some bubbles"
     }
@@ -296,8 +296,8 @@
     ],
     "saturation": "monounsaturated",
     "soapProperties": {
-      "cleansing": "low",
-      "conditioning": "high",
+      "degreasing": "low",
+      "moisturizing": "high",
       "hardness": "low",
       "lather": "mild, slippery"
     }
@@ -324,8 +324,8 @@
     ],
     "saturation": "saturated",
     "soapProperties": {
-      "cleansing": "moderate",
-      "conditioning": "moderate",
+      "degreasing": "moderate",
+      "moisturizing": "moderate",
       "hardness": "high",
       "lather": "stable, creamy"
     }
@@ -351,8 +351,8 @@
     ],
     "saturation": "monounsaturated",
     "soapProperties": {
-      "cleansing": "low",
-      "conditioning": "very high",
+      "degreasing": "low",
+      "moisturizing": "very high",
       "hardness": "low",
       "lather": "creamy"
     }
@@ -381,8 +381,8 @@
     ],
     "saturation": "monounsaturated (hydroxylated)",
     "soapProperties": {
-      "cleansing": "low",
-      "conditioning": "high",
+      "degreasing": "low",
+      "moisturizing": "high",
       "hardness": "low",
       "lather": "boosts and stabilizes other lather"
     }
@@ -411,8 +411,8 @@
     ],
     "saturation": "saturated",
     "soapProperties": {
-      "cleansing": "low",
-      "conditioning": "moderate",
+      "degreasing": "low",
+      "moisturizing": "moderate",
       "hardness": "very high",
       "lather": "stable, dense, creamy"
     }

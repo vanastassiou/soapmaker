@@ -138,24 +138,24 @@ const RANGE_EXPLANATIONS = {
         low: 'Soft bar; may need a longer cure time or additives like sodium lactate',
         high: 'Very hard; may be brittle or waxy, so cut soon after unmoulding to avoid cracking'
     },
-    cleansing: {
-        low: 'Low cleansing; very gentle on skn, but may feel insufficiently effective',
-        high: 'High cleansing; good for utility soap, but frequent use may dry skin'
+    degreasing: {
+        low: 'Low degreasing; very gentle on skin, but may feel insufficiently effective',
+        high: 'High degreasing; good for utility soap, but frequent use may dry skin'
     },
-    conditioning: {
-        low: 'Low conditioning; less moisturizing, may feel drying',
-        high: 'High conditioning; very moisturizing, but may reduce lather'
+    moisturizing: {
+        low: 'Low moisturizing; less conditioning, may feel drying',
+        high: 'High moisturizing; very conditioning, but may reduce lather'
     },
-    bubbly: {
+    'lather-volume': {
         low: 'Lathering produces less foam',
         high: 'Lathering produces lots of foam, but it may feel less creamy than desired'
     },
-    creamy: {
+    'lather-density': {
         low: 'Lathering produces a stable, lotion-like foam',
-        high: 'Lathering produces a dense foam, but bubbliness may be reduced'
+        high: 'Lathering produces a dense foam, but lather volume may be reduced'
     },
     iodine: {
-        low: 'Low iodine; very stable but may lack skin-conditioning fats',
+        low: 'Low iodine; very stable but may lack moisturizing fats',
         high: 'High iodine; prone to rancidity, so mitigate this by adding antioxidant and cure in cool dark place'
     },
     ins: {
@@ -203,7 +203,7 @@ export function populatePropertyRanges(ranges) {
     });
 
     // Also populate profile builder input placeholders
-    const profileProperties = ['hardness', 'cleansing', 'conditioning', 'bubbly', 'creamy'];
+    const profileProperties = ['hardness', 'degreasing', 'moisturizing', 'lather-volume', 'lather-density'];
     profileProperties.forEach(prop => {
         const input = $(PROPERTY_ELEMENT_IDS.target[prop]);
         if (input && ranges[prop]) {
@@ -468,9 +468,9 @@ export function showFattyAcidInfo(acidKey, fattyAcidsData, recipe, fatsDatabase)
     $('faContribution').innerHTML = `
         <div class="fa-props-grid">
             <div class="fa-prop-item"><span class="fa-prop-label">Hardness</span><span class="fa-prop-value">${props.hardness}</span></div>
-            <div class="fa-prop-item"><span class="fa-prop-label">Cleansing</span><span class="fa-prop-value">${props.cleansing}</span></div>
+            <div class="fa-prop-item"><span class="fa-prop-label">Degreasing</span><span class="fa-prop-value">${props.degreasing}</span></div>
             <div class="fa-prop-item"><span class="fa-prop-label">Lather</span><span class="fa-prop-value">${props.lather}</span></div>
-            <div class="fa-prop-item"><span class="fa-prop-label">Conditioning</span><span class="fa-prop-value">${props.conditioning}</span></div>
+            <div class="fa-prop-item"><span class="fa-prop-label">Moisturizing</span><span class="fa-prop-value">${props.moisturizing}</span></div>
         </div>
         ${acid.description ? `<p class="fa-description">${acid.description}</p>` : ''}
     `;
@@ -744,7 +744,7 @@ export function hideProfileResults() {
  */
 export function getPropertyTargets() {
     const targets = {};
-    const properties = ['hardness', 'cleansing', 'conditioning', 'bubbly', 'creamy'];
+    const properties = ['hardness', 'degreasing', 'moisturizing', 'lather-volume', 'lather-density'];
 
     properties.forEach(prop => {
         const input = $(PROPERTY_ELEMENT_IDS.target[prop]);
@@ -822,7 +822,7 @@ export function populateExcludeFatSelect(selectElement, fatsDatabase, excludedFa
  * Clear profile builder inputs
  */
 export function clearProfileInputs() {
-    const properties = ['hardness', 'cleansing', 'conditioning', 'bubbly', 'creamy'];
+    const properties = ['hardness', 'degreasing', 'moisturizing', 'lather-volume', 'lather-density'];
 
     properties.forEach(prop => {
         const input = $(PROPERTY_ELEMENT_IDS.target[prop]);

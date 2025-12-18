@@ -13,7 +13,7 @@ import { $, formatProseList } from './helpers.js';
 
 /**
  * Generate a qualitative description of soap properties
- * @param {Object} properties - {hardness, cleansing, conditioning, bubbly, creamy, iodine, ins}
+ * @param {Object} properties - {hardness, degreasing, moisturizing, lather-volume, lather-density, iodine, ins}
  * @param {Array} notes - Recipe notes array from calculator
  * @returns {string} HTML for qualitative summary
  */
@@ -35,33 +35,33 @@ function buildQualitativeSummary(properties, notes = []) {
         high: 'very hard'
     }[hardnessLevel];
 
-    // Cleansing description
-    const cleansingLevel = classify(properties.cleansing, R.cleansing);
-    const cleansingText = {
+    // Degreasing description
+    const degreasingLevel = classify(properties.degreasing, R.degreasing);
+    const degreasingText = {
         low: 'gentle',
         mid: 'moderate',
         high: 'strong'
-    }[cleansingLevel];
+    }[degreasingLevel];
 
-    // Bubbly description
-    const bubblyLevel = classify(properties.bubbly, R.bubbly);
-    const bubblyText = {
+    // Lather volume description
+    const latherVolumeLevel = classify(properties['lather-volume'], R['lather-volume']);
+    const latherVolumeText = {
         low: 'minimal',
         mid: 'good',
         high: 'abundant'
-    }[bubblyLevel];
+    }[latherVolumeLevel];
 
-    // Creamy description
-    const creamyLevel = classify(properties.creamy, R.creamy);
-    const creamyText = {
+    // Lather density description
+    const latherDensityLevel = classify(properties['lather-density'], R['lather-density']);
+    const latherDensityText = {
         low: 'light',
         mid: 'creamy',
         high: 'rich'
-    }[creamyLevel];
+    }[latherDensityLevel];
 
     // Build main description
-    let summary = `Produces a ${hardnessText} bar with ${cleansingText} cleansing ability. `;
-    summary += `Lather is ${bubblyText} with a ${creamyText} texture.`;
+    let summary = `Produces a ${hardnessText} bar with ${degreasingText} degreasing ability. `;
+    summary += `Lather is ${latherVolumeText} with a ${latherDensityText} texture.`;
 
     // Collect all warnings - start with calculator-generated notes
     const warnings = notes.map(note => note.text);
@@ -71,7 +71,7 @@ function buildQualitativeSummary(properties, notes = []) {
     if (iodineLevel === 'high') {
         warnings.push('High iodine value means an increased risk of rancidity. Store in a cool, dark place, and consider adding an antioxidant like Vitamin E or rosemary oleoresin extract to help preserve the soap.');
     } else if (iodineLevel === 'low') {
-        warnings.push('Low iodine value means excellent shelf stability, but the bar may feel less conditioning.');
+        warnings.push('Low iodine value means excellent shelf stability, but the bar may feel less moisturizing.');
     }
 
     const insLevel = classify(properties.ins, R.ins);
@@ -87,8 +87,8 @@ function buildQualitativeSummary(properties, notes = []) {
         warnings.push('Cut bars soon after unmoulding (12 to 24 hours) to prevent cracking.');
     }
 
-    if (cleansingLevel === 'high') {
-        warnings.push('High cleansing is great for utility soap (e.g. garage, kitchen) but may be drying for frequent facial use.');
+    if (degreasingLevel === 'high') {
+        warnings.push('High degreasing is great for utility soap (e.g. garage, kitchen) but may be drying for frequent facial use.');
     }
 
     let html = `<p class="qualitative-summary">${summary}</p>`;
@@ -381,7 +381,7 @@ function getClassificationText(classification) {
 
 /**
  * Build a single property explanation for the science section
- * @param {string} propertyKey - Key like 'hardness', 'cleansing'
+ * @param {string} propertyKey - Key like 'hardness', 'degreasing'
  * @param {number} value - Calculated value
  * @param {Object} formulas - Formulas database
  * @param {Object} sources - Sources database
@@ -391,10 +391,10 @@ function buildPropertyExplanation(propertyKey, value, formulas, sources) {
     // Map property keys to formula keys
     const formulaKeyMap = {
         hardness: 'hardness',
-        cleansing: 'cleansing',
-        conditioning: 'conditioning',
-        bubbly: 'bubbly',
-        creamy: 'creamy',
+        degreasing: 'degreasing',
+        moisturizing: 'moisturizing',
+        'lather-volume': 'lather-volume',
+        'lather-density': 'lather-density',
         iodine: 'iodine-value',
         ins: 'ins-value'
     };
@@ -552,7 +552,7 @@ function buildScienceExplanations(data) {
     explanations.push(buildWaterExplanation(data, formulas, sources));
 
     // Soap properties
-    const propertyOrder = ['hardness', 'cleansing', 'conditioning', 'bubbly', 'creamy', 'iodine', 'ins'];
+    const propertyOrder = ['hardness', 'degreasing', 'moisturizing', 'lather-volume', 'lather-density', 'iodine', 'ins'];
     propertyOrder.forEach(key => {
         if (properties[key] !== undefined) {
             explanations.push(buildPropertyExplanation(key, properties[key], formulas, sources));
@@ -608,7 +608,7 @@ function buildScienceSection(data) {
  * @param {number} data.waterRatio - Water to lye ratio
  * @param {string} data.unit - Unit string
  * @param {Object} data.fattyAcids - Fatty acid percentages
- * @param {Object} data.properties - Soap properties {hardness, cleansing, conditioning, bubbly, creamy, iodine, ins}
+ * @param {Object} data.properties - Soap properties {hardness, degreasing, moisturizing, lather-volume, lather-density, iodine, ins}
  * @param {Array} data.notes - Recipe notes array
  */
 export function renderFinalRecipe(container, data) {

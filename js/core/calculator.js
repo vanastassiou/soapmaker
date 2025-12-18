@@ -130,15 +130,15 @@ export function calculateINS(recipe, fatsDatabase) {
 /**
  * Calculate soap properties from fatty acid profile
  * @param {Object} fa - Fatty acid profile
- * @returns {Object} Soap properties (hardness, cleansing, etc.)
+ * @returns {Object} Soap properties (hardness, degreasing, etc.)
  */
 export function calculateProperties(fa) {
     return {
         hardness: (fa.caprylic || 0) + (fa.capric || 0) + fa.lauric + fa.myristic + fa.palmitic + fa.stearic + (fa.arachidic || 0) + (fa.behenic || 0),
-        cleansing: (fa.caprylic || 0) + (fa.capric || 0) + fa.lauric + fa.myristic,
-        conditioning: (fa.palmitoleic || 0) + fa.oleic + fa.ricinoleic + fa.linoleic + fa.linolenic + (fa.erucic || 0),
-        bubbly: fa.lauric + fa.myristic + fa.ricinoleic,
-        creamy: fa.palmitic + fa.stearic + fa.ricinoleic
+        degreasing: (fa.caprylic || 0) + (fa.capric || 0) + fa.lauric + fa.myristic,
+        moisturizing: (fa.palmitoleic || 0) + fa.oleic + fa.ricinoleic + fa.linoleic + fa.linolenic + (fa.erucic || 0),
+        'lather-volume': fa.lauric + fa.myristic + fa.ricinoleic,
+        'lather-density': fa.palmitic + fa.stearic + fa.ricinoleic
     };
 }
 
@@ -175,8 +175,8 @@ export function generateFatProperties(fat, fattyAcidsData) {
     // Calculate weighted properties
     let totalWeight = 0;
     let weightedHardness = 0;
-    let weightedCleansing = 0;
-    let weightedConditioning = 0;
+    let weightedDegreasing = 0;
+    let weightedMoisturizing = 0;
     const latherDescriptions = [];
 
     dominant.forEach(([acidKey, pct]) => {
@@ -188,12 +188,12 @@ export function generateFatProperties(fat, fattyAcidsData) {
 
         // Convert qualitative to numeric and weight
         const hardnessNum = LEVEL_TO_NUM[props.hardness] || 3;
-        const cleansingNum = LEVEL_TO_NUM[props.cleansing] || 3;
-        const conditioningNum = LEVEL_TO_NUM[props.conditioning] || 3;
+        const degreasingNum = LEVEL_TO_NUM[props.degreasing] || 3;
+        const moisturizingNum = LEVEL_TO_NUM[props.moisturizing] || 3;
 
         weightedHardness += hardnessNum * pct;
-        weightedCleansing += cleansingNum * pct;
-        weightedConditioning += conditioningNum * pct;
+        weightedDegreasing += degreasingNum * pct;
+        weightedMoisturizing += moisturizingNum * pct;
 
         // Collect unique lather descriptions
         if (props.lather && !latherDescriptions.includes(props.lather)) {
@@ -205,21 +205,21 @@ export function generateFatProperties(fat, fattyAcidsData) {
 
     // Calculate averages and convert back to levels
     const avgHardness = Math.round(weightedHardness / totalWeight);
-    const avgCleansing = Math.round(weightedCleansing / totalWeight);
-    const avgConditioning = Math.round(weightedConditioning / totalWeight);
+    const avgDegreasing = Math.round(weightedDegreasing / totalWeight);
+    const avgMoisturizing = Math.round(weightedMoisturizing / totalWeight);
 
     const hardnessLevel = NUM_TO_LEVEL[avgHardness] || 'moderate';
-    const cleansingLevel = NUM_TO_LEVEL[avgCleansing] || 'moderate';
-    const conditioningLevel = NUM_TO_LEVEL[avgConditioning] || 'moderate';
+    const degreasingLevel = NUM_TO_LEVEL[avgDegreasing] || 'moderate';
+    const moisturizingLevel = NUM_TO_LEVEL[avgMoisturizing] || 'moderate';
 
     // Build prose description
     const parts = [];
 
     // Combine similar levels
-    if (hardnessLevel === cleansingLevel) {
-        parts.push(`${hardnessLevel} hardness and cleansing.`);
+    if (hardnessLevel === degreasingLevel) {
+        parts.push(`${hardnessLevel} hardness and degreasing.`);
     } else {
-        parts.push(`${hardnessLevel} hardness. ${cleansingLevel} cleansing.`);
+        parts.push(`${hardnessLevel} hardness. ${degreasingLevel} degreasing.`);
     }
 
     // Add lather description (pick most descriptive from dominant acids)
@@ -228,7 +228,7 @@ export function generateFatProperties(fat, fattyAcidsData) {
         parts.push(lather + ' lather.');
     }
 
-    parts.push(`${conditioningLevel} conditioning.`);
+    parts.push(`${moisturizingLevel} moisturizing.`);
 
     return parts.join(' ');
 }
@@ -313,23 +313,23 @@ function checkHardness(properties) {
 }
 
 /**
- * Check cleansing and generate note if needed
+ * Check degreasing and generate note if needed
  */
-function checkCleansing(properties) {
+function checkDegreasing(properties) {
     const T = NOTE_THRESHOLDS;
 
-    if (properties.cleansing > T.HIGH_CLEANSING) {
+    if (properties.degreasing > T.HIGH_DEGREASING) {
         return {
             type: NOTE_TYPES.INFO,
             icon: NOTE_ICONS.HIGH_CLEANSING,
-            text: `High cleansing (${properties.cleansing.toFixed(0)}): excellent for kitchen/utility soap. May strip skin if used daily on face or sensitive areas.`
+            text: `High degreasing (${properties.degreasing.toFixed(0)}): excellent for kitchen/utility soap. May strip skin if used daily on face or sensitive areas.`
         };
     }
-    if (properties.cleansing < T.LOW_CLEANSING) {
+    if (properties.degreasing < T.LOW_DEGREASING) {
         return {
             type: NOTE_TYPES.INFO,
             icon: NOTE_ICONS.LOW_CLEANSING,
-            text: `Low cleansing (${properties.cleansing.toFixed(0)}): very gentle, good for sensitive skin. Some users may feel it doesn't "clean" enough.`
+            text: `Low degreasing (${properties.degreasing.toFixed(0)}): very gentle, good for sensitive skin. Some users may feel it doesn't "clean" enough.`
         };
     }
     return null;
@@ -374,7 +374,7 @@ function checkLinolenic(_properties, fa) {
 function checkLather(properties) {
     const R = PROPERTY_RANGES;
 
-    if (properties.bubbly < R.bubbly.min && properties.creamy < 20) {
+    if (properties['lather-volume'] < R['lather-volume'].min && properties['lather-density'] < 20) {
         return {
             type: NOTE_TYPES.INFO,
             icon: NOTE_ICONS.LOW_LATHER,
@@ -385,16 +385,16 @@ function checkLather(properties) {
 }
 
 /**
- * Check conditioning vs hardness balance
+ * Check moisturizing vs hardness balance
  */
-function checkConditioningBalance(properties) {
+function checkMoisturizingBalance(properties) {
     const T = NOTE_THRESHOLDS;
 
-    if (properties.conditioning > T.HIGH_CONDITIONING && properties.hardness < T.LOW_HARDNESS) {
+    if (properties.moisturizing > T.HIGH_MOISTURIZING && properties.hardness < T.LOW_HARDNESS) {
         return {
             type: NOTE_TYPES.INFO,
             icon: NOTE_ICONS.CONDITIONING_BALANCE,
-            text: 'Highly conditioning but soft: luxurious feel but bar may not last long in shower. Consider adding palm or tallow for balance.'
+            text: 'Highly moisturizing but soft: luxurious feel but bar may not last long in shower. Consider adding palm or tallow for balance.'
         };
     }
     return null;
@@ -407,7 +407,7 @@ function checkCastorOpportunity(properties, _fa, recipe) {
     const T = NOTE_THRESHOLDS;
     const hasCastor = recipe.some(r => r.id === SPECIAL_FATS.CASTOR);
 
-    if (!hasCastor && properties.bubbly < T.LOW_BUBBLY) {
+    if (!hasCastor && properties['lather-volume'] < T.LOW_LATHER_VOLUME) {
         return {
             type: NOTE_TYPES.SUCCESS,
             icon: NOTE_ICONS.TIP,
@@ -427,12 +427,12 @@ function checkGoodBalance(properties, fa) {
 
     const inRange = (prop) => properties[prop] >= R[prop].min && properties[prop] <= R[prop].max;
 
-    if (inRange('hardness') && inRange('cleansing') && inRange('conditioning') &&
+    if (inRange('hardness') && inRange('degreasing') && inRange('moisturizing') &&
         polyunsaturated <= T.HIGH_POLYUNSATURATED) {
         return {
             type: NOTE_TYPES.SUCCESS,
             icon: NOTE_ICONS.GOOD,
-            text: 'Well-balanced recipe: good hardness, cleansing, and conditioning within recommended ranges.'
+            text: 'Well-balanced recipe: good hardness, degreasing, and moisturizing within recommended ranges.'
         };
     }
     return null;
@@ -450,11 +450,11 @@ export function getRecipeNotes(properties, fa, recipe) {
 
     const noteGenerators = [
         checkHardness,
-        checkCleansing,
+        checkDegreasing,
         checkShelfStability,
         checkLinolenic,
         checkLather,
-        checkConditioningBalance,
+        checkMoisturizingBalance,
         checkCastorOpportunity,
         checkGoodBalance
     ];

@@ -435,18 +435,18 @@ function calculateMatchQuality(achieved, target) {
 /**
  * Convert property targets to approximate fatty acid targets
  * This is an inverse of calculateProperties() with assumptions
- * @param {Object} propertyTargets - {hardness: 40, cleansing: 18, ...}
+ * @param {Object} propertyTargets - {hardness: 40, degreasing: 18, ...}
  * @returns {Object} Approximate fatty acid targets
  */
 export function propertiesToFattyAcidTargets(propertyTargets) {
     const targets = {};
     const C = PROPERTY_CONVERSION;
 
-    // Cleansing = lauric + myristic
-    if (isValidTarget(propertyTargets.cleansing)) {
-        const cleansing = parseFloat(propertyTargets.cleansing);
-        targets.lauric = Math.round(cleansing * C.CLEANSING_LAURIC_RATIO);
-        targets.myristic = Math.round(cleansing * C.CLEANSING_MYRISTIC_RATIO);
+    // Degreasing = lauric + myristic
+    if (isValidTarget(propertyTargets.degreasing)) {
+        const degreasing = parseFloat(propertyTargets.degreasing);
+        targets.lauric = Math.round(degreasing * C.DEGREASING_LAURIC_RATIO);
+        targets.myristic = Math.round(degreasing * C.DEGREASING_MYRISTIC_RATIO);
     }
 
     // Hardness = lauric + myristic + palmitic + stearic
@@ -460,32 +460,32 @@ export function propertiesToFattyAcidTargets(propertyTargets) {
         }
     }
 
-    // Conditioning = oleic + ricinoleic + linoleic + linolenic
-    if (isValidTarget(propertyTargets.conditioning)) {
-        const conditioning = parseFloat(propertyTargets.conditioning);
-        targets.oleic = Math.round(conditioning * C.CONDITIONING_OLEIC_RATIO);
+    // Moisturizing = oleic + ricinoleic + linoleic + linolenic
+    if (isValidTarget(propertyTargets.moisturizing)) {
+        const moisturizing = parseFloat(propertyTargets.moisturizing);
+        targets.oleic = Math.round(moisturizing * C.MOISTURIZING_OLEIC_RATIO);
         if (!targets.ricinoleic) {
-            targets.ricinoleic = Math.round(conditioning * C.CONDITIONING_RICINOLEIC_RATIO);
+            targets.ricinoleic = Math.round(moisturizing * C.MOISTURIZING_RICINOLEIC_RATIO);
         }
-        targets.linoleic = Math.round(conditioning * C.CONDITIONING_LINOLEIC_RATIO);
-        targets.linolenic = Math.round(conditioning * C.CONDITIONING_LINOLENIC_RATIO);
+        targets.linoleic = Math.round(moisturizing * C.MOISTURIZING_LINOLEIC_RATIO);
+        targets.linolenic = Math.round(moisturizing * C.MOISTURIZING_LINOLENIC_RATIO);
     }
 
-    // Bubbly = lauric + myristic + ricinoleic
-    if (isValidTarget(propertyTargets.bubbly)) {
-        const bubbly = parseFloat(propertyTargets.bubbly);
+    // Lather volume = lauric + myristic + ricinoleic
+    if (isValidTarget(propertyTargets['lather-volume'])) {
+        const latherVolume = parseFloat(propertyTargets['lather-volume']);
         const lauricMyristic = (targets.lauric || 0) + (targets.myristic || 0);
-        const ricinoleicNeeded = bubbly - lauricMyristic;
+        const ricinoleicNeeded = latherVolume - lauricMyristic;
         if (ricinoleicNeeded > 0) {
             targets.ricinoleic = Math.round(ricinoleicNeeded);
         }
     }
 
-    // Creamy = palmitic + stearic + ricinoleic
-    if (isValidTarget(propertyTargets.creamy)) {
-        const creamy = parseFloat(propertyTargets.creamy);
+    // Lather density = palmitic + stearic + ricinoleic
+    if (isValidTarget(propertyTargets['lather-density'])) {
+        const latherDensity = parseFloat(propertyTargets['lather-density']);
         const ricinoleic = targets.ricinoleic || 0;
-        const remaining = creamy - ricinoleic;
+        const remaining = latherDensity - ricinoleic;
         if (remaining > 0 && !targets.palmitic && !targets.stearic) {
             targets.palmitic = Math.round(remaining * C.HARDNESS_PALMITIC_RATIO);
             targets.stearic = Math.round(remaining * C.HARDNESS_STEARIC_RATIO);
@@ -501,24 +501,28 @@ export function propertiesToFattyAcidTargets(propertyTargets) {
  * @returns {string|null} Error message or null if valid
  */
 export function validatePropertyTargets(targets) {
-    const { hardness, cleansing, conditioning, bubbly, creamy } = targets;
+    const hardness = targets.hardness;
+    const degreasing = targets.degreasing;
+    const moisturizing = targets.moisturizing;
+    const latherVolume = targets['lather-volume'];
+    const latherDensity = targets['lather-density'];
 
-    // Hardness + conditioning should be ~100
-    if (hardness !== undefined && conditioning !== undefined) {
-        const sum = hardness + conditioning;
+    // Hardness + moisturizing should be ~100
+    if (hardness !== undefined && moisturizing !== undefined) {
+        const sum = hardness + moisturizing;
         if (sum < 85 || sum > 115) {
-            return `Hardness + Conditioning should be around 100 (you entered ${sum}). These represent saturated + unsaturated fatty acids.`;
+            return `Hardness + Moisturizing should be around 100 (you entered ${sum}). These represent saturated + unsaturated fatty acids.`;
         }
     }
 
-    // Cleansing <= Hardness
-    if (cleansing !== undefined && hardness !== undefined && cleansing > hardness) {
-        return `Cleansing (${cleansing}) cannot exceed Hardness (${hardness}). Cleansing is a subset of the fatty acids that contribute to hardness.`;
+    // Degreasing <= Hardness
+    if (degreasing !== undefined && hardness !== undefined && degreasing > hardness) {
+        return `Degreasing (${degreasing}) cannot exceed Hardness (${hardness}). Degreasing is a subset of the fatty acids that contribute to hardness.`;
     }
 
-    // Bubbly >= Cleansing
-    if (bubbly !== undefined && cleansing !== undefined && bubbly < cleansing) {
-        return `Bubbly (${bubbly}) should be at least Cleansing (${cleansing}). Bubbly = Cleansing + ricinoleic.`;
+    // Lather volume >= Degreasing
+    if (latherVolume !== undefined && degreasing !== undefined && latherVolume < degreasing) {
+        return `Lather volume (${latherVolume}) should be at least Degreasing (${degreasing}). Lather volume = Degreasing + ricinoleic.`;
     }
 
     return null;
@@ -644,10 +648,10 @@ function scoreFatForPropertyImprovement(fat, currentProperties, propertyRanges) 
     // Check each property and score based on how much this fat could help
     const propertyMap = {
         hardness: ['lauric', 'myristic', 'palmitic', 'stearic'],
-        cleansing: ['lauric', 'myristic'],
-        conditioning: ['oleic', 'ricinoleic', 'linoleic', 'linolenic'],
-        bubbly: ['lauric', 'myristic', 'ricinoleic'],
-        creamy: ['palmitic', 'stearic', 'ricinoleic']
+        degreasing: ['lauric', 'myristic'],
+        moisturizing: ['oleic', 'ricinoleic', 'linoleic', 'linolenic'],
+        'lather-volume': ['lauric', 'myristic', 'ricinoleic'],
+        'lather-density': ['palmitic', 'stearic', 'ricinoleic']
     };
 
     for (const [prop, acids] of Object.entries(propertyMap)) {
@@ -761,7 +765,7 @@ export function suggestFatsForCupboard(baseFats, fatsDatabase, options = {}) {
 
             // Score based on how many properties are now in range
             let score = 0;
-            for (const prop of ['hardness', 'cleansing', 'conditioning', 'bubbly', 'creamy']) {
+            for (const prop of ['hardness', 'degreasing', 'moisturizing', 'lather-volume', 'lather-density']) {
                 const range = PROPERTY_RANGES[prop];
                 if (testProperties[prop] >= range.min && testProperties[prop] <= range.max) {
                     score += 20;
@@ -967,7 +971,7 @@ function optimizeCupboardRecipe(baseRecipe, suggestions, fatsDatabase, allowRati
 function scorePropertiesInRange(properties) {
     let score = 0;
 
-    for (const prop of ['hardness', 'cleansing', 'conditioning', 'bubbly', 'creamy']) {
+    for (const prop of ['hardness', 'degreasing', 'moisturizing', 'lather-volume', 'lather-density']) {
         const range = PROPERTY_RANGES[prop];
         const val = properties[prop] || 0;
 

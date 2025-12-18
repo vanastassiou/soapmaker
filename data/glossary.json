@@ -13,14 +13,14 @@
     ],
     "term": "Additive"
   },
-  "bubbly": {
+  "lather-volume": {
     "category": "property",
     "domain": [
       "craft",
       "calculator"
     ],
     "desc": "Sum of lauric + myristic + ricinoleic. Indicates volume and size of lather bubbles; big, fluffy, airy lather.",
-    "details": "Low bubbly: dense, creamy lather only.\nHigh bubbly: lots of fluffy foam.\n\nCastor oil (ricinoleic) boosts bubble stability even with small amounts.",
+    "details": "Low lather volume: dense, creamy lather only.\nHigh lather volume: lots of fluffy foam.\n\nCastor oil (ricinoleic) boosts bubble stability even with small amounts.",
     "ranges": {
       "max": 46,
       "min": 14
@@ -30,7 +30,7 @@
         "sourceId": "soapcalc",
         "section": "Soap Qualities",
         "url": "http://soapcalc.net/info/soapqualities.asp",
-        "note": "Empirically derived formula from soapmaking community practice; not peer-reviewed"
+        "note": "Called 'bubbly' in SoapCalc terminology. Empirically derived formula from soapmaking community practice; not peer-reviewed."
       },
       {
         "sourceId": "pmc",
@@ -40,7 +40,7 @@
       }
     ],
     "related": [
-      "creamy"
+      "lather-density"
     ],
     "term": "Lather volume"
   },
@@ -55,7 +55,7 @@
       "fat",
       "oil",
       "hardness",
-      "conditioning"
+      "moisturizing"
     ],
     "term": "Butter (plant)"
   },
@@ -67,9 +67,9 @@
     "desc": "Unique oil containing ~90% ricinoleic acid. Small amounts (2-5%) dramatically improve lather.",
     "details": "Castor oil is the only common source of ricinoleic acid, which improves lather by stabilizing bubbles and increasing foam volume.\n\nTypical usage: 2 - 5% of recipe. Higher amounts can make soap sticky or reduce hardness.",
     "related": [
-      "bubbly",
-      "creamy",
-      "conditioning"
+      "lather-volume",
+      "lather-density",
+      "moisturizing"
     ],
     "term": "Castor oil"
   },
@@ -87,13 +87,13 @@
     ],
     "term": "Clay"
   },
-  "cleansing": {
+  "degreasing": {
     "category": "property",
     "domain": [
       "craft",
       "calculator"
     ],
-    "desc": "Sum of short-chain saturated acids (lauric + myristic). Indicates how effectively the soap removes oils and dirt from skin.",
+    "desc": "Sum of short-chain saturated acids (lauric + myristic). Indicates how effectively the soap removes oils and grease from skin.",
     "details": "Below 12: very gentle, may feel like it doesn't 'clean'.\n\nAbove 22: can strip skin's natural oils, may be drying for face/daily use.\n\nHigher levels good for kitchen or mechanic's soap.",
     "ranges": {
       "max": 22,
@@ -104,7 +104,7 @@
         "sourceId": "soapcalc",
         "section": "Soap Qualities",
         "url": "http://soapcalc.net/info/soapqualities.asp",
-        "note": "Empirically derived formula; measures water solubility rather than cleaning ability"
+        "note": "Called 'cleansing' in SoapCalc terminology. Empirically derived formula; measures water solubility rather than cleaning ability."
       },
       {
         "sourceId": "pmc",
@@ -114,9 +114,9 @@
       }
     ],
     "related": [
-      "conditioning"
+      "moisturizing"
     ],
-    "term": "Cleansing"
+    "term": "Grease removing"
   },
   "colourant": {
     "category": "additive",
@@ -133,7 +133,7 @@
     ],
     "term": "Colourant"
   },
-  "conditioning": {
+  "moisturizing": {
     "category": "property",
     "domain": [
       "craft",
@@ -150,7 +150,7 @@
         "sourceId": "soapcalc",
         "section": "Soap Qualities",
         "url": "http://soapcalc.net/info/soapqualities.asp",
-        "note": "Empirically derived formula from soapmaking community practice; not peer-reviewed"
+        "note": "Called 'conditioning' in SoapCalc terminology. Empirically derived formula from soapmaking community practice; not peer-reviewed."
       },
       {
         "sourceId": "pmc",
@@ -163,7 +163,7 @@
       "unsaturated",
       "hardness"
     ],
-    "term": "Conditioning"
+    "term": "Skin conditioning"
   },
   "common-allergen": {
     "category": "concept",
@@ -189,14 +189,14 @@
     ],
     "term": "Common allergen"
   },
-  "creamy": {
+  "lather-density": {
     "category": "property",
     "domain": [
       "craft",
       "calculator"
     ],
     "desc": "Sum of palmitic + stearic + ricinoleic. Indicates density and stability of lather; rich, lotion-like feel.",
-    "details": "High creamy: dense, stable lather that doesn't disappear.\n\nWorks best in balance with bubbly; both create satisfying lather experience.",
+    "details": "High lather density: dense, stable lather that doesn't disappear.\n\nWorks best in balance with lather volume; both create satisfying lather experience.",
     "ranges": {
       "max": 48,
       "min": 16
@@ -206,7 +206,7 @@
         "sourceId": "soapcalc",
         "section": "Soap Qualities",
         "url": "http://soapcalc.net/info/soapqualities.asp",
-        "note": "Empirically derived formula from soapmaking community practice; not peer-reviewed"
+        "note": "Called 'creamy' in SoapCalc terminology. Empirically derived formula from soapmaking community practice; not peer-reviewed."
       },
       {
         "sourceId": "pmc",
@@ -216,9 +216,9 @@
       }
     ],
     "related": [
-      "bubbly"
+      "lather-volume"
     ],
-    "term": "Lather stability"
+    "term": "Lather density"
   },
   "cure": {
     "category": "concept",
@@ -554,7 +554,7 @@
     "details": "Sugar (sucrose) dissolved in the water portion increases lather dramatically. The sugar caramelizes slightly during saponification.\n\nUsage: 0.5-1% of oil weight, dissolved in water before adding lye.\n\nOther lather enhancers:\n\u2022 Honey (also adds colour)\n\u2022 Beer (reduce first, use flat)\n\u2022 Milks (watch for overheating)\n\nCastor oil (2-5%) also boosts lather but is a fat, not an additive.",
     "related": [
       "additive",
-      "bubbly"
+      "lather-volume"
     ],
     "term": "Lather enhancer"
   },
@@ -645,7 +645,7 @@
     "related": [
       "monounsaturated",
       "castor-oil",
-      "bubbly"
+      "lather-volume"
     ],
     "term": "Hydroxylated fatty acids"
   },
@@ -667,7 +667,7 @@
       "saturated",
       "polyunsaturated",
       "unsaturated",
-      "conditioning"
+      "moisturizing"
     ],
     "term": "Monounsaturated fatty acids (MUFAs)"
   },
@@ -711,7 +711,7 @@
       "monounsaturated",
       "unsaturated",
       "dos",
-      "conditioning"
+      "moisturizing"
     ],
     "term": "Polyunsaturated fatty acids (PUFAs)"
   },
@@ -837,7 +837,7 @@
       }
     ],
     "related": [
-      "conditioning",
+      "moisturizing",
       "sap-value"
     ],
     "term": "Superfat / lye discount"
@@ -901,7 +901,7 @@
     ],
     "related": [
       "saturated",
-      "conditioning",
+      "moisturizing",
       "dos"
     ],
     "term": "Unsaturated fatty acids"
@@ -917,7 +917,7 @@
     "related": [
       "superfat",
       "hardness",
-      "conditioning"
+      "moisturizing"
     ],
     "term": "Usage range"
   },
