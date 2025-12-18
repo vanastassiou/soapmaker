@@ -17,6 +17,7 @@ import {
 } from '../lib/constants.js';
 
 import { checkAdditiveWarnings, generateFatProperties } from '../core/calculator.js';
+import { resolveReferences } from '../lib/references.js';
 
 import {
     $,
@@ -246,21 +247,23 @@ export function updatePercentages(recipe, unit) {
 /**
  * Render references section into a panel
  * @param {HTMLElement} panel - The panel element to append references to
- * @param {Array} references - Array of {source, section, url}
+ * @param {Array} references - Array of {sourceId, section, url}
+ * @param {Object} sourcesData - Sources database for resolving sourceIds
  */
-function renderReferences(panel, references) {
+function renderReferences(panel, references, sourcesData) {
     // Remove existing references section if present
     const existing = panel.querySelector('.panel-references-section');
     if (existing) existing.remove();
 
     if (!references || references.length === 0) return;
 
+    const resolved = resolveReferences(references, sourcesData);
     const section = document.createElement('div');
     section.className = 'panel-section panel-references-section';
     section.innerHTML = `
         <h4>References</h4>
         <div class="panel-references">
-            ${references.map(ref => `
+            ${resolved.map(ref => `
                 <div class="reference-item">
                     <a href="${ref.url}" target="_blank" rel="noopener noreferrer">${ref.source}</a>
                     <span class="reference-section">${ref.section}</span>
@@ -276,9 +279,10 @@ function renderReferences(panel, references) {
  * @param {string} fatId - Fat id (kebab-case key)
  * @param {Object} fatsDatabase - Fat database
  * @param {Object} fattyAcidsData - Fatty acid data with soapProperties
+ * @param {Object} sourcesData - Sources database for resolving references
  * @param {Function} onFattyAcidClick - Callback when fatty acid is clicked
  */
-export function showFatInfo(fatId, fatsDatabase, fattyAcidsData, onFattyAcidClick) {
+export function showFatInfo(fatId, fatsDatabase, fattyAcidsData, sourcesData, onFattyAcidClick) {
     if (!fatId || !fatsDatabase[fatId]) return;
 
     const fat = fatsDatabase[fatId];
@@ -311,7 +315,7 @@ export function showFatInfo(fatId, fatsDatabase, fattyAcidsData, onFattyAcidClic
         }));
     }
 
-    renderReferences($(ELEMENT_IDS.fatInfoPanel), fat.references);
+    renderReferences($(ELEMENT_IDS.fatInfoPanel), fat.references, sourcesData);
 
     openPanel(ELEMENT_IDS.fatInfoPanel, ELEMENT_IDS.panelOverlay);
 }
@@ -349,9 +353,10 @@ function calculatePropertyContributors(recipe, fatsDatabase, fattyAcids) {
  * @param {Object} glossaryData - Glossary database
  * @param {Array} recipe - Current recipe array
  * @param {Object} fatsDatabase - Fat database
+ * @param {Object} sourcesData - Sources database for resolving references
  * @param {Function} onTermClick - Callback when related term is clicked
  */
-export function showGlossaryInfo(term, glossaryData, recipe, fatsDatabase, onTermClick) {
+export function showGlossaryInfo(term, glossaryData, recipe, fatsDatabase, sourcesData, onTermClick) {
     if (!term || !glossaryData[term]) return;
 
     const data = glossaryData[term];
@@ -414,7 +419,7 @@ export function showGlossaryInfo(term, glossaryData, recipe, fatsDatabase, onTer
         relatedSection.style.display = 'none';
     }
 
-    renderReferences($('glossaryPanel'), data.references);
+    renderReferences($('glossaryPanel'), data.references, sourcesData);
 
     openPanel('glossaryPanel', ELEMENT_IDS.panelOverlay);
 }
@@ -444,8 +449,9 @@ function findRecipeSourcesForAcid(recipe, fatsDatabase, acidKey) {
  * @param {Object} fattyAcidsData - Fatty acids database
  * @param {Array} recipe - Current recipe array
  * @param {Object} fatsDatabase - Fat database
+ * @param {Object} sourcesData - Sources database for resolving references
  */
-export function showFattyAcidInfo(acidKey, fattyAcidsData, recipe, fatsDatabase) {
+export function showFattyAcidInfo(acidKey, fattyAcidsData, recipe, fatsDatabase, sourcesData) {
     if (!acidKey || !fattyAcidsData[acidKey]) return;
 
     const acid = fattyAcidsData[acidKey];
@@ -500,7 +506,7 @@ export function showFattyAcidInfo(acidKey, fattyAcidsData, recipe, fatsDatabase)
             `;
         }).join('');
 
-    renderReferences($('fattyAcidPanel'), acid.references);
+    renderReferences($('fattyAcidPanel'), acid.references, sourcesData);
 
     openPanel('fattyAcidPanel', ELEMENT_IDS.panelOverlay);
 }
@@ -1133,8 +1139,9 @@ export function renderAdditives(container, recipeAdditives, additivesDatabase, t
  * Show additive info panel
  * @param {string} additiveId - Additive id (kebab-case key)
  * @param {Object} additivesDatabase - Additives database
+ * @param {Object} sourcesData - Sources database for resolving references
  */
-export function showAdditiveInfo(additiveId, additivesDatabase) {
+export function showAdditiveInfo(additiveId, additivesDatabase, sourcesData) {
     if (!additiveId || !additivesDatabase[additiveId]) return;
 
     const additive = additivesDatabase[additiveId];
@@ -1211,7 +1218,7 @@ export function showAdditiveInfo(additiveId, additivesDatabase) {
         extraSection.style.display = extraItems.length > 0 ? 'block' : 'none';
     }
 
-    renderReferences(panel, additive.references);
+    renderReferences(panel, additive.references, sourcesData);
 
     openPanel(ELEMENT_IDS.additiveInfoPanel, ELEMENT_IDS.panelOverlay);
 }

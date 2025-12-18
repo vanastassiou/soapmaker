@@ -150,8 +150,8 @@ function renderRecipeList() {
         onPercentageChange: handlePercentageChange,
         onToggleLock: handleToggleRecipeLock,
         onRemove: handleRemoveFat,
-        onFatInfo: (fatId) => ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, (acidKey) => {
-            ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, state.recipe, state.fatsDatabase);
+        onFatInfo: (fatId) => ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, state.sourcesData, (acidKey) => {
+            ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, state.recipe, state.fatsDatabase, state.sourcesData);
         })
     });
 
@@ -182,7 +182,7 @@ function renderAdditivesList() {
         {
             onWeightChange: handleAdditiveWeightChange,
             onRemove: handleRemoveAdditive,
-            onInfo: (additiveId) => ui.showAdditiveInfo(additiveId, allAdditives)
+            onInfo: (additiveId) => ui.showAdditiveInfo(additiveId, allAdditives, state.sourcesData)
         }
     );
 }
@@ -649,8 +649,8 @@ function renderPropertiesResults(result, targetProfile) {
     ui.renderProfileResults(result, targetProfile, state.fatsDatabase, state.propertiesLockedIndices, {
         onUseRecipe: handleUseGeneratedRecipe,
         onFatInfo: (fatId) => {
-            ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, (acidKey) => {
-                ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, state.propertiesRecipe, state.fatsDatabase);
+            ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, state.sourcesData, (acidKey) => {
+                ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, state.propertiesRecipe, state.fatsDatabase, state.sourcesData);
             });
         },
         onToggleLock: handleTogglePropertiesLock
@@ -919,7 +919,7 @@ function setupPanelHandlers() {
 
     const showGlossaryTerm = (term, triggerElement) => {
         if (triggerElement) lastFocusedElement = triggerElement;
-        ui.showGlossaryInfo(term, state.glossaryData, state.recipe, state.fatsDatabase, showGlossaryTerm);
+        ui.showGlossaryInfo(term, state.glossaryData, state.recipe, state.fatsDatabase, state.sourcesData, showGlossaryTerm);
         // Move focus to the panel
         const panel = $('glossaryPanel');
         if (panel) {
@@ -945,7 +945,7 @@ function setupPanelHandlers() {
     document.querySelectorAll('.fa-link').forEach(link => {
         const handler = () => {
             lastFocusedElement = link;
-            ui.showFattyAcidInfo(link.dataset.acid, state.fattyAcidsData, state.recipe, state.fatsDatabase);
+            ui.showFattyAcidInfo(link.dataset.acid, state.fattyAcidsData, state.recipe, state.fatsDatabase, state.sourcesData);
             // Move focus to the panel
             const panel = $('fattyAcidPanel');
             if (panel) {
@@ -962,7 +962,7 @@ function setupPanelHandlers() {
         const faLink = e.target.closest('.fa-link');
         if (faLink && faLink.dataset.acid) {
             lastFocusedElement = faLink;
-            ui.showFattyAcidInfo(faLink.dataset.acid, state.fattyAcidsData, state.recipe, state.fatsDatabase);
+            ui.showFattyAcidInfo(faLink.dataset.acid, state.fattyAcidsData, state.recipe, state.fatsDatabase, state.sourcesData);
             const panel = $('fattyAcidPanel');
             if (panel) {
                 const closeBtn = panel.querySelector('.close-panel');
@@ -1078,8 +1078,8 @@ function renderYoloRecipe() {
         },
         onInfo: (fatId) => {
             if (fatId && state.fatsDatabase[fatId]) {
-                ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, (acidKey) => {
-                    ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, state.yoloRecipe, state.fatsDatabase);
+                ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, state.sourcesData, (acidKey) => {
+                    ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, state.yoloRecipe, state.fatsDatabase, state.sourcesData);
                 });
             }
         }
@@ -1271,8 +1271,8 @@ function renderCupboardFatsList() {
         onRemove: handleRemoveCupboardFat,
         onInfo: (fatId) => {
             if (fatId && state.fatsDatabase[fatId]) {
-                ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, (acidKey) => {
-                    ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, state.cupboardFats, state.fatsDatabase);
+                ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, state.sourcesData, (acidKey) => {
+                    ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, state.cupboardFats, state.fatsDatabase, state.sourcesData);
                 });
             }
         }
@@ -1297,8 +1297,8 @@ function renderCupboardSuggestionsList() {
             onRemove: handleRemoveCupboardSuggestion,
             onInfo: (fatId) => {
                 if (fatId && state.fatsDatabase[fatId]) {
-                    ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, (acidKey) => {
-                        ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, state.cupboardSuggestions, state.fatsDatabase);
+                    ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, state.sourcesData, (acidKey) => {
+                        ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, state.cupboardSuggestions, state.fatsDatabase, state.sourcesData);
                     });
                 }
             }
@@ -1459,8 +1459,8 @@ async function init() {
 
     updateFatSelectWithFilters();
     ui.initHelpPopup(state.glossaryData, state.tooltipsData, (term) => {
-        ui.showGlossaryInfo(term, state.glossaryData, state.recipe, state.fatsDatabase, (t) => {
-            ui.showGlossaryInfo(t, state.glossaryData, state.recipe, state.fatsDatabase);
+        ui.showGlossaryInfo(term, state.glossaryData, state.recipe, state.fatsDatabase, state.sourcesData, (t) => {
+            ui.showGlossaryInfo(t, state.glossaryData, state.recipe, state.fatsDatabase, state.sourcesData);
         });
     });
     ui.populatePropertyRanges(PROPERTY_RANGES);
@@ -1497,13 +1497,13 @@ function handleShowParameter() {
     const id = idParts.join('-');
 
     if (type === 'fat' && state.fatsDatabase[id]) {
-        ui.showFatInfo(id, state.fatsDatabase, state.fattyAcidsData, (acidKey) => {
-            ui.showGlossaryInfo(acidKey, state.glossaryData, state.recipe, state.fatsDatabase);
+        ui.showFatInfo(id, state.fatsDatabase, state.fattyAcidsData, state.sourcesData, (acidKey) => {
+            ui.showGlossaryInfo(acidKey, state.glossaryData, state.recipe, state.fatsDatabase, state.sourcesData);
         });
     } else if (type === 'additive') {
         const allAdditives = getAllAdditivesDatabase();
         if (allAdditives[id]) {
-            ui.showAdditiveInfo(id, allAdditives);
+            ui.showAdditiveInfo(id, allAdditives, state.sourcesData);
         }
     }
 
