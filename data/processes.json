@@ -1,9 +1,11 @@
 {
   "cold-process": {
     "name": "Cold process",
-    "domain": ["craft"],
+    "domain": [
+      "craft"
+    ],
     "summary": "The most popular method for handmade soap. Oils and lye react at low temperatures, preserving beneficial compounds.",
-    "description": "Cold process (CP) soap making combines oils with lye solution at relatively low temperatures (typically 100-130°F / 38-54°C). The saponification reaction generates its own heat but doesn't require external heating.\n\nThis method preserves heat-sensitive compounds in oils and allows for creative designs like swirls and layers. The trade-off is a required 4-6 week cure time before use.",
+    "description": "Cold process (CP) soapmaking combines oils with lye solution at relatively low temperatures (typically 100-130°F / 38-54°C). The saponification reaction generates its own heat but doesn't require external heating.\n\nThis method preserves heat-sensitive compounds in oils and allows for creative designs like swirls and layers. The trade-off is a required 4-6 week cure time before use.",
     "difficulty": "beginner",
     "steps": [
       {
@@ -141,13 +143,23 @@
       "gel-phase",
       "cure",
       "superfat"
+    ],
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Cold saponification process and cure time research"
+      }
     ]
   },
   "hot-process": {
     "name": "Hot process",
-    "domain": ["craft"],
+    "domain": [
+      "craft"
+    ],
     "summary": "Soap is cooked until saponification completes. Ready to use sooner than cold process but with a rustic appearance.",
-    "description": "Hot process (HP) soap making uses external heat to accelerate and complete saponification during the cooking phase. This produces soap that's safe to use within days rather than weeks, though curing still improves the bar.\n\nThe trade-off is a more rustic, textured appearance and less opportunity for intricate designs. Hot process is excellent for salvaging batches that separated or accelerated too quickly.",
+    "description": "Hot process (HP) soapmaking uses external heat to accelerate and complete saponification during the cooking phase. This produces soap that's safe to use within days rather than weeks, though curing still improves the bar.\n\nThe trade-off is a more rustic, textured appearance and less opportunity for intricate designs. Hot process is excellent for salvaging batches that separated or accelerated too quickly.",
     "difficulty": "intermediate",
     "steps": [
       {
@@ -252,6 +264,14 @@
       "trace",
       "cure",
       "superfat"
+    ],
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Saponification chemistry; hot process accelerates completion"
+      }
     ]
   }
 }

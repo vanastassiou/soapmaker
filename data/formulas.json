@@ -1,10 +1,12 @@
 {
   "lye-amount": {
     "category": "core",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Lye amount",
-    "summary": "Calculates how much lye (sodium hydroxide or potassium hydroxide) is needed to saponify your fats.",
-    "userFriendly": "Every fat requires a specific amount of lye to turn into soap. This amount is determined by the fat's SAP (saponification) value. We multiply each fat's weight by its SAP value, add them all up, then reduce the total based on your superfat percentage to leave some oils unsaponified for skin conditioning.",
+    "summary": "Calculates how much lye is needed to saponify your fats.",
+    "userFriendly": "Every fat requires a specific amount of lye, determined by the fat's SAP (saponification) value, to turn into soap. The recipe builder multiplies each fat's weight by its SAP value, adds them all up, then reduces the total based on your superfat percentage to leave some oils unsaponified for skin conditioning.",
     "formula": "Lye = (fat\u2081 \u00d7 SAP\u2081 + fat\u2082 \u00d7 SAP\u2082 + ...) \u00d7 (1 - superfat/100)",
     "variables": {
       "fat\u2099": "Weight of each fat in your recipe (grams or ounces)",
@@ -15,11 +17,11 @@
       "scenario": "500g olive oil with 5% superfat using NaOH",
       "steps": [
         "Olive oil SAP for NaOH = 0.134",
-        "Base lye needed = 500 \u00d7 0.134 = 67g",
-        "With 5% superfat = 67 \u00d7 (1 - 0.05) = 63.65g NaOH"
+        "Base lye needed = 500g \u00d7 0.134 = 67g",
+        "With 5% superfat = 67g \u00d7 (1 - 0.05) = 63.65g NaOH"
       ]
     },
-    "technical": "The SAP value represents the mass ratio of alkali to fat required for complete saponification. For NaOH, values typically range from 0.12-0.19. KOH values are approximately 1.4\u00d7 higher due to its greater molecular weight (56.1 vs 40.0 g/mol). SAP values are derived from the average molecular weight of triglycerides in each fat.",
+    "technical": "A SAP value represents the ratio of alkali mass to fat mas required for complete saponification. It's derived from the average molecular weight of triglycerides in each fat. For NaOH, values typically range from 0.12-0.19. KOH values are about 1.4\u00d7 higher due to its greater molecular weight (56.1 vs 40.0 g/mol).",
     "related": [
       "superfat",
       "sap-value"
@@ -38,10 +40,12 @@
   },
   "water-amount": {
     "category": "core",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Water amount",
-    "summary": "Calculates the water needed to dissolve your lye.",
-    "userFriendly": "Lye must be dissolved in water before mixing with oils. The water-to-lye ratio determines your lye concentration. A 2:1 ratio (twice as much water as lye) gives a 33% lye solution, which is standard for most recipes.",
+    "summary": "Calculates the amount of water to use to dissolve your lye.",
+    "userFriendly": "For lye to be able to react with fats, it must first be dissolved in water so that it can dissociate into its component ions. For a given weight of lye to dissolve completely, you need to use at least the same weight of water.",
     "formula": "Water = Lye amount \u00d7 Water ratio",
     "variables": {
       "Lye amount": "Calculated lye weight from lye formula",
@@ -54,7 +58,7 @@
         "Lye concentration = 63.65 / (63.65 + 127.3) = 33%"
       ]
     },
-    "technical": "Lower water ratios (higher lye concentration) speed up trace and reduce cure time but increase working temperature. A 50% lye solution is the practical maximum solubility for NaOH at room temperature. Most soapmakers use 28-33% solutions (2:1 to 2.5:1 ratio).",
+    "technical": "Lower water ratios (higher lye concentration) speed up trace and reduce cure time, but increase working temperature. A 50% lye solution is the practical maximum solubility for NaOH at room temperature. Most soapmakers use 28-33% solutions (2:1 to 2.5:1 ratio).",
     "related": [
       "lye-concentration"
     ],
@@ -68,10 +72,12 @@
   },
   "fatty-acid-profile": {
     "category": "core",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Fatty acid profile",
     "summary": "Calculates the weighted average of fatty acids across all fats in your recipe.",
-    "userFriendly": "Each fat is made up of different fatty acids (like lauric, oleic, palmitic). Your soap's properties depend on which fatty acids dominate. We calculate the overall fatty acid profile by taking a weighted average based on how much of each fat you're using.",
+    "userFriendly": "Each fat is made up of different fatty acids (like lauric, oleic, palmitic). A soap's properties depend on which fatty acids dominate. The recipe builder calculates the overall fatty acid profile by taking a weighted average of the fats selected for the recipe.",
     "formula": "Fatty acid % = (fat\u2081% \u00d7 acid\u2081 + fat\u2082% \u00d7 acid\u2082 + ...) / 100",
     "variables": {
       "fat\u2099%": "Percentage of each fat in the recipe (by weight)",
@@ -84,7 +90,7 @@
         "Lauric acid = 24.5%"
       ]
     },
-    "technical": "Fatty acid profiles are stored in the fats database as percentages that should sum to approximately 100%. The weighted average calculation preserves this property. Fourteen fatty acids are tracked: caprylic (C8:0), capric (C10:0), lauric (C12:0), myristic (C14:0), palmitic (C16:0), palmitoleic (C16:1), stearic (C18:0), oleic (C18:1), ricinoleic (C18:1-OH), linoleic (C18:2), linolenic (C18:3), arachidic (C20:0), behenic (C22:0), and erucic (C22:1).",
+    "technical": "Fatty acid profiles are stored in the fats database as percentages that add up to about 100% (with very minor variances due to margins of error). The weighted average calculation preserves this property. Fourteen fatty acids are tracked: caprylic (C8:0), capric (C10:0), lauric (C12:0), myristic (C14:0), palmitic (C16:0), palmitoleic (C16:1), stearic (C18:0), oleic (C18:1), ricinoleic (C18:1-OH), linoleic (C18:2), linolenic (C18:3), arachidic (C20:0), behenic (C22:0), and erucic (C22:1).",
     "related": [
       "hardness",
       "cleansing",
@@ -100,10 +106,12 @@
   },
   "volume-estimate": {
     "category": "core",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Volume estimate",
-    "summary": "Estimates the final volume of your soap batch for mold sizing.",
-    "userFriendly": "Knowing your soap's volume helps you choose the right mold size. We calculate the volumes of fats, water, and lye separately using their densities, then account for approximately 5% volume reduction during saponification.",
+    "summary": "Estimates the final volume of your soap batch for mould sizing.",
+    "userFriendly": "Knowing your soap's volume helps you choose the right mould size. The recipe builder calculates the volumes of fats, water, and lye separately using their densities, then accounts for approximately 5% volume reduction during saponification.",
     "formula": "Volume = (Vfats + Vwater + Vlye) \u00d7 0.95",
     "variables": {
       "Vfats": "Fat volume = fat weight / fat density (avg ~0.91 g/mL)",
@@ -135,10 +143,12 @@
   },
   "hardness": {
     "category": "properties",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Hardness",
     "summary": "Predicts how hard your soap bar will be.",
-    "userFriendly": "Hardness measures how firm your soap bar will be. Hard soaps last longer and unmold faster. Saturated fatty acids (those with no double bonds) create harder bars because they pack together tightly. The saturated fatty acids are summed to estimate hardness.",
+    "userFriendly": "Hardness measures how firm your soap bar will be. Hard soaps last longer and unmould faster. Saturated fatty acids (those with no double bonds) create harder bars because they pack together tightly. The saturated fatty acids are summed to estimate hardness.",
     "formula": "Hardness = caprylic + capric + lauric + myristic + palmitic + stearic + arachidic + behenic",
     "variables": {
       "Each term": "Percentage of that fatty acid in the recipe's profile"
@@ -170,7 +180,9 @@
   },
   "cleansing": {
     "category": "properties",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Cleansing",
     "summary": "Predicts how effectively your soap will remove dirt and oils.",
     "userFriendly": "Cleansing measures how well your soap strips away oils and dirt. Short-chain saturated fatty acids (lauric and myristic, found in coconut and palm kernel oils) create soaps with strong cleansing action. High cleansing values are great for laundry or kitchen soap but can be drying for skin.",
@@ -200,17 +212,20 @@
     "references": [
       {
         "sourceId": "journal-chemical-education",
-        "section": "General reference",
+        "section": "Chemistry of Soaps and Detergents: Various Types of Commercial Products and Their Uses",
+        "url": "https://pubs.acs.org/doi/10.1021/ed300589k",
         "note": "Peer-reviewed explanation of surfactant chemistry"
       }
     ]
   },
   "conditioning": {
     "category": "properties",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Conditioning",
     "summary": "Predicts how moisturizing your soap will feel.",
-    "userFriendly": "Conditioning measures how gentle and moisturizing your soap feels on skin. Unsaturated fatty acids (oleic, linoleic) create softer soaps that are less stripping and more conditioning. Olive oil, with its high oleic acid content, is prized for conditioning bars.",
+    "userFriendly": "Conditioning measures how gentle and moisturizing your soap feels on skin. Unsaturated fatty acids (oleic, linoleic) create softer soaps that are less stripping and more conditioning.",
     "formula": "Conditioning = palmitoleic + oleic + ricinoleic + linoleic + linolenic + erucic",
     "variables": {
       "oleic": "C18:1 - abundant in olive (71%), avocado, sweet almond",
@@ -224,7 +239,7 @@
         "At 60% of recipe: 0.60 \u00d7 71 = 42.6 conditioning"
       ]
     },
-    "technical": "Unsaturated fatty acids produce sodium salts with kinked carbon chains that don't pack as tightly, resulting in softer bars with less oil-stripping action. The hydroxyl group on ricinoleic acid adds humectant properties unique to castor oil.",
+    "technical": "Unsaturated fatty acids produce sodium salts with kinked carbon chains that don't pack as tightly, resulting in softer bars that don't strip oils as completely. Ricinoleic acid, which is present in castor oil in uniquely high proporitons, has a hydroxyl group that adds humectant properties.",
     "recommendedRange": {
       "min": 44,
       "max": 69
@@ -247,10 +262,12 @@
   },
   "bubbly": {
     "category": "properties",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Bubbly lather",
     "summary": "Predicts how much fluffy, bubbly lather your soap produces.",
-    "userFriendly": "Bubbly measures the volume and lightness of your soap's lather\u2014those fluffy, airy bubbles. Lauric and myristic acids (from coconut oil) are the primary drivers of bubbles. Ricinoleic acid (from castor oil) acts as a lather booster and stabilizer.",
+    "userFriendly": "Bubbliness refer to the volume and lightness of your soap's lather. Lauric and myristic acids are the primary contributors, while ricinoleic acid boosts and stabilizes lather.",
     "formula": "Bubbly = lauric + myristic + ricinoleic",
     "variables": {
       "lauric": "C12:0 - the primary bubble-maker",
@@ -285,7 +302,9 @@
   },
   "creamy": {
     "category": "properties",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Creamy lather",
     "summary": "Predicts how dense, stable, and lotion-like your lather will be.",
     "userFriendly": "Creamy measures the density and stability of your lather\u2014that rich, thick, lotion-like foam. Palmitic and stearic acids (from palm oil, tallow, shea butter) create stable, creamy lather. Ricinoleic acid from castor oil also contributes to lather creaminess.",
@@ -323,7 +342,9 @@
   },
   "iodine-value": {
     "category": "properties",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Iodine value",
     "summary": "Measures the degree of unsaturation in your recipe, predicting shelf stability.",
     "userFriendly": "Iodine value indicates how much unsaturated fat is in your recipe. Lower values mean more saturated fats (harder, more stable bars). Higher values mean more unsaturated fats (softer, more conditioning bars but shorter shelf life). It's a weighted average of each fat's iodine value.",
@@ -359,7 +380,9 @@
   },
   "ins-value": {
     "category": "properties",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "INS value",
     "summary": "A combined index originally intended to predict overall soap quality.",
     "userFriendly": "INS combines saponification value and iodine value into a single number. It was originally suggested that values around 160 produce 'ideal' soap, but this is controversial. Many excellent soaps fall outside this range. Use it as one data point, not a definitive quality measure.",
@@ -396,10 +419,12 @@
   },
   "profile-error": {
     "category": "optimization",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Profile error (optimization)",
     "summary": "Measures how close the current recipe is to your target fatty acid profile.",
-    "userFriendly": "When you specify target properties, we convert them to target fatty acid percentages. The profile error measures how far off the current recipe is from those targets. We square each difference so that large errors are penalized more heavily, then sum them up.",
+    "userFriendly": "When you specify target properties, we convert them to target fatty acid percentages. The profile error measures how far off the current recipe is from those targets. The recipe builder squares each difference so that large errors are penalized more heavily, then sum them up.",
     "formula": "Error = (target\u2081 - actual\u2081)\u00b2 + (target\u2082 - actual\u2082)\u00b2 + ...",
     "variables": {
       "target\u2099": "Desired percentage for fatty acid n",
@@ -428,7 +453,9 @@
   },
   "weight-optimization": {
     "category": "optimization",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Weight optimization algorithm",
     "summary": "Iteratively adjusts fat percentages to minimize the profile error.",
     "userFriendly": "Once fats are selected, we need to find the best percentages. The optimizer starts with equal portions, then repeatedly tests small adjustments (shifting 2% between pairs of fats). If an adjustment reduces the error, we keep it. This continues until no improvement is found or 100 iterations pass.",
@@ -455,14 +482,17 @@
     "references": [
       {
         "sourceId": "mathematical-programming",
-        "section": "General reference",
+        "section": "Wright, S.J. (2015) Coordinate descent algorithms",
+        "url": "https://arxiv.org/abs/1502.04759",
         "note": "Academic paper on coordinate descent optimization"
       }
     ]
   },
   "match-quality": {
     "category": "optimization",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Match quality score",
     "summary": "Converts the profile error into a user-friendly percentage score.",
     "userFriendly": "After optimization, we calculate how well the recipe matches your targets. The match quality is shown as a percentage: 100% means perfect match, lower values mean some targets couldn't be fully achieved. It's based on the average deviation from targets.",
@@ -495,10 +525,12 @@
   },
   "property-to-fatty-acid": {
     "category": "optimization",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Property to fatty acid conversion",
     "summary": "Converts your target soap properties into target fatty acid percentages.",
-    "userFriendly": "When you enter targets like 'hardness: 40, cleansing: 18', we need to convert these to fatty acid targets for the optimizer. We use fixed ratios based on how each fatty acid contributes to each property.",
+    "userFriendly": "When you enter targets like 'hardness: 40, cleansing: 18', we need to convert these to fatty acid targets for the optimizer. The recipe builder uses fixed ratios based on how each fatty acid contributes to each property.",
     "formula": "lauric = cleansing \u00d7 0.7, myristic = cleansing \u00d7 0.3, etc.",
     "variables": {
       "Cleansing \u2192 Lauric": "70% of cleansing target",
@@ -535,7 +567,9 @@
   },
   "additive-amount": {
     "category": "core",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Additive amount",
     "summary": "Calculates additive weights as a percentage of your oil weight.",
     "userFriendly": "Additives like essential oils, clays, and colourants are measured as a percentage of your total fat weight. For example, if an essential oil is used at 3% and you have 500g of oils, you'd add 15g of essential oil.",
@@ -565,7 +599,9 @@
   },
   "unit-conversion": {
     "category": "core",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Unit conversions",
     "summary": "Converts between grams, ounces, milliliters, and fluid ounces.",
     "userFriendly": "The recipe builder supports both metric (grams, mL) and imperial (ounces, fl oz) units. All internal calculations use metric, then convert for display if needed.",
@@ -594,10 +630,12 @@
   },
   "density-constants": {
     "category": "core",
-    "domain": ["calculator"],
+    "domain": [
+      "calculator"
+    ],
     "name": "Density constants",
     "summary": "Material densities used for volume calculations.",
-    "userFriendly": "Different materials have different densities (weight per unit volume). We use these to convert between weight and volume measurements.",
+    "userFriendly": "Different materials have different densities (weight per unit volume). The recipe builder uses these to convert between weight and volume measurements.",
     "formula": "Volume = Weight / Density",
     "variables": {
       "Water density": "1.0 g/mL",
@@ -619,8 +657,13 @@
     "references": [
       {
         "sourceId": "crc-handbook",
-        "section": "General reference",
-        "note": "Standard reference for physical constants"
+        "section": "Physical Constants of Organic Compounds",
+        "note": "Standard reference for physical constants. Density values also available via PubChem compound pages."
+      },
+      {
+        "sourceId": "pubchem",
+        "section": "Sodium hydroxide density (CID 14798)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/14798#section=Density"
       }
     ]
   }
