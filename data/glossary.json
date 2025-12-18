@@ -5,7 +5,7 @@
       "craft"
     ],
     "desc": "Any ingredient added to soap beyond the base oils and lye. Includes essential oils, colourants (clays, micas, oxides), and functional additives (sodium lactate, salt, sugar).",
-    "details": "Additives are typically added at trace or mixed into oils before combining with lye, depending on type.\n\nUsage rates are given as percentage of oil weight. For example, 3% essential oil in a 500g oil batch = 15g essential oil.\n\nSome additives have safety limits (IFRA for fragrances, FDA for colourants).",
+    "details": "Additives are typically added at trace or mixed into oils before combining with lye, depending on type.\n\nUsage rates are given as percentage of oil weight. For example, 3% essential oil in a 500g oil batch = 15g essential oil.\n\nSome additives have safety limits (IFRA for fragrances, EU Cosmetics Regulation for colourants).",
     "related": [
       "essential-oil",
       "ifra",
@@ -170,13 +170,13 @@
     "domain": [
       "craft"
     ],
-    "desc": "Per FDA FALCPA and FASTER Act, the nine major food allergens are: milk, eggs, fish, shellfish, tree nuts, peanuts, wheat, soybeans, and sesame.",
+    "desc": "Per Codex Alimentarius, major food allergens include: cereals containing gluten, crustaceans, eggs, fish, peanuts, soybeans, milk, tree nuts, and sesame.",
     "details": "In cosmetics, the EU Cosmetics Regulation (EC) No 1223/2009 Annex III lists 26 fragrance allergens requiring declaration, including limonene, linalool, citronellol, and eugenol.\n\nRelevant to soapmaking:\n\u2022 Milk proteins (goat milk, buttermilk)\n\u2022 Tree nut oils (almond, walnut, hazelnut)\n\u2022 Soy derivatives (soybean oil)\n\u2022 Wheat proteins (wheat germ oil)\n\u2022 Lanolin (wool allergy cross-reactivity)\n\nSaponification denatures most proteins, but trace compounds may remain.",
     "references": [
       {
-        "sourceId": "fda-allergens",
-        "section": "Food Allergen Labeling and Consumer Protection Act (FALCPA) and FASTER Act",
-        "url": "https://www.fda.gov/food/food-allergensgluten-free-guidance-documents-regulatory-information/food-allergen-labeling-and-consumer-protection-act-2004-falcpa"
+        "sourceId": "codex-alimentarius",
+        "section": "General Standard for the Labelling of Prepackaged Foods (CXS 1-1985), Section 4.2.1.4",
+        "url": "https://www.fao.org/fao-who-codexalimentarius/sh-proxy/en/?lnk=1&url=https%253A%252F%252Fworkspace.fao.org%252Fsites%252Fcodex%252FStandards%252FCXS%2B1-1985%252FCXS_001e.pdf"
       },
       {
         "sourceId": "eu-cosmetics-regulation",
@@ -530,7 +530,7 @@
       "craft"
     ],
     "desc": "Mineral pigments made from iron compounds. Create stable, reliable colours that won't fade or morph in high pH soap.",
-    "details": "FDA approved for cosmetics (21 CFR 73.2250), including eye area.\n\nColors:\n\u2022 Red (Fe\u2082O\u2083): terracotta to brick red\n\u2022 Yellow (FeOOH): gold to tan\n\u2022 Black (Fe\u2083O\u2084): grey to black, use sparingly\n\u2022 Brown: blend of red + yellow + black\n\nUsage: 0.1-0.5% of oil weight. Disperse in oil to prevent speckling.",
+    "details": "Permitted in cosmetics under EU Regulation 1223/2009 (CI 77491, 77492, 77499).\n\nColours:\n\u2022 Red (Fe\u2082O\u2083): terracotta to brick red\n\u2022 Yellow (FeOOH): gold to tan\n\u2022 Black (Fe\u2083O\u2084): grey to black, use sparingly\n\u2022 Brown: blend of red + yellow + black\n\nUsage: 0.1-0.5% of oil weight. Disperse in oil to prevent speckling.",
     "references": [
       {
         "sourceId": "pubchem",
@@ -848,7 +848,7 @@
       "craft"
     ],
     "desc": "White mineral pigment (TiO\u2082) used to create opaque white soap or lighten other colours.",
-    "details": "FDA approved for cosmetics (21 CFR 73.2575).\n\nUses:\n\u2022 Pure white soap base\n\u2022 Lighten/pastel other colourants\n\u2022 Create base for swirls\n\u2022 Hide discolouration from vanilla or spices\n\nUsage: 0.1-1% of oil weight. Higher amounts can feel chalky. Disperse in oil to prevent clumping.",
+    "details": "Permitted in cosmetics under EU Regulation 1223/2009 (CI 77891).\n\nUses:\n\u2022 Pure white soap base\n\u2022 Lighten/pastel other colourants\n\u2022 Create base for swirls\n\u2022 Hide discolouration from vanilla or spices\n\nUsage: 0.1-1% of oil weight. Higher amounts can feel chalky. Disperse in oil to prevent clumping.",
     "references": [
       {
         "sourceId": "sccs",

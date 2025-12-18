@@ -8,20 +8,32 @@ import { TIMING } from '../../../js/lib/constants.js';
 import { resolveReferences } from '../../../js/lib/references.js';
 
 let fatsData = {};
-let additivesData = {};
+let fragrancesData = {};
+let colourantsData = {};
+let soapPerformanceData = {};
+let skinCareData = {};
 let sourcesData = {};
 let glossaryData = {};
 let currentCategory = 'all';
 
 async function loadIngredients() {
-    const [fatsResponse, additivesResponse, sourcesResponse, glossaryResponse] = await Promise.all([
+    const [
+        fatsResponse, fragrancesResponse, colourantsResponse,
+        soapPerformanceResponse, skinCareResponse, sourcesResponse, glossaryResponse
+    ] = await Promise.all([
         fetch('../../data/fats.json'),
-        fetch('../../data/additives.json'),
+        fetch('../../data/fragrances.json'),
+        fetch('../../data/colourants.json'),
+        fetch('../../data/soap-performance.json'),
+        fetch('../../data/skin-care.json'),
         fetch('../../data/sources.json'),
         fetch('../../data/glossary.json')
     ]);
     fatsData = await fatsResponse.json();
-    additivesData = await additivesResponse.json();
+    fragrancesData = await fragrancesResponse.json();
+    colourantsData = await colourantsResponse.json();
+    soapPerformanceData = await soapPerformanceResponse.json();
+    skinCareData = await skinCareResponse.json();
     sourcesData = await sourcesResponse.json();
     glossaryData = await glossaryResponse.json();
     renderIngredients();
@@ -146,23 +158,31 @@ function renderAdditiveCard(key, data) {
     `;
 }
 
+function addEntries(entries, data, type) {
+    Object.entries(data).forEach(([key, item]) => {
+        entries.push({ key, data: item, type, name: item.name });
+    });
+}
+
 function renderIngredients() {
     const container = $('ingredientsList');
 
     let entries = [];
 
-    // Add fats
     if (currentCategory === 'all' || currentCategory === 'fats') {
-        Object.entries(fatsData).forEach(([key, data]) => {
-            entries.push({ key, data, type: 'fat', name: data.name });
-        });
+        addEntries(entries, fatsData, 'fat');
     }
-
-    // Add additives
-    if (currentCategory === 'all' || currentCategory === 'additives') {
-        Object.entries(additivesData).forEach(([key, data]) => {
-            entries.push({ key, data, type: 'additive', name: data.name });
-        });
+    if (currentCategory === 'all' || currentCategory === 'fragrances') {
+        addEntries(entries, fragrancesData, 'additive');
+    }
+    if (currentCategory === 'all' || currentCategory === 'colourants') {
+        addEntries(entries, colourantsData, 'additive');
+    }
+    if (currentCategory === 'all' || currentCategory === 'soap-performance') {
+        addEntries(entries, soapPerformanceData, 'additive');
+    }
+    if (currentCategory === 'all' || currentCategory === 'skin-care') {
+        addEntries(entries, skinCareData, 'additive');
     }
 
     // Sort alphabetically

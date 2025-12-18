@@ -1170,12 +1170,6 @@ export function showAdditiveInfo(additiveId, additivesDatabase) {
         if (additive.safety.maxConcentration) {
             safetyItems.push(`Max concentration: ${additive.safety.maxConcentration}%`);
         }
-        if (additive.safety.fdaGras) {
-            safetyItems.push('FDA GRAS status');
-        }
-        if (additive.safety.fdaCfr) {
-            safetyItems.push(`FDA: ${additive.safety.fdaCfr}`);
-        }
         if (additive.safety.cosIng) {
             safetyItems.push(`CosIng: ${additive.safety.cosIng}`);
         }

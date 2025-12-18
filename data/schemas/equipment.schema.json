@@ -34,13 +34,6 @@
           "description": "Extended information including selection tips and usage notes",
           "type": "string"
         },
-        "materials": {
-          "description": "Common materials this equipment is made from",
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
         "considerations": {
           "description": "Key factors when selecting this equipment",
           "items": {

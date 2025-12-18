@@ -106,7 +106,7 @@
   "colloidal-oatmeal": {
     "name": "Colloidal oatmeal",
     "subcategory": "exfoliant",
-    "description": "Finely ground Avena sativa. FDA approved skin protectant. Add at trace. Particle size under 100 micrometers.",
+    "description": "Finely ground Avena sativa. Recognized skin protectant with monograph in European Pharmacopoeia. Add at trace. Particle size under 100 micrometers.",
     "density": 0.5,
     "dietary": {
       "animalBased": false,

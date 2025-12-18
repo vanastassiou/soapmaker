@@ -30,7 +30,7 @@
     "name": "Annatto extract",
     "subcategory": "natural",
     "color": "#ff6600",
-    "description": "Extract from Bixa orellana seeds. Contains bixin (oil-soluble) and norbixin (water-soluble). FDA-approved for cosmetics including eyes.",
+    "description": "Extract from Bixa orellana seeds. Contains bixin (oil-soluble) and norbixin (water-soluble). Permitted in cosmetics under EU Regulation 1223/2009.",
     "density": 1.1,
     "dietary": {
       "animalBased": false,
@@ -138,7 +138,7 @@
     "name": "Chromium oxide green",
     "subcategory": "mineral",
     "color": "#4a7c59",
-    "description": "Chromium(III) oxide (Cr2O3). FDA-approved for cosmetics including eye area. Not approved for lips. Stable at high pH.",
+    "description": "Chromium(III) oxide (Cr2O3). CI 77288. Permitted in cosmetics under EU Regulation 1223/2009. Not for lip products. Stable at high pH.",
     "density": 5.2,
     "dietary": {
       "animalBased": false,
@@ -219,7 +219,7 @@
     "name": "Iron oxide black",
     "subcategory": "oxide",
     "color": "#1a1a1a",
-    "description": "Iron(II,III) oxide (Fe3O4). FDA approved for cosmetics including eye area. Stable in high pH. Use sparingly.",
+    "description": "Iron(II,III) oxide (Fe3O4). CI 77499. Permitted in cosmetics under EU Regulation 1223/2009. Stable in high pH. Use sparingly.",
     "density": 5.2,
     "dietary": {
       "animalBased": false,
@@ -245,7 +245,7 @@
     "name": "Iron oxide red",
     "subcategory": "oxide",
     "color": "#b22222",
-    "description": "Iron(III) oxide (Fe2O3). FDA approved for cosmetics including eye area. Stable in high pH.",
+    "description": "Iron(III) oxide (Fe2O3). CI 77491. Permitted in cosmetics under EU Regulation 1223/2009. Stable in high pH.",
     "density": 5.2,
     "dietary": {
       "animalBased": false,
@@ -271,7 +271,7 @@
     "name": "Iron oxide yellow",
     "subcategory": "oxide",
     "color": "#e6b800",
-    "description": "Iron(III) oxide hydroxide (FeO(OH)). FDA approved for cosmetics including eye area. Stable in high pH.",
+    "description": "Iron(III) oxide hydroxide (FeO(OH)). CI 77492. Permitted in cosmetics under EU Regulation 1223/2009. Stable in high pH.",
     "density": 4.0,
     "dietary": {
       "animalBased": false,
@@ -432,7 +432,7 @@
     "name": "Titanium dioxide",
     "subcategory": "oxide",
     "color": "#ffffff",
-    "description": "Titanium(IV) oxide (TiO2). FDA approved for cosmetics. Creates opaque white. Stable in high pH.",
+    "description": "Titanium(IV) oxide (TiO2). CI 77891. Permitted in cosmetics under EU Regulation 1223/2009. Creates opaque white. Stable in high pH.",
     "density": 4.2,
     "dietary": {
       "animalBased": false,
@@ -458,7 +458,7 @@
     "name": "Turmeric powder",
     "subcategory": "natural",
     "color": "#ffa500",
-    "description": "Ground rhizome of Curcuma longa. Contains curcumin (90%+ curcuminoids). FDA-approved for food but not cosmetics.",
+    "description": "Ground rhizome of Curcuma longa. Contains curcumin (90%+ curcuminoids). Permitted as food colourant (E100) but not listed for cosmetics in EU Regulation 1223/2009.",
     "density": 0.8,
     "dietary": {
       "animalBased": false,
@@ -485,7 +485,7 @@
     "name": "Ultramarine blue",
     "subcategory": "mineral",
     "color": "#0033cc",
-    "description": "Synthetic sodium aluminum sulfosilicate. FDA-approved for cosmetics including eye area. Stable at high pH.",
+    "description": "Synthetic sodium aluminum sulfosilicate. CI 77007. Permitted in cosmetics under EU Regulation 1223/2009. Stable at high pH.",
     "density": 2.4,
     "dietary": {
       "animalBased": false,
@@ -512,7 +512,7 @@
     "name": "Ultramarine pink",
     "subcategory": "mineral",
     "color": "#e6a8d7",
-    "description": "Sodium aluminum sulfosilicate violet/pink. FDA-approved for cosmetics including eyes. Not permitted in lip products.",
+    "description": "Sodium aluminum sulfosilicate violet/pink. CI 77007. Permitted in cosmetics under EU Regulation 1223/2009. Not for lip products.",
     "density": 2.4,
     "dietary": {
       "animalBased": false,
@@ -539,7 +539,7 @@
     "name": "Zinc oxide",
     "subcategory": "mineral",
     "color": "#ffffff",
-    "description": "Zinc oxide (ZnO). FDA-approved for cosmetics including eye area. Creates opaque white.",
+    "description": "Zinc oxide (ZnO). CI 77947. Permitted in cosmetics under EU Regulation 1223/2009. Creates opaque white.",
     "density": 5.6,
     "dietary": {
       "animalBased": false,

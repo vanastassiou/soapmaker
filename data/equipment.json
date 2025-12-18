@@ -5,43 +5,34 @@
     "domain": [
       "craft"
     ],
-    "description": "Precision scale for measuring oils, lye, and additives by weight. Essential for accurate soap formulation.",
-    "details": "Volume-based measuring is not precise enough for soapmaking. A good scale should have at least 0.1g precision for small batches and handle up to 5kg for larger batches.\n\nLook for scales with a tare function to zero out container weight. Waterproof or splash-resistant models are ideal since you'll be working with liquids.",
-    "materials": [
-      "stainless steel platform",
-      "plastic housing"
-    ],
+    "description": "Precision scale for measuring oils, lye, and additives by weight.",
+    "details": "A scale is essential for soapmaking. Volume-based measuring is not precise enough for predictable results.",
     "considerations": [
-      "Capacity: 5kg minimum recommended",
-      "Precision: 0.1g for small batches, 1g acceptable for large batches",
-      "Tare function essential",
-      "Waterproof or splash-resistant preferred"
+      "Ensure maximum weight capacity suits your needs",
+      "Recommended precision to 0.1g (1g is acceptable for large batches)",
+      "Tare function is required",
+      "Must be at least splash resistant, but waterproof preferred"
     ],
     "related": [
       "recipe-weight"
     ]
   },
-  "stick-blender": {
-    "name": "Stick blender (immersion blender)",
+  "immersion-blender": {
+    "name": "Immersion blender (stick blender)",
     "category": "mixing",
     "domain": [
       "craft"
     ],
-    "description": "Handheld immersion blender used to emulsify oils and lye solution, dramatically reducing time to trace.",
-    "details": "A stick blender can reduce mixing time from the 30 to 60 minutes expected if stirring by hand to 2 to 5 minutes. Use short bursts of 2 to 3 seconds, alternating with stirring to avoid overmixing and reaching trace too quickly.\n\nIt's good to dedicate a stick blender to soapmaking, since the alkalinity of raw soap can degrade seals over time, and the additives used in soap can transfer back into food if you're not careful with cleaning.",
-    "materials": [
-      "stainless steel shaft",
-      "plastic body"
-    ],
+    "description": "Handheld immersion blender used to emulsify oils and lye solution and quickly bring mixture to trace.",
+    "details": "An immersion blender reduces mixing time from 30 to 60 minutes (if stirring by hand) to 2 to 5 minutes. Use short bursts of 2 to 3 seconds, alternating with stirring to avoid reaching trace unexpectedly quickly.",
     "considerations": [
-      "Stainless steel shaft (not aluminium, which reacts with lye)",
-      "Two-speed models offer more control",
-      "Dedicate to soapmaking only",
-      "Wattage: 200W+ for thick soap batters"
+      "Must have a stainless steel shaft (not aluminium, which reacts with lye)",
+      "Best to dedicate to soapmaking only to avoid cross-contamination with food",
+      "Recommend 200W+ to ensure thick batters don't stop it"
     ],
     "safetyNotes": [
-      "Never use while lye solution is hot",
-      "Keep blade submerged to avoid splashing",
+      "Never use while the fat/lye solution is hot",
+      "Keep blade submerged while blender is running to prevent splashing",
       "Unplug when not in use"
     ],
     "related": [
@@ -54,15 +45,10 @@
     "domain": [
       "craft"
     ],
-    "description": "Flexible silicone moulds for shaping soap.",
-    "details": "Silicone moulds are popular as they allow soap to release easily without sticking.\n\nLoaf moulds create bars that need cutting. Individual cavity moulds produce ready-to-use bars but may show partial gel phase rings.\n\nSilicone insulates well, which increases the likelihood of gel phase if using loaf moulds. For non-gel soap, use individual cavities or freeze the mould.",
-    "materials": [
-      "food-grade silicone"
-    ],
+    "description": "Flexible silicone mould for shaping soap.",
+    "details": "Silicone allows soap to release easily without sticking and insulates well, which promotes gel phase.",
     "considerations": [
-      "Food-grade silicone rated to 230°C",
-      "Loaf moulds: typically 1-1.5kg capacity",
-      "Wall thickness affects insulation and gel phase",
+      "Choose food-grade silicone rated to 230°C",
       "Some need external support (wooden frame)"
     ],
     "related": [
@@ -76,17 +62,11 @@
     "domain": [
       "craft"
     ],
-    "description": "Traditional wooden box mould lined with freezer paper or silicone. Provides excellent insulation for gel phase.",
-    "details": "A classic choice for cold process soap. They insulate well, promoting even gel phase throughout the loaf.\n\nMust be lined with freezer paper (shiny side toward soap) or a silicone liner. Unlined wood will absorb moisture and soap, becoming unusable.",
-    "materials": [
-      "hardwood (birch, maple)",
-      "plywood with food-safe finish"
-    ],
+    "description": "Wooden box mould lined with freezer paper or silicone. Provides excellent insulation for gel phase.",
+    "details": "Wooden moulds insulate well, which promotes an gel phase throughout the loaf.",
     "considerations": [
-      "Requires lining (freezer paper or silicone)",
-      "Excellent insulation promotes gel phase",
       "Heavier and less flexible than silicone",
-      "Can be made DIY to custom sizes"
+      "Requires lining (freezer paper, silicone); unlined wood will become unusable as it becomes saturated with moisture and soap."
     ],
     "related": [
       "gel-phase",
@@ -100,21 +80,16 @@
       "craft"
     ],
     "description": "Chemical splash goggles that seal around the eyes to protect against lye splashes.",
-    "details": "Regular glasses or safety glasses with open sides are not sufficient to protect against vapours or random splashes that can cause serious eye injury.\n\nChoose goggles rated for chemical splash protection (ANSI Z87.1 or equivalent), with indirect ventilation to prevent fogging while keeping liquids out.",
-    "materials": [
-      "polycarbonate lens",
-      "PVC or silicone frame"
-    ],
+    "details": "Any glasses with open sides do not protect against vapours or random splashes that can cause serious eye injury.\n\nChoose goggles rated for chemical splash protection, not just impact protection, with indirect ventilation to prevent fogging while keeping liquids out.",
     "considerations": [
       "Must seal completely around eyes",
-      "Chemical splash rated (not just impact rated)",
-      "Anti-fog coating helpful",
+      "Must be chemical splash rated (ANSI Z87.1 or equivalent)",
+      "Anti-fog coating or indirect ventilation is helpful",
       "Should fit over prescription glasses if needed"
     ],
     "safetyNotes": [
       "Wear whenever handling lye or raw soap",
-      "Replace if scratched or damaged",
-      "Keep within arm's reach of workspace"
+      "Replace if scratched or damaged"
     ],
     "references": [
       {
@@ -132,22 +107,15 @@
       "craft"
     ],
     "description": "Chemical-resistant gloves to protect hands from lye and raw soap batter.",
-    "details": "Nitrile or neoprene gloves provide good protection against sodium hydroxide. Latex is acceptable but may degrade faster with repeated exposure.\n\nChoose gloves long enough to cover wrists.",
-    "materials": [
-      "nitrile",
-      "neoprene",
-      "latex"
-    ],
+    "details": "Nitrile or neoprene gloves provide good protection against lye. Latex may degrade faster with repeated exposure, but works if disposable latex gloves are all you have available.",
     "considerations": [
-      "Nitrile or neoprene preferred over latex",
-      "Thickness: 8 mil minimum for durability",
-      "Length: wrist-length minimum, elbow-length for large batches",
-      "Replace immediately if torn or punctured"
+      "Choose gloves with a minimum 8 mil thickness for durability if using reusable gloves",
+      "Opt for wrist-length gloves as a minimum; choose elbow-length gloves when handling large batches of chemicals"
     ],
     "safetyNotes": [
       "Wear whenever handling lye or raw soap",
-      "Check for holes before each use",
-      "Wash gloves before removing to prevent drips"
+      "Check for holes before each use and replace if torn or punctured",
+      "Wash gloves before removing to prevent caustic drips"
     ],
     "references": [
       {
@@ -164,17 +132,13 @@
     "domain": [
       "craft"
     ],
-    "description": "Temperature measuring device for monitoring oil and lye solution temperatures before combining.",
-    "details": "The mixed melted fat and lye solution should ideally start at 38-54°C to prevent false trace.\n\nInfrared (non-contact) thermometers are convenient but measure surface temperature only. Probe thermometers give more accurate readings.",
-    "materials": [
-      "stainless steel probe",
-      "digital display"
-    ],
+    "description": "Device for monitoring fat and lye solution temperatures.",
+    "details": "Ideally, start the mixed melted fat and lye solution at 38 - 54°C to avoid false trace.",
     "considerations": [
       "Range: at least 0-120°C",
-      "Probe type more accurate than infrared for liquids",
+      "Probe type more accurate than infrared, which measure surface temperature only",
       "Instant-read digital models most convenient",
-      "Dedicate to soapmaking (lye residue)"
+      "Best practice to dedicate one to soapmaking to avoid cross-contamination concerns"
     ],
     "related": [
       "trace",
@@ -187,17 +151,13 @@
     "domain": [
       "craft"
     ],
-    "description": "Tool for cutting loaf soap into uniform bars; knives, wire-based cutters, adjustable multi-bar cutters...",
-    "details": "Timing matters: cut too early and bars may stick together or deform; too late and very hard soap may crack or be difficult to cut.\n\nMost cold process soap is ready to cut 24 to 48 hours after pouring, when firm but still slightly soft. High-olive recipes may need longer.",
-    "materials": [
-      "stainless steel wire",
-      "wooden or acrylic frame"
-    ],
+    "description": "Tool for cutting loaf soap into uniform bars",
+    "details": "You can use a knife, a wire stretched across a frame, or specialized multi-bar cutters; aim to cut soap while it's firm but not very hard.",
     "considerations": [
-      "Wire cutters: clean cuts, minimal drag",
-      "Knife: more control but may drag through soft soap",
-      "Multi-bar cutters: consistent thickness",
-      "Mitre box: helps achieve straight cuts"
+      "Wire cutters provide clean cuts with minimal drag",
+      "A knife provides more control but may drag through soft soap",
+      "Multi-bar cutters helf achieve consistent thickness",
+      "A mitre box helps achieve straight cuts"
     ],
     "related": [
       "cure"
@@ -210,23 +170,17 @@
       "craft"
     ],
     "description": "Heat-resistant containers for mixing lye solution and combining with oils. Must be lye-safe materials.",
-    "details": "For lye, use heat-resistant plastic (PP #5, HDPE #2), stainless steel, or tempered/borosilicate glass. NEVER use aluminium, as it reacts violently with lye.\n\nFor soap batter, use stainless steel or heavy-duty plastic pitchers. A pour spout helps with moulding.",
-    "materials": [
-      "polypropylene (PP #5)",
-      "high-density polyethylene (HDPE #2)",
-      "stainless steel",
-      "heat-resistant glass"
-    ],
+    "details": "For lye, use heat-resistant plastic (PP #5, HDPE #2), stainless steel, or tempered/borosilicate glass.\n\nFor soap batter, use stainless steel or heavy-duty plastic pitchers.",
     "considerations": [
-      "Never use aluminium (reacts with lye)",
       "Heat-resistant to at least 93°C",
       "Wide opening for stirring",
       "Pour spout helpful for moulding"
     ],
     "safetyNotes": [
+      "NEVER use aluminum, which is violently reactive with lye",
       "Check recycling code on plastic (PP #5 or HDPE #2 only)",
       "Inspect for cracks before each use",
-      "Dedicate to soapmaking only"
+      "Dedicate to soapmaking to avoid cross-contamination with food"
     ],
     "related": [
       "lye-concentration"
@@ -239,15 +193,10 @@
       "craft"
     ],
     "description": "Open-air rack for curing soap bars. Allows air circulation on all sides for even water evaporation.",
-    "details": "Soap needs 4 to 6 weeks of curing time after cutting. During this period, water evaporates and the crystal structure matures, resulting in harder, milder bars.\n\nGood air circulation prevents soft spots and speeds curing. Avoid direct sunlight, as it can fade colours and cause uneven curing.",
-    "materials": [
-      "coated wire rack",
-      "wooden dowel rack",
-      "plastic grid shelving"
-    ],
+    "details": "Soap needs 4 to 6 weeks of curing time after unmoulding (and, if using a loaf mould, slicing) for water to evaporate and saponification to complete.",
     "considerations": [
-      "Open design for air circulation on all sides",
-      "Sturdy enough to hold multiple batches",
+      "Use an open design for air circulation on all sides",
+      "Ensure it's sturdy enough to hold multiple batches",
       "Place in cool, dry area with good airflow",
       "Avoid direct sunlight"
     ],

@@ -181,12 +181,12 @@
     "publisher": "European Commission",
     "fundedBy": "European Union"
   },
-  "fda-allergens": {
-    "name": "FDA Food Allergen Labeling",
-    "description": "FALCPA (2004) and FASTER Act (2021) requirements for major food allergen labelling.",
-    "baseUrl": "https://www.fda.gov/food/food-allergensgluten-free-guidance-documents-regulatory-information",
-    "publisher": "US Food and Drug Administration (FDA)",
-    "fundedBy": "US federal government"
+  "codex-alimentarius": {
+    "name": "Codex Alimentarius",
+    "description": "International food standards developed by FAO and WHO to protect consumer health and ensure fair practices in food trade.",
+    "baseUrl": "https://www.fao.org/fao-who-codexalimentarius",
+    "publisher": "FAO/WHO Codex Alimentarius Commission",
+    "fundedBy": "United Nations (FAO and WHO)"
   },
   "iupac": {
     "name": "IUPAC Gold Book",

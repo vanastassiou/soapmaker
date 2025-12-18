@@ -58,28 +58,28 @@ function renderEquipment() {
                 <span class="entry-category">${data.category}</span>
             </header>
             <p class="entry-desc">${data.description}</p>
-            ${data.details ? `
-                <details class="entry-details">
-                    <summary>
-                        <span class="details-toggle">More details</span>
-                        <span class="details-hide">Hide details</span>
-                    </summary>
-                    <div class="entry-details-content">${data.details.replace(/\n/g, '<br>')}</div>
-                </details>
-            ` : ''}
             ${data.materials?.length > 0 ? `
                 <div class="entry-list">
                     <span class="entry-list-label">Materials:</span>
                     <span class="entry-list-items">${data.materials.join(', ')}</span>
                 </div>
             ` : ''}
-            ${data.considerations?.length > 0 ? `
-                <div class="entry-considerations">
-                    <h3 class="entry-subheading">Considerations</h3>
-                    <ul class="entry-bullet-list">
-                        ${data.considerations.map(c => `<li>${c}</li>`).join('')}
-                    </ul>
-                </div>
+            ${data.details || data.considerations?.length > 0 ? `
+                <details class="entry-details">
+                    <summary>
+                        <span class="details-toggle">More details</span>
+                        <span class="details-hide">Hide details</span>
+                    </summary>
+                    ${data.details ? `<div class="entry-details-content">${data.details.replace(/\n/g, '<br>')}</div>` : ''}
+                    ${data.considerations?.length > 0 ? `
+                        <div class="entry-considerations">
+                            <h3 class="entry-subheading">Considerations</h3>
+                            <ul class="entry-bullet-list">
+                                ${data.considerations.map(c => `<li>${c}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                </details>
             ` : ''}
             ${data.safetyNotes?.length > 0 ? `
                 <div class="entry-safety">

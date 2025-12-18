@@ -6,7 +6,6 @@
 import { $ } from './ui/helpers.js';
 
 let publicationIndex = {};
-let glossaryTerms = new Set();
 let sourcesData = {};
 
 /**
@@ -14,18 +13,34 @@ let sourcesData = {};
  */
 async function loadReferences() {
     try {
-        const [fatsRes, additivesRes, formulasRes, fattyAcidsRes, glossaryRes, sourcesRes] = await Promise.all([
-            fetch('./data/fats.json'),
-            fetch('./data/additives.json'),
-            fetch('./data/formulas.json'),
-            fetch('./data/fatty-acids.json'),
-            fetch('./data/glossary.json'),
-            fetch('./data/sources.json')
+        const [
+            fatsRes, fragrancesRes, colourantsRes, soapPerformanceRes, skinCareRes,
+            equipmentRes, processesRes, formulasRes, fattyAcidsRes, glossaryRes, sourcesRes
+        ] = await Promise.all([
+            fetch('../data/fats.json'),
+            fetch('../data/fragrances.json'),
+            fetch('../data/colourants.json'),
+            fetch('../data/soap-performance.json'),
+            fetch('../data/skin-care.json'),
+            fetch('../data/equipment.json'),
+            fetch('../data/processes.json'),
+            fetch('../data/formulas.json'),
+            fetch('../data/fatty-acids.json'),
+            fetch('../data/glossary.json'),
+            fetch('../data/sources.json')
         ]);
 
-        const [fats, additives, formulas, fattyAcids, glossary, sources] = await Promise.all([
+        const [
+            fats, fragrances, colourants, soapPerformance, skinCare,
+            equipment, processes, formulas, fattyAcids, glossary, sources
+        ] = await Promise.all([
             fatsRes.json(),
-            additivesRes.json(),
+            fragrancesRes.json(),
+            colourantsRes.json(),
+            soapPerformanceRes.json(),
+            skinCareRes.json(),
+            equipmentRes.json(),
+            processesRes.json(),
             formulasRes.json(),
             fattyAcidsRes.json(),
             glossaryRes.json(),
@@ -35,13 +50,15 @@ async function loadReferences() {
         // Store sources data for resolution
         sourcesData = sources;
 
-        // Store glossary terms for linking
-        glossaryTerms = new Set(Object.keys(glossary));
-
         // Extract references from each data source
         const allRefs = [
             ...extractReferences(fats, 'fat'),
-            ...extractReferences(additives, 'additive'),
+            ...extractReferences(fragrances, 'additive'),
+            ...extractReferences(colourants, 'additive'),
+            ...extractReferences(soapPerformance, 'additive'),
+            ...extractReferences(skinCare, 'additive'),
+            ...extractReferences(equipment, 'equipment'),
+            ...extractReferences(processes, 'process'),
             ...extractReferences(formulas, 'formula'),
             ...extractReferences(fattyAcids, 'fatty-acid'),
             ...extractReferences(glossary, 'glossary')
@@ -149,15 +166,19 @@ function buildPublicationIndex(allRefs) {
 function getCitedByLink(item) {
     switch (item.type) {
         case 'formula':
-            return `formulas.html#${item.id}`;
+            return `how-it-works/formulas.html#${item.id}`;
         case 'glossary':
-            return `glossary.html#${item.id}`;
+            return `soapmaking/glossary.html#${item.id}`;
         case 'fatty-acid':
-            return `glossary.html#${item.id}`;
+            return `how-it-works/glossary.html#${item.id}`;
         case 'fat':
-            return `fats.html#${item.id}`;
+            return `soapmaking/ingredients.html#${item.id}`;
         case 'additive':
-            return `index.html?show=additive-${item.id}`;
+            return `../index.html?show=additive-${item.id}`;
+        case 'equipment':
+            return `soapmaking/equipment.html#${item.id}`;
+        case 'process':
+            return `soapmaking/processes.html#${item.id}`;
         default:
             return null;
     }
@@ -168,16 +189,10 @@ function getCitedByLink(item) {
  */
 function renderReferences() {
     const container = $('referencesList');
-    const summary = $('referencesSummary');
 
     // Sort publications alphabetically by name
     const sortedPublications = Object.entries(publicationIndex)
         .sort((a, b) => a[1].name.localeCompare(b[1].name));
-
-    const totalPublications = sortedPublications.length;
-    const totalCitations = sortedPublications.reduce((sum, [_, pub]) => sum + pub.citations.length, 0);
-
-    summary.innerHTML = `<p>${totalPublications} publications, ${totalCitations} citations</p>`;
 
     if (sortedPublications.length === 0) {
         container.innerHTML = '<p class="no-results">No references found.</p>';
@@ -233,18 +248,6 @@ function renderReferences() {
             </details>
         </article>
     `).join('');
-}
-
-/**
- * Format URL for display (show domain only)
- */
-function formatUrl(url) {
-    try {
-        const urlObj = new URL(url);
-        return urlObj.hostname.replace(/^www\./, '');
-    } catch {
-        return url;
-    }
 }
 
 /**
