@@ -13,37 +13,6 @@
       "trace"
     ]
   },
-  "lather-volume": {
-    "name": "Lather volume",
-    "type": "property",
-    "description": "Sum of lauric + myristic + ricinoleic. Indicates volume and size of lather bubbles; big, fluffy, airy lather.",
-    "domain": [
-      "craft",
-      "calculator"
-    ],
-    "details": "Low lather volume: dense, creamy lather only.\nHigh lather volume: lots of fluffy foam.\n\nCastor oil (ricinoleic) boosts bubble stability even with small amounts.",
-    "ranges": {
-      "max": 46,
-      "min": 14
-    },
-    "references": [
-      {
-        "sourceId": "soapcalc",
-        "section": "Soap Qualities",
-        "url": "http://soapcalc.net/info/soapqualities.asp",
-        "note": "Called 'bubbly' in SoapCalc terminology. Empirically derived formula from soapmaking community practice; not peer-reviewed."
-      },
-      {
-        "sourceId": "pmc",
-        "section": "PMC6225244",
-        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
-        "note": "Scientific context: fatty acid composition affects lather properties"
-      }
-    ],
-    "related": [
-      "lather-density"
-    ]
-  },
   "butter": {
     "name": "Butter (plant)",
     "type": "concept",
@@ -87,6 +56,67 @@
       "trace"
     ]
   },
+  "colourant": {
+    "name": "Colourant",
+    "type": "additive",
+    "description": "Any ingredient added to soap to impart colour. Includes clays, oxides, micas, and natural colourants like herbs and spices.",
+    "domain": [
+      "craft"
+    ],
+    "details": "Colourants are typically dispersed in a small amount of oil before adding to soap at trace.\n\nCategories:\n• Clays: natural earth colours, also functional (absorb oils)\n• Oxides: synthetic or natural mineral pigments, stable in lye\n• Micas: shimmer/sparkle, may morph in high pH\n• Natural: herbs, spices, clays (may fade or change colour)\n\nUsage typically 0.1-1% of oil weight depending on intensity desired.",
+    "related": [
+      "additive",
+      "clay",
+      "iron-oxide",
+      "titanium-dioxide"
+    ]
+  },
+  "common-allergen": {
+    "name": "Common allergen",
+    "type": "concept",
+    "description": "Per Codex Alimentarius, major food allergens include: cereals containing gluten, crustaceans, eggs, fish, peanuts, soybeans, milk, tree nuts, and sesame.",
+    "domain": [
+      "craft"
+    ],
+    "details": "In cosmetics, the EU Cosmetics Regulation (EC) No 1223/2009 Annex III lists 26 fragrance allergens requiring declaration, including limonene, linalool, citronellol, and eugenol.\n\nRelevant to soapmaking:\n• Milk proteins (goat milk, buttermilk)\n• Tree nut oils (almond, walnut, hazelnut)\n• Soy derivatives (soybean oil)\n• Wheat proteins (wheat germ oil)\n• Lanolin (wool allergy cross-reactivity)\n\nSaponification denatures most proteins, but trace compounds may remain.",
+    "references": [
+      {
+        "sourceId": "codex-alimentarius",
+        "section": "General Standard for the Labelling of Prepackaged Foods (CXS 1-1985), Section 4.2.1.4",
+        "url": "https://www.fao.org/fao-who-codexalimentarius/sh-proxy/en/?lnk=1&url=https%253A%252F%252Fworkspace.fao.org%252Fsites%252Fcodex%252FStandards%252FCXS%2B1-1985%252FCXS_001e.pdf"
+      },
+      {
+        "sourceId": "eu-cosmetics-regulation",
+        "section": "Regulation (EC) No 1223/2009, Annex III",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02009R1223-20231201"
+      }
+    ],
+    "related": [
+      "ifra"
+    ]
+  },
+  "cure": {
+    "name": "Cure time",
+    "type": "concept",
+    "description": "4-6 week rest period after unmoulding. Water evaporates, crystal structure completes, bar becomes milder and harder.",
+    "domain": [
+      "craft"
+    ],
+    "details": "Soap is technically safe after 24-48hrs (saponification complete) but improves dramatically with cure.\n\nCured soap: harder, milder lather, longer lasting.\n\nSome recipes (castile, high-olive) benefit from 6-12 month cure.",
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Cold saponification takes 18-24h; curing requires 3-4 weeks for water evaporation"
+      }
+    ],
+    "related": [
+      "hardness",
+      "trace",
+      "gel-phase"
+    ]
+  },
   "degreasing": {
     "name": "Grease removing",
     "type": "property",
@@ -116,150 +146,6 @@
     ],
     "related": [
       "moisturizing"
-    ]
-  },
-  "colourant": {
-    "name": "Colourant",
-    "type": "additive",
-    "description": "Any ingredient added to soap to impart colour. Includes clays, oxides, micas, and natural colourants like herbs and spices.",
-    "domain": [
-      "craft"
-    ],
-    "details": "Colourants are typically dispersed in a small amount of oil before adding to soap at trace.\n\nCategories:\n• Clays: natural earth colours, also functional (absorb oils)\n• Oxides: synthetic or natural mineral pigments, stable in lye\n• Micas: shimmer/sparkle, may morph in high pH\n• Natural: herbs, spices, clays (may fade or change colour)\n\nUsage typically 0.1-1% of oil weight depending on intensity desired.",
-    "related": [
-      "additive",
-      "clay",
-      "iron-oxide",
-      "titanium-dioxide"
-    ]
-  },
-  "moisturizing": {
-    "name": "Skin conditioning",
-    "type": "property",
-    "description": "Sum of unsaturated fatty acids (oleic + ricinoleic + linoleic + linolenic). Indicates how moisturizing and gentle the soap feels on skin.",
-    "domain": [
-      "craft",
-      "calculator"
-    ],
-    "details": "Below 44: may feel stripping or drying.\n\nAbove 69: very moisturizing but bar will be soft and may not last long.\n\nBalance with hardness.",
-    "ranges": {
-      "max": 69,
-      "min": 44
-    },
-    "references": [
-      {
-        "sourceId": "soapcalc",
-        "section": "Soap Qualities",
-        "url": "http://soapcalc.net/info/soapqualities.asp",
-        "note": "Called 'conditioning' in SoapCalc terminology. Empirically derived formula from soapmaking community practice; not peer-reviewed."
-      },
-      {
-        "sourceId": "pmc",
-        "section": "PMC6225244",
-        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
-        "note": "Scientific context: unsaturated fatty acids provide moisturizing properties"
-      }
-    ],
-    "related": [
-      "unsaturated",
-      "hardness"
-    ]
-  },
-  "common-allergen": {
-    "name": "Common allergen",
-    "type": "concept",
-    "description": "Per Codex Alimentarius, major food allergens include: cereals containing gluten, crustaceans, eggs, fish, peanuts, soybeans, milk, tree nuts, and sesame.",
-    "domain": [
-      "craft"
-    ],
-    "details": "In cosmetics, the EU Cosmetics Regulation (EC) No 1223/2009 Annex III lists 26 fragrance allergens requiring declaration, including limonene, linalool, citronellol, and eugenol.\n\nRelevant to soapmaking:\n• Milk proteins (goat milk, buttermilk)\n• Tree nut oils (almond, walnut, hazelnut)\n• Soy derivatives (soybean oil)\n• Wheat proteins (wheat germ oil)\n• Lanolin (wool allergy cross-reactivity)\n\nSaponification denatures most proteins, but trace compounds may remain.",
-    "references": [
-      {
-        "sourceId": "codex-alimentarius",
-        "section": "General Standard for the Labelling of Prepackaged Foods (CXS 1-1985), Section 4.2.1.4",
-        "url": "https://www.fao.org/fao-who-codexalimentarius/sh-proxy/en/?lnk=1&url=https%253A%252F%252Fworkspace.fao.org%252Fsites%252Fcodex%252FStandards%252FCXS%2B1-1985%252FCXS_001e.pdf"
-      },
-      {
-        "sourceId": "eu-cosmetics-regulation",
-        "section": "Regulation (EC) No 1223/2009, Annex III",
-        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02009R1223-20231201"
-      }
-    ],
-    "related": [
-      "ifra"
-    ]
-  },
-  "lather-density": {
-    "name": "Lather density",
-    "type": "property",
-    "description": "Sum of palmitic + stearic + ricinoleic. Indicates density and stability of lather; rich, lotion-like feel.",
-    "domain": [
-      "craft",
-      "calculator"
-    ],
-    "details": "High lather density: dense, stable lather that doesn't disappear.\n\nWorks best in balance with lather volume; both create satisfying lather experience.",
-    "ranges": {
-      "max": 48,
-      "min": 16
-    },
-    "references": [
-      {
-        "sourceId": "soapcalc",
-        "section": "Soap Qualities",
-        "url": "http://soapcalc.net/info/soapqualities.asp",
-        "note": "Called 'creamy' in SoapCalc terminology. Empirically derived formula from soapmaking community practice; not peer-reviewed."
-      },
-      {
-        "sourceId": "pmc",
-        "section": "PMC6225244",
-        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
-        "note": "Scientific context: palmitic and stearic acids contribute to stable lather"
-      }
-    ],
-    "related": [
-      "lather-volume"
-    ]
-  },
-  "cure": {
-    "name": "Cure time",
-    "type": "concept",
-    "description": "4-6 week rest period after unmoulding. Water evaporates, crystal structure completes, bar becomes milder and harder.",
-    "domain": [
-      "craft"
-    ],
-    "details": "Soap is technically safe after 24-48hrs (saponification complete) but improves dramatically with cure.\n\nCured soap: harder, milder lather, longer lasting.\n\nSome recipes (castile, high-olive) benefit from 6-12 month cure.",
-    "references": [
-      {
-        "sourceId": "pmc",
-        "section": "PMC6225244",
-        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
-        "note": "Cold saponification takes 18-24h; curing requires 3-4 weeks for water evaporation"
-      }
-    ],
-    "related": [
-      "hardness",
-      "trace",
-      "gel-phase"
-    ]
-  },
-  "oil-density": {
-    "name": "Oil density",
-    "type": "concept",
-    "description": "Mass per unit volume of an oil or fat, typically expressed in g/mL. Used to estimate batch volume from weight.",
-    "domain": [
-      "craft"
-    ],
-    "details": "Most soap-making oils have densities between 0.91-0.97 g/mL.\n\nLighter oils (coconut ~0.92) give slightly more volume per gram than heavier oils (castor ~0.96).\n\nUsed with the volume estimate calculation to help size moulds.",
-    "references": [
-      {
-        "sourceId": "pubchem",
-        "section": "Physical properties",
-        "note": "Density values from compound pages; see individual fat entries for sources"
-      }
-    ],
-    "related": [
-      "volume-estimate",
-      "fat"
     ]
   },
   "dos": {
@@ -310,28 +196,6 @@
       "trace"
     ]
   },
-  "fat": {
-    "name": "Fat",
-    "type": "concept",
-    "description": "A triglyceride: three fatty acids bonded to a glycerol backbone. The general term for saponifiable lipids used in soapmaking.",
-    "domain": [
-      "craft"
-    ],
-    "details": "Fats react with lye (NaOH or KOH) to produce soap and glycerin. The fatty acid composition determines the soap's properties.\n\nIn common usage, 'fat' often refers to lipids solid at room temperature, while 'oil' refers to liquid ones, but chemically they're the same class of compounds.",
-    "references": [
-      {
-        "sourceId": "iupac",
-        "section": "Triacylglycerols (T06411)",
-        "url": "https://goldbook.iupac.org/terms/view/T06411"
-      }
-    ],
-    "related": [
-      "oil",
-      "butter",
-      "wax",
-      "sap-value"
-    ]
-  },
   "false-trace": {
     "name": "False trace",
     "type": "concept",
@@ -352,6 +216,28 @@
       "trace",
       "saturated",
       "gel-phase"
+    ]
+  },
+  "fat": {
+    "name": "Fat",
+    "type": "concept",
+    "description": "A triglyceride: three fatty acids bonded to a glycerol backbone. The general term for saponifiable lipids used in soapmaking.",
+    "domain": [
+      "craft"
+    ],
+    "details": "Fats react with lye (NaOH or KOH) to produce soap and glycerin. The fatty acid composition determines the soap's properties.\n\nIn common usage, 'fat' often refers to lipids solid at room temperature, while 'oil' refers to liquid ones, but chemically they're the same class of compounds.",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Triacylglycerols (T06411)",
+        "url": "https://goldbook.iupac.org/terms/view/T06411"
+      }
+    ],
+    "related": [
+      "oil",
+      "butter",
+      "wax",
+      "sap-value"
     ]
   },
   "gel-phase": {
@@ -443,6 +329,27 @@
     "related": [
       "saturated",
       "cure"
+    ]
+  },
+  "hydroxylated": {
+    "name": "Hydroxylated fatty acids",
+    "type": "concept",
+    "description": "Fatty acids containing a hydroxyl (-OH) group attached to the carbon chain. Unique soap properties.",
+    "domain": [
+      "craft"
+    ],
+    "details": "Ricinoleic acid (found only in castor oil) is the primary hydroxylated fatty acid in soapmaking.\n\nThe -OH group increases water solubility, making these acids exceptional lather boosters even in small amounts (2-5%).",
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Ricinoleic acid (CID 643684)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/643684"
+      }
+    ],
+    "related": [
+      "monounsaturated",
+      "castor-oil",
+      "lather-volume"
     ]
   },
   "ifra": {
@@ -544,6 +451,37 @@
       "additive"
     ]
   },
+  "lather-density": {
+    "name": "Lather density",
+    "type": "property",
+    "description": "Sum of palmitic + stearic + ricinoleic. Indicates density and stability of lather; rich, lotion-like feel.",
+    "domain": [
+      "craft",
+      "calculator"
+    ],
+    "details": "High lather density: dense, stable lather that doesn't disappear.\n\nWorks best in balance with lather volume; both create satisfying lather experience.",
+    "ranges": {
+      "max": 48,
+      "min": 16
+    },
+    "references": [
+      {
+        "sourceId": "soapcalc",
+        "section": "Soap Qualities",
+        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "note": "Called 'creamy' in SoapCalc terminology. Empirically derived formula from soapmaking community practice; not peer-reviewed."
+      },
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Scientific context: palmitic and stearic acids contribute to stable lather"
+      }
+    ],
+    "related": [
+      "lather-volume"
+    ]
+  },
   "lather-enhancer": {
     "name": "Lather enhancer",
     "type": "additive",
@@ -555,6 +493,37 @@
     "related": [
       "additive",
       "lather-volume"
+    ]
+  },
+  "lather-volume": {
+    "name": "Lather volume",
+    "type": "property",
+    "description": "Sum of lauric + myristic + ricinoleic. Indicates volume and size of lather bubbles; big, fluffy, airy lather.",
+    "domain": [
+      "craft",
+      "calculator"
+    ],
+    "details": "Low lather volume: dense, creamy lather only.\nHigh lather volume: lots of fluffy foam.\n\nCastor oil (ricinoleic) boosts bubble stability even with small amounts.",
+    "ranges": {
+      "max": 46,
+      "min": 14
+    },
+    "references": [
+      {
+        "sourceId": "soapcalc",
+        "section": "Soap Qualities",
+        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "note": "Called 'bubbly' in SoapCalc terminology. Empirically derived formula from soapmaking community practice; not peer-reviewed."
+      },
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Scientific context: fatty acid composition affects lather properties"
+      }
+    ],
+    "related": [
+      "lather-density"
     ]
   },
   "lye-concentration": {
@@ -627,25 +596,36 @@
       "butter"
     ]
   },
-  "hydroxylated": {
-    "name": "Hydroxylated fatty acids",
-    "type": "concept",
-    "description": "Fatty acids containing a hydroxyl (-OH) group attached to the carbon chain. Unique soap properties.",
+  "moisturizing": {
+    "name": "Skin conditioning",
+    "type": "property",
+    "description": "Sum of unsaturated fatty acids (oleic + ricinoleic + linoleic + linolenic). Indicates how moisturizing and gentle the soap feels on skin.",
     "domain": [
-      "craft"
+      "craft",
+      "calculator"
     ],
-    "details": "Ricinoleic acid (found only in castor oil) is the primary hydroxylated fatty acid in soapmaking.\n\nThe -OH group increases water solubility, making these acids exceptional lather boosters even in small amounts (2-5%).",
+    "details": "Below 44: may feel stripping or drying.\n\nAbove 69: very moisturizing but bar will be soft and may not last long.\n\nBalance with hardness.",
+    "ranges": {
+      "max": 69,
+      "min": 44
+    },
     "references": [
       {
-        "sourceId": "pubchem",
-        "section": "Ricinoleic acid (CID 643684)",
-        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/643684"
+        "sourceId": "soapcalc",
+        "section": "Soap Qualities",
+        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "note": "Called 'conditioning' in SoapCalc terminology. Empirically derived formula from soapmaking community practice; not peer-reviewed."
+      },
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Scientific context: unsaturated fatty acids provide moisturizing properties"
       }
     ],
     "related": [
-      "monounsaturated",
-      "castor-oil",
-      "lather-volume"
+      "unsaturated",
+      "hardness"
     ]
   },
   "monounsaturated": {
@@ -691,6 +671,26 @@
       "unsaturated"
     ]
   },
+  "oil-density": {
+    "name": "Oil density",
+    "type": "concept",
+    "description": "Mass per unit volume of an oil or fat, typically expressed in g/mL. Used to estimate batch volume from weight.",
+    "domain": [
+      "craft"
+    ],
+    "details": "Most soap-making oils have densities between 0.91-0.97 g/mL.\n\nLighter oils (coconut ~0.92) give slightly more volume per gram than heavier oils (castor ~0.96).\n\nUsed with the volume estimate calculation to help size moulds.",
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Physical properties",
+        "note": "Density values from compound pages; see individual fat entries for sources"
+      }
+    ],
+    "related": [
+      "volume-estimate",
+      "fat"
+    ]
+  },
   "polyunsaturated": {
     "name": "Polyunsaturated fatty acids (PUFAs)",
     "type": "concept",
@@ -714,6 +714,20 @@
       "moisturizing"
     ]
   },
+  "process-type": {
+    "name": "Soap process",
+    "type": "concept",
+    "description": "The method used to make soap. Cold process uses lower temperatures; hot process uses external heat to speed saponification.",
+    "domain": [
+      "craft"
+    ],
+    "details": "Cold process (CP): Oils and lye react at low temperatures (38-54°C). Requires 4-6 week cure. Preserves beneficial compounds and allows creative designs.\n\nHot process (HP): External heat speeds saponification. Soap is usable immediately but has a rustic appearance.",
+    "related": [
+      "trace",
+      "saponification",
+      "cure"
+    ]
+  },
   "rancidity": {
     "name": "Rancidity",
     "type": "concept",
@@ -735,6 +749,28 @@
       "polyunsaturated",
       "iodine",
       "superfat"
+    ]
+  },
+  "recipe-weight": {
+    "name": "Recipe weight",
+    "type": "calculation",
+    "description": "Total weight of fats in your recipe. Final soap weight and volume differ due to chemical changes during saponification and water loss during curing.",
+    "domain": [
+      "calculator"
+    ],
+    "details": "During saponification (18-24 hours), fats react with lye to form soap and glycerol, causing approximately 5% volume reduction. During the 3-4 week curing period, water evaporates from the bar, typically reducing weight by 10-25% depending on the water content used. The final cured bar will be firmer, lighter, and more durable than the freshly poured soap.",
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Cold saponification takes 18-24h; curing requires 3-4 weeks"
+      }
+    ],
+    "related": [
+      "superfat",
+      "lye-concentration",
+      "volume-estimate"
     ]
   },
   "sap-value": {
@@ -918,28 +954,6 @@
       "superfat",
       "hardness",
       "moisturizing"
-    ]
-  },
-  "recipe-weight": {
-    "name": "Recipe weight",
-    "type": "calculation",
-    "description": "Total weight of fats in your recipe. Final soap weight and volume differ due to chemical changes during saponification and water loss during curing.",
-    "domain": [
-      "calculator"
-    ],
-    "details": "During saponification (18-24 hours), fats react with lye to form soap and glycerol, causing approximately 5% volume reduction. During the 3-4 week curing period, water evaporates from the bar, typically reducing weight by 10-25% depending on the water content used. The final cured bar will be firmer, lighter, and more durable than the freshly poured soap.",
-    "references": [
-      {
-        "sourceId": "pmc",
-        "section": "PMC6225244",
-        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
-        "note": "Cold saponification takes 18-24h; curing requires 3-4 weeks"
-      }
-    ],
-    "related": [
-      "superfat",
-      "lye-concentration",
-      "volume-estimate"
     ]
   },
   "volume-estimate": {
