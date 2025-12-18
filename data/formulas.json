@@ -21,7 +21,7 @@
         "With 5% superfat = 67g \u00d7 (1 - 0.05) = 63.65g NaOH"
       ]
     },
-    "technical": "A SAP value represents the ratio of alkali mass to fat mas required for complete saponification. It's derived from the average molecular weight of triglycerides in each fat. For NaOH, values typically range from 0.12-0.19. KOH values are about 1.4\u00d7 higher due to its greater molecular weight (56.1 vs 40.0 g/mol).",
+    "technical": "A SAP value represents the ratio of alkali mass to fat mass required for complete saponification. It's derived from the average molecular weight of triglycerides in each fat. For NaOH, values typically range from 0.12-0.19. KOH values are about 1.4\u00d7 higher due to its greater molecular weight (56.1 vs 40.0 g/mol).",
     "related": [
       "superfat",
       "sap-value"
