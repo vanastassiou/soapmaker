@@ -36,6 +36,24 @@ async function loadFats() {
     renderFats();
 }
 
+/**
+ * Check if an ingredient has significant ethical concerns
+ * @param {Object} data - Ingredient data object
+ * @returns {boolean} True if significant concerns exist
+ */
+function hasSignificantEthicalConcerns(data) {
+    const concerns = data.ethicalConcerns;
+    if (!concerns) return false;
+
+    const environmental = concerns.environmental || [];
+    const social = concerns.social || [];
+    const political = concerns.political || [];
+
+    if (social.length > 0 || political.length > 0) return true;
+    if (environmental.length >= 2) return true;
+    return false;
+}
+
 function matchesCategory(data, category) {
     switch (category) {
         case 'all':
@@ -47,7 +65,7 @@ function matchesCategory(data, category) {
         case 'allergen':
             return data.dietary?.commonAllergen;
         case 'sourcing':
-            return data.dietary?.sourcingConcerns;
+            return hasSignificantEthicalConcerns(data);
         default:
             return true;
     }
@@ -119,7 +137,7 @@ function renderFats() {
                 <div class="fat-badges">
                     <span class="fat-category fat-category-${getCategoryLabel(data)}">${getCategoryLabel(data)}</span>
                     ${data.dietary?.commonAllergen ? '<span class="fat-badge fat-badge-allergen">allergen</span>' : ''}
-                    ${data.dietary?.sourcingConcerns ? '<span class="fat-badge fat-badge-sourcing">sourcing concerns</span>' : ''}
+                    ${hasSignificantEthicalConcerns(data) ? '<span class="fat-badge fat-badge-sourcing">ethical concerns</span>' : ''}
                 </div>
             </header>
             <p class="entry-desc">${data.description}</p>

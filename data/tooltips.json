@@ -17,7 +17,7 @@
     "desc": "Excludes tree nuts, legumes, and coconut."
   },
   "sourcing-concerns": {
-    "title": "Sourcing concerns",
-    "desc": "Excludes palm oil and palm kernel oil due to environmental concerns."
+    "title": "Ethical concerns",
+    "desc": "Excludes ingredients with significant ethical concerns (environmental, social, or political issues documented)."
   }
 }

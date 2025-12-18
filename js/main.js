@@ -541,6 +541,28 @@ function getDietaryFilters() {
 }
 
 /**
+ * Check if an ingredient has significant ethical concerns
+ * Significant = any social/political concerns, or 2+ environmental concerns
+ * @param {Object} data - Ingredient data object
+ * @returns {boolean} True if significant concerns exist
+ */
+function hasSignificantEthicalConcerns(data) {
+    const concerns = data.ethicalConcerns;
+    if (!concerns) return false;
+
+    const environmental = concerns.environmental || [];
+    const social = concerns.social || [];
+    const political = concerns.political || [];
+
+    // Any social or political concerns are significant
+    if (social.length > 0 || political.length > 0) return true;
+    // Multiple environmental concerns are significant
+    if (environmental.length >= 2) return true;
+
+    return false;
+}
+
+/**
  * Create a filter function based on current dietary filter settings and manual exclusions
  * Applies to all ingredient types (fats, colourants, fragrances, etc.)
  * @returns {Function|null} Filter function or null if no filters active
@@ -562,7 +584,7 @@ function createDietaryFilterFn() {
         // Check dietary filters
         const dietary = data.dietary || {};
         if (filters.animalBased && dietary.animalBased === true) return false;
-        if (filters.sourcingConcerns && dietary.sourcingConcerns === true) return false;
+        if (filters.sourcingConcerns && hasSignificantEthicalConcerns(data)) return false;
         if (filters.commonAllergens && dietary.commonAllergen === true) return false;
         return true;
     };
