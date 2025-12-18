@@ -1,39 +1,42 @@
 {
   "bergamot-eo": {
     "name": "Bergamot essential oil (FCF)",
+    "type": "fragrance",
     "description": "Furocoumarin-free (FCF) variety, safer for skin application.",
-    "sourceSpecies": "Citrus bergamia",
-    "sourcePart": "peel",
-    "extractionMethod": "cold-pressed",
-    "majorConstituents": {
-      "linalyl-acetate": {
-        "min": 30,
-        "max": 60
+    "details": {
+      "sourceSpecies": "Citrus bergamia",
+      "sourcePart": "peel",
+      "extractionMethod": "cold-pressed",
+      "majorConstituents": {
+        "linalyl-acetate": {
+          "min": 30,
+          "max": 60
+        },
+        "limonene": {
+          "min": 25,
+          "max": 50
+        },
+        "linalool": {
+          "min": 2,
+          "max": 20
+        }
       },
-      "limonene": {
-        "min": 25,
-        "max": 50
+      "density": 0.88,
+      "safety": {
+        "casNumber": "8007-75-8",
+        "flashPointC": 57,
+        "ifraCategory9Limit": 11.2
       },
-      "linalool": {
-        "min": 2,
-        "max": 20
+      "scentNote": "top",
+      "usage": {
+        "basis": "oil-weight",
+        "min": 1.5,
+        "max": 4
       }
     },
-    "density": 0.88,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8007-75-8",
-      "flashPointC": 57,
-      "ifraCategory9Limit": 11.2
-    },
-    "scentNote": "top",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1.5,
-      "max": 4
     },
     "references": [
       {
@@ -45,38 +48,41 @@
   },
   "cedarwood-eo": {
     "name": "Cedarwood essential oil (atlas)",
+    "type": "fragrance",
     "description": "Used to anchor lighter scents.",
-    "sourceSpecies": "Cedrus atlantica",
-    "sourcePart": "wood",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "alpha-cedrene": {
-        "min": 0,
-        "max": 38
+    "details": {
+      "sourceSpecies": "Cedrus atlantica",
+      "sourcePart": "wood",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "alpha-cedrene": {
+          "min": 0,
+          "max": 38
+        },
+        "beta-cedrene": {
+          "min": 0,
+          "max": 5
+        },
+        "cedrol": {
+          "min": 4,
+          "max": 23
+        }
       },
-      "beta-cedrene": {
-        "min": 0,
-        "max": 5
+      "density": 0.94,
+      "safety": {
+        "casNumber": "8000-27-9",
+        "flashPointC": 93
       },
-      "cedrol": {
-        "min": 4,
-        "max": 23
+      "scentNote": "base",
+      "usage": {
+        "basis": "oil-weight",
+        "min": 2,
+        "max": 4
       }
     },
-    "density": 0.94,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8000-27-9",
-      "flashPointC": 93
-    },
-    "scentNote": "base",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 2,
-      "max": 4
     },
     "references": [
       {
@@ -88,39 +94,42 @@
   },
   "clary-sage-eo": {
     "name": "Clary sage essential oil",
+    "type": "fragrance",
     "description": "Herbaceous, slightly sweet aroma.",
-    "sourceSpecies": "Salvia sclarea",
-    "sourcePart": "flowering tops",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "linalyl-acetate": {
-        "min": 56,
-        "max": 78
+    "details": {
+      "sourceSpecies": "Salvia sclarea",
+      "sourcePart": "flowering tops",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "linalyl-acetate": {
+          "min": 56,
+          "max": 78
+        },
+        "linalool": {
+          "min": 6.5,
+          "max": 24
+        },
+        "sclareol": {
+          "min": 0.3,
+          "max": 5.2
+        }
       },
-      "linalool": {
-        "min": 6.5,
-        "max": 24
+      "density": 0.9,
+      "safety": {
+        "casNumber": "8016-63-5",
+        "flashPointC": 79,
+        "ifraCategory9Limit": 3.8
       },
-      "sclareol": {
-        "min": 0.3,
-        "max": 5.2
+      "scentNote": "middle",
+      "usage": {
+        "basis": "oil-weight",
+        "min": 1,
+        "max": 3
       }
     },
-    "density": 0.9,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8016-63-5",
-      "flashPointC": 79,
-      "ifraCategory9Limit": 3.8
-    },
-    "scentNote": "middle",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 3
     },
     "references": [
       {
@@ -132,49 +141,52 @@
   },
   "eucalyptus-eo": {
     "name": "Eucalyptus essential oil (globulus)",
+    "type": "fragrance",
     "description": "Fresh, camphoraceous aroma with cooling sensation.",
-    "sourceSpecies": "Eucalyptus globulus",
-    "sourcePart": "leaves",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "eucalyptol": {
-        "min": 70,
-        "max": 90
+    "details": {
+      "sourceSpecies": "Eucalyptus globulus",
+      "sourcePart": "leaves",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "eucalyptol": {
+          "min": 70,
+          "max": 90
+        },
+        "alpha-pinene": {
+          "min": 1,
+          "max": 5
+        }
       },
-      "alpha-pinene": {
+      "density": 0.92,
+      "safety": {
+        "casNumber": "8000-48-4",
+        "flashPointC": 49,
+        "ifraCategory9Limit": 2.5
+      },
+      "hazards": {
+        "toxic-to-cats": {
+          "note": "Cats lack liver enzymes to metabolize 1,8-cineole; causes CNS depression"
+        },
+        "toxic-to-dogs": {
+          "note": "Less sensitive than cats; avoid concentrated exposure"
+        },
+        "toxic-to-birds": {
+          "note": "Eucalyptol causes respiratory distress and CNS depression in birds"
+        },
+        "toxic-to-small-mammals": {
+          "note": "Toxic to rabbits, hamsters, guinea pigs, ferrets"
+        }
+      },
+      "scentNote": "top",
+      "usage": {
+        "basis": "oil-weight",
         "min": 1,
-        "max": 5
+        "max": 3
       }
     },
-    "density": 0.92,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8000-48-4",
-      "flashPointC": 49,
-      "ifraCategory9Limit": 2.5
-    },
-    "hazards": {
-      "toxic-to-cats": {
-        "note": "Cats lack liver enzymes to metabolize 1,8-cineole; causes CNS depression"
-      },
-      "toxic-to-dogs": {
-        "note": "Less sensitive than cats; avoid concentrated exposure"
-      },
-      "toxic-to-birds": {
-        "note": "Eucalyptol causes respiratory distress and CNS depression in birds"
-      },
-      "toxic-to-small-mammals": {
-        "note": "Toxic to rabbits, hamsters, guinea pigs, ferrets"
-      }
-    },
-    "scentNote": "top",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 3
     },
     "references": [
       {
@@ -196,39 +208,42 @@
   },
   "frankincense-eo": {
     "name": "Frankincense essential oil (Boswellia carterii)",
+    "type": "fragrance",
     "description": "Warm, balsamic, slightly spicy aroma.",
-    "sourceSpecies": "Boswellia carterii",
-    "sourcePart": "resin",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "alpha-pinene": {
-        "min": 2,
-        "max": 65
+    "details": {
+      "sourceSpecies": "Boswellia carterii",
+      "sourcePart": "resin",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "alpha-pinene": {
+          "min": 2,
+          "max": 65
+        },
+        "limonene": {
+          "min": 1,
+          "max": 20
+        },
+        "alpha-thujene": {
+          "min": 0.3,
+          "max": 52
+        }
       },
-      "limonene": {
+      "density": 0.88,
+      "safety": {
+        "casNumber": "8016-36-2",
+        "flashPointC": 51,
+        "ifraCategory9Limit": 4
+      },
+      "scentNote": "base",
+      "usage": {
+        "basis": "oil-weight",
         "min": 1,
-        "max": 20
-      },
-      "alpha-thujene": {
-        "min": 0.3,
-        "max": 52
+        "max": 3
       }
     },
-    "density": 0.88,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8016-36-2",
-      "flashPointC": 51,
-      "ifraCategory9Limit": 4.0
-    },
-    "scentNote": "base",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 3
     },
     "references": [
       {
@@ -240,39 +255,42 @@
   },
   "geranium-eo": {
     "name": "Geranium essential oil (rose)",
+    "type": "fragrance",
     "description": "Floral, rosy aroma. Accelerates trace in cold process soap.",
-    "sourceSpecies": "Pelargonium graveolens",
-    "sourcePart": "leaves",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "citronellol": {
-        "min": 21.9,
-        "max": 21.9
+    "details": {
+      "sourceSpecies": "Pelargonium graveolens",
+      "sourcePart": "leaves",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "citronellol": {
+          "min": 21.9,
+          "max": 21.9
+        },
+        "geraniol": {
+          "min": 11.1,
+          "max": 11.1
+        },
+        "linalool": {
+          "min": 5.6,
+          "max": 5.6
+        }
       },
-      "geraniol": {
-        "min": 11.1,
-        "max": 11.1
+      "density": 0.89,
+      "safety": {
+        "casNumber": "8000-46-2",
+        "flashPointC": 80,
+        "ifraCategory9Limit": 1.1
       },
-      "linalool": {
-        "min": 5.6,
-        "max": 5.6
+      "scentNote": "middle",
+      "usage": {
+        "basis": "oil-weight",
+        "min": 1,
+        "max": 2.5
       }
     },
-    "density": 0.89,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8000-46-2",
-      "flashPointC": 80,
-      "ifraCategory9Limit": 1.1
-    },
-    "scentNote": "middle",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 2.5
     },
     "references": [
       {
@@ -284,44 +302,47 @@
   },
   "grapefruit-eo": {
     "name": "Grapefruit essential oil (pink)",
+    "type": "fragrance",
     "description": "Bright, fresh citrus aroma.",
-    "sourceSpecies": "Citrus paradisi",
-    "sourcePart": "peel",
-    "extractionMethod": "cold-pressed",
-    "majorConstituents": {
-      "d-limonene": {
-        "min": 90,
-        "max": 96
+    "details": {
+      "sourceSpecies": "Citrus paradisi",
+      "sourcePart": "peel",
+      "extractionMethod": "cold-pressed",
+      "majorConstituents": {
+        "d-limonene": {
+          "min": 90,
+          "max": 96
+        },
+        "beta-myrcene": {
+          "min": 2,
+          "max": 6
+        },
+        "gamma-terpinene": {
+          "min": 0.05,
+          "max": 2
+        }
       },
-      "beta-myrcene": {
+      "density": 0.85,
+      "safety": {
+        "casNumber": "8016-20-4",
+        "flashPointC": 45,
+        "ifraCategory9Limit": 4
+      },
+      "hazards": {
+        "phototoxic": {
+          "note": "Safe in rinse-off products like soap"
+        }
+      },
+      "scentNote": "top",
+      "usage": {
+        "basis": "oil-weight",
         "min": 2,
-        "max": 6
-      },
-      "gamma-terpinene": {
-        "min": 0.05,
-        "max": 2
+        "max": 4
       }
     },
-    "density": 0.85,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8016-20-4",
-      "flashPointC": 45,
-      "ifraCategory9Limit": 4.0
-    },
-    "hazards": {
-      "phototoxic": {
-        "note": "Safe in rinse-off products like soap"
-      }
-    },
-    "scentNote": "top",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 2,
-      "max": 4
     },
     "references": [
       {
@@ -338,39 +359,42 @@
   },
   "lavender-eo": {
     "name": "Lavender essential oil",
+    "type": "fragrance",
     "description": "Classic floral, herbaceous aroma. One of the most versatile essential oils.",
-    "sourceSpecies": "Lavandula angustifolia",
-    "sourcePart": "flowers",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "linalool": {
-        "min": 25,
-        "max": 45
+    "details": {
+      "sourceSpecies": "Lavandula angustifolia",
+      "sourcePart": "flowers",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "linalool": {
+          "min": 25,
+          "max": 45
+        },
+        "linalyl-acetate": {
+          "min": 25,
+          "max": 45
+        }
       },
-      "linalyl-acetate": {
-        "min": 25,
-        "max": 45
+      "density": 0.88,
+      "safety": {
+        "casNumber": "8000-28-0",
+        "flashPointC": 75,
+        "ifraCategory9Limit": 5.5
+      },
+      "scentNote": "middle",
+      "anchoring": [
+        "cedarwood-eo",
+        "patchouli-eo"
+      ],
+      "usage": {
+        "basis": "oil-weight",
+        "min": 2,
+        "max": 3
       }
     },
-    "density": 0.88,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8000-28-0",
-      "flashPointC": 75,
-      "ifraCategory9Limit": 5.5
-    },
-    "scentNote": "middle",
-    "anchoring": [
-      "cedarwood-eo",
-      "patchouli-eo"
-    ],
-    "usage": {
-      "basis": "oil-weight",
-      "min": 2,
-      "max": 3
     },
     "references": [
       {
@@ -382,39 +406,42 @@
   },
   "lemongrass-eo": {
     "name": "Lemongrass essential oil",
+    "type": "fragrance",
     "description": "Strong lemony, grassy aroma.",
-    "sourceSpecies": "Cymbopogon flexuosus",
-    "sourcePart": "leaves",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "citral": {
-        "min": 70,
-        "max": 85
+    "details": {
+      "sourceSpecies": "Cymbopogon flexuosus",
+      "sourcePart": "leaves",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "citral": {
+          "min": 70,
+          "max": 85
+        },
+        "geranial": {
+          "min": 35,
+          "max": 53
+        },
+        "neral": {
+          "min": 25,
+          "max": 36
+        }
       },
-      "geranial": {
-        "min": 35,
-        "max": 53
+      "density": 0.89,
+      "safety": {
+        "casNumber": "8007-02-1",
+        "flashPointC": 74,
+        "ifraCategory9Limit": 0.6
       },
-      "neral": {
-        "min": 25,
-        "max": 36
+      "scentNote": "top",
+      "usage": {
+        "basis": "oil-weight",
+        "min": 1,
+        "max": 2.5
       }
     },
-    "density": 0.89,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8007-02-1",
-      "flashPointC": 74,
-      "ifraCategory9Limit": 0.6
-    },
-    "scentNote": "top",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 2.5
     },
     "references": [
       {
@@ -426,39 +453,42 @@
   },
   "lime-eo": {
     "name": "Lime essential oil (distilled)",
+    "type": "fragrance",
     "description": "Fresh, zesty citrus aroma. Distilled version is non-phototoxic.",
-    "sourceSpecies": "Citrus aurantifolia",
-    "sourcePart": "peel",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "d-limonene": {
-        "min": 50,
-        "max": 50
+    "details": {
+      "sourceSpecies": "Citrus aurantifolia",
+      "sourcePart": "peel",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "d-limonene": {
+          "min": 50,
+          "max": 50
+        },
+        "gamma-terpinene": {
+          "min": 8,
+          "max": 15
+        },
+        "alpha-pinene": {
+          "min": 3,
+          "max": 11
+        }
       },
-      "gamma-terpinene": {
-        "min": 8,
-        "max": 15
+      "density": 0.86,
+      "safety": {
+        "casNumber": "8008-26-2",
+        "flashPointC": 50,
+        "ifraCategory9Limit": 3
       },
-      "alpha-pinene": {
-        "min": 3,
-        "max": 11
+      "scentNote": "top",
+      "usage": {
+        "basis": "oil-weight",
+        "min": 2,
+        "max": 4
       }
     },
-    "density": 0.86,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8008-26-2",
-      "flashPointC": 50,
-      "ifraCategory9Limit": 3.0
-    },
-    "scentNote": "top",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 2,
-      "max": 4
     },
     "references": [
       {
@@ -470,43 +500,46 @@
   },
   "may-chang-eo": {
     "name": "May chang essential oil (Litsea cubeba)",
+    "type": "fragrance",
     "description": "Bright, lemony aroma with better scent retention than lemongrass.",
-    "sourceSpecies": "Litsea cubeba",
-    "sourcePart": "fruits",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "citral": {
-        "min": 75,
-        "max": 100
+    "details": {
+      "sourceSpecies": "Litsea cubeba",
+      "sourcePart": "fruits",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "citral": {
+          "min": 75,
+          "max": 100
+        },
+        "geranial": {
+          "min": 37,
+          "max": 41
+        },
+        "neral": {
+          "min": 26,
+          "max": 34
+        },
+        "limonene": {
+          "min": 8,
+          "max": 23
+        }
       },
-      "geranial": {
-        "min": 37,
-        "max": 41
+      "density": 0.88,
+      "safety": {
+        "casNumber": "68855-99-2",
+        "flashPointC": 54,
+        "ifraCategory9Limit": 0.6
       },
-      "neral": {
-        "min": 26,
-        "max": 34
-      },
-      "limonene": {
-        "min": 8,
-        "max": 23
+      "scentNote": "top",
+      "usage": {
+        "basis": "oil-weight",
+        "min": 1,
+        "max": 2.5
       }
     },
-    "density": 0.88,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "68855-99-2",
-      "flashPointC": 54,
-      "ifraCategory9Limit": 0.6
-    },
-    "scentNote": "top",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 2.5
     },
     "references": [
       {
@@ -518,34 +551,37 @@
   },
   "patchouli-eo": {
     "name": "Patchouli essential oil",
+    "type": "fragrance",
     "description": "Deep, earthy, musky aroma. Used to anchor lighter scents.",
-    "sourceSpecies": "Pogostemon cablin",
-    "sourcePart": "leaves",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "patchoulol": {
-        "min": 25,
-        "max": 35
+    "details": {
+      "sourceSpecies": "Pogostemon cablin",
+      "sourcePart": "leaves",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "patchoulol": {
+          "min": 25,
+          "max": 35
+        },
+        "alpha-bulnesene": {
+          "min": 9,
+          "max": 21
+        }
       },
-      "alpha-bulnesene": {
-        "min": 9,
-        "max": 21
+      "density": 0.95,
+      "safety": {
+        "casNumber": "8014-09-3",
+        "flashPointC": 100
+      },
+      "scentNote": "base",
+      "usage": {
+        "basis": "oil-weight",
+        "min": 1,
+        "max": 3
       }
     },
-    "density": 0.95,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8014-09-3",
-      "flashPointC": 100
-    },
-    "scentNote": "base",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 3
     },
     "references": [
       {
@@ -557,46 +593,49 @@
   },
   "peppermint-eo": {
     "name": "Peppermint essential oil",
+    "type": "fragrance",
     "description": "Strong, fresh minty aroma with cooling sensation.",
-    "sourceSpecies": "Mentha piperita",
-    "sourcePart": "leaves",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "menthol": {
-        "min": 30,
-        "max": 55
+    "details": {
+      "sourceSpecies": "Mentha piperita",
+      "sourcePart": "leaves",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "menthol": {
+          "min": 30,
+          "max": 55
+        },
+        "menthone": {
+          "min": 14,
+          "max": 32
+        }
       },
-      "menthone": {
-        "min": 14,
-        "max": 32
+      "density": 0.9,
+      "safety": {
+        "casNumber": "8006-90-4",
+        "flashPointC": 66,
+        "ifraCategory9Limit": 5.4
+      },
+      "hazards": {
+        "toxic-to-cats": {
+          "note": "Cats cannot metabolize menthol; may cause liver damage"
+        },
+        "toxic-to-birds": {
+          "note": "Strong menthol vapours irritate sensitive avian respiratory system"
+        },
+        "toxic-to-small-mammals": {
+          "note": "Avoid use around rabbits, hamsters, guinea pigs, ferrets"
+        }
+      },
+      "scentNote": "top",
+      "usage": {
+        "basis": "oil-weight",
+        "min": 1,
+        "max": 3
       }
     },
-    "density": 0.9,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8006-90-4",
-      "flashPointC": 66,
-      "ifraCategory9Limit": 5.4
-    },
-    "hazards": {
-      "toxic-to-cats": {
-        "note": "Cats cannot metabolize menthol; may cause liver damage"
-      },
-      "toxic-to-birds": {
-        "note": "Strong menthol vapours irritate sensitive avian respiratory system"
-      },
-      "toxic-to-small-mammals": {
-        "note": "Avoid use around rabbits, hamsters, guinea pigs, ferrets"
-      }
-    },
-    "scentNote": "top",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 3
     },
     "references": [
       {
@@ -618,39 +657,42 @@
   },
   "rosemary-eo": {
     "name": "Rosemary essential oil",
+    "type": "fragrance",
     "description": "Fresh, herbaceous, camphoraceous aroma.",
-    "sourceSpecies": "Rosmarinus officinalis",
-    "sourcePart": "leaves and flowering tops",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "1,8-cineole": {
-        "min": 5,
-        "max": 60
+    "details": {
+      "sourceSpecies": "Rosmarinus officinalis",
+      "sourcePart": "leaves and flowering tops",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "1,8-cineole": {
+          "min": 5,
+          "max": 60
+        },
+        "camphor": {
+          "min": 1,
+          "max": 35
+        },
+        "alpha-pinene": {
+          "min": 10,
+          "max": 38
+        }
       },
-      "camphor": {
+      "density": 0.91,
+      "safety": {
+        "casNumber": "8000-25-7",
+        "flashPointC": 43,
+        "ifraCategory9Limit": 4.1
+      },
+      "scentNote": "middle",
+      "usage": {
+        "basis": "oil-weight",
         "min": 1,
-        "max": 35
-      },
-      "alpha-pinene": {
-        "min": 10,
-        "max": 38
+        "max": 3
       }
     },
-    "density": 0.91,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8000-25-7",
-      "flashPointC": 43,
-      "ifraCategory9Limit": 4.1
-    },
-    "scentNote": "middle",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 3
     },
     "references": [
       {
@@ -662,39 +704,42 @@
   },
   "sandalwood-eo": {
     "name": "Sandalwood essential oil (East Indian)",
+    "type": "fragrance",
     "description": "Rich, warm, woody aroma. Sustainable sourcing critical due to overharvesting.",
-    "sourceSpecies": "Santalum album",
-    "sourcePart": "heartwood",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "alpha-santalol": {
-        "min": 41,
-        "max": 55
+    "details": {
+      "sourceSpecies": "Santalum album",
+      "sourcePart": "heartwood",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "alpha-santalol": {
+          "min": 41,
+          "max": 55
+        },
+        "beta-santalol": {
+          "min": 16,
+          "max": 24
+        },
+        "santalene": {
+          "min": 7,
+          "max": 30
+        }
       },
-      "beta-santalol": {
-        "min": 16,
-        "max": 24
+      "density": 0.97,
+      "safety": {
+        "casNumber": "8006-87-9",
+        "flashPointC": 92,
+        "ifraCategory9Limit": 5
       },
-      "santalene": {
-        "min": 7,
-        "max": 30
+      "scentNote": "base",
+      "usage": {
+        "basis": "oil-weight",
+        "min": 1,
+        "max": 3
       }
     },
-    "density": 0.97,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": true
-    },
-    "safety": {
-      "casNumber": "8006-87-9",
-      "flashPointC": 92,
-      "ifraCategory9Limit": 5.0
-    },
-    "scentNote": "base",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 3
     },
     "references": [
       {
@@ -706,39 +751,42 @@
   },
   "spearmint-eo": {
     "name": "Spearmint essential oil",
+    "type": "fragrance",
     "description": "Sweet, minty aroma. Less intense than peppermint.",
-    "sourceSpecies": "Mentha spicata",
-    "sourcePart": "leaves",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "carvone": {
-        "min": 50,
-        "max": 80
+    "details": {
+      "sourceSpecies": "Mentha spicata",
+      "sourcePart": "leaves",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "carvone": {
+          "min": 50,
+          "max": 80
+        },
+        "limonene": {
+          "min": 2,
+          "max": 25
+        },
+        "menthol": {
+          "min": 0,
+          "max": 2
+        }
       },
-      "limonene": {
-        "min": 2,
-        "max": 25
+      "density": 0.92,
+      "safety": {
+        "casNumber": "8008-79-5",
+        "flashPointC": 88,
+        "ifraCategory9Limit": 1.6
       },
-      "menthol": {
-        "min": 0,
-        "max": 2
+      "scentNote": "top",
+      "usage": {
+        "basis": "oil-weight",
+        "min": 1,
+        "max": 3
       }
     },
-    "density": 0.92,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8008-79-5",
-      "flashPointC": 88,
-      "ifraCategory9Limit": 1.6
-    },
-    "scentNote": "top",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 3
     },
     "references": [
       {
@@ -750,48 +798,51 @@
   },
   "sweet-orange-eo": {
     "name": "Sweet orange essential oil",
+    "type": "fragrance",
     "description": "Sweet, fresh citrus aroma.",
-    "sourceSpecies": "Citrus sinensis",
-    "sourcePart": "peel",
-    "extractionMethod": "cold-pressed",
-    "majorConstituents": {
-      "d-limonene": {
-        "min": 93,
-        "max": 96
+    "details": {
+      "sourceSpecies": "Citrus sinensis",
+      "sourcePart": "peel",
+      "extractionMethod": "cold-pressed",
+      "majorConstituents": {
+        "d-limonene": {
+          "min": 93,
+          "max": 96
+        },
+        "octanal": {
+          "min": 0.1,
+          "max": 1.3
+        },
+        "decanal": {
+          "min": 0.1,
+          "max": 0.7
+        },
+        "citral": {
+          "min": 0.05,
+          "max": 0.3
+        }
       },
-      "octanal": {
-        "min": 0.1,
-        "max": 1.3
+      "density": 0.84,
+      "safety": {
+        "casNumber": "8008-57-9",
+        "flashPointC": 48,
+        "ifraCategory9Limit": 3.4
       },
-      "decanal": {
-        "min": 0.1,
-        "max": 0.7
+      "hazards": {
+        "oxidizes": {
+          "note": "Use with antioxidants for better shelf life"
+        }
       },
-      "citral": {
-        "min": 0.05,
-        "max": 0.3
+      "scentNote": "top",
+      "usage": {
+        "basis": "oil-weight",
+        "min": 2,
+        "max": 4
       }
     },
-    "density": 0.84,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8008-57-9",
-      "flashPointC": 48,
-      "ifraCategory9Limit": 3.4
-    },
-    "hazards": {
-      "oxidizes": {
-        "note": "Use with antioxidants for better shelf life"
-      }
-    },
-    "scentNote": "top",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 2,
-      "max": 4
     },
     "references": [
       {
@@ -808,49 +859,52 @@
   },
   "tea-tree-eo": {
     "name": "Tea tree essential oil",
+    "type": "fragrance",
     "description": "Fresh, medicinal, camphoraceous aroma.",
-    "sourceSpecies": "Melaleuca alternifolia",
-    "sourcePart": "leaves",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "terpinen-4-ol": {
-        "min": 30,
-        "max": 48
+    "details": {
+      "sourceSpecies": "Melaleuca alternifolia",
+      "sourcePart": "leaves",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "terpinen-4-ol": {
+          "min": 30,
+          "max": 48
+        },
+        "gamma-terpinene": {
+          "min": 10,
+          "max": 28
+        }
       },
-      "gamma-terpinene": {
-        "min": 10,
-        "max": 28
+      "density": 0.89,
+      "safety": {
+        "casNumber": "68647-73-4",
+        "flashPointC": 57,
+        "ifraCategory9Limit": 15
+      },
+      "hazards": {
+        "toxic-to-cats": {
+          "note": "7-8 drops of concentrated oil can cause ataxia, tremors, liver damage"
+        },
+        "toxic-to-dogs": {
+          "note": "Causes CNS depression, weakness, vomiting; keep products inaccessible"
+        },
+        "toxic-to-birds": {
+          "note": "Documented toxicosis in cockatiels; 3 drops caused coma and convulsions"
+        },
+        "toxic-to-small-mammals": {
+          "note": "Toxic to rabbits, hamsters, guinea pigs, ferrets"
+        }
+      },
+      "scentNote": "middle",
+      "usage": {
+        "basis": "oil-weight",
+        "min": 1,
+        "max": 3
       }
     },
-    "density": 0.89,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "68647-73-4",
-      "flashPointC": 57,
-      "ifraCategory9Limit": 15
-    },
-    "hazards": {
-      "toxic-to-cats": {
-        "note": "7-8 drops of concentrated oil can cause ataxia, tremors, liver damage"
-      },
-      "toxic-to-dogs": {
-        "note": "Causes CNS depression, weakness, vomiting; keep products inaccessible"
-      },
-      "toxic-to-birds": {
-        "note": "Documented toxicosis in cockatiels; 3 drops caused coma and convulsions"
-      },
-      "toxic-to-small-mammals": {
-        "note": "Toxic to rabbits, hamsters, guinea pigs, ferrets"
-      }
-    },
-    "scentNote": "middle",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 3
     },
     "references": [
       {
@@ -877,39 +931,42 @@
   },
   "vetiver-eo": {
     "name": "Vetiver essential oil",
+    "type": "fragrance",
     "description": "Deep, smoky, earthy aroma. Anchors lighter scents.",
-    "sourceSpecies": "Vetiveria zizanioides",
-    "sourcePart": "roots",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "khusimol": {
-        "min": 1,
-        "max": 30
+    "details": {
+      "sourceSpecies": "Vetiveria zizanioides",
+      "sourcePart": "roots",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "khusimol": {
+          "min": 1,
+          "max": 30
+        },
+        "alpha-vetivone": {
+          "min": 2,
+          "max": 13
+        },
+        "beta-vetivone": {
+          "min": 2,
+          "max": 14
+        }
       },
-      "alpha-vetivone": {
-        "min": 2,
-        "max": 13
+      "density": 0.99,
+      "safety": {
+        "casNumber": "8016-96-4",
+        "flashPointC": 110,
+        "ifraCategory9Limit": 5
       },
-      "beta-vetivone": {
-        "min": 2,
-        "max": 14
+      "scentNote": "base",
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.5,
+        "max": 2
       }
     },
-    "density": 0.99,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8016-96-4",
-      "flashPointC": 110,
-      "ifraCategory9Limit": 5.0
-    },
-    "scentNote": "base",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.5,
-      "max": 2
     },
     "references": [
       {
@@ -921,51 +978,54 @@
   },
   "ylang-ylang-eo": {
     "name": "Ylang ylang essential oil (complete)",
+    "type": "fragrance",
     "description": "Sweet, floral, exotic aroma.",
-    "sourceSpecies": "Cananga odorata",
-    "sourcePart": "flowers",
-    "extractionMethod": "steam-distilled",
-    "majorConstituents": {
-      "linalool": {
-        "min": 2,
-        "max": 24
+    "details": {
+      "sourceSpecies": "Cananga odorata",
+      "sourcePart": "flowers",
+      "extractionMethod": "steam-distilled",
+      "majorConstituents": {
+        "linalool": {
+          "min": 2,
+          "max": 24
+        },
+        "benzyl-acetate": {
+          "min": 6,
+          "max": 28
+        },
+        "benzyl-benzoate": {
+          "min": 3,
+          "max": 11
+        },
+        "geraniol": {
+          "min": 0.1,
+          "max": 3
+        }
       },
-      "benzyl-acetate": {
-        "min": 6,
-        "max": 28
+      "density": 0.94,
+      "safety": {
+        "casNumber": "8006-81-3",
+        "flashPointC": 88,
+        "ifraCategory9Limit": 0.8
       },
-      "benzyl-benzoate": {
-        "min": 3,
-        "max": 11
+      "hazards": {
+        "sensitizer": {
+          "note": "Contains linalool (oxidizes to allergens) and isoeugenol derivatives"
+        },
+        "toxic-to-birds": {
+          "note": "Avoid diffusing around birds; respiratory sensitivity"
+        }
       },
-      "geraniol": {
-        "min": 0.1,
-        "max": 3
+      "scentNote": "base",
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.5,
+        "max": 2
       }
     },
-    "density": 0.94,
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8006-81-3",
-      "flashPointC": 88,
-      "ifraCategory9Limit": 0.8
-    },
-    "hazards": {
-      "sensitizer": {
-        "note": "Contains linalool (oxidizes to allergens) and isoeugenol derivatives"
-      },
-      "toxic-to-birds": {
-        "note": "Avoid diffusing around birds; respiratory sensitivity"
-      }
-    },
-    "scentNote": "base",
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.5,
-      "max": 2
     },
     "references": [
       {

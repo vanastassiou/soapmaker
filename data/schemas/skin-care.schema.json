@@ -15,9 +15,9 @@
           "minLength": 1,
           "type": "string"
         },
-        "subcategory": {
-          "description": "Functional sub-classification",
-          "enum": ["emollient", "exfoliant"],
+        "type": {
+          "description": "Type classification",
+          "const": "skin care",
           "type": "string"
         },
         "description": {
@@ -25,26 +25,39 @@
           "minLength": 1,
           "type": "string"
         },
-        "density": {
-          "description": "Density in g/mL",
-          "maximum": 6,
-          "minimum": 0.1,
-          "type": "number"
+        "details": {
+          "description": "Technical details for the additive",
+          "additionalProperties": false,
+          "properties": {
+            "subcategory": {
+              "description": "Functional sub-classification",
+              "enum": ["emollient", "exfoliant"],
+              "type": "string"
+            },
+            "density": {
+              "description": "Density in g/mL",
+              "maximum": 6,
+              "minimum": 0.1,
+              "type": "number"
+            },
+            "safety": {
+              "$ref": "common-definitions.schema.json#/definitions/safety"
+            },
+            "usage": {
+              "$ref": "common-definitions.schema.json#/definitions/usage"
+            }
+          },
+          "required": ["subcategory", "usage"],
+          "type": "object"
         },
         "dietary": {
           "$ref": "common-definitions.schema.json#/definitions/dietary"
-        },
-        "safety": {
-          "$ref": "common-definitions.schema.json#/definitions/safety"
-        },
-        "usage": {
-          "$ref": "common-definitions.schema.json#/definitions/usage"
         },
         "references": {
           "$ref": "common-definitions.schema.json#/definitions/references"
         }
       },
-      "required": ["name", "subcategory", "description", "usage", "references"],
+      "required": ["name", "type", "description", "details"],
       "type": "object"
     }
   },

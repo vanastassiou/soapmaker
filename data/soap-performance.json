@@ -1,21 +1,24 @@
 {
   "beeswax": {
     "name": "Beeswax (yellow)",
-    "subcategory": "hardener",
-    "description": "Natural wax from Apis mellifera. Increases bar hardness. Melt into oils before adding lye. Melting point 62-64\u00b0C.",
-    "density": 0.96,
+    "type": "soap performance",
+    "description": "Natural wax from Apis mellifera. Increases bar hardness. Melt into oils before adding lye. Melting point 62-64°C.",
+    "details": {
+      "subcategory": "hardener",
+      "density": 0.96,
+      "safety": {
+        "casNumber": "8012-89-3",
+        "maxConcentration": 56
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.5,
+        "max": 5
+      }
+    },
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8012-89-3",
-      "maxConcentration": 56
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.5,
-      "max": 5
     },
     "references": [
       {
@@ -27,21 +30,24 @@
   },
   "candelilla-wax": {
     "name": "Candelilla wax",
-    "subcategory": "hardener",
-    "description": "Plant-based wax from Euphorbiaceae species. Vegan alternative to beeswax. Melting point 68.5-72.5\u00b0C.",
-    "density": 0.99,
+    "type": "soap performance",
+    "description": "Plant-based wax from Euphorbiaceae species. Vegan alternative to beeswax. Melting point 68.5-72.5°C.",
+    "details": {
+      "subcategory": "hardener",
+      "density": 0.99,
+      "safety": {
+        "casNumber": "8006-44-8",
+        "maxConcentration": 40
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.5,
+        "max": 3
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8006-44-8",
-      "maxConcentration": 40
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.5,
-      "max": 3
     },
     "references": [
       {
@@ -53,21 +59,24 @@
   },
   "carnauba-wax": {
     "name": "Carnauba wax",
-    "subcategory": "hardener",
-    "description": "Hardest natural wax from Copernicia cerifera palm. Vegan. Brittle alone, combine with softer waxes. Melting point 82-85\u00b0C.",
-    "density": 0.99,
+    "type": "soap performance",
+    "description": "Hardest natural wax from Copernicia cerifera palm. Vegan. Brittle alone, combine with softer waxes. Melting point 82-85°C.",
+    "details": {
+      "subcategory": "hardener",
+      "density": 0.99,
+      "safety": {
+        "casNumber": "8015-86-9",
+        "maxConcentration": 40
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.5,
+        "max": 3
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8015-86-9",
-      "maxConcentration": 40
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.5,
-      "max": 3
     },
     "references": [
       {
@@ -79,21 +88,24 @@
   },
   "grapefruit-seed-extract": {
     "name": "Grapefruit seed extract (GSE)",
-    "subcategory": "antioxidant",
+    "type": "soap performance",
     "description": "Extract from Citrus paradisi seeds. Antioxidant, extends shelf life. Not a broad-spectrum preservative. Verify purity.",
-    "density": 1.0,
+    "details": {
+      "subcategory": "antioxidant",
+      "density": 1,
+      "safety": {
+        "casNumber": "90045-43-5",
+        "maxConcentration": 3
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.1,
+        "max": 1
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "90045-43-5",
-      "maxConcentration": 3
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.1,
-      "max": 1
     },
     "references": [
       {
@@ -105,21 +117,24 @@
   },
   "honey": {
     "name": "Honey",
-    "subcategory": "lather-enhancer",
+    "type": "soap performance",
     "description": "Natural humectant from Apis mellifera. Increases lather, adds natural sugars. Heats soap significantly - freeze after moulding.",
-    "density": 1.42,
+    "details": {
+      "subcategory": "lather-enhancer",
+      "density": 1.42,
+      "safety": {
+        "casNumber": "91052-92-5",
+        "maxConcentration": 3
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.5,
+        "max": 1
+      }
+    },
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "91052-92-5",
-      "maxConcentration": 3
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.5,
-      "max": 1
     },
     "references": [
       {
@@ -131,21 +146,24 @@
   },
   "rosemary-oleoresin": {
     "name": "Rosemary oleoresin extract (ROE)",
-    "subcategory": "antioxidant",
+    "type": "soap performance",
     "description": "Oil-soluble extract from Rosmarinus officinalis leaves. Retards rancidity. Rich in carnosic acid (7%+). Add to oils before mixing.",
-    "density": 0.95,
+    "details": {
+      "subcategory": "antioxidant",
+      "density": 0.95,
+      "safety": {
+        "casNumber": "84604-14-8",
+        "maxConcentration": 1
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.02,
+        "max": 0.1
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "84604-14-8",
-      "maxConcentration": 1
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.02,
-      "max": 0.1
     },
     "references": [
       {
@@ -157,21 +175,24 @@
   },
   "silk-amino-acids": {
     "name": "Silk amino acids (hydrolyzed silk)",
-    "subcategory": "lather-enhancer",
+    "type": "soap performance",
     "description": "Hydrolyzed silk protein peptides (MW ~300-1000 Da). Enhances lather creaminess. Rich in glycine, alanine, serine. Add to cooled lye water.",
-    "density": 1.0,
+    "details": {
+      "subcategory": "lather-enhancer",
+      "density": 1,
+      "safety": {
+        "casNumber": "96690-41-4",
+        "maxConcentration": 10
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 1,
+        "max": 5
+      }
+    },
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "96690-41-4",
-      "maxConcentration": 10
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 5
     },
     "references": [
       {
@@ -183,21 +204,24 @@
   },
   "sodium-lactate": {
     "name": "Sodium lactate",
-    "subcategory": "hardener",
+    "type": "soap performance",
     "description": "Sodium salt of lactic acid (C3H5NaO3). Add to cooled lye water before combining with oils. Reduces unmoulding time.",
-    "density": 1.32,
+    "details": {
+      "subcategory": "hardener",
+      "density": 1.32,
+      "safety": {
+        "casNumber": "72-17-3",
+        "maxConcentration": 5
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 1,
+        "max": 3
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "72-17-3",
-      "maxConcentration": 5
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 3
     },
     "references": [
       {
@@ -209,20 +233,23 @@
   },
   "sugar": {
     "name": "Sugar (sucrose)",
-    "subcategory": "lather-enhancer",
+    "type": "soap performance",
     "description": "Sucrose (C12H22O11). Dissolve in water portion before adding lye. Increases lather volume.",
-    "density": 1.59,
+    "details": {
+      "subcategory": "lather-enhancer",
+      "density": 1.59,
+      "safety": {
+        "casNumber": "57-50-1"
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.5,
+        "max": 1
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "57-50-1"
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.5,
-      "max": 1
     },
     "references": [
       {
@@ -234,21 +261,24 @@
   },
   "table-salt": {
     "name": "Salt (sodium chloride)",
-    "subcategory": "hardener",
+    "type": "soap performance",
     "description": "Sodium chloride (NaCl). Dissolve in water portion before adding lye. Increases hardness. Above 3% may inhibit lather.",
-    "density": 2.16,
+    "details": {
+      "subcategory": "hardener",
+      "density": 2.16,
+      "safety": {
+        "casNumber": "7647-14-5",
+        "maxConcentration": 3
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.5,
+        "max": 1
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "7647-14-5",
-      "maxConcentration": 3
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.5,
-      "max": 1
     },
     "references": [
       {
@@ -260,21 +290,24 @@
   },
   "tussah-silk": {
     "name": "Tussah silk fibers",
-    "subcategory": "lather-enhancer",
-    "description": "Natural silk fibers from wild Antheraea moths. Dissolves in hot lye water (170-190\u00b0F). Increases lather creaminess.",
-    "density": 1.25,
+    "type": "soap performance",
+    "description": "Natural silk fibers from wild Antheraea moths. Dissolves in hot lye water (170-190°F). Increases lather creaminess.",
+    "details": {
+      "subcategory": "lather-enhancer",
+      "density": 1.25,
+      "safety": {
+        "casNumber": "96690-41-4",
+        "maxConcentration": 5
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.1,
+        "max": 0.5
+      }
+    },
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "96690-41-4",
-      "maxConcentration": 5
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.1,
-      "max": 0.5
     },
     "references": [
       {
@@ -286,21 +319,24 @@
   },
   "vitamin-e-tocopherol": {
     "name": "Vitamin E (mixed tocopherols)",
-    "subcategory": "antioxidant",
+    "type": "soap performance",
     "description": "Mixed tocopherols (alpha, beta, gamma, delta). Antioxidant to prevent oil oxidation. Add to oils before mixing.",
-    "density": 0.95,
+    "details": {
+      "subcategory": "antioxidant",
+      "density": 0.95,
+      "safety": {
+        "casNumber": "1406-18-4",
+        "maxConcentration": 1
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.01,
+        "max": 0.05
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "1406-18-4",
-      "maxConcentration": 1
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.01,
-      "max": 0.05
     },
     "references": [
       {

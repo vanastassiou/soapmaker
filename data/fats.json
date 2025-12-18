@@ -1,1308 +1,1396 @@
 {
   "argan-oil": {
-    "density": 0.91,
+    "name": "Argan oil",
+    "type": "fat",
     "description": "Oil pressed from argan tree (<i>Argania spinosa</i>) kernels. Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.191,
+        "naoh": 0.136
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.91,
+      "iodine": 100,
+      "ins": 94,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 12,
+        "palmitoleic": 0,
+        "stearic": 3,
+        "oleic": 46,
+        "linoleic": 33,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 12,
-      "palmitoleic": 0,
-      "stearic": 3,
-      "oleic": 46,
-      "linoleic": 33,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 94,
-    "iodine": 100,
-    "name": "Argan oil",
     "references": [
       {
         "sourceId": "pubchem",
         "section": "Argan oil (CID 11848929)",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/11848929"
       }
-    ],
-    "sap": {
-      "koh": 0.191,
-      "naoh": 0.136
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "apricot-kernel-oil": {
-    "density": 0.91,
+    "name": "Apricot kernel oil",
+    "type": "fat",
     "description": "Oil pressed from apricot (<i>Prunus armeniaca</i>) kernels. Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.19,
+        "naoh": 0.135
+      },
+      "usage": {
+        "max": 20,
+        "min": 5
+      },
+      "density": 0.91,
+      "iodine": 100,
+      "ins": 90,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 6,
+        "palmitoleic": 0,
+        "stearic": 1,
+        "oleic": 66,
+        "linoleic": 25,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 6,
-      "palmitoleic": 0,
-      "stearic": 1,
-      "oleic": 66,
-      "linoleic": 25,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 90,
-    "iodine": 100,
-    "name": "Apricot kernel oil",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC9905367: Apricot kernel characterization, oil extraction, and its utilization: a review",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9905367/"
       }
-    ],
-    "sap": {
-      "koh": 0.19,
-      "naoh": 0.135
-    },
-    "usage": {
-      "max": 20,
-      "min": 5
-    }
+    ]
   },
   "avocado-oil": {
-    "density": 0.91,
+    "name": "Avocado oil",
+    "type": "fat",
     "description": "Oil pressed from avocado (<i>Persea americana</i>) fruit. Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.187,
+        "naoh": 0.133
+      },
+      "usage": {
+        "max": 30,
+        "min": 10
+      },
+      "density": 0.91,
+      "iodine": 86,
+      "ins": 101,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 20,
+        "palmitoleic": 5,
+        "stearic": 2,
+        "oleic": 58,
+        "linoleic": 12,
+        "linolenic": 1,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 20,
-      "palmitoleic": 5,
-      "stearic": 2,
-      "oleic": 58,
-      "linoleic": 12,
-      "linolenic": 1,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 101,
-    "iodine": 86,
-    "name": "Avocado oil",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC6600360: Avocado Oil: Characteristics, Properties, and Applications",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6600360/"
       }
-    ],
-    "sap": {
-      "koh": 0.187,
-      "naoh": 0.133
-    },
-    "usage": {
-      "max": 30,
-      "min": 10
-    }
+    ]
   },
   "babassu-oil": {
-    "density": 0.92,
+    "name": "Babassu oil",
+    "type": "fat",
     "description": "Oil pressed from babassu palm (<i>Attalea speciosa</i>) nuts. Produces very hard bars with abundant, bubbly lather and high cleansing.",
-    "meltingPoint": 24,
+    "details": {
+      "sap": {
+        "koh": 0.251,
+        "naoh": 0.179
+      },
+      "usage": {
+        "max": 30,
+        "min": 15
+      },
+      "density": 0.92,
+      "iodine": 14,
+      "ins": 237,
+      "fattyAcids": {
+        "caprylic": 4,
+        "capric": 6,
+        "lauric": 50,
+        "myristic": 20,
+        "palmitic": 8,
+        "palmitoleic": 0,
+        "stearic": 4,
+        "oleic": 12,
+        "linoleic": 2,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 4,
-      "capric": 6,
-      "lauric": 50,
-      "myristic": 20,
-      "palmitic": 8,
-      "palmitoleic": 0,
-      "stearic": 4,
-      "oleic": 12,
-      "linoleic": 2,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 237,
-    "iodine": 14,
-    "name": "Babassu oil",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 210-1999: Section 2.1.2 Babassu Oil, Table 1 Fatty Acid Composition",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.251,
-      "naoh": 0.179
-    },
-    "usage": {
-      "max": 30,
-      "min": 15
-    }
+    ]
   },
   "beef-tallow": {
-    "density": 0.9,
+    "name": "Beef tallow",
+    "type": "fat",
     "description": "Rendered beef fat. Adds moderate hardness with stable, creamy lather.",
-    "meltingPoint": 45,
+    "details": {
+      "sap": {
+        "koh": 0.196,
+        "naoh": 0.14
+      },
+      "usage": {
+        "max": 100,
+        "min": 40
+      },
+      "density": 0.9,
+      "iodine": 46,
+      "ins": 150,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 4,
+        "palmitic": 25,
+        "palmitoleic": 0,
+        "stearic": 22,
+        "oleic": 38,
+        "linoleic": 3,
+        "linolenic": 1,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 4,
-      "palmitic": 25,
-      "palmitoleic": 0,
-      "stearic": 22,
-      "oleic": 38,
-      "linoleic": 3,
-      "linolenic": 1,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 150,
-    "iodine": 46,
-    "name": "Beef tallow",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 211-1999: Section 2.4 Edible Tallow, Table 1 Fatty Acid Ranges",
         "url": "https://www.fao.org/4/y2774e/y2774e05.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.196,
-      "naoh": 0.14
-    },
-    "usage": {
-      "max": 100,
-      "min": 40
-    }
+    ]
   },
   "black-cumin-seed-oil": {
-    "density": 0.92,
+    "name": "Black cumin seed oil (Nigella sativa)",
+    "type": "fat",
     "description": "Oil pressed from black cumin (<i>Nigella sativa</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.214,
+        "naoh": 0.151
+      },
+      "usage": {
+        "max": 10,
+        "min": 3
+      },
+      "density": 0.92,
+      "iodine": 122,
+      "ins": 92,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 1,
+        "palmitic": 12,
+        "palmitoleic": 0,
+        "stearic": 3,
+        "oleic": 25,
+        "linoleic": 58,
+        "linolenic": 1,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 1,
-      "palmitic": 12,
-      "palmitoleic": 0,
-      "stearic": 3,
-      "oleic": 25,
-      "linoleic": 58,
-      "linolenic": 1,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 92,
-    "iodine": 122,
-    "name": "Black cumin seed oil (Nigella sativa)",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC10975171: Variation in the Composition and Quality of Nigella sativa L. Seed Oils",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10975171/"
       }
-    ],
-    "sap": {
-      "koh": 0.214,
-      "naoh": 0.151
-    },
-    "usage": {
-      "max": 10,
-      "min": 3
-    }
+    ]
   },
   "camellia-seed-oil": {
-    "density": 0.91,
+    "name": "Camellia seed oil (tea seed oil)",
+    "type": "fat",
     "description": "Oil pressed from camellia (<i>Camellia oleifera</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.192,
+        "naoh": 0.136
+      },
+      "usage": {
+        "max": 30,
+        "min": 10
+      },
+      "density": 0.91,
+      "iodine": 83,
+      "ins": 109,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 9,
+        "palmitoleic": 0,
+        "stearic": 2,
+        "oleic": 78,
+        "linoleic": 8,
+        "linolenic": 1,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 9,
-      "palmitoleic": 0,
-      "stearic": 2,
-      "oleic": 78,
-      "linoleic": 8,
-      "linolenic": 1,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 109,
-    "iodine": 83,
-    "name": "Camellia seed oil (tea seed oil)",
     "references": [
       {
         "sourceId": "pubchem",
         "section": "Tea seed oil / Camellia oil (CID 6850744)",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850744"
       }
-    ],
-    "sap": {
-      "koh": 0.192,
-      "naoh": 0.136
-    },
-    "usage": {
-      "max": 30,
-      "min": 10
-    }
+    ]
   },
   "canola-oil-low-erucic-rapeseed": {
-    "density": 0.91,
+    "name": "Canola oil (low erucic rapeseed)",
+    "type": "fat",
     "description": "Oil pressed from low-erucic rapeseed (<i>Brassica napus</i>). Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.188,
+        "naoh": 0.134
+      },
+      "usage": {
+        "max": 30,
+        "min": 10
+      },
+      "density": 0.91,
+      "iodine": 116,
+      "ins": 72,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 5,
+        "palmitoleic": 0,
+        "stearic": 2,
+        "oleic": 61,
+        "linoleic": 22,
+        "linolenic": 10,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 5,
-      "palmitoleic": 0,
-      "stearic": 2,
-      "oleic": 61,
-      "linoleic": 22,
-      "linolenic": 10,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 72,
-    "iodine": 116,
-    "name": "Canola oil (low erucic rapeseed)",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 210-1999: Section 2.1.12 Rapeseed Oil (Low Erucic Acid), Table 1",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.188,
-      "naoh": 0.134
-    },
-    "usage": {
-      "max": 30,
-      "min": 10
-    }
+    ]
   },
   "castor-oil": {
-    "density": 0.96,
+    "name": "Castor oil",
+    "type": "fat",
     "description": "Oil pressed from castor (<i>Ricinus communis</i>) beans. Produces soft bars with abundant lather and highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.18,
+        "naoh": 0.128
+      },
+      "usage": {
+        "max": 10,
+        "min": 3
+      },
+      "density": 0.96,
+      "iodine": 86,
+      "ins": 94,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 1,
+        "palmitoleic": 0,
+        "stearic": 1,
+        "oleic": 4,
+        "linoleic": 3,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 90
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 1,
-      "palmitoleic": 0,
-      "stearic": 1,
-      "oleic": 4,
-      "linoleic": 3,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 90
-    },
-    "ins": 94,
-    "iodine": 86,
-    "name": "Castor oil",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC5015816: Castor Oil: Properties, Uses, and Optimization of Processing Parameters in Commercial Production",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5015816/"
       }
-    ],
-    "sap": {
-      "koh": 0.18,
-      "naoh": 0.128
-    },
-    "usage": {
-      "max": 10,
-      "min": 3
-    }
+    ]
   },
   "cocoa-butter": {
-    "density": 0.9,
+    "name": "Cocoa butter",
+    "type": "fat",
     "description": "Butter extracted from cocoa (<i>Theobroma cacao</i>) beans. Produces hard bars with stable, creamy lather.",
-    "meltingPoint": 34,
+    "details": {
+      "sap": {
+        "koh": 0.193,
+        "naoh": 0.137
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.9,
+      "iodine": 37,
+      "ins": 157,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 26,
+        "palmitoleic": 0,
+        "stearic": 34,
+        "oleic": 35,
+        "linoleic": 3,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 26,
-      "palmitoleic": 0,
-      "stearic": 34,
-      "oleic": 35,
-      "linoleic": 3,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 157,
-    "iodine": 37,
-    "name": "Cocoa butter",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 86-1981: Standard for Cocoa Butter",
         "url": "https://www.fao.org/input/download/standards/66/CXS_086e.pdf"
       }
-    ],
-    "sap": {
-      "koh": 0.193,
-      "naoh": 0.137
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "coconut-oil-76": {
-    "density": 0.92,
+    "name": "Coconut oil (76)",
+    "type": "fat",
     "description": "Oil pressed from coconut (<i>Cocos nucifera</i>) meat. Produces very hard bars with abundant, bubbly lather and high cleansing. Coconut is classified as a tree nut allergen.",
-    "meltingPoint": 24,
+    "details": {
+      "sap": {
+        "koh": 0.257,
+        "naoh": 0.183
+      },
+      "usage": {
+        "max": 30,
+        "min": 15
+      },
+      "density": 0.92,
+      "iodine": 8,
+      "ins": 249,
+      "fattyAcids": {
+        "caprylic": 7,
+        "capric": 6,
+        "lauric": 49,
+        "myristic": 19,
+        "palmitic": 9,
+        "palmitoleic": 0,
+        "stearic": 3,
+        "oleic": 7,
+        "linoleic": 2,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 7,
-      "capric": 6,
-      "lauric": 49,
-      "myristic": 19,
-      "palmitic": 9,
-      "palmitoleic": 0,
-      "stearic": 3,
-      "oleic": 7,
-      "linoleic": 2,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 249,
-    "iodine": 8,
-    "name": "Coconut oil (76)",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 210-1999: Section 2.1.3 Coconut Oil, Table 1 Fatty Acid Composition",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.257,
-      "naoh": 0.183
-    },
-    "usage": {
-      "max": 30,
-      "min": 15
-    }
+    ]
   },
   "coconut-oil-92": {
-    "density": 0.92,
+    "name": "Coconut oil (92)",
+    "type": "fat",
     "description": "Hydrogenated coconut (<i>Cocos nucifera</i>) oil. Produces very hard bars with abundant, bubbly lather and high cleansing. Coconut is classified as a tree nut allergen.",
-    "meltingPoint": 33,
+    "details": {
+      "sap": {
+        "koh": 0.257,
+        "naoh": 0.183
+      },
+      "usage": {
+        "max": 30,
+        "min": 15
+      },
+      "density": 0.92,
+      "iodine": 8,
+      "ins": 249,
+      "fattyAcids": {
+        "caprylic": 7,
+        "capric": 6,
+        "lauric": 49,
+        "myristic": 19,
+        "palmitic": 9,
+        "palmitoleic": 0,
+        "stearic": 3,
+        "oleic": 7,
+        "linoleic": 2,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 7,
-      "capric": 6,
-      "lauric": 49,
-      "myristic": 19,
-      "palmitic": 9,
-      "palmitoleic": 0,
-      "stearic": 3,
-      "oleic": 7,
-      "linoleic": 2,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 249,
-    "iodine": 8,
-    "name": "Coconut oil (92)",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 210-1999: Section 2.1.3 Coconut Oil (hydrogenated variant)",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.257,
-      "naoh": 0.183
-    },
-    "usage": {
-      "max": 30,
-      "min": 15
-    }
+    ]
   },
   "cupuacu-butter": {
-    "density": 0.9,
+    "name": "Cupuacu butter",
+    "type": "fat",
     "description": "Butter extracted from cupuacu (<i>Theobroma grandiflorum</i>) seeds. Adds moderate hardness with stable, creamy lather.",
-    "meltingPoint": 32,
+    "details": {
+      "sap": {
+        "koh": 0.193,
+        "naoh": 0.138
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.9,
+      "iodine": 45,
+      "ins": 148,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 11,
+        "palmitoleic": 0,
+        "stearic": 36,
+        "oleic": 40,
+        "linoleic": 3,
+        "linolenic": 0,
+        "arachidic": 1,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 11,
-      "palmitoleic": 0,
-      "stearic": 36,
-      "oleic": 40,
-      "linoleic": 3,
-      "linolenic": 0,
-      "arachidic": 1,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 148,
-    "iodine": 45,
-    "name": "Cupuacu butter",
     "references": [
       {
         "sourceId": "pubchem",
         "section": "Cupuacu butter (CID 6857658)",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6857658"
       }
-    ],
-    "sap": {
-      "koh": 0.193,
-      "naoh": 0.138
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "cottonseed-oil": {
-    "density": 0.92,
+    "name": "Cottonseed oil",
+    "type": "fat",
     "description": "Oil pressed from cottonseeds (<i>Gossypium</i>). Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.189,
+        "naoh": 0.135
+      },
+      "usage": {
+        "max": 25,
+        "min": 10
+      },
+      "density": 0.92,
+      "iodine": 106,
+      "ins": 83,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 1,
+        "palmitic": 23,
+        "palmitoleic": 0,
+        "stearic": 3,
+        "oleic": 19,
+        "linoleic": 52,
+        "linolenic": 1,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 1,
-      "palmitic": 23,
-      "palmitoleic": 0,
-      "stearic": 3,
-      "oleic": 19,
-      "linoleic": 52,
-      "linolenic": 1,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 83,
-    "iodine": 106,
-    "name": "Cottonseed oil",
     "references": [
       {
         "sourceId": "pubchem",
         "section": "Cottonseed oil (CID 6850758)",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850758"
       }
-    ],
-    "sap": {
-      "koh": 0.189,
-      "naoh": 0.135
-    },
-    "usage": {
-      "max": 25,
-      "min": 10
-    }
+    ]
   },
   "deer-tallow": {
-    "density": 0.9,
+    "name": "Deer tallow",
+    "type": "fat",
     "description": "Rendered deer fat. Adds moderate hardness with stable, creamy lather.",
-    "meltingPoint": 45,
+    "details": {
+      "sap": {
+        "koh": 0.195,
+        "naoh": 0.139
+      },
+      "usage": {
+        "max": 100,
+        "min": 40
+      },
+      "density": 0.9,
+      "iodine": 43,
+      "ins": 152,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 3,
+        "palmitic": 24,
+        "palmitoleic": 0,
+        "stearic": 24,
+        "oleic": 38,
+        "linoleic": 4,
+        "linolenic": 1,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 3,
-      "palmitic": 24,
-      "palmitoleic": 0,
-      "stearic": 24,
-      "oleic": 38,
-      "linoleic": 4,
-      "linolenic": 1,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 152,
-    "iodine": 43,
-    "name": "Deer tallow",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 211-1999: Extrapolated from Edible Tallow specifications",
         "url": "https://www.fao.org/4/y2774e/y2774e05.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.195,
-      "naoh": 0.139
-    },
-    "usage": {
-      "max": 100,
-      "min": 40
-    }
+    ]
   },
   "duck-fat": {
-    "density": 0.91,
+    "name": "Duck fat",
+    "type": "fat",
     "description": "Rendered duck fat. Adds moderate hardness with conditioning properties.",
-    "meltingPoint": 25,
+    "details": {
+      "sap": {
+        "koh": 0.19,
+        "naoh": 0.136
+      },
+      "usage": {
+        "max": 50,
+        "min": 20
+      },
+      "density": 0.91,
+      "iodine": 68,
+      "ins": 122,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 1,
+        "palmitic": 25,
+        "palmitoleic": 0,
+        "stearic": 7,
+        "oleic": 50,
+        "linoleic": 13,
+        "linolenic": 1,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 1,
-      "palmitic": 25,
-      "palmitoleic": 0,
-      "stearic": 7,
-      "oleic": 50,
-      "linoleic": 13,
-      "linolenic": 1,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 122,
-    "iodine": 68,
-    "name": "Duck fat",
     "references": [
       {
         "sourceId": "usda-fooddata",
         "section": "Duck fat composition",
         "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171401/nutrients"
       }
-    ],
-    "sap": {
-      "koh": 0.19,
-      "naoh": 0.136
-    },
-    "usage": {
-      "max": 50,
-      "min": 20
-    }
+    ]
   },
   "emu-oil": {
-    "density": 0.91,
+    "name": "Emu oil",
+    "type": "fat",
     "description": "Rendered emu (<i>Dromaius novaehollandiae</i>) fat. Adds moderate hardness with conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.194,
+        "naoh": 0.135
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.91,
+      "iodine": 75,
+      "ins": 119,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 1,
+        "palmitic": 21,
+        "palmitoleic": 0,
+        "stearic": 10,
+        "oleic": 46,
+        "linoleic": 20,
+        "linolenic": 1,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 1,
-      "palmitic": 21,
-      "palmitoleic": 0,
-      "stearic": 10,
-      "oleic": 46,
-      "linoleic": 20,
-      "linolenic": 1,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 119,
-    "iodine": 75,
-    "name": "Emu oil",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC9182831: Chemical Characterization and In Vivo Toxicological Safety Evaluation of Emu Oil",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9182831/"
       }
-    ],
-    "sap": {
-      "koh": 0.194,
-      "naoh": 0.135
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "flaxseed-oil": {
-    "density": 0.93,
+    "name": "Flaxseed oil (linseed)",
+    "type": "fat",
     "description": "Oil pressed from flax (<i>Linum usitatissimum</i>) seeds. Produces soft bars with highly conditioning properties. High linolenic content; soap prone to DOS.",
+    "details": {
+      "sap": {
+        "koh": 0.19,
+        "naoh": 0.136
+      },
+      "usage": {
+        "max": 8,
+        "min": 2
+      },
+      "density": 0.93,
+      "iodine": 180,
+      "ins": 10,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 7,
+        "palmitoleic": 0,
+        "stearic": 4,
+        "oleic": 18,
+        "linoleic": 17,
+        "linolenic": 53,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 7,
-      "palmitoleic": 0,
-      "stearic": 4,
-      "oleic": 18,
-      "linoleic": 17,
-      "linolenic": 53,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 10,
-    "iodine": 180,
-    "name": "Flaxseed oil (linseed)",
     "references": [
       {
         "sourceId": "pubchem",
         "section": "Linseed oil (CID 5356420)",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5356420"
       }
-    ],
-    "sap": {
-      "koh": 0.19,
-      "naoh": 0.136
-    },
-    "usage": {
-      "max": 8,
-      "min": 2
-    }
+    ]
   },
   "fractionated-coconut-oil-mct": {
-    "density": 0.95,
+    "name": "Fractionated coconut oil (MCT)",
+    "type": "fat",
     "description": "Fractionated coconut (<i>Cocos nucifera</i>) oil. Produces soft bars with minimal lather contribution. Coconut is classified as a tree nut allergen.",
+    "details": {
+      "sap": {
+        "koh": 0.323,
+        "naoh": 0.23
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.95,
+      "iodine": 1,
+      "ins": 322,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 3,
+        "myristic": 1,
+        "palmitic": 0,
+        "palmitoleic": 0,
+        "stearic": 0,
+        "oleic": 0,
+        "linoleic": 0,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 3,
-      "myristic": 1,
-      "palmitic": 0,
-      "palmitoleic": 0,
-      "stearic": 0,
-      "oleic": 0,
-      "linoleic": 0,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 322,
-    "iodine": 1,
-    "name": "Fractionated coconut oil (MCT)",
     "references": [
       {
         "sourceId": "pubchem",
         "section": "CID 9857063: Caprylic/Capric Triglyceride compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/9857063"
       }
-    ],
-    "sap": {
-      "koh": 0.323,
-      "naoh": 0.23
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "goat-tallow": {
-    "density": 0.9,
+    "name": "Goat tallow",
+    "type": "fat",
     "description": "Rendered goat fat. Adds moderate hardness with stable, creamy lather.",
-    "meltingPoint": 45,
+    "details": {
+      "sap": {
+        "koh": 0.196,
+        "naoh": 0.14
+      },
+      "usage": {
+        "max": 100,
+        "min": 40
+      },
+      "density": 0.9,
+      "iodine": 44,
+      "ins": 152,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 4,
+        "palmitic": 26,
+        "palmitoleic": 0,
+        "stearic": 22,
+        "oleic": 38,
+        "linoleic": 3,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 4,
-      "palmitic": 26,
-      "palmitoleic": 0,
-      "stearic": 22,
-      "oleic": 38,
-      "linoleic": 3,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 152,
-    "iodine": 44,
-    "name": "Goat tallow",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 211-1999: Extrapolated from Edible Tallow specifications",
         "url": "https://www.fao.org/4/y2774e/y2774e05.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.196,
-      "naoh": 0.14
-    },
-    "usage": {
-      "max": 100,
-      "min": 40
-    }
+    ]
   },
   "goose-fat": {
-    "density": 0.91,
+    "name": "Goose fat",
+    "type": "fat",
     "description": "Rendered goose fat. Adds moderate hardness with conditioning properties.",
-    "meltingPoint": 26,
+    "details": {
+      "sap": {
+        "koh": 0.19,
+        "naoh": 0.136
+      },
+      "usage": {
+        "max": 50,
+        "min": 20
+      },
+      "density": 0.91,
+      "iodine": 70,
+      "ins": 120,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 1,
+        "palmitic": 22,
+        "palmitoleic": 0,
+        "stearic": 7,
+        "oleic": 55,
+        "linoleic": 11,
+        "linolenic": 1,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 1,
-      "palmitic": 22,
-      "palmitoleic": 0,
-      "stearic": 7,
-      "oleic": 55,
-      "linoleic": 11,
-      "linolenic": 1,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 120,
-    "iodine": 70,
-    "name": "Goose fat",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC6325401: Fatty acid composition of goose meat depending on genotype and sex",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6325401/"
       }
-    ],
-    "sap": {
-      "koh": 0.19,
-      "naoh": 0.136
-    },
-    "usage": {
-      "max": 50,
-      "min": 20
-    }
+    ]
   },
   "grapeseed-oil": {
-    "density": 0.92,
+    "name": "Grapeseed oil",
+    "type": "fat",
     "description": "Oil pressed from grape (<i>Vitis vinifera</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.191,
+        "naoh": 0.136
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.92,
+      "iodine": 139,
+      "ins": 52,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 8,
+        "palmitoleic": 0,
+        "stearic": 5,
+        "oleic": 20,
+        "linoleic": 68,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 8,
-      "palmitoleic": 0,
-      "stearic": 5,
-      "oleic": 20,
-      "linoleic": 68,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 52,
-    "iodine": 139,
-    "name": "Grapeseed oil",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 210-1999: Section 2.1.5 Grapeseed Oil, Table 1 Fatty Acid Composition",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.191,
-      "naoh": 0.136
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "hazelnut-oil": {
-    "density": 0.91,
+    "name": "Hazelnut oil",
+    "type": "fat",
     "description": "Oil pressed from hazelnuts (<i>Corylus avellana</i>). Produces soft bars with highly conditioning properties. Tree nut allergen.",
+    "details": {
+      "sap": {
+        "koh": 0.191,
+        "naoh": 0.136
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.91,
+      "iodine": 94,
+      "ins": 97,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 5,
+        "palmitoleic": 0,
+        "stearic": 2,
+        "oleic": 78,
+        "linoleic": 10,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 5,
-      "palmitoleic": 0,
-      "stearic": 2,
-      "oleic": 78,
-      "linoleic": 10,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 97,
-    "iodine": 94,
-    "name": "Hazelnut oil",
     "references": [
       {
         "sourceId": "pubchem",
         "section": "Hazelnut oil (CID 6850741)",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850741"
       }
-    ],
-    "sap": {
-      "koh": 0.191,
-      "naoh": 0.136
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "hemp-seed-oil": {
-    "density": 0.93,
+    "name": "Hemp seed oil",
+    "type": "fat",
     "description": "Oil pressed from hemp (<i>Cannabis sativa</i>) seeds. Produces soft bars with highly conditioning properties. High linolenic content; soap prone to DOS.",
+    "details": {
+      "sap": {
+        "koh": 0.189,
+        "naoh": 0.135
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.93,
+      "iodine": 165,
+      "ins": 24,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 6,
+        "palmitoleic": 0,
+        "stearic": 2,
+        "oleic": 12,
+        "linoleic": 57,
+        "linolenic": 19,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 6,
-      "palmitoleic": 0,
-      "stearic": 2,
-      "oleic": 12,
-      "linoleic": 57,
-      "linolenic": 19,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 24,
-    "iodine": 165,
-    "name": "Hemp seed oil",
     "references": [
       {
         "sourceId": "pubchem",
         "section": "Hemp seed oil (CID 6850740)",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850740"
       }
-    ],
-    "sap": {
-      "koh": 0.189,
-      "naoh": 0.135
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "high-oleic-sunflower-oil": {
-    "density": 0.92,
+    "name": "High oleic sunflower oil",
+    "type": "fat",
     "description": "Oil pressed from high-oleic sunflower (<i>Helianthus annuus</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.191,
+        "naoh": 0.136
+      },
+      "usage": {
+        "max": 30,
+        "min": 15
+      },
+      "density": 0.92,
+      "iodine": 84,
+      "ins": 107,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 4,
+        "palmitoleic": 0,
+        "stearic": 4,
+        "oleic": 83,
+        "linoleic": 8,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 4,
-      "palmitoleic": 0,
-      "stearic": 4,
-      "oleic": 83,
-      "linoleic": 8,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 107,
-    "iodine": 84,
-    "name": "High oleic sunflower oil",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 210-1999: Section 2.1.19 Sunflowerseed Oil (High Oleic Acid), Table 1",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.191,
-      "naoh": 0.136
-    },
-    "usage": {
-      "max": 30,
-      "min": 15
-    }
+    ]
   },
   "illipe-butter": {
-    "density": 0.9,
+    "name": "Illipe butter",
+    "type": "fat",
     "description": "Butter extracted from illipe (<i>Shorea stenoptera</i>) seeds. Produces hard bars with stable, creamy lather.",
-    "meltingPoint": 37,
+    "details": {
+      "sap": {
+        "koh": 0.195,
+        "naoh": 0.138
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.9,
+      "iodine": 38,
+      "ins": 157,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 20,
+        "palmitoleic": 0,
+        "stearic": 38,
+        "oleic": 36,
+        "linoleic": 4,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 20,
-      "palmitoleic": 0,
-      "stearic": 38,
-      "oleic": 36,
-      "linoleic": 4,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 157,
-    "iodine": 38,
-    "name": "Illipe butter",
     "references": [
       {
         "sourceId": "pubchem",
         "section": "Illipe butter / Shorea stenoptera fat",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850742"
       }
-    ],
-    "sap": {
-      "koh": 0.195,
-      "naoh": 0.138
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "kokum-butter": {
-    "density": 0.9,
+    "name": "Kokum butter",
+    "type": "fat",
     "description": "Butter extracted from kokum (<i>Garcinia indica</i>) seeds. Produces hard bars with stable, creamy lather.",
-    "meltingPoint": 40,
+    "details": {
+      "sap": {
+        "koh": 0.189,
+        "naoh": 0.135
+      },
+      "usage": {
+        "max": 10,
+        "min": 5
+      },
+      "density": 0.9,
+      "iodine": 38,
+      "ins": 150,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 3,
+        "palmitoleic": 0,
+        "stearic": 55,
+        "oleic": 38,
+        "linoleic": 2,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 3,
-      "palmitoleic": 0,
-      "stearic": 55,
-      "oleic": 38,
-      "linoleic": 2,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 150,
-    "iodine": 38,
-    "name": "Kokum butter",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC6859180: Evaluation model for cocoa butter equivalents based on fatty acid compositions and triacylglycerol patterns",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6859180/"
       }
-    ],
-    "sap": {
-      "koh": 0.189,
-      "naoh": 0.135
-    },
-    "usage": {
-      "max": 10,
-      "min": 5
-    }
+    ]
   },
   "kukui-nut-oil": {
-    "density": 0.92,
+    "name": "Kukui nut oil",
+    "type": "fat",
     "description": "Oil pressed from kukui (<i>Aleurites moluccanus</i>) nuts. Produces soft bars with highly conditioning properties. High linolenic content; soap prone to DOS.",
+    "details": {
+      "sap": {
+        "koh": 0.19,
+        "naoh": 0.135
+      },
+      "usage": {
+        "max": 20,
+        "min": 5
+      },
+      "density": 0.92,
+      "iodine": 160,
+      "ins": 30,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 7,
+        "palmitoleic": 0,
+        "stearic": 3,
+        "oleic": 25,
+        "linoleic": 37,
+        "linolenic": 25,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 7,
-      "palmitoleic": 0,
-      "stearic": 3,
-      "oleic": 25,
-      "linoleic": 37,
-      "linolenic": 25,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 30,
-    "iodine": 160,
-    "name": "Kukui nut oil",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC10308387: Comprehensive Characterization of Kukui Nuts as Feedstock",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10308387/"
       }
-    ],
-    "sap": {
-      "koh": 0.19,
-      "naoh": 0.135
-    },
-    "usage": {
-      "max": 20,
-      "min": 5
-    }
+    ]
   },
   "macadamia-nut-oil": {
-    "density": 0.91,
+    "name": "Macadamia nut oil",
+    "type": "fat",
     "description": "Oil pressed from macadamia (<i>Macadamia integrifolia</i>) nuts. Produces soft bars with highly conditioning properties. Tree nut allergen.",
+    "details": {
+      "sap": {
+        "koh": 0.195,
+        "naoh": 0.139
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.91,
+      "iodine": 76,
+      "ins": 119,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 1,
+        "palmitic": 9,
+        "palmitoleic": 18,
+        "stearic": 3,
+        "oleic": 60,
+        "linoleic": 3,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 1,
-      "palmitic": 9,
-      "palmitoleic": 18,
-      "stearic": 3,
-      "oleic": 60,
-      "linoleic": 3,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 119,
-    "iodine": 76,
-    "name": "Macadamia nut oil",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC8151099: Comparative Study of Chemical Compositions and Antioxidant Capacities of Oils Obtained from 15 Macadamia Cultivars in China",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8151099/"
       }
-    ],
-    "sap": {
-      "koh": 0.195,
-      "naoh": 0.139
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "mango-butter": {
-    "density": 0.9,
+    "name": "Mango butter",
+    "type": "fat",
     "description": "Butter extracted from mango (<i>Mangifera indica</i>) seed kernels. Adds moderate hardness with stable, creamy lather.",
-    "meltingPoint": 32,
+    "details": {
+      "sap": {
+        "koh": 0.192,
+        "naoh": 0.137
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.9,
+      "iodine": 48,
+      "ins": 146,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 1,
+        "palmitic": 9,
+        "palmitoleic": 0,
+        "stearic": 42,
+        "oleic": 42,
+        "linoleic": 4,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 1,
-      "palmitic": 9,
-      "palmitoleic": 0,
-      "stearic": 42,
-      "oleic": 42,
-      "linoleic": 4,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 146,
-    "iodine": 48,
-    "name": "Mango butter",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC4995435: Mangifera sylvatica (Wild Mango): A new cocoa butter alternative",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4995435/"
       }
-    ],
-    "sap": {
-      "koh": 0.192,
-      "naoh": 0.137
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "meadowfoam-oil": {
-    "density": 0.91,
+    "name": "Meadowfoam oil",
+    "type": "fat",
     "description": "Oil pressed from meadowfoam (<i>Limnanthes alba</i>) seeds. Produces soft bars with minimal contribution to soap properties.",
+    "details": {
+      "sap": {
+        "koh": 0.168,
+        "naoh": 0.12
+      },
+      "usage": {
+        "max": 10,
+        "min": 5
+      },
+      "density": 0.91,
+      "iodine": 92,
+      "ins": 97,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 0,
+        "palmitoleic": 0,
+        "stearic": 2,
+        "oleic": 2,
+        "linoleic": 0,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 0,
-      "palmitoleic": 0,
-      "stearic": 2,
-      "oleic": 2,
-      "linoleic": 0,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 97,
-    "iodine": 92,
-    "name": "Meadowfoam oil",
     "references": [
       {
         "sourceId": "pmc",
@@ -1314,126 +1402,135 @@
         "section": "Biodiesel from meadowfoam: oxidative stability and unusual fatty acid composition",
         "url": "https://pubs.rsc.org/en/content/articlelanding/2010/ee/b923740m"
       }
-    ],
-    "sap": {
-      "koh": 0.168,
-      "naoh": 0.12
-    },
-    "usage": {
-      "max": 10,
-      "min": 5
-    }
+    ]
   },
   "moringa-oil": {
-    "density": 0.9,
+    "name": "Moringa oil (ben oil)",
+    "type": "fat",
     "description": "Oil pressed from moringa (<i>Moringa oleifera</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.187,
+        "naoh": 0.133
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.9,
+      "iodine": 70,
+      "ins": 117,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 6,
+        "palmitoleic": 0,
+        "stearic": 5,
+        "oleic": 72,
+        "linoleic": 1,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 7,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 6,
-      "palmitoleic": 0,
-      "stearic": 5,
-      "oleic": 72,
-      "linoleic": 1,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 7,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 117,
-    "iodine": 70,
-    "name": "Moringa oil (ben oil)",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC3931868: Quality characteristics and stability of Moringa oleifera seed oil of Indian origin",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3931868/"
       }
-    ],
-    "sap": {
-      "koh": 0.187,
-      "naoh": 0.133
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "mustard-seed-oil": {
-    "density": 0.91,
+    "name": "Mustard seed oil",
+    "type": "fat",
     "description": "Oil pressed from mustard (<i>Brassica</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.173,
+        "naoh": 0.123
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.91,
+      "iodine": 110,
+      "ins": 63,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 3,
+        "palmitoleic": 0,
+        "stearic": 1,
+        "oleic": 23,
+        "linoleic": 15,
+        "linolenic": 10,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 35,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 3,
-      "palmitoleic": 0,
-      "stearic": 1,
-      "oleic": 23,
-      "linoleic": 15,
-      "linolenic": 10,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 35,
-      "ricinoleic": 0
-    },
-    "ins": 63,
-    "iodine": 110,
-    "name": "Mustard seed oil",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC6717124: Physicochemical properties of cold pressed mustard oil",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6717124/"
       }
-    ],
-    "sap": {
-      "koh": 0.173,
-      "naoh": 0.123
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "neem-oil": {
-    "density": 0.92,
+    "name": "Neem oil",
+    "type": "fat",
     "description": "Oil pressed from neem (<i>Azadirachta indica</i>) seeds. Adds moderate hardness with conditioning properties. Raw oil has strong scent; mostly dissipates during saponification.",
+    "details": {
+      "sap": {
+        "koh": 0.195,
+        "naoh": 0.139
+      },
+      "usage": {
+        "max": 10,
+        "min": 5
+      },
+      "density": 0.92,
+      "iodine": 70,
+      "ins": 124,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 18,
+        "palmitoleic": 0,
+        "stearic": 15,
+        "oleic": 50,
+        "linoleic": 13,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 18,
-      "palmitoleic": 0,
-      "stearic": 15,
-      "oleic": 50,
-      "linoleic": 13,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 124,
-    "iodine": 70,
-    "name": "Neem oil",
     "references": [
       {
         "sourceId": "pubchem",
@@ -1445,127 +1542,135 @@
         "section": "PMID 11171243: Variations in fatty acid composition of neem seeds from Rajasthan",
         "url": "https://pubmed.ncbi.nlm.nih.gov/11171243/"
       }
-    ],
-    "sap": {
-      "koh": 0.195,
-      "naoh": 0.139
-    },
-    "usage": {
-      "max": 10,
-      "min": 5
-    }
+    ]
   },
   "olive-oil": {
-    "density": 0.91,
+    "name": "Olive oil",
+    "type": "fat",
     "description": "Oil pressed from olives (<i>Olea europaea</i>). Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.188,
+        "naoh": 0.134
+      },
+      "usage": {
+        "max": 100,
+        "min": 20
+      },
+      "density": 0.91,
+      "iodine": 85,
+      "ins": 103,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 11,
+        "palmitoleic": 0,
+        "stearic": 3,
+        "oleic": 72,
+        "linoleic": 10,
+        "linolenic": 1,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 11,
-      "palmitoleic": 0,
-      "stearic": 3,
-      "oleic": 72,
-      "linoleic": 10,
-      "linolenic": 1,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 103,
-    "iodine": 85,
-    "name": "Olive oil",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 33-1981: Standard for Olive Oils and Olive Pomace Oils, Table Fatty Acid Composition",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.188,
-      "naoh": 0.134
-    },
-    "usage": {
-      "max": 100,
-      "min": 20
-    }
+    ]
   },
   "olive-oil-pomace": {
-    "density": 0.91,
+    "name": "Olive oil pomace",
+    "type": "fat",
     "description": "Oil extracted from olive (<i>Olea europaea</i>) pulp after first pressing. Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.188,
+        "naoh": 0.134
+      },
+      "usage": {
+        "max": 100,
+        "min": 20
+      },
+      "density": 0.91,
+      "iodine": 87,
+      "ins": 101,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 12,
+        "palmitoleic": 0,
+        "stearic": 3,
+        "oleic": 70,
+        "linoleic": 11,
+        "linolenic": 1,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 12,
-      "palmitoleic": 0,
-      "stearic": 3,
-      "oleic": 70,
-      "linoleic": 11,
-      "linolenic": 1,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 101,
-    "iodine": 87,
-    "name": "Olive oil pomace",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 33-1981: Standard for Olive Oils and Olive Pomace Oils",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.188,
-      "naoh": 0.134
-    },
-    "usage": {
-      "max": 100,
-      "min": 20
-    }
+    ]
   },
   "palm-kernel-oil": {
-    "density": 0.92,
+    "name": "Palm kernel oil",
+    "type": "fat",
     "description": "Oil pressed from palm (<i>Elaeis guineensis</i>) fruit seeds. Produces very hard bars with abundant, bubbly lather and high cleansing. Palm cultivation linked to deforestation and biodiversity loss (IUCN); consider RSPO-certified sources.",
-    "meltingPoint": 27,
+    "details": {
+      "sap": {
+        "koh": 0.242,
+        "naoh": 0.173
+      },
+      "usage": {
+        "max": 30,
+        "min": 15
+      },
+      "density": 0.92,
+      "iodine": 18,
+      "ins": 224,
+      "fattyAcids": {
+        "caprylic": 4,
+        "capric": 4,
+        "lauric": 50,
+        "myristic": 16,
+        "palmitic": 8,
+        "palmitoleic": 0,
+        "stearic": 2,
+        "oleic": 16,
+        "linoleic": 3,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": true
     },
-    "fattyAcids": {
-      "caprylic": 4,
-      "capric": 4,
-      "lauric": 50,
-      "myristic": 16,
-      "palmitic": 8,
-      "palmitoleic": 0,
-      "stearic": 2,
-      "oleic": 16,
-      "linoleic": 3,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 224,
-    "iodine": 18,
-    "name": "Palm kernel oil",
     "references": [
       {
         "sourceId": "codex-alimentarius",
@@ -1582,43 +1687,45 @@
         "section": "Why Sustainable Palm Oil Matters",
         "url": "https://rspo.org/why-sustainable-palm-oil/"
       }
-    ],
-    "sap": {
-      "koh": 0.242,
-      "naoh": 0.173
-    },
-    "usage": {
-      "max": 30,
-      "min": 15
-    }
+    ]
   },
   "palm-oil": {
-    "density": 0.91,
+    "name": "Palm oil",
+    "type": "fat",
     "description": "Oil pressed from palm (<i>Elaeis guineensis</i>) fruit pulp. Adds moderate hardness with stable, creamy lather. Palm cultivation linked to deforestation and biodiversity loss (IUCN); consider RSPO-certified sources.",
-    "meltingPoint": 35,
+    "details": {
+      "sap": {
+        "koh": 0.199,
+        "naoh": 0.142
+      },
+      "usage": {
+        "max": 40,
+        "min": 20
+      },
+      "density": 0.91,
+      "iodine": 53,
+      "ins": 146,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 1,
+        "palmitic": 44,
+        "palmitoleic": 0,
+        "stearic": 5,
+        "oleic": 40,
+        "linoleic": 10,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": true
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 1,
-      "palmitic": 44,
-      "palmitoleic": 0,
-      "stearic": 5,
-      "oleic": 40,
-      "linoleic": 10,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 146,
-    "iodine": 53,
-    "name": "Palm oil",
     "references": [
       {
         "sourceId": "codex-alimentarius",
@@ -1635,553 +1742,588 @@
         "section": "Why Sustainable Palm Oil Matters",
         "url": "https://rspo.org/why-sustainable-palm-oil/"
       }
-    ],
-    "sap": {
-      "koh": 0.199,
-      "naoh": 0.142
-    },
-    "usage": {
-      "max": 40,
-      "min": 20
-    }
+    ]
   },
   "peanut-oil": {
-    "density": 0.915,
+    "name": "Peanut oil (groundnut)",
+    "type": "fat",
     "description": "Oil pressed from peanuts (<i>Arachis hypogaea</i>). Produces soft bars with highly conditioning properties. Peanut allergen.",
+    "details": {
+      "sap": {
+        "koh": 0.191,
+        "naoh": 0.136
+      },
+      "usage": {
+        "max": 20,
+        "min": 10
+      },
+      "density": 0.915,
+      "iodine": 95,
+      "ins": 96,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 10,
+        "palmitoleic": 0,
+        "stearic": 3,
+        "oleic": 48,
+        "linoleic": 32,
+        "linolenic": 0,
+        "arachidic": 1.5,
+        "behenic": 3,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 10,
-      "palmitoleic": 0,
-      "stearic": 3,
-      "oleic": 48,
-      "linoleic": 32,
-      "linolenic": 0,
-      "arachidic": 1.5,
-      "behenic": 3,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 96,
-    "iodine": 95,
-    "name": "Peanut oil (groundnut)",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 210-1999: Section 2.1.1 Arachis Oil (Peanut/Groundnut Oil)",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.191,
-      "naoh": 0.136
-    },
-    "usage": {
-      "max": 20,
-      "min": 10
-    }
+    ]
   },
   "pecan-oil": {
-    "density": 0.91,
+    "name": "Pecan oil",
+    "type": "fat",
     "description": "Oil pressed from pecans (<i>Carya illinoinensis</i>). Produces soft bars with highly conditioning properties. Tree nut allergen.",
+    "details": {
+      "sap": {
+        "koh": 0.19,
+        "naoh": 0.135
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.91,
+      "iodine": 95,
+      "ins": 95,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 6,
+        "palmitoleic": 0,
+        "stearic": 2,
+        "oleic": 65,
+        "linoleic": 25,
+        "linolenic": 1,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 6,
-      "palmitoleic": 0,
-      "stearic": 2,
-      "oleic": 65,
-      "linoleic": 25,
-      "linolenic": 1,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 95,
-    "iodine": 95,
-    "name": "Pecan oil",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC5827884: Comparison of Oil Content and Fatty Acids Profile of Pecan Nuts",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5827884/"
       }
-    ],
-    "sap": {
-      "koh": 0.19,
-      "naoh": 0.135
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "pistachio-oil": {
-    "density": 0.91,
+    "name": "Pistachio oil",
+    "type": "fat",
     "description": "Oil pressed from pistachios (<i>Pistacia vera</i>). Produces soft bars with highly conditioning properties. Tree nut allergen.",
+    "details": {
+      "sap": {
+        "koh": 0.188,
+        "naoh": 0.134
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.91,
+      "iodine": 94,
+      "ins": 94,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 11,
+        "palmitoleic": 0,
+        "stearic": 1,
+        "oleic": 54,
+        "linoleic": 32,
+        "linolenic": 1,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 11,
-      "palmitoleic": 0,
-      "stearic": 1,
-      "oleic": 54,
-      "linoleic": 32,
-      "linolenic": 1,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 94,
-    "iodine": 94,
-    "name": "Pistachio oil",
     "references": [
       {
         "sourceId": "pubchem",
         "section": "Pistachio oil (CID 6850754)",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850754"
       }
-    ],
-    "sap": {
-      "koh": 0.188,
-      "naoh": 0.134
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "pork-fat-rendered": {
-    "density": 0.92,
+    "name": "Lard (all)",
+    "type": "fat",
     "description": "Rendered pork fat. Adds moderate hardness with stable, creamy lather.",
-    "meltingPoint": 36,
+    "details": {
+      "sap": {
+        "koh": 0.198,
+        "naoh": 0.141
+      },
+      "usage": {
+        "max": 100,
+        "min": 40
+      },
+      "density": 0.92,
+      "iodine": 66,
+      "ins": 132,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 2,
+        "palmitic": 25,
+        "palmitoleic": 0,
+        "stearic": 15,
+        "oleic": 45,
+        "linoleic": 9,
+        "linolenic": 1,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 2,
-      "palmitic": 25,
-      "palmitoleic": 0,
-      "stearic": 15,
-      "oleic": 45,
-      "linoleic": 9,
-      "linolenic": 1,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 132,
-    "iodine": 66,
-    "name": "Lard (all)",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 211-1999: Section 2.2 Rendered Pork Fat, Table 1 Fatty Acid Ranges",
         "url": "https://www.fao.org/4/y2774e/y2774e05.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.198,
-      "naoh": 0.141
-    },
-    "usage": {
-      "max": 100,
-      "min": 40
-    }
+    ]
   },
   "pork-fat-rendered-pure": {
-    "density": 0.92,
+    "name": "Lard (leaf)",
+    "type": "fat",
     "description": "Rendered pork leaf fat from the visceral area near kidneys and loin. Adds moderate hardness with stable, creamy lather.",
-    "meltingPoint": 43,
+    "details": {
+      "sap": {
+        "koh": 0.198,
+        "naoh": 0.141
+      },
+      "usage": {
+        "max": 100,
+        "min": 40
+      },
+      "density": 0.92,
+      "iodine": 60,
+      "ins": 138,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 2,
+        "palmitic": 25,
+        "palmitoleic": 0,
+        "stearic": 15,
+        "oleic": 45,
+        "linoleic": 8,
+        "linolenic": 1,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 2,
-      "palmitic": 25,
-      "palmitoleic": 0,
-      "stearic": 15,
-      "oleic": 45,
-      "linoleic": 8,
-      "linolenic": 1,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 138,
-    "iodine": 60,
-    "name": "Lard (leaf)",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 211-1999: Section 2.1 Lard, Table 1 Fatty Acid Ranges",
         "url": "https://www.fao.org/4/y2774e/y2774e05.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.198,
-      "naoh": 0.141
-    },
-    "usage": {
-      "max": 100,
-      "min": 40
-    }
+    ]
   },
   "pumpkin-seed-oil": {
-    "density": 0.92,
+    "name": "Pumpkin seed oil",
+    "type": "fat",
     "description": "Oil pressed from pumpkin (<i>Cucurbita pepo</i>) seeds. Produces soft bars with highly conditioning properties. Raw oil is dark green; colour fades significantly in finished soap.",
+    "details": {
+      "sap": {
+        "koh": 0.189,
+        "naoh": 0.135
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.92,
+      "iodine": 115,
+      "ins": 74,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 12,
+        "palmitoleic": 0,
+        "stearic": 5,
+        "oleic": 28,
+        "linoleic": 53,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 12,
-      "palmitoleic": 0,
-      "stearic": 5,
-      "oleic": 28,
-      "linoleic": 53,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 74,
-    "iodine": 115,
-    "name": "Pumpkin seed oil",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC6906666: Comparative assessment of physicochemical properties of pumpkin seed oil",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6906666/"
       }
-    ],
-    "sap": {
-      "koh": 0.189,
-      "naoh": 0.135
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "rice-bran-oil": {
-    "density": 0.92,
+    "name": "Rice bran oil",
+    "type": "fat",
     "description": "Oil extracted from rice (<i>Oryza sativa</i>) bran. Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.19,
+        "naoh": 0.135
+      },
+      "usage": {
+        "max": 25,
+        "min": 10
+      },
+      "density": 0.92,
+      "iodine": 103,
+      "ins": 87,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 18,
+        "palmitoleic": 0,
+        "stearic": 2,
+        "oleic": 43,
+        "linoleic": 32,
+        "linolenic": 1,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 18,
-      "palmitoleic": 0,
-      "stearic": 2,
-      "oleic": 43,
-      "linoleic": 32,
-      "linolenic": 1,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 87,
-    "iodine": 103,
-    "name": "Rice bran oil",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 210-1999: Section 2.1.13 Rice Bran Oil, Table 1 Fatty Acid Composition",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.19,
-      "naoh": 0.135
-    },
-    "usage": {
-      "max": 25,
-      "min": 10
-    }
+    ]
   },
   "rosehip-seed-oil": {
-    "density": 0.92,
+    "name": "Rosehip seed oil",
+    "type": "fat",
     "description": "Oil pressed from rosehip (<i>Rosa canina</i>) seeds. Produces soft bars with highly conditioning properties. High linolenic content; soap prone to DOS.",
+    "details": {
+      "sap": {
+        "koh": 0.189,
+        "naoh": 0.135
+      },
+      "usage": {
+        "max": 10,
+        "min": 3
+      },
+      "density": 0.92,
+      "iodine": 160,
+      "ins": 29,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 5,
+        "palmitoleic": 0,
+        "stearic": 2,
+        "oleic": 17,
+        "linoleic": 51,
+        "linolenic": 20,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 5,
-      "palmitoleic": 0,
-      "stearic": 2,
-      "oleic": 17,
-      "linoleic": 51,
-      "linolenic": 20,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 29,
-    "iodine": 160,
-    "name": "Rosehip seed oil",
     "references": [
       {
         "sourceId": "pubchem",
         "section": "Rosehip seed oil (CID 6850756)",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850756"
       }
-    ],
-    "sap": {
-      "koh": 0.189,
-      "naoh": 0.135
-    },
-    "usage": {
-      "max": 10,
-      "min": 3
-    }
+    ]
   },
   "safflower-oil-high-oleic": {
-    "density": 0.92,
+    "name": "Safflower oil (high oleic)",
+    "type": "fat",
     "description": "Oil pressed from high-oleic safflower (<i>Carthamus tinctorius</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.192,
+        "naoh": 0.137
+      },
+      "usage": {
+        "max": 25,
+        "min": 10
+      },
+      "density": 0.92,
+      "iodine": 90,
+      "ins": 102,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 5,
+        "palmitoleic": 0,
+        "stearic": 2,
+        "oleic": 77,
+        "linoleic": 14,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 5,
-      "palmitoleic": 0,
-      "stearic": 2,
-      "oleic": 77,
-      "linoleic": 14,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 102,
-    "iodine": 90,
-    "name": "Safflower oil (high oleic)",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 210-1999: Section 2.1.15 Safflowerseed Oil (High Oleic Acid), Table 1",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.192,
-      "naoh": 0.137
-    },
-    "usage": {
-      "max": 25,
-      "min": 10
-    }
+    ]
   },
   "sal-seed-butter": {
-    "density": 0.9,
+    "name": "Sal seed butter",
+    "type": "fat",
     "description": "Butter extracted from sal (<i>Shorea robusta</i>) seeds. Produces hard bars with stable, creamy lather.",
-    "meltingPoint": 37,
+    "details": {
+      "sap": {
+        "koh": 0.189,
+        "naoh": 0.135
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.9,
+      "iodine": 8,
+      "ins": 181,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 14,
+        "palmitoleic": 0,
+        "stearic": 42,
+        "oleic": 40,
+        "linoleic": 2,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 14,
-      "palmitoleic": 0,
-      "stearic": 42,
-      "oleic": 40,
-      "linoleic": 2,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 181,
-    "iodine": 8,
-    "name": "Sal seed butter",
     "references": [
       {
         "sourceId": "pubchem",
         "section": "Sal butter / Shorea robusta fat",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850757"
       }
-    ],
-    "sap": {
-      "koh": 0.189,
-      "naoh": 0.135
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "sea-buckthorn-oil": {
-    "density": 0.92,
+    "name": "Sea buckthorn oil (fruit)",
+    "type": "fat",
     "description": "Oil pressed from sea buckthorn (<i>Hippophae rhamnoides</i>) fruit pulp. Adds moderate hardness with conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.186,
+        "naoh": 0.133
+      },
+      "usage": {
+        "max": 7,
+        "min": 3
+      },
+      "density": 0.92,
+      "iodine": 75,
+      "ins": 111,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 36,
+        "palmitoleic": 35,
+        "stearic": 1,
+        "oleic": 8,
+        "linoleic": 6,
+        "linolenic": 2,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 36,
-      "palmitoleic": 35,
-      "stearic": 1,
-      "oleic": 8,
-      "linoleic": 6,
-      "linolenic": 2,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 111,
-    "iodine": 75,
-    "name": "Sea buckthorn oil (fruit)",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC3338740: Fatty Acid Composition of Developing Sea Buckthorn (Hippophae rhamnoides L.) Berry and the Transcriptome of the Mature Seed",
         "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3338740/"
       }
-    ],
-    "sap": {
-      "koh": 0.186,
-      "naoh": 0.133
-    },
-    "usage": {
-      "max": 7,
-      "min": 3
-    }
+    ]
   },
   "sesame-oil": {
-    "density": 0.92,
+    "name": "Sesame oil",
+    "type": "fat",
     "description": "Oil pressed from sesame (<i>Sesamum indicum</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.191,
+        "naoh": 0.136
+      },
+      "usage": {
+        "max": 25,
+        "min": 10
+      },
+      "density": 0.92,
+      "iodine": 113,
+      "ins": 78,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 9,
+        "palmitoleic": 0,
+        "stearic": 5,
+        "oleic": 43,
+        "linoleic": 41,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 9,
-      "palmitoleic": 0,
-      "stearic": 5,
-      "oleic": 43,
-      "linoleic": 41,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 78,
-    "iodine": 113,
-    "name": "Sesame oil",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC10292629: Physicochemical and health properties of sesame seed oil: a review",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10292629/"
       }
-    ],
-    "sap": {
-      "koh": 0.191,
-      "naoh": 0.136
-    },
-    "usage": {
-      "max": 25,
-      "min": 10
-    }
+    ]
   },
   "shea-butter": {
-    "density": 0.9,
+    "name": "Shea butter",
+    "type": "fat",
     "description": "Butter extracted from shea tree (<i>Vitellaria paradoxa</i>) nuts. Adds moderate hardness with stable, creamy lather.",
-    "meltingPoint": 36,
+    "details": {
+      "sap": {
+        "koh": 0.18,
+        "naoh": 0.128
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.9,
+      "iodine": 59,
+      "ins": 116,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 5,
+        "palmitoleic": 0,
+        "stearic": 40,
+        "oleic": 46,
+        "linoleic": 6,
+        "linolenic": 0,
+        "arachidic": 1,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 5,
-      "palmitoleic": 0,
-      "stearic": 40,
-      "oleic": 46,
-      "linoleic": 6,
-      "linolenic": 0,
-      "arachidic": 1,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 116,
-    "iodine": 59,
-    "name": "Shea butter",
     "references": [
       {
         "sourceId": "codex-alimentarius",
@@ -2193,214 +2335,227 @@
         "section": "PMC10137687: Effect of Refining and Fractionation Processes on Minor Components, Fatty Acids, Antioxidant and Antimicrobial Activities of Shea Butter",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10137687/"
       }
-    ],
-    "sap": {
-      "koh": 0.18,
-      "naoh": 0.128
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "sheep-tallow-mutton": {
-    "density": 0.9,
+    "name": "Sheep tallow (mutton)",
+    "type": "fat",
     "description": "Rendered sheep fat. Produces hard bars with stable, creamy lather.",
-    "meltingPoint": 48,
+    "details": {
+      "sap": {
+        "koh": 0.196,
+        "naoh": 0.14
+      },
+      "usage": {
+        "max": 100,
+        "min": 40
+      },
+      "density": 0.9,
+      "iodine": 40,
+      "ins": 156,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 5,
+        "palmitic": 25,
+        "palmitoleic": 0,
+        "stearic": 26,
+        "oleic": 36,
+        "linoleic": 3,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 5,
-      "palmitic": 25,
-      "palmitoleic": 0,
-      "stearic": 26,
-      "oleic": 36,
-      "linoleic": 3,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 156,
-    "iodine": 40,
-    "name": "Sheep tallow (mutton)",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 211-1999: Section 2.4 Edible Tallow (includes sheep)",
         "url": "https://www.fao.org/4/y2774e/y2774e05.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.196,
-      "naoh": 0.14
-    },
-    "usage": {
-      "max": 100,
-      "min": 40
-    }
+    ]
   },
   "soybean-oil": {
-    "density": 0.92,
+    "name": "Soybean oil",
+    "type": "fat",
     "description": "Oil pressed from soybeans (<i>Glycine max</i>). Produces soft bars with highly conditioning properties. Soy allergen.",
+    "details": {
+      "sap": {
+        "koh": 0.19,
+        "naoh": 0.135
+      },
+      "usage": {
+        "max": 30,
+        "min": 10
+      },
+      "density": 0.92,
+      "iodine": 131,
+      "ins": 59,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 11,
+        "palmitoleic": 0,
+        "stearic": 4,
+        "oleic": 24,
+        "linoleic": 54,
+        "linolenic": 7,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 11,
-      "palmitoleic": 0,
-      "stearic": 4,
-      "oleic": 24,
-      "linoleic": 54,
-      "linolenic": 7,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 59,
-    "iodine": 131,
-    "name": "Soybean oil",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 210-1999: Section 2.1.17 Soyabean Oil, Table 1 Fatty Acid Composition",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.19,
-      "naoh": 0.135
-    },
-    "usage": {
-      "max": 30,
-      "min": 10
-    }
+    ]
   },
   "stearic-acid": {
-    "density": 0.94,
+    "name": "Stearic acid",
+    "type": "fat",
     "description": "Pure stearic fatty acid. Produces very hard bars with stable, creamy lather.",
-    "meltingPoint": 69,
+    "details": {
+      "sap": {
+        "koh": 0.198,
+        "naoh": 0.141
+      },
+      "usage": {
+        "max": 5,
+        "min": 2
+      },
+      "density": 0.94,
+      "iodine": 0,
+      "ins": 198,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 0,
+        "palmitoleic": 0,
+        "stearic": 100,
+        "oleic": 0,
+        "linoleic": 0,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 0,
-      "palmitoleic": 0,
-      "stearic": 100,
-      "oleic": 0,
-      "linoleic": 0,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 198,
-    "iodine": 0,
-    "name": "Stearic acid",
     "references": [
       {
         "sourceId": "pubchem",
         "section": "CID 5281: Stearic Acid compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Stearic-acid"
       }
-    ],
-    "sap": {
-      "koh": 0.198,
-      "naoh": 0.141
-    },
-    "usage": {
-      "max": 5,
-      "min": 2
-    }
+    ]
   },
   "sunflower-oil": {
-    "density": 0.92,
+    "name": "Sunflower oil",
+    "type": "fat",
     "description": "Oil pressed from sunflower (<i>Helianthus annuus</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "details": {
+      "sap": {
+        "koh": 0.188,
+        "naoh": 0.134
+      },
+      "usage": {
+        "max": 15,
+        "min": 5
+      },
+      "density": 0.92,
+      "iodine": 130,
+      "ins": 58,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 6,
+        "palmitoleic": 0,
+        "stearic": 5,
+        "oleic": 27,
+        "linoleic": 61,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 6,
-      "palmitoleic": 0,
-      "stearic": 5,
-      "oleic": 27,
-      "linoleic": 61,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 58,
-    "iodine": 130,
-    "name": "Sunflower oil",
     "references": [
       {
         "sourceId": "codex-alimentarius",
         "section": "CXS 210-1999: Section 2.1.18 Sunflowerseed Oil, Table 1 Fatty Acid Composition",
         "url": "https://www.fao.org/4/y2774e/y2774e04.htm"
       }
-    ],
-    "sap": {
-      "koh": 0.188,
-      "naoh": 0.134
-    },
-    "usage": {
-      "max": 15,
-      "min": 5
-    }
+    ]
   },
   "sweet-almond-oil": {
-    "density": 0.91,
+    "name": "Sweet almond oil",
+    "type": "fat",
     "description": "Oil pressed from sweet almond (<i>Prunus dulcis</i>) kernels. Produces soft bars with highly conditioning properties. Tree nut allergen.",
+    "details": {
+      "sap": {
+        "koh": 0.191,
+        "naoh": 0.136
+      },
+      "usage": {
+        "max": 20,
+        "min": 5
+      },
+      "density": 0.91,
+      "iodine": 99,
+      "ins": 92,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 7,
+        "palmitoleic": 0,
+        "stearic": 2,
+        "oleic": 68,
+        "linoleic": 18,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 7,
-      "palmitoleic": 0,
-      "stearic": 2,
-      "oleic": 68,
-      "linoleic": 18,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 92,
-    "iodine": 99,
-    "name": "Sweet almond oil",
     "references": [
       {
         "sourceId": "european-pharmacopoeia",
@@ -2412,141 +2567,142 @@
         "section": "Variability of Oil Content and Major Fatty Acid Composition in Almond",
         "url": "https://pubs.acs.org/doi/10.1021/jf8001679"
       }
-    ],
-    "sap": {
-      "koh": 0.191,
-      "naoh": 0.136
-    },
-    "usage": {
-      "max": 20,
-      "min": 5
-    }
+    ]
   },
   "tamanu-oil": {
-    "density": 0.93,
+    "name": "Tamanu oil",
+    "type": "fat",
     "description": "Oil pressed from tamanu (<i>Calophyllum inophyllum</i>) nuts. Produces soft bars with conditioning properties. Raw oil has strong nutty scent; mostly dissipates during saponification.",
+    "details": {
+      "sap": {
+        "koh": 0.195,
+        "naoh": 0.139
+      },
+      "usage": {
+        "max": 7,
+        "min": 3
+      },
+      "density": 0.93,
+      "iodine": 85,
+      "ins": 108,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 13,
+        "palmitoleic": 0,
+        "stearic": 13,
+        "oleic": 40,
+        "linoleic": 27,
+        "linolenic": 0,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 13,
-      "palmitoleic": 0,
-      "stearic": 13,
-      "oleic": 40,
-      "linoleic": 27,
-      "linolenic": 0,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 108,
-    "iodine": 85,
-    "name": "Tamanu oil",
     "references": [
       {
         "sourceId": "pubchem",
         "section": "Tamanu oil / Calophyllum inophyllum oil (CID 6850760)",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6850760"
       }
-    ],
-    "sap": {
-      "koh": 0.195,
-      "naoh": 0.139
-    },
-    "usage": {
-      "max": 7,
-      "min": 3
-    }
+    ]
   },
   "walnut-oil": {
-    "density": 0.92,
+    "name": "Walnut oil",
+    "type": "fat",
     "description": "Oil pressed from walnuts (<i>Juglans regia</i>). Produces soft bars with highly conditioning properties. Tree nut allergen.",
+    "details": {
+      "sap": {
+        "koh": 0.189,
+        "naoh": 0.135
+      },
+      "usage": {
+        "max": 10,
+        "min": 5
+      },
+      "density": 0.92,
+      "iodine": 145,
+      "ins": 44,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 7,
+        "palmitoleic": 0,
+        "stearic": 2,
+        "oleic": 19,
+        "linoleic": 58,
+        "linolenic": 12,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "commonAllergen": true,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 7,
-      "palmitoleic": 0,
-      "stearic": 2,
-      "oleic": 19,
-      "linoleic": 58,
-      "linolenic": 12,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 44,
-    "iodine": 145,
-    "name": "Walnut oil",
     "references": [
       {
         "sourceId": "usda-fooddata",
         "section": "Oil, walnut (FDC ID 173582)",
         "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173582/nutrients"
       }
-    ],
-    "sap": {
-      "koh": 0.189,
-      "naoh": 0.135
-    },
-    "usage": {
-      "max": 10,
-      "min": 5
-    }
+    ]
   },
   "wheat-germ-oil": {
-    "density": 0.93,
+    "name": "Wheat germ oil",
+    "type": "fat",
     "description": "Oil pressed from wheat (<i>Triticum aestivum</i>) germ. Produces soft bars with highly conditioning properties. High polyunsaturated content; soap may be prone to DOS.",
+    "details": {
+      "sap": {
+        "koh": 0.19,
+        "naoh": 0.135
+      },
+      "usage": {
+        "max": 10,
+        "min": 3
+      },
+      "density": 0.93,
+      "iodine": 125,
+      "ins": 65,
+      "fattyAcids": {
+        "caprylic": 0,
+        "capric": 0,
+        "lauric": 0,
+        "myristic": 0,
+        "palmitic": 16,
+        "palmitoleic": 0,
+        "stearic": 1,
+        "oleic": 18,
+        "linoleic": 56,
+        "linolenic": 7,
+        "arachidic": 0,
+        "behenic": 0,
+        "erucic": 0,
+        "ricinoleic": 0
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
     },
-    "fattyAcids": {
-      "caprylic": 0,
-      "capric": 0,
-      "lauric": 0,
-      "myristic": 0,
-      "palmitic": 16,
-      "palmitoleic": 0,
-      "stearic": 1,
-      "oleic": 18,
-      "linoleic": 56,
-      "linolenic": 7,
-      "arachidic": 0,
-      "behenic": 0,
-      "erucic": 0,
-      "ricinoleic": 0
-    },
-    "ins": 65,
-    "iodine": 125,
-    "name": "Wheat germ oil",
     "references": [
       {
         "sourceId": "usda-fooddata",
         "section": "Oil, wheat germ (FDC ID 172354)",
         "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172354/nutrients"
       }
-    ],
-    "sap": {
-      "koh": 0.19,
-      "naoh": 0.135
-    },
-    "usage": {
-      "max": 10,
-      "min": 3
-    }
+    ]
   }
 }

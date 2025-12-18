@@ -61,9 +61,10 @@ function calculateFattyAcidsCore(recipe, fatsDatabase, valueKey) {
     return recipe.reduce((acc, r) => {
         const fat = fatsDatabase[r.id];
         if (fat) {
+            const fattyAcids = fat.details?.fattyAcids || fat.fattyAcids;
             const fraction = r[valueKey] / total;
             FATTY_ACID_KEYS.forEach(acid => {
-                acc[acid] += (fat.fattyAcids?.[acid] ?? 0) * fraction;
+                acc[acid] += (fattyAcids?.[acid] ?? 0) * fraction;
             });
         }
         return acc;
@@ -163,10 +164,11 @@ const NUM_TO_LEVEL = ['', 'very low', 'low', 'moderate', 'high', 'very high'];
  * @returns {{hardness: string, degreasing: string, lather: string, moisturizing: string}|null}
  */
 export function getFatSoapProperties(fat, fattyAcidsData) {
-    if (!fat.fattyAcids) return null;
+    const fattyAcids = fat.details?.fattyAcids || fat.fattyAcids;
+    if (!fattyAcids) return null;
 
     // Get fatty acids above the dominant threshold
-    const dominant = Object.entries(fat.fattyAcids)
+    const dominant = Object.entries(fattyAcids)
         .filter(([_, pct]) => pct >= CALCULATION.DOMINANT_FATTY_ACID_THRESHOLD)
         .sort((a, b) => b[1] - a[1]);
 
@@ -222,10 +224,11 @@ export function getFatSoapProperties(fat, fattyAcidsData) {
  * @returns {string} Prose description of soap properties
  */
 export function generateFatProperties(fat, fattyAcidsData) {
-    if (!fat.fattyAcids) return '';
+    const fattyAcids = fat.details?.fattyAcids || fat.fattyAcids;
+    if (!fattyAcids) return '';
 
     // Get fatty acids above the dominant threshold
-    const dominant = Object.entries(fat.fattyAcids)
+    const dominant = Object.entries(fattyAcids)
         .filter(([_, pct]) => pct >= CALCULATION.DOMINANT_FATTY_ACID_THRESHOLD)
         .sort((a, b) => b[1] - a[1]);
 

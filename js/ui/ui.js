@@ -259,9 +259,9 @@ function renderReferences(panel, references, sourcesData) {
 
     const resolved = resolveReferences(references, sourcesData);
     const section = document.createElement('div');
-    section.className = 'panel-section panel-references-section';
+    section.className = 'panel-content-section panel-references-section';
     section.innerHTML = `
-        <h4>References</h4>
+        <h4 class="panel-section-title">References</h4>
         <div class="panel-references">
             ${resolved.map(ref => `
                 <div class="reference-item">
@@ -329,7 +329,8 @@ export function showFatInfo(fatId, fatsDatabase, fattyAcidsData, sourcesData, on
 
     // Fatty acid composition
     const faContainer = $('fatPanelFattyAcids');
-    faContainer.innerHTML = Object.entries(fat.fattyAcids)
+    const fattyAcids = fat.details?.fattyAcids || fat.fattyAcids;
+    faContainer.innerHTML = Object.entries(fattyAcids)
         .filter(([_, v]) => v > 0)
         .sort((a, b) => b[1] - a[1])
         .map(([name, value]) => `
@@ -373,7 +374,8 @@ function calculatePropertyContributors(recipe, fatsDatabase, fattyAcids) {
         .map(item => {
             const fat = fatsDatabase[item.id];
             if (!fat) return null;
-            const contribution = fattyAcids.reduce((sum, fa) => sum + (fat.fattyAcids[fa] || 0), 0);
+            const fatFA = fat.details?.fattyAcids || fat.fattyAcids;
+            const contribution = fattyAcids.reduce((sum, fa) => sum + (fatFA[fa] || 0), 0);
             const weightedContribution = (contribution * item.weight / totalWeight);
             return { name: fat.name, value: weightedContribution };
         })
@@ -470,13 +472,15 @@ function findRecipeSourcesForAcid(recipe, fatsDatabase, acidKey) {
     return recipe
         .filter(item => {
             const fat = fatsDatabase[item.id];
-            return fat?.fattyAcids?.[acidKey] > 0;
+            const fattyAcids = fat?.details?.fattyAcids || fat?.fattyAcids;
+            return fattyAcids?.[acidKey] > 0;
         })
         .map(item => {
             const fat = fatsDatabase[item.id];
+            const fattyAcids = fat.details?.fattyAcids || fat.fattyAcids;
             return {
                 name: fat.name,
-                percent: fat.fattyAcids[acidKey]
+                percent: fattyAcids[acidKey]
             };
         })
         .sort((a, b) => b.percent - a.percent);
@@ -662,8 +666,8 @@ export function initHelpPopup(glossaryData, tooltipsData, onOpenPanel) {
                 const data = glossaryData[term];
                 if (data) {
                     showPopup(glossaryTip, {
-                        title: data.term,
-                        desc: data.desc,
+                        title: data.name || data.term,
+                        desc: data.description || data.desc,
                         linkText: 'More details',
                         linkAction: () => onOpenPanel(term)
                     });

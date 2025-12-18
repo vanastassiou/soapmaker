@@ -15,14 +15,9 @@
           "minLength": 1,
           "type": "string"
         },
-        "subcategory": {
-          "description": "Colourant type classification",
-          "enum": ["natural", "mineral", "oxide", "mica", "clay", "botanical"],
-          "type": "string"
-        },
-        "color": {
-          "description": "Hex colour code for visual reference",
-          "pattern": "^#[0-9a-fA-F]{6}$",
+        "type": {
+          "description": "Type classification",
+          "const": "colourant",
           "type": "string"
         },
         "description": {
@@ -30,26 +25,44 @@
           "minLength": 1,
           "type": "string"
         },
-        "density": {
-          "description": "Density in g/mL (bulk density for powders)",
-          "maximum": 6,
-          "minimum": 0.1,
-          "type": "number"
+        "details": {
+          "description": "Technical details for the colourant",
+          "additionalProperties": false,
+          "properties": {
+            "subcategory": {
+              "description": "Colourant type classification",
+              "enum": ["natural", "mineral", "oxide", "mica", "clay", "botanical"],
+              "type": "string"
+            },
+            "color": {
+              "description": "Hex colour code for visual reference",
+              "pattern": "^#[0-9a-fA-F]{6}$",
+              "type": "string"
+            },
+            "density": {
+              "description": "Density in g/mL (bulk density for powders)",
+              "maximum": 6,
+              "minimum": 0.1,
+              "type": "number"
+            },
+            "safety": {
+              "$ref": "common-definitions.schema.json#/definitions/safety"
+            },
+            "usage": {
+              "$ref": "common-definitions.schema.json#/definitions/usage"
+            }
+          },
+          "required": ["subcategory", "color", "usage"],
+          "type": "object"
         },
         "dietary": {
           "$ref": "common-definitions.schema.json#/definitions/dietary"
-        },
-        "safety": {
-          "$ref": "common-definitions.schema.json#/definitions/safety"
-        },
-        "usage": {
-          "$ref": "common-definitions.schema.json#/definitions/usage"
         },
         "references": {
           "$ref": "common-definitions.schema.json#/definitions/references"
         }
       },
-      "required": ["name", "subcategory", "color", "description", "usage", "references"],
+      "required": ["name", "type", "description", "details"],
       "type": "object"
     }
   },

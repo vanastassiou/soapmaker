@@ -8,34 +8,92 @@
     "FattyAcid": {
       "additionalProperties": false,
       "properties": {
-        "carbonChain": {
-          "description": "Number of carbon atoms",
-          "maximum": 30,
-          "minimum": 1,
-          "type": "integer"
-        },
-        "commonSources": {
-          "description": "Oils/fats that contain this fatty acid",
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "description": {
-          "description": "Additional notes about this fatty acid",
-          "type": "string"
-        },
-        "formula": {
-          "description": "Chemical formula notation (e.g., C12:0, C18:1)",
-          "type": "string"
-        },
-        "meltingPoint": {
-          "description": "Melting point in Celsius",
-          "type": "number"
-        },
         "name": {
           "description": "Full name of the fatty acid",
           "type": "string"
+        },
+        "type": {
+          "description": "Classification of the fatty acid",
+          "type": "string"
+        },
+        "description": {
+          "description": "Chemistry attributes of the fatty acid",
+          "additionalProperties": false,
+          "properties": {
+            "formula": {
+              "description": "Chemical formula notation (e.g., C12:0, C18:1)",
+              "type": "string"
+            },
+            "carbonChain": {
+              "description": "Number of carbon atoms",
+              "maximum": 30,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "saturation": {
+              "description": "Saturation level",
+              "enum": [
+                "saturated",
+                "monounsaturated",
+                "polyunsaturated",
+                "monounsaturated (hydroxylated)"
+              ],
+              "type": "string"
+            },
+            "meltingPoint": {
+              "description": "Melting point in Celsius",
+              "type": "number"
+            },
+            "prose": {
+              "description": "Additional notes about this fatty acid",
+              "type": "string"
+            }
+          },
+          "required": ["formula", "carbonChain", "saturation", "meltingPoint"],
+          "type": "object"
+        },
+        "details": {
+          "description": "Detail attributes",
+          "additionalProperties": false,
+          "properties": {
+            "soapProperties": {
+              "additionalProperties": false,
+              "description": "Qualitative soap property contributions",
+              "properties": {
+                "degreasing": {
+                  "type": "string"
+                },
+                "moisturizing": {
+                  "type": "string"
+                },
+                "hardness": {
+                  "type": "string"
+                },
+                "lather": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "commonSources": {
+              "description": "Oils/fats that contain this fatty acid",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": ["soapProperties", "commonSources"],
+          "type": "object"
+        },
+        "domain": {
+          "description": "Knowledge section(s) where this fatty acid appears",
+          "items": {
+            "enum": ["craft", "calculator"],
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
         },
         "references": {
           "items": {
@@ -67,55 +125,13 @@
             "type": "object"
           },
           "type": "array"
-        },
-        "saturation": {
-          "description": "Saturation level",
-          "enum": [
-            "saturated",
-            "monounsaturated",
-            "polyunsaturated",
-            "monounsaturated (hydroxylated)"
-          ],
-          "type": "string"
-        },
-        "soapProperties": {
-          "additionalProperties": false,
-          "description": "Qualitative soap property contributions",
-          "properties": {
-            "degreasing": {
-              "type": "string"
-            },
-            "moisturizing": {
-              "type": "string"
-            },
-            "hardness": {
-              "type": "string"
-            },
-            "lather": {
-              "type": "string"
-            }
-          },
-          "type": "object"
-        },
-        "domain": {
-          "description": "Knowledge section(s) where this fatty acid appears",
-          "items": {
-            "enum": ["craft", "calculator"],
-            "type": "string"
-          },
-          "minItems": 1,
-          "type": "array"
         }
       },
       "required": [
         "name",
-        "formula",
-        "carbonChain",
-        "saturation",
-        "meltingPoint",
-        "soapProperties",
+        "type",
         "description",
-        "commonSources",
+        "details",
         "domain"
       ],
       "type": "object"

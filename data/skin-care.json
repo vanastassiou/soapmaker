@@ -1,21 +1,24 @@
 {
   "aloe-vera-powder": {
     "name": "Aloe vera powder (200:1)",
-    "subcategory": "emollient",
+    "type": "skin care",
     "description": "Concentrated Aloe barbadensis leaf juice powder (200:1). Moisturizing, anti-inflammatory. Low anthraquinone content (<50 ppm).",
-    "density": 0.6,
+    "details": {
+      "subcategory": "emollient",
+      "density": 0.6,
+      "safety": {
+        "casNumber": "85507-69-3",
+        "maxConcentration": 20
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.1,
+        "max": 1
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "85507-69-3",
-      "maxConcentration": 20
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.1,
-      "max": 1
     },
     "references": [
       {
@@ -27,21 +30,24 @@
   },
   "apricot-shell-powder": {
     "name": "Apricot shell powder",
-    "subcategory": "exfoliant",
+    "type": "skin care",
     "description": "Finely ground Prunus armeniaca seed shells. Particle size 10-177 microns.",
-    "density": 0.65,
+    "details": {
+      "subcategory": "exfoliant",
+      "density": 0.65,
+      "safety": {
+        "casNumber": "68650-44-2",
+        "maxConcentration": 50
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 1,
+        "max": 10
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "68650-44-2",
-      "maxConcentration": 50
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 10
     },
     "references": [
       {
@@ -53,21 +59,24 @@
   },
   "buttermilk-powder": {
     "name": "Buttermilk powder",
-    "subcategory": "emollient",
+    "type": "skin care",
     "description": "Dried cultured buttermilk. Creates creamy lather. Lactic acid provides gentle exfoliation.",
-    "density": 0.5,
+    "details": {
+      "subcategory": "emollient",
+      "density": 0.5,
+      "safety": {
+        "maxConcentration": 100
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 3,
+        "max": 10
+      }
+    },
     "dietary": {
       "animalBased": true,
       "commonAllergen": true,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "maxConcentration": 100
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 3,
-      "max": 10
     },
     "references": [
       {
@@ -79,21 +88,24 @@
   },
   "coffee-grounds": {
     "name": "Coffee grounds (used)",
-    "subcategory": "exfoliant",
+    "type": "skin care",
     "description": "Spent Coffea arabica grounds. Used grounds preferred - softer, less colour bleed. Dry thoroughly before adding at trace.",
-    "density": 0.4,
+    "details": {
+      "subcategory": "exfoliant",
+      "density": 0.4,
+      "safety": {
+        "casNumber": "8001-67-0",
+        "maxConcentration": 10
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.5,
+        "max": 2
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8001-67-0",
-      "maxConcentration": 10
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.5,
-      "max": 2
     },
     "references": [
       {
@@ -105,20 +117,23 @@
   },
   "colloidal-oatmeal": {
     "name": "Colloidal oatmeal",
-    "subcategory": "exfoliant",
+    "type": "skin care",
     "description": "Finely ground Avena sativa. Recognized skin protectant with monograph in European Pharmacopoeia. Add at trace. Particle size under 100 micrometers.",
-    "density": 0.5,
+    "details": {
+      "subcategory": "exfoliant",
+      "density": 0.5,
+      "safety": {
+        "maxConcentration": 5
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 1,
+        "max": 3
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "maxConcentration": 5
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 3
     },
     "references": [
       {
@@ -130,21 +145,24 @@
   },
   "goat-milk-powder": {
     "name": "Goat milk powder",
-    "subcategory": "emollient",
+    "type": "skin care",
     "description": "Full-cream powder from Capra aegagrus hircus. Rich in vitamins A, B6, B12, E. Reconstitute 8:1 water:powder.",
-    "density": 0.55,
+    "details": {
+      "subcategory": "emollient",
+      "density": 0.55,
+      "safety": {
+        "maxConcentration": 100
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 5,
+        "max": 10
+      }
+    },
     "dietary": {
       "animalBased": true,
       "commonAllergen": true,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "maxConcentration": 100
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 5,
-      "max": 10
     },
     "references": [
       {
@@ -156,20 +174,23 @@
   },
   "jojoba-oil": {
     "name": "Jojoba oil",
-    "subcategory": "emollient",
+    "type": "skin care",
     "description": "Liquid wax ester (~97%) from Simmondsia chinensis seeds. Does not saponify. Add at trace as superfat for conditioning and stability.",
-    "density": 0.86,
+    "details": {
+      "subcategory": "emollient",
+      "density": 0.86,
+      "safety": {
+        "casNumber": "61789-91-1"
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 3,
+        "max": 7
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "61789-91-1"
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 3,
-      "max": 7
     },
     "references": [
       {
@@ -181,21 +202,24 @@
   },
   "lanolin": {
     "name": "Lanolin (anhydrous)",
-    "subcategory": "emollient",
+    "type": "skin care",
     "description": "Wool wax from sheep (Ovis aries). Creates protective barrier. Add at trace or as superfat. May cause sensitivity in some users.",
-    "density": 0.94,
+    "details": {
+      "subcategory": "emollient",
+      "density": 0.94,
+      "safety": {
+        "casNumber": "8006-54-0",
+        "maxConcentration": 50
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 1,
+        "max": 5
+      }
+    },
     "dietary": {
       "animalBased": true,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8006-54-0",
-      "maxConcentration": 50
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 5
     },
     "references": [
       {
@@ -207,21 +231,24 @@
   },
   "poppy-seeds": {
     "name": "Poppy seeds",
-    "subcategory": "exfoliant",
+    "type": "skin care",
     "description": "Whole seeds from Papaver somniferum. Does not create micro-tears.",
-    "density": 0.53,
+    "details": {
+      "subcategory": "exfoliant",
+      "density": 0.53,
+      "safety": {
+        "casNumber": "8002-64-0",
+        "maxConcentration": 5
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.25,
+        "max": 2
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "8002-64-0",
-      "maxConcentration": 5
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.25,
-      "max": 2
     },
     "references": [
       {
@@ -233,21 +260,24 @@
   },
   "pumice-powder": {
     "name": "Pumice powder (fine)",
-    "subcategory": "exfoliant",
+    "type": "skin care",
     "description": "Volcanic rock powder (amorphous aluminum silicate). 80-200 mesh size. Non-crystalline structure, no respirable silite.",
-    "density": 0.64,
+    "details": {
+      "subcategory": "exfoliant",
+      "density": 0.64,
+      "safety": {
+        "casNumber": "1332-09-8",
+        "maxConcentration": 50
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 1,
+        "max": 10
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "1332-09-8",
-      "maxConcentration": 50
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 1,
-      "max": 10
     },
     "references": [
       {
@@ -259,21 +289,24 @@
   },
   "sea-salt-fine": {
     "name": "Sea salt (fine grain)",
-    "subcategory": "exfoliant",
+    "type": "skin care",
     "description": "Fine-grain sea salt. Rich in minerals (magnesium, calcium, potassium). Above 3% may inhibit lather.",
-    "density": 2.16,
+    "details": {
+      "subcategory": "exfoliant",
+      "density": 2.16,
+      "safety": {
+        "casNumber": "7647-14-5",
+        "maxConcentration": 50
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 3,
+        "max": 50
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "7647-14-5",
-      "maxConcentration": 50
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 3,
-      "max": 50
     },
     "references": [
       {

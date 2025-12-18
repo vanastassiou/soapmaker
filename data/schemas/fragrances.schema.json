@@ -15,112 +15,125 @@
           "minLength": 1,
           "type": "string"
         },
+        "type": {
+          "description": "Type classification",
+          "const": "fragrance",
+          "type": "string"
+        },
         "description": {
           "description": "Factual description of the essential oil",
           "minLength": 1,
           "type": "string"
         },
-        "sourceSpecies": {
-          "description": "Botanical species name",
-          "minLength": 1,
-          "type": "string"
-        },
-        "sourcePart": {
-          "description": "Plant part used for extraction",
-          "type": "string",
-          "enum": ["bark", "flowers", "flowering tops", "fruits", "heartwood", "leaves", "leaves and flowering tops", "peel", "resin", "roots", "wood"]
-        },
-        "extractionMethod": {
-          "description": "Method used to extract the essential oil",
-          "type": "string",
-          "enum": ["steam-distilled", "cold-pressed"]
-        },
-        "majorConstituents": {
-          "description": "Primary chemical constituents with percentage ranges",
-          "type": "object",
-          "additionalProperties": {
-            "oneOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "min": { "type": "number", "minimum": 0, "maximum": 100 },
-                  "max": { "type": "number", "minimum": 0, "maximum": 100 }
+        "details": {
+          "description": "Technical details for the fragrance",
+          "additionalProperties": false,
+          "properties": {
+            "sourceSpecies": {
+              "description": "Botanical species name",
+              "minLength": 1,
+              "type": "string"
+            },
+            "sourcePart": {
+              "description": "Plant part used for extraction",
+              "type": "string",
+              "enum": ["bark", "flowers", "flowering tops", "fruits", "heartwood", "leaves", "leaves and flowering tops", "peel", "resin", "roots", "wood"]
+            },
+            "extractionMethod": {
+              "description": "Method used to extract the essential oil",
+              "type": "string",
+              "enum": ["steam-distilled", "cold-pressed"]
+            },
+            "majorConstituents": {
+              "description": "Primary chemical constituents with percentage ranges",
+              "type": "object",
+              "additionalProperties": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "min": { "type": "number", "minimum": 0, "maximum": 100 },
+                      "max": { "type": "number", "minimum": 0, "maximum": 100 }
+                    },
+                    "required": ["min", "max"],
+                    "additionalProperties": false
+                  },
+                  { "type": "null" }
+                ]
+              }
+            },
+            "density": {
+              "description": "Density in g/mL",
+              "maximum": 1.2,
+              "minimum": 0.7,
+              "type": "number"
+            },
+            "safety": {
+              "additionalProperties": false,
+              "description": "Safety and regulatory information for fragrances",
+              "properties": {
+                "casNumber": {
+                  "$ref": "common-definitions.schema.json#/definitions/casNumber"
                 },
-                "required": ["min", "max"],
-                "additionalProperties": false
+                "flashPointC": {
+                  "description": "Flash point in Celsius",
+                  "type": "number"
+                },
+                "ifraCategory9Limit": {
+                  "description": "IFRA max % for Category 9 (rinse-off products)",
+                  "maximum": 100,
+                  "minimum": 0,
+                  "type": "number"
+                }
               },
-              { "type": "null" }
-            ]
-          }
-        },
-        "density": {
-          "description": "Density in g/mL",
-          "maximum": 1.2,
-          "minimum": 0.7,
-          "type": "number"
+              "type": "object"
+            },
+            "hazards": {
+              "description": "Known safety hazards",
+              "type": "object",
+              "propertyNames": {
+                "enum": ["phototoxic", "sensitizer", "toxic-to-cats", "toxic-to-dogs", "toxic-to-birds", "toxic-to-small-mammals", "oxidizes"]
+              },
+              "additionalProperties": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "note": { "type": "string", "minLength": 1 }
+                    },
+                    "additionalProperties": false
+                  },
+                  { "type": "null" }
+                ]
+              }
+            },
+            "scentNote": {
+              "description": "Fragrance note classification",
+              "enum": ["top", "middle", "base"],
+              "type": "string"
+            },
+            "anchoring": {
+              "description": "Essential oil IDs that help anchor this scent",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "usage": {
+              "$ref": "common-definitions.schema.json#/definitions/usage"
+            }
+          },
+          "required": ["scentNote", "usage"],
+          "type": "object"
         },
         "dietary": {
           "$ref": "common-definitions.schema.json#/definitions/dietary"
-        },
-        "safety": {
-          "additionalProperties": false,
-          "description": "Safety and regulatory information for fragrances",
-          "properties": {
-            "casNumber": {
-              "$ref": "common-definitions.schema.json#/definitions/casNumber"
-            },
-            "flashPointC": {
-              "description": "Flash point in Celsius",
-              "type": "number"
-            },
-            "ifraCategory9Limit": {
-              "description": "IFRA max % for Category 9 (rinse-off products)",
-              "maximum": 100,
-              "minimum": 0,
-              "type": "number"
-            }
-          },
-          "type": "object"
-        },
-        "hazards": {
-          "description": "Known safety hazards",
-          "type": "object",
-          "propertyNames": {
-            "enum": ["phototoxic", "sensitizer", "toxic-to-cats", "toxic-to-dogs", "toxic-to-birds", "toxic-to-small-mammals", "oxidizes"]
-          },
-          "additionalProperties": {
-            "oneOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "note": { "type": "string", "minLength": 1 }
-                },
-                "additionalProperties": false
-              },
-              { "type": "null" }
-            ]
-          }
-        },
-        "scentNote": {
-          "description": "Fragrance note classification",
-          "enum": ["top", "middle", "base"],
-          "type": "string"
-        },
-        "anchoring": {
-          "description": "Essential oil IDs that help anchor this scent",
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "usage": {
-          "$ref": "common-definitions.schema.json#/definitions/usage"
         },
         "references": {
           "$ref": "common-definitions.schema.json#/definitions/references"
         }
       },
-      "required": ["name", "description", "scentNote", "usage", "references"],
+      "required": ["name", "type", "description", "details"],
       "type": "object"
     }
   },

@@ -85,13 +85,14 @@ export function calculateProfileError(current, target) {
  */
 function scoreFatForTarget(fat, targetProfile, currentProfile = {}) {
     let score = 0;
+    const fattyAcids = fat.details?.fattyAcids || fat.fattyAcids;
 
     for (const acid of Object.keys(targetProfile)) {
         if (!isValidTarget(targetProfile[acid])) continue;
 
         const targetVal = parseFloat(targetProfile[acid]);
         const currentVal = currentProfile[acid] || 0;
-        const fatVal = fat.fattyAcids[acid] || 0;
+        const fatVal = fattyAcids[acid] || 0;
         const deficit = targetVal - currentVal;
 
         // Fat is helpful if it provides what we need more of
@@ -720,7 +721,7 @@ function generateRandomPercentagesScaled(fatIds, targetTotal) {
  */
 function scoreFatForPropertyImprovement(fat, currentProperties, propertyRanges) {
     let score = 0;
-    const fa = fat.fattyAcids;
+    const fa = fat.details?.fattyAcids || fat.fattyAcids;
 
     // Check each property and score based on how much this fat could help
     const propertyMap = {

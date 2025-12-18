@@ -10,7 +10,7 @@
     "Term": {
       "additionalProperties": false,
       "properties": {
-        "category": {
+        "type": {
           "description": "Classification of the term",
           "enum": [
             "property",
@@ -20,7 +20,7 @@
           ],
           "type": "string"
         },
-        "desc": {
+        "description": {
           "description": "Short description",
           "minLength": 1,
           "type": "string"
@@ -96,7 +96,7 @@
           },
           "type": "array"
         },
-        "term": {
+        "name": {
           "description": "Display name for the term",
           "minLength": 1,
           "type": "string"
@@ -115,9 +115,9 @@
         }
       },
       "required": [
-        "term",
-        "category",
-        "desc",
+        "name",
+        "type",
+        "description",
         "domain"
       ],
       "type": "object"

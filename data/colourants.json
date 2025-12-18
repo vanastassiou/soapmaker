@@ -1,22 +1,25 @@
 {
   "activated-charcoal": {
     "name": "Activated charcoal",
-    "subcategory": "natural",
-    "color": "#1a1a1a",
+    "type": "colourant",
     "description": "Activated carbon powder from plant sources. Creates deep black to grey colours. Add at trace.",
-    "density": 2.1,
+    "details": {
+      "subcategory": "natural",
+      "color": "#1a1a1a",
+      "density": 2.1,
+      "safety": {
+        "casNumber": "7440-44-0",
+        "maxConcentration": 5
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.5,
+        "max": 2
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "7440-44-0",
-      "maxConcentration": 5
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.5,
-      "max": 2
     },
     "references": [
       {
@@ -28,22 +31,25 @@
   },
   "annatto-extract": {
     "name": "Annatto extract",
-    "subcategory": "natural",
-    "color": "#ff6600",
+    "type": "colourant",
     "description": "Extract from Bixa orellana seeds. Contains bixin (oil-soluble) and norbixin (water-soluble). Permitted in cosmetics under EU Regulation 1223/2009.",
-    "density": 1.1,
+    "details": {
+      "subcategory": "natural",
+      "color": "#ff6600",
+      "density": 1.1,
+      "safety": {
+        "casNumber": "1393-63-1",
+        "maxConcentration": 3
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.1,
+        "max": 1
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "1393-63-1",
-      "maxConcentration": 3
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.1,
-      "max": 1
     },
     "references": [
       {
@@ -55,22 +61,25 @@
   },
   "bentonite-clay": {
     "name": "Bentonite clay",
-    "subcategory": "clay",
-    "color": "#c9c5b8",
+    "type": "colourant",
     "description": "Montmorillonite-rich clay. Swells 12-15x when wet. Cation exchange capacity ~100 meq/100g. Higher absorption than kaolin.",
-    "density": 2.5,
+    "details": {
+      "subcategory": "clay",
+      "color": "#c9c5b8",
+      "density": 2.5,
+      "safety": {
+        "casNumber": "1302-78-9",
+        "maxConcentration": 15
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.5,
+        "max": 1
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "1302-78-9",
-      "maxConcentration": 15
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.5,
-      "max": 1
     },
     "references": [
       {
@@ -82,22 +91,25 @@
   },
   "calendula-petals": {
     "name": "Calendula petals (dried)",
-    "subcategory": "botanical",
-    "color": "#ffa500",
+    "type": "colourant",
     "description": "Dried Calendula officinalis flowers. Only botanical that retains colour in high pH soap. Use for decoration or oil infusion.",
-    "density": 0.3,
+    "details": {
+      "subcategory": "botanical",
+      "color": "#ffa500",
+      "density": 0.3,
+      "safety": {
+        "casNumber": "84776-23-8",
+        "maxConcentration": 10
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.1,
+        "max": 1
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "84776-23-8",
-      "maxConcentration": 10
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.1,
-      "max": 1
     },
     "references": [
       {
@@ -109,22 +121,25 @@
   },
   "chamomile-flowers": {
     "name": "Chamomile flowers (dried)",
-    "subcategory": "botanical",
-    "color": "#d4a574",
+    "type": "colourant",
     "description": "Dried Matricaria chamomilla flowers. Use for decoration (crispy-dry only) or tea infusion for lye. Turn brown over time in soap.",
-    "density": 0.15,
+    "details": {
+      "subcategory": "botanical",
+      "color": "#d4a574",
+      "density": 0.15,
+      "safety": {
+        "casNumber": "84082-60-0",
+        "maxConcentration": 5
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.1,
+        "max": 1
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "84082-60-0",
-      "maxConcentration": 5
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.1,
-      "max": 1
     },
     "references": [
       {
@@ -136,22 +151,25 @@
   },
   "chromium-oxide-green": {
     "name": "Chromium oxide green",
-    "subcategory": "mineral",
-    "color": "#4a7c59",
+    "type": "colourant",
     "description": "Chromium(III) oxide (Cr2O3). CI 77288. Permitted in cosmetics under EU Regulation 1223/2009. Not for lip products. Stable at high pH.",
-    "density": 5.2,
+    "details": {
+      "subcategory": "mineral",
+      "color": "#4a7c59",
+      "density": 5.2,
+      "safety": {
+        "casNumber": "1308-38-9",
+        "maxConcentration": 3
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.05,
+        "max": 0.3
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "1308-38-9",
-      "maxConcentration": 3
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.05,
-      "max": 0.3
     },
     "references": [
       {
@@ -163,22 +181,25 @@
   },
   "french-green-clay": {
     "name": "French green clay (illite)",
-    "subcategory": "clay",
-    "color": "#8a9a5b",
+    "type": "colourant",
     "description": "Illite clay. Green colour from iron oxides and decomposed plant matter. Similar absorption properties to kaolin.",
-    "density": 2.6,
+    "details": {
+      "subcategory": "clay",
+      "color": "#8a9a5b",
+      "density": 2.6,
+      "safety": {
+        "casNumber": "12173-60-3",
+        "maxConcentration": 15
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.5,
+        "max": 1
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "12173-60-3",
-      "maxConcentration": 15
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.5,
-      "max": 1
     },
     "references": [
       {
@@ -190,22 +211,25 @@
   },
   "indigo-powder": {
     "name": "Indigo powder",
-    "subcategory": "natural",
-    "color": "#4b0082",
+    "type": "colourant",
     "description": "Natural indigo from Indigofera tinctoria. Contains indigotin. Not approved for eyes, lips, or nails.",
-    "density": 0.6,
+    "details": {
+      "subcategory": "natural",
+      "color": "#4b0082",
+      "density": 0.6,
+      "safety": {
+        "casNumber": "482-89-3",
+        "maxConcentration": 2
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.25,
+        "max": 1
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "482-89-3",
-      "maxConcentration": 2
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.25,
-      "max": 1
     },
     "references": [
       {
@@ -217,21 +241,24 @@
   },
   "iron-oxide-black": {
     "name": "Iron oxide black",
-    "subcategory": "oxide",
-    "color": "#1a1a1a",
+    "type": "colourant",
     "description": "Iron(II,III) oxide (Fe3O4). CI 77499. Permitted in cosmetics under EU Regulation 1223/2009. Stable in high pH. Use sparingly.",
-    "density": 5.2,
+    "details": {
+      "subcategory": "oxide",
+      "color": "#1a1a1a",
+      "density": 5.2,
+      "safety": {
+        "casNumber": "1317-61-9"
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.05,
+        "max": 0.3
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "1317-61-9"
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.05,
-      "max": 0.3
     },
     "references": [
       {
@@ -243,21 +270,24 @@
   },
   "iron-oxide-red": {
     "name": "Iron oxide red",
-    "subcategory": "oxide",
-    "color": "#b22222",
+    "type": "colourant",
     "description": "Iron(III) oxide (Fe2O3). CI 77491. Permitted in cosmetics under EU Regulation 1223/2009. Stable in high pH.",
-    "density": 5.2,
+    "details": {
+      "subcategory": "oxide",
+      "color": "#b22222",
+      "density": 5.2,
+      "safety": {
+        "casNumber": "1309-37-1"
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.1,
+        "max": 0.5
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "1309-37-1"
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.1,
-      "max": 0.5
     },
     "references": [
       {
@@ -269,21 +299,24 @@
   },
   "iron-oxide-yellow": {
     "name": "Iron oxide yellow",
-    "subcategory": "oxide",
-    "color": "#e6b800",
+    "type": "colourant",
     "description": "Iron(III) oxide hydroxide (FeO(OH)). CI 77492. Permitted in cosmetics under EU Regulation 1223/2009. Stable in high pH.",
-    "density": 4.0,
+    "details": {
+      "subcategory": "oxide",
+      "color": "#e6b800",
+      "density": 4,
+      "safety": {
+        "casNumber": "51274-00-1"
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.1,
+        "max": 0.5
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "51274-00-1"
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.1,
-      "max": 0.5
     },
     "references": [
       {
@@ -295,22 +328,25 @@
   },
   "kaolin-clay": {
     "name": "Kaolin clay (white)",
-    "subcategory": "clay",
-    "color": "#f5f5f0",
+    "type": "colourant",
     "description": "Hydrated aluminum silicate (Al2Si2O5(OH)4). Particle size 0.1-4 micrometers. Cation exchange capacity 2-10 meq/100g. Can absorb essential oils.",
-    "density": 2.6,
+    "details": {
+      "subcategory": "clay",
+      "color": "#f5f5f0",
+      "density": 2.6,
+      "safety": {
+        "casNumber": "1332-58-7",
+        "maxConcentration": 15
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.5,
+        "max": 1
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "1332-58-7",
-      "maxConcentration": 15
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.5,
-      "max": 1
     },
     "references": [
       {
@@ -322,22 +358,25 @@
   },
   "mica-iron-oxide": {
     "name": "Mica (iron oxide coated)",
-    "subcategory": "mica",
-    "color": "#b87333",
-    "description": "Mica coated with iron oxides (\u226455% by weight). Creates bronze, copper, gold effects. Color-stable in high pH soap.",
-    "density": 3.2,
+    "type": "colourant",
+    "description": "Mica coated with iron oxides (≤55% by weight). Creates bronze, copper, gold effects. Color-stable in high pH soap.",
+    "details": {
+      "subcategory": "mica",
+      "color": "#b87333",
+      "density": 3.2,
+      "safety": {
+        "casNumber": "12001-26-2",
+        "maxConcentration": 50
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.25,
+        "max": 2
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "12001-26-2",
-      "maxConcentration": 50
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.25,
-      "max": 2
     },
     "references": [
       {
@@ -349,22 +388,25 @@
   },
   "mica-pearl-titanium": {
     "name": "Mica pearl (titanium dioxide)",
-    "subcategory": "mica",
-    "color": "#f5f5f5",
+    "type": "colourant",
     "description": "Natural or synthetic mica coated with titanium dioxide (TiO2). Creates interference/pearl effects. Color-stable in CP soap.",
-    "density": 2.8,
+    "details": {
+      "subcategory": "mica",
+      "color": "#f5f5f5",
+      "density": 2.8,
+      "safety": {
+        "casNumber": "12001-26-2",
+        "maxConcentration": 50
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.25,
+        "max": 2
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "12001-26-2",
-      "maxConcentration": 50
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.25,
-      "max": 2
     },
     "references": [
       {
@@ -376,22 +418,25 @@
   },
   "rose-petals": {
     "name": "Rose petals (dried)",
-    "subcategory": "botanical",
-    "color": "#8b4513",
+    "type": "colourant",
     "description": "Dried Rosa spp. petals. Turn brown in CP soap due to high pH. Add only to top of cured soap for decoration.",
-    "density": 0.2,
+    "details": {
+      "subcategory": "botanical",
+      "color": "#8b4513",
+      "density": 0.2,
+      "safety": {
+        "casNumber": "90106-38-0",
+        "maxConcentration": 5
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.1,
+        "max": 0.5
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "90106-38-0",
-      "maxConcentration": 5
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.1,
-      "max": 0.5
     },
     "references": [
       {
@@ -403,22 +448,25 @@
   },
   "spirulina-powder": {
     "name": "Spirulina powder",
-    "subcategory": "natural",
-    "color": "#3a7d7c",
+    "type": "colourant",
     "description": "Dried blue-green algae (Limnospira spp.) powder. pH-stable natural colourant. Rich in phycocyanin.",
-    "density": 0.4,
+    "details": {
+      "subcategory": "natural",
+      "color": "#3a7d7c",
+      "density": 0.4,
+      "safety": {
+        "casNumber": "724424-92-4",
+        "maxConcentration": 5
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.5,
+        "max": 2
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "724424-92-4",
-      "maxConcentration": 5
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.5,
-      "max": 2
     },
     "references": [
       {
@@ -430,21 +478,24 @@
   },
   "titanium-dioxide": {
     "name": "Titanium dioxide",
-    "subcategory": "oxide",
-    "color": "#ffffff",
+    "type": "colourant",
     "description": "Titanium(IV) oxide (TiO2). CI 77891. Permitted in cosmetics under EU Regulation 1223/2009. Creates opaque white. Stable in high pH.",
-    "density": 4.2,
+    "details": {
+      "subcategory": "oxide",
+      "color": "#ffffff",
+      "density": 4.2,
+      "safety": {
+        "casNumber": "13463-67-7"
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.1,
+        "max": 1
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "13463-67-7"
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.1,
-      "max": 1
     },
     "references": [
       {
@@ -456,22 +507,25 @@
   },
   "turmeric-powder": {
     "name": "Turmeric powder",
-    "subcategory": "natural",
-    "color": "#ffa500",
+    "type": "colourant",
     "description": "Ground rhizome of Curcuma longa. Contains curcumin (90%+ curcuminoids). Permitted as food colourant (E100) but not listed for cosmetics in EU Regulation 1223/2009.",
-    "density": 0.8,
+    "details": {
+      "subcategory": "natural",
+      "color": "#ffa500",
+      "density": 0.8,
+      "safety": {
+        "casNumber": "458-37-7",
+        "maxConcentration": 3
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.25,
+        "max": 1
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "458-37-7",
-      "maxConcentration": 3
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.25,
-      "max": 1
     },
     "references": [
       {
@@ -483,22 +537,25 @@
   },
   "ultramarine-blue": {
     "name": "Ultramarine blue",
-    "subcategory": "mineral",
-    "color": "#0033cc",
+    "type": "colourant",
     "description": "Synthetic sodium aluminum sulfosilicate. CI 77007. Permitted in cosmetics under EU Regulation 1223/2009. Stable at high pH.",
-    "density": 2.4,
+    "details": {
+      "subcategory": "mineral",
+      "color": "#0033cc",
+      "density": 2.4,
+      "safety": {
+        "casNumber": "57455-37-5",
+        "maxConcentration": 5
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.1,
+        "max": 0.5
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "57455-37-5",
-      "maxConcentration": 5
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.1,
-      "max": 0.5
     },
     "references": [
       {
@@ -510,22 +567,25 @@
   },
   "ultramarine-pink": {
     "name": "Ultramarine pink",
-    "subcategory": "mineral",
-    "color": "#e6a8d7",
+    "type": "colourant",
     "description": "Sodium aluminum sulfosilicate violet/pink. CI 77007. Permitted in cosmetics under EU Regulation 1223/2009. Not for lip products.",
-    "density": 2.4,
+    "details": {
+      "subcategory": "mineral",
+      "color": "#e6a8d7",
+      "density": 2.4,
+      "safety": {
+        "casNumber": "12769-96-9",
+        "maxConcentration": 5
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.1,
+        "max": 0.5
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "12769-96-9",
-      "maxConcentration": 5
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.1,
-      "max": 0.5
     },
     "references": [
       {
@@ -537,21 +597,24 @@
   },
   "zinc-oxide": {
     "name": "Zinc oxide",
-    "subcategory": "mineral",
-    "color": "#ffffff",
+    "type": "colourant",
     "description": "Zinc oxide (ZnO). CI 77947. Permitted in cosmetics under EU Regulation 1223/2009. Creates opaque white.",
-    "density": 5.6,
+    "details": {
+      "subcategory": "mineral",
+      "color": "#ffffff",
+      "density": 5.6,
+      "safety": {
+        "casNumber": "1314-13-2"
+      },
+      "usage": {
+        "basis": "oil-weight",
+        "min": 0.5,
+        "max": 5
+      }
+    },
     "dietary": {
       "animalBased": false,
       "sourcingConcerns": false
-    },
-    "safety": {
-      "casNumber": "1314-13-2"
-    },
-    "usage": {
-      "basis": "oil-weight",
-      "min": 0.5,
-      "max": 5
     },
     "references": [
       {

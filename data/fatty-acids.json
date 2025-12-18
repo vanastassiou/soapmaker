@@ -1,372 +1,491 @@
 {
   "arachidic": {
-    "domain": ["craft", "calculator"],
-    "carbonChain": 20,
-    "commonSources": [
-      "shea-butter",
-      "peanut-oil",
-      "cupuacu-butter"
-    ],
-    "description": "Part of the unsaponifiable fraction in some fats.",
-    "formula": "C20:0",
-    "meltingPoint": 76,
     "name": "arachidic acid",
+    "type": "saturated fatty acid",
+    "description": {
+      "formula": "C20:0",
+      "carbonChain": 20,
+      "saturation": "saturated",
+      "meltingPoint": 76,
+      "prose": "Part of the unsaponifiable fraction in some fats."
+    },
+    "details": {
+      "soapProperties": {
+        "degreasing": "very low",
+        "moisturizing": "moderate",
+        "hardness": "very high",
+        "lather": "minimal contribution"
+      },
+      "commonSources": [
+        "shea-butter",
+        "peanut-oil",
+        "cupuacu-butter"
+      ]
+    },
+    "domain": [
+      "craft",
+      "calculator"
+    ],
     "references": [
       {
         "sourceId": "pubchem",
         "section": "CID 10467: Arachidic Acid compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Eicosanoic-acid"
       }
-    ],
-    "saturation": "saturated",
-    "soapProperties": {
-      "degreasing": "very low",
-      "moisturizing": "moderate",
-      "hardness": "very high",
-      "lather": "minimal contribution"
-    }
+    ]
   },
   "behenic": {
-    "domain": ["craft", "calculator"],
-    "carbonChain": 22,
-    "commonSources": [
-      "moringa-oil",
-      "canola-oil-low-erucic-rapeseed",
-      "peanut-oil"
-    ],
-    "description": "Long-chain saturated fatty acid.",
-    "formula": "C22:0",
-    "meltingPoint": 80,
     "name": "behenic acid",
+    "type": "saturated fatty acid",
+    "description": {
+      "formula": "C22:0",
+      "carbonChain": 22,
+      "saturation": "saturated",
+      "meltingPoint": 80,
+      "prose": "Long-chain saturated fatty acid."
+    },
+    "details": {
+      "soapProperties": {
+        "degreasing": "very low",
+        "moisturizing": "moderate",
+        "hardness": "very high",
+        "lather": "minimal contribution"
+      },
+      "commonSources": [
+        "moringa-oil",
+        "canola-oil-low-erucic-rapeseed",
+        "peanut-oil"
+      ]
+    },
+    "domain": [
+      "craft",
+      "calculator"
+    ],
     "references": [
       {
         "sourceId": "pubchem",
         "section": "CID 8215: Behenic Acid compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Docosanoic-acid"
       }
-    ],
-    "saturation": "saturated",
-    "soapProperties": {
-      "degreasing": "very low",
-      "moisturizing": "moderate",
-      "hardness": "very high",
-      "lather": "minimal contribution"
-    }
+    ]
   },
   "capric": {
-    "domain": ["craft", "calculator"],
-    "carbonChain": 10,
-    "commonSources": [
-      "fractionated-coconut-oil-mct",
-      "coconut-oil-76",
-      "coconut-oil-92",
-      "palm-kernel-oil"
-    ],
-    "description": "Slightly milder than caprylic acid.",
-    "formula": "C10:0",
-    "meltingPoint": 31,
     "name": "capric acid",
+    "type": "saturated fatty acid",
+    "description": {
+      "formula": "C10:0",
+      "carbonChain": 10,
+      "saturation": "saturated",
+      "meltingPoint": 31,
+      "prose": "Slightly milder than caprylic acid."
+    },
+    "details": {
+      "soapProperties": {
+        "degreasing": "high",
+        "moisturizing": "low",
+        "hardness": "moderate",
+        "lather": "bubbly"
+      },
+      "commonSources": [
+        "fractionated-coconut-oil-mct",
+        "coconut-oil-76",
+        "coconut-oil-92",
+        "palm-kernel-oil"
+      ]
+    },
+    "domain": [
+      "craft",
+      "calculator"
+    ],
     "references": [
       {
         "sourceId": "pubchem",
         "section": "CID 2969: Decanoic Acid compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Decanoic-acid"
       }
-    ],
-    "saturation": "saturated",
-    "soapProperties": {
-      "degreasing": "high",
-      "moisturizing": "low",
-      "hardness": "moderate",
-      "lather": "bubbly"
-    }
+    ]
   },
   "caprylic": {
-    "domain": ["craft", "calculator"],
-    "carbonChain": 8,
-    "commonSources": [
-      "fractionated-coconut-oil-mct",
-      "coconut-oil-76",
-      "coconut-oil-92"
-    ],
-    "description": "Very water-soluble short-chain fatty acid.",
-    "formula": "C8:0",
-    "meltingPoint": 16,
     "name": "caprylic acid",
+    "type": "saturated fatty acid",
+    "description": {
+      "formula": "C8:0",
+      "carbonChain": 8,
+      "saturation": "saturated",
+      "meltingPoint": 16,
+      "prose": "Very water-soluble short-chain fatty acid."
+    },
+    "details": {
+      "soapProperties": {
+        "degreasing": "very high",
+        "moisturizing": "very low",
+        "hardness": "moderate",
+        "lather": "thin, quick"
+      },
+      "commonSources": [
+        "fractionated-coconut-oil-mct",
+        "coconut-oil-76",
+        "coconut-oil-92"
+      ]
+    },
+    "domain": [
+      "craft",
+      "calculator"
+    ],
     "references": [
       {
         "sourceId": "pubchem",
         "section": "CID 379: Caprylic Acid compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Octanoic-acid"
       }
-    ],
-    "saturation": "saturated",
-    "soapProperties": {
-      "degreasing": "very high",
-      "moisturizing": "very low",
-      "hardness": "moderate",
-      "lather": "thin, quick"
-    }
+    ]
   },
   "erucic": {
-    "domain": ["craft", "calculator"],
-    "carbonChain": 22,
-    "commonSources": [
-      "mustard-seed-oil"
-    ],
-    "description": "Long-chain monounsaturated fatty acid. Bred out of food-grade rapeseed (canola) due to health concerns at high dietary intake.",
-    "formula": "C22:1",
-    "meltingPoint": 34,
     "name": "erucic acid",
+    "type": "monounsaturated fatty acid",
+    "description": {
+      "formula": "C22:1",
+      "carbonChain": 22,
+      "saturation": "monounsaturated",
+      "meltingPoint": 34,
+      "prose": "Long-chain monounsaturated fatty acid. Bred out of food-grade rapeseed (canola) due to health concerns at high dietary intake."
+    },
+    "details": {
+      "soapProperties": {
+        "degreasing": "low",
+        "moisturizing": "high",
+        "hardness": "moderate",
+        "lather": "mild, stable"
+      },
+      "commonSources": [
+        "mustard-seed-oil"
+      ]
+    },
+    "domain": [
+      "craft",
+      "calculator"
+    ],
     "references": [
       {
         "sourceId": "pubchem",
         "section": "CID 5281116: Erucic Acid compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Erucic-acid"
       }
-    ],
-    "saturation": "monounsaturated",
-    "soapProperties": {
-      "degreasing": "low",
-      "moisturizing": "high",
-      "hardness": "moderate",
-      "lather": "mild, stable"
-    }
+    ]
   },
   "eicosenoic": {
-    "domain": ["craft", "calculator"],
-    "carbonChain": 20,
-    "commonSources": [
-      "jojoba-oil",
-      "meadowfoam-oil"
-    ],
-    "description": "Very stable to oxidation. Jojoba's eicosenoic acid (as wax ester) does not fully saponify.",
-    "formula": "C20:1",
-    "meltingPoint": 24,
     "name": "eicosenoic acid (gondoic acid)",
+    "type": "monounsaturated fatty acid",
+    "description": {
+      "formula": "C20:1",
+      "carbonChain": 20,
+      "saturation": "monounsaturated",
+      "meltingPoint": 24,
+      "prose": "Very stable to oxidation. Jojoba's eicosenoic acid (as wax ester) does not fully saponify."
+    },
+    "details": {
+      "soapProperties": {
+        "degreasing": "low",
+        "moisturizing": "high",
+        "hardness": "moderate",
+        "lather": "mild, stable"
+      },
+      "commonSources": [
+        "jojoba-oil",
+        "meadowfoam-oil"
+      ]
+    },
+    "domain": [
+      "craft",
+      "calculator"
+    ],
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC8197201: Jojoba Oil: An Updated Comprehensive Review on Chemistry, Pharmaceutical Uses, and Toxicity",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8197201/"
       }
-    ],
-    "saturation": "monounsaturated",
-    "soapProperties": {
-      "degreasing": "low",
-      "moisturizing": "high",
-      "hardness": "moderate",
-      "lather": "mild, stable"
-    }
+    ]
   },
   "lauric": {
-    "domain": ["craft", "calculator"],
-    "carbonChain": 12,
-    "commonSources": [
-      "coconut-oil-76",
-      "coconut-oil-92",
-      "palm-kernel-oil",
-      "babassu-oil"
-    ],
-    "description": "Primary lather-producing fatty acid among saturated fats.",
-    "formula": "C12:0",
-    "meltingPoint": 44,
     "name": "lauric acid",
+    "type": "saturated fatty acid",
+    "description": {
+      "formula": "C12:0",
+      "carbonChain": 12,
+      "saturation": "saturated",
+      "meltingPoint": 44,
+      "prose": "Primary lather-producing fatty acid among saturated fats."
+    },
+    "details": {
+      "soapProperties": {
+        "degreasing": "high",
+        "moisturizing": "low",
+        "hardness": "high",
+        "lather": "big fluffy bubbles"
+      },
+      "commonSources": [
+        "coconut-oil-76",
+        "coconut-oil-92",
+        "palm-kernel-oil",
+        "babassu-oil"
+      ]
+    },
+    "domain": [
+      "craft",
+      "calculator"
+    ],
     "references": [
       {
         "sourceId": "pubchem",
         "section": "CID 3893: Lauric Acid compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Lauric-Acid"
       }
-    ],
-    "saturation": "saturated",
-    "soapProperties": {
-      "degreasing": "high",
-      "moisturizing": "low",
-      "hardness": "high",
-      "lather": "big fluffy bubbles"
-    }
+    ]
   },
   "linoleic": {
-    "domain": ["craft", "calculator"],
-    "carbonChain": 18,
-    "commonSources": [
-      "grapeseed-oil",
-      "hemp-seed-oil",
-      "sunflower-oil",
-      "soybean-oil",
-      "walnut-oil"
-    ],
-    "description": "High levels reduce shelf life due to oxidation (DOS).",
-    "formula": "C18:2",
-    "meltingPoint": -5,
     "name": "linoleic acid",
+    "type": "polyunsaturated fatty acid",
+    "description": {
+      "formula": "C18:2",
+      "carbonChain": 18,
+      "saturation": "polyunsaturated",
+      "meltingPoint": -5,
+      "prose": "High levels reduce shelf life due to oxidation (DOS)."
+    },
+    "details": {
+      "soapProperties": {
+        "degreasing": "low",
+        "moisturizing": "very high",
+        "hardness": "low",
+        "lather": "silky"
+      },
+      "commonSources": [
+        "grapeseed-oil",
+        "hemp-seed-oil",
+        "sunflower-oil",
+        "soybean-oil",
+        "walnut-oil"
+      ]
+    },
+    "domain": [
+      "craft",
+      "calculator"
+    ],
     "references": [
       {
         "sourceId": "pubchem",
         "section": "CID 5280450: Linoleic Acid compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Linoleic-acid"
       }
-    ],
-    "saturation": "polyunsaturated",
-    "soapProperties": {
-      "degreasing": "low",
-      "moisturizing": "very high",
-      "hardness": "low",
-      "lather": "silky"
-    }
+    ]
   },
   "linolenic": {
-    "domain": ["craft", "calculator"],
-    "carbonChain": 18,
-    "commonSources": [
-      "hemp-seed-oil",
-      "walnut-oil",
-      "canola-oil-low-erucic-rapeseed",
-      "flaxseed-oil"
-    ],
-    "description": "Very prone to rancidity. Shortened shelf life.",
-    "formula": "C18:3",
-    "meltingPoint": -11,
     "name": "alpha-linolenic acid",
+    "type": "polyunsaturated fatty acid",
+    "description": {
+      "formula": "C18:3",
+      "carbonChain": 18,
+      "saturation": "polyunsaturated",
+      "meltingPoint": -11,
+      "prose": "Very prone to rancidity. Shortened shelf life."
+    },
+    "details": {
+      "soapProperties": {
+        "degreasing": "low",
+        "moisturizing": "very high",
+        "hardness": "very low",
+        "lather": "silky"
+      },
+      "commonSources": [
+        "hemp-seed-oil",
+        "walnut-oil",
+        "canola-oil-low-erucic-rapeseed",
+        "flaxseed-oil"
+      ]
+    },
+    "domain": [
+      "craft",
+      "calculator"
+    ],
     "references": [
       {
         "sourceId": "pubchem",
         "section": "CID 5280934: Alpha-Linolenic Acid compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Alpha-linolenic-acid"
       }
-    ],
-    "saturation": "polyunsaturated",
-    "soapProperties": {
-      "degreasing": "low",
-      "moisturizing": "very high",
-      "hardness": "very low",
-      "lather": "silky"
-    }
+    ]
   },
   "myristic": {
-    "domain": ["craft", "calculator"],
-    "carbonChain": 14,
-    "commonSources": [
-      "coconut-oil-76",
-      "coconut-oil-92",
-      "palm-kernel-oil",
-      "babassu-oil",
-      "beef-tallow"
-    ],
-    "description": "Similar profile to lauric acid. Often accompanies lauric in tropical oils.",
-    "formula": "C14:0",
-    "meltingPoint": 54,
     "name": "myristic acid",
+    "type": "saturated fatty acid",
+    "description": {
+      "formula": "C14:0",
+      "carbonChain": 14,
+      "saturation": "saturated",
+      "meltingPoint": 54,
+      "prose": "Similar profile to lauric acid. Often accompanies lauric in tropical oils."
+    },
+    "details": {
+      "soapProperties": {
+        "degreasing": "high",
+        "moisturizing": "low",
+        "hardness": "high",
+        "lather": "creamy with some bubbles"
+      },
+      "commonSources": [
+        "coconut-oil-76",
+        "coconut-oil-92",
+        "palm-kernel-oil",
+        "babassu-oil",
+        "beef-tallow"
+      ]
+    },
+    "domain": [
+      "craft",
+      "calculator"
+    ],
     "references": [
       {
         "sourceId": "pubchem",
         "section": "CID 11005: Myristic Acid compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Myristic-acid"
       }
-    ],
-    "saturation": "saturated",
-    "soapProperties": {
-      "degreasing": "high",
-      "moisturizing": "low",
-      "hardness": "high",
-      "lather": "creamy with some bubbles"
-    }
+    ]
   },
   "oleic": {
-    "domain": ["craft", "calculator"],
-    "carbonChain": 18,
-    "commonSources": [
-      "olive-oil",
-      "high-oleic-sunflower-oil",
-      "avocado-oil",
-      "sweet-almond-oil",
-      "hazelnut-oil"
-    ],
-    "description": "High oleic soaps harden during extended curing.",
-    "formula": "C18:1",
-    "meltingPoint": 13,
     "name": "oleic acid",
+    "type": "monounsaturated fatty acid",
+    "description": {
+      "formula": "C18:1",
+      "carbonChain": 18,
+      "saturation": "monounsaturated",
+      "meltingPoint": 13,
+      "prose": "High oleic soaps harden during extended curing."
+    },
+    "details": {
+      "soapProperties": {
+        "degreasing": "low",
+        "moisturizing": "high",
+        "hardness": "low",
+        "lather": "mild, slippery"
+      },
+      "commonSources": [
+        "olive-oil",
+        "high-oleic-sunflower-oil",
+        "avocado-oil",
+        "sweet-almond-oil",
+        "hazelnut-oil"
+      ]
+    },
+    "domain": [
+      "craft",
+      "calculator"
+    ],
     "references": [
       {
         "sourceId": "pubchem",
         "section": "CID 445639: Oleic Acid compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Oleic-acid"
       }
-    ],
-    "saturation": "monounsaturated",
-    "soapProperties": {
-      "degreasing": "low",
-      "moisturizing": "high",
-      "hardness": "low",
-      "lather": "mild, slippery"
-    }
+    ]
   },
   "palmitic": {
-    "domain": ["craft", "calculator"],
-    "carbonChain": 16,
-    "commonSources": [
-      "palm-oil",
-      "beef-tallow",
-      "pork-fat-rendered-pure",
-      "cocoa-butter"
-    ],
-    "description": "Creates long-lasting bars that don't dissolve quickly in water.",
-    "formula": "C16:0",
-    "meltingPoint": 63,
     "name": "palmitic acid",
+    "type": "saturated fatty acid",
+    "description": {
+      "formula": "C16:0",
+      "carbonChain": 16,
+      "saturation": "saturated",
+      "meltingPoint": 63,
+      "prose": "Creates long-lasting bars that don't dissolve quickly in water."
+    },
+    "details": {
+      "soapProperties": {
+        "degreasing": "moderate",
+        "moisturizing": "moderate",
+        "hardness": "high",
+        "lather": "stable, creamy"
+      },
+      "commonSources": [
+        "palm-oil",
+        "beef-tallow",
+        "pork-fat-rendered-pure",
+        "cocoa-butter"
+      ]
+    },
+    "domain": [
+      "craft",
+      "calculator"
+    ],
     "references": [
       {
         "sourceId": "pubchem",
         "section": "CID 985: Palmitic Acid compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Palmitic-acid"
       }
-    ],
-    "saturation": "saturated",
-    "soapProperties": {
-      "degreasing": "moderate",
-      "moisturizing": "moderate",
-      "hardness": "high",
-      "lather": "stable, creamy"
-    }
+    ]
   },
   "palmitoleic": {
-    "domain": ["craft", "calculator"],
-    "carbonChain": 16,
-    "commonSources": [
-      "macadamia-nut-oil",
-      "sea-buckthorn-oil",
-      "avocado-oil"
-    ],
-    "description": "Relatively rare monounsaturated fatty acid.",
-    "formula": "C16:1",
-    "meltingPoint": 0,
     "name": "palmitoleic acid",
+    "type": "monounsaturated fatty acid",
+    "description": {
+      "formula": "C16:1",
+      "carbonChain": 16,
+      "saturation": "monounsaturated",
+      "meltingPoint": 0,
+      "prose": "Relatively rare monounsaturated fatty acid."
+    },
+    "details": {
+      "soapProperties": {
+        "degreasing": "low",
+        "moisturizing": "very high",
+        "hardness": "low",
+        "lather": "creamy"
+      },
+      "commonSources": [
+        "macadamia-nut-oil",
+        "sea-buckthorn-oil",
+        "avocado-oil"
+      ]
+    },
+    "domain": [
+      "craft",
+      "calculator"
+    ],
     "references": [
       {
         "sourceId": "pubchem",
         "section": "CID 445638: Palmitoleic Acid compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Palmitoleic-acid"
       }
-    ],
-    "saturation": "monounsaturated",
-    "soapProperties": {
-      "degreasing": "low",
-      "moisturizing": "very high",
-      "hardness": "low",
-      "lather": "creamy"
-    }
+    ]
   },
   "ricinoleic": {
-    "domain": ["craft", "calculator"],
-    "carbonChain": 18,
-    "commonSources": [
-      "castor-oil"
-    ],
-    "description": "High percentages can make soap sticky or draggy.",
-    "formula": "C18:1-OH",
-    "meltingPoint": 5,
     "name": "ricinoleic acid",
+    "type": "polyunsaturated fatty acid",
+    "description": {
+      "formula": "C18:1-OH",
+      "carbonChain": 18,
+      "saturation": "monounsaturated (hydroxylated)",
+      "meltingPoint": 5,
+      "prose": "High percentages can make soap sticky or draggy."
+    },
+    "details": {
+      "soapProperties": {
+        "degreasing": "low",
+        "moisturizing": "high",
+        "hardness": "low",
+        "lather": "boosts and stabilizes other lather"
+      },
+      "commonSources": [
+        "castor-oil"
+      ]
+    },
+    "domain": [
+      "craft",
+      "calculator"
+    ],
     "references": [
       {
         "sourceId": "pmc",
@@ -378,43 +497,44 @@
         "section": "CID 643684: Ricinoleic Acid compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Ricinoleic-acid"
       }
-    ],
-    "saturation": "monounsaturated (hydroxylated)",
-    "soapProperties": {
-      "degreasing": "low",
-      "moisturizing": "high",
-      "hardness": "low",
-      "lather": "boosts and stabilizes other lather"
-    }
+    ]
   },
   "stearic": {
-    "domain": ["craft", "calculator"],
-    "carbonChain": 18,
-    "commonSources": [
-      "shea-butter",
-      "cocoa-butter",
-      "mango-butter",
-      "kokum-butter",
-      "beef-tallow",
-      "sheep-tallow-mutton"
-    ],
-    "description": "Often used in shaving soaps for its dense lather.",
-    "formula": "C18:0",
-    "meltingPoint": 70,
     "name": "stearic acid",
+    "type": "saturated fatty acid",
+    "description": {
+      "formula": "C18:0",
+      "carbonChain": 18,
+      "saturation": "saturated",
+      "meltingPoint": 70,
+      "prose": "Often used in shaving soaps for its dense lather."
+    },
+    "details": {
+      "soapProperties": {
+        "degreasing": "low",
+        "moisturizing": "moderate",
+        "hardness": "very high",
+        "lather": "stable, dense, creamy"
+      },
+      "commonSources": [
+        "shea-butter",
+        "cocoa-butter",
+        "mango-butter",
+        "kokum-butter",
+        "beef-tallow",
+        "sheep-tallow-mutton"
+      ]
+    },
+    "domain": [
+      "craft",
+      "calculator"
+    ],
     "references": [
       {
         "sourceId": "pubchem",
         "section": "CID 5281: Stearic Acid compound summary",
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Stearic-acid"
       }
-    ],
-    "saturation": "saturated",
-    "soapProperties": {
-      "degreasing": "low",
-      "moisturizing": "moderate",
-      "hardness": "very high",
-      "lather": "stable, dense, creamy"
-    }
+    ]
   }
 }

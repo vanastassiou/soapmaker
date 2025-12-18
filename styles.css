@@ -873,29 +873,6 @@ input:focus, select:focus {
     padding-right: 3rem;
 }
 
-.panel-subtitle {
-    font-family: var(--font-mono);
-    color: var(--accent-gold);
-    margin-bottom: var(--space-6);
-}
-
-.panel-section {
-    margin-bottom: var(--space-6);
-}
-
-.panel-section h4 {
-    font-size: var(--text-md);
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--space-3);
-}
-
-.panel-description {
-    color: var(--text-secondary);
-    line-height: 1.7;
-}
-
 .panel-overlay {
     position: fixed;
     top: 0;
@@ -1119,25 +1096,6 @@ input:focus, select:focus {
     font-family: var(--font-mono);
     color: var(--accent-gold);
     font-size: var(--text-lg);
-}
-
-/* Info list - safety items, usage info, etc. */
-.panel-info-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-    margin-bottom: var(--space-3);
-}
-
-.panel-info-item {
-    font-size: var(--text-lg);
-    color: var(--text-secondary);
-    padding: var(--space-1) 0;
-    border-bottom: 1px solid var(--border-30);
-}
-
-.panel-info-item:last-child {
-    border-bottom: none;
 }
 
 /* Extra details - colour swatch, etc. */
@@ -2682,24 +2640,6 @@ details.mode-subcontainer > .collapsible-content {
     margin-bottom: 0;
 }
 
-/* Additive Info Panel */
-.panel-safety {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-}
-
-.safety-item {
-    font-size: var(--text-lg);
-    color: var(--text-secondary);
-    padding: var(--space-1) 0;
-    border-bottom: 1px solid var(--border-30);
-}
-
-.safety-item:last-child {
-    border-bottom: none;
-}
-
 /* Create Recipe Section */
 .create-recipe-section {
     margin-top: var(--space-6);
@@ -3701,105 +3641,6 @@ a.fat-stat-label:hover { color: var(--accent-gold); border-bottom-color: var(--a
     margin: 0;
 }
 
-/* Fatty Acid Detail Panel Styles */
-.fa-chemistry {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-3);
-}
-
-.fa-chem-item {
-    background: var(--bg-secondary);
-    padding: var(--space-3);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border);
-}
-
-.fa-chem-label {
-    font-size: var(--text-sm);
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--space-1);
-}
-
-.fa-chem-value {
-    font-family: var(--font-mono);
-    color: var(--accent-cream);
-    font-size: var(--text-2xl);
-}
-
-.fa-props-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-2);
-    margin-bottom: var(--space-3);
-}
-
-.fa-prop-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--bg-secondary);
-    padding: var(--space-2) var(--space-3);
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
-}
-
-.fa-prop-label {
-    font-size: var(--text-base);
-    color: var(--text-muted);
-}
-
-.fa-prop-value {
-    font-size: var(--text-md);
-    color: var(--accent-cream);
-}
-
-.fa-description {
-    color: var(--text-secondary);
-    margin: 0;
-    padding-top: var(--space-2);
-    border-top: 1px solid var(--border);
-}
-
-.fa-sources,
-.fa-common-sources {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-}
-
-.fa-source-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--bg-secondary);
-    padding: var(--space-2) var(--space-3);
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
-}
-
-.fa-source-name {
-    color: var(--text-primary);
-}
-
-.fa-source-percent {
-    font-family: var(--font-mono);
-    color: var(--accent-gold);
-    font-size: var(--text-lg);
-}
-
-.fa-common-sources .fa-source-item {
-    border: 1px dashed var(--border);
-    background: transparent;
-}
-
-.no-sources {
-    color: var(--text-muted);
-    font-style: italic;
-    font-size: var(--text-lg);
-}
 /* ============================================
    Formulas Page - Entry Styles
    ============================================ */
