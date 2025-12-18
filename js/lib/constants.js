@@ -88,9 +88,9 @@ export const ELEMENT_IDS = {
 
     // Exclusions
     excludeFatsSection: 'excludeFatsSection',
-    excludeFatSelect: 'excludeFatSelect',
+    excludeIngredientSelect: 'excludeIngredientSelect',
     addExclusionBtn: 'addExclusionBtn',
-    excludedFatsList: 'excludedFatsList',
+    excludedIngredientsList: 'excludedIngredientsList',
 
     // Cupboard cleaner mode
     cupboardCleanerMode: 'cupboardCleanerMode',

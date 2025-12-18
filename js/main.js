@@ -405,23 +405,42 @@ function handleUnitChange() {
 }
 
 function handleAddExclusion() {
-    const select = $(ELEMENT_IDS.excludeFatSelect);
+    const select = $(ELEMENT_IDS.excludeIngredientSelect);
     if (select.value) {
         addExclusion(select.value);
         updateExclusionUI();
+        updateFatSelectWithFilters();
+        updateAdditiveSelect();
     }
 }
 
-function handleRemoveExclusion(fatId) {
-    removeExclusion(fatId);
+function handleRemoveExclusion(id) {
+    removeExclusion(id);
     updateExclusionUI();
+    updateFatSelectWithFilters();
+    updateAdditiveSelect();
 }
 
 function updateExclusionUI() {
-    const excludeSelect = $(ELEMENT_IDS.excludeFatSelect);
-    ui.populateExcludeFatSelect(excludeSelect, state.fatsDatabase, state.excludedFats);
-    ui.renderExcludedFats(state.excludedFats, state.fatsDatabase, handleRemoveExclusion);
+    const excludeSelect = $(ELEMENT_IDS.excludeIngredientSelect);
+    const allDatabases = getAllIngredientDatabases();
+    ui.populateExcludeIngredientSelect(excludeSelect, allDatabases, state.excludedFats);
+    ui.renderExcludedIngredients(state.excludedFats, allDatabases, handleRemoveExclusion);
     excludeSelect.value = '';
+}
+
+/**
+ * Get all ingredient databases for exclusion filtering
+ * @returns {Object} Object containing all ingredient databases
+ */
+function getAllIngredientDatabases() {
+    return {
+        fats: state.fatsDatabase,
+        fragrances: state.fragrancesDatabase,
+        colourants: state.colourantsDatabase,
+        soapPerformance: state.soapPerformanceDatabase,
+        skinCare: state.skinCareDatabase
+    };
 }
 
 // ============================================
@@ -522,15 +541,25 @@ function getDietaryFilters() {
 }
 
 /**
- * Create a filter function based on current dietary filter settings
+ * Create a filter function based on current dietary filter settings and manual exclusions
+ * Applies to all ingredient types (fats, colourants, fragrances, etc.)
  * @returns {Function|null} Filter function or null if no filters active
  */
 function createDietaryFilterFn() {
     const filters = getDietaryFilters();
-    if (!filters.animalBased && !filters.sourcingConcerns && !filters.commonAllergens) {
+    const manualExclusions = new Set(state.excludedFats);
+    const hasFilters = filters.animalBased || filters.sourcingConcerns || filters.commonAllergens;
+    const hasExclusions = manualExclusions.size > 0;
+
+    if (!hasFilters && !hasExclusions) {
         return null;
     }
-    return (_id, data) => {
+
+    return (id, data) => {
+        // Check manual exclusions first
+        if (manualExclusions.has(id)) return false;
+
+        // Check dietary filters
         const dietary = data.dietary || {};
         if (filters.animalBased && dietary.animalBased === true) return false;
         if (filters.sourcingConcerns && dietary.sourcingConcerns === true) return false;
@@ -547,8 +576,9 @@ function updateFatSelectWithFilters() {
     const existingIds = state.recipe.map(f => f.id);
     ui.populateFatSelect($(ELEMENT_IDS.fatSelect), state.fatsDatabase, existingIds, filterFn);
 
-    // Also update exclude fat select
-    ui.populateExcludeFatSelect($(ELEMENT_IDS.excludeFatSelect), state.fatsDatabase, state.excludedFats);
+    // Also update exclude ingredient select
+    const allDatabases = getAllIngredientDatabases();
+    ui.populateExcludeIngredientSelect($(ELEMENT_IDS.excludeIngredientSelect), allDatabases, state.excludedFats);
 }
 
 /**
@@ -972,6 +1002,7 @@ function handleYoloGenerate() {
         maxFats: DEFAULTS.YOLO_MAX_FATS
     });
 
+    // Only fail if not enough fats available (exclusions too restrictive)
     if (!result) {
         toast.warning(UI_MESSAGES.YOLO_GENERATION_FAILED);
         return;
@@ -1307,10 +1338,11 @@ function updatePropertiesFromFats(fats) {
 }
 
 function setupExclusionHandlers() {
-    const excludeSelect = $(ELEMENT_IDS.excludeFatSelect);
+    const excludeSelect = $(ELEMENT_IDS.excludeIngredientSelect);
     if (excludeSelect) {
-        ui.populateExcludeFatSelect(excludeSelect, state.fatsDatabase, state.excludedFats);
-        ui.renderExcludedFats(state.excludedFats, state.fatsDatabase, handleRemoveExclusion);
+        const allDatabases = getAllIngredientDatabases();
+        ui.populateExcludeIngredientSelect(excludeSelect, allDatabases, state.excludedFats);
+        ui.renderExcludedIngredients(state.excludedFats, allDatabases, handleRemoveExclusion);
     }
 
     $(ELEMENT_IDS.addExclusionBtn)?.addEventListener('click', handleAddExclusion);

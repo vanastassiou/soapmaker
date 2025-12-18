@@ -2604,10 +2604,20 @@ details.mode-subcontainer > .collapsible-content {
     width: 100%;
 }
 
-#generateRecipeBtn {
+#generateRecipeBtn,
+#yoloBtn,
+#cupboardCleanerBtn {
     width: 100%;
     padding: var(--space-3);
     font-size: var(--text-2xl);
+}
+
+/* Remove top border when generate-action is first child (YOLO/Cupboard modes) */
+#yoloMode > .generate-action:first-child,
+#cupboardCleanerMode > .generate-action {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 /* Instructions list */
@@ -2756,7 +2766,7 @@ ol.instructions li:last-child {
     color: var(--text-secondary);
 }
 
-.excluded-fats-list {
+.excluded-ingredients-list {
     display: flex;
     flex-wrap: wrap;
     align-items: center;

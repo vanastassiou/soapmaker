@@ -23,22 +23,23 @@ import { calculateProperties, calculateFattyAcidsFromPercentages } from './calcu
 // ============================================
 
 /**
- * Filter fats based on dietary requirements
- * @param {Object} fatsDatabase - Fat database
+ * Filter ingredients based on dietary requirements
+ * Works with any ingredient database (fats, colourants, fragrances, etc.)
+ * @param {Object} database - Ingredient database
  * @param {Object} dietaryFilters - {animalBased, sourcingConcerns, commonAllergens}
- * @returns {Set} Set of fat IDs that should be excluded
+ * @returns {Set} Set of ingredient IDs that should be excluded
  */
-export function getDietaryExclusions(fatsDatabase, dietaryFilters = {}) {
+export function getDietaryExclusions(database, dietaryFilters = {}) {
     const exclusions = new Set();
 
     if (!dietaryFilters.animalBased && !dietaryFilters.sourcingConcerns && !dietaryFilters.commonAllergens) {
         return exclusions;
     }
 
-    for (const [id, fat] of Object.entries(fatsDatabase)) {
-        const dietary = fat.dietary || {};
+    for (const [id, item] of Object.entries(database)) {
+        const dietary = item.dietary || {};
 
-        // Exclude fats that match the filter criteria
+        // Exclude items that match the filter criteria
         if (dietaryFilters.animalBased && dietary.animalBased === true) {
             exclusions.add(id);
         } else if (dietaryFilters.sourcingConcerns && dietary.sourcingConcerns === true) {
@@ -566,6 +567,11 @@ export function generateRandomRecipe(fatsDatabase, options = {}) {
     const neededFats = Math.max(0, minFats - lockedFats.length);
     if (availableFats.length < neededFats) return null;
 
+    // Track best recipe found (even if not perfect)
+    let bestResult = null;
+    let bestScore = -Infinity;
+
+    // Phase 1: Pure random attempts (fast, gives varied results)
     for (let attempt = 0; attempt < maxAttempts; attempt++) {
         // Random number of new fats to add
         const numNewFats = Math.max(neededFats,
@@ -585,7 +591,7 @@ export function generateRandomRecipe(fatsDatabase, options = {}) {
         const fattyAcids = calculateFattyAcidsFromPercentages(recipe, fatsDatabase);
         const properties = calculateProperties(fattyAcids);
 
-        // Check if properties are in acceptable ranges
+        // Check if properties are in acceptable ranges - return immediately if perfect
         if (allPropertiesInRange(properties)) {
             return {
                 recipe,
@@ -593,9 +599,80 @@ export function generateRandomRecipe(fatsDatabase, options = {}) {
                 properties
             };
         }
+
+        // Track best result
+        const score = scorePropertiesInRange(properties);
+        if (score > bestScore) {
+            bestScore = score;
+            bestResult = { recipe, fattyAcids, properties };
+        }
     }
 
-    return null;
+    // Phase 2: Optimized fallback - random fat selection with optimized percentages
+    // Target midpoint of property ranges for balanced soap
+    const balancedTarget = {
+        lauric: 10,      // Contributes to degreasing, lather-volume
+        myristic: 5,     // Contributes to degreasing, lather-volume
+        palmitic: 20,    // Contributes to hardness, lather-density
+        stearic: 8,      // Contributes to hardness, lather-density
+        oleic: 40,       // Contributes to moisturizing
+        linoleic: 10,    // Contributes to moisturizing
+        ricinoleic: 5    // Contributes to lather-volume, lather-density
+    };
+
+    const fallbackAttempts = 20;
+    for (let attempt = 0; attempt < fallbackAttempts; attempt++) {
+        // Random number of new fats
+        const numNewFats = Math.max(neededFats,
+            Math.floor(Math.random() * (maxFats - lockedFats.length + 1)));
+
+        // Shuffle and pick random fats
+        const shuffled = [...availableFats].sort(() => Math.random() - 0.5);
+        const selectedFatIds = shuffled.slice(0, Math.min(numNewFats, shuffled.length));
+
+        // Use optimizer to find good percentages for these fats
+        const allFatIds = [...lockedFats.map(f => f.id), ...selectedFatIds];
+        const optimizedRecipe = optimizeWeights(allFatIds, balancedTarget, fatsDatabase);
+
+        // Reorder so locked fats come first with their original percentages preserved
+        const recipe = lockedFats.length > 0
+            ? [...lockedFats, ...optimizedRecipe.filter(f => !lockedIds.has(f.id))]
+            : optimizedRecipe;
+
+        // Recalculate with locked percentages if needed
+        if (lockedFats.length > 0) {
+            // Scale unlocked fat percentages to fit remaining space
+            const unlockedFats = recipe.filter(f => !lockedIds.has(f.id));
+            const unlockedTotal = unlockedFats.reduce((sum, f) => sum + f.percentage, 0);
+            if (unlockedTotal > 0) {
+                unlockedFats.forEach(f => {
+                    f.percentage = Math.round(f.percentage / unlockedTotal * remainingPercent);
+                });
+            }
+        }
+
+        const fattyAcids = calculateFattyAcidsFromPercentages(recipe, fatsDatabase);
+        const properties = calculateProperties(fattyAcids);
+
+        // Return immediately if perfect
+        if (allPropertiesInRange(properties)) {
+            return {
+                recipe,
+                fattyAcids,
+                properties
+            };
+        }
+
+        // Track best result
+        const score = scorePropertiesInRange(properties);
+        if (score > bestScore) {
+            bestScore = score;
+            bestResult = { recipe, fattyAcids, properties };
+        }
+    }
+
+    // Return best result found (may have some properties out of range)
+    return bestResult;
 }
 
 /**
