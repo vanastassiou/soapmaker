@@ -16,7 +16,7 @@ import {
     UI_MESSAGES
 } from '../lib/constants.js';
 
-import { checkAdditiveWarnings, generateFatProperties } from '../core/calculator.js';
+import { checkAdditiveWarnings, getFatSoapProperties } from '../core/calculator.js';
 import { resolveReferences } from '../lib/references.js';
 
 import {
@@ -294,16 +294,38 @@ export function showFatInfo(fatId, fatsDatabase, fattyAcidsData, sourcesData, on
     // Description
     $('fatPanelDescription').textContent = fat.description;
 
-    // Details: SAP and usage
+    // Details: SAP and usage as list items with labels
     const sap = fat.details?.sap || fat.sap;
-    $('fatPanelSap').textContent = `NaOH: ${sap.naoh} | KOH: ${sap.koh}`;
-
     const usage = fat.details?.usage || fat.usage;
-    $('fatPanelUsage').textContent = `${usage.min}% to ${usage.max}% of recipe lipids`;
+
+    $('fatPanelDetails').innerHTML = `
+        <div class="panel-list-item">
+            <span class="panel-list-name">NaOH SAP</span>
+            <span class="panel-list-value">${sap.naoh}</span>
+        </div>
+        <div class="panel-list-item">
+            <span class="panel-list-name">KOH SAP</span>
+            <span class="panel-list-value">${sap.koh}</span>
+        </div>
+        <div class="panel-list-item">
+            <span class="panel-list-name">Recommended usage</span>
+            <span class="panel-list-value">${usage.min}–${usage.max}%</span>
+        </div>
+    `;
 
     // Details: soap properties
-    const soapProps = fat.details?.soapProperties || generateFatProperties(fat, fattyAcidsData);
-    $('fatPanelProperties').textContent = soapProps;
+    const soapProps = getFatSoapProperties(fat, fattyAcidsData);
+    const propsEl = $('fatPanelProperties');
+    if (soapProps) {
+        propsEl.innerHTML = `
+            <div class="panel-prop-item"><span class="panel-prop-label">Hardness</span><span class="panel-prop-value">${soapProps.hardness}</span></div>
+            <div class="panel-prop-item"><span class="panel-prop-label">Degreasing</span><span class="panel-prop-value">${soapProps.degreasing}</span></div>
+            <div class="panel-prop-item"><span class="panel-prop-label">Lather</span><span class="panel-prop-value">${soapProps.lather}</span></div>
+            <div class="panel-prop-item"><span class="panel-prop-label">Moisturizing</span><span class="panel-prop-value">${soapProps.moisturizing}</span></div>
+        `;
+    } else {
+        propsEl.innerHTML = '';
+    }
 
     // Fatty acid composition
     const faContainer = $('fatPanelFattyAcids');
@@ -1209,34 +1231,60 @@ export function showAdditiveInfo(additiveId, additivesDatabase, sourcesData) {
     // Description
     $('additivePanelDescription').textContent = additive.description;
 
-    // Details: usage
+    // Details: usage and other attributes as list items
     const usage = additive.details?.usage || additive.usage;
-    $('additivePanelUsage').textContent = `${usage.min}% to ${usage.max}% of fat weight`;
+    const detailItems = [];
 
-    // Details: extra info
-    const extraInfo = $('additivePanelExtra');
-    const extraItems = [];
+    detailItems.push(`
+        <div class="panel-list-item">
+            <span class="panel-list-name">Recommended usage</span>
+            <span class="panel-list-value">${usage.min}–${usage.max}%</span>
+        </div>
+    `);
 
     const scentNote = additive.details?.scentNote || additive.scentNote;
     if (scentNote) {
-        extraItems.push(`<div class="panel-extra-item"><span class="panel-extra-label">Scent note:</span> ${scentNote}</div>`);
+        detailItems.push(`
+            <div class="panel-list-item">
+                <span class="panel-list-name">Scent note</span>
+                <span class="panel-list-value">${scentNote}</span>
+            </div>
+        `);
     }
+
+    const density = additive.details?.density || additive.density;
+    if (density) {
+        detailItems.push(`
+            <div class="panel-list-item">
+                <span class="panel-list-name">Density</span>
+                <span class="panel-list-value">${density} g/mL</span>
+            </div>
+        `);
+    }
+
+    const color = additive.details?.colour || additive.color;
+    if (color) {
+        detailItems.push(`
+            <div class="panel-list-item">
+                <span class="panel-list-name">Colour</span>
+                <span class="panel-list-value"><span class="panel-colour-swatch" style="background-color: ${color}"></span></span>
+            </div>
+        `);
+    }
+
     if (additive.anchoring?.length > 0) {
         const anchorNames = additive.anchoring
             .map(id => additivesDatabase[id]?.name || id)
             .join(', ');
-        extraItems.push(`<div class="panel-extra-item"><span class="panel-extra-label">Anchors well with:</span> ${anchorNames}</div>`);
-    }
-    const color = additive.details?.colour || additive.color;
-    if (color) {
-        extraItems.push(`<div class="panel-extra-item"><span class="panel-extra-label">Colour:</span> <span class="panel-colour-swatch" style="background-color: ${color}"></span></div>`);
-    }
-    const density = additive.details?.density || additive.density;
-    if (density) {
-        extraItems.push(`<div class="panel-extra-item"><span class="panel-extra-label">Density:</span> ${density} g/mL</div>`);
+        detailItems.push(`
+            <div class="panel-list-item">
+                <span class="panel-list-name">Anchors well with</span>
+                <span class="panel-list-value">${anchorNames}</span>
+            </div>
+        `);
     }
 
-    extraInfo.innerHTML = extraItems.join('');
+    $('additivePanelDetails').innerHTML = detailItems.join('');
 
     // Safety section
     const safetySection = $('additivePanelSafetySection');
@@ -1246,24 +1294,24 @@ export function showAdditiveInfo(additiveId, additivesDatabase, sourcesData) {
 
     if (safety) {
         if (safety.ifraCategory9Limit) {
-            safetyItems.push(`IFRA Category 9 limit: ${safety.ifraCategory9Limit}%`);
+            safetyItems.push(`<div class="panel-list-item"><span class="panel-list-name">IFRA Category 9 limit</span><span class="panel-list-value">${safety.ifraCategory9Limit}%</span></div>`);
         }
         if (safety.maxConcentration) {
-            safetyItems.push(`Max concentration: ${safety.maxConcentration}%`);
+            safetyItems.push(`<div class="panel-list-item"><span class="panel-list-name">Max concentration</span><span class="panel-list-value">${safety.maxConcentration}%</span></div>`);
         }
         if (safety.cosIng) {
-            safetyItems.push(`CosIng: ${safety.cosIng}`);
+            safetyItems.push(`<div class="panel-list-item"><span class="panel-list-name">CosIng</span><span class="panel-list-value">${safety.cosIng}</span></div>`);
         }
         if (safety.casNumber) {
-            safetyItems.push(`CAS: ${safety.casNumber}`);
+            safetyItems.push(`<div class="panel-list-item"><span class="panel-list-name">CAS</span><span class="panel-list-value">${safety.casNumber}</span></div>`);
         }
         if (safety.flashPointC) {
-            safetyItems.push(`Flash point: ${safety.flashPointC}°C`);
+            safetyItems.push(`<div class="panel-list-item"><span class="panel-list-name">Flash point</span><span class="panel-list-value">${safety.flashPointC}°C</span></div>`);
         }
     }
 
     if (safetyItems.length > 0) {
-        safetyContainer.innerHTML = safetyItems.map(item => `<div class="panel-info-item">${item}</div>`).join('');
+        safetyContainer.innerHTML = safetyItems.join('');
         safetySection.style.display = 'block';
     } else {
         safetySection.style.display = 'none';
