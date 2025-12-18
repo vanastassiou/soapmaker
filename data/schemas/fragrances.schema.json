@@ -20,6 +20,39 @@
           "minLength": 1,
           "type": "string"
         },
+        "sourceSpecies": {
+          "description": "Botanical species name",
+          "minLength": 1,
+          "type": "string"
+        },
+        "sourcePart": {
+          "description": "Plant part used for extraction",
+          "type": "string",
+          "enum": ["bark", "flowers", "flowering tops", "fruits", "heartwood", "leaves", "leaves and flowering tops", "peel", "resin", "roots", "wood"]
+        },
+        "extractionMethod": {
+          "description": "Method used to extract the essential oil",
+          "type": "string",
+          "enum": ["steam-distilled", "cold-pressed"]
+        },
+        "majorConstituents": {
+          "description": "Primary chemical constituents with percentage ranges",
+          "type": "object",
+          "additionalProperties": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "min": { "type": "number", "minimum": 0, "maximum": 100 },
+                  "max": { "type": "number", "minimum": 0, "maximum": 100 }
+                },
+                "required": ["min", "max"],
+                "additionalProperties": false
+              },
+              { "type": "null" }
+            ]
+          }
+        },
         "density": {
           "description": "Density in g/mL",
           "maximum": 1.2,
@@ -45,16 +78,28 @@
               "maximum": 100,
               "minimum": 0,
               "type": "number"
-            },
-            "majorConstituents": {
-              "description": "Primary chemical constituents",
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
             }
           },
           "type": "object"
+        },
+        "hazards": {
+          "description": "Known safety hazards",
+          "type": "object",
+          "propertyNames": {
+            "enum": ["phototoxic", "sensitizer", "toxic-to-cats", "toxic-to-dogs", "toxic-to-birds", "toxic-to-small-mammals", "oxidizes"]
+          },
+          "additionalProperties": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "note": { "type": "string", "minLength": 1 }
+                },
+                "additionalProperties": false
+              },
+              { "type": "null" }
+            ]
+          }
         },
         "scentNote": {
           "description": "Fragrance note classification",

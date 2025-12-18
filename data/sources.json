@@ -214,5 +214,12 @@
     "baseUrl": "https://www.ansi.org",
     "publisher": "American National Standards Institute (ANSI)",
     "fundedBy": "Member organizations and fees"
+  },
+  "aspca": {
+    "name": "ASPCA Animal Poison Control Center",
+    "description": "Veterinary toxicology resource providing information on substances toxic to animals.",
+    "baseUrl": "https://www.aspca.org",
+    "publisher": "American Society for the Prevention of Cruelty to Animals (ASPCA)",
+    "fundedBy": "Donations and service fees"
   }
 }
