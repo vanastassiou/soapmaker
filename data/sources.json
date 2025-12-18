@@ -27,13 +27,6 @@
     "publisher": "Cosmetic Ingredient Review (CIR)",
     "fundedBy": "Personal Care Products Council (industry association)"
   },
-  "codex-alimentarius": {
-    "name": "Codex Alimentarius",
-    "description": "International food standards collection.",
-    "baseUrl": "https://www.fao.org/fao-who-codexalimentarius",
-    "publisher": "Codex Alimentarius Commission",
-    "fundedBy": "Food and Agriculture Organization (FAO) and World Health Organization (WHO)"
-  },
   "who-inchem": {
     "name": "International Programme on Chemical Safety (WHO/INCHEM)",
     "description": "Chemical safety information database providing toxicological and safety data.",
