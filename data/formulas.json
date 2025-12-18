@@ -386,7 +386,7 @@
     "name": "INS value",
     "summary": "A combined index originally intended to predict overall soap quality.",
     "userFriendly": "INS combines saponification value and iodine value into a single number. It was originally suggested that values around 160 produce 'ideal' soap, but this is controversial. Many excellent soaps fall outside this range. Use it as one data point, not a definitive quality measure.",
-    "formula": "INS = SAP value \u00d7 1000 - Iodine value",
+    "formula": "INS = SAP value - Iodine value",
     "variables": {
       "SAP value": "Saponification value (typically as mg KOH/g for this formula)",
       "Iodine value": "Iodine value of the fat"
