@@ -1416,7 +1416,7 @@ function handleCreateRecipe() {
         recipe: recipeWithWeights,
         recipeAdditives: state.recipeAdditives,
         fatsDatabase: state.fatsDatabase,
-        additivesDatabase: state.additivesDatabase,
+        additivesDatabase: getAllAdditivesDatabase(),
         lyeAmount,
         waterAmount,
         lyeType: settings.lyeType,
