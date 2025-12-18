@@ -103,14 +103,35 @@
                 "ricinoleic": { "maximum": 100, "minimum": 0, "type": "number" }
               },
               "type": "object"
+            },
+            "sourcing": {
+              "additionalProperties": false,
+              "description": "Sourcing and production information",
+              "properties": {
+                "primaryRegions": {
+                  "description": "Primary countries or regions where this ingredient is produced",
+                  "items": { "type": "string", "minLength": 1 },
+                  "type": "array"
+                },
+                "productionMethod": {
+                  "description": "How the ingredient is extracted or produced",
+                  "type": "string"
+                },
+                "supplyChainNotes": {
+                  "description": "Additional notes about supply chain specifics",
+                  "type": "string"
+                }
+              },
+              "required": ["primaryRegions", "productionMethod"],
+              "type": "object"
             }
           },
-          "required": ["sap", "usage", "density", "iodine", "ins", "fattyAcids"],
+          "required": ["sap", "usage", "density", "iodine", "ins", "fattyAcids", "sourcing"],
           "type": "object"
         },
         "dietary": {
           "additionalProperties": false,
-          "description": "Dietary and sourcing classification flags",
+          "description": "Dietary classification flags",
           "properties": {
             "animalBased": {
               "description": "True if derived from animal sources",
@@ -119,12 +140,40 @@
             "commonAllergen": {
               "description": "True if associated with common allergens (tree nuts, soy, etc.)",
               "type": "boolean"
-            },
-            "sourcingConcerns": {
-              "description": "True if there are significant sourcing concerns (e.g., palm oil deforestation)",
-              "type": "boolean"
             }
           },
+          "type": "object"
+        },
+        "ethicalConcerns": {
+          "additionalProperties": false,
+          "description": "Ethical and sustainability concerns",
+          "properties": {
+            "environmental": {
+              "description": "Environmental impact concerns",
+              "items": { "type": "string" },
+              "type": "array"
+            },
+            "social": {
+              "description": "Social and labour-related concerns",
+              "items": { "type": "string" },
+              "type": "array"
+            },
+            "political": {
+              "description": "Political or conflict-related concerns",
+              "items": { "type": "string" },
+              "type": "array"
+            },
+            "certifications": {
+              "description": "Available certifications to address concerns",
+              "items": { "type": "string" },
+              "type": "array"
+            },
+            "notes": {
+              "description": "Additional context about ethical considerations",
+              "type": "string"
+            }
+          },
+          "required": ["environmental", "social", "political", "certifications", "notes"],
           "type": "object"
         },
         "references": {
@@ -156,7 +205,7 @@
           "type": "array"
         }
       },
-      "required": ["name", "type", "description", "details"],
+      "required": ["name", "type", "description", "details", "ethicalConcerns"],
       "type": "object"
     }
   },

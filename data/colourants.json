@@ -15,11 +15,21 @@
         "basis": "oil-weight",
         "min": 0.5,
         "max": 2
+      },
+      "sourcing": {
+        "primaryRegions": ["Global (multiple sources)"],
+        "productionMethod": "Carbonization of plant materials (coconut shells, bamboo, wood) followed by activation."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Usually made from coconut shells (sustainable byproduct) or bamboo. Source material varies by manufacturer."
     },
     "references": [
       {
@@ -45,11 +55,21 @@
         "basis": "oil-weight",
         "min": 0.1,
         "max": 1
+      },
+      "sourcing": {
+        "primaryRegions": ["Brazil", "Peru", "Ecuador", "Kenya", "India"],
+        "productionMethod": "Extracted from Bixa orellana seed coating using oil or alkali."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Fair Trade"],
+      "notes": "Supports smallholder farmers in tropical regions. Sustainable crop with low environmental impact."
     },
     "references": [
       {
@@ -75,11 +95,21 @@
         "basis": "oil-weight",
         "min": 0.5,
         "max": 1
+      },
+      "sourcing": {
+        "primaryRegions": ["United States (Wyoming)", "Greece", "Italy", "India", "China"],
+        "productionMethod": "Open-pit or underground mining, then processed and purified."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Mining operations can disrupt local ecosystems"],
+      "social": [],
+      "political": [],
+      "certifications": [],
+      "notes": "Mined mineral with established global supply chains. Wyoming is a major source of high-quality bentonite."
     },
     "references": [
       {
@@ -105,11 +135,21 @@
         "basis": "oil-weight",
         "min": 0.1,
         "max": 1
+      },
+      "sourcing": {
+        "primaryRegions": ["Egypt", "India", "Poland", "Hungary", "United States"],
+        "productionMethod": "Cultivated Calendula officinalis flowers, harvested and dried."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "EU Organic"],
+      "notes": "Widely cultivated medicinal herb with established agricultural supply chains."
     },
     "references": [
       {
@@ -135,11 +175,21 @@
         "basis": "oil-weight",
         "min": 0.1,
         "max": 1
+      },
+      "sourcing": {
+        "primaryRegions": ["Egypt", "Germany", "Hungary", "Argentina", "Poland"],
+        "productionMethod": "Cultivated Matricaria chamomilla flowers, harvested and dried."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "EU Organic"],
+      "notes": "Widely cultivated medicinal herb. Egyptian chamomile is highly valued."
     },
     "references": [
       {
@@ -165,11 +215,21 @@
         "basis": "oil-weight",
         "min": 0.05,
         "max": 0.3
+      },
+      "sourcing": {
+        "primaryRegions": ["South Africa", "Kazakhstan", "India", "Turkey"],
+        "productionMethod": "Synthesized from chromite ore or recycled chromium sources."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Chromite mining has environmental impact"],
+      "social": [],
+      "political": [],
+      "certifications": [],
+      "notes": "Synthetic pigment derived from chromium mining. Cosmetic-grade chromium oxide is highly purified."
     },
     "references": [
       {
@@ -195,11 +255,21 @@
         "basis": "oil-weight",
         "min": 0.5,
         "max": 1
+      },
+      "sourcing": {
+        "primaryRegions": ["France (Montmorillon)", "Italy", "China", "United States"],
+        "productionMethod": "Mined and processed illite clay deposits."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": [],
+      "notes": "Named for the Montmorillon region of France. Also mined in other countries."
     },
     "references": [
       {
@@ -225,11 +295,21 @@
         "basis": "oil-weight",
         "min": 0.25,
         "max": 1
+      },
+      "sourcing": {
+        "primaryRegions": ["India", "El Salvador", "Bangladesh", "China"],
+        "productionMethod": "Extracted from Indigofera tinctoria leaves through fermentation and oxidation."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Fair Trade"],
+      "notes": "Traditional dye plant. India is the historic centre of natural indigo production."
     },
     "references": [
       {
@@ -254,11 +334,21 @@
         "basis": "oil-weight",
         "min": 0.05,
         "max": 0.3
+      },
+      "sourcing": {
+        "primaryRegions": ["Germany", "United States", "China", "India", "Brazil"],
+        "productionMethod": "Synthetic precipitation from iron salts (cosmetic grade) or mined natural deposits."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": [],
+      "notes": "Cosmetic-grade iron oxides are typically synthetic for purity and heavy metal control."
     },
     "references": [
       {
@@ -283,11 +373,21 @@
         "basis": "oil-weight",
         "min": 0.1,
         "max": 0.5
+      },
+      "sourcing": {
+        "primaryRegions": ["Germany", "United States", "China", "India", "Brazil"],
+        "productionMethod": "Synthetic precipitation from iron salts (cosmetic grade) or mined natural deposits."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": [],
+      "notes": "Cosmetic-grade iron oxides are typically synthetic for purity and heavy metal control."
     },
     "references": [
       {
@@ -312,11 +412,21 @@
         "basis": "oil-weight",
         "min": 0.1,
         "max": 0.5
+      },
+      "sourcing": {
+        "primaryRegions": ["Germany", "United States", "China", "India", "Brazil"],
+        "productionMethod": "Synthetic precipitation from iron salts (cosmetic grade) or mined natural deposits."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": [],
+      "notes": "Cosmetic-grade iron oxides are typically synthetic for purity and heavy metal control."
     },
     "references": [
       {
@@ -342,11 +452,21 @@
         "basis": "oil-weight",
         "min": 0.5,
         "max": 1
+      },
+      "sourcing": {
+        "primaryRegions": ["United States (Georgia)", "Brazil", "United Kingdom", "Germany", "China"],
+        "productionMethod": "Mined and refined from kaolinite deposits."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": [],
+      "notes": "Georgia (USA) is a major source of high-quality kaolin. Well-regulated mining industry."
     },
     "references": [
       {
@@ -372,11 +492,22 @@
         "basis": "oil-weight",
         "min": 0.25,
         "max": 2
+      },
+      "sourcing": {
+        "primaryRegions": ["India (Jharkhand, Bihar)", "Madagascar", "China", "Brazil", "United States"],
+        "productionMethod": "Natural mica mined, then coated with iron oxides in industrial process.",
+        "supplyChainNotes": "India produces ~60% of global mica. Synthetic mica is an alternative."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Illegal mining degrades forests in India"],
+      "social": ["Child labour documented in Indian mica mines (Jharkhand/Bihar)", "Unsafe working conditions in informal mining operations", "Deaths and injuries from mine collapses"],
+      "political": [],
+      "certifications": ["Responsible Mica Initiative (RMI)", "RMI verified supplier"],
+      "notes": "Indian mica mining has severe child labour and safety issues. Responsible Mica Initiative works to address concerns. Synthetic (fluorphlogopite) mica avoids mining concerns entirely. Verify sourcing from RMI members or synthetic sources."
     },
     "references": [
       {
@@ -402,11 +533,22 @@
         "basis": "oil-weight",
         "min": 0.25,
         "max": 2
+      },
+      "sourcing": {
+        "primaryRegions": ["India (Jharkhand, Bihar)", "Madagascar", "China", "Brazil", "United States"],
+        "productionMethod": "Natural mica mined, then coated with titanium dioxide in industrial process.",
+        "supplyChainNotes": "India produces ~60% of global mica. Synthetic mica is an alternative."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Illegal mining degrades forests in India"],
+      "social": ["Child labour documented in Indian mica mines (Jharkhand/Bihar)", "Unsafe working conditions in informal mining operations", "Deaths and injuries from mine collapses"],
+      "political": [],
+      "certifications": ["Responsible Mica Initiative (RMI)", "RMI verified supplier"],
+      "notes": "Indian mica mining has severe child labour and safety issues. Responsible Mica Initiative works to address concerns. Synthetic (fluorphlogopite) mica avoids mining concerns entirely. Verify sourcing from RMI members or synthetic sources."
     },
     "references": [
       {
@@ -432,11 +574,21 @@
         "basis": "oil-weight",
         "min": 0.1,
         "max": 0.5
+      },
+      "sourcing": {
+        "primaryRegions": ["Bulgaria", "Turkey", "Morocco", "Iran", "India"],
+        "productionMethod": "Cultivated Rosa spp. flowers, harvested and dried."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "EU Organic"],
+      "notes": "Often a byproduct of rose oil/water distillation. Bulgaria's Rose Valley is a major source."
     },
     "references": [
       {
@@ -462,11 +614,21 @@
         "basis": "oil-weight",
         "min": 0.5,
         "max": 2
+      },
+      "sourcing": {
+        "primaryRegions": ["China", "India", "United States", "Thailand", "Australia"],
+        "productionMethod": "Cultivated in controlled ponds or closed photobioreactors, then harvested and dried."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Sustainable microalgae cultivation. Low environmental impact compared to traditional agriculture."
     },
     "references": [
       {
@@ -491,11 +653,21 @@
         "basis": "oil-weight",
         "min": 0.1,
         "max": 1
+      },
+      "sourcing": {
+        "primaryRegions": ["China", "Australia", "South Africa", "Canada", "Mozambique"],
+        "productionMethod": "Extracted from ilmenite or rutile ore through chloride or sulfate process."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Mining operations impact local environments"],
+      "social": [],
+      "political": [],
+      "certifications": [],
+      "notes": "Major industrial mineral. China is the largest producer of titanium dioxide."
     },
     "references": [
       {
@@ -521,11 +693,21 @@
         "basis": "oil-weight",
         "min": 0.25,
         "max": 1
+      },
+      "sourcing": {
+        "primaryRegions": ["India", "Bangladesh", "Pakistan", "Indonesia", "Peru"],
+        "productionMethod": "Ground Curcuma longa rhizome, dried and powdered."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Fair Trade"],
+      "notes": "India produces ~80% of global turmeric. Important smallholder crop."
     },
     "references": [
       {
@@ -551,11 +733,21 @@
         "basis": "oil-weight",
         "min": 0.1,
         "max": 0.5
+      },
+      "sourcing": {
+        "primaryRegions": ["France", "Germany", "United States", "China"],
+        "productionMethod": "Synthetic pigment made by heating kaolin, sulfur, sodium carbonate, and carbon."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": [],
+      "notes": "Fully synthetic pigment with no mining concerns. Historical ultramarine was made from lapis lazuli."
     },
     "references": [
       {
@@ -581,11 +773,21 @@
         "basis": "oil-weight",
         "min": 0.1,
         "max": 0.5
+      },
+      "sourcing": {
+        "primaryRegions": ["France", "Germany", "United States", "China"],
+        "productionMethod": "Synthetic pigment variation of ultramarine blue process."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": [],
+      "notes": "Fully synthetic pigment with no mining concerns."
     },
     "references": [
       {
@@ -610,11 +812,21 @@
         "basis": "oil-weight",
         "min": 0.5,
         "max": 5
+      },
+      "sourcing": {
+        "primaryRegions": ["China", "Peru", "Australia", "United States", "India"],
+        "productionMethod": "Produced from zinc ore (sphalerite) or recycled zinc via direct or indirect process."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Mining operations impact local environments"],
+      "social": [],
+      "political": [],
+      "certifications": [],
+      "notes": "Major industrial mineral with established global supply chains. China is the largest producer."
     },
     "references": [
       {

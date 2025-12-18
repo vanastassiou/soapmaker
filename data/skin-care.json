@@ -14,11 +14,22 @@
         "basis": "oil-weight",
         "min": 0.1,
         "max": 1
+      },
+      "sourcing": {
+        "primaryRegions": ["Mexico", "Dominican Republic", "United States", "China", "Thailand"],
+        "productionMethod": "Aloe leaf gel concentrated and spray-dried or freeze-dried to powder form.",
+        "supplyChainNotes": "Mexico and Dominican Republic are major exporters. Most commercial aloe is cultivated, not wild-harvested."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Water-intensive cultivation in arid regions"],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Fair Trade (some producers)"],
+      "notes": "Most aloe is plantation-grown with relatively low environmental impact. Wild harvesting is rare for commercial products."
     },
     "references": [
       {
@@ -43,11 +54,22 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 10
+      },
+      "sourcing": {
+        "primaryRegions": ["Turkey", "Uzbekistan", "Iran", "Italy", "Spain", "United States"],
+        "productionMethod": "Ground from apricot pit shells, a byproduct of apricot fruit and kernel oil processing.",
+        "supplyChainNotes": "Waste stream product from food industry. Turkey is the world's largest apricot producer."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Low-impact byproduct of fruit processing industry. Upcycled agricultural waste with minimal additional environmental footprint."
     },
     "references": [
       {
@@ -71,12 +93,23 @@
         "basis": "oil-weight",
         "min": 3,
         "max": 10
+      },
+      "sourcing": {
+        "primaryRegions": ["United States", "European Union", "New Zealand", "Australia"],
+        "productionMethod": "Spray-dried buttermilk, a byproduct of butter churning.",
+        "supplyChainNotes": "Byproduct of butter production. Major dairy regions have established supply chains."
       }
     },
     "dietary": {
       "animalBased": true,
-      "commonAllergen": true,
-      "sourcingConcerns": false
+      "commonAllergen": true
+    },
+    "ethicalConcerns": {
+      "environmental": ["Dairy industry greenhouse gas emissions", "Water and land use for cattle feed"],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Certified Humane", "Animal Welfare Approved", "Pasture-Raised"],
+      "notes": "Byproduct of butter production. Environmental impact tied to broader dairy industry. Organic and pasture-raised certifications indicate higher animal welfare standards."
     },
     "references": [
       {
@@ -101,11 +134,22 @@
         "basis": "oil-weight",
         "min": 0.5,
         "max": 2
+      },
+      "sourcing": {
+        "primaryRegions": ["Brazil", "Vietnam", "Colombia", "Indonesia", "Ethiopia", "Honduras"],
+        "productionMethod": "Spent grounds from coffee brewing, dried and processed.",
+        "supplyChainNotes": "Typically upcycled waste from coffee consumption. Brazil produces ~35% of world coffee supply."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Coffee cultivation linked to deforestation in some regions", "Pesticide and agrochemical use in conventional farming", "Water-intensive processing"],
+      "social": ["Fair wage concerns for smallholder farmers", "Labour conditions on some plantations"],
+      "political": [],
+      "certifications": ["Fair Trade", "Rainforest Alliance", "UTZ Certified", "Bird Friendly", "USDA Organic"],
+      "notes": "While used grounds are upcycled waste, the broader coffee industry has significant sustainability concerns. Fair Trade and Rainforest Alliance certifications address labour and environmental practices."
     },
     "references": [
       {
@@ -129,11 +173,22 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 3
+      },
+      "sourcing": {
+        "primaryRegions": ["Russia", "Canada", "Australia", "United States", "European Union"],
+        "productionMethod": "Oat groats (Avena sativa) dehulled and finely milled to colloidal particle size.",
+        "supplyChainNotes": "Major grain crop with established global supply chains. Russia and Canada are top producers."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Non-GMO Project Verified"],
+      "notes": "Oats are a low-impact staple crop with well-established agricultural practices. Generally considered sustainable with minimal ethical concerns."
     },
     "references": [
       {
@@ -157,12 +212,23 @@
         "basis": "oil-weight",
         "min": 5,
         "max": 10
+      },
+      "sourcing": {
+        "primaryRegions": ["European Union", "China", "New Zealand", "United States", "India"],
+        "productionMethod": "Fresh goat milk spray-dried to powder form.",
+        "supplyChainNotes": "France and Netherlands are major European producers. Small-scale goat farming is common globally."
       }
     },
     "dietary": {
       "animalBased": true,
-      "commonAllergen": true,
-      "sourcingConcerns": false
+      "commonAllergen": true
+    },
+    "ethicalConcerns": {
+      "environmental": ["Livestock greenhouse gas emissions (lower than cattle)", "Land use for grazing"],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Certified Humane", "Animal Welfare Approved"],
+      "notes": "Goat dairy has lower environmental impact than cow dairy per unit. Often produced on small family farms. Animal welfare certifications available for verified humane practices."
     },
     "references": [
       {
@@ -186,11 +252,22 @@
         "basis": "oil-weight",
         "min": 3,
         "max": 7
+      },
+      "sourcing": {
+        "primaryRegions": ["United States", "Argentina", "Israel", "Peru", "Mexico", "Australia"],
+        "productionMethod": "Cold-pressed from Simmondsia chinensis seeds.",
+        "supplyChainNotes": "Desert shrub cultivation. Arizona is the historical center of production. Argentina has expanded significantly."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Fair Trade (some producers)"],
+      "notes": "Jojoba is a drought-resistant desert crop requiring minimal water and no irrigation in some regions. Replaced sperm whale oil in cosmetics, providing conservation benefit. Generally sustainable with low environmental impact."
     },
     "references": [
       {
@@ -215,11 +292,22 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 5
+      },
+      "sourcing": {
+        "primaryRegions": ["Australia", "New Zealand", "China", "United Kingdom", "South Africa"],
+        "productionMethod": "Extracted from raw sheep wool during scouring process, then refined and purified.",
+        "supplyChainNotes": "Byproduct of wool production. Australia is the world's largest wool producer."
       }
     },
     "dietary": {
-      "animalBased": true,
-      "sourcingConcerns": false
+      "animalBased": true
+    },
+    "ethicalConcerns": {
+      "environmental": ["Sheep farming land use and emissions"],
+      "social": ["Mulesing practice in Australian sheep (surgical skin removal without anaesthesia)"],
+      "political": [],
+      "certifications": ["ZQ Merino (non-mulesed)", "Responsible Wool Standard (RWS)", "IWTO Wool Traceability"],
+      "notes": "Mulesing is a controversial practice in Australian wool production involving surgical removal of skin to prevent flystrike. ZQ Merino and Responsible Wool Standard certifications prohibit mulesing. New Zealand has largely phased out mulesing. Specify non-mulesed sources for ethical sourcing."
     },
     "references": [
       {
@@ -244,11 +332,22 @@
         "basis": "oil-weight",
         "min": 0.25,
         "max": 2
+      },
+      "sourcing": {
+        "primaryRegions": ["Turkey", "Czech Republic", "Spain", "Hungary", "France", "Netherlands"],
+        "productionMethod": "Harvested from mature Papaver somniferum seed pods, cleaned and processed for food-grade use.",
+        "supplyChainNotes": "Turkey is the largest legal exporter. Seeds must be properly washed to remove alkaloid residue for food/cosmetic use."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": ["Papaver somniferum cultivation is regulated or prohibited in many countries", "Legal cultivation requires government licensing in most regions"],
+      "certifications": ["USDA Organic"],
+      "notes": "Opium poppy cultivation is heavily regulated internationally. Culinary poppy seeds are legal and widely available, but cultivation restrictions exist in many jurisdictions. Seeds for cosmetic use should be from licensed, food-grade sources."
     },
     "references": [
       {
@@ -273,11 +372,22 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 10
+      },
+      "sourcing": {
+        "primaryRegions": ["United States", "Turkey", "Greece", "Italy", "Indonesia", "Japan"],
+        "productionMethod": "Mined volcanic rock deposits, crushed and graded to particle size.",
+        "supplyChainNotes": "United States production centered in Oregon and Arizona. Natural volcanic deposits are abundant globally."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Mining operations cause localized habitat disruption", "Dust generation during extraction"],
+      "social": [],
+      "political": [],
+      "certifications": [],
+      "notes": "Pumice is a naturally abundant volcanic mineral. Mining impact is generally localized and moderate. No significant labour or political concerns associated with pumice extraction."
     },
     "references": [
       {
@@ -302,11 +412,22 @@
         "basis": "oil-weight",
         "min": 3,
         "max": 50
+      },
+      "sourcing": {
+        "primaryRegions": ["France", "United States", "Mediterranean Basin", "Dead Sea region", "Himalayas"],
+        "productionMethod": "Solar evaporation of seawater or brine, or mined from ancient sea deposits.",
+        "supplyChainNotes": "Production methods vary by region. Fleur de sel and Celtic sea salt from France command premium prices."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Microplastic contamination documented in sea salt globally", "Large-scale salt evaporation ponds can impact coastal ecosystems"],
+      "social": [],
+      "political": [],
+      "certifications": ["Kosher", "Halal", "Nature & Progrès (artisanal French sea salt)"],
+      "notes": "Studies have found microplastics in sea salt from marine pollution. Rock salt (mined from ancient deposits) avoids this concern. Artisanal sea salt from protected coastal areas may have lower contamination."
     },
     "references": [
       {

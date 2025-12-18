@@ -14,11 +14,22 @@
         "basis": "oil-weight",
         "min": 0.5,
         "max": 5
+      },
+      "sourcing": {
+        "primaryRegions": ["China", "Turkey", "Argentina", "United States", "Ethiopia"],
+        "productionMethod": "Secreted by honey bees (Apis mellifera), harvested from hive cappings and comb during honey extraction.",
+        "supplyChainNotes": "China is the largest producer. Quality varies significantly by region and processing method."
       }
     },
     "dietary": {
-      "animalBased": true,
-      "sourcingConcerns": false
+      "animalBased": true
+    },
+    "ethicalConcerns": {
+      "environmental": ["Colony collapse disorder concerns", "Pesticide impact on bee populations"],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Fair Trade (some producers)"],
+      "notes": "Bee welfare is a growing concern in commercial beekeeping. Organic certification indicates no synthetic pesticide exposure. Some vegans avoid beeswax as an animal product."
     },
     "references": [
       {
@@ -43,11 +54,22 @@
         "basis": "oil-weight",
         "min": 0.5,
         "max": 3
+      },
+      "sourcing": {
+        "primaryRegions": ["Mexico", "United States (Texas)"],
+        "productionMethod": "Extracted from Euphorbia antisyphilitica shrub stems by boiling in acidified water.",
+        "supplyChainNotes": "Mexico produces ~95% of global supply. Wild-harvested from Chihuahuan Desert region."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Wild harvesting pressure on native plant populations"],
+      "social": ["Fair trade concerns for harvesters (candelilleros)"],
+      "political": ["Mexican government regulates harvest to prevent overexploitation"],
+      "certifications": ["USDA Organic"],
+      "notes": "Candelilla harvest supports rural communities in northern Mexico. Sustainable harvesting practices are important to prevent overexploitation of wild populations."
     },
     "references": [
       {
@@ -72,11 +94,22 @@
         "basis": "oil-weight",
         "min": 0.5,
         "max": 3
+      },
+      "sourcing": {
+        "primaryRegions": ["Brazil"],
+        "productionMethod": "Scraped from dried leaves of Copernicia prunifera palm, then refined and bleached.",
+        "supplyChainNotes": "Brazil produces virtually 100% of global supply, primarily from northeastern states (Piauí, Ceará)."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": ["Seasonal work with low wages for harvesters", "Labour conditions in northeastern Brazil"],
+      "political": [],
+      "certifications": ["USDA Organic", "Fair Trade (some producers)"],
+      "notes": "Carnauba palm is not cultivated; wax is harvested from wild or semi-wild trees. Provides income for rural communities but working conditions vary. Fair trade certified sources available."
     },
     "references": [
       {
@@ -101,11 +134,22 @@
         "basis": "oil-weight",
         "min": 0.1,
         "max": 1
+      },
+      "sourcing": {
+        "primaryRegions": ["United States", "China", "South Africa", "Israel", "Spain"],
+        "productionMethod": "Extracted from Citrus paradisi seeds and pulp using glycerin or other solvents.",
+        "supplyChainNotes": "Byproduct of grapefruit juice industry. United States (Florida) and China are major producers."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Byproduct of citrus juice industry with minimal additional environmental impact. Some commercial GSE products have been found adulterated with synthetic preservatives; verify purity from reputable suppliers."
     },
     "references": [
       {
@@ -130,11 +174,22 @@
         "basis": "oil-weight",
         "min": 0.5,
         "max": 1
+      },
+      "sourcing": {
+        "primaryRegions": ["China", "Turkey", "Argentina", "Ukraine", "United States"],
+        "productionMethod": "Collected from honey bee hives, filtered and sometimes pasteurized.",
+        "supplyChainNotes": "China is the world's largest producer. Adulteration with corn syrup is a known issue in global supply chains."
       }
     },
     "dietary": {
-      "animalBased": true,
-      "sourcingConcerns": false
+      "animalBased": true
+    },
+    "ethicalConcerns": {
+      "environmental": ["Colony collapse disorder threatens bee populations", "Pesticide exposure affects bee health"],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "True Source Certified", "Fair Trade"],
+      "notes": "Honey adulteration is widespread; True Source certification verifies origin. Colony collapse disorder is a serious environmental concern. Some vegans avoid honey as an animal product."
     },
     "references": [
       {
@@ -159,11 +214,22 @@
         "basis": "oil-weight",
         "min": 0.02,
         "max": 0.1
+      },
+      "sourcing": {
+        "primaryRegions": ["Spain", "Morocco", "Tunisia", "Turkey", "United States"],
+        "productionMethod": "Supercritical CO2 extraction or solvent extraction from Rosmarinus officinalis leaves.",
+        "supplyChainNotes": "Mediterranean region is the traditional production center. Spain is a major producer."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Non-GMO Project Verified"],
+      "notes": "Rosemary is a widely cultivated herb with established sustainable farming practices. Low environmental and social concerns."
     },
     "references": [
       {
@@ -188,11 +254,22 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 5
+      },
+      "sourcing": {
+        "primaryRegions": ["China", "India", "Japan", "Brazil", "Thailand"],
+        "productionMethod": "Hydrolyzed from Bombyx mori (mulberry silkworm) cocoons using enzymes or acids.",
+        "supplyChainNotes": "China produces ~80% of world silk supply. Silkworms are typically killed during cocoon harvesting."
       }
     },
     "dietary": {
-      "animalBased": true,
-      "sourcingConcerns": false
+      "animalBased": true
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic (for mulberry cultivation)"],
+      "notes": "Conventional silk production kills silkworms during cocoon processing. 'Peace silk' or 'Ahimsa silk' allows moths to emerge before harvesting, though this is rare for cosmetic-grade silk amino acids."
     },
     "references": [
       {
@@ -217,11 +294,22 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 3
+      },
+      "sourcing": {
+        "primaryRegions": ["United States", "European Union", "China", "Brazil"],
+        "productionMethod": "Produced by neutralizing lactic acid (from corn or sugar fermentation) with sodium hydroxide.",
+        "supplyChainNotes": "Usually derived from fermented plant sugars (corn, beet, cane). Major industrial chemical with global supply chains."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["Non-GMO Project Verified"],
+      "notes": "Typically derived from plant fermentation. Non-GMO certification available for those avoiding GMO corn-derived products."
     },
     "references": [
       {
@@ -245,11 +333,22 @@
         "basis": "oil-weight",
         "min": 0.5,
         "max": 1
+      },
+      "sourcing": {
+        "primaryRegions": ["Brazil", "India", "Thailand", "China", "United States"],
+        "productionMethod": "Extracted and refined from sugarcane (Saccharum officinarum) or sugar beet (Beta vulgaris).",
+        "supplyChainNotes": "Brazil is the world's largest producer and exporter. Cane sugar dominates tropical regions; beet sugar is common in temperate climates."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Sugarcane cultivation linked to habitat loss", "Water-intensive crop", "Agricultural runoff affects water quality"],
+      "social": ["Historical and ongoing labour rights concerns in sugarcane industry", "Fair wage issues for cane cutters"],
+      "political": [],
+      "certifications": ["Fair Trade", "Bonsucro", "USDA Organic"],
+      "notes": "Sugar industry has significant labour and environmental concerns, particularly in sugarcane production. Fair Trade and Bonsucro certifications address labour conditions and environmental practices."
     },
     "references": [
       {
@@ -274,11 +373,22 @@
         "basis": "oil-weight",
         "min": 0.5,
         "max": 1
+      },
+      "sourcing": {
+        "primaryRegions": ["China", "United States", "India", "Germany", "Australia"],
+        "productionMethod": "Mined from underground deposits (rock salt) or evaporated from seawater/brine.",
+        "supplyChainNotes": "Major industrial commodity with global supply chains. China and United States are largest producers."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["Kosher", "Halal"],
+      "notes": "Widely available commodity with minimal ethical concerns. Mined salt avoids microplastic contamination found in some sea salt."
     },
     "references": [
       {
@@ -303,11 +413,22 @@
         "basis": "oil-weight",
         "min": 0.1,
         "max": 0.5
+      },
+      "sourcing": {
+        "primaryRegions": ["India", "China", "Japan"],
+        "productionMethod": "Harvested from wild Antheraea (tussah/tasar) moth cocoons after moth emergence, or from broken cocoons.",
+        "supplyChainNotes": "Wild silk from forest-fed moths. India is the largest tussah silk producer. Often collected after moth emergence."
       }
     },
     "dietary": {
-      "animalBased": true,
-      "sourcingConcerns": false
+      "animalBased": true
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": ["Supports rural/tribal communities in India"],
+      "political": [],
+      "certifications": [],
+      "notes": "Tussah silk is often considered more ethical than mulberry silk because cocoons are frequently collected after moth emergence (peace silk). However, practices vary by source. Supports forest-dependent communities in India."
     },
     "references": [
       {
@@ -332,11 +453,22 @@
         "basis": "oil-weight",
         "min": 0.01,
         "max": 0.05
+      },
+      "sourcing": {
+        "primaryRegions": ["United States", "China", "Argentina", "Brazil", "European Union"],
+        "productionMethod": "Extracted from vegetable oils (soybean, sunflower, wheat germ) or synthesized chemically.",
+        "supplyChainNotes": "Natural vitamin E typically extracted from soybean oil deodorizer distillate. Synthetic forms are common."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["If soy-derived, may be linked to soy cultivation concerns"],
+      "social": [],
+      "political": [],
+      "certifications": ["Non-GMO Project Verified", "USDA Organic"],
+      "notes": "Natural vitamin E is often derived from soybean oil processing. Non-GMO and sunflower-derived options available for those avoiding GMO soy. Synthetic vitamin E (dl-alpha-tocopherol) is petroleum-derived."
     },
     "references": [
       {

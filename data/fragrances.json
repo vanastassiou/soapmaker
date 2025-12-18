@@ -32,11 +32,22 @@
         "basis": "oil-weight",
         "min": 1.5,
         "max": 4
+      },
+      "sourcing": {
+        "primaryRegions": ["Italy (Calabria)", "Ivory Coast"],
+        "productionMethod": "Cold-pressed from Citrus bergamia peel, then furocoumarins removed for FCF grade.",
+        "supplyChainNotes": "Calabria, Italy produces ~80% of global bergamot oil."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "EU Organic"],
+      "notes": "Production concentrated in Calabria supports local agricultural economy. FCF processing adds cost but removes phototoxic compounds."
     },
     "references": [
       {
@@ -78,11 +89,22 @@
         "basis": "oil-weight",
         "min": 2,
         "max": 4
+      },
+      "sourcing": {
+        "primaryRegions": ["Morocco", "Algeria", "United States", "China"],
+        "productionMethod": "Steam-distilled from Cedrus atlantica wood and sawdust.",
+        "supplyChainNotes": "Atlas cedar (Morocco/Algeria) is the traditional source. Texas cedarwood comes from Juniperus species."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Overharvesting of wild cedar in some North African regions"],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Moroccan Atlas cedar faces some harvesting pressure. Sustainable forestry practices vary by supplier."
     },
     "references": [
       {
@@ -125,11 +147,21 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 3
+      },
+      "sourcing": {
+        "primaryRegions": ["France", "Russia", "Hungary", "United States"],
+        "productionMethod": "Steam-distilled from Salvia sclarea flowering tops."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "EU Organic"],
+      "notes": "Cultivated herb with established agricultural supply chains."
     },
     "references": [
       {
@@ -182,11 +214,21 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 3
+      },
+      "sourcing": {
+        "primaryRegions": ["Australia", "China", "Portugal", "Spain", "South Africa"],
+        "productionMethod": "Steam-distilled from Eucalyptus globulus leaves."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "EU Organic"],
+      "notes": "Widely cultivated tree with abundant global supply. Australia is the primary producer of high-quality globulus oil."
     },
     "references": [
       {
@@ -239,11 +281,22 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 3
+      },
+      "sourcing": {
+        "primaryRegions": ["Somalia", "Ethiopia", "Oman", "Yemen", "India"],
+        "productionMethod": "Steam-distilled from Boswellia carterii resin (oleo-gum-resin).",
+        "supplyChainNotes": "Resin harvested by tapping wild Boswellia trees. Somali frankincense is highly valued."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Overharvesting threatens wild Boswellia populations", "Climate change affecting tree viability"],
+      "social": ["Harvesters in Somalia/Ethiopia often receive low wages", "Conflict regions affect supply"],
+      "political": ["Instability in Horn of Africa affects supply chains"],
+      "certifications": ["Fair Trade", "Fairly Traded"],
+      "notes": "Boswellia trees face sustainability concerns from overtapping and climate stress. Somali supply chains affected by regional instability. Fair Trade options help support harvesters."
     },
     "references": [
       {
@@ -286,11 +339,22 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 2.5
+      },
+      "sourcing": {
+        "primaryRegions": ["Egypt", "China", "South Africa", "Morocco", "Réunion Island"],
+        "productionMethod": "Steam-distilled from Pelargonium graveolens leaves.",
+        "supplyChainNotes": "Egyptian and Réunion geranium oils are considered premium grades."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Fair Trade"],
+      "notes": "Cultivated crop supporting small farmers in Egypt and South Africa."
     },
     "references": [
       {
@@ -338,11 +402,22 @@
         "basis": "oil-weight",
         "min": 2,
         "max": 4
+      },
+      "sourcing": {
+        "primaryRegions": ["United States (Florida, Texas, California)", "Israel", "South Africa"],
+        "productionMethod": "Cold-pressed from Citrus paradisi peel.",
+        "supplyChainNotes": "Byproduct of citrus juice industry."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Sustainable byproduct of grapefruit juice production."
     },
     "references": [
       {
@@ -390,11 +465,22 @@
         "basis": "oil-weight",
         "min": 2,
         "max": 3
+      },
+      "sourcing": {
+        "primaryRegions": ["France (Provence)", "Bulgaria", "United Kingdom", "United States", "Australia"],
+        "productionMethod": "Steam-distilled from Lavandula angustifolia flowers.",
+        "supplyChainNotes": "French and Bulgarian lavender oils are considered highest quality."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "EU Organic", "AOC (France)"],
+      "notes": "Well-established cultivated crop. French Provence lavender has protected origin designation."
     },
     "references": [
       {
@@ -437,11 +523,21 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 2.5
+      },
+      "sourcing": {
+        "primaryRegions": ["India", "Guatemala", "China", "Indonesia", "Sri Lanka"],
+        "productionMethod": "Steam-distilled from Cymbopogon flexuosus leaves."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Fair Trade"],
+      "notes": "Fast-growing tropical grass supporting smallholder farmers in Asia and Central America."
     },
     "references": [
       {
@@ -484,11 +580,21 @@
         "basis": "oil-weight",
         "min": 2,
         "max": 4
+      },
+      "sourcing": {
+        "primaryRegions": ["Mexico", "Peru", "Brazil", "West Indies"],
+        "productionMethod": "Steam-distilled from Citrus aurantifolia peel (distilled grade is non-phototoxic)."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Byproduct of lime juice industry. Mexico is the largest producer."
     },
     "references": [
       {
@@ -535,11 +641,21 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 2.5
+      },
+      "sourcing": {
+        "primaryRegions": ["China", "Vietnam", "Taiwan", "Indonesia"],
+        "productionMethod": "Steam-distilled from Litsea cubeba fruits."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Cultivated small tree. China is the primary producer. Sustainable alternative to lemongrass with better scent retention."
     },
     "references": [
       {
@@ -577,11 +693,22 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 3
+      },
+      "sourcing": {
+        "primaryRegions": ["Indonesia", "India", "China", "Malaysia", "Philippines"],
+        "productionMethod": "Steam-distilled from dried and fermented Pogostemon cablin leaves.",
+        "supplyChainNotes": "Indonesia (Sumatra) produces ~80% of global patchouli oil."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Fair Trade"],
+      "notes": "Supports smallholder farmers in Indonesia. Quality improves with leaf fermentation before distillation."
     },
     "references": [
       {
@@ -631,11 +758,22 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 3
+      },
+      "sourcing": {
+        "primaryRegions": ["United States (Oregon, Washington, Indiana)", "India", "China"],
+        "productionMethod": "Steam-distilled from Mentha piperita leaves.",
+        "supplyChainNotes": "US produces highest quality peppermint oil. Pacific Northwest and Midwest are primary growing regions."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Well-established agricultural crop with global supply chains."
     },
     "references": [
       {
@@ -688,11 +826,21 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 3
+      },
+      "sourcing": {
+        "primaryRegions": ["Morocco", "Tunisia", "Spain", "Turkey", "United States"],
+        "productionMethod": "Steam-distilled from Rosmarinus officinalis leaves and flowering tops."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "EU Organic"],
+      "notes": "Widely cultivated Mediterranean herb with established supply chains."
     },
     "references": [
       {
@@ -735,11 +883,22 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 3
+      },
+      "sourcing": {
+        "primaryRegions": ["India", "Australia", "Indonesia", "New Caledonia"],
+        "productionMethod": "Steam-distilled from Santalum album heartwood.",
+        "supplyChainNotes": "Trees require 15-30 years to mature. Indian sandalwood is heavily regulated due to overexploitation."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": true
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Wild Indian sandalwood severely overexploited", "Santalum album listed as Vulnerable on IUCN Red List", "Illegal harvesting widespread in India"],
+      "social": ["Smuggling associated with organized crime in India"],
+      "political": ["Export restrictions from India", "CITES considerations for some species"],
+      "certifications": ["FSC", "Australian Sandalwood Association certification"],
+      "notes": "East Indian sandalwood (Santalum album) faces severe sustainability concerns. Australian plantation sandalwood (S. spicatum or S. album) is a more sustainable alternative. Verify sourcing carefully."
     },
     "references": [
       {
@@ -782,11 +941,21 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 3
+      },
+      "sourcing": {
+        "primaryRegions": ["United States", "China", "India"],
+        "productionMethod": "Steam-distilled from Mentha spicata leaves."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Widely cultivated mint variety with abundant supply."
     },
     "references": [
       {
@@ -838,11 +1007,22 @@
         "basis": "oil-weight",
         "min": 2,
         "max": 4
+      },
+      "sourcing": {
+        "primaryRegions": ["Brazil", "United States (Florida)", "Mexico", "Italy", "Spain"],
+        "productionMethod": "Cold-pressed from Citrus sinensis peel.",
+        "supplyChainNotes": "Byproduct of orange juice industry. Brazil is world's largest producer."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Sustainable byproduct of orange juice production. Abundant and affordable."
     },
     "references": [
       {
@@ -900,11 +1080,22 @@
         "basis": "oil-weight",
         "min": 1,
         "max": 3
+      },
+      "sourcing": {
+        "primaryRegions": ["Australia", "China", "Zimbabwe"],
+        "productionMethod": "Steam-distilled from Melaleuca alternifolia leaves.",
+        "supplyChainNotes": "Australia produces highest quality tea tree oil. Most Australian production is from New South Wales."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Australian Certified Organic"],
+      "notes": "Australian tea tree is a well-established plantation crop. Quality standards are regulated by ISO 4730."
     },
     "references": [
       {
@@ -962,11 +1153,22 @@
         "basis": "oil-weight",
         "min": 0.5,
         "max": 2
+      },
+      "sourcing": {
+        "primaryRegions": ["Haiti", "Indonesia", "India", "Réunion Island", "Brazil"],
+        "productionMethod": "Steam-distilled from Vetiveria zizanioides roots.",
+        "supplyChainNotes": "Haitian vetiver is considered highest quality. Root harvesting requires replanting."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": ["Haitian vetiver industry faces economic instability"],
+      "political": ["Political instability in Haiti affects supply"],
+      "certifications": ["Fair Trade", "USDA Organic"],
+      "notes": "Vetiver cultivation supports rural livelihoods in Haiti and Indonesia. Fair Trade programs help stabilize income for Haitian farmers. Vetiver grass also prevents soil erosion."
     },
     "references": [
       {
@@ -1021,11 +1223,22 @@
         "basis": "oil-weight",
         "min": 0.5,
         "max": 2
+      },
+      "sourcing": {
+        "primaryRegions": ["Madagascar", "Comoros Islands", "Indonesia", "Philippines"],
+        "productionMethod": "Steam-distilled from Cananga odorata flowers (fractional distillation produces grades I-IV; complete is unfractionated).",
+        "supplyChainNotes": "Madagascar and Comoros produce majority of global supply."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": ["Distillation is labour-intensive and often low-paid work"],
+      "political": ["Political instability in Comoros affects supply"],
+      "certifications": ["Fair Trade", "USDA Organic"],
+      "notes": "Ylang ylang cultivation supports rural communities in Madagascar and Comoros. Fair Trade certification helps improve worker conditions."
     },
     "references": [
       {

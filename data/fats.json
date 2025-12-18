@@ -30,11 +30,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Morocco"],
+        "productionMethod": "Cold-pressed or mechanically extracted from Argania spinosa kernels. Traditional production involves hand-cracking nuts and grinding kernels.",
+        "supplyChainNotes": "Morocco is the sole commercial producer. UNESCO-protected argan forest ecosystem."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Argan forest ecosystem under pressure from climate change and overgrazing"],
+      "social": ["Fair compensation for women's cooperatives varies widely", "Traditional knowledge appropriation concerns"],
+      "political": [],
+      "certifications": ["Fair Trade", "EcoCert", "USDA Organic"],
+      "notes": "Women's cooperatives have historically provided income to rural Berber women. Look for cooperative-sourced products with fair trade certification."
     },
     "references": [
       {
@@ -75,11 +86,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Turkey", "Iran", "Uzbekistan", "China", "Italy"],
+        "productionMethod": "Cold-pressed from apricot kernels, a byproduct of the dried fruit and fresh fruit industries."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Generally low concern as kernels are a byproduct of fruit processing. Supply chain is well-established."
     },
     "references": [
       {
@@ -120,11 +141,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Mexico", "Peru", "Chile", "Kenya", "South Africa", "United States"],
+        "productionMethod": "Mechanically pressed from avocado fruit flesh, often from fruit unsuitable for fresh market.",
+        "supplyChainNotes": "Mexico produces ~30% of world supply. Oil can be extracted from cosmetically imperfect fruit."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["High water consumption (estimated 320 litres per fruit)", "Deforestation for new plantations in Mexico and Peru"],
+      "social": ["Cartel involvement in Mexican avocado regions (Michoacán)", "Labour exploitation reported in some regions"],
+      "political": [],
+      "certifications": ["Fair Trade", "Rainforest Alliance", "USDA Organic"],
+      "notes": "Mexican sourcing carries higher social risk. Consider sourcing from regions with better oversight like Kenya or California."
     },
     "references": [
       {
@@ -165,11 +197,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Brazil"],
+        "productionMethod": "Hand-harvested nuts cracked and cold-pressed. Wild-harvested from native babassu forests in northeastern Brazil.",
+        "supplyChainNotes": "Endemic to Brazil. Collected by traditional 'quebradeiras de coco' (nut breakers), predominantly women."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Native babassu forests under pressure from cattle ranching and soy expansion"],
+      "social": ["Important income source for rural communities", "Land rights disputes affect harvester access"],
+      "political": [],
+      "certifications": ["Fair Trade", "USDA Organic"],
+      "notes": "Considered a sustainable palm oil alternative when ethically sourced. Supports traditional livelihoods. Look for community-sourced products."
     },
     "references": [
       {
@@ -210,11 +253,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["United States", "Brazil", "Australia", "Argentina", "European Union"],
+        "productionMethod": "Rendered from beef fat, a byproduct of the meat industry. Fat is heated to separate from connective tissue.",
+        "supplyChainNotes": "Byproduct of beef processing. Quality varies by cattle diet (grass-fed vs grain-fed)."
       }
     },
     "dietary": {
-      "animalBased": true,
-      "sourcingConcerns": false
+      "animalBased": true
+    },
+    "ethicalConcerns": {
+      "environmental": ["Cattle ranching contributes to deforestation (especially in Amazon)", "High methane emissions from cattle", "Significant water and land use"],
+      "social": ["Animal welfare concerns in industrial farming"],
+      "political": [],
+      "certifications": ["Certified Humane", "Animal Welfare Approved", "Grass-fed certified", "USDA Organic"],
+      "notes": "Byproduct utilization reduces waste. Consider sourcing from grass-fed, pasture-raised, or local small-scale farms. Brazilian beef linked to deforestation."
     },
     "references": [
       {
@@ -255,11 +309,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Egypt", "India", "Turkey", "Syria", "Pakistan"],
+        "productionMethod": "Cold-pressed from Nigella sativa seeds. Traditional cultivation in Middle East and South Asia."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": ["Syrian conflict has disrupted traditional supply chains"],
+      "certifications": ["USDA Organic"],
+      "notes": "Low environmental impact crop. Syrian sourcing may be affected by ongoing conflict."
     },
     "references": [
       {
@@ -300,11 +364,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["China", "Japan", "South Korea", "Vietnam"],
+        "productionMethod": "Cold-pressed from Camellia oleifera seeds. Traditional oil in East Asian cuisine and cosmetics."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Well-established crop with low environmental impact. Perennial tree crop that provides habitat."
     },
     "references": [
       {
@@ -345,11 +419,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Canada", "European Union", "China", "Australia", "United States"],
+        "productionMethod": "Mechanically pressed or solvent-extracted from rapeseed. Large-scale industrial agriculture.",
+        "supplyChainNotes": "Canada is the world's largest producer and exporter."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Majority of North American canola is GMO", "Pesticide use in conventional farming", "Monoculture farming practices"],
+      "social": [],
+      "political": [],
+      "certifications": ["Non-GMO Project Verified", "USDA Organic"],
+      "notes": "Non-GMO and organic options available but at higher cost. Conventional canola widely uses glyphosate."
     },
     "references": [
       {
@@ -390,11 +475,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 90
+      },
+      "sourcing": {
+        "primaryRegions": ["India", "China", "Brazil", "Mozambique"],
+        "productionMethod": "Cold-pressed or solvent-extracted from castor beans. India produces ~90% of global supply."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": ["Child labour reported in some Indian production regions", "Exposure to toxic ricin during processing poses worker safety risks"],
+      "political": [],
+      "certifications": ["USDA Organic", "Fair Trade"],
+      "notes": "Seeds contain toxic ricin which is removed during processing. Look for suppliers with verified labour practices."
     },
     "references": [
       {
@@ -435,11 +530,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Côte d'Ivoire", "Ghana", "Indonesia", "Ecuador", "Cameroon"],
+        "productionMethod": "Hydraulic pressing of roasted cocoa beans. Byproduct of chocolate production.",
+        "supplyChainNotes": "West Africa produces ~70% of world cocoa. Complex multi-tier supply chain."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Deforestation for cocoa plantations in West Africa", "Biodiversity loss in tropical forests"],
+      "social": ["Child labour and forced labour documented in West African cocoa farming", "Farmer poverty despite high global demand"],
+      "political": [],
+      "certifications": ["Fair Trade", "Rainforest Alliance", "UTZ Certified", "USDA Organic"],
+      "notes": "Cocoa industry has significant child labour concerns. Fair Trade certification addresses farmer income and labour standards."
     },
     "references": [
       {
@@ -480,12 +586,23 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Philippines", "Indonesia", "India", "Sri Lanka", "Vietnam"],
+        "productionMethod": "Cold-pressed or expeller-pressed from dried coconut meat (copra). Unrefined (virgin) vs refined options available.",
+        "supplyChainNotes": "Philippines and Indonesia dominate global production. Small-holder farmers produce most coconuts."
       }
     },
     "dietary": {
       "animalBased": false,
-      "commonAllergen": true,
-      "sourcingConcerns": false
+      "commonAllergen": true
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": ["Fair wage concerns for small-holder farmers", "Coconut farmers often receive low prices for harvest"],
+      "political": [],
+      "certifications": ["Fair Trade", "USDA Organic", "Fair for Life"],
+      "notes": "Coconut palms are generally sustainable perennial crops. Fair trade addresses farmer income inequality."
     },
     "references": [
       {
@@ -526,12 +643,23 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Philippines", "Indonesia", "India", "Sri Lanka", "Vietnam"],
+        "productionMethod": "Hydrogenated coconut oil processed to raise melting point. Additional industrial processing step.",
+        "supplyChainNotes": "Same source regions as regular coconut oil."
       }
     },
     "dietary": {
       "animalBased": false,
-      "commonAllergen": true,
-      "sourcingConcerns": false
+      "commonAllergen": true
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": ["Fair wage concerns for small-holder farmers"],
+      "political": [],
+      "certifications": ["Fair Trade", "USDA Organic"],
+      "notes": "Same sourcing concerns as regular coconut oil. Hydrogenation adds industrial processing."
     },
     "references": [
       {
@@ -572,11 +700,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Brazil"],
+        "productionMethod": "Cold-pressed from cupuacu seeds. Native to Amazon basin, related to cocoa.",
+        "supplyChainNotes": "Endemic to Brazilian Amazon. Often wild-harvested or from agroforestry systems."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Amazon deforestation pressures habitat"],
+      "social": ["Supports indigenous and local communities when sustainably sourced"],
+      "political": [],
+      "certifications": ["Fair Trade", "USDA Organic", "Rainforest Alliance"],
+      "notes": "Can support sustainable Amazon livelihoods when sourced from agroforestry or wild-harvest programs."
     },
     "references": [
       {
@@ -617,11 +756,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["China", "India", "United States", "Pakistan", "Brazil"],
+        "productionMethod": "Solvent-extracted or expeller-pressed from cottonseeds, a byproduct of cotton textile industry."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Cotton is one of the most pesticide-intensive crops", "High water consumption", "Majority of cotton is GMO"],
+      "social": ["Forced labour documented in Uzbekistan and Xinjiang cotton production", "Child labour in some regions"],
+      "political": ["Xinjiang cotton linked to Uyghur forced labour concerns"],
+      "certifications": ["USDA Organic", "Fair Trade Cotton", "Better Cotton Initiative", "Non-GMO Project Verified"],
+      "notes": "Conventional cotton production has significant environmental and social concerns. Organic and Fair Trade options address many issues."
     },
     "references": [
       {
@@ -662,11 +811,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["United States", "New Zealand", "Europe", "Canada"],
+        "productionMethod": "Rendered from deer fat, typically a byproduct of venison production from farmed or hunted deer."
       }
     },
     "dietary": {
-      "animalBased": true,
-      "sourcingConcerns": false
+      "animalBased": true
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": ["Animal welfare varies by farming practices"],
+      "political": [],
+      "certifications": ["Certified Humane"],
+      "notes": "Byproduct of venison industry. Wild-harvested deer from regulated hunting has lower environmental impact than farmed."
     },
     "references": [
       {
@@ -707,11 +866,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["France", "China", "United States", "United Kingdom"],
+        "productionMethod": "Rendered from duck fat, a byproduct of duck meat and foie gras production."
       }
     },
     "dietary": {
-      "animalBased": true,
-      "sourcingConcerns": false
+      "animalBased": true
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": ["Foie gras production involves force-feeding (gavage), banned in many jurisdictions", "Animal welfare concerns in intensive duck farming"],
+      "political": [],
+      "certifications": ["Certified Humane", "Animal Welfare Approved"],
+      "notes": "Foie gras-sourced fat has significant animal welfare concerns. Look for fat from non-gavage duck operations."
     },
     "references": [
       {
@@ -752,11 +921,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Australia", "United States"],
+        "productionMethod": "Rendered from emu fat, byproduct of emu farming for meat and leather.",
+        "supplyChainNotes": "Emus are native to Australia. US has significant farming operations."
       }
     },
     "dietary": {
-      "animalBased": true,
-      "sourcingConcerns": false
+      "animalBased": true
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": ["Animal welfare concerns in intensive emu farming"],
+      "political": [],
+      "certifications": ["AEA Certified (American Emu Association)"],
+      "notes": "Byproduct of emu farming. Quality and ethical standards vary by farm."
     },
     "references": [
       {
@@ -797,11 +977,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Canada", "Russia", "Kazakhstan", "China", "United States"],
+        "productionMethod": "Cold-pressed from flax seeds. Canada is the world's largest producer."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Non-GMO Project Verified"],
+      "notes": "Low environmental impact crop. Can be grown in rotation with other crops, improving soil health."
     },
     "references": [
       {
@@ -842,12 +1032,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Philippines", "Indonesia", "Malaysia"],
+        "productionMethod": "Coconut oil fractionated to isolate medium-chain triglycerides (MCT). Industrial processing."
       }
     },
     "dietary": {
       "animalBased": false,
-      "commonAllergen": true,
-      "sourcingConcerns": false
+      "commonAllergen": true
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": ["Same farmer income concerns as regular coconut oil"],
+      "political": [],
+      "certifications": ["Fair Trade", "USDA Organic"],
+      "notes": "Additional industrial processing over regular coconut oil. Same sourcing concerns apply."
     },
     "references": [
       {
@@ -888,11 +1088,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["China", "India", "Nigeria", "Pakistan", "Bangladesh"],
+        "productionMethod": "Rendered from goat fat, a byproduct of goat meat production."
       }
     },
     "dietary": {
-      "animalBased": true,
-      "sourcingConcerns": false
+      "animalBased": true
+    },
+    "ethicalConcerns": {
+      "environmental": ["Lower environmental impact than cattle"],
+      "social": ["Animal welfare varies by farming practices"],
+      "political": [],
+      "certifications": ["Certified Humane", "Animal Welfare Approved"],
+      "notes": "Byproduct of goat meat industry. Goats have lower environmental impact than cattle. Often raised on small-scale farms."
     },
     "references": [
       {
@@ -933,11 +1143,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["France", "Hungary", "Poland", "China"],
+        "productionMethod": "Rendered from goose fat, byproduct of goose meat and foie gras production."
       }
     },
     "dietary": {
-      "animalBased": true,
-      "sourcingConcerns": false
+      "animalBased": true
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": ["Foie gras production involves force-feeding (gavage)", "Animal welfare concerns in intensive farming"],
+      "political": [],
+      "certifications": ["Certified Humane", "Animal Welfare Approved"],
+      "notes": "Similar concerns to duck fat. Foie gras-sourced fat has significant animal welfare concerns."
     },
     "references": [
       {
@@ -978,11 +1198,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Italy", "France", "Spain", "United States", "Argentina"],
+        "productionMethod": "Expeller-pressed or solvent-extracted from grape seeds, a byproduct of wine production."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Sustainable byproduct of wine industry. Upcycles waste material that would otherwise be discarded."
     },
     "references": [
       {
@@ -1023,12 +1253,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Turkey", "Italy", "United States", "Azerbaijan", "Georgia"],
+        "productionMethod": "Cold-pressed from hazelnuts. Turkey produces ~70% of world supply."
       }
     },
     "dietary": {
       "animalBased": false,
-      "commonAllergen": true,
-      "sourcingConcerns": false
+      "commonAllergen": true
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": ["Child labour reported in Turkish hazelnut harvest", "Migrant worker exploitation documented"],
+      "political": [],
+      "certifications": ["Fair Trade", "Rainforest Alliance", "USDA Organic"],
+      "notes": "Turkish hazelnuts have documented child labour and migrant worker concerns. Fair Trade certification helps address these issues."
     },
     "references": [
       {
@@ -1069,11 +1309,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Canada", "France", "China", "United States", "Romania"],
+        "productionMethod": "Cold-pressed from hemp seeds. Industrial hemp (low THC) is legal in most jurisdictions."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": ["Legal status varies by jurisdiction due to cannabis association"],
+      "certifications": ["USDA Organic", "Non-GMO Project Verified"],
+      "notes": "Environmentally beneficial crop requiring few pesticides. Growing demand supports sustainable agriculture."
     },
     "references": [
       {
@@ -1114,11 +1364,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Ukraine", "Russia", "Argentina", "France", "United States"],
+        "productionMethod": "Expeller-pressed or solvent-extracted from hybrid sunflower seeds bred for high oleic content."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": ["Ukraine conflict has disrupted global sunflower oil supply (major producer)"],
+      "certifications": ["USDA Organic", "Non-GMO Project Verified"],
+      "notes": "Non-GMO high-oleic varieties developed through conventional breeding. Ukraine conflict affects supply and pricing."
     },
     "references": [
       {
@@ -1159,11 +1419,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Malaysia", "Indonesia"],
+        "productionMethod": "Extracted from Shorea stenoptera nuts, a Dipterocarp tree native to Borneo rainforests.",
+        "supplyChainNotes": "Wild-harvested from tropical rainforests. Trees cannot be cultivated commercially."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Tropical rainforest habitat under threat", "Over-harvesting concerns for wild populations"],
+      "social": ["Supports indigenous forest communities when sustainably harvested"],
+      "political": [],
+      "certifications": ["FSC (Forest Stewardship Council)", "Rainforest Alliance"],
+      "notes": "Wild-harvested from endangered rainforest habitat. Sustainable sourcing crucial for forest conservation."
     },
     "references": [
       {
@@ -1204,11 +1475,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["India"],
+        "productionMethod": "Extracted from Garcinia indica seeds. Endemic to Western Ghats of India.",
+        "supplyChainNotes": "Wild-harvested from forests and cultivated in home gardens. Traditional Indian product."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Wild populations under pressure from habitat loss"],
+      "social": ["Supports rural Indian communities"],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Endemic to India's Western Ghats biodiversity hotspot. Sustainable harvesting supports conservation."
     },
     "references": [
       {
@@ -1249,11 +1531,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Hawaii", "Pacific Islands"],
+        "productionMethod": "Cold-pressed from kukui nuts. State tree of Hawaii. Traditional Polynesian use.",
+        "supplyChainNotes": "Hawaiian production supports local agriculture. Also grows wild across Pacific Islands."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": ["Supports Hawaiian and Pacific Island communities"],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Traditional Hawaiian product. Local sourcing supports island economies and preserves cultural practices."
     },
     "references": [
       {
@@ -1294,12 +1587,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Australia", "South Africa", "Kenya", "Hawaii", "China"],
+        "productionMethod": "Cold-pressed from macadamia nuts. Native to Australian rainforests."
       }
     },
     "dietary": {
       "animalBased": false,
-      "commonAllergen": true,
-      "sourcingConcerns": false
+      "commonAllergen": true
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Rainforest Alliance"],
+      "notes": "Well-established perennial crop. Australian and Hawaiian production generally have good labour standards."
     },
     "references": [
       {
@@ -1340,11 +1643,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["India", "Pakistan", "Mexico", "Thailand", "Philippines"],
+        "productionMethod": "Extracted from mango seed kernels, a byproduct of mango fruit processing."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Sustainable byproduct of mango fruit industry. Upcycles waste material. India is world's largest mango producer."
     },
     "references": [
       {
@@ -1385,11 +1698,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["United States (Oregon, Washington)"],
+        "productionMethod": "Cold-pressed from Limnanthes alba seeds, a crop developed specifically for the oilseed industry."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Meadowfoam is primarily grown in the Pacific Northwest US as an alternative rotation crop. Supports local agriculture and does not compete with food crops."
     },
     "references": [
       {
@@ -1435,11 +1758,22 @@
         "behenic": 7,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["India", "Philippines", "Africa (various)", "Central America"],
+        "productionMethod": "Cold-pressed or solvent-extracted from Moringa oleifera seeds.",
+        "supplyChainNotes": "Moringa is often promoted as a sustainable crop for developing regions due to drought tolerance."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Fair Trade"],
+      "notes": "Moringa cultivation supports smallholder farmers in tropical regions. The tree is fast-growing and drought-resistant, requiring minimal inputs."
     },
     "references": [
       {
@@ -1480,11 +1814,21 @@
         "behenic": 0,
         "erucic": 35,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["India", "Bangladesh", "Nepal", "Canada"],
+        "productionMethod": "Cold-pressed or expeller-pressed from Brassica species seeds."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Traditional cooking oil in South Asia. Large-scale production in Canada uses low-erucic varieties."
     },
     "references": [
       {
@@ -1525,11 +1869,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["India", "Pakistan", "Bangladesh", "Sri Lanka", "Africa (various)"],
+        "productionMethod": "Cold-pressed or solvent-extracted from Azadirachta indica seeds."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Neem trees are widely cultivated in South Asia and Africa. Traditional medicine and agricultural uses support local economies."
     },
     "references": [
       {
@@ -1575,11 +1929,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Spain", "Italy", "Greece", "Tunisia", "Turkey", "Morocco", "Portugal"],
+        "productionMethod": "Cold-pressed (extra virgin) or refined from Olea europaea fruit.",
+        "supplyChainNotes": "Mediterranean region dominates global production. Spain alone produces nearly half of world supply."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Intensive irrigation in water-scarce regions", "Monoculture farming in some areas"],
+      "social": ["Seasonal migrant labour exploitation documented in some European harvests"],
+      "political": [],
+      "certifications": ["USDA Organic", "EU Organic", "PDO/PGI designations"],
+      "notes": "Large-scale olive farming has environmental impacts in water-stressed Mediterranean regions. Premium extra virgin oils often support smaller producers."
     },
     "references": [
       {
@@ -1620,11 +1985,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Spain", "Italy", "Greece", "Tunisia", "Turkey"],
+        "productionMethod": "Solvent-extracted from olive pulp remaining after first pressing, then refined.",
+        "supplyChainNotes": "Byproduct of virgin olive oil production. More cost-effective than virgin grades."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Intensive irrigation in water-scarce regions"],
+      "social": ["Seasonal migrant labour exploitation documented in some European harvests"],
+      "political": [],
+      "certifications": ["USDA Organic", "EU Organic"],
+      "notes": "Same sourcing concerns as virgin olive oil. Uses pulp byproduct that would otherwise be waste."
     },
     "references": [
       {
@@ -1665,11 +2041,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Indonesia", "Malaysia", "Thailand", "Colombia", "Nigeria"],
+        "productionMethod": "Mechanically extracted from Elaeis guineensis kernel (seed), then refined.",
+        "supplyChainNotes": "Indonesia and Malaysia produce ~85% of global palm oil. Complex supply chains make traceability difficult."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": true
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Tropical deforestation and peatland destruction", "Orangutan, tiger, and elephant habitat loss", "Greenhouse gas emissions from peat fires", "Biodiversity loss in Southeast Asian rainforests"],
+      "social": ["Forced and child labour documented on plantations", "Indigenous land rights violations", "Unsafe working conditions reported"],
+      "political": ["Land tenure conflicts with indigenous communities", "Corruption in land concession processes"],
+      "certifications": ["RSPO (Roundtable on Sustainable Palm Oil)", "RSPO Identity Preserved", "RSPO Segregated", "Rainforest Alliance"],
+      "notes": "Palm kernel oil shares all supply chain concerns with palm oil. RSPO certification addresses some concerns but has been criticized for weak enforcement. Identity Preserved or Segregated certifications provide better traceability than Mass Balance."
     },
     "references": [
       {
@@ -1720,11 +2107,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Indonesia", "Malaysia", "Thailand", "Colombia", "Nigeria"],
+        "productionMethod": "Mechanically extracted from Elaeis guineensis fruit pulp (mesocarp), then refined.",
+        "supplyChainNotes": "Most widely produced vegetable oil globally. Indonesia and Malaysia produce ~85% of world supply."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": true
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Tropical deforestation and peatland destruction", "Orangutan, tiger, and elephant habitat loss", "Greenhouse gas emissions from peat fires", "Biodiversity loss in Southeast Asian rainforests"],
+      "social": ["Forced and child labour documented on plantations", "Indigenous land rights violations", "Unsafe working conditions reported"],
+      "political": ["Land tenure conflicts with indigenous communities", "Corruption in land concession processes"],
+      "certifications": ["RSPO (Roundtable on Sustainable Palm Oil)", "RSPO Identity Preserved", "RSPO Segregated", "Rainforest Alliance"],
+      "notes": "Palm oil is the world's most consumed vegetable oil. RSPO certification is the primary standard but has limitations. Boycotts may push production to less regulated regions; certified sustainable sourcing is often recommended over avoidance."
     },
     "references": [
       {
@@ -1775,12 +2173,22 @@
         "behenic": 3,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["China", "India", "Nigeria", "United States", "Senegal"],
+        "productionMethod": "Expeller-pressed or solvent-extracted from Arachis hypogaea seeds."
       }
     },
     "dietary": {
       "animalBased": false,
-      "commonAllergen": true,
-      "sourcingConcerns": false
+      "commonAllergen": true
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Major global crop with established supply chains. China and India are dominant producers."
     },
     "references": [
       {
@@ -1821,12 +2229,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["United States (Texas, Georgia, New Mexico)", "Mexico"],
+        "productionMethod": "Cold-pressed or expeller-pressed from Carya illinoinensis nuts."
       }
     },
     "dietary": {
       "animalBased": false,
-      "commonAllergen": true,
-      "sourcingConcerns": false
+      "commonAllergen": true
+    },
+    "ethicalConcerns": {
+      "environmental": ["Water-intensive crop in drought-prone regions"],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "US produces ~80% of global pecans. Water usage in arid regions (Texas, New Mexico) is a growing concern."
     },
     "references": [
       {
@@ -1867,12 +2285,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Iran", "United States (California)", "Turkey", "Syria"],
+        "productionMethod": "Cold-pressed from Pistacia vera nuts."
       }
     },
     "dietary": {
       "animalBased": false,
-      "commonAllergen": true,
-      "sourcingConcerns": false
+      "commonAllergen": true
+    },
+    "ethicalConcerns": {
+      "environmental": ["Water-intensive crop in arid regions"],
+      "social": [],
+      "political": ["Iranian pistachios subject to trade sanctions in some countries"],
+      "certifications": ["USDA Organic"],
+      "notes": "Iran and California are leading producers. Water scarcity is a concern in both regions. Ongoing conflict in Syria has disrupted production."
     },
     "references": [
       {
@@ -1913,11 +2341,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["China", "United States", "Germany", "Spain", "Brazil"],
+        "productionMethod": "Rendered (wet or dry) from pork adipose tissue.",
+        "supplyChainNotes": "Byproduct of pork processing. China is world's largest pork producer."
       }
     },
     "dietary": {
-      "animalBased": true,
-      "sourcingConcerns": false
+      "animalBased": true
+    },
+    "ethicalConcerns": {
+      "environmental": ["Industrial pork production contributes to water pollution", "Antibiotic use in confined operations"],
+      "social": ["Industrial farming labour conditions vary widely"],
+      "political": [],
+      "certifications": ["Certified Humane", "Animal Welfare Approved", "USDA Organic"],
+      "notes": "Not suitable for vegetarian/vegan or halal/kosher products. Sourcing from pasture-raised or certified humane farms addresses some animal welfare concerns."
     },
     "references": [
       {
@@ -1958,11 +2397,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["China", "United States", "Germany", "Spain", "Brazil"],
+        "productionMethod": "Rendered from visceral fat deposits (around kidneys and loin).",
+        "supplyChainNotes": "Premium grade lard from specific fat deposits. Often from smaller producers."
       }
     },
     "dietary": {
-      "animalBased": true,
-      "sourcingConcerns": false
+      "animalBased": true
+    },
+    "ethicalConcerns": {
+      "environmental": ["Industrial pork production contributes to water pollution", "Antibiotic use in confined operations"],
+      "social": ["Industrial farming labour conditions vary widely"],
+      "political": [],
+      "certifications": ["Certified Humane", "Animal Welfare Approved", "USDA Organic"],
+      "notes": "Not suitable for vegetarian/vegan or halal/kosher products. Leaf lard is often sourced from smaller, heritage breed farms."
     },
     "references": [
       {
@@ -2003,11 +2453,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Austria", "Slovenia", "Hungary", "China", "United States"],
+        "productionMethod": "Cold-pressed from roasted or raw Cucurbita pepo seeds.",
+        "supplyChainNotes": "Styrian pumpkin seed oil (from Austria/Slovenia) is a protected designation of origin product."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "EU Organic", "PDO (Styrian)"],
+      "notes": "Traditional Central European product. Seeds are often a byproduct of food pumpkin processing."
     },
     "references": [
       {
@@ -2048,11 +2509,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["India", "Japan", "Thailand", "China", "Vietnam"],
+        "productionMethod": "Solvent-extracted or expeller-pressed from rice bran (outer layer of rice kernel).",
+        "supplyChainNotes": "Byproduct of rice milling. Must be processed quickly due to rapid oxidation of fresh bran."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Rice cultivation is methane-intensive"],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Sustainable use of rice milling byproduct. Rice paddies contribute to global methane emissions, but bran oil itself uses existing waste."
     },
     "references": [
       {
@@ -2093,11 +2565,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Chile", "Argentina", "South Africa", "Europe (various)"],
+        "productionMethod": "Cold-pressed from Rosa canina (dog rose) or Rosa rubiginosa seeds."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "EcoCert"],
+      "notes": "Wild-harvested or cultivated in temperate regions. Chilean rosehip oil is widely exported."
     },
     "references": [
       {
@@ -2138,11 +2620,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["United States", "Mexico", "India", "Kazakhstan", "Argentina"],
+        "productionMethod": "Expeller-pressed or solvent-extracted from Carthamus tinctorius seeds."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Drought-tolerant crop suitable for arid regions. High-oleic varieties developed for improved stability."
     },
     "references": [
       {
@@ -2183,11 +2675,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["India", "Nepal", "Bangladesh"],
+        "productionMethod": "Extracted from Shorea robusta seeds, often using solvent extraction.",
+        "supplyChainNotes": "Seeds collected from natural sal forests, primarily in the Indian subcontinent."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Forest management practices vary"],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "Harvested from natural forests by local communities. Provides income to rural populations in India and Nepal."
     },
     "references": [
       {
@@ -2228,11 +2731,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Russia", "China", "Mongolia", "Finland", "Canada"],
+        "productionMethod": "Cold-pressed or CO2-extracted from Hippophae rhamnoides fruit pulp."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "EU Organic"],
+      "notes": "Hardy plant that can grow in poor soils and harsh climates. Often cultivated for land restoration."
     },
     "references": [
       {
@@ -2273,11 +2786,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["India", "Sudan", "Myanmar", "Tanzania", "Nigeria", "China"],
+        "productionMethod": "Cold-pressed or expeller-pressed from Sesamum indicum seeds."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Fair Trade"],
+      "notes": "One of the oldest cultivated oil crops. Important smallholder crop in Africa and Asia."
     },
     "references": [
       {
@@ -2318,11 +2841,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Ghana", "Burkina Faso", "Nigeria", "Mali", "Benin", "Ivory Coast"],
+        "productionMethod": "Traditional hand-processing or mechanical extraction from Vitellaria paradoxa nuts.",
+        "supplyChainNotes": "Shea belt spans 21 African countries. Production is largely by women's cooperatives."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Wild harvesting pressure on shea trees in some areas", "Climate change affecting shea tree range"],
+      "social": ["Fair compensation for women collectors varies", "Middlemen capture significant value in supply chain"],
+      "political": [],
+      "certifications": ["Fair Trade", "Fair for Life", "USDA Organic", "EcoCert"],
+      "notes": "Traditional women's trade in West Africa. Fair Trade certification helps ensure better prices reach collectors. Ghana and Burkina Faso are largest exporters."
     },
     "references": [
       {
@@ -2368,11 +2902,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Australia", "New Zealand", "United Kingdom", "China", "India"],
+        "productionMethod": "Rendered from sheep adipose tissue, typically from meat processing.",
+        "supplyChainNotes": "Byproduct of sheep meat industry. Australia and New Zealand are major exporters."
       }
     },
     "dietary": {
-      "animalBased": true,
-      "sourcingConcerns": false
+      "animalBased": true
+    },
+    "ethicalConcerns": {
+      "environmental": ["Sheep farming contributes to methane emissions", "Land use for grazing"],
+      "social": [],
+      "political": [],
+      "certifications": ["Certified Humane", "Animal Welfare Approved", "Pasture-raised"],
+      "notes": "Not suitable for vegetarian/vegan products. Pasture-raised and grass-fed sheep have lower environmental impact than feedlot operations."
     },
     "references": [
       {
@@ -2413,12 +2958,23 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Brazil", "United States", "Argentina", "China", "India"],
+        "productionMethod": "Solvent-extracted or expeller-pressed from Glycine max seeds.",
+        "supplyChainNotes": "World's most widely produced oilseed. Brazil surpassed US as largest producer."
       }
     },
     "dietary": {
       "animalBased": false,
-      "commonAllergen": true,
-      "sourcingConcerns": false
+      "commonAllergen": true
+    },
+    "ethicalConcerns": {
+      "environmental": ["Amazon and Cerrado deforestation for soy expansion", "Monoculture farming depletes soil", "Heavy pesticide and herbicide use"],
+      "social": ["Land conflicts with indigenous communities in Brazil", "Displacement of smallholder farmers"],
+      "political": ["Trade disputes and tariffs affect supply chains"],
+      "certifications": ["RTRS (Round Table on Responsible Soy)", "ProTerra", "USDA Organic", "Non-GMO Project Verified"],
+      "notes": "Soy is a major driver of deforestation in South America. Most soy goes to animal feed, not direct human consumption. RTRS and ProTerra certifications address deforestation concerns."
     },
     "references": [
       {
@@ -2459,11 +3015,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Global (derived from various fats)"],
+        "productionMethod": "Hydrolyzed and fractionated from animal fats (tallow) or vegetable oils (palm, soy).",
+        "supplyChainNotes": "Can be animal or vegetable-derived. Source varies by manufacturer."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": ["Inherits concerns from source material (palm, tallow, or soy)"],
+      "social": [],
+      "political": [],
+      "certifications": ["RSPO (if palm-derived)", "Vegetable-derived certification"],
+      "notes": "Ethical concerns depend entirely on source material. Vegetable-derived stearic acid may come from palm oil (same concerns) or other vegetable sources. Animal-derived comes from tallow."
     },
     "references": [
       {
@@ -2504,11 +3071,21 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Ukraine", "Russia", "Argentina", "European Union", "Turkey"],
+        "productionMethod": "Expeller-pressed or solvent-extracted from Helianthus annuus seeds."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": ["Ukraine conflict has disrupted global sunflower oil supply"],
+      "certifications": ["USDA Organic", "EU Organic"],
+      "notes": "Ukraine and Russia together produced ~60% of global supply before 2022. War in Ukraine caused major supply disruptions and price increases."
     },
     "references": [
       {
@@ -2549,12 +3126,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["United States (California)", "Spain", "Australia", "Iran", "Morocco"],
+        "productionMethod": "Cold-pressed or expeller-pressed from Prunus dulcis kernels."
       }
     },
     "dietary": {
       "animalBased": false,
-      "commonAllergen": true,
-      "sourcingConcerns": false
+      "commonAllergen": true
+    },
+    "ethicalConcerns": {
+      "environmental": ["California almond production is highly water-intensive", "Honeybee stress from pollination demands"],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "Bee Better Certified"],
+      "notes": "California produces ~80% of global almonds. High water usage in drought-prone regions and heavy reliance on commercial bee pollination are significant concerns."
     },
     "references": [
       {
@@ -2600,11 +3187,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["Tahiti", "Fiji", "Vanuatu", "Madagascar", "Southeast Asia"],
+        "productionMethod": "Cold-pressed from dried Calophyllum inophyllum nuts after curing.",
+        "supplyChainNotes": "Traditional Polynesian medicine. Nuts require curing before oil extraction."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "EcoCert"],
+      "notes": "Wild-harvested in Pacific islands. Supports traditional livelihoods in island communities. Tamanu trees are coastal and help prevent erosion."
     },
     "references": [
       {
@@ -2645,12 +3243,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["China", "United States (California)", "Chile", "France", "Turkey"],
+        "productionMethod": "Cold-pressed or expeller-pressed from Juglans regia kernels."
       }
     },
     "dietary": {
       "animalBased": false,
-      "commonAllergen": true,
-      "sourcingConcerns": false
+      "commonAllergen": true
+    },
+    "ethicalConcerns": {
+      "environmental": ["Water-intensive crop in some regions"],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic"],
+      "notes": "China produces ~50% of global walnuts. California is second largest producer and faces water scarcity challenges."
     },
     "references": [
       {
@@ -2691,11 +3299,22 @@
         "behenic": 0,
         "erucic": 0,
         "ricinoleic": 0
+      },
+      "sourcing": {
+        "primaryRegions": ["European Union", "United States", "China", "Russia", "India"],
+        "productionMethod": "Cold-pressed or solvent-extracted from wheat germ, a byproduct of flour milling.",
+        "supplyChainNotes": "Byproduct of wheat flour production. Germ represents only ~2.5% of kernel weight."
       }
     },
     "dietary": {
-      "animalBased": false,
-      "sourcingConcerns": false
+      "animalBased": false
+    },
+    "ethicalConcerns": {
+      "environmental": [],
+      "social": [],
+      "political": [],
+      "certifications": ["USDA Organic", "EU Organic"],
+      "notes": "Sustainable use of wheat milling byproduct. Highly perishable due to polyunsaturated fat content."
     },
     "references": [
       {

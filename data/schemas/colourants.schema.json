@@ -50,19 +50,25 @@
             },
             "usage": {
               "$ref": "common-definitions.schema.json#/definitions/usage"
+            },
+            "sourcing": {
+              "$ref": "common-definitions.schema.json#/definitions/sourcing"
             }
           },
-          "required": ["subcategory", "color", "usage"],
+          "required": ["subcategory", "color", "usage", "sourcing"],
           "type": "object"
         },
         "dietary": {
           "$ref": "common-definitions.schema.json#/definitions/dietary"
         },
+        "ethicalConcerns": {
+          "$ref": "common-definitions.schema.json#/definitions/ethicalConcerns"
+        },
         "references": {
           "$ref": "common-definitions.schema.json#/definitions/references"
         }
       },
-      "required": ["name", "type", "description", "details"],
+      "required": ["name", "type", "description", "details", "ethicalConcerns"],
       "type": "object"
     }
   },
