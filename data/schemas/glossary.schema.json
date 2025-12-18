@@ -1,6 +1,8 @@
 {
   "$id": "glossary.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {},
   "additionalProperties": {
     "$ref": "#/definitions/Term"
   },
@@ -122,6 +124,5 @@
     }
   },
   "description": "Schema for glossary terms and definitions",
-  "title": "Soapmaking Glossary",
-  "type": "object"
+  "title": "Soap Making Glossary"
 }
