@@ -93,7 +93,7 @@
       "craft",
       "calculator"
     ],
-    "desc": "Sum of short-chain saturated acids (lauric + myristic). Indicates how effectively the soap removes oils and grease from skin.",
+    "desc": "Sum of short-chain saturated acids (caprylic + capric + lauric + myristic). Indicates how effectively the soap removes oils and grease from skin.",
     "details": "Below 12: very gentle, may feel like it doesn't 'clean'.\n\nAbove 22: can strip skin's natural oils, may be drying for face/daily use.\n\nHigher levels good for kitchen or mechanic's soap.",
     "ranges": {
       "max": 22,
