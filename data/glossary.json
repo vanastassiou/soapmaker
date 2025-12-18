@@ -242,11 +242,10 @@
     ],
     "term": "Cure time"
   },
-  "density": {
-    "category": "property",
+  "oil-density": {
+    "category": "concept",
     "domain": [
-      "craft",
-      "calculator"
+      "craft"
     ],
     "desc": "Mass per unit volume of an oil or fat, typically expressed in g/mL. Used to estimate batch volume from weight.",
     "details": "Most soap-making oils have densities between 0.91-0.97 g/mL.\n\nLighter oils (coconut ~0.92) give slightly more volume per gram than heavier oils (castor ~0.96).\n\nUsed with the volume estimate calculation to help size moulds.",
@@ -261,7 +260,7 @@
       "volume-estimate",
       "fat"
     ],
-    "term": "Density"
+    "term": "Oil density"
   },
   "dos": {
     "category": "concept",
