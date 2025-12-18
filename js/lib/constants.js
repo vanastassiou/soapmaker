@@ -338,9 +338,10 @@ export const BUILD_MODES = {
 
 // Additive categories for UI tabs
 export const ADDITIVE_CATEGORIES = {
-    ESSENTIAL_OIL: 'essential-oil',
+    FRAGRANCE: 'fragrance',
     COLOURANT: 'colourant',
-    FUNCTIONAL: 'functional'
+    SOAP_PERFORMANCE: 'soap-performance',
+    SKIN_CARE: 'skin-care'
 };
 
 // Additive warning severity (reuses NOTE_TYPES for consistency)

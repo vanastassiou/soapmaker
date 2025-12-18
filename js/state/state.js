@@ -150,12 +150,16 @@ export const state = createReactiveState({
     propertiesLockedIndices: new Set(),  // Set of locked fat indices in properties mode
 
     // Data (loaded from JSON)
-    fatsDatabase: {},        // Fat data with SAP values, fatty acids
-    glossaryData: {},        // Educational definitions (soapmaking knowledge)
-    tooltipsData: {},        // UI help text (site usage)
-    fattyAcidsData: {},      // Fatty acid information
-    additivesDatabase: {},   // Additive data (EOs, colourants, functional)
-    sourcesData: {},         // Reference sources data
+    fatsDatabase: {},           // Fat data with SAP values, fatty acids
+    glossaryData: {},           // Educational definitions (soapmaking knowledge)
+    tooltipsData: {},           // UI help text (site usage)
+    fattyAcidsData: {},         // Fatty acid information
+    fragrancesDatabase: {},     // Essential oils for fragrance
+    colourantsDatabase: {},     // Colourant additives (oxides, micas, clays, botanicals)
+    soapPerformanceDatabase: {},// Bar quality additives (hardeners, lather enhancers, antioxidants)
+    skinCareDatabase: {},       // Skin effect additives (emollients, exfoliants)
+    sourcesData: {},            // Reference sources data
+    formulasData: {},           // Calculation formulas documentation
 
     // UI state
     excludedFats: [],        // Fats excluded from profile builder
