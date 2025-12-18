@@ -229,8 +229,11 @@ DEFAULTS.YOLO_MAX_FATS       // 5 - maximum fats in YOLO recipe
 Recommended soap property ranges:
 
 ```javascript
-PROPERTY_RANGES.hardness     // { min: 29, max: 54 }
-PROPERTY_RANGES.cleansing    // { min: 12, max: 22 }
+PROPERTY_RANGES.hardness         // { min: 29, max: 54 }
+PROPERTY_RANGES.degreasing       // { min: 12, max: 22 }
+PROPERTY_RANGES.moisturizing     // { min: 44, max: 69 }
+PROPERTY_RANGES['lather-volume'] // { min: 14, max: 46 }
+PROPERTY_RANGES['lather-density']// { min: 16, max: 48 }
 // etc.
 ```
 

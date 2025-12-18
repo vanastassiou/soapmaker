@@ -151,13 +151,13 @@ Chemistry data: formula, carbon chain, melting point, saturation.
 
 ```javascript
 export const PROPERTY_RANGES = {
-  hardness:     { min: 29, max: 54 },
-  cleansing:    { min: 12, max: 22 },
-  conditioning: { min: 44, max: 69 },
-  bubbly:       { min: 14, max: 46 },
-  creamy:       { min: 16, max: 48 },
-  iodine:       { min: 41, max: 70 },
-  ins:          { min: 136, max: 165 }
+  hardness:         { min: 29, max: 54 },
+  degreasing:       { min: 12, max: 22 },
+  moisturizing:     { min: 44, max: 69 },
+  'lather-volume':  { min: 14, max: 46 },
+  'lather-density': { min: 16, max: 48 },
+  iodine:           { min: 41, max: 70 },
+  ins:              { min: 136, max: 165 }
 };
 ```
 
@@ -167,12 +167,12 @@ These drive the UI range indicators and recipe notes.
 
 ```javascript
 export const NOTE_THRESHOLDS = {
-  HIGH_CLEANSING: 20,        // Triggers "may strip skin" note
-  LOW_CLEANSING: 10,         // Triggers "very gentle" note
+  HIGH_DEGREASING: 20,       // Triggers "may strip skin" note
+  LOW_DEGREASING: 10,        // Triggers "very gentle" note
   HIGH_POLYUNSATURATED: 15,  // Triggers DOS warning
   HIGH_LINOLENIC: 5,         // Triggers stability warning
-  LOW_BUBBLY: 20,            // Triggers lather suggestion
-  HIGH_CONDITIONING: 65,     // Used in balance check
+  LOW_LATHER_VOLUME: 20,     // Triggers lather suggestion
+  HIGH_MOISTURIZING: 65,     // Used in balance check
   LOW_HARDNESS: 35           // Used in balance check
 };
 ```
