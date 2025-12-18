@@ -985,6 +985,196 @@ input:focus, select:focus {
     color: var(--text-muted);
 }
 
+/* ============================================
+   Unified Panel Components
+   ============================================ */
+
+/* Panel type badge (replaces .panel-subtitle for type display) */
+.panel-type {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--accent-gold);
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+    margin-bottom: var(--space-6);
+}
+
+/* Panel content section */
+.panel-content-section {
+    margin-bottom: var(--space-6);
+}
+
+.panel-section-title {
+    font-size: var(--text-md);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-3);
+}
+
+/* Panel description text */
+.panel-description-text {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Details grid - 2-column key-value pairs */
+.panel-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+}
+
+.panel-detail-item {
+    background: var(--bg-secondary);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+}
+
+.panel-detail-label {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-1);
+}
+
+.panel-detail-value {
+    font-family: var(--font-mono);
+    color: var(--accent-cream);
+    font-size: var(--text-2xl);
+}
+
+/* Property grid - compact 2-column layout */
+.panel-props-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.panel-prop-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-secondary);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+}
+
+.panel-prop-label {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+}
+
+.panel-prop-value {
+    font-size: var(--text-md);
+    color: var(--accent-cream);
+}
+
+/* Panel list - vertical list of items */
+.panel-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.panel-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-secondary);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+}
+
+.panel-list-item--dashed {
+    border: 1px dashed var(--border);
+    background: transparent;
+}
+
+.panel-list-name {
+    color: var(--text-primary);
+}
+
+.panel-list-name--link {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: color var(--transition-base);
+}
+
+.panel-list-name--link:hover {
+    color: var(--accent-green);
+}
+
+.panel-list-value {
+    font-family: var(--font-mono);
+    color: var(--accent-gold);
+    font-size: var(--text-lg);
+}
+
+/* Info list - safety items, usage info, etc. */
+.panel-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.panel-info-item {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    padding: var(--space-1) 0;
+    border-bottom: 1px solid var(--border-30);
+}
+
+.panel-info-item:last-child {
+    border-bottom: none;
+}
+
+/* Extra details - colour swatch, etc. */
+.panel-extra-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+    color: var(--text-secondary);
+}
+
+.panel-extra-label {
+    color: var(--text-muted);
+}
+
+.panel-colour-swatch {
+    width: 20px;
+    height: 20px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+}
+
+/* Empty state for lists */
+.panel-empty-state {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: var(--text-lg);
+}
+
+/* Responsive: stack grids on mobile */
+@media (max-width: 480px) {
+    .panel-details-grid,
+    .panel-props-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Usage rate badge */
 .usage-rate {
     display: inline-block;

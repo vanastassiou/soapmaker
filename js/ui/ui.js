@@ -287,30 +287,42 @@ export function showFatInfo(fatId, fatsDatabase, fattyAcidsData, sourcesData, on
 
     const fat = fatsDatabase[fatId];
 
+    // Name and type
     $('fatPanelName').textContent = fat.name;
-    $('fatPanelSap').textContent = `NaOH SAP: ${fat.sap.naoh} | KOH SAP: ${fat.sap.koh}`;
-    $('fatPanelUsage').textContent = `${fat.usage.min}% to ${fat.usage.max}% of recipe lipids`;
-    $('fatPanelDescription').textContent = fat.description;
-    $('fatPanelProperties').textContent = generateFatProperties(fat, fattyAcidsData);
+    $('fatPanelType').textContent = fat.type || 'fat';
 
-    // Fatty acids
+    // Description
+    $('fatPanelDescription').textContent = fat.description;
+
+    // Details: SAP and usage
+    const sap = fat.details?.sap || fat.sap;
+    $('fatPanelSap').textContent = `NaOH: ${sap.naoh} | KOH: ${sap.koh}`;
+
+    const usage = fat.details?.usage || fat.usage;
+    $('fatPanelUsage').textContent = `${usage.min}% to ${usage.max}% of recipe lipids`;
+
+    // Details: soap properties
+    const soapProps = fat.details?.soapProperties || generateFatProperties(fat, fattyAcidsData);
+    $('fatPanelProperties').textContent = soapProps;
+
+    // Fatty acid composition
     const faContainer = $('fatPanelFattyAcids');
     faContainer.innerHTML = Object.entries(fat.fattyAcids)
         .filter(([_, v]) => v > 0)
         .sort((a, b) => b[1] - a[1])
         .map(([name, value]) => `
-            <div class="fa-source-item">
-                <button type="button" class="fa-source-name fa-link" data-acid="${name}">${name}</button>
-                <span class="fa-source-percent">${value}%</span>
+            <div class="panel-list-item">
+                <button type="button" class="panel-list-name panel-list-name--link" data-acid="${name}">${name}</button>
+                <span class="panel-list-value">${value}%</span>
             </div>
         `).join('');
 
     if (onFattyAcidClick) {
-        delegate(faContainer, '.fa-link', 'click', (_e, el) => {
+        delegate(faContainer, '.panel-list-name--link', 'click', (_e, el) => {
             onFattyAcidClick(el.dataset.acid);
         });
-        delegate(faContainer, '.fa-link', 'keydown', onActivate((e) => {
-            const el = e.target.closest('.fa-link');
+        delegate(faContainer, '.panel-list-name--link', 'keydown', onActivate((e) => {
+            const el = e.target.closest('.panel-list-name--link');
             if (el) onFattyAcidClick(el.dataset.acid);
         }));
     }
@@ -361,15 +373,19 @@ export function showGlossaryInfo(term, glossaryData, recipe, fatsDatabase, sourc
 
     const data = glossaryData[term];
 
-    $('glossaryPanelName').textContent = data.term;
-    $('glossaryPanelCategory').textContent = data.category;
-    $('glossaryPanelDesc').textContent = data.desc;
+    // Name and type
+    $('glossaryPanelName').textContent = data.name || data.term;
+    $('glossaryPanelType').textContent = data.type || data.category;
+
+    // Description
+    $('glossaryPanelDesc').textContent = data.description || data.desc;
 
     // Details section
     const detailsSection = $('glossaryDetailsSection');
     const detailsEl = $('glossaryPanelDetails');
-    if (data.details) {
-        detailsEl.innerHTML = data.details.replace(/\n/g, '<br>');
+    const details = data.details?.prose || data.details;
+    if (details) {
+        detailsEl.innerHTML = details.replace(/\n/g, '<br>');
         detailsSection.style.display = 'block';
     } else {
         detailsSection.style.display = 'none';
@@ -378,16 +394,17 @@ export function showGlossaryInfo(term, glossaryData, recipe, fatsDatabase, sourc
     // Contributing fats (for properties)
     const contributorsSection = $('glossaryContributorsSection');
     const contributorsEl = $('glossaryPanelContributors');
+    const category = data.type || data.category;
 
-    if (data.category === 'property' && PROPERTY_FATTY_ACIDS[term] && recipe.length > 0) {
+    if (category === 'property' && PROPERTY_FATTY_ACIDS[term] && recipe.length > 0) {
         const contributors = calculatePropertyContributors(recipe, fatsDatabase, PROPERTY_FATTY_ACIDS[term]);
 
         if (contributors.length > 0) {
             contributorsEl.innerHTML = contributors
                 .map(c => `
-                    <div class="fa-source-item">
-                        <span class="fa-source-name">${c.name}</span>
-                        <span class="fa-source-percent">${c.value.toFixed(1)}</span>
+                    <div class="panel-list-item">
+                        <span class="panel-list-name">${c.name}</span>
+                        <span class="panel-list-value">${c.value.toFixed(1)}</span>
                     </div>
                 `).join('');
             contributorsSection.style.display = 'block';
@@ -404,7 +421,7 @@ export function showGlossaryInfo(term, glossaryData, recipe, fatsDatabase, sourc
     if (data.related?.length > 0) {
         relatedEl.innerHTML = data.related
             .filter(r => glossaryData[r])
-            .map(r => `<button type="button" class="panel-tag" data-term="${r}">${glossaryData[r].term}</button>`)
+            .map(r => `<button type="button" class="panel-tag" data-term="${r}">${glossaryData[r].name || glossaryData[r].term}</button>`)
             .join('');
         relatedSection.style.display = 'block';
 
@@ -456,52 +473,76 @@ export function showFattyAcidInfo(acidKey, fattyAcidsData, recipe, fatsDatabase,
 
     const acid = fattyAcidsData[acidKey];
 
+    // Name and type
     $('faName').textContent = acid.name;
-    $('faFormula').textContent = `${acid.formula} · ${acid.saturation}`;
+    const saturation = acid.description?.saturation || acid.saturation;
+    $('faType').textContent = `${saturation} fatty acid`;
+
+    // Description: chemistry attributes
+    const formula = acid.description?.formula || acid.formula;
+    const carbonChain = acid.description?.carbonChain || acid.carbonChain;
+    const meltingPoint = acid.description?.meltingPoint || acid.meltingPoint;
 
     $('faChemistry').innerHTML = `
-        <div class="fa-chem-item">
-            <div class="fa-chem-label">Carbon Chain</div>
-            <div class="fa-chem-value">${acid.carbonChain} carbons</div>
+        <div class="panel-detail-item">
+            <div class="panel-detail-label">Formula</div>
+            <div class="panel-detail-value">${formula}</div>
         </div>
-        <div class="fa-chem-item">
-            <div class="fa-chem-label">Melting Point</div>
-            <div class="fa-chem-value">${acid.meltingPoint}°C</div>
+        <div class="panel-detail-item">
+            <div class="panel-detail-label">Carbon chain</div>
+            <div class="panel-detail-value">${carbonChain}</div>
+        </div>
+        <div class="panel-detail-item">
+            <div class="panel-detail-label">Saturation</div>
+            <div class="panel-detail-value">${saturation}</div>
+        </div>
+        <div class="panel-detail-item">
+            <div class="panel-detail-label">Melting point</div>
+            <div class="panel-detail-value">${meltingPoint}°C</div>
         </div>
     `;
 
-    const props = acid.soapProperties;
+    // Description: prose
+    const prose = acid.description?.prose || acid.description;
+    const descEl = $('faDescription');
+    if (prose && typeof prose === 'string') {
+        descEl.textContent = prose;
+        descEl.style.display = 'block';
+    } else {
+        descEl.style.display = 'none';
+    }
+
+    // Details: soap properties
+    const props = acid.details?.soapProperties || acid.soapProperties;
     $('faContribution').innerHTML = `
-        <div class="fa-props-grid">
-            <div class="fa-prop-item"><span class="fa-prop-label">Hardness</span><span class="fa-prop-value">${props.hardness}</span></div>
-            <div class="fa-prop-item"><span class="fa-prop-label">Degreasing</span><span class="fa-prop-value">${props.degreasing}</span></div>
-            <div class="fa-prop-item"><span class="fa-prop-label">Lather</span><span class="fa-prop-value">${props.lather}</span></div>
-            <div class="fa-prop-item"><span class="fa-prop-label">Moisturizing</span><span class="fa-prop-value">${props.moisturizing}</span></div>
-        </div>
-        ${acid.description ? `<p class="fa-description">${acid.description}</p>` : ''}
+        <div class="panel-prop-item"><span class="panel-prop-label">Hardness</span><span class="panel-prop-value">${props.hardness}</span></div>
+        <div class="panel-prop-item"><span class="panel-prop-label">Degreasing</span><span class="panel-prop-value">${props.degreasing}</span></div>
+        <div class="panel-prop-item"><span class="panel-prop-label">Lather</span><span class="panel-prop-value">${props.lather}</span></div>
+        <div class="panel-prop-item"><span class="panel-prop-label">Moisturizing</span><span class="panel-prop-value">${props.moisturizing}</span></div>
     `;
 
-    // Recipe sources
+    // Details: recipe sources
     const recipeSources = findRecipeSourcesForAcid(recipe, fatsDatabase, acidKey);
     const recipeSourcesEl = $('faRecipeSources');
 
     recipeSourcesEl.innerHTML = recipeSources.length > 0
         ? recipeSources.map(s => `
-            <div class="fa-source-item">
-                <span class="fa-source-name">${s.name}</span>
-                <span class="fa-source-percent">${s.percent}%</span>
+            <div class="panel-list-item">
+                <span class="panel-list-name">${s.name}</span>
+                <span class="panel-list-value">${s.percent}%</span>
             </div>
         `).join('')
-        : '<p class="no-sources">No fats in your recipe contain this fatty acid</p>';
+        : '<p class="panel-empty-state">No fats in your recipe contain this fatty acid</p>';
 
-    // Common sources
-    $('faCommonSources').innerHTML = acid.commonSources
+    // Details: common sources
+    const commonSources = acid.details?.commonSources || acid.commonSources;
+    $('faCommonSources').innerHTML = commonSources
         .map(id => {
             const fat = fatsDatabase[id];
             const name = fat ? fat.name : id;
             return `
-                <div class="fa-source-item">
-                    <span class="fa-source-name">${name}</span>
+                <div class="panel-list-item panel-list-item--dashed">
+                    <span class="panel-list-name">${name}</span>
                 </div>
             `;
         }).join('');
@@ -1147,8 +1188,8 @@ export function showAdditiveInfo(additiveId, additivesDatabase, sourcesData) {
     const additive = additivesDatabase[additiveId];
     const panel = $(ELEMENT_IDS.additiveInfoPanel);
 
-    // Infer category from item properties (separate files don't have category field)
-    let category = additive.category;
+    // Infer category/type from item properties (separate files don't have category field)
+    let category = additive.type || additive.category;
     if (!category) {
         if (additive.scentNote) {
             category = 'fragrance';
@@ -1161,61 +1202,71 @@ export function showAdditiveInfo(additiveId, additivesDatabase, sourcesData) {
         }
     }
 
+    // Name and type
     $('additivePanelName').textContent = additive.name;
-    $('additivePanelCategory').textContent = formatCategory(category, additive.subcategory);
-    $('additivePanelUsage').textContent = `${additive.usage.min}% to ${additive.usage.max}% of fat weight`;
+    $('additivePanelType').textContent = formatCategory(category, additive.subcategory);
+
+    // Description
     $('additivePanelDescription').textContent = additive.description;
 
-    // Safety info
-    const safetyContainer = $('additivePanelSafety');
-    const safetyItems = [];
+    // Details: usage
+    const usage = additive.details?.usage || additive.usage;
+    $('additivePanelUsage').textContent = `${usage.min}% to ${usage.max}% of fat weight`;
 
-    if (additive.safety) {
-        if (additive.safety.ifraCategory9Limit) {
-            safetyItems.push(`IFRA Category 9 limit: ${additive.safety.ifraCategory9Limit}%`);
-        }
-        if (additive.safety.maxConcentration) {
-            safetyItems.push(`Max concentration: ${additive.safety.maxConcentration}%`);
-        }
-        if (additive.safety.cosIng) {
-            safetyItems.push(`CosIng: ${additive.safety.cosIng}`);
-        }
-        if (additive.safety.casNumber) {
-            safetyItems.push(`CAS: ${additive.safety.casNumber}`);
-        }
-        if (additive.safety.flashPointC) {
-            safetyItems.push(`Flash point: ${additive.safety.flashPointC}°C`);
-        }
-    }
-
-    safetyContainer.innerHTML = safetyItems.length > 0
-        ? safetyItems.map(item => `<div class="safety-item">${item}</div>`).join('')
-        : '<div class="safety-item">No specific safety data</div>';
-
-    // Category-specific info
+    // Details: extra info
     const extraInfo = $('additivePanelExtra');
-    const extraSection = $('additivePanelExtraSection');
     const extraItems = [];
 
-    if (additive.scentNote) {
-        extraItems.push(`<div class="extra-item"><span class="extra-label">Scent note:</span> ${additive.scentNote}</div>`);
+    const scentNote = additive.details?.scentNote || additive.scentNote;
+    if (scentNote) {
+        extraItems.push(`<div class="panel-extra-item"><span class="panel-extra-label">Scent note:</span> ${scentNote}</div>`);
     }
     if (additive.anchoring?.length > 0) {
         const anchorNames = additive.anchoring
             .map(id => additivesDatabase[id]?.name || id)
             .join(', ');
-        extraItems.push(`<div class="extra-item"><span class="extra-label">Anchors well with:</span> ${anchorNames}</div>`);
+        extraItems.push(`<div class="panel-extra-item"><span class="panel-extra-label">Anchors well with:</span> ${anchorNames}</div>`);
     }
-    if (additive.color) {
-        extraItems.push(`<div class="extra-item"><span class="extra-label">Colour:</span> <span class="color-swatch" style="background-color: ${additive.color}"></span></div>`);
+    const color = additive.details?.colour || additive.color;
+    if (color) {
+        extraItems.push(`<div class="panel-extra-item"><span class="panel-extra-label">Colour:</span> <span class="panel-colour-swatch" style="background-color: ${color}"></span></div>`);
     }
-    if (additive.density) {
-        extraItems.push(`<div class="extra-item"><span class="extra-label">Density:</span> ${additive.density} g/mL</div>`);
+    const density = additive.details?.density || additive.density;
+    if (density) {
+        extraItems.push(`<div class="panel-extra-item"><span class="panel-extra-label">Density:</span> ${density} g/mL</div>`);
     }
 
     extraInfo.innerHTML = extraItems.join('');
-    if (extraSection) {
-        extraSection.style.display = extraItems.length > 0 ? 'block' : 'none';
+
+    // Safety section
+    const safetySection = $('additivePanelSafetySection');
+    const safetyContainer = $('additivePanelSafety');
+    const safety = additive.details?.safety || additive.safety;
+    const safetyItems = [];
+
+    if (safety) {
+        if (safety.ifraCategory9Limit) {
+            safetyItems.push(`IFRA Category 9 limit: ${safety.ifraCategory9Limit}%`);
+        }
+        if (safety.maxConcentration) {
+            safetyItems.push(`Max concentration: ${safety.maxConcentration}%`);
+        }
+        if (safety.cosIng) {
+            safetyItems.push(`CosIng: ${safety.cosIng}`);
+        }
+        if (safety.casNumber) {
+            safetyItems.push(`CAS: ${safety.casNumber}`);
+        }
+        if (safety.flashPointC) {
+            safetyItems.push(`Flash point: ${safety.flashPointC}°C`);
+        }
+    }
+
+    if (safetyItems.length > 0) {
+        safetyContainer.innerHTML = safetyItems.map(item => `<div class="panel-info-item">${item}</div>`).join('');
+        safetySection.style.display = 'block';
+    } else {
+        safetySection.style.display = 'none';
     }
 
     renderReferences(panel, additive.references, sourcesData);

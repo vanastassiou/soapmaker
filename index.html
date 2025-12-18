@@ -414,25 +414,25 @@
     <div class="info-panel" id="glossaryPanel" role="dialog" aria-modal="true" aria-labelledby="glossaryPanelName">
         <button class="close-panel" aria-label="Close panel">×</button>
         <h3 class="panel-title" id="glossaryPanelName" tabindex="-1">Term</h3>
-        <div class="panel-subtitle" id="glossaryPanelCategory">category</div>
+        <div class="panel-type" id="glossaryPanelType">category</div>
 
-        <div class="panel-section">
-            <h4>Description</h4>
-            <p class="panel-description" id="glossaryPanelDesc"></p>
+        <div class="panel-content-section">
+            <h4 class="panel-section-title">Description</h4>
+            <p class="panel-description-text" id="glossaryPanelDesc"></p>
         </div>
 
-        <div class="panel-section" id="glossaryDetailsSection">
-            <h4>Details</h4>
-            <p class="panel-description" id="glossaryPanelDetails"></p>
+        <div class="panel-content-section" id="glossaryDetailsSection">
+            <h4 class="panel-section-title">Details</h4>
+            <p class="panel-description-text" id="glossaryPanelDetails"></p>
         </div>
 
-        <div class="panel-section" id="glossaryContributorsSection">
-            <h4>Contributing fats in recipe</h4>
-            <div class="fa-sources" id="glossaryPanelContributors"></div>
+        <div class="panel-content-section" id="glossaryContributorsSection">
+            <h4 class="panel-section-title">Contributing fats in recipe</h4>
+            <div class="panel-list" id="glossaryPanelContributors"></div>
         </div>
 
-        <div class="panel-section" id="glossaryRelatedSection">
-            <h4>Related</h4>
+        <div class="panel-content-section" id="glossaryRelatedSection">
+            <h4 class="panel-section-title">Related</h4>
             <div class="panel-tags" id="glossaryPanelRelated"></div>
         </div>
 
@@ -442,26 +442,25 @@
     <div class="info-panel" id="fatInfoPanel" role="dialog" aria-modal="true" aria-labelledby="fatPanelName">
         <button class="close-panel" aria-label="Close panel">×</button>
         <h3 class="panel-title" id="fatPanelName" tabindex="-1">Fat name</h3>
-        <div class="panel-subtitle" id="fatPanelSap">NaOH SAP: 0.000 | KOH SAP: 0.000</div>
+        <div class="panel-type" id="fatPanelType">fat</div>
 
-        <div class="panel-section">
-            <h4>Recommended usage</h4>
-            <span class="panel-usage" id="fatPanelUsage">0 to 0% of total recipe fats</span>
+        <div class="panel-content-section">
+            <h4 class="panel-section-title">Description</h4>
+            <p class="panel-description-text" id="fatPanelDescription"></p>
         </div>
 
-        <div class="panel-section">
-            <h4>Description</h4>
-            <p class="panel-description" id="fatPanelDescription"></p>
+        <div class="panel-content-section">
+            <h4 class="panel-section-title">Details</h4>
+            <div class="panel-info-list">
+                <div class="panel-info-item" id="fatPanelSap">NaOH: 0.000 | KOH: 0.000</div>
+                <div class="panel-info-item" id="fatPanelUsage">0% to 0% of recipe lipids</div>
+            </div>
+            <p class="panel-description-text" id="fatPanelProperties"></p>
         </div>
 
-        <div class="panel-section">
-            <h4>Contributions to soap</h4>
-            <p class="panel-description" id="fatPanelProperties"></p>
-        </div>
-
-        <div class="panel-section">
-            <h4>Fatty acid composition</h4>
-            <div class="fa-sources" id="fatPanelFattyAcids"></div>
+        <div class="panel-content-section">
+            <h4 class="panel-section-title">Fatty acid composition</h4>
+            <div class="panel-list" id="fatPanelFattyAcids"></div>
         </div>
 
     </div>
@@ -470,28 +469,29 @@
     <div class="info-panel" id="fattyAcidPanel" role="dialog" aria-modal="true" aria-labelledby="faName">
         <button class="close-panel" id="closeFattyAcidPanel" aria-label="Close panel">×</button>
         <h3 class="panel-title" id="faName" tabindex="-1">Fatty acid name</h3>
-        <div class="panel-subtitle" id="faFormula">C12:0 · Saturated</div>
+        <div class="panel-type" id="faType">fatty acid</div>
 
-        <div class="panel-section">
-            <h4>Chemistry</h4>
-            <div class="fa-chemistry" id="faChemistry"></div>
+        <div class="panel-content-section">
+            <h4 class="panel-section-title">Description</h4>
+            <div class="panel-details-grid" id="faChemistry"></div>
+            <p class="panel-description-text" id="faDescription"></p>
         </div>
 
-        <div class="panel-section">
-            <h4>Soap contribution</h4>
-            <p class="panel-description" id="faContribution"></p>
+        <div class="panel-content-section">
+            <h4 class="panel-section-title">Details</h4>
+            <div class="panel-props-grid" id="faContribution"></div>
         </div>
 
-        <div class="panel-section">
-            <h4>In your recipe</h4>
-            <div class="fa-sources" id="faRecipeSources">
-                <p class="no-sources">No fats in your recipe contain this fatty acid</p>
+        <div class="panel-content-section">
+            <h4 class="panel-section-title">In your recipe</h4>
+            <div class="panel-list" id="faRecipeSources">
+                <p class="panel-empty-state">No fats in your recipe contain this fatty acid</p>
             </div>
         </div>
 
-        <div class="panel-section">
-            <h4>Common sources</h4>
-            <div class="fa-common-sources" id="faCommonSources"></div>
+        <div class="panel-content-section">
+            <h4 class="panel-section-title">Common sources</h4>
+            <div class="panel-list" id="faCommonSources"></div>
         </div>
 
     </div>
@@ -500,25 +500,24 @@
     <div class="info-panel" id="additiveInfoPanel" role="dialog" aria-modal="true" aria-labelledby="additivePanelName">
         <button class="close-panel" aria-label="Close panel">×</button>
         <h3 class="panel-title" id="additivePanelName" tabindex="-1">Additive name</h3>
-        <div class="panel-subtitle" id="additivePanelCategory">Category</div>
+        <div class="panel-type" id="additivePanelType">additive</div>
 
-        <div class="panel-section">
-            <h4>Recommended usage</h4>
-            <span class="panel-usage" id="additivePanelUsage">0% to 0% of fat weight</span>
+        <div class="panel-content-section">
+            <h4 class="panel-section-title">Description</h4>
+            <p class="panel-description-text" id="additivePanelDescription"></p>
         </div>
 
-        <div class="panel-section">
-            <h4>Description</h4>
-            <p class="panel-description" id="additivePanelDescription"></p>
-        </div>
-
-        <div class="panel-section" id="additivePanelSafetySection">
-            <h4>Safety</h4>
-            <div class="panel-safety" id="additivePanelSafety"></div>
-        </div>
-
-        <div class="panel-section" id="additivePanelExtraSection">
+        <div class="panel-content-section">
+            <h4 class="panel-section-title">Details</h4>
+            <div class="panel-info-list">
+                <div class="panel-info-item" id="additivePanelUsage">0% to 0% of fat weight</div>
+            </div>
             <div id="additivePanelExtra"></div>
+        </div>
+
+        <div class="panel-content-section" id="additivePanelSafetySection">
+            <h4 class="panel-section-title">Safety</h4>
+            <div class="panel-info-list" id="additivePanelSafety"></div>
         </div>
 
     </div>
