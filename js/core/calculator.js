@@ -251,9 +251,10 @@ export function calculateVolume(recipe, fatsDatabase, lyeAmount, waterAmount, un
     if (totalFatWeight === 0) return { min: 0, max: 0 };
 
     // Convert to grams if needed (density is g/mL)
-    const fatWeightG = unit === 'oz' ? totalFatWeight * VOLUME.G_PER_OZ : totalFatWeight;
-    const lyeWeightG = unit === 'oz' ? lyeAmount * VOLUME.G_PER_OZ : lyeAmount;
-    const waterWeightG = unit === 'oz' ? waterAmount * VOLUME.G_PER_OZ : waterAmount;
+    const isImperial = unit === 'imperial';
+    const fatWeightG = isImperial ? totalFatWeight * VOLUME.G_PER_OZ : totalFatWeight;
+    const lyeWeightG = isImperial ? lyeAmount * VOLUME.G_PER_OZ : lyeAmount;
+    const waterWeightG = isImperial ? waterAmount * VOLUME.G_PER_OZ : waterAmount;
 
     // Calculate weighted average fat density
     const avgFatDensity = recipe.reduce((sum, fat) => {
@@ -274,8 +275,8 @@ export function calculateVolume(recipe, fatsDatabase, lyeAmount, waterAmount, un
     const minML = Math.round(baseVolumeML * VOLUME.UNCERTAINTY_MIN);
     const maxML = Math.round(baseVolumeML * VOLUME.UNCERTAINTY_MAX);
 
-    // Convert to fl oz if user is in oz mode
-    if (unit === 'oz') {
+    // Convert to fl oz if user is in imperial mode
+    if (isImperial) {
         return {
             min: Math.round(minML / VOLUME.ML_PER_FLOZ),
             max: Math.round(maxML / VOLUME.ML_PER_FLOZ)
@@ -559,11 +560,11 @@ export function calculateAdditivesTotal(recipeAdditives, additivesDatabase, tota
  * @param {Array} recipeAdditives - Additives in recipe {id, weight}
  * @param {Object} additivesDatabase - Database
  * @param {number} totalFatWeight - Total fat weight (unused, kept for API compatibility)
- * @param {string} unit - 'g' or 'oz'
+ * @param {string} unit - 'metric' or 'imperial'
  * @returns {number} Volume in mL
  */
 export function calculateAdditiveVolume(recipeAdditives, additivesDatabase, totalFatWeight, unit) {
-    const conversionFactor = unit === 'oz' ? VOLUME.G_PER_OZ : 1;
+    const conversionFactor = unit === 'imperial' ? VOLUME.G_PER_OZ : 1;
     return recipeAdditives.reduce((sum, item) => {
         const density = additivesDatabase[item.id]?.density ?? 1.0;
         return sum + (item.weight * conversionFactor) / density;

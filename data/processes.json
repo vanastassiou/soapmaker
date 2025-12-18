@@ -5,7 +5,7 @@
       "craft"
     ],
     "summary": "The most popular method for handmade soap. Oils and lye react at low temperatures, preserving beneficial compounds.",
-    "description": "Cold process (CP) soapmaking combines oils with lye solution at relatively low temperatures (typically 100-130°F / 38-54°C). The saponification reaction generates its own heat but doesn't require external heating.\n\nThis method preserves heat-sensitive compounds in oils and allows for creative designs like swirls and layers. The trade-off is a required 4-6 week cure time before use.",
+    "description": "Cold process (CP) soapmaking combines oils with lye solution at relatively low temperatures (typically 38-54°C). The saponification reaction generates its own heat but doesn't require external heating.\n\nThis method preserves heat-sensitive compounds in oils and allows for creative designs like swirls and layers. The trade-off is a required 4-6 week cure time before use.",
     "difficulty": "beginner",
     "steps": [
       {
@@ -27,7 +27,7 @@
         "tips": [
           "Weigh directly into container using tare function",
           "Melt solid fats first, then add liquid oils",
-          "Target oil temperature: 100-130°F (38-54°C)"
+          "Target oil temperature: 38-54°C"
         ]
       },
       {
@@ -36,7 +36,7 @@
         "tips": [
           "Always add lye to water, not water to lye",
           "Stir until all crystals dissolve",
-          "Solution will heat to 200°F+ (93°C+); let cool"
+          "Solution will heat to 93°C+; let cool"
         ],
         "warnings": [
           "Lye solution releases caustic fumes; work in ventilation",
@@ -46,10 +46,10 @@
       },
       {
         "title": "Combine oils and lye",
-        "description": "When both mixtures are within 10°F (5°C) of each other and at target temperature, slowly pour lye solution into oils while stirring.",
+        "description": "When both mixtures are within 5°C of each other and at target temperature, slowly pour lye solution into oils while stirring.",
         "tips": [
           "Pour in a thin stream while stirring",
-          "Temperatures between 100-130°F (38-54°C) work well",
+          "Temperatures between 38-54°C work well",
           "Exact temperature match less critical than often stated"
         ]
       },

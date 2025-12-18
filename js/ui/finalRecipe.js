@@ -156,10 +156,33 @@ function formatAdditivesList(recipeAdditives, additivesDatabase, unit) {
 // Recipe Procedure Templates
 // ============================================
 
+/**
+ * Convert Celsius to Fahrenheit
+ * @param {number} celsius - Temperature in Celsius
+ * @returns {number} Temperature in Fahrenheit
+ */
+function celsiusToFahrenheit(celsius) {
+    return Math.round(celsius * 9 / 5 + 32);
+}
+
+/**
+ * Format temperature for display based on unit system
+ * @param {number} lowC - Low temperature in Celsius
+ * @param {number} highC - High temperature in Celsius
+ * @param {string} unitSystem - 'metric' or 'imperial'
+ * @returns {string} Formatted temperature string
+ */
+function formatTemperatureRange(lowC, highC, unitSystem) {
+    if (unitSystem === 'imperial') {
+        return `${celsiusToFahrenheit(lowC)}-${celsiusToFahrenheit(highC)}°F`;
+    }
+    return `${lowC}-${highC}°C`;
+}
+
 const COLD_PROCESS_PROCEDURE = [
     {
         title: 'Prepare fats',
-        text: 'Combine fats in a heat-safe, non-reactive container (avoid aluminum). Heat gently until all solid fats are melted, then let cool to target soaping temperature (typically 100-130°F / 38-54°C).'
+        textTemplate: (unit) => `Combine fats in a heat-safe, non-reactive container (avoid aluminum). Heat gently until all solid fats are melted, then let cool to target soaping temperature (typically ${formatTemperatureRange(38, 54, unit)}).`
     },
     {
         title: 'Prepare lye solution',
@@ -183,6 +206,19 @@ const COLD_PROCESS_PROCEDURE = [
         text: 'Let mixture saponify for 24 to 48 hours, then unmould and cut into bars if needed. Cure soap on a rack in a cool, dry place for 4 to 6 weeks before use.'
     }
 ];
+
+/**
+ * Get procedure step text, supporting both static text and templates
+ * @param {Object} step - Procedure step
+ * @param {string} unitSystem - 'metric' or 'imperial'
+ * @returns {string} Step text
+ */
+function getStepText(step, unitSystem) {
+    if (step.textTemplate) {
+        return step.textTemplate(unitSystem);
+    }
+    return step.text;
+}
 
 const HOT_PROCESS_PROCEDURE = [
     {
@@ -261,7 +297,7 @@ function buildIngredientsList(data) {
  * @param {string} processType - 'cold' or 'hot'
  * @returns {string} HTML for procedure section
  */
-function buildProcedureList(hasAdditives, processType = 'cold') {
+function buildProcedureList(hasAdditives, processType = 'cold', unitSystem = 'metric') {
     const procedure = processType === 'hot' ? HOT_PROCESS_PROCEDURE : COLD_PROCESS_PROCEDURE;
     const processLabel = processType === 'hot' ? 'Hot process' : 'Cold process';
 
@@ -271,7 +307,7 @@ function buildProcedureList(hasAdditives, processType = 'cold') {
         // Skip conditional steps if condition not met
         if (step.conditional === 'additives' && !hasAdditives) return;
 
-        html += `<li><strong>${step.title}.</strong> ${step.text}</li>`;
+        html += `<li><strong>${step.title}.</strong> ${getStepText(step, unitSystem)}</li>`;
     });
 
     html += '</ol></div>';
@@ -613,12 +649,13 @@ function buildScienceSection(data) {
  */
 export function renderFinalRecipe(container, data) {
     const hasAdditives = data.recipeAdditives.length > 0;
+    const unitSystem = data.unitSystem || 'metric';
 
     container.innerHTML = `
         <div class="recipe-prose">
             ${buildQualitativeSummary(data.properties, data.notes)}
             ${buildIngredientsList(data)}
-            ${buildProcedureList(hasAdditives, data.processType)}
+            ${buildProcedureList(hasAdditives, data.processType, unitSystem)}
             ${buildScienceSection(data)}
         </div>
     `;

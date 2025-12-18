@@ -1017,7 +1017,7 @@ export function getSettings() {
         processType: $(ELEMENT_IDS.processType)?.value || 'cold',
         superfat: parseFloatOr($(ELEMENT_IDS.superfat)?.value, 0),
         waterRatio: parseFloatOr($(ELEMENT_IDS.waterRatio)?.value, 2),
-        unit: $(ELEMENT_IDS.unit)?.value || 'g',
+        unit: $(ELEMENT_IDS.unit)?.value || 'metric',
         recipeWeight: parseFloatOr($(ELEMENT_IDS.recipeWeight)?.value, DEFAULTS.BASE_RECIPE_WEIGHT)
     };
 }

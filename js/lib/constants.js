@@ -235,6 +235,39 @@ export const VOLUME = {
     UNCERTAINTY_MAX: 1.12      // +12% volume uncertainty
 };
 
+// Unit system labels
+export const UNIT_LABELS = {
+    metric: { weight: 'g', volume: 'mL' },
+    imperial: { weight: 'oz', volume: 'fl oz' }
+};
+
+/**
+ * Get display labels for a unit system
+ * @param {string} unitSystem - 'metric' or 'imperial'
+ * @returns {{weight: string, volume: string}} Display labels
+ */
+export function getUnitLabels(unitSystem) {
+    return UNIT_LABELS[unitSystem] || UNIT_LABELS.metric;
+}
+
+/**
+ * Get weight label for a unit system
+ * @param {string} unitSystem - 'metric' or 'imperial'
+ * @returns {string} Weight label ('g' or 'oz')
+ */
+export function getWeightLabel(unitSystem) {
+    return getUnitLabels(unitSystem).weight;
+}
+
+/**
+ * Get volume label for a unit system
+ * @param {string} unitSystem - 'metric' or 'imperial'
+ * @returns {string} Volume label ('mL' or 'fl oz')
+ */
+export function getVolumeLabel(unitSystem) {
+    return getUnitLabels(unitSystem).volume;
+}
+
 // Profile builder thresholds
 export const PROFILE = {
     MIN_FAT_PERCENT: 5,

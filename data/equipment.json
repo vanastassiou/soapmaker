@@ -60,7 +60,7 @@
       "food-grade silicone"
     ],
     "considerations": [
-      "Food-grade silicone rated to 230°C/450°F",
+      "Food-grade silicone rated to 230°C",
       "Loaf moulds: typically 1-1.5kg capacity",
       "Wall thickness affects insulation and gel phase",
       "Some need external support (wooden frame)"
@@ -165,13 +165,13 @@
       "craft"
     ],
     "description": "Temperature measuring device for monitoring oil and lye solution temperatures before combining.",
-    "details": "The mixed melted fat and lye solution should ideally start at  100-130°F (38-54°C) to prevent false trace.\n\nInfrared (non-contact) thermometers are convenient but measure surface temperature only. Probe thermometers give more accurate readings.",
+    "details": "The mixed melted fat and lye solution should ideally start at 38-54°C to prevent false trace.\n\nInfrared (non-contact) thermometers are convenient but measure surface temperature only. Probe thermometers give more accurate readings.",
     "materials": [
       "stainless steel probe",
       "digital display"
     ],
     "considerations": [
-      "Range: at least 32-250°F (0-120°C)",
+      "Range: at least 0-120°C",
       "Probe type more accurate than infrared for liquids",
       "Instant-read digital models most convenient",
       "Dedicate to soapmaking (lye residue)"
@@ -219,7 +219,7 @@
     ],
     "considerations": [
       "Never use aluminium (reacts with lye)",
-      "Heat-resistant to at least 200°F (93°C)",
+      "Heat-resistant to at least 93°C",
       "Wide opening for stirring",
       "Pour spout helpful for moulding"
     ],

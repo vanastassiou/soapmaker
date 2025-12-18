@@ -5,7 +5,7 @@
 
 import * as calc from './core/calculator.js';
 import * as optimizer from './core/optimizer.js';
-import { ADDITIVE_CATEGORIES, ADDITIVE_WARNING_TYPES, CSS_CLASSES, DEFAULTS, ELEMENT_IDS, PROPERTY_KEYS, PROPERTY_RANGES, UI_MESSAGES, VOLUME } from './lib/constants.js';
+import { ADDITIVE_CATEGORIES, ADDITIVE_WARNING_TYPES, CSS_CLASSES, DEFAULTS, ELEMENT_IDS, getWeightLabel, PROPERTY_KEYS, PROPERTY_RANGES, UI_MESSAGES, VOLUME } from './lib/constants.js';
 import * as validation from './lib/validation.js';
 import {
     addAdditiveToRecipe, addExclusion, addFatToRecipe, clearRecipe,
@@ -178,7 +178,7 @@ function renderAdditivesList() {
         state.recipeAdditives,
         allAdditives,
         totalFatWeight,
-        settings.unit,
+        getWeightLabel(settings.unit),
         {
             onWeightChange: handleAdditiveWeightChange,
             onRemove: handleRemoveAdditive,
@@ -375,17 +375,17 @@ function handleResetExclusions() {
 function handleUnitChange() {
     const unitSelect = $(ELEMENT_IDS.unit);
     const recipeWeightInput = $(ELEMENT_IDS.recipeWeight);
-    const newUnit = unitSelect?.value || 'g';
+    const newUnit = unitSelect?.value || 'metric';
 
     // Convert recipe weight if unit changed
     if (recipeWeightInput && previousUnit !== newUnit) {
         const currentWeight = parseFloat(recipeWeightInput.value) || 0;
         let convertedWeight;
 
-        if (previousUnit === 'g' && newUnit === 'oz') {
+        if (previousUnit === 'metric' && newUnit === 'imperial') {
             // Grams to ounces
             convertedWeight = currentWeight / VOLUME.G_PER_OZ;
-        } else if (previousUnit === 'oz' && newUnit === 'g') {
+        } else if (previousUnit === 'imperial' && newUnit === 'metric') {
             // Ounces to grams
             convertedWeight = currentWeight * VOLUME.G_PER_OZ;
         } else {
@@ -393,7 +393,7 @@ function handleUnitChange() {
         }
 
         // Round to reasonable precision
-        recipeWeightInput.value = newUnit === 'oz'
+        recipeWeightInput.value = newUnit === 'imperial'
             ? convertedWeight.toFixed(1)
             : Math.round(convertedWeight);
     }
@@ -1266,7 +1266,7 @@ function renderCupboardFatsList() {
 
     const settings = ui.getSettings();
 
-    ui.renderCupboardFats(container, state.cupboardFats, state.fatsDatabase, settings.unit, {
+    ui.renderCupboardFats(container, state.cupboardFats, state.fatsDatabase, getWeightLabel(settings.unit), {
         onWeightChange: handleCupboardWeightChange,
         onRemove: handleRemoveCupboardFat,
         onInfo: (fatId) => {
@@ -1291,7 +1291,7 @@ function renderCupboardSuggestionsList() {
         container,
         state.cupboardSuggestions,
         state.fatsDatabase,
-        settings.unit,
+        getWeightLabel(settings.unit),
         {
             onWeightChange: handleCupboardSuggestionWeightChange,
             onRemove: handleRemoveCupboardSuggestion,
@@ -1423,7 +1423,8 @@ function handleCreateRecipe() {
         processType: settings.processType,
         superfat: settings.superfat,
         waterRatio: settings.waterRatio,
-        unit: settings.unit,
+        unit: getWeightLabel(settings.unit),
+        unitSystem: settings.unit,
         fattyAcids,
         properties: { ...properties, iodine, ins },
         notes,
@@ -1454,7 +1455,7 @@ async function init() {
     restoreState();
 
     // Sync previousUnit with restored/default unit value
-    previousUnit = $(ELEMENT_IDS.unit)?.value || 'g';
+    previousUnit = $(ELEMENT_IDS.unit)?.value || 'metric';
 
     updateFatSelectWithFilters();
     ui.initHelpPopup(state.glossaryData, state.tooltipsData, (term) => {
