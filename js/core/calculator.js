@@ -1,19 +1,18 @@
 /**
- * Pure calculation functions for soap making
+ * Pure calculation functions for soapmaking
  * No DOM dependencies - can be unit tested independently
  */
 
 import {
-    FATTY_ACID_KEYS,
-    NOTE_THRESHOLDS,
-    VOLUME,
-    NOTE_TYPES,
-    NOTE_ICONS,
-    SPECIAL_FATS,
-    PROPERTY_RANGES,
     CALCULATION,
+    FATTY_ACID_KEYS,
     initFattyAcids,
-    isInRange
+    NOTE_ICONS,
+    NOTE_THRESHOLDS,
+    NOTE_TYPES,
+    PROPERTY_RANGES,
+    SPECIAL_FATS,
+    VOLUME
 } from '../lib/constants.js';
 
 // ============================================

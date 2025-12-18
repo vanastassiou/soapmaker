@@ -102,7 +102,10 @@
         "domain": {
           "description": "Knowledge section(s) where this term appears",
           "items": {
-            "enum": ["craft", "calculator"],
+            "enum": [
+              "craft",
+              "calculator"
+            ],
             "type": "string"
           },
           "minItems": 1,
@@ -119,6 +122,6 @@
     }
   },
   "description": "Schema for glossary terms and definitions",
-  "title": "Soap Making Glossary",
+  "title": "Soapmaking Glossary",
   "type": "object"
 }

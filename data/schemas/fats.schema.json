@@ -227,7 +227,7 @@
       "type": "object"
     }
   },
-  "description": "Schema for oils used in soap making calculations",
-  "title": "Soap Making Oils Database",
+  "description": "Schema for oils used in soapmaking calculations",
+  "title": "Soapmaking Oils Database",
   "type": "object"
 }
