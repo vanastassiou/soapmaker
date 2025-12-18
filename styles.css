@@ -113,6 +113,9 @@
     /* Icon button size (lock, remove) */
     --size-icon-btn: 28px;
 
+    /* Input field width for list items (5 digits + spinner buttons) */
+    --width-input-list: 5.5rem;
+
     /* ============================================
        Effects
        ============================================ */
@@ -726,21 +729,17 @@ input:focus, select:focus {
 .percentage-cell input {
     flex: 1;
     min-width: 0;
-    max-width: 5rem;
+    max-width: var(--width-input-list);
 }
 
 /* Item row inputs and percentages */
 .item-row input {
-    width: 4rem;
+    width: var(--width-input-list);
     height: var(--size-icon-btn);
     min-height: var(--size-icon-btn);
-    padding: var(--space-1) var(--space-2);
+    padding: var(--space-1) var(--space-4) var(--space-1) var(--space-2);
     font-size: var(--text-lg);
     text-align: right;
-}
-
-.item-row input[data-action="percentage"] {
-    width: 3rem;
 }
 
 .item-row input:disabled {

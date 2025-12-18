@@ -1090,7 +1090,7 @@ function renderYoloRecipe() {
 
     // Store callbacks on container for dynamic lookup
     container._callbacks = {
-        onTogglePercentageLock: (index) => {
+        onToggleLock: (index) => {
             toggleYoloLock(index);
             renderYoloRecipe();
         },

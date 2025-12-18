@@ -84,7 +84,7 @@ export function renderRecipe(container, recipe, locks, fatsDatabase, callbacks) 
     const totalPercentage = recipe.reduce((sum, fat) => sum + fat.percentage, 0);
 
     const headerRow = `
-        <div class="item-row header-row">
+        <div class="item-row header-row cols-3">
             <span>Fat</span>
             <span>%</span>
             <span></span>
@@ -764,7 +764,7 @@ export function renderProfileResults(result, targetProfile, fatsDatabase, locked
     // Attach event handlers for fat info and lock toggle
     attachRowEventHandlersWithSignal(suggestedRecipeDiv, {
         onInfo: callbacks.onFatInfo,
-        onTogglePercentageLock: callbacks.onToggleLock
+        onToggleLock: callbacks.onToggleLock
     }, 'fat', signal);
 
     // Render achieved vs target comparison
@@ -976,10 +976,11 @@ export function renderCupboardFats(container, cupboardFats, fatsDatabase, unit, 
     const totalWeight = cupboardFats.reduce((sum, fat) => sum + fat.weight, 0);
 
     const headerRow = `
-        <div class="item-row header-row cols-3">
+        <div class="item-row header-row cols-4">
             <span>Fat</span>
-            <span>Weight</span>
+            <span>${unit}</span>
             <span>%</span>
+            <span></span>
         </div>
     `;
 
@@ -1030,9 +1031,9 @@ export function renderCupboardSuggestions(container, suggestions, fatsDatabase, 
     const totalWeight = suggestions.reduce((sum, s) => sum + s.weight, 0);
 
     const headerRow = `
-        <div class="item-row header-row">
+        <div class="item-row header-row cols-4">
             <span>Suggested fat</span>
-            <span>Weight</span>
+            <span>${unit}</span>
             <span>%</span>
             <span></span>
         </div>

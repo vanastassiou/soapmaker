@@ -104,7 +104,7 @@ function calculateWeightedAverage(recipe, fatsDatabase, property) {
 
     return recipe.reduce((sum, r) => {
         const fat = fatsDatabase[r.id];
-        return sum + (fat?.[property] ?? 0) * (r.weight / totalFats);
+        return sum + (fat?.details?.[property] ?? 0) * (r.weight / totalFats);
     }, 0);
 }
 
