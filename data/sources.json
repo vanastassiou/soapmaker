@@ -9,7 +9,7 @@
   "pmc": {
     "name": "PubMed Central",
     "description": "Free full-text archive of biomedical and life sciences journal literature.",
-    "baseUrl": "https://www.ncbi.nlm.nih.gov/pmc",
+    "baseUrl": "https://pmc.ncbi.nlm.nih.gov",
     "publisher": "National Center for Biotechnology Information (NCBI)",
     "fundedBy": "US National Institutes of Health (NIH)"
   },
@@ -198,6 +198,7 @@
   "scientific-soapmaking": {
     "name": "Scientific Soapmaking (Dunn)",
     "description": "Kevin Dunn (2010). Clavicula Press. ISBN 978-1935652090. Academic chemist's guide to soapmaking science.",
+    "baseUrl": "https://www.worldcat.org/isbn/9781935652090",
     "publisher": "Clavicula Press",
     "fundedBy": "Author / publisher"
   },

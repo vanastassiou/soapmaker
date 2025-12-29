@@ -413,7 +413,9 @@
         "sourceId": "journal-aocs",
         "section": "Structure Indices in FA Chemistry",
         "url": "https://doi.org/10.1007/s11746-002-0569-4",
-        "note": "Peer-reviewed critique of iodine value as quality predictor"
+        "doi": "10.1007/s11746-002-0569-4",
+        "published": "2002",
+        "note": "Knothe, G. (2002). How relevant is the iodine value?"
       }
     ]
   },

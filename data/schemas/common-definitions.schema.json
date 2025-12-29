@@ -126,6 +126,15 @@
           "format": "uri",
           "description": "Direct URL to the referenced content"
         },
+        "doi": {
+          "type": "string",
+          "pattern": "^10\\.[0-9]+/",
+          "description": "Digital Object Identifier for peer-reviewed publications"
+        },
+        "published": {
+          "type": "string",
+          "description": "Publication date (YYYY, YYYY-MM, or YYYY-MM-DD)"
+        },
         "note": {
           "type": "string",
           "description": "Additional context about this specific reference"

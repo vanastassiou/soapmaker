@@ -108,6 +108,8 @@
         "sourceId": "pmc",
         "section": "PMC6225244",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
         "note": "Cold saponification takes 18-24h; curing requires 3-4 weeks for water evaporation"
       }
     ],
@@ -134,13 +136,15 @@
       {
         "sourceId": "soapcalc",
         "section": "Soap Qualities",
-        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "url": "https://soapcalc.net/info/soapqualities.asp",
         "note": "Called 'cleansing' in SoapCalc terminology. Empirically derived formula; measures water solubility rather than cleaning ability."
       },
       {
         "sourceId": "pmc",
         "section": "PMC6225244",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
         "note": "Scientific context: short-chain saturated fatty acids affect soap solubility"
       }
     ],
@@ -161,6 +165,8 @@
         "sourceId": "pmc",
         "section": "PMC6827023",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6827023/",
+        "doi": "10.3390/antiox8100429",
+        "published": "2019-09",
         "note": "Lipid oxidation mechanisms causing dreaded orange spots"
       }
     ],
@@ -209,6 +215,8 @@
         "sourceId": "pmc",
         "section": "PMC6225244",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
         "note": "Saponification process and temperature effects on emulsification"
       }
     ],
@@ -247,12 +255,14 @@
     "domain": [
       "craft"
     ],
-    "details": "Forcing gel: insulate mould, use CPOP (cold process oven process)\nPreventing gel: refrigerate/freeze mould, use individual cavities\n\nPartial gel creates darker center ring. Glycerin rivers more likely with low water + gel.",
+    "details": "Forcing gel: insulate mould, use CPOP (cold process oven process)\nPreventing gel: refrigerate/freeze mould, use individual cavities\n\nPartial gel creates darker centre ring. Glycerin rivers more likely with low water + gel.",
     "references": [
       {
         "sourceId": "pmc",
         "section": "PMC6225244",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
         "note": "Saponification reaction generates heat causing gel phase transition"
       }
     ],
@@ -275,6 +285,8 @@
         "sourceId": "pmc",
         "section": "PMC6225244",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
         "note": "Lyotropic liquid-crystalline phase behaviour during saponification"
       }
     ],
@@ -302,7 +314,7 @@
   "hardness": {
     "name": "Hardness",
     "type": "property",
-    "description": "Sum of saturated fatty acids (lauric + myristic + palmitic + stearic). Affects bar firmness, unmoulding time, and how long the bar lasts in the shower.",
+    "description": "Sum of all saturated fatty acids (caprylic + capric + lauric + myristic + palmitic + stearic + arachidic + behenic). Affects bar firmness, unmoulding time, and how long the bar lasts in the shower.",
     "domain": [
       "craft",
       "calculator"
@@ -316,13 +328,15 @@
       {
         "sourceId": "soapcalc",
         "section": "Soap Qualities",
-        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "url": "https://soapcalc.net/info/soapqualities.asp",
         "note": "Empirically derived formula from soapmaking community practice; not peer-reviewed"
       },
       {
         "sourceId": "pmc",
         "section": "PMC6225244",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
         "note": "Scientific context: saturated fatty acids contribute to soap hardness"
       }
     ],
@@ -390,7 +404,9 @@
         "sourceId": "journal-aocs",
         "section": "Structure Indices in FA Chemistry",
         "url": "https://doi.org/10.1007/s11746-002-0569-4",
-        "note": "Modern analysis of fatty acid structure indices including INS"
+        "doi": "10.1007/s11746-002-0569-4",
+        "published": "2002",
+        "note": "Knothe, G. (2002). How relevant is the iodine value?"
       }
     ],
     "related": [
@@ -420,7 +436,7 @@
       {
         "sourceId": "soapcalc",
         "section": "Soap Qualities",
-        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "url": "https://soapcalc.net/info/soapqualities.asp",
         "note": "Recommended ranges are empirically derived from soapmaking practice"
       }
     ],
@@ -468,13 +484,15 @@
       {
         "sourceId": "soapcalc",
         "section": "Soap Qualities",
-        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "url": "https://soapcalc.net/info/soapqualities.asp",
         "note": "Called 'creamy' in SoapCalc terminology. Empirically derived formula from soapmaking community practice; not peer-reviewed."
       },
       {
         "sourceId": "pmc",
         "section": "PMC6225244",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
         "note": "Scientific context: palmitic and stearic acids contribute to stable lather"
       }
     ],
@@ -512,13 +530,15 @@
       {
         "sourceId": "soapcalc",
         "section": "Soap Qualities",
-        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "url": "https://soapcalc.net/info/soapqualities.asp",
         "note": "Called 'bubbly' in SoapCalc terminology. Empirically derived formula from soapmaking community practice; not peer-reviewed."
       },
       {
         "sourceId": "pmc",
         "section": "PMC6225244",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
         "note": "Scientific context: fatty acid composition affects lather properties"
       }
     ],
@@ -539,6 +559,8 @@
         "sourceId": "pmc",
         "section": "PMC6225244",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
         "note": "Water content affects saponification rate and final soap properties"
       }
     ],
@@ -599,7 +621,7 @@
   "moisturizing": {
     "name": "Skin conditioning",
     "type": "property",
-    "description": "Sum of unsaturated fatty acids (oleic + ricinoleic + linoleic + linolenic). Indicates how moisturizing and gentle the soap feels on skin.",
+    "description": "Sum of unsaturated fatty acids (palmitoleic + oleic + ricinoleic + linoleic + linolenic + erucic). Indicates how moisturizing and gentle the soap feels on skin.",
     "domain": [
       "craft",
       "calculator"
@@ -613,13 +635,15 @@
       {
         "sourceId": "soapcalc",
         "section": "Soap Qualities",
-        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "url": "https://soapcalc.net/info/soapqualities.asp",
         "note": "Called 'conditioning' in SoapCalc terminology. Empirically derived formula from soapmaking community practice; not peer-reviewed."
       },
       {
         "sourceId": "pmc",
         "section": "PMC6225244",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
         "note": "Scientific context: unsaturated fatty acids provide moisturizing properties"
       }
     ],
@@ -741,6 +765,8 @@
         "sourceId": "pmc",
         "section": "PMC6827023",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6827023/",
+        "doi": "10.3390/antiox8100429",
+        "published": "2019-09",
         "note": "Comprehensive review of lipid oxidation mechanisms"
       }
     ],
@@ -764,6 +790,8 @@
         "sourceId": "pmc",
         "section": "PMC6225244",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
         "note": "Cold saponification takes 18-24h; curing requires 3-4 weeks"
       }
     ],
@@ -868,7 +896,7 @@
       {
         "sourceId": "soapcalc",
         "section": "Soap Qualities",
-        "url": "http://soapcalc.net/info/soapqualities.asp",
+        "url": "https://soapcalc.net/info/soapqualities.asp",
         "note": "Recommended superfat ranges are empirically derived from soapmaking practice"
       }
     ],
@@ -911,6 +939,8 @@
         "sourceId": "pmc",
         "section": "PMC6225244",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
         "note": "Emulsification stage of saponification process"
       }
     ],

@@ -15,6 +15,14 @@
     ],
     "related": [
       "recipe-weight"
+    ],
+    "references": [
+      {
+        "sourceId": "nist",
+        "section": "Weights and Measures",
+        "url": "https://www.nist.gov/pml/owm",
+        "note": "NIST standards for accurate measurement"
+      }
     ]
   },
   "immersion-blender": {
@@ -37,6 +45,16 @@
     ],
     "related": [
       "trace"
+    ],
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
+        "note": "Emulsification process and trace formation in cold-process soapmaking"
+      }
     ]
   },
   "silicone-mould": {
@@ -54,6 +72,14 @@
     "related": [
       "gel-phase",
       "cure"
+    ],
+    "references": [
+      {
+        "sourceId": "echa",
+        "section": "Silicones in consumer products",
+        "url": "https://echa.europa.eu/hot-topics/silicones",
+        "note": "EU chemical safety guidance for silicone materials"
+      }
     ]
   },
   "wooden-loaf-mould": {
@@ -63,7 +89,7 @@
       "craft"
     ],
     "description": "Wooden box mould lined with freezer paper or silicone. Provides excellent insulation for gel phase.",
-    "details": "Wooden moulds insulate well, which promotes an gel phase throughout the loaf.",
+    "details": "Wooden moulds insulate well, which promotes a gel phase throughout the loaf.",
     "considerations": [
       "Heavier and less flexible than silicone",
       "Requires lining (freezer paper, silicone); unlined wood will become unusable as it becomes saturated with moisture and soap."
@@ -71,6 +97,16 @@
     "related": [
       "gel-phase",
       "cure"
+    ],
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
+        "note": "Gel phase transition during saponification and effect on final soap quality"
+      }
     ]
   },
   "safety-goggles": {
@@ -143,6 +179,16 @@
     "related": [
       "trace",
       "gel-phase"
+    ],
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
+        "note": "Temperature effects on saponification and emulsification"
+      }
     ]
   },
   "soap-cutter": {
@@ -156,11 +202,18 @@
     "considerations": [
       "Wire cutters provide clean cuts with minimal drag",
       "A knife provides more control but may drag through soft soap",
-      "Multi-bar cutters helf achieve consistent thickness",
+      "Multi-bar cutters help achieve consistent thickness",
       "A mitre box helps achieve straight cuts"
     ],
     "related": [
       "cure"
+    ],
+    "references": [
+      {
+        "sourceId": "scientific-soapmaking",
+        "section": "Chapter 15: Cutting and Curing",
+        "note": "Dunn, K. (2010). Scientific Soapmaking. Clavicula Press."
+      }
     ]
   },
   "mixing-containers": {
@@ -184,6 +237,14 @@
     ],
     "related": [
       "lye-concentration"
+    ],
+    "references": [
+      {
+        "sourceId": "echa",
+        "section": "Sodium hydroxide chemical safety",
+        "url": "https://echa.europa.eu/substance-information/-/substanceinfo/100.013.805",
+        "note": "Material compatibility guidance for handling sodium hydroxide"
+      }
     ]
   },
   "curing-rack": {
@@ -202,6 +263,16 @@
     ],
     "related": [
       "cure"
+    ],
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
+        "note": "Cure time requirements and water evaporation during cold-process soap curing"
+      }
     ]
   }
 }

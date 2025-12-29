@@ -89,7 +89,7 @@
         "tips": [
           "Gel phase: wrap in towels, leave 24 hours",
           "Non-gel: refrigerate for 24 hours",
-          "Partial gel creates darker ring in center"
+          "Partial gel creates darker ring in centre"
         ]
       },
       {
@@ -149,6 +149,8 @@
         "sourceId": "pmc",
         "section": "PMC6225244",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
         "note": "Cold saponification process and cure time research"
       }
     ]
@@ -270,6 +272,8 @@
         "sourceId": "pmc",
         "section": "PMC6225244",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "doi": "10.3390/molecules23092356",
+        "published": "2018-09",
         "note": "Saponification chemistry; hot process accelerates completion"
       }
     ]

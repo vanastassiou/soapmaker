@@ -273,7 +273,9 @@
       {
         "sourceId": "pmc",
         "section": "Jojoba Oil: An Updated Comprehensive Review on Chemistry, Pharmaceutical Uses, and Toxicity",
-        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8197201/"
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8197201/",
+        "doi": "10.3390/polym13111711",
+        "published": "2021-05"
       }
     ]
   },

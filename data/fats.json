@@ -495,7 +495,9 @@
       {
         "sourceId": "pmc",
         "section": "PMC5015816: Castor Oil: Properties, Uses, and Optimization of Processing Parameters in Commercial Production",
-        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5015816/"
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5015816/",
+        "doi": "10.4137/LPI.S40233",
+        "published": "2016-09"
       }
     ]
   },
