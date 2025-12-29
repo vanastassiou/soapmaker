@@ -249,33 +249,140 @@ CALCULATION.DOMINANT_FATTY_ACID_THRESHOLD  // 10% - minimum for "dominant"
 
 ## CSS Architecture
 
+### Cascade Layers
+
+Specificity is controlled via CSS cascade layers:
+
+```css
+@layer reset, tokens, components, layouts, pages, utilities;
+```
+
+Layer purposes:
+
+- `reset` - Browser normalization
+- `tokens` - CSS custom properties applied to elements
+- `components` - Reusable UI components (buttons, cards, inputs)
+- `layouts` - Page structure (header, main, panels)
+- `pages` - Page-specific styles
+- `utilities` - Helper classes (visually-hidden, etc.)
+
 ### CSS Custom Properties
 
-All colours and spacing use CSS variables:
+All colours, spacing, and breakpoints use CSS variables:
 
 ```css
 :root {
-    --bg-primary: #141917;
-    --text-primary: #e8efe9;
-    --accent-gold: #d4a84b;
-    /* ... */
+    --bg-primary: #1a2420;
+    --text-primary: #e8e8e0;
+    --accent-gold: #e0b050;
+
+    /* Breakpoints (reference values) */
+    --bp-xs: 375px;
+    --bp-sm: 480px;
+    --bp-md: 768px;
+    --bp-lg: 1024px;
+    --bp-xl: 1200px;
+}
+```
+
+### Container Queries
+
+Cards use container queries for component-level responsiveness:
+
+```css
+.card {
+    container-type: inline-size;
+    container-name: card;
+}
+
+@container card (max-width: 400px) {
+    .card-header { flex-direction: column; }
 }
 ```
 
 ### Component Styling
 
-Each component has isolated styles:
+Each component has isolated styles within appropriate layers:
 
 - `.fat-row` - Recipe item rows
 - `.toast` - Toast notifications
 - `.info-panel` - Info panels
 
-### Responsive Breakpoints
+---
 
-```css
-@media (max-width: 1024px) { /* Tablet */ }
-@media (max-width: 768px)  { /* Mobile landscape */ }
-@media (max-width: 480px)  { /* Mobile portrait */ }
+## Performance Patterns
+
+### Lazy Loading
+
+Additive databases load on-demand when user switches tabs:
+
+```javascript
+const ADDITIVE_CATEGORY_MAP = {
+    fragrance: { stateKey: 'fragrancesDatabase', file: 'fragrances' },
+    colourant: { stateKey: 'colourantsDatabase', file: 'colourants' },
+    // ...
+};
+
+async function loadAdditiveCategory(category) {
+    if (state[config.stateKey]) return; // Already loaded
+    const data = await fetch(`./data/${config.file}.json`);
+    // ...
+}
+```
+
+Core data (fats, glossary, formulas) loads at startup; additives (~100KB) are deferred.
+
+### DOM Batching
+
+Property updates use `requestAnimationFrame` to batch DOM writes:
+
+```javascript
+function batchUpdateProperties(properties) {
+    if (pendingPropertyFrame) {
+        cancelAnimationFrame(pendingPropertyFrame);
+    }
+    pendingPropertyFrame = requestAnimationFrame(() => {
+        PROPERTY_KEYS.forEach(key => {
+            ui.updateProperty(key, properties[key], range.min, range.max);
+        });
+    });
+}
+```
+
+### Production Validation Skip
+
+Schema validation runs only on localhost:
+
+```javascript
+export function shouldSkipValidation() {
+    const host = window.location.hostname;
+    return host !== 'localhost' && host !== '127.0.0.1';
+}
+```
+
+---
+
+## Schema DRY-ness
+
+### Shared Definitions
+
+`common-definitions.schema.json` contains reusable patterns:
+
+- `references` - Source citation arrays
+- `usage` - Min/max percentage ranges
+- `dietary` - animalBased, commonAllergen flags
+- `ethicalConcerns` - Environmental, social, political arrays
+- `sourcing` - Production regions and methods
+- `safety` - CAS numbers, concentration limits
+
+All schemas use `$ref` to reference these:
+
+```json
+{
+    "references": {
+        "$ref": "common-definitions.schema.json#/definitions/references"
+    }
+}
 ```
 
 ---
@@ -297,3 +404,4 @@ Each component has isolated styles:
 - State library: custom reactive state is sufficient; no need for Redux/MobX
 - Build system: ES modules work natively; no bundler required
 - CSS framework: custom CSS matches design needs exactly
+- CSS modules: would require build step and break HTML/JS class references
