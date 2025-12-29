@@ -1,4 +1,22 @@
 /* ============================================
+   Soapmaker CSS Architecture
+   ============================================
+
+   Layer order (lowest to highest specificity):
+   1. reset      - CSS reset and base element styles
+   2. tokens     - Design system applied to elements
+   3. components - Reusable UI components
+   4. layouts    - Page structure and containers
+   5. pages      - Page-specific styles
+   6. utilities  - Utility classes and overrides
+
+   Custom properties (:root) are NOT layered - they're
+   globally available variable definitions.
+   ============================================ */
+
+@layer reset, tokens, components, layouts, pages, utilities;
+
+/* ============================================
    Design Tokens - Soap Maker
    ============================================ */
 
@@ -130,180 +148,197 @@
     --transition-fast: 0.15s ease;
     --transition-base: 0.2s ease;
     --transition-slow: 0.3s ease;
+
+    /* ============================================
+       Breakpoints
+       ============================================ */
+
+    /* Breakpoint values for reference (used in @media queries) */
+    --bp-xs: 375px;   /* Extra small phones */
+    --bp-sm: 480px;   /* Small phones */
+    --bp-md: 768px;   /* Tablets */
+    --bp-lg: 1024px;  /* Small desktops */
+    --bp-xl: 1200px;  /* Large desktops */
 }
 /* ============================================
    Reset & Base Styles
    ============================================ */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@layer reset {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-body {
-    font-family: var(--font-body);
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    min-height: 100vh;
-    line-height: 1.6;
-}
-/* ============================================
-   Container Layout
-   ============================================ */
-
-.container {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: var(--space-14);
-    padding-bottom: var(--space-14);
-    padding-left: var(--space-8);
-    padding-right: var(--space-8);
-}
-
-/* Page container - narrow width for content pages */
-.page-container {
-    max-width: 900px;
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding-left: var(--space-3);
-        padding-right: var(--space-3);
-        padding-top: var(--space-12);
-        padding-bottom: var(--space-12);
+    body {
+        font-family: var(--font-body);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        min-height: 100vh;
+        line-height: 1.6;
     }
 }
 /* ============================================
-   Header Layout
+   Layout Layer
    ============================================ */
 
-header {
-    text-align: center;
-    margin-bottom: var(--space-12);
-    padding: var(--space-8) 0;
-    border-bottom: 1px solid var(--border);
-}
+@layer layouts {
+    /* Container Layout */
+    .container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: var(--space-14);
+        padding-bottom: var(--space-14);
+        padding-left: var(--space-8);
+        padding-right: var(--space-8);
+    }
 
-h1 {
-    font-family: var(--font-display);
-    font-size: var(--text-7xl);
-    font-weight: 400;
-    color: var(--accent-cream);
-    letter-spacing: 0.02em;
-    margin-bottom: var(--space-2);
-}
+    .page-container {
+        max-width: 900px;
+    }
 
-header p {
-    color: var(--text-secondary);
-    font-size: var(--text-3xl);
-}
+    @media (max-width: 480px) {
+        .container {
+            padding-left: var(--space-3);
+            padding-right: var(--space-3);
+            padding-top: var(--space-12);
+            padding-bottom: var(--space-12);
+        }
+    }
 
-.header-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--space-2);
-    margin-top: var(--space-3);
-}
-
-.header-link {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: var(--text-base);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: var(--space-2) var(--space-4);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    transition: all var(--transition-base);
-    -webkit-tap-highlight-color: transparent;
-}
-
-.header-link:hover {
-    color: var(--text-primary);
-    border-color: var(--text-secondary);
-}
-
-.header-link:active {
-    color: var(--text-primary);
-    border-color: var(--text-secondary);
-    background: transparent;
-}
-
-.header-link[aria-current="page"] {
-    color: var(--text-primary);
-    background: var(--bg-secondary);
-    border-color: var(--text-secondary);
-}
-
-.kofi-button {
-    position: absolute;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    background: var(--accent-gold);
-    color: var(--bg-primary);
-    text-decoration: none;
-    font-size: var(--text-md);
-    font-weight: 600;
-    padding: var(--space-2) var(--space-4);
-    border-radius: var(--radius-md);
-    transition: all var(--transition-base);
-}
-
-.kofi-button:hover {
-    background: var(--accent-copper);
-}
-
-.kofi-icon {
-    width: 18px;
-    height: 18px;
-    min-width: 18px;
-    min-height: 18px;
-    max-width: 18px;
-    max-height: 18px;
-    flex-shrink: 0;
-}
-
-@media (max-width: 480px) {
-    .kofi-button {
-        font-size: var(--text-sm);
-        padding: var(--space-1) var(--space-3);
-        top: 0.5rem;
+    /* Header Layout */
+    header {
+        text-align: center;
+        margin-bottom: var(--space-12);
+        padding: var(--space-8) 0;
+        border-bottom: 1px solid var(--border);
     }
 
     h1 {
-        font-size: var(--text-6xl);
+        font-family: var(--font-display);
+        font-size: var(--text-7xl);
+        font-weight: 400;
+        color: var(--accent-cream);
+        letter-spacing: 0.02em;
+        margin-bottom: var(--space-2);
     }
 
     header p {
-        font-size: var(--text-xl);
+        color: var(--text-secondary);
+        font-size: var(--text-3xl);
     }
 
-    header {
-        margin-bottom: var(--space-8);
-        padding: var(--space-5) 0;
+    .header-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-2);
+        margin-top: var(--space-3);
+    }
+
+    .header-link {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: var(--text-base);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        padding: var(--space-2) var(--space-4);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        transition: all var(--transition-base);
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .header-link:hover {
+        color: var(--text-primary);
+        border-color: var(--text-secondary);
+    }
+
+    .header-link:active {
+        color: var(--text-primary);
+        border-color: var(--text-secondary);
+        background: transparent;
+    }
+
+    .header-link[aria-current="page"] {
+        color: var(--text-primary);
+        background: var(--bg-secondary);
+        border-color: var(--text-secondary);
+    }
+
+    .kofi-button {
+        position: absolute;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        background: var(--accent-gold);
+        color: var(--bg-primary);
+        text-decoration: none;
+        font-size: var(--text-md);
+        font-weight: 600;
+        padding: var(--space-2) var(--space-4);
+        border-radius: var(--radius-md);
+        transition: all var(--transition-base);
+    }
+
+    .kofi-button:hover {
+        background: var(--accent-copper);
+    }
+
+    .kofi-icon {
+        width: 18px;
+        height: 18px;
+        min-width: 18px;
+        min-height: 18px;
+        max-width: 18px;
+        max-height: 18px;
+        flex-shrink: 0;
+    }
+
+    @media (max-width: 480px) {
+        .kofi-button {
+            font-size: var(--text-sm);
+            padding: var(--space-1) var(--space-3);
+            top: 0.5rem;
+        }
+
+        h1 {
+            font-size: var(--text-6xl);
+        }
+
+        header p {
+            font-size: var(--text-xl);
+        }
+
+        header {
+            margin-bottom: var(--space-8);
+            padding: var(--space-5) 0;
+        }
+    }
+
+    /* Main Grid Layout */
+    .main-grid {
+        display: block;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .main-grid > * {
+        min-width: 0;
     }
 }
+
 /* ============================================
-   Main Grid Layout
+   Components Layer
    ============================================ */
 
-.main-grid {
-    display: block;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.main-grid > * {
-    min-width: 0;
-}
+@layer components {
 /* ============================================
    Accessibility Components
    ============================================ */
@@ -516,6 +551,8 @@ button:focus-visible,
     margin-bottom: var(--space-6);
     overflow: hidden;
     max-width: 100%;
+    container-type: inline-size;
+    container-name: card;
 }
 
 .card-header {
@@ -533,6 +570,19 @@ button:focus-visible,
     font-family: var(--font-display);
     font-size: var(--text-4xl);
     color: var(--accent-cream);
+}
+
+/* Container query: compact card layout */
+@container card (max-width: 400px) {
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+    }
+
+    .card-title {
+        font-size: var(--text-3xl);
+    }
 }
 
 @media (max-width: 480px) {
@@ -2446,7 +2496,13 @@ a.entry-title:hover,
 .formula-link:hover {
     text-decoration: underline;
 }
+} /* End @layer components */
 
+/* ============================================
+   Pages Layer
+   ============================================ */
+
+@layer pages {
 /* ============================================
    Recipe Builder Page Styles
    ============================================ */
@@ -2594,9 +2650,7 @@ details.mode-subcontainer > .collapsible-content {
     display: none;
 }
 
-.build-mode-content {
-    /* No background/border - inherits from .mode-area */
-}
+/* .build-mode-content inherits from .mode-area (no additional styles needed) */
 
 .build-mode-content.hidden {
     display: none;
@@ -3732,6 +3786,13 @@ a.citation-title .external-icon {
 .cited-by-link:hover {
     text-decoration: underline;
 }
+} /* End @layer pages */
+
+/* ============================================
+   Utilities Layer
+   ============================================ */
+
+@layer utilities {
 /* ============================================
    Utility Classes
    ============================================ */
@@ -3846,3 +3907,4 @@ a.citation-title .external-icon {
         scroll-behavior: auto !important;
     }
 }
+} /* End @layer utilities */

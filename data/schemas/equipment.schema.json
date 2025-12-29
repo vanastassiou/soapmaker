@@ -56,35 +56,7 @@
           "type": "array"
         },
         "references": {
-          "items": {
-            "additionalProperties": false,
-            "properties": {
-              "sourceId": {
-                "type": "string",
-                "minLength": 1,
-                "description": "ID of source in sources.json"
-              },
-              "section": {
-                "type": "string",
-                "description": "Specific section, chapter, or article identifier"
-              },
-              "url": {
-                "type": "string",
-                "format": "uri",
-                "description": "Direct URL to the referenced content"
-              },
-              "note": {
-                "type": "string",
-                "description": "Additional context about this specific reference"
-              }
-            },
-            "required": [
-              "sourceId",
-              "section"
-            ],
-            "type": "object"
-          },
-          "type": "array"
+          "$ref": "common-definitions.schema.json#/definitions/references"
         },
         "domain": {
           "description": "Knowledge section(s) where this equipment appears",

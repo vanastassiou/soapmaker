@@ -30,32 +30,74 @@ import * as ui from './ui/ui.js';
 // Data Loading
 // ============================================
 
+/** Map additive category to state key and file name */
+const ADDITIVE_CATEGORY_MAP = {
+    fragrance: { stateKey: 'fragrancesDatabase', file: 'fragrances', schemaKey: 'fragrances' },
+    colourant: { stateKey: 'colourantsDatabase', file: 'colourants', schemaKey: 'colourants' },
+    'soap-performance': { stateKey: 'soapPerformanceDatabase', file: 'soap-performance', schemaKey: 'soapPerformance' },
+    'skin-care': { stateKey: 'skinCareDatabase', file: 'skin-care', schemaKey: 'skinCare' }
+};
+
+/**
+ * Load an additive category on demand (lazy loading)
+ * @param {string} category - Category key (fragrance, colourant, soap-performance, skin-care)
+ * @returns {Promise<Object>} The loaded database
+ */
+async function loadAdditiveCategory(category) {
+    const config = ADDITIVE_CATEGORY_MAP[category];
+    if (!config) {
+        throw new Error(`Unknown additive category: ${category}`);
+    }
+
+    // Already loaded?
+    if (state[config.stateKey] && Object.keys(state[config.stateKey]).length > 0) {
+        return state[config.stateKey];
+    }
+
+    // Fetch data and schema in parallel
+    const [dataResponse, schemaResponse] = await Promise.all([
+        fetch(`./data/${config.file}.json`),
+        fetch(`./data/schemas/${config.file}.schema.json`)
+    ]);
+
+    const data = await dataResponse.json();
+    const schema = await schemaResponse.json();
+
+    // Add schema and validate (skip in production)
+    if (!validation.shouldSkipValidation()) {
+        validation.addSchema(config.schemaKey, schema);
+        const result = validation.validate(config.schemaKey, data);
+        if (!result.valid) {
+            throw new Error(`${config.file}.json validation failed:\n${validation.formatErrors(result.errors)}`);
+        }
+    }
+
+    // Store in state
+    state[config.stateKey] = data;
+    return data;
+}
+
 async function loadData() {
     try {
-        // Additive databases (4 separate files by category)
-        const additiveFiles = ['fragrances', 'colourants', 'soap-performance', 'skin-care'];
-
-        const [fatsResponse, glossaryResponse, fattyAcidsResponse, tooltipsResponse, sourcesResponse, formulasResponse,
-               ...additiveResponses] = await Promise.all([
+        // Load core data only (additives loaded on demand)
+        const [fatsResponse, glossaryResponse, fattyAcidsResponse, tooltipsResponse, sourcesResponse, formulasResponse] = await Promise.all([
             fetch('./data/fats.json'),
             fetch('./data/glossary.json'),
             fetch('./data/fatty-acids.json'),
             fetch('./data/tooltips.json'),
             fetch('./data/sources.json'),
-            fetch('./data/formulas.json'),
-            ...additiveFiles.map(f => fetch(`./data/${f}.json`))
+            fetch('./data/formulas.json')
         ]);
 
         const [fatsSchemaResponse, glossarySchemaResponse, fattyAcidsSchemaResponse, tooltipsSchemaResponse, sourcesSchemaResponse, formulasSchemaResponse,
-               commonDefinitionsSchemaResponse, ...additiveSchemaResponses] = await Promise.all([
+               commonDefinitionsSchemaResponse] = await Promise.all([
             fetch('./data/schemas/fats.schema.json'),
             fetch('./data/schemas/glossary.schema.json'),
             fetch('./data/schemas/fatty-acids.schema.json'),
             fetch('./data/schemas/tooltips.schema.json'),
             fetch('./data/schemas/sources.schema.json'),
             fetch('./data/schemas/formulas.schema.json'),
-            fetch('./data/schemas/common-definitions.schema.json'),
-            ...additiveFiles.map(f => fetch(`./data/schemas/${f}.schema.json`))
+            fetch('./data/schemas/common-definitions.schema.json')
         ]);
 
         state.fatsDatabase = await fatsResponse.json();
@@ -65,14 +107,12 @@ async function loadData() {
         state.sourcesData = await sourcesResponse.json();
         state.formulasData = await formulasResponse.json();
 
-        // Load additive databases into state
-        const additiveData = await Promise.all(additiveResponses.map(r => r.json()));
-        state.fragrancesDatabase = additiveData[0];
-        state.colourantsDatabase = additiveData[1];
-        state.soapPerformanceDatabase = additiveData[2];
-        state.skinCareDatabase = additiveData[3];
+        // Initialize empty additive databases (lazy loaded)
+        state.fragrancesDatabase = {};
+        state.colourantsDatabase = {};
+        state.soapPerformanceDatabase = {};
+        state.skinCareDatabase = {};
 
-        const additiveSchemas = await Promise.all(additiveSchemaResponses.map(r => r.json()));
         const schemas = {
             fats: await fatsSchemaResponse.json(),
             glossary: await glossarySchemaResponse.json(),
@@ -80,11 +120,7 @@ async function loadData() {
             tooltips: await tooltipsSchemaResponse.json(),
             sources: await sourcesSchemaResponse.json(),
             formulas: await formulasSchemaResponse.json(),
-            commonDefinitions: await commonDefinitionsSchemaResponse.json(),
-            fragrances: additiveSchemas[0],
-            colourants: additiveSchemas[1],
-            soapPerformance: additiveSchemas[2],
-            skinCare: additiveSchemas[3]
+            commonDefinitions: await commonDefinitionsSchemaResponse.json()
         };
 
         validation.initValidation(schemas);
@@ -94,11 +130,7 @@ async function loadData() {
             fattyAcids: state.fattyAcidsData,
             tooltips: state.tooltipsData,
             sources: state.sourcesData,
-            formulas: state.formulasData,
-            fragrances: state.fragrancesDatabase,
-            colourants: state.colourantsDatabase,
-            soapPerformance: state.soapPerformanceDatabase,
-            skinCare: state.skinCareDatabase
+            formulas: state.formulasData
         });
     } catch (error) {
         console.error('Error loading or validating data:', error);
@@ -115,6 +147,29 @@ async function loadData() {
 // ============================================
 // Calculations
 // ============================================
+
+/** Pending property update frame ID for cancellation */
+let pendingPropertyFrame = null;
+
+/**
+ * Batch update all properties in a single animation frame
+ * Prevents layout thrashing from multiple DOM updates
+ * @param {Object} properties - Object with property values keyed by PROPERTY_KEYS
+ */
+function batchUpdateProperties(properties) {
+    // Cancel any pending frame to avoid stale updates
+    if (pendingPropertyFrame) {
+        cancelAnimationFrame(pendingPropertyFrame);
+    }
+
+    pendingPropertyFrame = requestAnimationFrame(() => {
+        PROPERTY_KEYS.forEach(key => {
+            const range = PROPERTY_RANGES[key];
+            ui.updateProperty(key, properties[key] ?? 0, range.min, range.max);
+        });
+        pendingPropertyFrame = null;
+    });
+}
 
 function calculate() {
     const settings = ui.getSettings();
@@ -133,10 +188,7 @@ function calculate() {
     const properties = calc.calculateProperties(fa);
 
     const allProperties = { ...properties, iodine, ins };
-    PROPERTY_KEYS.forEach(key => {
-        const range = PROPERTY_RANGES[key];
-        ui.updateProperty(key, allProperties[key], range.min, range.max);
-    });
+    batchUpdateProperties(allProperties);
 
     // Render additives
     renderAdditivesList();
@@ -508,9 +560,19 @@ function handleAdditiveWeightChange(index, weight) {
     calculate();
 }
 
-function switchAdditiveCategory(category) {
+async function switchAdditiveCategory(category) {
     currentAdditiveCategory = category;
     updateTabStates('.additive-tab', 'category', category);
+
+    // Lazy load additive data if needed
+    try {
+        await loadAdditiveCategory(category);
+    } catch (error) {
+        console.error(`Failed to load ${category} data:`, error);
+        toast.error(`Failed to load ${category} data`);
+        return;
+    }
+
     updateAdditiveSelect();
 }
 
@@ -1341,9 +1403,7 @@ function renderCupboardSuggestionsList() {
 function updatePropertiesFromFats(fats) {
     if (!fats || fats.length === 0) {
         // Clear properties to zero
-        PROPERTY_KEYS.forEach(key => {
-            ui.updateProperty(key, 0, PROPERTY_RANGES[key].min, PROPERTY_RANGES[key].max);
-        });
+        batchUpdateProperties({});
         return;
     }
 
@@ -1353,10 +1413,7 @@ function updatePropertiesFromFats(fats) {
     const ins = calc.calculateINS(fats, state.fatsDatabase);
 
     const allProperties = { ...properties, iodine, ins };
-    PROPERTY_KEYS.forEach(key => {
-        const range = PROPERTY_RANGES[key];
-        ui.updateProperty(key, allProperties[key], range.min, range.max);
-    });
+    batchUpdateProperties(allProperties);
 }
 
 function setupExclusionHandlers() {
@@ -1370,7 +1427,7 @@ function setupExclusionHandlers() {
     $(ELEMENT_IDS.addExclusionBtn)?.addEventListener('click', handleAddExclusion);
 }
 
-function setupAdditiveHandlers() {
+async function setupAdditiveHandlers() {
     // Click handlers for additive tabs
     document.querySelectorAll('.additive-tab').forEach(tab => {
         tab.addEventListener('click', () => switchAdditiveCategory(tab.dataset.category));
@@ -1387,8 +1444,8 @@ function setupAdditiveHandlers() {
     // Add button
     $(ELEMENT_IDS.addAdditiveBtn)?.addEventListener('click', handleAddAdditive);
 
-    // Initialize select with default category
-    updateAdditiveSelect();
+    // Load initial additive category data and populate select
+    await switchAdditiveCategory(currentAdditiveCategory);
 }
 
 // ============================================
@@ -1492,7 +1549,7 @@ async function init() {
     setupPanelHandlers();
     setupBuildModeHandlers();
     setupExclusionHandlers();
-    setupAdditiveHandlers();
+    await setupAdditiveHandlers();
     setupCupboardCleanerHandlers();
     setupFinalRecipeHandlers();
     setupCollapsibleSections();

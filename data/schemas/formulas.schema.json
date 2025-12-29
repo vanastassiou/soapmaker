@@ -65,33 +65,7 @@
           "description": "Technical details for advanced users"
         },
         "references": {
-          "type": "array",
-          "description": "Academic or scientific references for this formula",
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "sourceId": {
-                "type": "string",
-                "minLength": 1,
-                "description": "ID of source in sources.json"
-              },
-              "section": {
-                "type": "string",
-                "description": "Specific section, chapter, or article identifier"
-              },
-              "url": {
-                "type": "string",
-                "format": "uri",
-                "description": "Direct URL to the referenced content"
-              },
-              "note": {
-                "type": "string",
-                "description": "Additional context about this specific reference"
-              }
-            },
-            "required": ["sourceId", "section"]
-          }
+          "$ref": "common-definitions.schema.json#/definitions/references"
         },
         "recommendedRange": {
           "type": "object",

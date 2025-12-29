@@ -49,7 +49,7 @@
             },
             "usage": {
               "additionalProperties": false,
-              "description": "Recommended usage percentage range",
+              "description": "Recommended usage percentage range (fats don't use basis)",
               "properties": {
                 "max": {
                   "maximum": 100,
@@ -105,104 +105,20 @@
               "type": "object"
             },
             "sourcing": {
-              "additionalProperties": false,
-              "description": "Sourcing and production information",
-              "properties": {
-                "primaryRegions": {
-                  "description": "Primary countries or regions where this ingredient is produced",
-                  "items": { "type": "string", "minLength": 1 },
-                  "type": "array"
-                },
-                "productionMethod": {
-                  "description": "How the ingredient is extracted or produced",
-                  "type": "string"
-                },
-                "supplyChainNotes": {
-                  "description": "Additional notes about supply chain specifics",
-                  "type": "string"
-                }
-              },
-              "required": ["primaryRegions", "productionMethod"],
-              "type": "object"
+              "$ref": "common-definitions.schema.json#/definitions/sourcing"
             }
           },
           "required": ["sap", "usage", "density", "iodine", "ins", "fattyAcids", "sourcing"],
           "type": "object"
         },
         "dietary": {
-          "additionalProperties": false,
-          "description": "Dietary classification flags",
-          "properties": {
-            "animalBased": {
-              "description": "True if derived from animal sources",
-              "type": "boolean"
-            },
-            "commonAllergen": {
-              "description": "True if associated with common allergens (tree nuts, soy, etc.)",
-              "type": "boolean"
-            }
-          },
-          "type": "object"
+          "$ref": "common-definitions.schema.json#/definitions/dietary"
         },
         "ethicalConcerns": {
-          "additionalProperties": false,
-          "description": "Ethical and sustainability concerns",
-          "properties": {
-            "environmental": {
-              "description": "Environmental impact concerns",
-              "items": { "type": "string" },
-              "type": "array"
-            },
-            "social": {
-              "description": "Social and labour-related concerns",
-              "items": { "type": "string" },
-              "type": "array"
-            },
-            "political": {
-              "description": "Political or conflict-related concerns",
-              "items": { "type": "string" },
-              "type": "array"
-            },
-            "certifications": {
-              "description": "Available certifications to address concerns",
-              "items": { "type": "string" },
-              "type": "array"
-            },
-            "notes": {
-              "description": "Additional context about ethical considerations",
-              "type": "string"
-            }
-          },
-          "required": ["environmental", "social", "political", "certifications", "notes"],
-          "type": "object"
+          "$ref": "common-definitions.schema.json#/definitions/ethicalConcerns"
         },
         "references": {
-          "items": {
-            "additionalProperties": false,
-            "properties": {
-              "sourceId": {
-                "type": "string",
-                "minLength": 1,
-                "description": "ID of source in sources.json"
-              },
-              "section": {
-                "type": "string",
-                "description": "Specific section, chapter, or article identifier"
-              },
-              "url": {
-                "type": "string",
-                "format": "uri",
-                "description": "Direct URL to the referenced content"
-              },
-              "note": {
-                "type": "string",
-                "description": "Additional context about this specific reference"
-              }
-            },
-            "required": ["sourceId", "section"],
-            "type": "object"
-          },
-          "type": "array"
+          "$ref": "common-definitions.schema.json#/definitions/references"
         }
       },
       "required": ["name", "type", "description", "details", "ethicalConcerns"],

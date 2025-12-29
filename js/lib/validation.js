@@ -7,6 +7,16 @@ let ajvInstance = null;
 let validators = {};
 
 /**
+ * Check if validation should be skipped (production mode)
+ * Skip validation on non-localhost hosts to reduce startup time
+ * @returns {boolean} True if validation should be skipped
+ */
+export function shouldSkipValidation() {
+    const host = window.location.hostname;
+    return host !== 'localhost' && host !== '127.0.0.1' && host !== '';
+}
+
+/**
  * Initialize Ajv and compile schemas
  * @param {Object} schemas - Schema objects including commonDefinitions for shared refs
  */
@@ -22,18 +32,24 @@ export function initValidation(schemas) {
         ajvInstance.addSchema(schemas.commonDefinitions, 'common-definitions.schema.json');
     }
 
-    validators = {
-        fats: ajvInstance.compile(schemas.fats),
-        glossary: ajvInstance.compile(schemas.glossary),
-        fattyAcids: ajvInstance.compile(schemas.fattyAcids),
-        tooltips: ajvInstance.compile(schemas.tooltips),
-        sources: ajvInstance.compile(schemas.sources),
-        formulas: ajvInstance.compile(schemas.formulas),
-        fragrances: ajvInstance.compile(schemas.fragrances),
-        colourants: ajvInstance.compile(schemas.colourants),
-        soapPerformance: ajvInstance.compile(schemas.soapPerformance),
-        skinCare: ajvInstance.compile(schemas.skinCare)
-    };
+    // Compile all provided schemas (core schemas at startup)
+    for (const [name, schema] of Object.entries(schemas)) {
+        if (name !== 'commonDefinitions' && schema) {
+            validators[name] = ajvInstance.compile(schema);
+        }
+    }
+}
+
+/**
+ * Add and compile a schema after initialization (for lazy-loaded data)
+ * @param {string} name - Schema name (e.g., 'fragrances')
+ * @param {Object} schema - JSON schema object
+ */
+export function addSchema(name, schema) {
+    if (!ajvInstance) {
+        throw new Error('Validation not initialized. Call initValidation first.');
+    }
+    validators[name] = ajvInstance.compile(schema);
 }
 
 /**
@@ -69,10 +85,16 @@ export function formatErrors(errors) {
 
 /**
  * Validate all data files and throw on failure (strict mode)
+ * Skips validation in production (non-localhost) for faster startup
  * @param {Object} data - All data objects to validate against their schemas
  * @throws {Error} If any validation fails
  */
 export function validateAllStrict(data) {
+    if (shouldSkipValidation()) {
+        console.log('Skipping validation in production mode');
+        return;
+    }
+
     const results = {};
     for (const [name, dataset] of Object.entries(data)) {
         results[name] = validate(name, dataset);
