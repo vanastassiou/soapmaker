@@ -48,22 +48,7 @@
               "type": "object"
             },
             "usage": {
-              "additionalProperties": false,
-              "description": "Recommended usage percentage range (fats don't use basis)",
-              "properties": {
-                "max": {
-                  "maximum": 100,
-                  "minimum": 0,
-                  "type": "integer"
-                },
-                "min": {
-                  "maximum": 100,
-                  "minimum": 0,
-                  "type": "integer"
-                }
-              },
-              "required": ["min", "max"],
-              "type": "object"
+              "$ref": "common-definitions.schema.json#/definitions/usage"
             },
             "density": {
               "description": "Density in g/mL",

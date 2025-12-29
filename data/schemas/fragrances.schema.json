@@ -73,7 +73,9 @@
               "description": "Safety and regulatory information for fragrances",
               "properties": {
                 "casNumber": {
-                  "$ref": "common-definitions.schema.json#/definitions/casNumber"
+                  "description": "CAS registry number",
+                  "pattern": "^[0-9]+-[0-9]+-[0-9]+$",
+                  "type": "string"
                 },
                 "flashPointC": {
                   "description": "Flash point in Celsius",

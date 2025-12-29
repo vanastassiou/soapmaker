@@ -2,7 +2,7 @@
   "argan-oil": {
     "name": "Argan oil",
     "type": "fat",
-    "description": "Oil pressed from argan tree (<i>Argania spinosa</i>) kernels. Produces soft bars with highly conditioning properties.",
+    "description": "Oil pressed from argan tree (Argania spinosa) kernels. Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.191,
@@ -10,7 +10,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 100,
@@ -32,7 +33,9 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Morocco"],
+        "primaryRegions": [
+          "Morocco"
+        ],
         "productionMethod": "Cold-pressed or mechanically extracted from Argania spinosa kernels. Traditional production involves hand-cracking nuts and grinding kernels.",
         "supplyChainNotes": "Morocco is the sole commercial producer. UNESCO-protected argan forest ecosystem."
       }
@@ -41,10 +44,19 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["Argan forest ecosystem under pressure from climate change and overgrazing"],
-      "social": ["Fair compensation for women's cooperatives varies widely", "Traditional knowledge appropriation concerns"],
+      "environmental": [
+        "Argan forest ecosystem under pressure from climate change and overgrazing"
+      ],
+      "social": [
+        "Fair compensation for women's cooperatives varies widely",
+        "Traditional knowledge appropriation concerns"
+      ],
       "political": [],
-      "certifications": ["Fair Trade", "EcoCert", "USDA Organic"],
+      "certifications": [
+        "Fair Trade",
+        "EcoCert",
+        "USDA Organic"
+      ],
       "notes": "Women's cooperatives have historically provided income to rural Berber women. Look for cooperative-sourced products with fair trade certification."
     },
     "references": [
@@ -58,7 +70,7 @@
   "apricot-kernel-oil": {
     "name": "Apricot kernel oil",
     "type": "fat",
-    "description": "Oil pressed from apricot (<i>Prunus armeniaca</i>) kernels. Produces soft bars with highly conditioning properties.",
+    "description": "Oil pressed from apricot (Prunus armeniaca) kernels. Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.19,
@@ -66,7 +78,8 @@
       },
       "usage": {
         "max": 20,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 100,
@@ -88,7 +101,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Turkey", "Iran", "Uzbekistan", "China", "Italy"],
+        "primaryRegions": [
+          "Turkey",
+          "Iran",
+          "Uzbekistan",
+          "China",
+          "Italy"
+        ],
         "productionMethod": "Cold-pressed from apricot kernels, a byproduct of the dried fruit and fresh fruit industries."
       }
     },
@@ -99,7 +118,9 @@
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic"],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "Generally low concern as kernels are a byproduct of fruit processing. Supply chain is well-established."
     },
     "references": [
@@ -113,7 +134,7 @@
   "avocado-oil": {
     "name": "Avocado oil",
     "type": "fat",
-    "description": "Oil pressed from avocado (<i>Persea americana</i>) fruit. Produces soft bars with highly conditioning properties.",
+    "description": "Oil pressed from avocado (Persea americana) fruit. Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.187,
@@ -121,7 +142,8 @@
       },
       "usage": {
         "max": 30,
-        "min": 10
+        "min": 10,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 86,
@@ -143,7 +165,14 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Mexico", "Peru", "Chile", "Kenya", "South Africa", "United States"],
+        "primaryRegions": [
+          "Mexico",
+          "Peru",
+          "Chile",
+          "Kenya",
+          "South Africa",
+          "United States"
+        ],
         "productionMethod": "Mechanically pressed from avocado fruit flesh, often from fruit unsuitable for fresh market.",
         "supplyChainNotes": "Mexico produces ~30% of world supply. Oil can be extracted from cosmetically imperfect fruit."
       }
@@ -152,10 +181,20 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["High water consumption (estimated 320 litres per fruit)", "Deforestation for new plantations in Mexico and Peru"],
-      "social": ["Cartel involvement in Mexican avocado regions (Michoacán)", "Labour exploitation reported in some regions"],
+      "environmental": [
+        "High water consumption (estimated 320 litres per fruit)",
+        "Deforestation for new plantations in Mexico and Peru"
+      ],
+      "social": [
+        "Cartel involvement in Mexican avocado regions (Michoacán)",
+        "Labour exploitation reported in some regions"
+      ],
       "political": [],
-      "certifications": ["Fair Trade", "Rainforest Alliance", "USDA Organic"],
+      "certifications": [
+        "Fair Trade",
+        "Rainforest Alliance",
+        "USDA Organic"
+      ],
       "notes": "Mexican sourcing carries higher social risk. Consider sourcing from regions with better oversight like Kenya or California."
     },
     "references": [
@@ -169,7 +208,7 @@
   "babassu-oil": {
     "name": "Babassu oil",
     "type": "fat",
-    "description": "Oil pressed from babassu palm (<i>Attalea speciosa</i>) nuts. Produces very hard bars with abundant, bubbly lather and high cleansing.",
+    "description": "Oil pressed from babassu palm (Attalea speciosa) nuts. Produces very hard bars with abundant, bubbly lather and high cleansing.",
     "details": {
       "sap": {
         "koh": 0.251,
@@ -177,7 +216,8 @@
       },
       "usage": {
         "max": 30,
-        "min": 15
+        "min": 15,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 14,
@@ -199,7 +239,9 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Brazil"],
+        "primaryRegions": [
+          "Brazil"
+        ],
         "productionMethod": "Hand-harvested nuts cracked and cold-pressed. Wild-harvested from native babassu forests in northeastern Brazil.",
         "supplyChainNotes": "Endemic to Brazil. Collected by traditional 'quebradeiras de coco' (nut breakers), predominantly women."
       }
@@ -208,10 +250,18 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["Native babassu forests under pressure from cattle ranching and soy expansion"],
-      "social": ["Important income source for rural communities", "Land rights disputes affect harvester access"],
+      "environmental": [
+        "Native babassu forests under pressure from cattle ranching and soy expansion"
+      ],
+      "social": [
+        "Important income source for rural communities",
+        "Land rights disputes affect harvester access"
+      ],
       "political": [],
-      "certifications": ["Fair Trade", "USDA Organic"],
+      "certifications": [
+        "Fair Trade",
+        "USDA Organic"
+      ],
       "notes": "Considered a sustainable palm oil alternative when ethically sourced. Supports traditional livelihoods. Look for community-sourced products."
     },
     "references": [
@@ -233,7 +283,8 @@
       },
       "usage": {
         "max": 100,
-        "min": 40
+        "min": 40,
+        "basis": "total-oils"
       },
       "density": 0.9,
       "iodine": 46,
@@ -255,7 +306,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["United States", "Brazil", "Australia", "Argentina", "European Union"],
+        "primaryRegions": [
+          "United States",
+          "Brazil",
+          "Australia",
+          "Argentina",
+          "European Union"
+        ],
         "productionMethod": "Rendered from beef fat, a byproduct of the meat industry. Fat is heated to separate from connective tissue.",
         "supplyChainNotes": "Byproduct of beef processing. Quality varies by cattle diet (grass-fed vs grain-fed)."
       }
@@ -264,10 +321,21 @@
       "animalBased": true
     },
     "ethicalConcerns": {
-      "environmental": ["Cattle ranching contributes to deforestation (especially in Amazon)", "High methane emissions from cattle", "Significant water and land use"],
-      "social": ["Animal welfare concerns in industrial farming"],
+      "environmental": [
+        "Cattle ranching contributes to deforestation (especially in Amazon)",
+        "High methane emissions from cattle",
+        "Significant water and land use"
+      ],
+      "social": [
+        "Animal welfare concerns in industrial farming"
+      ],
       "political": [],
-      "certifications": ["Certified Humane", "Animal Welfare Approved", "Grass-fed certified", "USDA Organic"],
+      "certifications": [
+        "Certified Humane",
+        "Animal Welfare Approved",
+        "Grass-fed certified",
+        "USDA Organic"
+      ],
       "notes": "Byproduct utilization reduces waste. Consider sourcing from grass-fed, pasture-raised, or local small-scale farms. Brazilian beef linked to deforestation."
     },
     "references": [
@@ -281,7 +349,7 @@
   "black-cumin-seed-oil": {
     "name": "Black cumin seed oil (Nigella sativa)",
     "type": "fat",
-    "description": "Oil pressed from black cumin (<i>Nigella sativa</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "description": "Oil pressed from black cumin (Nigella sativa) seeds. Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.214,
@@ -289,7 +357,8 @@
       },
       "usage": {
         "max": 10,
-        "min": 3
+        "min": 3,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 122,
@@ -311,7 +380,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Egypt", "India", "Turkey", "Syria", "Pakistan"],
+        "primaryRegions": [
+          "Egypt",
+          "India",
+          "Turkey",
+          "Syria",
+          "Pakistan"
+        ],
         "productionMethod": "Cold-pressed from Nigella sativa seeds. Traditional cultivation in Middle East and South Asia."
       }
     },
@@ -321,8 +396,12 @@
     "ethicalConcerns": {
       "environmental": [],
       "social": [],
-      "political": ["Syrian conflict has disrupted traditional supply chains"],
-      "certifications": ["USDA Organic"],
+      "political": [
+        "Syrian conflict has disrupted traditional supply chains"
+      ],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "Low environmental impact crop. Syrian sourcing may be affected by ongoing conflict."
     },
     "references": [
@@ -336,7 +415,7 @@
   "camellia-seed-oil": {
     "name": "Camellia seed oil (tea seed oil)",
     "type": "fat",
-    "description": "Oil pressed from camellia (<i>Camellia oleifera</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "description": "Oil pressed from camellia (Camellia oleifera) seeds. Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.192,
@@ -344,7 +423,8 @@
       },
       "usage": {
         "max": 30,
-        "min": 10
+        "min": 10,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 83,
@@ -366,7 +446,12 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["China", "Japan", "South Korea", "Vietnam"],
+        "primaryRegions": [
+          "China",
+          "Japan",
+          "South Korea",
+          "Vietnam"
+        ],
         "productionMethod": "Cold-pressed from Camellia oleifera seeds. Traditional oil in East Asian cuisine and cosmetics."
       }
     },
@@ -377,7 +462,9 @@
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic"],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "Well-established crop with low environmental impact. Perennial tree crop that provides habitat."
     },
     "references": [
@@ -391,7 +478,7 @@
   "canola-oil-low-erucic-rapeseed": {
     "name": "Canola oil (low erucic rapeseed)",
     "type": "fat",
-    "description": "Oil pressed from low-erucic rapeseed (<i>Brassica napus</i>). Produces soft bars with highly conditioning properties.",
+    "description": "Oil pressed from low-erucic rapeseed (Brassica napus). Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.188,
@@ -399,7 +486,8 @@
       },
       "usage": {
         "max": 30,
-        "min": 10
+        "min": 10,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 116,
@@ -421,7 +509,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Canada", "European Union", "China", "Australia", "United States"],
+        "primaryRegions": [
+          "Canada",
+          "European Union",
+          "China",
+          "Australia",
+          "United States"
+        ],
         "productionMethod": "Mechanically pressed or solvent-extracted from rapeseed. Large-scale industrial agriculture.",
         "supplyChainNotes": "Canada is the world's largest producer and exporter."
       }
@@ -430,10 +524,17 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["Majority of North American canola is GMO", "Pesticide use in conventional farming", "Monoculture farming practices"],
+      "environmental": [
+        "Majority of North American canola is GMO",
+        "Pesticide use in conventional farming",
+        "Monoculture farming practices"
+      ],
       "social": [],
       "political": [],
-      "certifications": ["Non-GMO Project Verified", "USDA Organic"],
+      "certifications": [
+        "Non-GMO Project Verified",
+        "USDA Organic"
+      ],
       "notes": "Non-GMO and organic options available but at higher cost. Conventional canola widely uses glyphosate."
     },
     "references": [
@@ -447,7 +548,7 @@
   "castor-oil": {
     "name": "Castor oil",
     "type": "fat",
-    "description": "Oil pressed from castor (<i>Ricinus communis</i>) beans. Produces soft bars with abundant lather and highly conditioning properties.",
+    "description": "Oil pressed from castor (Ricinus communis) beans. Produces soft bars with abundant lather and highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.18,
@@ -455,7 +556,8 @@
       },
       "usage": {
         "max": 10,
-        "min": 3
+        "min": 3,
+        "basis": "total-oils"
       },
       "density": 0.96,
       "iodine": 86,
@@ -477,7 +579,12 @@
         "ricinoleic": 90
       },
       "sourcing": {
-        "primaryRegions": ["India", "China", "Brazil", "Mozambique"],
+        "primaryRegions": [
+          "India",
+          "China",
+          "Brazil",
+          "Mozambique"
+        ],
         "productionMethod": "Cold-pressed or solvent-extracted from castor beans. India produces ~90% of global supply."
       }
     },
@@ -486,9 +593,15 @@
     },
     "ethicalConcerns": {
       "environmental": [],
-      "social": ["Child labour reported in some Indian production regions", "Exposure to toxic ricin during processing poses worker safety risks"],
+      "social": [
+        "Child labour reported in some Indian production regions",
+        "Exposure to toxic ricin during processing poses worker safety risks"
+      ],
       "political": [],
-      "certifications": ["USDA Organic", "Fair Trade"],
+      "certifications": [
+        "USDA Organic",
+        "Fair Trade"
+      ],
       "notes": "Seeds contain toxic ricin which is removed during processing. Look for suppliers with verified labour practices."
     },
     "references": [
@@ -504,7 +617,7 @@
   "cocoa-butter": {
     "name": "Cocoa butter",
     "type": "fat",
-    "description": "Butter extracted from cocoa (<i>Theobroma cacao</i>) beans. Produces hard bars with stable, creamy lather.",
+    "description": "Butter extracted from cocoa (Theobroma cacao) beans. Produces hard bars with stable, creamy lather.",
     "details": {
       "sap": {
         "koh": 0.193,
@@ -512,7 +625,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.9,
       "iodine": 37,
@@ -534,7 +648,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Côte d'Ivoire", "Ghana", "Indonesia", "Ecuador", "Cameroon"],
+        "primaryRegions": [
+          "Côte d'Ivoire",
+          "Ghana",
+          "Indonesia",
+          "Ecuador",
+          "Cameroon"
+        ],
         "productionMethod": "Hydraulic pressing of roasted cocoa beans. Byproduct of chocolate production.",
         "supplyChainNotes": "West Africa produces ~70% of world cocoa. Complex multi-tier supply chain."
       }
@@ -543,10 +663,21 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["Deforestation for cocoa plantations in West Africa", "Biodiversity loss in tropical forests"],
-      "social": ["Child labour and forced labour documented in West African cocoa farming", "Farmer poverty despite high global demand"],
+      "environmental": [
+        "Deforestation for cocoa plantations in West Africa",
+        "Biodiversity loss in tropical forests"
+      ],
+      "social": [
+        "Child labour and forced labour documented in West African cocoa farming",
+        "Farmer poverty despite high global demand"
+      ],
       "political": [],
-      "certifications": ["Fair Trade", "Rainforest Alliance", "UTZ Certified", "USDA Organic"],
+      "certifications": [
+        "Fair Trade",
+        "Rainforest Alliance",
+        "UTZ Certified",
+        "USDA Organic"
+      ],
       "notes": "Cocoa industry has significant child labour concerns. Fair Trade certification addresses farmer income and labour standards."
     },
     "references": [
@@ -560,7 +691,7 @@
   "coconut-oil-76": {
     "name": "Coconut oil (76)",
     "type": "fat",
-    "description": "Oil pressed from coconut (<i>Cocos nucifera</i>) meat. Produces very hard bars with abundant, bubbly lather and high cleansing. Coconut is classified as a tree nut allergen.",
+    "description": "Oil pressed from coconut (Cocos nucifera) meat. Produces very hard bars with abundant, bubbly lather and high cleansing. Coconut is classified as a tree nut allergen.",
     "details": {
       "sap": {
         "koh": 0.257,
@@ -568,7 +699,8 @@
       },
       "usage": {
         "max": 30,
-        "min": 15
+        "min": 15,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 8,
@@ -590,7 +722,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Philippines", "Indonesia", "India", "Sri Lanka", "Vietnam"],
+        "primaryRegions": [
+          "Philippines",
+          "Indonesia",
+          "India",
+          "Sri Lanka",
+          "Vietnam"
+        ],
         "productionMethod": "Cold-pressed or expeller-pressed from dried coconut meat (copra). Unrefined (virgin) vs refined options available.",
         "supplyChainNotes": "Philippines and Indonesia dominate global production. Small-holder farmers produce most coconuts."
       }
@@ -601,9 +739,16 @@
     },
     "ethicalConcerns": {
       "environmental": [],
-      "social": ["Fair wage concerns for small-holder farmers", "Coconut farmers often receive low prices for harvest"],
+      "social": [
+        "Fair wage concerns for small-holder farmers",
+        "Coconut farmers often receive low prices for harvest"
+      ],
       "political": [],
-      "certifications": ["Fair Trade", "USDA Organic", "Fair for Life"],
+      "certifications": [
+        "Fair Trade",
+        "USDA Organic",
+        "Fair for Life"
+      ],
       "notes": "Coconut palms are generally sustainable perennial crops. Fair trade addresses farmer income inequality."
     },
     "references": [
@@ -617,7 +762,7 @@
   "coconut-oil-92": {
     "name": "Coconut oil (92)",
     "type": "fat",
-    "description": "Hydrogenated coconut (<i>Cocos nucifera</i>) oil. Produces very hard bars with abundant, bubbly lather and high cleansing. Coconut is classified as a tree nut allergen.",
+    "description": "Hydrogenated coconut (Cocos nucifera) oil. Produces very hard bars with abundant, bubbly lather and high cleansing. Coconut is classified as a tree nut allergen.",
     "details": {
       "sap": {
         "koh": 0.257,
@@ -625,7 +770,8 @@
       },
       "usage": {
         "max": 30,
-        "min": 15
+        "min": 15,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 8,
@@ -647,7 +793,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Philippines", "Indonesia", "India", "Sri Lanka", "Vietnam"],
+        "primaryRegions": [
+          "Philippines",
+          "Indonesia",
+          "India",
+          "Sri Lanka",
+          "Vietnam"
+        ],
         "productionMethod": "Hydrogenated coconut oil processed to raise melting point. Additional industrial processing step.",
         "supplyChainNotes": "Same source regions as regular coconut oil."
       }
@@ -658,9 +810,14 @@
     },
     "ethicalConcerns": {
       "environmental": [],
-      "social": ["Fair wage concerns for small-holder farmers"],
+      "social": [
+        "Fair wage concerns for small-holder farmers"
+      ],
       "political": [],
-      "certifications": ["Fair Trade", "USDA Organic"],
+      "certifications": [
+        "Fair Trade",
+        "USDA Organic"
+      ],
       "notes": "Same sourcing concerns as regular coconut oil. Hydrogenation adds industrial processing."
     },
     "references": [
@@ -674,7 +831,7 @@
   "cupuacu-butter": {
     "name": "Cupuacu butter",
     "type": "fat",
-    "description": "Butter extracted from cupuacu (<i>Theobroma grandiflorum</i>) seeds. Adds moderate hardness with stable, creamy lather.",
+    "description": "Butter extracted from cupuacu (Theobroma grandiflorum) seeds. Adds moderate hardness with stable, creamy lather.",
     "details": {
       "sap": {
         "koh": 0.193,
@@ -682,7 +839,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.9,
       "iodine": 45,
@@ -704,7 +862,9 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Brazil"],
+        "primaryRegions": [
+          "Brazil"
+        ],
         "productionMethod": "Cold-pressed from cupuacu seeds. Native to Amazon basin, related to cocoa.",
         "supplyChainNotes": "Endemic to Brazilian Amazon. Often wild-harvested or from agroforestry systems."
       }
@@ -713,10 +873,18 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["Amazon deforestation pressures habitat"],
-      "social": ["Supports indigenous and local communities when sustainably sourced"],
+      "environmental": [
+        "Amazon deforestation pressures habitat"
+      ],
+      "social": [
+        "Supports indigenous and local communities when sustainably sourced"
+      ],
       "political": [],
-      "certifications": ["Fair Trade", "USDA Organic", "Rainforest Alliance"],
+      "certifications": [
+        "Fair Trade",
+        "USDA Organic",
+        "Rainforest Alliance"
+      ],
       "notes": "Can support sustainable Amazon livelihoods when sourced from agroforestry or wild-harvest programs."
     },
     "references": [
@@ -730,7 +898,7 @@
   "cottonseed-oil": {
     "name": "Cottonseed oil",
     "type": "fat",
-    "description": "Oil pressed from cottonseeds (<i>Gossypium</i>). Produces soft bars with highly conditioning properties.",
+    "description": "Oil pressed from cottonseeds (Gossypium). Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.189,
@@ -738,7 +906,8 @@
       },
       "usage": {
         "max": 25,
-        "min": 10
+        "min": 10,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 106,
@@ -760,7 +929,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["China", "India", "United States", "Pakistan", "Brazil"],
+        "primaryRegions": [
+          "China",
+          "India",
+          "United States",
+          "Pakistan",
+          "Brazil"
+        ],
         "productionMethod": "Solvent-extracted or expeller-pressed from cottonseeds, a byproduct of cotton textile industry."
       }
     },
@@ -768,10 +943,24 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["Cotton is one of the most pesticide-intensive crops", "High water consumption", "Majority of cotton is GMO"],
-      "social": ["Forced labour documented in Uzbekistan and Xinjiang cotton production", "Child labour in some regions"],
-      "political": ["Xinjiang cotton linked to Uyghur forced labour concerns"],
-      "certifications": ["USDA Organic", "Fair Trade Cotton", "Better Cotton Initiative", "Non-GMO Project Verified"],
+      "environmental": [
+        "Cotton is one of the most pesticide-intensive crops",
+        "High water consumption",
+        "Majority of cotton is GMO"
+      ],
+      "social": [
+        "Forced labour documented in Uzbekistan and Xinjiang cotton production",
+        "Child labour in some regions"
+      ],
+      "political": [
+        "Xinjiang cotton linked to Uyghur forced labour concerns"
+      ],
+      "certifications": [
+        "USDA Organic",
+        "Fair Trade Cotton",
+        "Better Cotton Initiative",
+        "Non-GMO Project Verified"
+      ],
       "notes": "Conventional cotton production has significant environmental and social concerns. Organic and Fair Trade options address many issues."
     },
     "references": [
@@ -793,7 +982,8 @@
       },
       "usage": {
         "max": 100,
-        "min": 40
+        "min": 40,
+        "basis": "total-oils"
       },
       "density": 0.9,
       "iodine": 43,
@@ -815,7 +1005,12 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["United States", "New Zealand", "Europe", "Canada"],
+        "primaryRegions": [
+          "United States",
+          "New Zealand",
+          "Europe",
+          "Canada"
+        ],
         "productionMethod": "Rendered from deer fat, typically a byproduct of venison production from farmed or hunted deer."
       }
     },
@@ -824,9 +1019,13 @@
     },
     "ethicalConcerns": {
       "environmental": [],
-      "social": ["Animal welfare varies by farming practices"],
+      "social": [
+        "Animal welfare varies by farming practices"
+      ],
       "political": [],
-      "certifications": ["Certified Humane"],
+      "certifications": [
+        "Certified Humane"
+      ],
       "notes": "Byproduct of venison industry. Wild-harvested deer from regulated hunting has lower environmental impact than farmed."
     },
     "references": [
@@ -848,7 +1047,8 @@
       },
       "usage": {
         "max": 50,
-        "min": 20
+        "min": 20,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 68,
@@ -870,7 +1070,12 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["France", "China", "United States", "United Kingdom"],
+        "primaryRegions": [
+          "France",
+          "China",
+          "United States",
+          "United Kingdom"
+        ],
         "productionMethod": "Rendered from duck fat, a byproduct of duck meat and foie gras production."
       }
     },
@@ -879,9 +1084,15 @@
     },
     "ethicalConcerns": {
       "environmental": [],
-      "social": ["Foie gras production involves force-feeding (gavage), banned in many jurisdictions", "Animal welfare concerns in intensive duck farming"],
+      "social": [
+        "Foie gras production involves force-feeding (gavage), banned in many jurisdictions",
+        "Animal welfare concerns in intensive duck farming"
+      ],
       "political": [],
-      "certifications": ["Certified Humane", "Animal Welfare Approved"],
+      "certifications": [
+        "Certified Humane",
+        "Animal Welfare Approved"
+      ],
       "notes": "Foie gras-sourced fat has significant animal welfare concerns. Look for fat from non-gavage duck operations."
     },
     "references": [
@@ -895,7 +1106,7 @@
   "emu-oil": {
     "name": "Emu oil",
     "type": "fat",
-    "description": "Rendered emu (<i>Dromaius novaehollandiae</i>) fat. Adds moderate hardness with conditioning properties.",
+    "description": "Rendered emu (Dromaius novaehollandiae) fat. Adds moderate hardness with conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.194,
@@ -903,7 +1114,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 75,
@@ -925,7 +1137,10 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Australia", "United States"],
+        "primaryRegions": [
+          "Australia",
+          "United States"
+        ],
         "productionMethod": "Rendered from emu fat, byproduct of emu farming for meat and leather.",
         "supplyChainNotes": "Emus are native to Australia. US has significant farming operations."
       }
@@ -935,9 +1150,13 @@
     },
     "ethicalConcerns": {
       "environmental": [],
-      "social": ["Animal welfare concerns in intensive emu farming"],
+      "social": [
+        "Animal welfare concerns in intensive emu farming"
+      ],
       "political": [],
-      "certifications": ["AEA Certified (American Emu Association)"],
+      "certifications": [
+        "AEA Certified (American Emu Association)"
+      ],
       "notes": "Byproduct of emu farming. Quality and ethical standards vary by farm."
     },
     "references": [
@@ -951,7 +1170,7 @@
   "flaxseed-oil": {
     "name": "Flaxseed oil (linseed)",
     "type": "fat",
-    "description": "Oil pressed from flax (<i>Linum usitatissimum</i>) seeds. Produces soft bars with highly conditioning properties. High linolenic content; soap prone to DOS.",
+    "description": "Oil pressed from flax (Linum usitatissimum) seeds. Produces soft bars with highly conditioning properties. High linolenic content; soap prone to DOS.",
     "details": {
       "sap": {
         "koh": 0.19,
@@ -959,7 +1178,8 @@
       },
       "usage": {
         "max": 8,
-        "min": 2
+        "min": 2,
+        "basis": "total-oils"
       },
       "density": 0.93,
       "iodine": 180,
@@ -981,7 +1201,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Canada", "Russia", "Kazakhstan", "China", "United States"],
+        "primaryRegions": [
+          "Canada",
+          "Russia",
+          "Kazakhstan",
+          "China",
+          "United States"
+        ],
         "productionMethod": "Cold-pressed from flax seeds. Canada is the world's largest producer."
       }
     },
@@ -992,7 +1218,10 @@
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic", "Non-GMO Project Verified"],
+      "certifications": [
+        "USDA Organic",
+        "Non-GMO Project Verified"
+      ],
       "notes": "Low environmental impact crop. Can be grown in rotation with other crops, improving soil health."
     },
     "references": [
@@ -1006,7 +1235,7 @@
   "fractionated-coconut-oil-mct": {
     "name": "Fractionated coconut oil (MCT)",
     "type": "fat",
-    "description": "Fractionated coconut (<i>Cocos nucifera</i>) oil. Produces soft bars with minimal lather contribution. Coconut is classified as a tree nut allergen.",
+    "description": "Fractionated coconut (Cocos nucifera) oil. Produces soft bars with minimal lather contribution. Coconut is classified as a tree nut allergen.",
     "details": {
       "sap": {
         "koh": 0.323,
@@ -1014,7 +1243,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.95,
       "iodine": 1,
@@ -1036,7 +1266,11 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Philippines", "Indonesia", "Malaysia"],
+        "primaryRegions": [
+          "Philippines",
+          "Indonesia",
+          "Malaysia"
+        ],
         "productionMethod": "Coconut oil fractionated to isolate medium-chain triglycerides (MCT). Industrial processing."
       }
     },
@@ -1046,9 +1280,14 @@
     },
     "ethicalConcerns": {
       "environmental": [],
-      "social": ["Same farmer income concerns as regular coconut oil"],
+      "social": [
+        "Same farmer income concerns as regular coconut oil"
+      ],
       "political": [],
-      "certifications": ["Fair Trade", "USDA Organic"],
+      "certifications": [
+        "Fair Trade",
+        "USDA Organic"
+      ],
       "notes": "Additional industrial processing over regular coconut oil. Same sourcing concerns apply."
     },
     "references": [
@@ -1070,7 +1309,8 @@
       },
       "usage": {
         "max": 100,
-        "min": 40
+        "min": 40,
+        "basis": "total-oils"
       },
       "density": 0.9,
       "iodine": 44,
@@ -1092,7 +1332,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["China", "India", "Nigeria", "Pakistan", "Bangladesh"],
+        "primaryRegions": [
+          "China",
+          "India",
+          "Nigeria",
+          "Pakistan",
+          "Bangladesh"
+        ],
         "productionMethod": "Rendered from goat fat, a byproduct of goat meat production."
       }
     },
@@ -1100,10 +1346,17 @@
       "animalBased": true
     },
     "ethicalConcerns": {
-      "environmental": ["Lower environmental impact than cattle"],
-      "social": ["Animal welfare varies by farming practices"],
+      "environmental": [
+        "Lower environmental impact than cattle"
+      ],
+      "social": [
+        "Animal welfare varies by farming practices"
+      ],
       "political": [],
-      "certifications": ["Certified Humane", "Animal Welfare Approved"],
+      "certifications": [
+        "Certified Humane",
+        "Animal Welfare Approved"
+      ],
       "notes": "Byproduct of goat meat industry. Goats have lower environmental impact than cattle. Often raised on small-scale farms."
     },
     "references": [
@@ -1125,7 +1378,8 @@
       },
       "usage": {
         "max": 50,
-        "min": 20
+        "min": 20,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 70,
@@ -1147,7 +1401,12 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["France", "Hungary", "Poland", "China"],
+        "primaryRegions": [
+          "France",
+          "Hungary",
+          "Poland",
+          "China"
+        ],
         "productionMethod": "Rendered from goose fat, byproduct of goose meat and foie gras production."
       }
     },
@@ -1156,9 +1415,15 @@
     },
     "ethicalConcerns": {
       "environmental": [],
-      "social": ["Foie gras production involves force-feeding (gavage)", "Animal welfare concerns in intensive farming"],
+      "social": [
+        "Foie gras production involves force-feeding (gavage)",
+        "Animal welfare concerns in intensive farming"
+      ],
       "political": [],
-      "certifications": ["Certified Humane", "Animal Welfare Approved"],
+      "certifications": [
+        "Certified Humane",
+        "Animal Welfare Approved"
+      ],
       "notes": "Similar concerns to duck fat. Foie gras-sourced fat has significant animal welfare concerns."
     },
     "references": [
@@ -1172,7 +1437,7 @@
   "grapeseed-oil": {
     "name": "Grapeseed oil",
     "type": "fat",
-    "description": "Oil pressed from grape (<i>Vitis vinifera</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "description": "Oil pressed from grape (Vitis vinifera) seeds. Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.191,
@@ -1180,7 +1445,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 139,
@@ -1202,7 +1468,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Italy", "France", "Spain", "United States", "Argentina"],
+        "primaryRegions": [
+          "Italy",
+          "France",
+          "Spain",
+          "United States",
+          "Argentina"
+        ],
         "productionMethod": "Expeller-pressed or solvent-extracted from grape seeds, a byproduct of wine production."
       }
     },
@@ -1213,7 +1485,9 @@
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic"],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "Sustainable byproduct of wine industry. Upcycles waste material that would otherwise be discarded."
     },
     "references": [
@@ -1227,7 +1501,7 @@
   "hazelnut-oil": {
     "name": "Hazelnut oil",
     "type": "fat",
-    "description": "Oil pressed from hazelnuts (<i>Corylus avellana</i>). Produces soft bars with highly conditioning properties. Tree nut allergen.",
+    "description": "Oil pressed from hazelnuts (Corylus avellana). Produces soft bars with highly conditioning properties. Tree nut allergen.",
     "details": {
       "sap": {
         "koh": 0.191,
@@ -1235,7 +1509,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 94,
@@ -1257,7 +1532,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Turkey", "Italy", "United States", "Azerbaijan", "Georgia"],
+        "primaryRegions": [
+          "Turkey",
+          "Italy",
+          "United States",
+          "Azerbaijan",
+          "Georgia"
+        ],
         "productionMethod": "Cold-pressed from hazelnuts. Turkey produces ~70% of world supply."
       }
     },
@@ -1267,9 +1548,16 @@
     },
     "ethicalConcerns": {
       "environmental": [],
-      "social": ["Child labour reported in Turkish hazelnut harvest", "Migrant worker exploitation documented"],
+      "social": [
+        "Child labour reported in Turkish hazelnut harvest",
+        "Migrant worker exploitation documented"
+      ],
       "political": [],
-      "certifications": ["Fair Trade", "Rainforest Alliance", "USDA Organic"],
+      "certifications": [
+        "Fair Trade",
+        "Rainforest Alliance",
+        "USDA Organic"
+      ],
       "notes": "Turkish hazelnuts have documented child labour and migrant worker concerns. Fair Trade certification helps address these issues."
     },
     "references": [
@@ -1283,7 +1571,7 @@
   "hemp-seed-oil": {
     "name": "Hemp seed oil",
     "type": "fat",
-    "description": "Oil pressed from hemp (<i>Cannabis sativa</i>) seeds. Produces soft bars with highly conditioning properties. High linolenic content; soap prone to DOS.",
+    "description": "Oil pressed from hemp (Cannabis sativa) seeds. Produces soft bars with highly conditioning properties. High linolenic content; soap prone to DOS.",
     "details": {
       "sap": {
         "koh": 0.189,
@@ -1291,7 +1579,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.93,
       "iodine": 165,
@@ -1313,7 +1602,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Canada", "France", "China", "United States", "Romania"],
+        "primaryRegions": [
+          "Canada",
+          "France",
+          "China",
+          "United States",
+          "Romania"
+        ],
         "productionMethod": "Cold-pressed from hemp seeds. Industrial hemp (low THC) is legal in most jurisdictions."
       }
     },
@@ -1323,8 +1618,13 @@
     "ethicalConcerns": {
       "environmental": [],
       "social": [],
-      "political": ["Legal status varies by jurisdiction due to cannabis association"],
-      "certifications": ["USDA Organic", "Non-GMO Project Verified"],
+      "political": [
+        "Legal status varies by jurisdiction due to cannabis association"
+      ],
+      "certifications": [
+        "USDA Organic",
+        "Non-GMO Project Verified"
+      ],
       "notes": "Environmentally beneficial crop requiring few pesticides. Growing demand supports sustainable agriculture."
     },
     "references": [
@@ -1338,7 +1638,7 @@
   "high-oleic-sunflower-oil": {
     "name": "High oleic sunflower oil",
     "type": "fat",
-    "description": "Oil pressed from high-oleic sunflower (<i>Helianthus annuus</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "description": "Oil pressed from high-oleic sunflower (Helianthus annuus) seeds. Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.191,
@@ -1346,7 +1646,8 @@
       },
       "usage": {
         "max": 30,
-        "min": 15
+        "min": 15,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 84,
@@ -1368,7 +1669,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Ukraine", "Russia", "Argentina", "France", "United States"],
+        "primaryRegions": [
+          "Ukraine",
+          "Russia",
+          "Argentina",
+          "France",
+          "United States"
+        ],
         "productionMethod": "Expeller-pressed or solvent-extracted from hybrid sunflower seeds bred for high oleic content."
       }
     },
@@ -1378,8 +1685,13 @@
     "ethicalConcerns": {
       "environmental": [],
       "social": [],
-      "political": ["Ukraine conflict has disrupted global sunflower oil supply (major producer)"],
-      "certifications": ["USDA Organic", "Non-GMO Project Verified"],
+      "political": [
+        "Ukraine conflict has disrupted global sunflower oil supply (major producer)"
+      ],
+      "certifications": [
+        "USDA Organic",
+        "Non-GMO Project Verified"
+      ],
       "notes": "Non-GMO high-oleic varieties developed through conventional breeding. Ukraine conflict affects supply and pricing."
     },
     "references": [
@@ -1393,7 +1705,7 @@
   "illipe-butter": {
     "name": "Illipe butter",
     "type": "fat",
-    "description": "Butter extracted from illipe (<i>Shorea stenoptera</i>) seeds. Produces hard bars with stable, creamy lather.",
+    "description": "Butter extracted from illipe (Shorea stenoptera) seeds. Produces hard bars with stable, creamy lather.",
     "details": {
       "sap": {
         "koh": 0.195,
@@ -1401,7 +1713,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.9,
       "iodine": 38,
@@ -1423,7 +1736,10 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Malaysia", "Indonesia"],
+        "primaryRegions": [
+          "Malaysia",
+          "Indonesia"
+        ],
         "productionMethod": "Extracted from Shorea stenoptera nuts, a Dipterocarp tree native to Borneo rainforests.",
         "supplyChainNotes": "Wild-harvested from tropical rainforests. Trees cannot be cultivated commercially."
       }
@@ -1432,10 +1748,18 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["Tropical rainforest habitat under threat", "Over-harvesting concerns for wild populations"],
-      "social": ["Supports indigenous forest communities when sustainably harvested"],
+      "environmental": [
+        "Tropical rainforest habitat under threat",
+        "Over-harvesting concerns for wild populations"
+      ],
+      "social": [
+        "Supports indigenous forest communities when sustainably harvested"
+      ],
       "political": [],
-      "certifications": ["FSC (Forest Stewardship Council)", "Rainforest Alliance"],
+      "certifications": [
+        "FSC (Forest Stewardship Council)",
+        "Rainforest Alliance"
+      ],
       "notes": "Wild-harvested from endangered rainforest habitat. Sustainable sourcing crucial for forest conservation."
     },
     "references": [
@@ -1449,7 +1773,7 @@
   "kokum-butter": {
     "name": "Kokum butter",
     "type": "fat",
-    "description": "Butter extracted from kokum (<i>Garcinia indica</i>) seeds. Produces hard bars with stable, creamy lather.",
+    "description": "Butter extracted from kokum (Garcinia indica) seeds. Produces hard bars with stable, creamy lather.",
     "details": {
       "sap": {
         "koh": 0.189,
@@ -1457,7 +1781,8 @@
       },
       "usage": {
         "max": 10,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.9,
       "iodine": 38,
@@ -1479,7 +1804,9 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["India"],
+        "primaryRegions": [
+          "India"
+        ],
         "productionMethod": "Extracted from Garcinia indica seeds. Endemic to Western Ghats of India.",
         "supplyChainNotes": "Wild-harvested from forests and cultivated in home gardens. Traditional Indian product."
       }
@@ -1488,10 +1815,16 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["Wild populations under pressure from habitat loss"],
-      "social": ["Supports rural Indian communities"],
+      "environmental": [
+        "Wild populations under pressure from habitat loss"
+      ],
+      "social": [
+        "Supports rural Indian communities"
+      ],
       "political": [],
-      "certifications": ["USDA Organic"],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "Endemic to India's Western Ghats biodiversity hotspot. Sustainable harvesting supports conservation."
     },
     "references": [
@@ -1505,7 +1838,7 @@
   "kukui-nut-oil": {
     "name": "Kukui nut oil",
     "type": "fat",
-    "description": "Oil pressed from kukui (<i>Aleurites moluccanus</i>) nuts. Produces soft bars with highly conditioning properties. High linolenic content; soap prone to DOS.",
+    "description": "Oil pressed from kukui (Aleurites moluccanus) nuts. Produces soft bars with highly conditioning properties. High linolenic content; soap prone to DOS.",
     "details": {
       "sap": {
         "koh": 0.19,
@@ -1513,7 +1846,8 @@
       },
       "usage": {
         "max": 20,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 160,
@@ -1535,19 +1869,27 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Hawaii", "Pacific Islands"],
+        "primaryRegions": [
+          "Hawaii",
+          "Pacific Islands"
+        ],
         "productionMethod": "Cold-pressed from kukui nuts. State tree of Hawaii. Traditional Polynesian use.",
         "supplyChainNotes": "Hawaiian production supports local agriculture. Also grows wild across Pacific Islands."
       }
     },
     "dietary": {
-      "animalBased": false
+      "animalBased": false,
+      "commonAllergen": true
     },
     "ethicalConcerns": {
       "environmental": [],
-      "social": ["Supports Hawaiian and Pacific Island communities"],
+      "social": [
+        "Supports Hawaiian and Pacific Island communities"
+      ],
       "political": [],
-      "certifications": ["USDA Organic"],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "Traditional Hawaiian product. Local sourcing supports island economies and preserves cultural practices."
     },
     "references": [
@@ -1561,7 +1903,7 @@
   "macadamia-nut-oil": {
     "name": "Macadamia nut oil",
     "type": "fat",
-    "description": "Oil pressed from macadamia (<i>Macadamia integrifolia</i>) nuts. Produces soft bars with highly conditioning properties. Tree nut allergen.",
+    "description": "Oil pressed from macadamia (Macadamia integrifolia) nuts. Produces soft bars with highly conditioning properties. Tree nut allergen.",
     "details": {
       "sap": {
         "koh": 0.195,
@@ -1569,7 +1911,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 76,
@@ -1591,7 +1934,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Australia", "South Africa", "Kenya", "Hawaii", "China"],
+        "primaryRegions": [
+          "Australia",
+          "South Africa",
+          "Kenya",
+          "Hawaii",
+          "China"
+        ],
         "productionMethod": "Cold-pressed from macadamia nuts. Native to Australian rainforests."
       }
     },
@@ -1603,7 +1952,10 @@
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic", "Rainforest Alliance"],
+      "certifications": [
+        "USDA Organic",
+        "Rainforest Alliance"
+      ],
       "notes": "Well-established perennial crop. Australian and Hawaiian production generally have good labour standards."
     },
     "references": [
@@ -1617,7 +1969,7 @@
   "mango-butter": {
     "name": "Mango butter",
     "type": "fat",
-    "description": "Butter extracted from mango (<i>Mangifera indica</i>) seed kernels. Adds moderate hardness with stable, creamy lather.",
+    "description": "Butter extracted from mango (Mangifera indica) seed kernels. Adds moderate hardness with stable, creamy lather.",
     "details": {
       "sap": {
         "koh": 0.192,
@@ -1625,7 +1977,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.9,
       "iodine": 48,
@@ -1647,7 +2000,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["India", "Pakistan", "Mexico", "Thailand", "Philippines"],
+        "primaryRegions": [
+          "India",
+          "Pakistan",
+          "Mexico",
+          "Thailand",
+          "Philippines"
+        ],
         "productionMethod": "Extracted from mango seed kernels, a byproduct of mango fruit processing."
       }
     },
@@ -1658,7 +2017,9 @@
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic"],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "Sustainable byproduct of mango fruit industry. Upcycles waste material. India is world's largest mango producer."
     },
     "references": [
@@ -1672,7 +2033,7 @@
   "meadowfoam-oil": {
     "name": "Meadowfoam oil",
     "type": "fat",
-    "description": "Oil pressed from meadowfoam (<i>Limnanthes alba</i>) seeds. Produces soft bars with minimal contribution to soap properties.",
+    "description": "Oil pressed from meadowfoam (Limnanthes alba) seeds. Produces soft bars with minimal contribution to soap properties.",
     "details": {
       "sap": {
         "koh": 0.168,
@@ -1680,7 +2041,8 @@
       },
       "usage": {
         "max": 10,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 92,
@@ -1702,7 +2064,9 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["United States (Oregon, Washington)"],
+        "primaryRegions": [
+          "United States (Oregon, Washington)"
+        ],
         "productionMethod": "Cold-pressed from Limnanthes alba seeds, a crop developed specifically for the oilseed industry."
       }
     },
@@ -1713,7 +2077,9 @@
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic"],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "Meadowfoam is primarily grown in the Pacific Northwest US as an alternative rotation crop. Supports local agriculture and does not compete with food crops."
     },
     "references": [
@@ -1732,7 +2098,7 @@
   "moringa-oil": {
     "name": "Moringa oil (ben oil)",
     "type": "fat",
-    "description": "Oil pressed from moringa (<i>Moringa oleifera</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "description": "Oil pressed from moringa (Moringa oleifera) seeds. Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.187,
@@ -1740,7 +2106,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.9,
       "iodine": 70,
@@ -1762,7 +2129,12 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["India", "Philippines", "Africa (various)", "Central America"],
+        "primaryRegions": [
+          "India",
+          "Philippines",
+          "Africa (various)",
+          "Central America"
+        ],
         "productionMethod": "Cold-pressed or solvent-extracted from Moringa oleifera seeds.",
         "supplyChainNotes": "Moringa is often promoted as a sustainable crop for developing regions due to drought tolerance."
       }
@@ -1774,7 +2146,10 @@
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic", "Fair Trade"],
+      "certifications": [
+        "USDA Organic",
+        "Fair Trade"
+      ],
       "notes": "Moringa cultivation supports smallholder farmers in tropical regions. The tree is fast-growing and drought-resistant, requiring minimal inputs."
     },
     "references": [
@@ -1788,7 +2163,7 @@
   "mustard-seed-oil": {
     "name": "Mustard seed oil",
     "type": "fat",
-    "description": "Oil pressed from mustard (<i>Brassica</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "description": "Oil pressed from mustard (Brassica) seeds. Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.173,
@@ -1796,7 +2171,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 110,
@@ -1818,7 +2194,12 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["India", "Bangladesh", "Nepal", "Canada"],
+        "primaryRegions": [
+          "India",
+          "Bangladesh",
+          "Nepal",
+          "Canada"
+        ],
         "productionMethod": "Cold-pressed or expeller-pressed from Brassica species seeds."
       }
     },
@@ -1829,7 +2210,9 @@
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic"],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "Traditional cooking oil in South Asia. Large-scale production in Canada uses low-erucic varieties."
     },
     "references": [
@@ -1843,7 +2226,7 @@
   "neem-oil": {
     "name": "Neem oil",
     "type": "fat",
-    "description": "Oil pressed from neem (<i>Azadirachta indica</i>) seeds. Adds moderate hardness with conditioning properties. Raw oil has strong scent; mostly dissipates during saponification.",
+    "description": "Oil pressed from neem (Azadirachta indica) seeds. Adds moderate hardness with conditioning properties. Raw oil has strong scent; mostly dissipates during saponification.",
     "details": {
       "sap": {
         "koh": 0.195,
@@ -1851,7 +2234,8 @@
       },
       "usage": {
         "max": 10,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 70,
@@ -1873,7 +2257,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["India", "Pakistan", "Bangladesh", "Sri Lanka", "Africa (various)"],
+        "primaryRegions": [
+          "India",
+          "Pakistan",
+          "Bangladesh",
+          "Sri Lanka",
+          "Africa (various)"
+        ],
         "productionMethod": "Cold-pressed or solvent-extracted from Azadirachta indica seeds."
       }
     },
@@ -1884,7 +2274,9 @@
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic"],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "Neem trees are widely cultivated in South Asia and Africa. Traditional medicine and agricultural uses support local economies."
     },
     "references": [
@@ -1903,7 +2295,7 @@
   "olive-oil": {
     "name": "Olive oil",
     "type": "fat",
-    "description": "Oil pressed from olives (<i>Olea europaea</i>). Produces soft bars with highly conditioning properties.",
+    "description": "Oil pressed from olives (Olea europaea). Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.188,
@@ -1911,7 +2303,8 @@
       },
       "usage": {
         "max": 100,
-        "min": 20
+        "min": 20,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 85,
@@ -1933,7 +2326,15 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Spain", "Italy", "Greece", "Tunisia", "Turkey", "Morocco", "Portugal"],
+        "primaryRegions": [
+          "Spain",
+          "Italy",
+          "Greece",
+          "Tunisia",
+          "Turkey",
+          "Morocco",
+          "Portugal"
+        ],
         "productionMethod": "Cold-pressed (extra virgin) or refined from Olea europaea fruit.",
         "supplyChainNotes": "Mediterranean region dominates global production. Spain alone produces nearly half of world supply."
       }
@@ -1942,10 +2343,19 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["Intensive irrigation in water-scarce regions", "Monoculture farming in some areas"],
-      "social": ["Seasonal migrant labour exploitation documented in some European harvests"],
+      "environmental": [
+        "Intensive irrigation in water-scarce regions",
+        "Monoculture farming in some areas"
+      ],
+      "social": [
+        "Seasonal migrant labour exploitation documented in some European harvests"
+      ],
       "political": [],
-      "certifications": ["USDA Organic", "EU Organic", "PDO/PGI designations"],
+      "certifications": [
+        "USDA Organic",
+        "EU Organic",
+        "PDO/PGI designations"
+      ],
       "notes": "Large-scale olive farming has environmental impacts in water-stressed Mediterranean regions. Premium extra virgin oils often support smaller producers."
     },
     "references": [
@@ -1959,7 +2369,7 @@
   "olive-oil-pomace": {
     "name": "Olive oil pomace",
     "type": "fat",
-    "description": "Oil extracted from olive (<i>Olea europaea</i>) pulp after first pressing. Produces soft bars with highly conditioning properties.",
+    "description": "Oil extracted from olive (Olea europaea) pulp after first pressing. Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.188,
@@ -1967,7 +2377,8 @@
       },
       "usage": {
         "max": 100,
-        "min": 20
+        "min": 20,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 87,
@@ -1989,7 +2400,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Spain", "Italy", "Greece", "Tunisia", "Turkey"],
+        "primaryRegions": [
+          "Spain",
+          "Italy",
+          "Greece",
+          "Tunisia",
+          "Turkey"
+        ],
         "productionMethod": "Solvent-extracted from olive pulp remaining after first pressing, then refined.",
         "supplyChainNotes": "Byproduct of virgin olive oil production. More cost-effective than virgin grades."
       }
@@ -1998,10 +2415,17 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["Intensive irrigation in water-scarce regions"],
-      "social": ["Seasonal migrant labour exploitation documented in some European harvests"],
+      "environmental": [
+        "Intensive irrigation in water-scarce regions"
+      ],
+      "social": [
+        "Seasonal migrant labour exploitation documented in some European harvests"
+      ],
       "political": [],
-      "certifications": ["USDA Organic", "EU Organic"],
+      "certifications": [
+        "USDA Organic",
+        "EU Organic"
+      ],
       "notes": "Same sourcing concerns as virgin olive oil. Uses pulp byproduct that would otherwise be waste."
     },
     "references": [
@@ -2015,7 +2439,7 @@
   "palm-kernel-oil": {
     "name": "Palm kernel oil",
     "type": "fat",
-    "description": "Oil pressed from palm (<i>Elaeis guineensis</i>) fruit seeds. Produces very hard bars with abundant, bubbly lather and high cleansing. Palm cultivation linked to deforestation and biodiversity loss (IUCN); consider RSPO-certified sources.",
+    "description": "Oil pressed from palm (Elaeis guineensis) fruit seeds. Produces very hard bars with abundant, bubbly lather and high cleansing. Palm cultivation linked to deforestation and biodiversity loss (IUCN); consider RSPO-certified sources.",
     "details": {
       "sap": {
         "koh": 0.242,
@@ -2023,7 +2447,8 @@
       },
       "usage": {
         "max": 30,
-        "min": 15
+        "min": 15,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 18,
@@ -2045,7 +2470,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Indonesia", "Malaysia", "Thailand", "Colombia", "Nigeria"],
+        "primaryRegions": [
+          "Indonesia",
+          "Malaysia",
+          "Thailand",
+          "Colombia",
+          "Nigeria"
+        ],
         "productionMethod": "Mechanically extracted from Elaeis guineensis kernel (seed), then refined.",
         "supplyChainNotes": "Indonesia and Malaysia produce ~85% of global palm oil. Complex supply chains make traceability difficult."
       }
@@ -2054,10 +2485,27 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["Tropical deforestation and peatland destruction", "Orangutan, tiger, and elephant habitat loss", "Greenhouse gas emissions from peat fires", "Biodiversity loss in Southeast Asian rainforests"],
-      "social": ["Forced and child labour documented on plantations", "Indigenous land rights violations", "Unsafe working conditions reported"],
-      "political": ["Land tenure conflicts with indigenous communities", "Corruption in land concession processes"],
-      "certifications": ["RSPO (Roundtable on Sustainable Palm Oil)", "RSPO Identity Preserved", "RSPO Segregated", "Rainforest Alliance"],
+      "environmental": [
+        "Tropical deforestation and peatland destruction",
+        "Orangutan, tiger, and elephant habitat loss",
+        "Greenhouse gas emissions from peat fires",
+        "Biodiversity loss in Southeast Asian rainforests"
+      ],
+      "social": [
+        "Forced and child labour documented on plantations",
+        "Indigenous land rights violations",
+        "Unsafe working conditions reported"
+      ],
+      "political": [
+        "Land tenure conflicts with indigenous communities",
+        "Corruption in land concession processes"
+      ],
+      "certifications": [
+        "RSPO (Roundtable on Sustainable Palm Oil)",
+        "RSPO Identity Preserved",
+        "RSPO Segregated",
+        "Rainforest Alliance"
+      ],
       "notes": "Palm kernel oil shares all supply chain concerns with palm oil. RSPO certification addresses some concerns but has been criticized for weak enforcement. Identity Preserved or Segregated certifications provide better traceability than Mass Balance."
     },
     "references": [
@@ -2081,7 +2529,7 @@
   "palm-oil": {
     "name": "Palm oil",
     "type": "fat",
-    "description": "Oil pressed from palm (<i>Elaeis guineensis</i>) fruit pulp. Adds moderate hardness with stable, creamy lather. Palm cultivation linked to deforestation and biodiversity loss (IUCN); consider RSPO-certified sources.",
+    "description": "Oil pressed from palm (Elaeis guineensis) fruit pulp. Adds moderate hardness with stable, creamy lather. Palm cultivation linked to deforestation and biodiversity loss (IUCN); consider RSPO-certified sources.",
     "details": {
       "sap": {
         "koh": 0.199,
@@ -2089,7 +2537,8 @@
       },
       "usage": {
         "max": 40,
-        "min": 20
+        "min": 20,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 53,
@@ -2111,7 +2560,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Indonesia", "Malaysia", "Thailand", "Colombia", "Nigeria"],
+        "primaryRegions": [
+          "Indonesia",
+          "Malaysia",
+          "Thailand",
+          "Colombia",
+          "Nigeria"
+        ],
         "productionMethod": "Mechanically extracted from Elaeis guineensis fruit pulp (mesocarp), then refined.",
         "supplyChainNotes": "Most widely produced vegetable oil globally. Indonesia and Malaysia produce ~85% of world supply."
       }
@@ -2120,10 +2575,27 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["Tropical deforestation and peatland destruction", "Orangutan, tiger, and elephant habitat loss", "Greenhouse gas emissions from peat fires", "Biodiversity loss in Southeast Asian rainforests"],
-      "social": ["Forced and child labour documented on plantations", "Indigenous land rights violations", "Unsafe working conditions reported"],
-      "political": ["Land tenure conflicts with indigenous communities", "Corruption in land concession processes"],
-      "certifications": ["RSPO (Roundtable on Sustainable Palm Oil)", "RSPO Identity Preserved", "RSPO Segregated", "Rainforest Alliance"],
+      "environmental": [
+        "Tropical deforestation and peatland destruction",
+        "Orangutan, tiger, and elephant habitat loss",
+        "Greenhouse gas emissions from peat fires",
+        "Biodiversity loss in Southeast Asian rainforests"
+      ],
+      "social": [
+        "Forced and child labour documented on plantations",
+        "Indigenous land rights violations",
+        "Unsafe working conditions reported"
+      ],
+      "political": [
+        "Land tenure conflicts with indigenous communities",
+        "Corruption in land concession processes"
+      ],
+      "certifications": [
+        "RSPO (Roundtable on Sustainable Palm Oil)",
+        "RSPO Identity Preserved",
+        "RSPO Segregated",
+        "Rainforest Alliance"
+      ],
       "notes": "Palm oil is the world's most consumed vegetable oil. RSPO certification is the primary standard but has limitations. Boycotts may push production to less regulated regions; certified sustainable sourcing is often recommended over avoidance."
     },
     "references": [
@@ -2147,7 +2619,7 @@
   "peanut-oil": {
     "name": "Peanut oil (groundnut)",
     "type": "fat",
-    "description": "Oil pressed from peanuts (<i>Arachis hypogaea</i>). Produces soft bars with highly conditioning properties. Peanut allergen.",
+    "description": "Oil pressed from peanuts (Arachis hypogaea). Produces soft bars with highly conditioning properties. Peanut allergen.",
     "details": {
       "sap": {
         "koh": 0.191,
@@ -2155,7 +2627,8 @@
       },
       "usage": {
         "max": 20,
-        "min": 10
+        "min": 10,
+        "basis": "total-oils"
       },
       "density": 0.915,
       "iodine": 95,
@@ -2177,7 +2650,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["China", "India", "Nigeria", "United States", "Senegal"],
+        "primaryRegions": [
+          "China",
+          "India",
+          "Nigeria",
+          "United States",
+          "Senegal"
+        ],
         "productionMethod": "Expeller-pressed or solvent-extracted from Arachis hypogaea seeds."
       }
     },
@@ -2189,7 +2668,9 @@
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic"],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "Major global crop with established supply chains. China and India are dominant producers."
     },
     "references": [
@@ -2203,7 +2684,7 @@
   "pecan-oil": {
     "name": "Pecan oil",
     "type": "fat",
-    "description": "Oil pressed from pecans (<i>Carya illinoinensis</i>). Produces soft bars with highly conditioning properties. Tree nut allergen.",
+    "description": "Oil pressed from pecans (Carya illinoinensis). Produces soft bars with highly conditioning properties. Tree nut allergen.",
     "details": {
       "sap": {
         "koh": 0.19,
@@ -2211,7 +2692,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 95,
@@ -2233,7 +2715,10 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["United States (Texas, Georgia, New Mexico)", "Mexico"],
+        "primaryRegions": [
+          "United States (Texas, Georgia, New Mexico)",
+          "Mexico"
+        ],
         "productionMethod": "Cold-pressed or expeller-pressed from Carya illinoinensis nuts."
       }
     },
@@ -2242,10 +2727,14 @@
       "commonAllergen": true
     },
     "ethicalConcerns": {
-      "environmental": ["Water-intensive crop in drought-prone regions"],
+      "environmental": [
+        "Water-intensive crop in drought-prone regions"
+      ],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic"],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "US produces ~80% of global pecans. Water usage in arid regions (Texas, New Mexico) is a growing concern."
     },
     "references": [
@@ -2259,7 +2748,7 @@
   "pistachio-oil": {
     "name": "Pistachio oil",
     "type": "fat",
-    "description": "Oil pressed from pistachios (<i>Pistacia vera</i>). Produces soft bars with highly conditioning properties. Tree nut allergen.",
+    "description": "Oil pressed from pistachios (Pistacia vera). Produces soft bars with highly conditioning properties. Tree nut allergen.",
     "details": {
       "sap": {
         "koh": 0.188,
@@ -2267,7 +2756,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 94,
@@ -2289,7 +2779,12 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Iran", "United States (California)", "Turkey", "Syria"],
+        "primaryRegions": [
+          "Iran",
+          "United States (California)",
+          "Turkey",
+          "Syria"
+        ],
         "productionMethod": "Cold-pressed from Pistacia vera nuts."
       }
     },
@@ -2298,10 +2793,16 @@
       "commonAllergen": true
     },
     "ethicalConcerns": {
-      "environmental": ["Water-intensive crop in arid regions"],
+      "environmental": [
+        "Water-intensive crop in arid regions"
+      ],
       "social": [],
-      "political": ["Iranian pistachios subject to trade sanctions in some countries"],
-      "certifications": ["USDA Organic"],
+      "political": [
+        "Iranian pistachios subject to trade sanctions in some countries"
+      ],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "Iran and California are leading producers. Water scarcity is a concern in both regions. Ongoing conflict in Syria has disrupted production."
     },
     "references": [
@@ -2323,7 +2824,8 @@
       },
       "usage": {
         "max": 100,
-        "min": 40
+        "min": 40,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 66,
@@ -2345,7 +2847,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["China", "United States", "Germany", "Spain", "Brazil"],
+        "primaryRegions": [
+          "China",
+          "United States",
+          "Germany",
+          "Spain",
+          "Brazil"
+        ],
         "productionMethod": "Rendered (wet or dry) from pork adipose tissue.",
         "supplyChainNotes": "Byproduct of pork processing. China is world's largest pork producer."
       }
@@ -2354,10 +2862,19 @@
       "animalBased": true
     },
     "ethicalConcerns": {
-      "environmental": ["Industrial pork production contributes to water pollution", "Antibiotic use in confined operations"],
-      "social": ["Industrial farming labour conditions vary widely"],
+      "environmental": [
+        "Industrial pork production contributes to water pollution",
+        "Antibiotic use in confined operations"
+      ],
+      "social": [
+        "Industrial farming labour conditions vary widely"
+      ],
       "political": [],
-      "certifications": ["Certified Humane", "Animal Welfare Approved", "USDA Organic"],
+      "certifications": [
+        "Certified Humane",
+        "Animal Welfare Approved",
+        "USDA Organic"
+      ],
       "notes": "Not suitable for vegetarian/vegan or halal/kosher products. Sourcing from pasture-raised or certified humane farms addresses some animal welfare concerns."
     },
     "references": [
@@ -2379,7 +2896,8 @@
       },
       "usage": {
         "max": 100,
-        "min": 40
+        "min": 40,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 60,
@@ -2401,7 +2919,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["China", "United States", "Germany", "Spain", "Brazil"],
+        "primaryRegions": [
+          "China",
+          "United States",
+          "Germany",
+          "Spain",
+          "Brazil"
+        ],
         "productionMethod": "Rendered from visceral fat deposits (around kidneys and loin).",
         "supplyChainNotes": "Premium grade lard from specific fat deposits. Often from smaller producers."
       }
@@ -2410,10 +2934,19 @@
       "animalBased": true
     },
     "ethicalConcerns": {
-      "environmental": ["Industrial pork production contributes to water pollution", "Antibiotic use in confined operations"],
-      "social": ["Industrial farming labour conditions vary widely"],
+      "environmental": [
+        "Industrial pork production contributes to water pollution",
+        "Antibiotic use in confined operations"
+      ],
+      "social": [
+        "Industrial farming labour conditions vary widely"
+      ],
       "political": [],
-      "certifications": ["Certified Humane", "Animal Welfare Approved", "USDA Organic"],
+      "certifications": [
+        "Certified Humane",
+        "Animal Welfare Approved",
+        "USDA Organic"
+      ],
       "notes": "Not suitable for vegetarian/vegan or halal/kosher products. Leaf lard is often sourced from smaller, heritage breed farms."
     },
     "references": [
@@ -2427,7 +2960,7 @@
   "pumpkin-seed-oil": {
     "name": "Pumpkin seed oil",
     "type": "fat",
-    "description": "Oil pressed from pumpkin (<i>Cucurbita pepo</i>) seeds. Produces soft bars with highly conditioning properties. Raw oil is dark green; colour fades significantly in finished soap.",
+    "description": "Oil pressed from pumpkin (Cucurbita pepo) seeds. Produces soft bars with highly conditioning properties. Raw oil is dark green; colour fades significantly in finished soap.",
     "details": {
       "sap": {
         "koh": 0.189,
@@ -2435,7 +2968,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 115,
@@ -2457,7 +2991,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Austria", "Slovenia", "Hungary", "China", "United States"],
+        "primaryRegions": [
+          "Austria",
+          "Slovenia",
+          "Hungary",
+          "China",
+          "United States"
+        ],
         "productionMethod": "Cold-pressed from roasted or raw Cucurbita pepo seeds.",
         "supplyChainNotes": "Styrian pumpkin seed oil (from Austria/Slovenia) is a protected designation of origin product."
       }
@@ -2469,7 +3009,11 @@
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic", "EU Organic", "PDO (Styrian)"],
+      "certifications": [
+        "USDA Organic",
+        "EU Organic",
+        "PDO (Styrian)"
+      ],
       "notes": "Traditional Central European product. Seeds are often a byproduct of food pumpkin processing."
     },
     "references": [
@@ -2483,7 +3027,7 @@
   "rice-bran-oil": {
     "name": "Rice bran oil",
     "type": "fat",
-    "description": "Oil extracted from rice (<i>Oryza sativa</i>) bran. Produces soft bars with highly conditioning properties.",
+    "description": "Oil extracted from rice (Oryza sativa) bran. Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.19,
@@ -2491,7 +3035,8 @@
       },
       "usage": {
         "max": 25,
-        "min": 10
+        "min": 10,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 103,
@@ -2513,7 +3058,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["India", "Japan", "Thailand", "China", "Vietnam"],
+        "primaryRegions": [
+          "India",
+          "Japan",
+          "Thailand",
+          "China",
+          "Vietnam"
+        ],
         "productionMethod": "Solvent-extracted or expeller-pressed from rice bran (outer layer of rice kernel).",
         "supplyChainNotes": "Byproduct of rice milling. Must be processed quickly due to rapid oxidation of fresh bran."
       }
@@ -2522,10 +3073,14 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["Rice cultivation is methane-intensive"],
+      "environmental": [
+        "Rice cultivation is methane-intensive"
+      ],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic"],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "Sustainable use of rice milling byproduct. Rice paddies contribute to global methane emissions, but bran oil itself uses existing waste."
     },
     "references": [
@@ -2539,7 +3094,7 @@
   "rosehip-seed-oil": {
     "name": "Rosehip seed oil",
     "type": "fat",
-    "description": "Oil pressed from rosehip (<i>Rosa canina</i>) seeds. Produces soft bars with highly conditioning properties. High linolenic content; soap prone to DOS.",
+    "description": "Oil pressed from rosehip (Rosa canina) seeds. Produces soft bars with highly conditioning properties. High linolenic content; soap prone to DOS.",
     "details": {
       "sap": {
         "koh": 0.189,
@@ -2547,7 +3102,8 @@
       },
       "usage": {
         "max": 10,
-        "min": 3
+        "min": 3,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 160,
@@ -2569,7 +3125,12 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Chile", "Argentina", "South Africa", "Europe (various)"],
+        "primaryRegions": [
+          "Chile",
+          "Argentina",
+          "South Africa",
+          "Europe (various)"
+        ],
         "productionMethod": "Cold-pressed from Rosa canina (dog rose) or Rosa rubiginosa seeds."
       }
     },
@@ -2580,7 +3141,10 @@
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic", "EcoCert"],
+      "certifications": [
+        "USDA Organic",
+        "EcoCert"
+      ],
       "notes": "Wild-harvested or cultivated in temperate regions. Chilean rosehip oil is widely exported."
     },
     "references": [
@@ -2594,7 +3158,7 @@
   "safflower-oil-high-oleic": {
     "name": "Safflower oil (high oleic)",
     "type": "fat",
-    "description": "Oil pressed from high-oleic safflower (<i>Carthamus tinctorius</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "description": "Oil pressed from high-oleic safflower (Carthamus tinctorius) seeds. Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.192,
@@ -2602,7 +3166,8 @@
       },
       "usage": {
         "max": 25,
-        "min": 10
+        "min": 10,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 90,
@@ -2624,7 +3189,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["United States", "Mexico", "India", "Kazakhstan", "Argentina"],
+        "primaryRegions": [
+          "United States",
+          "Mexico",
+          "India",
+          "Kazakhstan",
+          "Argentina"
+        ],
         "productionMethod": "Expeller-pressed or solvent-extracted from Carthamus tinctorius seeds."
       }
     },
@@ -2635,7 +3206,9 @@
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic"],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "Drought-tolerant crop suitable for arid regions. High-oleic varieties developed for improved stability."
     },
     "references": [
@@ -2649,7 +3222,7 @@
   "sal-seed-butter": {
     "name": "Sal seed butter",
     "type": "fat",
-    "description": "Butter extracted from sal (<i>Shorea robusta</i>) seeds. Produces hard bars with stable, creamy lather.",
+    "description": "Butter extracted from sal (Shorea robusta) seeds. Produces hard bars with stable, creamy lather.",
     "details": {
       "sap": {
         "koh": 0.189,
@@ -2657,7 +3230,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.9,
       "iodine": 8,
@@ -2679,7 +3253,11 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["India", "Nepal", "Bangladesh"],
+        "primaryRegions": [
+          "India",
+          "Nepal",
+          "Bangladesh"
+        ],
         "productionMethod": "Extracted from Shorea robusta seeds, often using solvent extraction.",
         "supplyChainNotes": "Seeds collected from natural sal forests, primarily in the Indian subcontinent."
       }
@@ -2688,10 +3266,14 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["Forest management practices vary"],
+      "environmental": [
+        "Forest management practices vary"
+      ],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic"],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "Harvested from natural forests by local communities. Provides income to rural populations in India and Nepal."
     },
     "references": [
@@ -2705,7 +3287,7 @@
   "sea-buckthorn-oil": {
     "name": "Sea buckthorn oil (fruit)",
     "type": "fat",
-    "description": "Oil pressed from sea buckthorn (<i>Hippophae rhamnoides</i>) fruit pulp. Adds moderate hardness with conditioning properties.",
+    "description": "Oil pressed from sea buckthorn (Hippophae rhamnoides) fruit pulp. Adds moderate hardness with conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.186,
@@ -2713,7 +3295,8 @@
       },
       "usage": {
         "max": 7,
-        "min": 3
+        "min": 3,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 75,
@@ -2735,7 +3318,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Russia", "China", "Mongolia", "Finland", "Canada"],
+        "primaryRegions": [
+          "Russia",
+          "China",
+          "Mongolia",
+          "Finland",
+          "Canada"
+        ],
         "productionMethod": "Cold-pressed or CO2-extracted from Hippophae rhamnoides fruit pulp."
       }
     },
@@ -2746,7 +3335,10 @@
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic", "EU Organic"],
+      "certifications": [
+        "USDA Organic",
+        "EU Organic"
+      ],
       "notes": "Hardy plant that can grow in poor soils and harsh climates. Often cultivated for land restoration."
     },
     "references": [
@@ -2760,7 +3352,7 @@
   "sesame-oil": {
     "name": "Sesame oil",
     "type": "fat",
-    "description": "Oil pressed from sesame (<i>Sesamum indicum</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "description": "Oil pressed from sesame (Sesamum indicum) seeds. Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.191,
@@ -2768,7 +3360,8 @@
       },
       "usage": {
         "max": 25,
-        "min": 10
+        "min": 10,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 113,
@@ -2790,18 +3383,29 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["India", "Sudan", "Myanmar", "Tanzania", "Nigeria", "China"],
+        "primaryRegions": [
+          "India",
+          "Sudan",
+          "Myanmar",
+          "Tanzania",
+          "Nigeria",
+          "China"
+        ],
         "productionMethod": "Cold-pressed or expeller-pressed from Sesamum indicum seeds."
       }
     },
     "dietary": {
-      "animalBased": false
+      "animalBased": false,
+      "commonAllergen": true
     },
     "ethicalConcerns": {
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic", "Fair Trade"],
+      "certifications": [
+        "USDA Organic",
+        "Fair Trade"
+      ],
       "notes": "One of the oldest cultivated oil crops. Important smallholder crop in Africa and Asia."
     },
     "references": [
@@ -2815,7 +3419,7 @@
   "shea-butter": {
     "name": "Shea butter",
     "type": "fat",
-    "description": "Butter extracted from shea tree (<i>Vitellaria paradoxa</i>) nuts. Adds moderate hardness with stable, creamy lather.",
+    "description": "Butter extracted from shea tree (Vitellaria paradoxa) nuts. Adds moderate hardness with stable, creamy lather.",
     "details": {
       "sap": {
         "koh": 0.18,
@@ -2823,7 +3427,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.9,
       "iodine": 59,
@@ -2845,7 +3450,14 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Ghana", "Burkina Faso", "Nigeria", "Mali", "Benin", "Ivory Coast"],
+        "primaryRegions": [
+          "Ghana",
+          "Burkina Faso",
+          "Nigeria",
+          "Mali",
+          "Benin",
+          "Ivory Coast"
+        ],
         "productionMethod": "Traditional hand-processing or mechanical extraction from Vitellaria paradoxa nuts.",
         "supplyChainNotes": "Shea belt spans 21 African countries. Production is largely by women's cooperatives."
       }
@@ -2854,10 +3466,21 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["Wild harvesting pressure on shea trees in some areas", "Climate change affecting shea tree range"],
-      "social": ["Fair compensation for women collectors varies", "Middlemen capture significant value in supply chain"],
+      "environmental": [
+        "Wild harvesting pressure on shea trees in some areas",
+        "Climate change affecting shea tree range"
+      ],
+      "social": [
+        "Fair compensation for women collectors varies",
+        "Middlemen capture significant value in supply chain"
+      ],
       "political": [],
-      "certifications": ["Fair Trade", "Fair for Life", "USDA Organic", "EcoCert"],
+      "certifications": [
+        "Fair Trade",
+        "Fair for Life",
+        "USDA Organic",
+        "EcoCert"
+      ],
       "notes": "Traditional women's trade in West Africa. Fair Trade certification helps ensure better prices reach collectors. Ghana and Burkina Faso are largest exporters."
     },
     "references": [
@@ -2884,7 +3507,8 @@
       },
       "usage": {
         "max": 100,
-        "min": 40
+        "min": 40,
+        "basis": "total-oils"
       },
       "density": 0.9,
       "iodine": 40,
@@ -2906,7 +3530,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Australia", "New Zealand", "United Kingdom", "China", "India"],
+        "primaryRegions": [
+          "Australia",
+          "New Zealand",
+          "United Kingdom",
+          "China",
+          "India"
+        ],
         "productionMethod": "Rendered from sheep adipose tissue, typically from meat processing.",
         "supplyChainNotes": "Byproduct of sheep meat industry. Australia and New Zealand are major exporters."
       }
@@ -2915,10 +3545,17 @@
       "animalBased": true
     },
     "ethicalConcerns": {
-      "environmental": ["Sheep farming contributes to methane emissions", "Land use for grazing"],
+      "environmental": [
+        "Sheep farming contributes to methane emissions",
+        "Land use for grazing"
+      ],
       "social": [],
       "political": [],
-      "certifications": ["Certified Humane", "Animal Welfare Approved", "Pasture-raised"],
+      "certifications": [
+        "Certified Humane",
+        "Animal Welfare Approved",
+        "Pasture-raised"
+      ],
       "notes": "Not suitable for vegetarian/vegan products. Pasture-raised and grass-fed sheep have lower environmental impact than feedlot operations."
     },
     "references": [
@@ -2932,7 +3569,7 @@
   "soybean-oil": {
     "name": "Soybean oil",
     "type": "fat",
-    "description": "Oil pressed from soybeans (<i>Glycine max</i>). Produces soft bars with highly conditioning properties. Soy allergen.",
+    "description": "Oil pressed from soybeans (Glycine max). Produces soft bars with highly conditioning properties. Soy allergen.",
     "details": {
       "sap": {
         "koh": 0.19,
@@ -2940,7 +3577,8 @@
       },
       "usage": {
         "max": 30,
-        "min": 10
+        "min": 10,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 131,
@@ -2962,7 +3600,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Brazil", "United States", "Argentina", "China", "India"],
+        "primaryRegions": [
+          "Brazil",
+          "United States",
+          "Argentina",
+          "China",
+          "India"
+        ],
         "productionMethod": "Solvent-extracted or expeller-pressed from Glycine max seeds.",
         "supplyChainNotes": "World's most widely produced oilseed. Brazil surpassed US as largest producer."
       }
@@ -2972,10 +3616,24 @@
       "commonAllergen": true
     },
     "ethicalConcerns": {
-      "environmental": ["Amazon and Cerrado deforestation for soy expansion", "Monoculture farming depletes soil", "Heavy pesticide and herbicide use"],
-      "social": ["Land conflicts with indigenous communities in Brazil", "Displacement of smallholder farmers"],
-      "political": ["Trade disputes and tariffs affect supply chains"],
-      "certifications": ["RTRS (Round Table on Responsible Soy)", "ProTerra", "USDA Organic", "Non-GMO Project Verified"],
+      "environmental": [
+        "Amazon and Cerrado deforestation for soy expansion",
+        "Monoculture farming depletes soil",
+        "Heavy pesticide and herbicide use"
+      ],
+      "social": [
+        "Land conflicts with indigenous communities in Brazil",
+        "Displacement of smallholder farmers"
+      ],
+      "political": [
+        "Trade disputes and tariffs affect supply chains"
+      ],
+      "certifications": [
+        "RTRS (Round Table on Responsible Soy)",
+        "ProTerra",
+        "USDA Organic",
+        "Non-GMO Project Verified"
+      ],
       "notes": "Soy is a major driver of deforestation in South America. Most soy goes to animal feed, not direct human consumption. RTRS and ProTerra certifications address deforestation concerns."
     },
     "references": [
@@ -2997,7 +3655,8 @@
       },
       "usage": {
         "max": 5,
-        "min": 2
+        "min": 2,
+        "basis": "total-oils"
       },
       "density": 0.94,
       "iodine": 0,
@@ -3019,7 +3678,9 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Global (derived from various fats)"],
+        "primaryRegions": [
+          "Global (derived from various fats)"
+        ],
         "productionMethod": "Hydrolyzed and fractionated from animal fats (tallow) or vegetable oils (palm, soy).",
         "supplyChainNotes": "Can be animal or vegetable-derived. Source varies by manufacturer."
       }
@@ -3028,10 +3689,15 @@
       "animalBased": false
     },
     "ethicalConcerns": {
-      "environmental": ["Inherits concerns from source material (palm, tallow, or soy)"],
+      "environmental": [
+        "Inherits concerns from source material (palm, tallow, or soy)"
+      ],
       "social": [],
       "political": [],
-      "certifications": ["RSPO (if palm-derived)", "Vegetable-derived certification"],
+      "certifications": [
+        "RSPO (if palm-derived)",
+        "Vegetable-derived certification"
+      ],
       "notes": "Ethical concerns depend entirely on source material. Vegetable-derived stearic acid may come from palm oil (same concerns) or other vegetable sources. Animal-derived comes from tallow."
     },
     "references": [
@@ -3045,7 +3711,7 @@
   "sunflower-oil": {
     "name": "Sunflower oil",
     "type": "fat",
-    "description": "Oil pressed from sunflower (<i>Helianthus annuus</i>) seeds. Produces soft bars with highly conditioning properties.",
+    "description": "Oil pressed from sunflower (Helianthus annuus) seeds. Produces soft bars with highly conditioning properties.",
     "details": {
       "sap": {
         "koh": 0.188,
@@ -3053,7 +3719,8 @@
       },
       "usage": {
         "max": 15,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 130,
@@ -3075,7 +3742,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Ukraine", "Russia", "Argentina", "European Union", "Turkey"],
+        "primaryRegions": [
+          "Ukraine",
+          "Russia",
+          "Argentina",
+          "European Union",
+          "Turkey"
+        ],
         "productionMethod": "Expeller-pressed or solvent-extracted from Helianthus annuus seeds."
       }
     },
@@ -3085,8 +3758,13 @@
     "ethicalConcerns": {
       "environmental": [],
       "social": [],
-      "political": ["Ukraine conflict has disrupted global sunflower oil supply"],
-      "certifications": ["USDA Organic", "EU Organic"],
+      "political": [
+        "Ukraine conflict has disrupted global sunflower oil supply"
+      ],
+      "certifications": [
+        "USDA Organic",
+        "EU Organic"
+      ],
       "notes": "Ukraine and Russia together produced ~60% of global supply before 2022. War in Ukraine caused major supply disruptions and price increases."
     },
     "references": [
@@ -3100,7 +3778,7 @@
   "sweet-almond-oil": {
     "name": "Sweet almond oil",
     "type": "fat",
-    "description": "Oil pressed from sweet almond (<i>Prunus dulcis</i>) kernels. Produces soft bars with highly conditioning properties. Tree nut allergen.",
+    "description": "Oil pressed from sweet almond (Prunus dulcis) kernels. Produces soft bars with highly conditioning properties. Tree nut allergen.",
     "details": {
       "sap": {
         "koh": 0.191,
@@ -3108,7 +3786,8 @@
       },
       "usage": {
         "max": 20,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.91,
       "iodine": 99,
@@ -3130,7 +3809,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["United States (California)", "Spain", "Australia", "Iran", "Morocco"],
+        "primaryRegions": [
+          "United States (California)",
+          "Spain",
+          "Australia",
+          "Iran",
+          "Morocco"
+        ],
         "productionMethod": "Cold-pressed or expeller-pressed from Prunus dulcis kernels."
       }
     },
@@ -3139,10 +3824,16 @@
       "commonAllergen": true
     },
     "ethicalConcerns": {
-      "environmental": ["California almond production is highly water-intensive", "Honeybee stress from pollination demands"],
+      "environmental": [
+        "California almond production is highly water-intensive",
+        "Honeybee stress from pollination demands"
+      ],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic", "Bee Better Certified"],
+      "certifications": [
+        "USDA Organic",
+        "Bee Better Certified"
+      ],
       "notes": "California produces ~80% of global almonds. High water usage in drought-prone regions and heavy reliance on commercial bee pollination are significant concerns."
     },
     "references": [
@@ -3161,7 +3852,7 @@
   "tamanu-oil": {
     "name": "Tamanu oil",
     "type": "fat",
-    "description": "Oil pressed from tamanu (<i>Calophyllum inophyllum</i>) nuts. Produces soft bars with conditioning properties. Raw oil has strong nutty scent; mostly dissipates during saponification.",
+    "description": "Oil pressed from tamanu (Calophyllum inophyllum) nuts. Produces soft bars with conditioning properties. Raw oil has strong nutty scent; mostly dissipates during saponification.",
     "details": {
       "sap": {
         "koh": 0.195,
@@ -3169,7 +3860,8 @@
       },
       "usage": {
         "max": 7,
-        "min": 3
+        "min": 3,
+        "basis": "total-oils"
       },
       "density": 0.93,
       "iodine": 85,
@@ -3191,7 +3883,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["Tahiti", "Fiji", "Vanuatu", "Madagascar", "Southeast Asia"],
+        "primaryRegions": [
+          "Tahiti",
+          "Fiji",
+          "Vanuatu",
+          "Madagascar",
+          "Southeast Asia"
+        ],
         "productionMethod": "Cold-pressed from dried Calophyllum inophyllum nuts after curing.",
         "supplyChainNotes": "Traditional Polynesian medicine. Nuts require curing before oil extraction."
       }
@@ -3203,7 +3901,10 @@
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic", "EcoCert"],
+      "certifications": [
+        "USDA Organic",
+        "EcoCert"
+      ],
       "notes": "Wild-harvested in Pacific islands. Supports traditional livelihoods in island communities. Tamanu trees are coastal and help prevent erosion."
     },
     "references": [
@@ -3217,7 +3918,7 @@
   "walnut-oil": {
     "name": "Walnut oil",
     "type": "fat",
-    "description": "Oil pressed from walnuts (<i>Juglans regia</i>). Produces soft bars with highly conditioning properties. Tree nut allergen.",
+    "description": "Oil pressed from walnuts (Juglans regia). Produces soft bars with highly conditioning properties. Tree nut allergen.",
     "details": {
       "sap": {
         "koh": 0.189,
@@ -3225,7 +3926,8 @@
       },
       "usage": {
         "max": 10,
-        "min": 5
+        "min": 5,
+        "basis": "total-oils"
       },
       "density": 0.92,
       "iodine": 145,
@@ -3247,7 +3949,13 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["China", "United States (California)", "Chile", "France", "Turkey"],
+        "primaryRegions": [
+          "China",
+          "United States (California)",
+          "Chile",
+          "France",
+          "Turkey"
+        ],
         "productionMethod": "Cold-pressed or expeller-pressed from Juglans regia kernels."
       }
     },
@@ -3256,10 +3964,14 @@
       "commonAllergen": true
     },
     "ethicalConcerns": {
-      "environmental": ["Water-intensive crop in some regions"],
+      "environmental": [
+        "Water-intensive crop in some regions"
+      ],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic"],
+      "certifications": [
+        "USDA Organic"
+      ],
       "notes": "China produces ~50% of global walnuts. California is second largest producer and faces water scarcity challenges."
     },
     "references": [
@@ -3273,7 +3985,7 @@
   "wheat-germ-oil": {
     "name": "Wheat germ oil",
     "type": "fat",
-    "description": "Oil pressed from wheat (<i>Triticum aestivum</i>) germ. Produces soft bars with highly conditioning properties. High polyunsaturated content; soap may be prone to DOS.",
+    "description": "Oil pressed from wheat (Triticum aestivum) germ. Produces soft bars with highly conditioning properties. High polyunsaturated content; soap may be prone to DOS.",
     "details": {
       "sap": {
         "koh": 0.19,
@@ -3281,7 +3993,8 @@
       },
       "usage": {
         "max": 10,
-        "min": 3
+        "min": 3,
+        "basis": "total-oils"
       },
       "density": 0.93,
       "iodine": 125,
@@ -3303,19 +4016,29 @@
         "ricinoleic": 0
       },
       "sourcing": {
-        "primaryRegions": ["European Union", "United States", "China", "Russia", "India"],
+        "primaryRegions": [
+          "European Union",
+          "United States",
+          "China",
+          "Russia",
+          "India"
+        ],
         "productionMethod": "Cold-pressed or solvent-extracted from wheat germ, a byproduct of flour milling.",
         "supplyChainNotes": "Byproduct of wheat flour production. Germ represents only ~2.5% of kernel weight."
       }
     },
     "dietary": {
-      "animalBased": false
+      "animalBased": false,
+      "commonAllergen": true
     },
     "ethicalConcerns": {
       "environmental": [],
       "social": [],
       "political": [],
-      "certifications": ["USDA Organic", "EU Organic"],
+      "certifications": [
+        "USDA Organic",
+        "EU Organic"
+      ],
       "notes": "Sustainable use of wheat milling byproduct. Highly perishable due to polyunsaturated fat content."
     },
     "references": [

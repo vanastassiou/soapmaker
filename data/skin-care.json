@@ -167,6 +167,7 @@
       "subcategory": "exfoliant",
       "density": 0.5,
       "safety": {
+        "casNumber": "84012-26-0",
         "maxConcentration": 5
       },
       "usage": {
