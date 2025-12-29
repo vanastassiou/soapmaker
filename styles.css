@@ -3786,6 +3786,92 @@ a.citation-title .external-icon {
 .cited-by-link:hover {
     text-decoration: underline;
 }
+
+/* ============================================
+   About Page - Prose Content Styles
+   ============================================ */
+
+.about-content {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.about-section {
+    margin-bottom: var(--space-10);
+}
+
+.about-section:last-child {
+    margin-bottom: 0;
+}
+
+.about-section h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: 500;
+    color: var(--accent-gold);
+    margin: 0 0 var(--space-4) 0;
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--border);
+}
+
+.about-section h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: var(--space-6) 0 var(--space-3) 0;
+}
+
+.about-section p {
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+    margin: 0 0 var(--space-4) 0;
+}
+
+.about-section p:last-child {
+    margin-bottom: 0;
+}
+
+.about-section ul {
+    margin: 0 0 var(--space-4) 0;
+    padding-left: var(--space-6);
+}
+
+.about-section li {
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.about-section li:last-child {
+    margin-bottom: 0;
+}
+
+.about-section strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.about-section code {
+    font-family: var(--font-mono);
+    font-size: var(--text-md);
+    background: var(--bg-secondary);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    color: var(--accent-gold);
+}
+
+.about-section a {
+    color: var(--accent-green);
+    text-decoration: none;
+}
+
+.about-section a:hover {
+    text-decoration: underline;
+}
+
 } /* End @layer pages */
 
 /* ============================================
