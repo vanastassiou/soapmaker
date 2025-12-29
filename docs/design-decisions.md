@@ -384,12 +384,14 @@ export function shouldSkipValidation() {
 
 `common-definitions.schema.json` contains reusable patterns:
 
-- `references` - Source citation arrays with DOI and publication date support
-- `usage` - Min/max percentage ranges
-- `dietary` - animalBased, commonAllergen flags
-- `ethicalConcerns` - Environmental, social, political arrays
-- `sourcing` - Production regions and methods
-- `safety` - CAS numbers, concentration limits
+| Definition | Fields | Notes |
+| ---------- | ------ | ----- |
+| `references` | sourceId, section, url, doi, published, note | Array of source citations |
+| `usage` | min, max, basis | Basis: `oil-weight`, `batch-weight`, or `total-oils` |
+| `dietary` | animalBased, commonAllergen | Boolean flags |
+| `ethicalConcerns` | environmental, social, political, certifications, notes | Arrays for concerns |
+| `sourcing` | primaryRegions, productionMethod, supplyChainNotes | Production info |
+| `safety` | casNumber, maxConcentration | Inlined CAS pattern and concentration limit |
 
 All schemas use `$ref` to reference these:
 
@@ -400,6 +402,12 @@ All schemas use `$ref` to reference these:
     }
 }
 ```
+
+### Usage basis values
+
+- `oil-weight` - Percentage of total oil weight (additives like fragrances)
+- `batch-weight` - Percentage of total batch weight (rarely used)
+- `total-oils` - Percentage of recipe oils (fats only)
 
 ---
 
