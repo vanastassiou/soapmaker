@@ -148,10 +148,17 @@
   },
   "journal-chemical-education": {
     "name": "Journal of Chemical Education",
-    "description": "Peer-reviewed chemistry education journal. Cited: Friedman, M. (2013) \"Chemistry of Soaps and Detergents.\" Open-access.",
+    "description": "Peer-reviewed chemistry education journal published by the American Chemical Society.",
     "baseUrl": "https://pubs.acs.org",
     "publisher": "American Chemical Society (ACS)",
-    "fundedBy": "Author's institution"
+    "fundedBy": "Member dues and publishing revenue"
+  },
+  "clinics-dermatology": {
+    "name": "Clinics in Dermatology",
+    "description": "Peer-reviewed dermatology journal. Cited: Friedman, M. & Wolf, R. (1996) \"Chemistry of soaps and detergents.\"",
+    "baseUrl": "https://www.cidjournal.com",
+    "publisher": "Elsevier",
+    "fundedBy": "Publishing revenue"
   },
   "journal-aocs": {
     "name": "Journal of the American Oil Chemists' Society",

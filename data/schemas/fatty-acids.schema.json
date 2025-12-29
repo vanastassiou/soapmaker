@@ -1,6 +1,23 @@
 {
   "$id": "fatty-acids.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "_metadata": {
+      "description": "File-level metadata and documentation notes",
+      "type": "object",
+      "properties": {
+        "description": {
+          "description": "Description of the file contents",
+          "type": "string"
+        },
+        "soapPropertiesNote": {
+          "description": "Clarification about soapProperties values",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
   "additionalProperties": {
     "$ref": "#/definitions/FattyAcid"
   },

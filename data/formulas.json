@@ -171,10 +171,17 @@
     ],
     "references": [
       {
-        "sourceId": "journal-chemical-education",
-        "section": "Soap formulation and properties",
-        "url": "https://pubs.acs.org/doi/10.1021/ed300589k",
+        "sourceId": "clinics-dermatology",
+        "section": "Friedman & Wolf (1996) Chemistry of soaps and detergents",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/8901393/",
+        "doi": "10.1016/0738-081x(95)00102-l",
         "note": "Peer-reviewed reference on soap chemistry and formulation"
+      },
+      {
+        "sourceId": "soapcalc",
+        "section": "Soap quality ranges",
+        "url": "https://www.soapcalc.net/calc/SoapCalcWP.asp",
+        "note": "Recommended ranges (29-54) derived from soapmaking community experience"
       }
     ]
   },
@@ -211,10 +218,17 @@
     ],
     "references": [
       {
-        "sourceId": "journal-chemical-education",
-        "section": "Chemistry of Soaps and Detergents: Various Types of Commercial Products and Their Uses",
-        "url": "https://pubs.acs.org/doi/10.1021/ed300589k",
+        "sourceId": "clinics-dermatology",
+        "section": "Friedman & Wolf (1996) Chemistry of soaps and detergents",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/8901393/",
+        "doi": "10.1016/0738-081x(95)00102-l",
         "note": "Peer-reviewed explanation of surfactant chemistry"
+      },
+      {
+        "sourceId": "soapcalc",
+        "section": "Soap quality ranges",
+        "url": "https://www.soapcalc.net/calc/SoapCalcWP.asp",
+        "note": "Recommended ranges (12-22) derived from soapmaking community experience"
       }
     ]
   },
@@ -293,10 +307,17 @@
     ],
     "references": [
       {
-        "sourceId": "journal-chemical-education",
-        "section": "Soap formulation and lather properties",
-        "url": "https://pubs.acs.org/doi/10.1021/ed300589k",
+        "sourceId": "clinics-dermatology",
+        "section": "Friedman & Wolf (1996) Chemistry of soaps and detergents",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/8901393/",
+        "doi": "10.1016/0738-081x(95)00102-l",
         "note": "Peer-reviewed reference on soap chemistry and foam formation"
+      },
+      {
+        "sourceId": "soapcalc",
+        "section": "Soap quality ranges",
+        "url": "https://www.soapcalc.net/calc/SoapCalcWP.asp",
+        "note": "Recommended ranges (14-46) derived from soapmaking community experience"
       }
     ]
   },
@@ -333,10 +354,17 @@
     ],
     "references": [
       {
-        "sourceId": "journal-chemical-education",
-        "section": "Soap formulation and lather properties",
-        "url": "https://pubs.acs.org/doi/10.1021/ed300589k",
+        "sourceId": "clinics-dermatology",
+        "section": "Friedman & Wolf (1996) Chemistry of soaps and detergents",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/8901393/",
+        "doi": "10.1016/0738-081x(95)00102-l",
         "note": "Peer-reviewed reference on soap chemistry and foam stability"
+      },
+      {
+        "sourceId": "soapcalc",
+        "section": "Soap quality ranges",
+        "url": "https://www.soapcalc.net/calc/SoapCalcWP.asp",
+        "note": "Recommended ranges (16-48) derived from soapmaking community experience"
       }
     ]
   },

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Soap Making</title>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="container page-container">
+        <header class="page-header">
+            <h1>About this recipe builder</h1>
+            <p class="page-intro">How this tool works and where its information comes from.</p>
+            <nav class="header-nav">
+                <a href="../index.html" class="header-link">Recipe builder</a>
+                <a href="soapmaking/" class="header-link">The craft</a>
+                <a href="how-it-works/" class="header-link">The science</a>
+                <a href="references.html" class="header-link">References</a>
+                <a href="about.html" class="header-link" aria-current="page">About</a>
+            </nav>
+        </header>
+
+        <main id="main-content" class="page-content">
+            <section class="content-section">
+                <h2>Purpose</h2>
+                <p>
+                    This recipe builder helps soapmakers formulate cold process and hot process
+                    soap recipes. It calculates lye and water amounts, predicts soap properties
+                    based on fatty acid chemistry, and helps balance recipes for desired
+                    characteristics like hardness, lather, and skin conditioning.
+                </p>
+                <p>
+                    The tool is designed for both beginners learning soap chemistry and
+                    experienced soapmakers who want to understand the science behind their
+                    formulations.
+                </p>
+            </section>
+
+            <section class="content-section">
+                <h2>How calculations work</h2>
+
+                <h3>Core chemistry</h3>
+                <p>
+                    Saponification calculations use established chemistry. Each fat has a
+                    <strong>SAP value</strong> (saponification value) representing how much lye
+                    is needed per gram of fat. These values are derived from average triglyceride
+                    molecular weights and are well-documented in chemical literature.
+                </p>
+                <p>
+                    The basic formula is: <code>Lye = (fat weight × SAP value) × (1 - superfat%)</code>
+                </p>
+
+                <h3>Soap properties</h3>
+                <p>
+                    Soap properties (hardness, lather, conditioning) are predicted by summing
+                    specific fatty acids in your recipe:
+                </p>
+                <ul>
+                    <li><strong>Hardness</strong> - saturated fatty acids (lauric, palmitic, stearic, etc.)</li>
+                    <li><strong>Cleansing</strong> - short-chain fatty acids (lauric, myristic)</li>
+                    <li><strong>Conditioning</strong> - unsaturated fatty acids (oleic, linoleic)</li>
+                    <li><strong>Lather</strong> - combination of lauric, myristic, and ricinoleic acids</li>
+                </ul>
+                <p>
+                    The chemistry behind these correlations is sound: saturated fatty acids
+                    pack tightly creating harder bars, while short-chain acids produce more
+                    soluble sodium salts with stronger detergent action.
+                </p>
+
+                <h3>Recommended ranges</h3>
+                <p>
+                    The recommended property ranges (hardness 29-54, cleansing 12-22, etc.)
+                    are <strong>empirically derived</strong> from soapmaking community experience,
+                    not from peer-reviewed chemical studies. They represent values that
+                    soapmakers have found produce good results in practice.
+                </p>
+                <p>
+                    These ranges are attributed to
+                    <a href="https://www.soapcalc.net" target="_blank" rel="noopener">SoapCalc</a>,
+                    the widely-used community soapmaking calculator.
+                </p>
+            </section>
+
+            <section class="content-section">
+                <h2>Data sources</h2>
+                <p>
+                    This tool prioritizes authoritative sources following a clear hierarchy:
+                </p>
+
+                <h3>Tier 1: Peer-reviewed and government sources</h3>
+                <ul>
+                    <li>
+                        <strong>USDA FoodData Central</strong> - fatty acid profiles for fats and oils
+                        (US Department of Agriculture)
+                    </li>
+                    <li>
+                        <strong>PubChem</strong> - chemical compound data including SAP values and densities
+                        (NIH/NCBI)
+                    </li>
+                    <li>
+                        <strong>NIST</strong> - unit conversion standards and statistical methods
+                        (National Institute of Standards and Technology)
+                    </li>
+                    <li>
+                        <strong>Peer-reviewed journals</strong> - Journal of the American Oil Chemists'
+                        Society, Clinics in Dermatology
+                    </li>
+                </ul>
+
+                <h3>Tier 2: Professional standards</h3>
+                <ul>
+                    <li>
+                        <strong>AOCS</strong> - analytical methods for fats, oils, and lipids
+                        (American Oil Chemists' Society)
+                    </li>
+                    <li>
+                        <strong>IFRA</strong> - fragrance safety guidelines and usage limits
+                        (International Fragrance Association)
+                    </li>
+                    <li>
+                        <strong>CRC Handbook</strong> - physical and chemical constants
+                    </li>
+                </ul>
+
+                <h3>Tier 3: Practice-based sources</h3>
+                <ul>
+                    <li>
+                        <strong>SoapCalc</strong> - empirical property ranges derived from soapmaking
+                        community experience (explicitly acknowledged as non-peer-reviewed)
+                    </li>
+                    <li>
+                        <strong>Scientific Soapmaking</strong> by Kevin Dunn - academic chemist's
+                        guide to soapmaking science
+                    </li>
+                </ul>
+
+                <p>
+                    All sources are documented in the
+                    <a href="references.html">references page</a>
+                    with publisher information, funding sources, and access details.
+                </p>
+            </section>
+
+            <section class="content-section">
+                <h2>Transparency and limitations</h2>
+                <p>
+                    This tool strives to be transparent about what is established chemistry
+                    versus what is empirical knowledge:
+                </p>
+                <ul>
+                    <li>
+                        <strong>Established chemistry:</strong> SAP values, fatty acid chemistry,
+                        iodine values, density calculations
+                    </li>
+                    <li>
+                        <strong>Empirical/community-derived:</strong> property threshold ranges,
+                        recipe optimization heuristics
+                    </li>
+                    <li>
+                        <strong>Controversial:</strong> the INS value (SAP minus iodine) is
+                        included but noted as controversial - excellent soaps can fall outside
+                        the "ideal" range
+                    </li>
+                </ul>
+                <p>
+                    Soap property predictions are guidelines, not guarantees. Actual results
+                    depend on many factors including technique, curing time, water quality,
+                    and ingredient freshness.
+                </p>
+            </section>
+
+            <section class="content-section">
+                <h2>Technical details</h2>
+                <p>
+                    This is a client-side web application with no server backend. All
+                    calculations run in your browser. Your recipes are saved to your
+                    browser's local storage and never transmitted anywhere.
+                </p>
+                <p>
+                    The source code is available for review. All formulas are documented
+                    in the <a href="how-it-works/formulas.html">formulas reference</a>
+                    with mathematical notation, worked examples, and citations.
+                </p>
+            </section>
+
+            <section class="content-section">
+                <h2>Quality assurance</h2>
+                <p>
+                    The calculator has been audited for:
+                </p>
+                <ul>
+                    <li>Scientific validity of formulas</li>
+                    <li>Source verification (URLs checked for accessibility and accuracy)</li>
+                    <li>Appropriate attribution of empirical versus scientific values</li>
+                </ul>
+                <p>
+                    Key findings: core chemistry calculations are valid and correctly implemented;
+                    empirical values are clearly attributed; sources are appropriately prioritized
+                    with peer-reviewed and government sources taking precedence.
+                </p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
