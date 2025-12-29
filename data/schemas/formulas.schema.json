@@ -96,7 +96,6 @@
             },
             "url": {
               "type": "string",
-              "format": "uri",
               "description": "URL to the educational resource"
             }
           },
