@@ -37,11 +37,11 @@ function renderReferencesHtml(references) {
 function renderGlossary() {
     const container = $('glossaryList');
 
-    // Filter by calculator domain and category
+    // Filter by calculator domain and type
     const entries = Object.entries(glossaryData)
         .filter(([_, data]) => data.domain?.includes('calculator'))
-        .filter(([_, data]) => currentCategory === 'all' || data.category === currentCategory)
-        .sort((a, b) => a[1].term.localeCompare(b[1].term));
+        .filter(([_, data]) => currentCategory === 'all' || data.type === currentCategory)
+        .sort((a, b) => a[1].name.localeCompare(b[1].name));
 
     if (entries.length === 0) {
         container.innerHTML = '<p class="no-results">No terms found in this category.</p>';
@@ -51,10 +51,10 @@ function renderGlossary() {
     container.innerHTML = entries.map(([key, data]) => `
         <article class="entry-card" data-key="${key}">
             <header class="entry-header">
-                <h2 class="entry-title">${data.term}</h2>
-                <span class="entry-category">${data.category}</span>
+                <h2 class="entry-title">${data.name}</h2>
+                <span class="entry-category">${data.type}</span>
             </header>
-            <p class="entry-desc">${data.desc}</p>
+            <p class="entry-desc">${data.description}</p>
             ${data.details ? `
                 <details class="entry-details">
                     <summary>
@@ -69,7 +69,7 @@ function renderGlossary() {
                     <span class="entry-related-label">Related:</span>
                     ${data.related
                         .filter(r => glossaryData[r] && glossaryData[r].domain?.includes('calculator'))
-                        .map(r => `<a href="#${r}" class="entry-related-link" data-term="${r}">${glossaryData[r].term}</a>`)
+                        .map(r => `<a href="#${r}" class="entry-related-link" data-term="${r}">${glossaryData[r].name}</a>`)
                         .join('')}
                 </div>
             ` : ''}

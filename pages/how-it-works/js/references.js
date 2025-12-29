@@ -3,7 +3,7 @@
  * Aggregates citations from all data files and displays grouped by publication
  */
 
-import { $ } from './ui/helpers.js';
+import { $ } from '../../../js/ui/helpers.js';
 
 let publicationIndex = {};
 let sourcesData = {};
@@ -17,17 +17,17 @@ async function loadReferences() {
             fatsRes, fragrancesRes, colourantsRes, soapPerformanceRes, skinCareRes,
             equipmentRes, processesRes, formulasRes, fattyAcidsRes, glossaryRes, sourcesRes
         ] = await Promise.all([
-            fetch('../data/fats.json'),
-            fetch('../data/fragrances.json'),
-            fetch('../data/colourants.json'),
-            fetch('../data/soap-performance.json'),
-            fetch('../data/skin-care.json'),
-            fetch('../data/equipment.json'),
-            fetch('../data/processes.json'),
-            fetch('../data/formulas.json'),
-            fetch('../data/fatty-acids.json'),
-            fetch('../data/glossary.json'),
-            fetch('../data/sources.json')
+            fetch('../../data/fats.json'),
+            fetch('../../data/fragrances.json'),
+            fetch('../../data/colourants.json'),
+            fetch('../../data/soap-performance.json'),
+            fetch('../../data/skin-care.json'),
+            fetch('../../data/equipment.json'),
+            fetch('../../data/processes.json'),
+            fetch('../../data/formulas.json'),
+            fetch('../../data/fatty-acids.json'),
+            fetch('../../data/glossary.json'),
+            fetch('../../data/sources.json')
         ]);
 
         const [
@@ -166,19 +166,19 @@ function buildPublicationIndex(allRefs) {
 function getCitedByLink(item) {
     switch (item.type) {
         case 'formula':
-            return `how-it-works/formulas.html#${item.id}`;
+            return `formulas.html#${item.id}`;
         case 'glossary':
-            return `soapmaking/glossary.html#${item.id}`;
+            return `../soapmaking/glossary.html#${item.id}`;
         case 'fatty-acid':
-            return `how-it-works/glossary.html#${item.id}`;
+            return `glossary.html#${item.id}`;
         case 'fat':
-            return `soapmaking/ingredients.html#${item.id}`;
+            return `../soapmaking/ingredients.html#${item.id}`;
         case 'additive':
-            return `../index.html?show=additive-${item.id}`;
+            return `../../index.html?show=additive-${item.id}`;
         case 'equipment':
-            return `soapmaking/equipment.html#${item.id}`;
+            return `../soapmaking/equipment.html#${item.id}`;
         case 'process':
-            return `soapmaking/processes.html#${item.id}`;
+            return `../soapmaking/processes.html#${item.id}`;
         default:
             return null;
     }
