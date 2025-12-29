@@ -20,6 +20,7 @@ A web app for soap makers to calculate lye amounts, water ratios, and analyze so
   * [Profile builder](#profile-builder)
   * [Pure calculations](#pure-calculations)
 - [No build system](#no-build-system)
+- [Known issues](#known-issues)
 
 <!-- tocstop -->
 
@@ -201,3 +202,15 @@ This project intentionally avoids build tools:
 - Instant iteration: edit file, refresh browser
 
 Trade-off: Requires HTTP server for local development (CORS).
+
+## Known issues
+
+### Slow static file loading in WSL2
+
+**Symptoms:** CSS and other static files take 2-4 seconds to load when running a local dev server in WSL2, despite small file sizes (~75KB).
+
+**Cause:** WSL2 networking has known performance issues when serving files to a Windows browser. The delay appears in "Waiting for server response" (TTFB), not the server itself.
+
+**Impact:** Development only. Production deployments are unaffected.
+
+**Status:** Accepted as WSL2 limitation.

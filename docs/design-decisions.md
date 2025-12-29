@@ -11,7 +11,7 @@ This document describes the architectural decisions and patterns used in the Soa
 
 ### Directory Structure
 
-```
+```text
 js/
 ├── core/               # Pure business logic (no DOM)
 │   ├── calculator.js       # Lye, water, fatty acid calculations
@@ -168,7 +168,7 @@ State is automatically persisted to localStorage with version migration:
 All user-facing errors use the toast system:
 
 | Scenario | Toast Type | Example |
-|----------|------------|---------|
+| -------- | ---------- | ------- |
 | Validation error | `error` | "Hardness + Conditioning should be around 100" |
 | Duplicate item | `warning` | "This fat is already in your recipe" |
 | Missing input | `info` | "Please enter at least one property target" |
