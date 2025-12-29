@@ -131,8 +131,38 @@
     /* Icon button size (lock, remove) */
     --size-icon-btn: 28px;
 
+    /* Element sizes */
+    --size-close-btn: 36px;
+    --size-checkbox: 18px;
+    --size-checkbox-sm: 16px;
+    --size-colour-swatch: 20px;
+    --size-step-counter: 24px;
+    --size-collapse-icon: 20px;
+
+    /* Bar heights */
+    --height-progress-bar: 6px;
+    --height-match-bar: 8px;
+    --height-fa-bar: 4px;
+
     /* Input field width for list items (5 digits + spinner buttons) */
     --width-input-list: 5.5rem;
+    --width-input-number: 80px;
+
+    /* Panel and popup widths */
+    --width-panel: 450px;
+    --width-panel-mobile: 360px;
+    --width-toast: 400px;
+    --width-tooltip: 320px;
+    --width-help-popup: 280px;
+
+    /* Max widths for layout */
+    --max-width-page: 1200px;
+    --max-width-layout: 900px;
+    --max-width-section: 800px;
+    --max-width-content: 720px;
+
+    /* Text on danger background (contrast: 5.5:1) */
+    --text-on-danger: #1a1714;
 
     /* ============================================
        Effects
@@ -186,7 +216,7 @@
 @layer layouts {
     /* Container Layout */
     .container {
-        max-width: 1200px;
+        max-width: var(--max-width-page);
         margin-left: auto;
         margin-right: auto;
         padding-top: var(--space-14);
@@ -196,7 +226,7 @@
     }
 
     .page-container {
-        max-width: 900px;
+        max-width: var(--max-width-layout);
     }
 
     @media (max-width: 480px) {
@@ -325,7 +355,7 @@
     /* Main Grid Layout */
     .main-grid {
         display: block;
-        max-width: 800px;
+        max-width: var(--max-width-section);
         margin: 0 auto;
     }
 
@@ -434,7 +464,7 @@ button:focus-visible,
 
 .btn-danger {
     background: var(--danger);
-    color: #1a1714;  /* dark text for 5.5:1 contrast */
+    color: var(--text-on-danger);
     font-weight: 600;
 }
 
@@ -835,7 +865,7 @@ input:focus, select:focus {
 }
 
 .item-row.danger {
-    background: rgba(217, 123, 108, 0.1);
+    background: color-mix(in srgb, var(--danger), transparent 90%);
     border-color: var(--danger);
 }
 
@@ -899,8 +929,8 @@ input:focus, select:focus {
 .info-panel {
     position: fixed;
     top: 0;
-    right: -450px;
-    width: 450px;
+    right: calc(-1 * var(--width-panel));
+    width: var(--width-panel);
     height: 100vh;
     background: var(--bg-card);
     border-left: 1px solid var(--border);
@@ -947,8 +977,8 @@ input:focus, select:focus {
     background: transparent;
     border: 1px solid var(--border);
     color: var(--text-secondary);
-    width: 36px;
-    height: 36px;
+    width: var(--size-close-btn);
+    height: var(--size-close-btn);
     border-radius: var(--radius-md);
     cursor: pointer;
     font-size: var(--text-4xl);
@@ -969,8 +999,8 @@ input:focus, select:focus {
     color: var(--text-secondary);
     cursor: pointer;
     transition: all var(--transition-base);
-    /* WCAG 2.2 Target Size: minimum 24x24px */
-    min-height: 24px;
+    /* WCAG 2.2 Target Size */
+    min-height: var(--size-touch-min);
     display: inline-flex;
     align-items: center;
     /* Button reset for semantic button elements */
@@ -1161,8 +1191,8 @@ input:focus, select:focus {
 }
 
 .panel-colour-swatch {
-    width: 20px;
-    height: 20px;
+    width: var(--size-colour-swatch);
+    height: var(--size-colour-swatch);
     border-radius: var(--radius-sm);
     border: 1px solid var(--border);
 }
@@ -1198,8 +1228,8 @@ input:focus, select:focus {
     background: transparent;
     border: 1px solid var(--border);
     color: var(--text-muted);
-    width: 28px;
-    height: 28px;
+    width: var(--size-icon-btn);
+    height: var(--size-icon-btn);
     border-radius: var(--radius-sm);
     cursor: pointer;
     font-size: var(--text-md);
@@ -1211,7 +1241,7 @@ input:focus, select:focus {
 @media (max-width: 768px) {
     .info-panel {
         width: 85%;
-        max-width: 360px;
+        max-width: var(--width-panel-mobile);
         right: -100%;
         padding: var(--space-5);
     }
@@ -1264,7 +1294,7 @@ input:focus, select:focus {
 }
 
 .property-bar {
-    height: 6px;
+    height: var(--height-progress-bar);
     background: var(--bg-input);
     border-radius: var(--radius-sm);
     overflow: hidden;
@@ -1534,8 +1564,8 @@ input:focus, select:focus {
 }
 
 .property-options input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
+    width: var(--size-checkbox);
+    height: var(--size-checkbox);
     margin: 0;
     accent-color: var(--accent-gold);
     cursor: pointer;
@@ -1567,7 +1597,7 @@ input:focus, select:focus {
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
-    max-width: 400px;
+    max-width: var(--width-toast);
     pointer-events: none;
 }
 
@@ -1696,7 +1726,7 @@ input:focus, select:focus {
 /* Glossary tooltip */
 .glossary-tooltip {
     position: absolute;
-    max-width: 320px;
+    max-width: var(--width-tooltip);
     background: var(--bg-primary);
     border: 1px solid var(--accent-gold);
     border-radius: var(--radius-lg);
@@ -1822,8 +1852,8 @@ details[open] .details-hide {
     cursor: pointer;
     transition: background var(--transition-base);
     border: 1px solid var(--border);
-    /* WCAG 2.2 Target Size: minimum 24x24px */
-    min-height: 24px;
+    /* WCAG 2.2 Target Size */
+    min-height: var(--size-touch-min);
 }
 
 .related-term:hover {
@@ -1836,7 +1866,7 @@ details[open] .details-hide {
 /* Help Popup (shared by glossary and tooltips) */
 .help-popup {
     position: absolute;
-    max-width: 280px;
+    max-width: var(--width-help-popup);
     background: var(--bg-primary);
     border: 1px solid var(--accent-gold);
     border-radius: var(--radius-md);
@@ -1881,7 +1911,7 @@ details[open] .details-hide {
 
 /* Page container - narrow width for content pages */
 .page-container {
-    max-width: 900px;
+    max-width: var(--max-width-layout);
 }
 
 /* Page header - centred with consistent spacing */
@@ -2256,8 +2286,8 @@ a.entry-title:hover,
     position: absolute;
     left: 0;
     top: 0;
-    width: 24px;
-    height: 24px;
+    width: var(--size-step-counter);
+    height: var(--size-step-counter);
     background: var(--accent-gold);
     color: var(--bg-primary);
     border-radius: 50%;
@@ -2602,8 +2632,8 @@ details.mode-subcontainer > summary .reset-btn {
 
 details.build-subcontainer > summary .collapse-icon,
 details.mode-subcontainer > summary .collapse-icon {
-    width: 20px;
-    height: 20px;
+    width: var(--size-collapse-icon);
+    height: var(--size-collapse-icon);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2754,7 +2784,7 @@ details.mode-subcontainer > .collapsible-content {
 }
 
 .profile-target input {
-    width: 80px;
+    width: var(--width-input-number);
     text-align: center;
     font-size: var(--text-2xl);
 }
@@ -2894,7 +2924,7 @@ ol.instructions li:last-child {
 }
 
 .property-row input {
-    width: 80px;
+    width: var(--width-input-number);
     height: var(--size-icon-btn);
     min-height: var(--size-icon-btn);
     padding: var(--space-1) var(--space-2);
@@ -2940,8 +2970,8 @@ ol.instructions li:last-child {
 }
 
 .dietary-filter input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
+    width: var(--size-checkbox-sm);
+    height: var(--size-checkbox-sm);
     accent-color: var(--accent-gold);
     cursor: pointer;
 }
@@ -3122,7 +3152,7 @@ ol.instructions li:last-child {
 
 .match-bar {
     flex: 1;
-    height: 8px;
+    height: var(--height-match-bar);
     background: var(--bg-input);
     border-radius: var(--radius-sm);
     overflow: hidden;
@@ -3322,7 +3352,7 @@ ol.instructions li:last-child {
     font-family: var(--font-mono);
     font-size: var(--text-lg);
     color: var(--accent-gold);
-    min-width: 80px;
+    min-width: var(--width-input-number);
 }
 
 .ingredient-name {
@@ -3706,7 +3736,7 @@ a.fat-stat-label:hover { color: var(--accent-gold); border-bottom-color: var(--a
 
 .fatty-acid-bar {
     grid-column: 1 / -1;
-    height: 4px;
+    height: var(--height-fa-bar);
     background: var(--accent-green);
     border-radius: var(--radius-sm);
     opacity: 0.6;
@@ -3816,7 +3846,7 @@ a.citation-title .external-icon {
    ============================================ */
 
 .about-content {
-    max-width: 720px;
+    max-width: var(--max-width-content);
     margin: 0 auto;
 }
 
@@ -3908,7 +3938,7 @@ a.citation-title .external-icon {
    ============================================ */
 
 /* Visibility */
-.hidden {
+.u-hidden {
     display: none !important;
 }
 
@@ -3925,7 +3955,7 @@ a.citation-title .external-icon {
 }
 
 /* Button reset - use for semantic buttons with custom styling */
-.btn-reset {
+.u-btn-reset {
     background: none;
     border: none;
     padding: 0;
@@ -3967,13 +3997,13 @@ a.citation-title .external-icon {
    Touch Targets (WCAG 2.2)
    ============================================ */
 
-.touch-target {
+.u-touch-target {
     display: inline-flex;
     align-items: center;
     min-height: var(--size-touch-min);
 }
 
-.touch-target-center {
+.u-touch-target-center {
     display: inline-flex;
     align-items: center;
     justify-content: center;

@@ -389,7 +389,7 @@ export const ADDITIVE_WARNING_TYPES = {
 // ============================================
 
 export const CSS_CLASSES = {
-    hidden: 'hidden',
+    hidden: 'u-hidden',
     active: 'active',
     open: 'open',
     locked: 'locked',

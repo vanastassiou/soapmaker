@@ -161,9 +161,9 @@
 
                             <!-- Mode helper text -->
                             <p class="build-mode-helper" id="fatsDescription">Choose fats to use in your recipe. You can lock fats at specified percentages while you tweak the others.</p>
-                            <p class="build-mode-helper hidden" id="propertiesDescription">Enter the soap properties you want to aim for and find fats to match.</p>
-                            <p class="build-mode-helper hidden" id="yoloDescription">Lock fats you like and regenerate the rest for new ideas and inspiration.</p>
-                            <p class="build-mode-helper hidden" id="cupboardDescription">Enter the fats you already have and how much of each you want to use. Get suggestions for additional fats to create a balanced soap.</p>
+                            <p class="build-mode-helper u-hidden" id="propertiesDescription">Enter the soap properties you want to aim for and find fats to match.</p>
+                            <p class="build-mode-helper u-hidden" id="yoloDescription">Lock fats you like and regenerate the rest for new ideas and inspiration.</p>
+                            <p class="build-mode-helper u-hidden" id="cupboardDescription">Enter the fats you already have and how much of each you want to use. Get suggestions for additional fats to create a balanced soap.</p>
 
                         <!-- Select Fats mode -->
                         <div class="build-mode-content" id="selectFatsMode" role="tabpanel" aria-labelledby="tab-fats">
@@ -179,13 +179,13 @@
                                     <p>No fats added</p>
                                 </div>
                             </div>
-                            <div class="use-recipe-action hidden" id="useFatsAction">
+                            <div class="use-recipe-action u-hidden" id="useFatsAction">
                                 <button class="btn" id="useFatsBtn">Use these fats</button>
                             </div>
                         </div>
 
                         <!-- Specify Properties mode -->
-                        <div class="build-mode-content hidden" id="specifyPropertiesMode" role="tabpanel" aria-labelledby="tab-properties">
+                        <div class="build-mode-content u-hidden" id="specifyPropertiesMode" role="tabpanel" aria-labelledby="tab-properties">
                             <div class="property-header">
                                 <div class="property-options">
                                     <label for="maxFats">Max different fats <select id="maxFats">
@@ -227,7 +227,7 @@
                                 <button class="btn" id="generateRecipeBtn">Generate</button>
                             </div>
 
-                            <div class="profile-results hidden" id="profileResults">
+                            <div class="profile-results u-hidden" id="profileResults">
                                 <div class="match-quality" id="matchQuality">
                                     <span class="match-label">Match Quality:</span>
                                     <div class="match-bar">
@@ -254,20 +254,20 @@
                         </div>
 
                         <!-- YOLO Mode -->
-                        <div class="build-mode-content hidden" id="yoloMode" role="tabpanel" aria-labelledby="tab-yolo">
+                        <div class="build-mode-content u-hidden" id="yoloMode" role="tabpanel" aria-labelledby="tab-yolo">
                             <div class="generate-action">
                                 <button class="btn" id="yoloBtn" aria-describedby="yoloDescription">Surprise me!</button>
                             </div>
                             <div class="recipe-fats" id="yoloRecipeFats">
                                 <!-- Populated by JS after generation -->
                             </div>
-                            <div class="use-recipe-action hidden" id="useYoloRecipeAction">
+                            <div class="use-recipe-action u-hidden" id="useYoloRecipeAction">
                                 <button class="btn" id="useYoloRecipeBtn">Use these fats</button>
                             </div>
                         </div>
 
                         <!-- Cupboard Cleaner Mode -->
-                        <div class="build-mode-content hidden" id="cupboardCleanerMode" role="tabpanel" aria-labelledby="tab-cupboard">
+                        <div class="build-mode-content u-hidden" id="cupboardCleanerMode" role="tabpanel" aria-labelledby="tab-cupboard">
                             <!-- Your fats section -->
                             <div class="mode-subcontainer">
                                 <h4 class="mode-subcontainer-title">Your fats</h4>
@@ -296,7 +296,7 @@
                                 <!-- Populated by JS -->
                             </div>
 
-                            <div class="use-recipe-action hidden" id="useCupboardAction">
+                            <div class="use-recipe-action u-hidden" id="useCupboardAction">
                                 <button class="btn" id="useCupboardBtn">Use this recipe</button>
                             </div>
                         </div>
@@ -395,7 +395,7 @@
                 </div>
 
                 <!-- Final recipe display -->
-                <div class="card hidden" id="finalRecipeCard">
+                <div class="card u-hidden" id="finalRecipeCard">
                     <div class="card-header">
                         <h2 class="card-title">Your recipe</h2>
                     </div>
