@@ -13,22 +13,31 @@ This document describes the architectural decisions and patterns used in the Soa
 
 ```
 js/
-├── core/           # Pure business logic (no DOM)
-│   ├── calculator.js   # Lye, water, fatty acid calculations
-│   └── optimizer.js    # Recipe optimization algorithms
-├── lib/            # Shared utilities and constants
-│   ├── constants.js    # All magic numbers, IDs, messages
-│   └── validation.js   # JSON schema validation
-├── state/          # State management
-│   └── state.js        # Reactive proxy-based state
-├── ui/             # UI layer
-│   ├── components/     # Reusable UI components
-│   │   ├── itemRow.js      # Fat/additive row rendering
-│   │   └── toast.js        # Toast notification system
-│   ├── helpers.js      # DOM utilities, event delegation
-│   ├── ui.js           # Main UI rendering functions
-│   └── finalRecipe.js  # Final recipe display
-└── main.js         # Application entry point
+├── core/               # Pure business logic (no DOM)
+│   ├── calculator.js       # Lye, water, fatty acid calculations
+│   └── optimizer.js        # Recipe optimization algorithms
+├── lib/                # Shared utilities and constants
+│   ├── constants.js        # All magic numbers, IDs, messages
+│   ├── references.js       # Source reference resolution
+│   └── validation.js       # JSON schema validation
+├── state/              # State management
+│   └── state.js            # Reactive proxy-based state
+├── ui/                 # UI layer
+│   ├── components/         # Reusable UI components
+│   │   ├── itemRow.js          # Fat/additive row rendering
+│   │   └── toast.js            # Toast notification system
+│   ├── helpers.js          # DOM utilities, event delegation
+│   ├── panelManager.js     # Info panel focus management
+│   ├── ui.js               # Main UI rendering functions
+│   └── finalRecipe.js      # Final recipe display
+├── vendor/             # Third-party libraries
+│   └── ajv.min.js          # JSON schema validator
+├── main.js             # Calculator page entry point
+├── glossary.js         # Glossary page entry point
+├── fats.js             # Fats reference page entry point
+├── additives.js        # Additives page entry point
+├── formulas.js         # Formulas page entry point
+└── references.js       # References page entry point
 ```
 
 ### Separation of Concerns
@@ -105,9 +114,16 @@ Features:
 State changes automatically trigger UI updates via ES6 Proxy:
 
 ```javascript
-const state = createReactiveState({
-    recipe: [],
-    lockedFatIndex: null,
+export const state = createReactiveState({
+    // Recipe state (percentage-based)
+    recipe: [],              // Array of {id, percentage}
+    recipeLocks: new Set(),  // Locked percentage indices
+    recipeAdditives: [],     // Array of {id, weight}
+
+    // Data (loaded from JSON)
+    fatsDatabase: {},
+    glossaryData: {},
+    fragrancesDatabase: {},  // Lazy-loaded
     // ...
 });
 
@@ -122,13 +138,26 @@ state.subscribeAll(() => {
 });
 ```
 
+### Immutable Updates
+
+Always create new arrays/objects when updating state:
+
+```javascript
+// Correct - creates new array, triggers notification
+state.recipe = [...state.recipe, { id: 'olive-oil', percentage: 30 }];
+
+// Wrong - mutates existing array, no notification
+state.recipe.push(newFat);
+```
+
 ### Persistence
 
-State is automatically persisted to localStorage:
+State is automatically persisted to localStorage with version migration:
 
-- Recipe configuration
-- Settings (lye type, superfat, water ratio, unit)
+- Recipe configuration (fats, percentages, locks)
 - Additives
+- Cupboard cleaner state
+- Exclusion list
 
 ---
 
@@ -153,6 +182,50 @@ All user-facing messages are in `UI_MESSAGES` constant:
 import { UI_MESSAGES } from './lib/constants.js';
 
 toast.warning(UI_MESSAGES.FAT_ALREADY_EXISTS);
+```
+
+---
+
+## Reference System
+
+### Normalized Sources
+
+References use a two-part structure to avoid duplication:
+
+**`sources.json`** defines each publication once:
+
+```json
+{
+    "pubchem": {
+        "name": "PubChem",
+        "description": "Open chemistry database maintained by NCBI",
+        "baseUrl": "https://pubchem.ncbi.nlm.nih.gov",
+        "accessType": "free"
+    }
+}
+```
+
+**Data files** reference sources by ID:
+
+```json
+{
+    "references": [{
+        "sourceId": "pubchem",
+        "section": "CID 5281",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5281"
+    }]
+}
+```
+
+### Runtime Resolution
+
+`js/lib/references.js` joins references with source data at runtime:
+
+```javascript
+import { resolveReferences } from './lib/references.js';
+
+const enrichedRefs = resolveReferences(item.references, sourcesData);
+// Returns: [{ source: "PubChem", sourceDescription: "...", section: "CID 5281", url: "..." }]
 ```
 
 ---
@@ -219,7 +292,7 @@ Magic numbers for recipe defaults:
 ```javascript
 DEFAULTS.FAT_WEIGHT          // 100 - default weight when adding fat
 DEFAULTS.ADDITIVE_WEIGHT     // 10 - default weight when adding additive
-DEFAULTS.BASE_RECIPE_WEIGHT  // 1000 - for percentage-to-weight conversion
+DEFAULTS.BASE_RECIPE_WEIGHT  // 500 - default recipe weight in grams
 DEFAULTS.YOLO_MIN_FATS       // 3 - minimum fats in YOLO recipe
 DEFAULTS.YOLO_MAX_FATS       // 5 - maximum fats in YOLO recipe
 ```
