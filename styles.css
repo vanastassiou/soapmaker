@@ -32,7 +32,7 @@
     /* Text colours - all meet 4.5:1 contrast */
     --text-primary: #e8e8e0;
     --text-secondary: #b0b8a8;
-    --text-muted: #808880;
+    --text-muted: #9a9f9a;  /* WCAG AA compliant: 4.5:1 contrast */
 
     /* Accent colours */
     --accent-gold: #e0b050;       /* warm gold for buttons */
@@ -184,12 +184,11 @@
        Breakpoints
        ============================================ */
 
-    /* Breakpoint values for reference (used in @media queries) */
-    --bp-xs: 375px;   /* Extra small phones */
+    /* Breakpoint values for reference (used in @media queries)
+       Standardized to 3 breakpoints: 480px, 768px, 1024px */
     --bp-sm: 480px;   /* Small phones */
     --bp-md: 768px;   /* Tablets */
-    --bp-lg: 1024px;  /* Small desktops */
-    --bp-xl: 1200px;  /* Large desktops */
+    --bp-lg: 1024px;  /* Desktop */
 }
 /* ============================================
    Reset & Base Styles
@@ -208,7 +207,7 @@
         color: var(--text-primary);
         min-height: 100vh;
         line-height: 1.6;
-        padding-bottom: 4rem;
+        padding-bottom: 3rem;  /* Space for fixed footer */
     }
 }
 /* ============================================
@@ -279,6 +278,14 @@
         border-bottom: 1px solid var(--accent-gold);
     }
 
+    @media (max-width: 480px) {
+        .header-link {
+            padding: var(--space-2) var(--space-3);  /* Tighter padding */
+            font-size: var(--text-sm);  /* Slightly smaller */
+            letter-spacing: 0.05em;  /* Reduce letter spacing */
+        }
+    }
+
     .kofi-button {
         display: inline-flex;
         align-items: center;
@@ -318,7 +325,7 @@
         justify-content: center;
         align-items: center;
         gap: var(--space-4);
-        padding: var(--space-3) var(--space-4);
+        padding: var(--space-2) var(--space-4);  /* Reduced vertical padding */
         background: var(--bg-primary);
         border-top: 1px solid var(--border);
     }
@@ -617,7 +624,7 @@ button:focus-visible,
 }
 
 /* Container query: compact card layout */
-@container card (max-width: 400px) {
+@container card (max-width: 480px) {
     .card-header {
         flex-direction: column;
         align-items: flex-start;
@@ -719,7 +726,7 @@ input, select {
     padding: var(--space-2) var(--space-3);
     color: var(--text-primary);
     font-family: var(--font-mono);
-    font-size: var(--text-xl);
+    font-size: 1rem;  /* 16px - prevents iOS zoom on focus */
     transition: border-color var(--transition-base), box-shadow var(--transition-base);
     width: 100%;
     min-height: var(--size-btn-md);
@@ -731,14 +738,24 @@ input:focus, select:focus {
     box-shadow: var(--focus-ring);
 }
 
+/* Form validation states */
+input:disabled, select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: var(--danger);
+}
+
 @media (max-width: 480px) {
     .settings-row {
         grid-template-columns: 1fr;
     }
 
+    /* Keep 16px font on mobile - never decrease */
     select, input {
-        font-size: var(--text-lg);
-        padding: var(--space-2) var(--space-2);
+        padding: var(--space-3);  /* Larger touch targets */
     }
 }
 /* ============================================
@@ -944,8 +961,8 @@ input:focus, select:focus {
     position: fixed;
     top: 0;
     right: calc(-1 * var(--width-panel));
-    width: var(--width-panel);
-    height: 100vh;
+    width: min(var(--width-panel), 90vw);  /* Responsive width */
+    height: 100dvh;  /* Dynamic viewport height (accounts for mobile address bar) */
     background: var(--bg-card);
     border-left: 1px solid var(--border);
     padding: var(--space-8);
@@ -1392,12 +1409,19 @@ input:focus, select:focus {
     font-weight: 400;
 }
 
+/* Table wrapper for responsive scrolling */
+.table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 calc(-1 * var(--space-3));
+    padding: 0 var(--space-3);
+}
+
 /* Analysis table */
 .analysis-table {
     width: 100%;
     border-collapse: collapse;
     font-size: var(--text-lg);
-    table-layout: fixed;
 }
 
 .analysis-table th {
@@ -1493,9 +1517,14 @@ input:focus, select:focus {
 }
 
 @media (max-width: 480px) {
+    .analysis-table {
+        min-width: 400px;  /* Force horizontal scroll on small screens */
+    }
+
     .analysis-table th,
     .analysis-table td {
-        padding: var(--space-1) var(--space-1);
+        padding: var(--space-2);  /* Readable padding */
+        white-space: nowrap;
     }
 }
 /* ============================================
@@ -1594,7 +1623,7 @@ input:focus, select:focus {
     white-space: nowrap;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 480px) {
     .property-options label {
         white-space: normal;
     }
@@ -2442,7 +2471,7 @@ a.entry-title:hover,
     margin-bottom: var(--space-4);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
     .process-pros-cons {
         grid-template-columns: 1fr;
     }
