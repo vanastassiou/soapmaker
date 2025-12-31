@@ -2,7 +2,7 @@
   "beeswax": {
     "name": "Beeswax (yellow)",
     "type": "soap performance",
-    "description": "Natural wax from Apis mellifera. Increases bar hardness. Melt into oils before adding lye. Melting point 62-64°C.",
+    "description": "Natural wax from Apis mellifera. Increases bar hardness. Melt into fats before adding lye. Melting point 62-64°C.",
     "details": {
       "subcategory": "hardener",
       "density": 0.96,
@@ -202,7 +202,7 @@
   "rosemary-oleoresin": {
     "name": "Rosemary oleoresin extract (ROE)",
     "type": "soap performance",
-    "description": "Oil-soluble extract from Rosmarinus officinalis leaves. Retards rancidity. Rich in carnosic acid (7%+). Add to oils before mixing.",
+    "description": "Oil-soluble extract from Rosmarinus officinalis leaves. Retards rancidity. Rich in carnosic acid (7%+). Add to fats before mixing.",
     "details": {
       "subcategory": "antioxidant",
       "density": 0.95,
@@ -282,7 +282,7 @@
   "sodium-lactate": {
     "name": "Sodium lactate",
     "type": "soap performance",
-    "description": "Sodium salt of lactic acid (C3H5NaO3). Add to cooled lye water before combining with oils. Reduces unmoulding time.",
+    "description": "Sodium salt of lactic acid (C3H5NaO3). Add to cooled lye water before combining with fats. Reduces unmoulding time.",
     "details": {
       "subcategory": "hardener",
       "density": 1.32,
@@ -441,7 +441,7 @@
   "vitamin-e-tocopherol": {
     "name": "Vitamin E (mixed tocopherols)",
     "type": "soap performance",
-    "description": "Mixed tocopherols (alpha, beta, gamma, delta). Antioxidant to prevent oil oxidation. Add to oils before mixing.",
+    "description": "Mixed tocopherols (alpha, beta, gamma, delta). Antioxidant to prevent fat oxidation. Add to fats before mixing.",
     "details": {
       "subcategory": "antioxidant",
       "density": 0.95,

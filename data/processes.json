@@ -4,8 +4,8 @@
     "domain": [
       "craft"
     ],
-    "summary": "The most popular method for handmade soap. Oils and lye react at low temperatures, preserving beneficial compounds.",
-    "description": "Cold process (CP) soapmaking combines oils with lye solution at relatively low temperatures (typically 38-54°C). The saponification reaction generates its own heat but doesn't require external heating.\n\nThis method preserves heat-sensitive compounds in oils and allows for creative designs like swirls and layers. The trade-off is a required 4-6 week cure time before use.",
+    "summary": "The most popular method for handmade soap. Fats and lye react at low temperatures, preserving beneficial compounds.",
+    "description": "Cold process (CP) soapmaking combines fats with lye solution at relatively low temperatures (typically 38-54°C). The saponification reaction generates its own heat but doesn't require external heating.\n\nThis method preserves heat-sensitive compounds and allows for creative designs like swirls and layers. The trade-off is a required 4-6 week cure time before use.",
     "difficulty": "beginner",
     "steps": [
       {
@@ -45,8 +45,8 @@
         ]
       },
       {
-        "title": "Combine oils and lye",
-        "description": "When both mixtures are within 5°C of each other and at target temperature, slowly pour lye solution into oils while stirring.",
+        "title": "Combine fats and lye",
+        "description": "When both mixtures are within 5°C of each other and at target temperature, slowly pour lye solution into fats while stirring.",
         "tips": [
           "Pour in a thin stream while stirring",
           "Temperatures between 38-54°C work well",
@@ -178,8 +178,8 @@
         ]
       },
       {
-        "title": "Combine oils and lye",
-        "description": "Follow cold process steps to combine oils and lye solution. Bring to light trace with stick blender.",
+        "title": "Combine fats and lye",
+        "description": "Follow cold process steps to combine fats and lye solution. Bring to light trace with stick blender.",
         "tips": [
           "Temperature less critical than cold process",
           "Light trace is sufficient before cooking"

@@ -2,11 +2,11 @@
   "additive": {
     "name": "Additive",
     "type": "concept",
-    "description": "Any ingredient added to soap beyond the base oils and lye. Includes essential oils, colourants (clays, micas, oxides), and functional additives (sodium lactate, salt, sugar).",
+    "description": "Any ingredient added to soap beyond the base fats and lye. Includes essential oils, colourants (clays, micas, oxides), and functional additives (sodium lactate, salt, sugar).",
     "domain": [
       "craft"
     ],
-    "details": "Additives are typically added at trace or mixed into oils before combining with lye, depending on type.\n\nUsage rates are given as percentage of oil weight. For example, 3% essential oil in a 500g oil batch = 15g essential oil.\n\nSome additives have safety limits (IFRA for fragrances, EU Cosmetics Regulation for colourants).",
+    "details": "Additives are typically added at trace or mixed into fats before combining with lye, depending on type.\n\nUsage rates are given as percentage of fat weight. For example, 3% essential oil in a 500g fat batch = 15g essential oil.\n\nSome additives have safety limits (IFRA for fragrances, EU Cosmetics Regulation for colourants).",
     "related": [
       "essential-oil",
       "ifra",
@@ -49,7 +49,7 @@
     "domain": [
       "craft"
     ],
-    "details": "Common clays:\n• Kaolin (white): gentle, good for sensitive skin, low absorption\n• Bentonite: high absorption, good for oily skin, swells when wet\n• French Green (illite): moderate absorption, natural green colour\n• Rose Clay: pink/terracotta colour, gentle\n\nUsage: 0.5-1% of oil weight. Mix with water or oil before adding at trace.",
+    "details": "Common clays:\n• Kaolin (white): gentle, good for sensitive skin, low absorption\n• Bentonite: high absorption, good for oily skin, swells when wet\n• French Green (illite): moderate absorption, natural green colour\n• Rose Clay: pink/terracotta colour, gentle\n\nUsage: 0.5-1% of fat weight. Mix with water or oil before adding at trace.",
     "related": [
       "colourant",
       "additive",
@@ -63,7 +63,7 @@
     "domain": [
       "craft"
     ],
-    "details": "Colourants are typically dispersed in a small amount of oil before adding to soap at trace.\n\nCategories:\n• Clays: natural earth colours, also functional (absorb oils)\n• Oxides: synthetic or natural mineral pigments, stable in lye\n• Micas: shimmer/sparkle, may morph in high pH\n• Natural: herbs, spices, clays (may fade or change colour)\n\nUsage typically 0.1-1% of oil weight depending on intensity desired.",
+    "details": "Colourants are typically dispersed in a small amount of oil before adding to soap at trace.\n\nCategories:\n• Clays: natural earth colours, also functional (absorb oils)\n• Oxides: synthetic or natural mineral pigments, stable in lye\n• Micas: shimmer/sparkle, may morph in high pH\n• Natural: herbs, spices, clays (may fade or change colour)\n\nUsage typically 0.1-1% of fat weight depending on intensity desired.",
     "related": [
       "additive",
       "clay",
@@ -182,7 +182,7 @@
     "domain": [
       "craft"
     ],
-    "details": "Essential oils are complex mixtures of terpenes, alcohols, esters, and other compounds. Each has a characteristic scent and safety profile.\n\nScent notes:\n• Top: first detected, evaporate quickly (citrus, peppermint)\n• Middle: body of scent (lavender, rosemary)\n• Base: last to evaporate, anchor blends (cedarwood, patchouli)\n\nUsage typically 2-5% of oil weight. Some accelerate trace (clove) or may discolour soap (vanilla).",
+    "details": "Essential oils are complex mixtures of terpenes, alcohols, esters, and other compounds. Each has a characteristic scent and safety profile.\n\nScent notes:\n• Top: first detected, evaporate quickly (citrus, peppermint)\n• Middle: body of scent (lavender, rosemary)\n• Base: last to evaporate, anchor blends (cedarwood, patchouli)\n\nUsage typically 2-5% of fat weight. Some accelerate trace (clove) or may discolour soap (vanilla).",
     "related": [
       "additive",
       "ifra",
@@ -196,7 +196,7 @@
     "domain": [
       "craft"
     ],
-    "details": "Common exfoliants:\n• Colloidal oatmeal: very gentle, also soothing\n• Poppy seeds: moderate texture\n• Coffee grounds: moderate to rough\n• Pumice: rough, for feet/hands\n• Loofah: embedded pieces\n\nAdd at trace. Usage varies by desired scrubiness; typically 1-3% of oil weight.\n\nNote: exfoliants sink in fluid soap; work at medium trace or suspend in layers.",
+    "details": "Common exfoliants:\n• Colloidal oatmeal: very gentle, also soothing\n• Poppy seeds: moderate texture\n• Coffee grounds: moderate to rough\n• Pumice: rough, for feet/hands\n• Loofah: embedded pieces\n\nAdd at trace. Usage varies by desired scrubiness; typically 1-3% of fat weight.\n\nNote: exfoliants sink in fluid soap; work at medium trace or suspend in layers.",
     "related": [
       "additive",
       "trace"
@@ -209,7 +209,7 @@
     "domain": [
       "craft"
     ],
-    "details": "False trace occurs when hard fats (coconut oil, palm, butters) cool and solidify before proper emulsification. The batter looks thick but oils and lye haven't combined.\n\nCauses:\n• Large temperature difference between oils and lye\n• High percentage of saturated fats\n• Insufficient stick blending before fats solidify\n\nRisks: separation in mould, pockets of unsaponified oil or lye.\n\nPrevention: ensure oils and lye are within 10°F/5°C of each other, blend thoroughly before fats can resolidify, work at warmer temperatures with high-saturated recipes.",
+    "details": "False trace occurs when hard fats (coconut oil, palm, butters) cool and solidify before proper emulsification. The batter looks thick but fats and lye haven't combined.\n\nCauses:\n• Large temperature difference between fats and lye\n• High percentage of saturated fats\n• Insufficient stick blending before fats solidify\n\nRisks: separation in mould, pockets of unsaponified fat or lye.\n\nPrevention: ensure fats and lye are within 10°F/5°C of each other, blend thoroughly before fats can resolidify, work at warmer temperatures with high-saturated recipes.",
     "references": [
       {
         "sourceId": "pmc",
@@ -303,7 +303,7 @@
     "domain": [
       "craft"
     ],
-    "details": "Sodium lactate: 1-3% of oil weight, added to cooled lye water. Most effective option.\n\nSalt (NaCl): 0.5-1% of oil weight, dissolved in water before adding lye. Above 3% can inhibit lather.\n\nBoth work by affecting the crystal structure of the soap.\n\nNote: high amounts of either can cause glycerin rivers if combined with gel phase.",
+    "details": "Sodium lactate: 1-3% of fat weight, added to cooled lye water. Most effective option.\n\nSalt (NaCl): 0.5-1% of fat weight, dissolved in water before adding lye. Above 3% can inhibit lather.\n\nBoth work by affecting the crystal structure of the soap.\n\nNote: high amounts of either can cause glycerin rivers if combined with gel phase.",
     "related": [
       "additive",
       "sodium-lactate",
@@ -453,7 +453,7 @@
     "domain": [
       "craft"
     ],
-    "details": "Permitted in cosmetics under EU Regulation 1223/2009 (CI 77491, 77492, 77499).\n\nColours:\n• Red (Fe₂O₃): terracotta to brick red\n• Yellow (FeOOH): gold to tan\n• Black (Fe₃O₄): grey to black, use sparingly\n• Brown: blend of red + yellow + black\n\nUsage: 0.1-0.5% of oil weight. Disperse in oil to prevent speckling.",
+    "details": "Permitted in cosmetics under EU Regulation 1223/2009 (CI 77491, 77492, 77499).\n\nColours:\n• Red (Fe₂O₃): terracotta to brick red\n• Yellow (FeOOH): gold to tan\n• Black (Fe₃O₄): grey to black, use sparingly\n• Brown: blend of red + yellow + black\n\nUsage: 0.1-0.5% of fat weight. Disperse in oil to prevent speckling.",
     "references": [
       {
         "sourceId": "pubchem",
@@ -507,7 +507,7 @@
     "domain": [
       "craft"
     ],
-    "details": "Sugar (sucrose) dissolved in the water portion increases lather dramatically. The sugar caramelizes slightly during saponification.\n\nUsage: 0.5-1% of oil weight, dissolved in water before adding lye.\n\nOther lather enhancers:\n• Honey (also adds colour)\n• Beer (reduce first, use flat)\n• Milks (watch for overheating)\n\nCastor oil (2-5%) also boosts lather but is a fat, not an additive.",
+    "details": "Sugar (sucrose) dissolved in the water portion increases lather dramatically. The sugar caramelizes slightly during saponification.\n\nUsage: 0.5-1% of fat weight, dissolved in water before adding lye.\n\nOther lather enhancers:\n• Honey (also adds colour)\n• Beer (reduce first, use flat)\n• Milks (watch for overheating)\n\nCastor oil (2-5%) also boosts lather but is a fat, not an additive.",
     "related": [
       "additive",
       "lather-volume"
@@ -574,7 +574,7 @@
   "lye-type": {
     "name": "Lye type",
     "type": "concept",
-    "description": "The alkali used to saponify oils. NaOH (sodium hydroxide) produces hard bar soap. KOH (potassium hydroxide) produces liquid or soft soap. They are not interchangeable.",
+    "description": "The alkali used to saponify fats. NaOH (sodium hydroxide) produces hard bar soap. KOH (potassium hydroxide) produces liquid or soft soap. They are not interchangeable.",
     "domain": [
       "craft"
     ],
@@ -745,7 +745,7 @@
     "domain": [
       "craft"
     ],
-    "details": "Cold process (CP): Oils and lye react at low temperatures (38-54°C). Requires 4-6 week cure. Preserves beneficial compounds and allows creative designs.\n\nHot process (HP): External heat speeds saponification. Soap is usable immediately but has a rustic appearance.",
+    "details": "Cold process (CP): Fats and lye react at low temperatures (38-54°C). Requires 4-6 week cure. Preserves beneficial compounds and allows creative designs.\n\nHot process (HP): External heat speeds saponification. Soap is usable immediately but has a rustic appearance.",
     "related": [
       "trace",
       "saponification",
@@ -869,7 +869,7 @@
     "domain": [
       "craft"
     ],
-    "details": "Added to cooled lye water (not hot lye). Typical usage 1-3% of oil weight.\n\nBenefits:\n• Harder bars (unmould 4-12 hours faster)\n• Improved bar release from silicone moulds\n• Slight humectant properties\n\nExcessive use (>5%) can cause brittle bars or glycerin rivers.",
+    "details": "Added to cooled lye water (not hot lye). Typical usage 1-3% of fat weight.\n\nBenefits:\n• Harder bars (unmould 4-12 hours faster)\n• Improved bar release from silicone moulds\n• Slight humectant properties.\n\nExcessive use (>5%) can cause brittle bars or glycerin rivers.",
     "references": [
       {
         "sourceId": "pubchem",
@@ -886,7 +886,7 @@
   "superfat": {
     "name": "Superfat / lye discount",
     "type": "concept",
-    "description": "Percentage of oils left unsaponified in the final soap. Adds conditioning and ensures no excess lye remains.",
+    "description": "Percentage of fats left unsaponified in the final soap. Adds conditioning and ensures no excess lye remains.",
     "domain": [
       "craft",
       "calculator"
@@ -912,7 +912,7 @@
     "domain": [
       "craft"
     ],
-    "details": "Permitted in cosmetics under EU Regulation 1223/2009 (CI 77891).\n\nUses:\n• Pure white soap base\n• Lighten/pastel other colourants\n• Create base for swirls\n• Hide discolouration from vanilla or spices\n\nUsage: 0.1-1% of oil weight. Higher amounts can feel chalky. Disperse in oil to prevent clumping.",
+    "details": "Permitted in cosmetics under EU Regulation 1223/2009 (CI 77891).\n\nUses:\n• Pure white soap base\n• Lighten/pastel other colourants\n• Create base for swirls\n• Hide discolouration from vanilla or spices\n\nUsage: 0.1-1% of fat weight. Higher amounts can feel chalky. Disperse in oil to prevent clumping.",
     "references": [
       {
         "sourceId": "sccs",

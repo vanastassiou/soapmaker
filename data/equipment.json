@@ -5,7 +5,7 @@
     "domain": [
       "craft"
     ],
-    "description": "Precision scale for measuring oils, lye, and additives by weight.",
+    "description": "Precision scale for measuring fats, lye, and additives by weight.",
     "details": "A scale is essential for soapmaking. Volume-based measuring is not precise enough for predictable results.",
     "considerations": [
       "Ensure maximum weight capacity suits your needs",
@@ -31,7 +31,7 @@
     "domain": [
       "craft"
     ],
-    "description": "Handheld immersion blender used to emulsify oils and lye solution and quickly bring mixture to trace.",
+    "description": "Handheld immersion blender used to emulsify fats and lye solution and quickly bring mixture to trace.",
     "details": "An immersion blender reduces mixing time from 30 to 60 minutes (if stirring by hand) to 2 to 5 minutes. Use short bursts of 2 to 3 seconds, alternating with stirring to avoid reaching trace unexpectedly quickly.",
     "considerations": [
       "Must have a stainless steel shaft (not aluminium, which reacts with lye)",
@@ -222,7 +222,7 @@
     "domain": [
       "craft"
     ],
-    "description": "Heat-resistant containers for mixing lye solution and combining with oils. Must be lye-safe materials.",
+    "description": "Heat-resistant containers for mixing lye solution and combining with fats. Must be lye-safe materials.",
     "details": "For lye, use heat-resistant plastic (PP #5, HDPE #2), stainless steel, or tempered/borosilicate glass.\n\nFor soap batter, use stainless steel or heavy-duty plastic pitchers.",
     "considerations": [
       "Heat-resistant to at least 93°C",

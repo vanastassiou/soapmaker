@@ -52,7 +52,7 @@ function escapeHtml(text) {
 
 function formatUsage(usage) {
     if (!usage) return '—';
-    const basis = usage.basis === 'oil-weight' ? '% of oils' : '%';
+    const basis = usage.basis === 'oil-weight' ? '% of fats' : '%';
     return `${usage.min}–${usage.max}${basis}`;
 }
 

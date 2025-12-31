@@ -120,7 +120,7 @@
       "0.95": "5% reduction during saponification"
     },
     "example": {
-      "scenario": "500g oils, 127g water, 64g NaOH",
+      "scenario": "500g fats, 127g water, 64g NaOH",
       "steps": [
         "Vfats = 500 / 0.91 = 549 mL",
         "Vwater = 127 / 1.0 = 127 mL",
@@ -129,7 +129,7 @@
         "Final = 706 \u00d7 0.95 = 671 mL (\u00b112%)"
       ]
     },
-    "technical": "Volume calculations include \u00b112% uncertainty to account for: air incorporation during mixing, temperature variations, water evaporation during cure (10-15% loss), and variations in actual oil densities. The saponification reduction factor (0.95) accounts for molecular rearrangement and water binding during the chemical reaction.",
+    "technical": "Volume calculations include \u00b112% uncertainty to account for: air incorporation during mixing, temperature variations, water evaporation during cure (10-15% loss), and variations in actual fat densities. The saponification reduction factor (0.95) accounts for molecular rearrangement and water binding during the chemical reaction.",
     "related": [
       "cure"
     ],
@@ -601,15 +601,15 @@
       "calculator"
     ],
     "name": "Additive amount",
-    "summary": "Calculates additive weights as a percentage of your oil weight.",
-    "userFriendly": "Additives like essential oils, clays, and colourants are measured as a percentage of your total fat weight. For example, if an essential oil is used at 3% and you have 500g of oils, you'd add 15g of essential oil.",
+    "summary": "Calculates additive weights as a percentage of your fat weight.",
+    "userFriendly": "Additives like essential oils, clays, and colourants are measured as a percentage of your total fat weight. For example, if an essential oil is used at 3% and you have 500g of fats, you'd add 15g of essential oil.",
     "formula": "Additive weight = Total fat weight \u00d7 (usage % / 100)",
     "variables": {
       "Total fat weight": "Sum of all fats in your recipe",
       "usage %": "Recommended percentage for the additive"
     },
     "example": {
-      "scenario": "500g oils, lavender EO at 3%",
+      "scenario": "500g fats, lavender EO at 3%",
       "steps": [
         "Additive = 500 \u00d7 (3 / 100) = 15g lavender EO"
       ]
@@ -641,7 +641,7 @@
       "29.5735": "Milliliters per fluid ounce (volume)"
     },
     "example": {
-      "scenario": "500g oils in ounces",
+      "scenario": "500g fats in ounces",
       "steps": [
         "500 / 28.3495 = 17.64 oz"
       ]
