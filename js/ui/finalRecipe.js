@@ -94,7 +94,7 @@ function buildQualitativeSummary(properties, notes = []) {
     let html = `<p class="qualitative-summary">${summary}</p>`;
 
     if (warnings.length > 0) {
-        html += `<ul class="qualitative-warnings">`;
+        html += `<ul class="callout callout-tip">`;
         warnings.forEach(w => {
             html += `<li>${w}</li>`;
         });

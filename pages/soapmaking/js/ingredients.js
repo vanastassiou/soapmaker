@@ -4,7 +4,6 @@
  */
 
 import { $ } from '../../../js/ui/helpers.js';
-import { TIMING } from '../../../js/lib/constants.js';
 import { resolveReferences } from '../../../js/lib/references.js';
 
 let fatsData = {};
@@ -53,30 +52,33 @@ function renderReferencesHtml(references) {
 }
 
 function renderFatCard(key, data) {
+    const details = data.details || {};
+    const sap = details.sap || {};
+    const usage = details.usage || {};
+    const fattyAcids = details.fattyAcids || {};
+
     return `
         <article class="entry-card" data-key="${key}" data-type="fat">
             <header class="entry-header">
                 <h2 class="entry-title">${data.name}</h2>
-                <span class="entry-category">Fat/oil</span>
             </header>
             ${data.description ? `<p class="entry-desc">${data.description}</p>` : ''}
 
             <div class="fat-properties">
-                ${data.sap?.naoh ? `<span class="property-item"><strong>SAP (NaOH):</strong> ${data.sap.naoh}</span>` : ''}
-                ${data.sap?.koh ? `<span class="property-item"><strong>SAP (KOH):</strong> ${data.sap.koh}</span>` : ''}
-                ${data.iodine ? `<span class="property-item"><strong>Iodine:</strong> ${data.iodine}</span>` : ''}
-                ${data.ins ? `<span class="property-item"><strong>INS:</strong> ${data.ins}</span>` : ''}
+                ${sap.naoh ? `<span class="property-item"><strong>SAP (NaOH):</strong> ${sap.naoh}</span>` : ''}
+                ${sap.koh ? `<span class="property-item"><strong>SAP (KOH):</strong> ${sap.koh}</span>` : ''}
+                ${details.iodine ? `<span class="property-item"><strong>Iodine:</strong> ${details.iodine}</span>` : ''}
+                ${details.ins ? `<span class="property-item"><strong>INS:</strong> ${details.ins}</span>` : ''}
             </div>
 
-            ${data.usageLimits ? `
+            ${usage.min !== undefined || usage.max !== undefined ? `
                 <div class="fat-usage">
                     <span class="usage-label">Recommended usage:</span>
-                    <span class="usage-range">${data.usageLimits.min || 0}% - ${data.usageLimits.max || 100}%</span>
-                    ${data.usageLimits.note ? `<span class="usage-note">${data.usageLimits.note}</span>` : ''}
+                    <span class="usage-range">${usage.min || 0}% - ${usage.max || 100}%</span>
                 </div>
             ` : ''}
 
-            ${data.fattyAcids ? `
+            ${Object.keys(fattyAcids).length > 0 ? `
                 <details class="entry-details">
                     <summary>
                         <span class="details-toggle">Fatty acid profile</span>
@@ -84,7 +86,7 @@ function renderFatCard(key, data) {
                     </summary>
                     <div class="entry-details-content">
                         <dl class="fatty-acid-list">
-                            ${Object.entries(data.fattyAcids)
+                            ${Object.entries(fattyAcids)
                                 .filter(([_, v]) => v > 0)
                                 .sort((a, b) => b[1] - a[1])
                                 .map(([acid, pct]) => `
@@ -98,48 +100,34 @@ function renderFatCard(key, data) {
                 </details>
             ` : ''}
 
-            ${data.tags?.length > 0 ? `
-                <div class="entry-tags">
-                    ${data.tags.map(tag => `<span class="entry-tag">${tag}</span>`).join('')}
-                </div>
-            ` : ''}
-
             ${renderReferencesHtml(data.references)}
         </article>
     `;
 }
 
 function renderAdditiveCard(key, data) {
+    const details = data.details || {};
+    const usage = details.usage || {};
+
     return `
         <article class="entry-card" data-key="${key}" data-type="additive">
             <header class="entry-header">
                 <h2 class="entry-title">${data.name}</h2>
-                <span class="entry-category">${data.category || 'Additive'}</span>
             </header>
             <p class="entry-desc">${data.description}</p>
 
-            ${data.details ? `
-                <details class="entry-details">
-                    <summary>
-                        <span class="details-toggle">More details</span>
-                        <span class="details-hide">Hide details</span>
-                    </summary>
-                    <div class="entry-details-content">${data.details.replace(/\n/g, '<br>')}</div>
-                </details>
-            ` : ''}
-
-            ${data.usageRate ? `
+            ${usage.min !== undefined || usage.max !== undefined ? `
                 <div class="additive-usage">
                     <span class="usage-label">Usage rate:</span>
-                    <span class="usage-range">${data.usageRate.min || 0}% - ${data.usageRate.max}%</span>
-                    ${data.usageRate.note ? `<span class="usage-note">${data.usageRate.note}</span>` : ''}
+                    <span class="usage-range">${usage.min || 0}% - ${usage.max || 100}%</span>
+                    ${usage.basis ? `<span class="usage-note">(${usage.basis.replace(/-/g, ' ')})</span>` : ''}
                 </div>
             ` : ''}
 
-            ${data.whenToAdd ? `
-                <div class="additive-timing">
-                    <span class="timing-label">When to add:</span>
-                    <span class="timing-value">${data.whenToAdd}</span>
+            ${details.subcategory ? `
+                <div class="additive-subcategory">
+                    <span class="subcategory-label">Type:</span>
+                    <span class="subcategory-value">${details.subcategory}</span>
                 </div>
             ` : ''}
 
@@ -148,7 +136,7 @@ function renderAdditiveCard(key, data) {
                     <span class="entry-related-label">Related:</span>
                     ${data.related
                         .filter(r => glossaryData[r])
-                        .map(r => `<a href="glossary.html#${r}" class="entry-related-link">${glossaryData[r].term}</a>`)
+                        .map(r => `<a href="glossary.html#${r}" class="entry-related-link">${glossaryData[r].name}</a>`)
                         .join('')}
                 </div>
             ` : ''}
@@ -234,6 +222,14 @@ window.addEventListener('pageshow', (event) => {
     }
 });
 
-// Initialize
-loadIngredients();
-initFilters();
+// Initialize when DOM is ready
+function init() {
+    initFilters();
+    loadIngredients();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}

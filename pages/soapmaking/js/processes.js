@@ -43,15 +43,11 @@ function renderReferencesHtml(references) {
 function renderProcesses() {
     const container = $('processesList');
 
-    // Filter by craft domain and difficulty
+    // Filter by craft domain and process type
     const entries = Object.entries(processesData)
         .filter(([_, data]) => data.domain?.includes('craft'))
-        .filter(([_, data]) => currentCategory === 'all' || data.difficulty === currentCategory)
-        .sort((a, b) => {
-            // Sort by difficulty: beginner, intermediate, advanced
-            const order = { beginner: 0, intermediate: 1, advanced: 2 };
-            return (order[a[1].difficulty] || 0) - (order[b[1].difficulty] || 0);
-        });
+        .filter(([key, _]) => currentCategory === 'all' || key === currentCategory)
+        .sort((a, b) => a[1].name.localeCompare(b[1].name));
 
     if (entries.length === 0) {
         container.innerHTML = '<p class="no-results">No processes found in this category.</p>';
@@ -62,7 +58,6 @@ function renderProcesses() {
         <article class="entry-card entry-card--process" data-key="${key}">
             <header class="entry-header">
                 <h2 class="entry-title">${data.name}</h2>
-                <span class="entry-category">${data.difficulty}</span>
             </header>
             <p class="entry-desc">${data.summary}</p>
 
@@ -93,12 +88,12 @@ function renderProcesses() {
                                     <h3 class="step-title">${step.title}</h3>
                                     <p class="step-description">${step.description}</p>
                                     ${step.tips?.length > 0 ? `
-                                        <ul class="step-tips">
+                                        <ul class="callout callout-tip">
                                             ${step.tips.map(tip => `<li>${tip}</li>`).join('')}
                                         </ul>
                                     ` : ''}
                                     ${step.warnings?.length > 0 ? `
-                                        <ul class="step-warnings">
+                                        <ul class="callout callout-warning">
                                             ${step.warnings.map(w => `<li>${w}</li>`).join('')}
                                         </ul>
                                     ` : ''}
@@ -149,7 +144,7 @@ function renderProcesses() {
                     <span class="entry-related-label">Related:</span>
                     ${data.related
                         .filter(r => glossaryData[r])
-                        .map(r => `<a href="glossary.html#${r}" class="entry-related-link">${glossaryData[r].term}</a>`)
+                        .map(r => `<a href="glossary.html#${r}" class="entry-related-link">${glossaryData[r].name}</a>`)
                         .join('')}
                 </div>
             ` : ''}
@@ -191,6 +186,14 @@ window.addEventListener('pageshow', (event) => {
     }
 });
 
-// Initialize
-loadProcesses();
-initFilters();
+// Initialize when DOM is ready
+function init() {
+    initFilters();
+    loadProcesses();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}

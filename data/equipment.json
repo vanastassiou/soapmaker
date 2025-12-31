@@ -1,7 +1,7 @@
 {
   "digital-scale": {
     "name": "Digital scale",
-    "category": "measuring",
+    "category": "processing",
     "domain": [
       "craft"
     ],
@@ -27,7 +27,7 @@
   },
   "immersion-blender": {
     "name": "Immersion blender (stick blender)",
-    "category": "mixing",
+    "category": "processing",
     "domain": [
       "craft"
     ],
@@ -59,7 +59,7 @@
   },
   "silicone-mould": {
     "name": "Silicone mould",
-    "category": "mould",
+    "category": "processing",
     "domain": [
       "craft"
     ],
@@ -84,7 +84,7 @@
   },
   "wooden-loaf-mould": {
     "name": "Wooden loaf mould",
-    "category": "mould",
+    "category": "processing",
     "domain": [
       "craft"
     ],
@@ -164,7 +164,7 @@
   },
   "thermometer": {
     "name": "Thermometer",
-    "category": "measuring",
+    "category": "processing",
     "domain": [
       "craft"
     ],
@@ -193,7 +193,7 @@
   },
   "soap-cutter": {
     "name": "Soap cutter",
-    "category": "cutting",
+    "category": "processing",
     "domain": [
       "craft"
     ],
@@ -218,7 +218,7 @@
   },
   "mixing-containers": {
     "name": "Mixing containers",
-    "category": "mixing",
+    "category": "processing",
     "domain": [
       "craft"
     ],
@@ -249,7 +249,7 @@
   },
   "curing-rack": {
     "name": "Curing rack",
-    "category": "storage",
+    "category": "processing",
     "domain": [
       "craft"
     ],

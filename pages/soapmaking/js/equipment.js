@@ -4,7 +4,6 @@
  */
 
 import { $ } from '../../../js/ui/helpers.js';
-import { TIMING } from '../../../js/lib/constants.js';
 import { resolveReferences } from '../../../js/lib/references.js';
 
 let equipmentData = {};
@@ -55,7 +54,6 @@ function renderEquipment() {
         <article class="entry-card" data-key="${key}">
             <header class="entry-header">
                 <h2 class="entry-title">${data.name}</h2>
-                <span class="entry-category">${data.category}</span>
             </header>
             <p class="entry-desc">${data.description}</p>
             ${data.materials?.length > 0 ? `
@@ -84,7 +82,7 @@ function renderEquipment() {
             ${data.safetyNotes?.length > 0 ? `
                 <div class="entry-safety">
                     <h3 class="entry-subheading">Safety notes</h3>
-                    <ul class="entry-bullet-list entry-bullet-list--warning">
+                    <ul class="callout callout-caution">
                         ${data.safetyNotes.map(n => `<li>${n}</li>`).join('')}
                     </ul>
                 </div>
@@ -94,7 +92,7 @@ function renderEquipment() {
                     <span class="entry-related-label">Related:</span>
                     ${data.related
                         .filter(r => glossaryData[r])
-                        .map(r => `<a href="glossary.html#${r}" class="entry-related-link">${glossaryData[r].term}</a>`)
+                        .map(r => `<a href="glossary.html#${r}" class="entry-related-link">${glossaryData[r].name}</a>`)
                         .join('')}
                 </div>
             ` : ''}
@@ -135,6 +133,14 @@ window.addEventListener('pageshow', (event) => {
     }
 });
 
-// Initialize
-loadEquipment();
-initFilters();
+// Initialize when DOM is ready
+function init() {
+    initFilters();
+    loadEquipment();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}

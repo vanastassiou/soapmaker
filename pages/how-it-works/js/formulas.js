@@ -55,7 +55,6 @@ function renderFormulas() {
         <article class="entry-card" data-key="${key}">
             <header class="entry-header">
                 <h2 class="entry-title">${data.name}</h2>
-                <span class="entry-category">${data.category}</span>
             </header>
 
             <p class="entry-desc">${data.summary}</p>
@@ -124,7 +123,7 @@ function renderFormulas() {
                     <span class="entry-related-label">Related:</span>
                     ${data.related
                         .filter(r => glossaryData[r])
-                        .map(r => `<a href="glossary.html#${r}" class="entry-related-link">${glossaryData[r].term}</a>`)
+                        .map(r => `<a href="glossary.html#${r}" class="entry-related-link">${glossaryData[r].name}</a>`)
                         .join('')}
                 </div>
             ` : ''}
@@ -164,6 +163,14 @@ window.addEventListener('pageshow', (event) => {
     }
 });
 
-// Initialize
-loadFormulas();
-initFilters();
+// Initialize when DOM is ready
+function init() {
+    initFilters();
+    loadFormulas();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}

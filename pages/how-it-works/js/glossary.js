@@ -52,7 +52,6 @@ function renderGlossary() {
         <article class="entry-card" data-key="${key}">
             <header class="entry-header">
                 <h2 class="entry-title">${data.name}</h2>
-                <span class="entry-category">${data.type}</span>
             </header>
             <p class="entry-desc">${data.description}</p>
             ${data.details ? `
@@ -124,6 +123,14 @@ window.addEventListener('pageshow', (event) => {
     }
 });
 
-// Initialize
-loadGlossary();
-initFilters();
+// Initialize when DOM is ready
+function init() {
+    initFilters();
+    loadGlossary();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}

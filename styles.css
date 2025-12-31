@@ -2064,6 +2064,16 @@ details[open] .details-hide {
     margin-bottom: var(--space-8);
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+}
+
+/* Category label in filter nav */
+.page-nav-label {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 500;
+    color: var(--accent-cream);
+    margin-right: var(--space-2);
 }
 
 /* Filter buttons */
@@ -2102,7 +2112,7 @@ details[open] .details-hide {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: var(--space-2) var(--space-4);
+    padding: var(--space-4);
     transition: border-color var(--transition-slow), box-shadow var(--transition-slow);
 }
 
@@ -2117,11 +2127,8 @@ details[open] .details-hide {
 
 /* Entry header */
 .entry-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--space-2);
-    padding: 0 0 0.5rem 0;
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-2);
     border-bottom: 1px solid var(--border);
 }
 
@@ -2134,17 +2141,17 @@ details[open] .details-hide {
 .entry-category {
     font-size: var(--text-sm);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: var(--tracking-wider);
     color: var(--bg-primary);
     background: var(--text-secondary);
-    padding: 0.1rem 0.4rem;
+    padding: var(--space-1) var(--space-2);
     border-radius: var(--radius-sm);
 }
 
 /* Entry description */
 .entry-desc {
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: var(--leading-relaxed);
     margin-bottom: var(--space-3);
 }
 
@@ -2404,35 +2411,62 @@ a.entry-title:hover,
     margin-bottom: var(--space-2);
 }
 
-.step-tips {
-    list-style: disc;
-    padding-left: var(--space-4);
-    margin: var(--space-2) 0;
-    font-size: var(--text-md);
-    color: var(--text-secondary);
-}
-
-.step-tips li {
-    margin-bottom: var(--space-1);
-}
-
-.step-warnings {
+/* Callout styles - tips, cautions, warnings */
+.callout {
     list-style: none;
     padding: var(--space-2) var(--space-3);
     margin: var(--space-2) 0;
-    background: rgba(208, 112, 96, 0.1);
-    border-left: 3px solid var(--danger);
+    border-left: 3px solid var(--border);
     border-radius: var(--radius-sm);
     font-size: var(--text-md);
 }
 
-.step-warnings li {
-    color: var(--danger);
+.callout li {
     margin-bottom: var(--space-1);
 }
 
-.step-warnings li:last-child {
+.callout li:last-child {
     margin-bottom: 0;
+}
+
+/* Tips - neutral/helpful hints */
+.callout-tip {
+    background: color-mix(in srgb, var(--accent-green), transparent 90%);
+    border-left-color: var(--accent-green);
+}
+
+.callout-tip li::before {
+    content: "• ";
+    color: var(--accent-green);
+}
+
+/* Caution - safety notes, things to be aware of */
+.callout-caution {
+    background: color-mix(in srgb, var(--warning), transparent 90%);
+    border-left-color: var(--warning);
+}
+
+.callout-caution li {
+    color: var(--text-primary);
+}
+
+.callout-caution li::before {
+    content: "⚠ ";
+    color: var(--warning);
+}
+
+/* Warning - critical/danger, must not ignore */
+.callout-warning {
+    background: color-mix(in srgb, var(--danger), transparent 90%);
+    border-left-color: var(--danger);
+}
+
+.callout-warning li {
+    color: var(--danger);
+}
+
+.callout-warning li::before {
+    content: "⚠ ";
 }
 
 .process-equipment {
@@ -2498,13 +2532,6 @@ a.entry-title:hover,
     color: var(--danger);
 }
 
-.entry-bullet-list--warning {
-    background: rgba(224, 176, 80, 0.1);
-    padding: var(--space-2) var(--space-3) var(--space-2) var(--space-6);
-    border-radius: var(--radius-md);
-    border-left: 3px solid var(--warning);
-}
-
 /* Entry subheadings */
 .entry-subheading {
     font-size: var(--text-lg);
@@ -2536,7 +2563,7 @@ a.entry-title:hover,
     flex-wrap: wrap;
     gap: var(--space-3);
     margin-bottom: var(--space-3);
-    padding: var(--space-2) var(--space-3);
+    padding: var(--space-3);
     background: var(--bg-secondary);
     border-radius: var(--radius-md);
 }
@@ -2551,7 +2578,9 @@ a.entry-title:hover,
 }
 
 .fat-usage,
-.additive-usage {
+.additive-usage,
+.additive-timing,
+.additive-subcategory {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -2561,12 +2590,14 @@ a.entry-title:hover,
 }
 
 .usage-label,
-.timing-label {
+.timing-label,
+.subcategory-label {
     color: var(--text-muted);
 }
 
 .usage-range,
-.timing-value {
+.timing-value,
+.subcategory-value {
     color: var(--accent-gold);
     font-weight: 500;
 }
@@ -3394,21 +3425,6 @@ ol.instructions li:last-child {
     line-height: 1.6;
 }
 
-.qualitative-warnings {
-    list-style: disc;
-    padding-left: var(--space-5);
-    margin: var(--space-3) 0 var(--space-6) 0;
-}
-
-.qualitative-warnings li {
-    margin-bottom: var(--space-2);
-    color: var(--text-secondary);
-    line-height: 1.5;
-}
-
-.qualitative-warnings li:last-child {
-    margin-bottom: 0;
-}
 
 .recipe-section {
     margin-bottom: var(--space-6);
