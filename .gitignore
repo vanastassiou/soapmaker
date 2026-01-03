@@ -10,3 +10,9 @@
 .pre-commit-config*
 
 node_modules/
+
+# Config with secrets
+js/lib/config.js
+
+# Test coverage
+coverage/

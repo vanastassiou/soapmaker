@@ -525,55 +525,81 @@ export function restoreState() {
         const saved = localStorage.getItem(STORAGE_KEY);
         if (saved) {
             const data = JSON.parse(saved);
-
-            // Handle recipe - migrate from v1 (weight-based) to v2 (percentage-based)
-            if (Array.isArray(data.recipe)) {
-                if (data.version >= 2) {
-                    // Already in new format
-                    state.recipe = data.recipe;
-                } else if (data.recipe.length > 0 && 'weight' in data.recipe[0]) {
-                    // Old format - migrate
-                    state.recipe = migrateRecipeToPercentage(data.recipe);
-                } else {
-                    state.recipe = data.recipe;
-                }
-            }
-
-            // Handle locks - migrate old names to new
-            if (Array.isArray(data.recipeLocks)) {
-                state.recipeLocks = new Set(data.recipeLocks);
-            } else if (Array.isArray(data.percentageLocks)) {
-                // Migrate old percentageLocks to recipeLocks
-                state.recipeLocks = new Set(data.percentageLocks);
-            }
-
-            if (Array.isArray(data.excludedFats)) {
-                state.excludedFats = data.excludedFats;
-            }
-            if (Array.isArray(data.recipeAdditives)) {
-                state.recipeAdditives = data.recipeAdditives;
-            }
-
-            // Cupboard cleaner state
-            if (Array.isArray(data.cupboardFats)) {
-                state.cupboardFats = data.cupboardFats;
-            }
-            if (Array.isArray(data.cupboardLocks)) {
-                state.cupboardLocks = new Set(data.cupboardLocks);
-            } else if (Array.isArray(data.cupboardFatLocks)) {
-                // Migrate old cupboardFatLocks to cupboardLocks
-                state.cupboardLocks = new Set(data.cupboardFatLocks);
-            }
-            if (Array.isArray(data.cupboardSuggestions)) {
-                state.cupboardSuggestions = data.cupboardSuggestions;
-            }
-            if (typeof data.allowRatioMode === 'boolean') {
-                state.allowRatioMode = data.allowRatioMode;
-            }
+            importUserData(data);
             return true;
         }
     } catch (_e) {
         // Invalid or unavailable localStorage
     }
     return false;
+}
+
+/**
+ * Export all user data for backup/sync
+ * @returns {Object} Exported data
+ */
+export function exportAllData() {
+    return {
+        version: 2,
+        exportedAt: new Date().toISOString(),
+        recipe: state.recipe,
+        recipeLocks: Array.from(state.recipeLocks),
+        excludedFats: state.excludedFats,
+        recipeAdditives: state.recipeAdditives,
+        cupboardFats: state.cupboardFats,
+        cupboardLocks: Array.from(state.cupboardLocks),
+        cupboardSuggestions: state.cupboardSuggestions,
+        allowRatioMode: state.allowRatioMode
+    };
+}
+
+/**
+ * Import user data from backup/sync
+ * @param {Object} data - Imported data
+ */
+export function importUserData(data) {
+    // Handle recipe - migrate from v1 (weight-based) to v2 (percentage-based)
+    if (Array.isArray(data.recipe)) {
+        if (data.version >= 2) {
+            // Already in new format
+            state.recipe = data.recipe;
+        } else if (data.recipe.length > 0 && 'weight' in data.recipe[0]) {
+            // Old format - migrate
+            state.recipe = migrateRecipeToPercentage(data.recipe);
+        } else {
+            state.recipe = data.recipe;
+        }
+    }
+
+    // Handle locks - migrate old names to new
+    if (Array.isArray(data.recipeLocks)) {
+        state.recipeLocks = new Set(data.recipeLocks);
+    } else if (Array.isArray(data.percentageLocks)) {
+        // Migrate old percentageLocks to recipeLocks
+        state.recipeLocks = new Set(data.percentageLocks);
+    }
+
+    if (Array.isArray(data.excludedFats)) {
+        state.excludedFats = data.excludedFats;
+    }
+    if (Array.isArray(data.recipeAdditives)) {
+        state.recipeAdditives = data.recipeAdditives;
+    }
+
+    // Cupboard cleaner state
+    if (Array.isArray(data.cupboardFats)) {
+        state.cupboardFats = data.cupboardFats;
+    }
+    if (Array.isArray(data.cupboardLocks)) {
+        state.cupboardLocks = new Set(data.cupboardLocks);
+    } else if (Array.isArray(data.cupboardFatLocks)) {
+        // Migrate old cupboardFatLocks to cupboardLocks
+        state.cupboardLocks = new Set(data.cupboardFatLocks);
+    }
+    if (Array.isArray(data.cupboardSuggestions)) {
+        state.cupboardSuggestions = data.cupboardSuggestions;
+    }
+    if (typeof data.allowRatioMode === 'boolean') {
+        state.allowRatioMode = data.allowRatioMode;
+    }
 }
