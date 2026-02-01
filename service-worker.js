@@ -4,7 +4,7 @@
  */
 
 // Cache version - increment to force cache invalidation on deploy
-const CACHE_VERSION = 2;
+const CACHE_VERSION = 3;
 const STATIC_CACHE_NAME = `soap-calc-static-v${CACHE_VERSION}`;
 const DATA_CACHE_NAME = `soap-calc-data-v${CACHE_VERSION}`;
 
@@ -116,6 +116,12 @@ self.addEventListener('fetch', (event) => {
 
     // Skip cross-origin requests
     if (url.origin !== location.origin) {
+        return;
+    }
+
+    // Skip pages directory - let browser handle normally
+    // These pages aren't pre-cached and should always fetch from network
+    if (url.pathname.startsWith('/pages/')) {
         return;
     }
 
