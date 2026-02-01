@@ -135,6 +135,18 @@ function renderFatCard(key, data) {
 function renderAdditiveCard(key, data) {
     const details = data.details || {};
     const usage = details.usage || {};
+    const majorConstituents = details.majorConstituents || {};
+    const safety = details.safety || {};
+
+    // Build properties list
+    const properties = [];
+    if (details.sourceSpecies) properties.push(`<span class="property-item"><strong>Source:</strong> ${details.sourceSpecies}</span>`);
+    if (details.sourcePart) properties.push(`<span class="property-item"><strong>Part:</strong> ${details.sourcePart}</span>`);
+    if (details.extractionMethod) properties.push(`<span class="property-item"><strong>Extraction:</strong> ${details.extractionMethod}</span>`);
+    if (details.scentNote) properties.push(`<span class="property-item"><strong>Scent note:</strong> ${details.scentNote}</span>`);
+    if (details.subcategory) properties.push(`<span class="property-item"><strong>Category:</strong> ${details.subcategory}</span>`);
+    if (details.color) properties.push(`<span class="property-item"><strong>Color:</strong> <span style="background:${details.color};width:1em;height:1em;display:inline-block;vertical-align:middle;border-radius:2px;"></span> ${details.color}</span>`);
+    if (safety.flashPointC) properties.push(`<span class="property-item"><strong>Flash point:</strong> ${safety.flashPointC}°C</span>`);
 
     return `
         <article class="entry-card" data-key="${key}" data-type="additive">
@@ -144,6 +156,12 @@ function renderAdditiveCard(key, data) {
             </header>
             ${data.description ? `<p class="entry-desc">${data.description}</p>` : ''}
 
+            ${properties.length > 0 ? `
+                <div class="fat-properties">
+                    ${properties.join('')}
+                </div>
+            ` : ''}
+
             ${usage.min !== undefined || usage.max !== undefined ? `
                 <div class="additive-usage">
                     <span class="usage-label">Usage rate:</span>
@@ -152,11 +170,25 @@ function renderAdditiveCard(key, data) {
                 </div>
             ` : ''}
 
-            ${details.scentNote ? `
-                <div class="additive-timing">
-                    <span class="timing-label">Scent note:</span>
-                    <span class="timing-value">${details.scentNote}</span>
-                </div>
+            ${Object.keys(majorConstituents).length > 0 ? `
+                <details class="entry-details">
+                    <summary>
+                        <span class="details-toggle">Major constituents</span>
+                        <span class="details-hide">Hide constituents</span>
+                    </summary>
+                    <div class="entry-details-content">
+                        <dl class="fatty-acid-list">
+                            ${Object.entries(majorConstituents)
+                                .sort((a, b) => (b[1].max || 0) - (a[1].max || 0))
+                                .map(([constituent, range]) => `
+                                    <div class="fatty-acid-item">
+                                        <dt>${constituent.replace(/-/g, ' ')}</dt>
+                                        <dd>${range.min || 0}% - ${range.max || 0}%</dd>
+                                    </div>
+                                `).join('')}
+                        </dl>
+                    </div>
+                </details>
             ` : ''}
 
             ${data.related?.filter(r => glossaryData[r]).length > 0 ? `
