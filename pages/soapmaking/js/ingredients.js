@@ -84,26 +84,20 @@ function renderFatCard(key, data) {
             </header>
             ${data.description ? `<p class="entry-desc">${data.description}</p>` : ''}
 
-            ${sap.naoh || sap.koh || details.iodine || details.ins ? `
+            ${sap.naoh || sap.koh || details.iodine || details.ins || usage.min !== undefined || usage.max !== undefined ? `
                 <details class="entry-details">
                     <summary>
                         <span class="details-toggle">Soap properties</span>
                         <span class="details-hide">Hide properties</span>
                     </summary>
                     <div class="entry-details-content">
-                        <div class="fat-properties">
-                            ${sap.naoh ? `<span class="property-item"><strong>SAP (NaOH):</strong> ${sap.naoh}</span>` : ''}
-                            ${sap.koh ? `<span class="property-item"><strong>SAP (KOH):</strong> ${sap.koh}</span>` : ''}
-                            ${details.iodine ? `<span class="property-item"><strong>Iodine:</strong> ${details.iodine}</span>` : ''}
-                            ${details.ins ? `<span class="property-item"><strong>INS:</strong> ${details.ins}</span>` : ''}
-                        </div>
-                        ${usage.min !== undefined || usage.max !== undefined ? `
-                            <div class="fat-usage">
-                                <span class="usage-label">Recommended usage:</span>
-                                <span class="usage-range">${usage.min || 0}% - ${usage.max || 100}%</span>
-                                ${usage.note ? `<span class="usage-note">${usage.note}</span>` : ''}
-                            </div>
-                        ` : ''}
+                        <dl class="fatty-acid-list">
+                            ${sap.naoh ? `<div class="fatty-acid-item"><dt>SAP (NaOH)</dt><dd>${sap.naoh}</dd></div>` : ''}
+                            ${sap.koh ? `<div class="fatty-acid-item"><dt>SAP (KOH)</dt><dd>${sap.koh}</dd></div>` : ''}
+                            ${details.iodine ? `<div class="fatty-acid-item"><dt>Iodine</dt><dd>${details.iodine}</dd></div>` : ''}
+                            ${details.ins ? `<div class="fatty-acid-item"><dt>INS</dt><dd>${details.ins}</dd></div>` : ''}
+                            ${usage.min !== undefined || usage.max !== undefined ? `<div class="fatty-acid-item"><dt>Usage</dt><dd>${usage.min || 0}% - ${usage.max || 100}%</dd></div>` : ''}
+                        </dl>
                     </div>
                 </details>
             ` : ''}
@@ -147,15 +141,16 @@ function renderAdditiveCard(key, data) {
     const majorConstituents = details.majorConstituents || {};
     const safety = details.safety || {};
 
-    // Build properties list
+    // Build properties list using dl/dt/dd pattern
     const properties = [];
-    if (details.sourceSpecies) properties.push(`<span class="property-item"><strong>Source:</strong> ${details.sourceSpecies}</span>`);
-    if (details.sourcePart) properties.push(`<span class="property-item"><strong>Part:</strong> ${details.sourcePart}</span>`);
-    if (details.extractionMethod) properties.push(`<span class="property-item"><strong>Extraction:</strong> ${details.extractionMethod}</span>`);
-    if (details.scentNote) properties.push(`<span class="property-item"><strong>Scent note:</strong> ${details.scentNote}</span>`);
-    if (details.subcategory) properties.push(`<span class="property-item"><strong>Category:</strong> ${details.subcategory}</span>`);
-    if (details.color) properties.push(`<span class="property-item"><strong>Color:</strong> <span style="background:${details.color};width:1em;height:1em;display:inline-block;vertical-align:middle;border-radius:2px;"></span> ${details.color}</span>`);
-    if (safety.flashPointC) properties.push(`<span class="property-item"><strong>Flash point:</strong> ${safety.flashPointC}°C</span>`);
+    if (details.sourceSpecies) properties.push(`<div class="fatty-acid-item"><dt>Source</dt><dd>${details.sourceSpecies}</dd></div>`);
+    if (details.sourcePart) properties.push(`<div class="fatty-acid-item"><dt>Part</dt><dd>${details.sourcePart}</dd></div>`);
+    if (details.extractionMethod) properties.push(`<div class="fatty-acid-item"><dt>Extraction</dt><dd>${details.extractionMethod}</dd></div>`);
+    if (details.scentNote) properties.push(`<div class="fatty-acid-item"><dt>Scent note</dt><dd>${details.scentNote}</dd></div>`);
+    if (details.subcategory) properties.push(`<div class="fatty-acid-item"><dt>Category</dt><dd>${details.subcategory}</dd></div>`);
+    if (details.color) properties.push(`<div class="fatty-acid-item"><dt>Color</dt><dd><span style="background:${details.color};width:1em;height:1em;display:inline-block;vertical-align:middle;border-radius:2px;margin-right:0.5em;"></span>${details.color}</dd></div>`);
+    if (safety.flashPointC) properties.push(`<div class="fatty-acid-item"><dt>Flash point</dt><dd>${safety.flashPointC}°C</dd></div>`);
+    if (usage.min !== undefined || usage.max !== undefined) properties.push(`<div class="fatty-acid-item"><dt>Usage</dt><dd>${usage.min || 0}% - ${usage.max || 100}%${usage.basis ? ` (${usage.basis})` : ''}</dd></div>`);
 
     return `
         <article class="entry-card" data-key="${key}" data-type="additive">
@@ -165,25 +160,16 @@ function renderAdditiveCard(key, data) {
             </header>
             ${data.description ? `<p class="entry-desc">${data.description}</p>` : ''}
 
-            ${properties.length > 0 || usage.min !== undefined || usage.max !== undefined ? `
+            ${properties.length > 0 ? `
                 <details class="entry-details">
                     <summary>
                         <span class="details-toggle">Properties</span>
                         <span class="details-hide">Hide properties</span>
                     </summary>
                     <div class="entry-details-content">
-                        ${properties.length > 0 ? `
-                            <div class="fat-properties">
-                                ${properties.join('')}
-                            </div>
-                        ` : ''}
-                        ${usage.min !== undefined || usage.max !== undefined ? `
-                            <div class="additive-usage">
-                                <span class="usage-label">Usage rate:</span>
-                                <span class="usage-range">${usage.min || 0}% - ${usage.max || 100}%${usage.basis ? ` (${usage.basis})` : ''}</span>
-                                ${usage.note ? `<span class="usage-note">${usage.note}</span>` : ''}
-                            </div>
-                        ` : ''}
+                        <dl class="fatty-acid-list">
+                            ${properties.join('')}
+                        </dl>
                     </div>
                 </details>
             ` : ''}
