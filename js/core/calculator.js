@@ -30,7 +30,8 @@ import {
 export function calculateLye(recipe, fatsDatabase, lyeType, superfat) {
     const sapKey = lyeType === 'NaOH' ? 'naoh' : 'koh';
     const totalLye = recipe.reduce((sum, r) => {
-        const sap = fatsDatabase[r.id]?.sap?.[sapKey] ?? 0;
+        const fat = fatsDatabase[r.id];
+        const sap = fat?.details?.sap?.[sapKey] ?? fat?.sap?.[sapKey] ?? 0;
         return sum + r.weight * sap;
     }, 0);
     return totalLye * (1 - superfat / 100);
@@ -321,7 +322,7 @@ export function calculateVolume(recipe, fatsDatabase, lyeAmount, waterAmount, un
     // Calculate weighted average fat density
     const avgFatDensity = recipe.reduce((sum, fat) => {
         const data = fatsDatabase[fat.id];
-        const density = data?.density || VOLUME.DEFAULT_FAT_DENSITY;
+        const density = data?.details?.density ?? data?.density ?? VOLUME.DEFAULT_FAT_DENSITY;
         return sum + (fat.weight / totalFatWeight) * density;
     }, 0);
 
