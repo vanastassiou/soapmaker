@@ -11,14 +11,13 @@ let processesData = {};
 let sourcesData = {};
 let glossaryData = {};
 let equipmentData = {};
-let currentCategory = 'all';
 
 async function loadProcesses() {
     const [processesResponse, sourcesResponse, glossaryResponse, equipmentResponse] = await Promise.all([
-        fetch('../../data/processes.json'),
-        fetch('../../data/sources.json'),
-        fetch('../../data/glossary.json'),
-        fetch('../../data/equipment.json')
+        fetch('../../../data/processes.json'),
+        fetch('../../../data/sources.json'),
+        fetch('../../../data/glossary.json'),
+        fetch('../../../data/equipment.json')
     ]);
     processesData = await processesResponse.json();
     sourcesData = await sourcesResponse.json();
@@ -43,12 +42,10 @@ function renderReferencesHtml(references) {
 function renderProcesses() {
     const container = $('processesList');
 
-    // Filter by craft domain and difficulty
+    // Filter by craft domain, sort by difficulty
     const entries = Object.entries(processesData)
         .filter(([_, data]) => data.domain?.includes('craft'))
-        .filter(([_, data]) => currentCategory === 'all' || data.difficulty === currentCategory)
         .sort((a, b) => {
-            // Sort by difficulty: beginner, intermediate, advanced
             const order = { beginner: 0, intermediate: 1, advanced: 2 };
             return (order[a[1].difficulty] || 0) - (order[b[1].difficulty] || 0);
         });
@@ -159,38 +156,5 @@ function renderProcesses() {
     `).join('');
 }
 
-function initFilters() {
-    document.querySelectorAll('.page-filter').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.page-filter').forEach(b => {
-                b.classList.remove('active');
-                b.setAttribute('aria-selected', 'false');
-            });
-            btn.classList.add('active');
-            btn.setAttribute('aria-selected', 'true');
-            currentCategory = btn.dataset.category;
-            renderProcesses();
-        });
-    });
-}
-
-function resetFilters() {
-    currentCategory = 'all';
-    document.querySelectorAll('.page-filter').forEach(btn => {
-        const isAll = btn.dataset.category === 'all';
-        btn.classList.toggle('active', isAll);
-        btn.setAttribute('aria-selected', isAll ? 'true' : 'false');
-    });
-    renderProcesses();
-}
-
-// Reset state when page is restored from bfcache
-window.addEventListener('pageshow', (event) => {
-    if (event.persisted) {
-        resetFilters();
-    }
-});
-
 // Initialize
 loadProcesses();
-initFilters();
