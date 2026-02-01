@@ -149,7 +149,10 @@ function renderAdditiveCard(key, data) {
     if (details.scentNote) properties.push(`<div class="fatty-acid-item"><dt>Scent note</dt><dd>${details.scentNote}</dd></div>`);
     if (details.subcategory) properties.push(`<div class="fatty-acid-item"><dt>Category</dt><dd>${details.subcategory}</dd></div>`);
     if (details.color) properties.push(`<div class="fatty-acid-item"><dt>Color</dt><dd><span style="background:${details.color};width:1em;height:1em;display:inline-block;vertical-align:middle;border-radius:2px;margin-right:0.5em;"></span>${details.color}</dd></div>`);
+    if (details.density) properties.push(`<div class="fatty-acid-item"><dt>Density</dt><dd>${details.density} g/cm³</dd></div>`);
+    if (safety.casNumber) properties.push(`<div class="fatty-acid-item"><dt>CAS number</dt><dd>${safety.casNumber}</dd></div>`);
     if (safety.flashPointC) properties.push(`<div class="fatty-acid-item"><dt>Flash point</dt><dd>${safety.flashPointC}°C</dd></div>`);
+    if (safety.maxConcentration) properties.push(`<div class="fatty-acid-item"><dt>Max concentration</dt><dd>${safety.maxConcentration}%</dd></div>`);
     if (usage.min !== undefined || usage.max !== undefined) properties.push(`<div class="fatty-acid-item"><dt>Usage</dt><dd>${usage.min || 0}% - ${usage.max || 100}%${usage.basis ? ` (${usage.basis})` : ''}</dd></div>`);
 
     return `
