@@ -184,9 +184,8 @@ export function getFatSoapProperties(fat, fattyAcidsData) {
 
     dominant.forEach(([acidKey, pct]) => {
         const acidData = fattyAcidsData[acidKey];
-        if (!acidData?.soapProperties) return;
-
-        const props = acidData.soapProperties;
+        const props = acidData?.details?.soapProperties ?? acidData?.soapProperties;
+        if (!props) return;
         totalWeight += pct;
 
         // Convert qualitative to numeric and weight
@@ -244,9 +243,8 @@ export function generateFatProperties(fat, fattyAcidsData) {
 
     dominant.forEach(([acidKey, pct]) => {
         const acidData = fattyAcidsData[acidKey];
-        if (!acidData?.soapProperties) return;
-
-        const props = acidData.soapProperties;
+        const props = acidData?.details?.soapProperties ?? acidData?.soapProperties;
+        if (!props) return;
         totalWeight += pct;
 
         // Convert qualitative to numeric and weight
