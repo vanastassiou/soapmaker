@@ -17,26 +17,44 @@ let glossaryData = {};
 let currentCategory = 'all';
 
 async function loadIngredients() {
-    const [
-        fatsResponse, fragrancesResponse, colourantsResponse,
-        soapPerformanceResponse, skinCareResponse, sourcesResponse, glossaryResponse
-    ] = await Promise.all([
-        fetch('../../data/fats.json'),
-        fetch('../../data/fragrances.json'),
-        fetch('../../data/colourants.json'),
-        fetch('../../data/soap-performance.json'),
-        fetch('../../data/skin-care.json'),
-        fetch('../../data/sources.json'),
-        fetch('../../data/glossary.json')
-    ]);
-    fatsData = await fatsResponse.json();
-    fragrancesData = await fragrancesResponse.json();
-    colourantsData = await colourantsResponse.json();
-    soapPerformanceData = await soapPerformanceResponse.json();
-    skinCareData = await skinCareResponse.json();
-    sourcesData = await sourcesResponse.json();
-    glossaryData = await glossaryResponse.json();
-    renderIngredients();
+    try {
+        const [
+            fatsResponse, fragrancesResponse, colourantsResponse,
+            soapPerformanceResponse, skinCareResponse, sourcesResponse, glossaryResponse
+        ] = await Promise.all([
+            fetch('../../../data/fats.json'),
+            fetch('../../../data/fragrances.json'),
+            fetch('../../../data/colourants.json'),
+            fetch('../../../data/soap-performance.json'),
+            fetch('../../../data/skin-care.json'),
+            fetch('../../../data/sources.json'),
+            fetch('../../../data/glossary.json')
+        ]);
+
+        // Check for failed responses
+        const responses = [fatsResponse, fragrancesResponse, colourantsResponse,
+            soapPerformanceResponse, skinCareResponse, sourcesResponse, glossaryResponse];
+        for (const response of responses) {
+            if (!response.ok) {
+                throw new Error(`Failed to load ${response.url}: ${response.status}`);
+            }
+        }
+
+        fatsData = await fatsResponse.json();
+        fragrancesData = await fragrancesResponse.json();
+        colourantsData = await colourantsResponse.json();
+        soapPerformanceData = await soapPerformanceResponse.json();
+        skinCareData = await skinCareResponse.json();
+        sourcesData = await sourcesResponse.json();
+        glossaryData = await glossaryResponse.json();
+        renderIngredients();
+    } catch (error) {
+        console.error('Failed to load ingredients:', error);
+        const container = $('ingredientsList');
+        if (container) {
+            container.innerHTML = `<p class="no-results">Failed to load ingredients. Please try refreshing the page.</p>`;
+        }
+    }
 }
 
 function renderReferencesHtml(references) {
@@ -53,6 +71,11 @@ function renderReferencesHtml(references) {
 }
 
 function renderFatCard(key, data) {
+    const details = data.details || {};
+    const sap = details.sap || {};
+    const usage = details.usage || {};
+    const fattyAcids = details.fattyAcids || {};
+
     return `
         <article class="entry-card" data-key="${key}" data-type="fat">
             <header class="entry-header">
@@ -62,21 +85,21 @@ function renderFatCard(key, data) {
             ${data.description ? `<p class="entry-desc">${data.description}</p>` : ''}
 
             <div class="fat-properties">
-                ${data.sap?.naoh ? `<span class="property-item"><strong>SAP (NaOH):</strong> ${data.sap.naoh}</span>` : ''}
-                ${data.sap?.koh ? `<span class="property-item"><strong>SAP (KOH):</strong> ${data.sap.koh}</span>` : ''}
-                ${data.iodine ? `<span class="property-item"><strong>Iodine:</strong> ${data.iodine}</span>` : ''}
-                ${data.ins ? `<span class="property-item"><strong>INS:</strong> ${data.ins}</span>` : ''}
+                ${sap.naoh ? `<span class="property-item"><strong>SAP (NaOH):</strong> ${sap.naoh}</span>` : ''}
+                ${sap.koh ? `<span class="property-item"><strong>SAP (KOH):</strong> ${sap.koh}</span>` : ''}
+                ${details.iodine ? `<span class="property-item"><strong>Iodine:</strong> ${details.iodine}</span>` : ''}
+                ${details.ins ? `<span class="property-item"><strong>INS:</strong> ${details.ins}</span>` : ''}
             </div>
 
-            ${data.usageLimits ? `
+            ${usage.min !== undefined || usage.max !== undefined ? `
                 <div class="fat-usage">
                     <span class="usage-label">Recommended usage:</span>
-                    <span class="usage-range">${data.usageLimits.min || 0}% - ${data.usageLimits.max || 100}%</span>
-                    ${data.usageLimits.note ? `<span class="usage-note">${data.usageLimits.note}</span>` : ''}
+                    <span class="usage-range">${usage.min || 0}% - ${usage.max || 100}%</span>
+                    ${usage.note ? `<span class="usage-note">${usage.note}</span>` : ''}
                 </div>
             ` : ''}
 
-            ${data.fattyAcids ? `
+            ${Object.keys(fattyAcids).length > 0 ? `
                 <details class="entry-details">
                     <summary>
                         <span class="details-toggle">Fatty acid profile</span>
@@ -84,7 +107,7 @@ function renderFatCard(key, data) {
                     </summary>
                     <div class="entry-details-content">
                         <dl class="fatty-acid-list">
-                            ${Object.entries(data.fattyAcids)
+                            ${Object.entries(fattyAcids)
                                 .filter(([_, v]) => v > 0)
                                 .sort((a, b) => b[1] - a[1])
                                 .map(([acid, pct]) => `
@@ -110,36 +133,29 @@ function renderFatCard(key, data) {
 }
 
 function renderAdditiveCard(key, data) {
+    const details = data.details || {};
+    const usage = details.usage || {};
+
     return `
         <article class="entry-card" data-key="${key}" data-type="additive">
             <header class="entry-header">
                 <h2 class="entry-title">${data.name}</h2>
-                <span class="entry-category">${data.category || 'Additive'}</span>
+                <span class="entry-category">${data.type || 'Additive'}</span>
             </header>
-            <p class="entry-desc">${data.description}</p>
+            ${data.description ? `<p class="entry-desc">${data.description}</p>` : ''}
 
-            ${data.details ? `
-                <details class="entry-details">
-                    <summary>
-                        <span class="details-toggle">More details</span>
-                        <span class="details-hide">Hide details</span>
-                    </summary>
-                    <div class="entry-details-content">${data.details.replace(/\n/g, '<br>')}</div>
-                </details>
-            ` : ''}
-
-            ${data.usageRate ? `
+            ${usage.min !== undefined || usage.max !== undefined ? `
                 <div class="additive-usage">
                     <span class="usage-label">Usage rate:</span>
-                    <span class="usage-range">${data.usageRate.min || 0}% - ${data.usageRate.max}%</span>
-                    ${data.usageRate.note ? `<span class="usage-note">${data.usageRate.note}</span>` : ''}
+                    <span class="usage-range">${usage.min || 0}% - ${usage.max || 100}%${usage.basis ? ` (${usage.basis})` : ''}</span>
+                    ${usage.note ? `<span class="usage-note">${usage.note}</span>` : ''}
                 </div>
             ` : ''}
 
-            ${data.whenToAdd ? `
+            ${details.scentNote ? `
                 <div class="additive-timing">
-                    <span class="timing-label">When to add:</span>
-                    <span class="timing-value">${data.whenToAdd}</span>
+                    <span class="timing-label">Scent note:</span>
+                    <span class="timing-value">${details.scentNote}</span>
                 </div>
             ` : ''}
 
