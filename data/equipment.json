@@ -12,9 +12,6 @@
       "Recommended precision to 0.1g (1g is acceptable for large batches)",
       "Tare function is required",
       "Must be at least splash resistant, but waterproof preferred"
-    ],
-    "related": [
-      "recipe-weight"
     ]
   },
   "immersion-blender": {
@@ -34,9 +31,6 @@
       "Never use while the fat/lye solution is hot",
       "Keep blade submerged while blender is running to prevent splashing",
       "Unplug when not in use"
-    ],
-    "related": [
-      "trace"
     ]
   },
   "silicone-mould": {
@@ -50,10 +44,6 @@
     "considerations": [
       "Choose food-grade silicone rated to 230°C",
       "Some need external support (wooden frame)"
-    ],
-    "related": [
-      "gel-phase",
-      "cure"
     ]
   },
   "wooden-loaf-mould": {
@@ -67,10 +57,6 @@
     "considerations": [
       "Heavier and less flexible than silicone",
       "Requires lining (freezer paper, silicone); unlined wood will become unusable as it becomes saturated with moisture and soap."
-    ],
-    "related": [
-      "gel-phase",
-      "cure"
     ]
   },
   "safety-goggles": {
@@ -139,10 +125,6 @@
       "Probe type more accurate than infrared, which measure surface temperature only",
       "Instant-read digital models most convenient",
       "Best practice to dedicate one to soapmaking to avoid cross-contamination concerns"
-    ],
-    "related": [
-      "trace",
-      "gel-phase"
     ]
   },
   "soap-cutter": {
@@ -158,9 +140,6 @@
       "A knife provides more control but may drag through soft soap",
       "Multi-bar cutters helf achieve consistent thickness",
       "A mitre box helps achieve straight cuts"
-    ],
-    "related": [
-      "cure"
     ]
   },
   "mixing-containers": {
@@ -181,9 +160,6 @@
       "Check recycling code on plastic (PP #5 or HDPE #2 only)",
       "Inspect for cracks before each use",
       "Dedicate to soapmaking to avoid cross-contamination with food"
-    ],
-    "related": [
-      "lye-concentration"
     ]
   },
   "curing-rack": {
@@ -199,9 +175,6 @@
       "Ensure it's sturdy enough to hold multiple batches",
       "Place in cool, dry area with good airflow",
       "Avoid direct sunlight"
-    ],
-    "related": [
-      "cure"
     ]
   }
 }

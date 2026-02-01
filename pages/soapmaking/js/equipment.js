@@ -9,18 +9,15 @@ import { resolveReferences } from '../../../js/lib/references.js';
 
 let equipmentData = {};
 let sourcesData = {};
-let glossaryData = {};
 let currentCategory = 'all';
 
 async function loadEquipment() {
-    const [equipmentResponse, sourcesResponse, glossaryResponse] = await Promise.all([
+    const [equipmentResponse, sourcesResponse] = await Promise.all([
         fetch('../../../data/equipment.json'),
-        fetch('../../../data/sources.json'),
-        fetch('../../../data/glossary.json')
+        fetch('../../../data/sources.json')
     ]);
     equipmentData = await equipmentResponse.json();
     sourcesData = await sourcesResponse.json();
-    glossaryData = await glossaryResponse.json();
     renderEquipment();
 }
 
@@ -87,15 +84,6 @@ function renderEquipment() {
                     <ul class="entry-bullet-list entry-bullet-list--warning">
                         ${data.safetyNotes.map(n => `<li>${n}</li>`).join('')}
                     </ul>
-                </div>
-            ` : ''}
-            ${data.related?.filter(r => glossaryData[r]).length > 0 ? `
-                <div class="entry-related">
-                    <span class="entry-related-label">Related:</span>
-                    ${data.related
-                        .filter(r => glossaryData[r])
-                        .map(r => `<a href="glossary.html#${r}" class="entry-related-link">${glossaryData[r].term}</a>`)
-                        .join('')}
                 </div>
             ` : ''}
             ${renderReferencesHtml(data.references)}

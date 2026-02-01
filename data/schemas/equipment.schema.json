@@ -48,13 +48,6 @@
           },
           "type": "array"
         },
-        "related": {
-          "description": "IDs of related equipment or glossary terms",
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
         "references": {
           "items": {
             "additionalProperties": false,
