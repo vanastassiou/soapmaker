@@ -84,19 +84,28 @@ function renderFatCard(key, data) {
             </header>
             ${data.description ? `<p class="entry-desc">${data.description}</p>` : ''}
 
-            <div class="fat-properties">
-                ${sap.naoh ? `<span class="property-item"><strong>SAP (NaOH):</strong> ${sap.naoh}</span>` : ''}
-                ${sap.koh ? `<span class="property-item"><strong>SAP (KOH):</strong> ${sap.koh}</span>` : ''}
-                ${details.iodine ? `<span class="property-item"><strong>Iodine:</strong> ${details.iodine}</span>` : ''}
-                ${details.ins ? `<span class="property-item"><strong>INS:</strong> ${details.ins}</span>` : ''}
-            </div>
-
-            ${usage.min !== undefined || usage.max !== undefined ? `
-                <div class="fat-usage">
-                    <span class="usage-label">Recommended usage:</span>
-                    <span class="usage-range">${usage.min || 0}% - ${usage.max || 100}%</span>
-                    ${usage.note ? `<span class="usage-note">${usage.note}</span>` : ''}
-                </div>
+            ${sap.naoh || sap.koh || details.iodine || details.ins ? `
+                <details class="entry-details">
+                    <summary>
+                        <span class="details-toggle">Soap properties</span>
+                        <span class="details-hide">Hide properties</span>
+                    </summary>
+                    <div class="entry-details-content">
+                        <div class="fat-properties">
+                            ${sap.naoh ? `<span class="property-item"><strong>SAP (NaOH):</strong> ${sap.naoh}</span>` : ''}
+                            ${sap.koh ? `<span class="property-item"><strong>SAP (KOH):</strong> ${sap.koh}</span>` : ''}
+                            ${details.iodine ? `<span class="property-item"><strong>Iodine:</strong> ${details.iodine}</span>` : ''}
+                            ${details.ins ? `<span class="property-item"><strong>INS:</strong> ${details.ins}</span>` : ''}
+                        </div>
+                        ${usage.min !== undefined || usage.max !== undefined ? `
+                            <div class="fat-usage">
+                                <span class="usage-label">Recommended usage:</span>
+                                <span class="usage-range">${usage.min || 0}% - ${usage.max || 100}%</span>
+                                ${usage.note ? `<span class="usage-note">${usage.note}</span>` : ''}
+                            </div>
+                        ` : ''}
+                    </div>
+                </details>
             ` : ''}
 
             ${Object.keys(fattyAcids).length > 0 ? `
@@ -156,18 +165,27 @@ function renderAdditiveCard(key, data) {
             </header>
             ${data.description ? `<p class="entry-desc">${data.description}</p>` : ''}
 
-            ${properties.length > 0 ? `
-                <div class="fat-properties">
-                    ${properties.join('')}
-                </div>
-            ` : ''}
-
-            ${usage.min !== undefined || usage.max !== undefined ? `
-                <div class="additive-usage">
-                    <span class="usage-label">Usage rate:</span>
-                    <span class="usage-range">${usage.min || 0}% - ${usage.max || 100}%${usage.basis ? ` (${usage.basis})` : ''}</span>
-                    ${usage.note ? `<span class="usage-note">${usage.note}</span>` : ''}
-                </div>
+            ${properties.length > 0 || usage.min !== undefined || usage.max !== undefined ? `
+                <details class="entry-details">
+                    <summary>
+                        <span class="details-toggle">Properties</span>
+                        <span class="details-hide">Hide properties</span>
+                    </summary>
+                    <div class="entry-details-content">
+                        ${properties.length > 0 ? `
+                            <div class="fat-properties">
+                                ${properties.join('')}
+                            </div>
+                        ` : ''}
+                        ${usage.min !== undefined || usage.max !== undefined ? `
+                            <div class="additive-usage">
+                                <span class="usage-label">Usage rate:</span>
+                                <span class="usage-range">${usage.min || 0}% - ${usage.max || 100}%${usage.basis ? ` (${usage.basis})` : ''}</span>
+                                ${usage.note ? `<span class="usage-note">${usage.note}</span>` : ''}
+                            </div>
+                        ` : ''}
+                    </div>
+                </details>
             ` : ''}
 
             ${Object.keys(majorConstituents).length > 0 ? `
