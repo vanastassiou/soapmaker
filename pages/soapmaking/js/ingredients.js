@@ -257,38 +257,50 @@ function renderIngredients() {
     }).join('');
 }
 
-function initFilters() {
+function setCategory(category) {
+    currentCategory = category;
     document.querySelectorAll('.page-filter').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.page-filter').forEach(b => {
-                b.classList.remove('active');
-                b.setAttribute('aria-selected', 'false');
-            });
-            btn.classList.add('active');
-            btn.setAttribute('aria-selected', 'true');
-            currentCategory = btn.dataset.category;
-            renderIngredients();
-        });
-    });
-}
-
-function resetFilters() {
-    currentCategory = 'all';
-    document.querySelectorAll('.page-filter').forEach(btn => {
-        const isAll = btn.dataset.category === 'all';
-        btn.classList.toggle('active', isAll);
-        btn.setAttribute('aria-selected', isAll ? 'true' : 'false');
+        const isActive = btn.dataset.category === category;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
     renderIngredients();
 }
 
-// Reset state when page is restored from bfcache
+function getCategoryFromHash() {
+    const hash = window.location.hash.slice(1);
+    const validCategories = ['all', 'fats', 'fragrances', 'colourants', 'soap-performance', 'skin-care'];
+    return validCategories.includes(hash) ? hash : 'all';
+}
+
+function initFilters() {
+    document.querySelectorAll('.page-filter').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const category = btn.dataset.category;
+            window.location.hash = category === 'all' ? '' : category;
+        });
+    });
+
+    // Handle browser back/forward
+    window.addEventListener('hashchange', () => {
+        setCategory(getCategoryFromHash());
+    });
+}
+
+// Restore state when page is restored from bfcache
 window.addEventListener('pageshow', (event) => {
     if (event.persisted) {
-        resetFilters();
+        setCategory(getCategoryFromHash());
     }
 });
 
-// Initialize
+// Initialize with category from URL hash
+currentCategory = getCategoryFromHash();
+// Set initial button state before data loads
+document.querySelectorAll('.page-filter').forEach(btn => {
+    const isActive = btn.dataset.category === currentCategory;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+});
 loadIngredients();
 initFilters();
