@@ -40,7 +40,7 @@ function renderGlossary() {
     // Filter by craft domain and category
     const entries = Object.entries(glossaryData)
         .filter(([_, data]) => data.domain?.includes('craft'))
-        .filter(([_, data]) => currentCategory === 'all' || data.category === currentCategory)
+        .filter(([_, data]) => currentCategory === 'all' || data.type === currentCategory)
         .sort((a, b) => a[1].term.localeCompare(b[1].term));
 
     if (entries.length === 0) {
