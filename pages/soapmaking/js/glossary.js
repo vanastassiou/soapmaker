@@ -41,7 +41,7 @@ function renderGlossary() {
     const entries = Object.entries(glossaryData)
         .filter(([_, data]) => data.domain?.includes('craft'))
         .filter(([_, data]) => currentCategory === 'all' || data.type === currentCategory)
-        .sort((a, b) => a[1].term.localeCompare(b[1].term));
+        .sort((a, b) => a[1].name.localeCompare(b[1].name));
 
     if (entries.length === 0) {
         container.innerHTML = '<p class="no-results">No terms found in this category.</p>';
@@ -51,9 +51,9 @@ function renderGlossary() {
     container.innerHTML = entries.map(([key, data]) => `
         <article class="entry-card" data-key="${key}">
             <header class="entry-header">
-                <h2 class="entry-title">${data.term}</h2>
+                <h2 class="entry-title">${data.name}</h2>
             </header>
-            <p class="entry-desc">${data.desc}</p>
+            <p class="entry-desc">${data.description}</p>
             ${data.details ? `
                 <details class="entry-details">
                     <summary>
