@@ -52,7 +52,6 @@ function renderGlossary() {
         <article class="entry-card" data-key="${key}">
             <header class="entry-header">
                 <h2 class="entry-title">${data.term}</h2>
-                <span class="entry-category">${data.category}</span>
             </header>
             <p class="entry-desc">${data.desc}</p>
             ${data.details ? `

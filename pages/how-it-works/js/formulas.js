@@ -55,7 +55,6 @@ function renderFormulas() {
         <article class="entry-card" data-key="${key}">
             <header class="entry-header">
                 <h2 class="entry-title">${data.name}</h2>
-                <span class="entry-category">${data.category}</span>
             </header>
 
             <p class="entry-desc">${data.summary}</p>

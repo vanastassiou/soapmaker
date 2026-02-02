@@ -59,7 +59,6 @@ function renderProcesses() {
         <article class="entry-card entry-card--process" data-key="${key}">
             <header class="entry-header">
                 <h2 class="entry-title">${data.name}</h2>
-                <span class="entry-category">${data.difficulty}</span>
             </header>
             <p class="entry-desc">${data.summary}</p>
 

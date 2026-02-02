@@ -59,7 +59,6 @@ function renderProperties() {
             <article class="entry-card entry-card--property" data-key="${key}">
                 <header class="entry-header">
                     <h2 class="entry-title">${data.term}</h2>
-                    <span class="entry-category">Property</span>
                 </header>
                 <p class="entry-desc">${data.desc}</p>
 

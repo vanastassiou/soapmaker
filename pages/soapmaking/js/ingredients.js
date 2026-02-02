@@ -80,7 +80,6 @@ function renderFatCard(key, data) {
         <article class="entry-card" data-key="${key}" data-type="fat">
             <header class="entry-header">
                 <h2 class="entry-title">${data.name}</h2>
-                <span class="entry-category">Fat/oil</span>
             </header>
             ${data.description ? `<p class="entry-desc">${data.description}</p>` : ''}
 
@@ -159,7 +158,6 @@ function renderAdditiveCard(key, data) {
         <article class="entry-card" data-key="${key}" data-type="additive">
             <header class="entry-header">
                 <h2 class="entry-title">${data.name}</h2>
-                <span class="entry-category">${data.type || 'Additive'}</span>
             </header>
             ${data.description ? `<p class="entry-desc">${data.description}</p>` : ''}
 
