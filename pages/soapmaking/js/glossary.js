@@ -68,7 +68,7 @@ function renderGlossary() {
                     <span class="entry-related-label">Related:</span>
                     ${data.related
                         .filter(r => glossaryData[r] && glossaryData[r].domain?.includes('craft'))
-                        .map(r => `<a href="#${r}" class="entry-related-link" data-term="${r}">${glossaryData[r].term}</a>`)
+                        .map(r => `<a href="#${r}" class="entry-related-link" data-term="${r}">${glossaryData[r].name}</a>`)
                         .join('')}
                 </div>
             ` : ''}
