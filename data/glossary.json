@@ -634,7 +634,7 @@
       "craft",
       "calculator"
     ],
-    "details": "Below 44: may feel stripping or drying.\n\nAbove 69: very moisturizing but bar will be soft and may not last long.\n\nBalance with hardness.",
+    "details": "Below 44: may feel stripping or drying.\nAbove 69: very moisturizing but bar will be soft and may not last long.\n\nWhy unsaturated fats are gentler:\n\nSaturated fatty acids have straight carbon chains that pack tightly together, like a bundle of pencils. Their resulting soap molecules are highly organized, dissolve readily, and aggressively emulsify oils—including your skin's natural sebum.\n\nUnsaturated fatty acids have one or more double bonds that create 'kinks' in the carbon chain. These kinked chains can't pack together as tightly, so the soap molecules are less organized and less aggressive at stripping oils. The result is a gentler cleansing action that removes dirt without completely depleting your skin's protective oils.\n\nThis is also why high-conditioning soaps tend to be softer—the same loose molecular packing that makes them gentle also makes them less hard.",
     "ranges": {
       "max": 69,
       "min": 44
@@ -655,7 +655,8 @@
     ],
     "related": [
       "unsaturated",
-      "hardness"
+      "hardness",
+      "hlb"
     ]
   },
   "monounsaturated": {
