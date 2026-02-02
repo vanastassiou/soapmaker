@@ -349,7 +349,8 @@
     "related": [
       "monounsaturated",
       "castor-oil",
-      "lather-volume"
+      "lather-volume",
+      "hydroxyl-group"
     ]
   },
   "hydration-number": {
@@ -1044,6 +1045,200 @@
     "related": [
       "fat",
       "oil"
+    ]
+  },
+  "amphiphilic": {
+    "name": "Amphiphilic / Surfactant",
+    "type": "concept",
+    "domain": [
+      "calculator"
+    ],
+    "description": "A molecule with both water-loving (hydrophilic) and oil-loving (hydrophobic) parts. All soaps are amphiphilic surfactants.",
+    "details": "The word 'amphiphilic' comes from Greek: amphi (both) + philos (loving). Soap molecules have:\n\n• Hydrophilic head: The carboxylate group (-COO⁻) that dissolves in water\n• Hydrophobic tail: The fatty acid chain (8-22 carbons) that dissolves in oils\n\nThis dual nature is why soap works as a cleaning agent—it can interact with both water and oils simultaneously, forming micelles that carry oils away.",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Amphiphilic (A00306)",
+        "url": "https://goldbook.iupac.org/terms/view/A00306"
+      }
+    ],
+    "related": [
+      "micelle",
+      "saponification"
+    ]
+  },
+  "chain-length": {
+    "name": "Fatty acid chain length",
+    "type": "concept",
+    "domain": [
+      "calculator"
+    ],
+    "description": "The number of carbon atoms in a fatty acid chain (C8-C22). Shorter chains produce harder, more cleansing soap; longer chains produce milder, more conditioning soap.",
+    "details": "Fatty acids are named by their chain length and saturation:\n• C12:0 = 12 carbons, 0 double bonds (lauric acid)\n• C18:1 = 18 carbons, 1 double bond (oleic acid)\n\nWhy chain length matters:\n\n• SAP value: Shorter chains have more molecules per gram, requiring more lye. Coconut oil (high C12) has SAP ~0.19; olive oil (high C18) has SAP ~0.13.\n\n• Solubility: Shorter chains dissolve more easily, creating stronger cleansing action but potentially more drying.\n\n• Hardness: Both short and long saturated chains contribute to hardness, but through different mechanisms.",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Fatty acids (F02330)",
+        "url": "https://goldbook.iupac.org/terms/view/F02330"
+      }
+    ],
+    "related": [
+      "sap-value",
+      "degreasing",
+      "hardness"
+    ]
+  },
+  "exothermic": {
+    "name": "Exothermic reaction",
+    "type": "concept",
+    "domain": [
+      "calculator"
+    ],
+    "description": "A chemical reaction that releases heat. Saponification is exothermic, which is why soap batter heats up and can enter gel phase.",
+    "details": "When lye dissolves in water and when oils saponify, chemical bonds rearrange and release energy as heat.\n\nPractical implications:\n• Lye solution can reach 90°C+ when mixing—always add lye to water, never water to lye\n• Soap batter temperature rises during mixing\n• Large batches generate more heat (volume increases faster than surface area)\n• Gel phase occurs when this heat builds up enough to change the soap's crystalline structure",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Exothermic reaction (E02269)",
+        "url": "https://goldbook.iupac.org/terms/view/E02269"
+      }
+    ],
+    "related": [
+      "saponification",
+      "gel-phase",
+      "trace"
+    ]
+  },
+  "glycerin": {
+    "name": "Glycerin (Glycerol)",
+    "type": "concept",
+    "domain": [
+      "calculator"
+    ],
+    "description": "A humectant byproduct of saponification. Handmade soap naturally contains glycerin; commercial soap often has it removed.",
+    "details": "During saponification, each triglyceride molecule releases one glycerol molecule. This means about 10% of handmade soap's weight is glycerin.\n\nGlycerin is a humectant—it attracts moisture from the air to your skin. This is why handmade soap often feels more moisturizing than commercial bars, which typically have glycerin extracted for sale to cosmetics manufacturers.\n\nFormula: C₃H₈O₃ (three carbons, each with a hydroxyl group)",
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Glycerol (CID 753)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/753"
+      }
+    ],
+    "related": [
+      "saponification",
+      "moisturizing"
+    ]
+  },
+  "hlb": {
+    "name": "HLB (Hydrophilic-Lipophilic Balance)",
+    "type": "concept",
+    "domain": [
+      "calculator"
+    ],
+    "description": "A scale from 0-20 measuring how water-loving vs oil-loving a surfactant molecule is. Determines whether a soap is better at cleaning, emulsifying, or conditioning.",
+    "details": "Every soap molecule has a hydrophilic (water-loving) head and a lipophilic (oil-loving) tail. The HLB number describes the balance between these two parts:\n\n• HLB 1-3: Oil-soluble, poor cleaners\n• HLB 7-9: Wetting agents\n• HLB 12-16: Excellent detergents and foam producers\n• HLB 15-18: Solubilizers\n\nIn soapmaking, sodium laurate (from lauric acid, C12) and sodium myristate (from myristic acid, C14) have HLB values in the optimal 12-16 range for foam formation. This is why coconut oil—high in lauric and myristic acids—produces abundant lather.\n\nLonger-chain fatty acids like oleic (C18) produce soaps with lower HLB values that are gentler but don't foam as vigorously.",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Hydrophile-lipophile balance (H02907)",
+        "url": "https://goldbook.iupac.org/terms/view/H02907"
+      }
+    ],
+    "related": [
+      "amphiphilic",
+      "lather-volume",
+      "degreasing",
+      "chain-length"
+    ]
+  },
+  "hydroxyl-group": {
+    "name": "Hydroxyl group (-OH)",
+    "type": "concept",
+    "domain": [
+      "calculator"
+    ],
+    "description": "An oxygen-hydrogen functional group (-OH) that dramatically increases water attraction. Present in glycerin, ricinoleic acid, and alcohols.",
+    "details": "The hydroxyl group consists of an oxygen atom bonded to a hydrogen atom (-OH). Oxygen is highly electronegative, creating a polar bond that attracts water molecules through hydrogen bonding.\n\nIn soapmaking, hydroxyl groups appear in several key places:\n\n• Glycerin: Contains three -OH groups, making it an excellent humectant that draws moisture to skin\n\n• Ricinoleic acid: The only common fatty acid with a mid-chain -OH group. This makes castor oil soaps unusually water-soluble and exceptional lather boosters\n\n• Soap molecules: The carboxylate head (-COO⁻) is the water-attracting end that makes soap work as a surfactant\n\nMore hydroxyl groups = more water attraction = better humectancy but also increased water solubility (which can make bars dissolve faster in the shower).",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Hydroxyl group (H02927)",
+        "url": "https://goldbook.iupac.org/terms/view/H02927"
+      },
+      {
+        "sourceId": "pubchem",
+        "section": "Ricinoleic acid (CID 643684)",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/643684",
+        "note": "Structure showing mid-chain hydroxyl group"
+      }
+    ],
+    "related": [
+      "hydroxylated",
+      "glycerin",
+      "castor-oil",
+      "amphiphilic"
+    ]
+  },
+  "micelle": {
+    "name": "Micelle",
+    "type": "concept",
+    "domain": [
+      "calculator"
+    ],
+    "description": "Spherical structures formed when soap molecules surround oil droplets in water, enabling oils to be rinsed away.",
+    "details": "Soap molecules are amphiphilic—one end loves water (hydrophilic), the other loves oil (hydrophobic). In water, they spontaneously arrange into spheres called micelles, with hydrophobic tails pointing inward and hydrophilic heads facing outward.\n\nWhen soap encounters oil on skin, the hydrophobic tails embed in the oil droplet while the hydrophilic heads remain in the water. The oil becomes encapsulated in a micelle and can be rinsed away.\n\nThis is why soap removes grease that water alone cannot—it bridges the gap between water-soluble and oil-soluble substances.",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Micelle (M03889)",
+        "url": "https://goldbook.iupac.org/terms/view/M03889"
+      }
+    ],
+    "related": [
+      "amphiphilic",
+      "degreasing"
+    ]
+  },
+  "molar-mass": {
+    "name": "Molar mass",
+    "type": "concept",
+    "domain": [
+      "calculator"
+    ],
+    "description": "The mass of one mole of a substance. Explains why potassium hydroxide (KOH) requires about 1.4× the weight of sodium hydroxide (NaOH) to saponify the same amount of fat.",
+    "details": "One mole of any substance contains the same number of molecules (6.02 × 10²³). But different molecules have different masses:\n\n• NaOH: 40 g/mol (Na=23 + O=16 + H=1)\n• KOH: 56 g/mol (K=39 + O=16 + H=1)\n\nSaponification requires one hydroxide ion (OH⁻) per fatty acid. Since KOH is heavier per molecule, you need 56/40 = 1.4× more grams of KOH to provide the same number of hydroxide ions.\n\nThis is why KOH SAP values are always ~1.4× higher than NaOH SAP values for the same fat.",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "Molar mass (M03969)",
+        "url": "https://goldbook.iupac.org/terms/view/M03969"
+      }
+    ],
+    "related": [
+      "sap-value",
+      "lye-type",
+      "hydration-number"
+    ]
+  },
+  "ph": {
+    "name": "pH",
+    "type": "concept",
+    "domain": [
+      "calculator"
+    ],
+    "description": "A measure of acidity or alkalinity. Finished soap typically has pH 9-10, which is safe for skin despite being alkaline.",
+    "details": "The pH scale runs 0-14:\n• Below 7: acidic (skin is ~5.5)\n• 7: neutral (pure water)\n• Above 7: alkaline\n\nLye solution is extremely alkaline (pH 13-14). During saponification, the lye is consumed, and finished soap settles at pH 9-10.\n\nThis mild alkalinity is safe because:\n• It's much gentler than unreacted lye\n• Brief contact during washing doesn't harm skin\n• Skin's acid mantle recovers quickly after rinsing\n\nIf soap tests above pH 10, it may contain unreacted lye (lye-heavy) and needs more cure time or should not be used.",
+    "references": [
+      {
+        "sourceId": "iupac",
+        "section": "pH (P04524)",
+        "url": "https://goldbook.iupac.org/terms/view/P04524"
+      }
+    ],
+    "related": [
+      "saponification",
+      "cure",
+      "superfat"
     ]
   }
 }
