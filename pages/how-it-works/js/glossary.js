@@ -103,7 +103,7 @@ function setCategory(category) {
 
 function getCategoryFromHash() {
     const hash = window.location.hash.slice(1);
-    const validCategories = ['all', 'property', 'calculation'];
+    const validCategories = ['all', 'property', 'calculation', 'concept'];
     return validCategories.includes(hash) ? hash : 'all';
 }
 

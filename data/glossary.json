@@ -352,6 +352,33 @@
       "lather-volume"
     ]
   },
+  "hydration-number": {
+    "name": "Hydration number",
+    "type": "concept",
+    "description": "The number of water molecules that associate with an ion in solution. Sodium (Na⁺) and potassium (K⁺) have different hydration numbers, which is why they produce different types of soap.",
+    "domain": [
+      "calculator"
+    ],
+    "details": "Sodium (Na⁺) has a hydration number of ~6, while potassium (K⁺) has ~4. Despite potassium being a larger ion, it holds fewer water molecules because its charge is more diffuse.\n\nThis affects soap properties:\n• Sodium soaps (NaOH): The higher hydration number means sodium ions are more strongly attracted to water. The resulting soap molecules pack together more tightly, creating hard bar soap.\n• Potassium soaps (KOH): The lower hydration number produces more soluble soap molecules that don't crystallize as readily, creating soft or liquid soap.\n\nThis is why you cannot make bar soap with KOH or liquid soap with NaOH—the difference is fundamental to the ion's behaviour in water, not just a matter of concentration.",
+    "references": [
+      {
+        "sourceId": "pubchem",
+        "section": "Sodium ion hydration",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/923",
+        "note": "Sodium ion properties"
+      },
+      {
+        "sourceId": "pubchem",
+        "section": "Potassium ion hydration",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/813",
+        "note": "Potassium ion properties"
+      }
+    ],
+    "related": [
+      "lye-type",
+      "saponification"
+    ]
+  },
   "ifra": {
     "name": "IFRA (fragrance safety)",
     "type": "concept",
@@ -797,6 +824,34 @@
     "related": [
       "ins",
       "superfat"
+    ]
+  },
+  "saponification": {
+    "name": "Saponification",
+    "type": "concept",
+    "description": "The chemical reaction where fats (triglycerides) react with an alkali (lye) to produce soap and glycerin.",
+    "domain": [
+      "calculator"
+    ],
+    "details": "The reaction: Triglyceride + 3 NaOH → 3 Soap molecules + Glycerol\n\nEach triglyceride molecule contains three fatty acid chains attached to a glycerol backbone. The alkali breaks these bonds (hydrolysis), and the fatty acids combine with sodium or potassium ions to form soap (fatty acid salts).\n\nThe process is exothermic (releases heat) and typically completes within 18-24 hours for cold process, though the soap continues to improve during the 4-6 week cure.\n\nThe amount of lye needed depends on the fatty acid composition of each oil, expressed as the SAP value.",
+    "references": [
+      {
+        "sourceId": "pmc",
+        "section": "PMC6225244",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6225244/",
+        "note": "Saponification reaction mechanism and kinetics"
+      },
+      {
+        "sourceId": "iupac",
+        "section": "Saponification (S05397)",
+        "url": "https://goldbook.iupac.org/terms/view/S05397"
+      }
+    ],
+    "related": [
+      "sap-value",
+      "lye-type",
+      "superfat",
+      "trace"
     ]
   },
   "saturated": {

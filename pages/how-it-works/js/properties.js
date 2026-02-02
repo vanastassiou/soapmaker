@@ -13,9 +13,9 @@ let sourcesData = {};
 
 async function loadProperties() {
     const [glossaryResponse, formulasResponse, sourcesResponse] = await Promise.all([
-        fetch('../../data/glossary.json'),
-        fetch('../../data/formulas.json'),
-        fetch('../../data/sources.json')
+        fetch('../../../data/glossary.json'),
+        fetch('../../../data/formulas.json'),
+        fetch('../../../data/sources.json')
     ]);
     glossaryData = await glossaryResponse.json();
     formulasData = await formulasResponse.json();
@@ -39,10 +39,10 @@ function renderReferencesHtml(references) {
 function renderProperties() {
     const container = $('propertiesList');
 
-    // Get property terms from glossary (calculator domain, property category)
+    // Get property terms from glossary (calculator domain, property type)
     const propertyTerms = Object.entries(glossaryData)
-        .filter(([_, data]) => data.domain?.includes('calculator') && data.category === 'property')
-        .sort((a, b) => a[1].term.localeCompare(b[1].term));
+        .filter(([_, data]) => data.domain?.includes('calculator') && data.type === 'property')
+        .sort((a, b) => a[1].name.localeCompare(b[1].name));
 
     if (propertyTerms.length === 0) {
         container.innerHTML = '<p class="no-results">No properties found.</p>';
@@ -58,9 +58,9 @@ function renderProperties() {
         return `
             <article class="entry-card entry-card--property" data-key="${key}">
                 <header class="entry-header">
-                    <h2 class="entry-title">${data.term}</h2>
+                    <h2 class="entry-title">${data.name}</h2>
                 </header>
-                <p class="entry-desc">${data.desc}</p>
+                <p class="entry-desc">${data.description}</p>
 
                 ${data.details ? `
                     <div class="property-details">
@@ -84,7 +84,7 @@ function renderProperties() {
                         <span class="entry-related-label">Related:</span>
                         ${data.related
                             .filter(r => glossaryData[r] && glossaryData[r].domain?.includes('calculator'))
-                            .map(r => `<a href="glossary.html#${r}" class="entry-related-link">${glossaryData[r].term}</a>`)
+                            .map(r => `<a href="glossary.html#${r}" class="entry-related-link">${glossaryData[r].name}</a>`)
                             .join('')}
                     </div>
                 ` : ''}
