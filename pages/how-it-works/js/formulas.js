@@ -67,30 +67,6 @@ function renderFormulas() {
                 <p>${data.userFriendly}</p>
             </div>
 
-            ${data.variables ? `
-                <div class="formula-variables">
-                    <h3 class="formula-section-heading">Variables</h3>
-                    <dl class="formula-section-box">
-                        ${Object.entries(data.variables).map(([varName, desc]) => `
-                            <dt>${varName}</dt>
-                            <dd>${desc}</dd>
-                        `).join('')}
-                    </dl>
-                </div>
-            ` : ''}
-
-            ${data.example ? `
-                <div class="formula-example">
-                    <h3 class="formula-section-heading">Example</h3>
-                    <div class="formula-section-box">
-                        <p class="example-scenario">${data.example.scenario}</p>
-                        <div class="example-steps">
-                            ${data.example.steps.map(step => `<div class="example-step">${step}</div>`).join('')}
-                        </div>
-                    </div>
-                </div>
-            ` : ''}
-
             ${data.recommendedRange ? `
                 <div class="formula-range">
                     <span class="range-label">Recommended range:</span>
@@ -98,14 +74,42 @@ function renderFormulas() {
                 </div>
             ` : ''}
 
-            ${data.technical ? `
+            ${data.variables || data.example || data.technical ? `
                 <details class="entry-details">
                     <summary>
                         <span class="details-toggle">Technical details</span>
                         <span class="details-hide">Hide technical details</span>
                     </summary>
                     <div class="entry-details-content">
-                        <p>${data.technical}</p>
+                        ${data.variables ? `
+                            <div class="formula-variables">
+                                <h3 class="formula-section-heading">Variables</h3>
+                                <dl class="formula-section-box">
+                                    ${Object.entries(data.variables).map(([varName, desc]) => `
+                                        <dt>${varName}</dt>
+                                        <dd>${desc}</dd>
+                                    `).join('')}
+                                </dl>
+                            </div>
+                        ` : ''}
+
+                        ${data.example ? `
+                            <div class="formula-example">
+                                <h3 class="formula-section-heading">Example</h3>
+                                <div class="formula-section-box">
+                                    <p class="example-scenario">${data.example.scenario}</p>
+                                    <div class="example-steps">
+                                        ${data.example.steps.map(step => `<div class="example-step">${step}</div>`).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        ` : ''}
+
+                        ${data.technical ? `
+                            <div class="formula-technical">
+                                <p>${data.technical}</p>
+                            </div>
+                        ` : ''}
                     </div>
                 </details>
             ` : ''}
@@ -123,7 +127,7 @@ function renderFormulas() {
                     <span class="entry-related-label">Related:</span>
                     ${data.related
                         .filter(r => glossaryData[r])
-                        .map(r => `<a href="glossary.html#${r}" class="entry-related-link">${glossaryData[r].term}</a>`)
+                        .map(r => `<a href="glossary.html#${r}" class="entry-related-link">${glossaryData[r].name}</a>`)
                         .join('')}
                 </div>
             ` : ''}
