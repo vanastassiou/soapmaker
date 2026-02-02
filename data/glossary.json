@@ -433,7 +433,7 @@
       "craft",
       "calculator"
     ],
-    "details": "Below 41: very hard, stable bar but potentially less conditioning.\n\nAbove 70: soft bar, shorter shelf life, consider antioxidants.",
+    "details": "Below 41: very hard, stable bar but potentially less conditioning.\n\nAbove 70: soft bar, shorter shelf life, consider antioxidants.\n\nWhy iodine value predicts rancidity:\n\nThe iodine value test works by adding iodine molecules across carbon-carbon double bonds. More double bonds = more iodine absorbed = higher IV number. This makes IV a direct measure of unsaturation.\n\nDouble bonds are oxidation targets because:\n\n• The π electrons in a C=C double bond are loosely held and exposed above and below the carbon chain\n\n• Oxygen (especially as free radicals) attacks these electron-rich sites\n\n• Each attack breaks the double bond and creates reactive peroxides that propagate chain reactions\n\n• These peroxides eventually break down into aldehydes and ketones—the compounds that smell and taste rancid\n\nThis is why polyunsaturated fats (linoleic C18:2, linolenic C18:3) with multiple double bonds are far more oxidation-prone than monounsaturated fats (oleic C18:1), which are more stable than saturated fats (no double bonds, no oxidation sites).",
     "ranges": {
       "max": 70,
       "min": 41
@@ -454,7 +454,9 @@
     "related": [
       "unsaturated",
       "dos",
-      "hardness"
+      "hardness",
+      "polyunsaturated",
+      "monounsaturated"
     ]
   },
   "iron-oxide": {
