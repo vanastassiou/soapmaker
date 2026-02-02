@@ -55,6 +55,14 @@ function renderEquipment() {
                 <span class="entry-category">${data.category}</span>
             </header>
             <p class="entry-desc">${data.description}</p>
+            ${data.safetyNotes?.length > 0 ? `
+                <div class="entry-safety">
+                    <h3 class="entry-subheading">Safety notes</h3>
+                    <ul class="entry-bullet-list entry-bullet-list--warning">
+                        ${data.safetyNotes.map(n => `<li>${n}</li>`).join('')}
+                    </ul>
+                </div>
+            ` : ''}
             ${data.materials?.length > 0 ? `
                 <div class="entry-list">
                     <span class="entry-list-label">Materials:</span>
@@ -77,14 +85,6 @@ function renderEquipment() {
                         </div>
                     ` : ''}
                 </details>
-            ` : ''}
-            ${data.safetyNotes?.length > 0 ? `
-                <div class="entry-safety">
-                    <h3 class="entry-subheading">Safety notes</h3>
-                    <ul class="entry-bullet-list entry-bullet-list--warning">
-                        ${data.safetyNotes.map(n => `<li>${n}</li>`).join('')}
-                    </ul>
-                </div>
             ` : ''}
             ${renderReferencesHtml(data.references)}
         </article>
