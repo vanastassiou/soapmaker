@@ -295,9 +295,11 @@ function handleStartOver() {
     const filterAnimal = $(ELEMENT_IDS.filterAnimalBased);
     const filterSourcing = $(ELEMENT_IDS.filterSourcingConcerns);
     const filterAllergens = $(ELEMENT_IDS.filterCommonAllergens);
+    const includeExotic = $(ELEMENT_IDS.includeExoticFats);
     if (filterAnimal) filterAnimal.checked = false;
     if (filterSourcing) filterSourcing.checked = false;
     if (filterAllergens) filterAllergens.checked = false;
+    if (includeExotic) includeExotic.checked = false;
 
     // Update UI
     renderRecipeList();
@@ -333,9 +335,11 @@ function handleResetSettings() {
     const filterAnimal = $(ELEMENT_IDS.filterAnimalBased);
     const filterSourcing = $(ELEMENT_IDS.filterSourcingConcerns);
     const filterAllergens = $(ELEMENT_IDS.filterCommonAllergens);
+    const includeExotic = $(ELEMENT_IDS.includeExoticFats);
     if (filterAnimal) filterAnimal.checked = false;
     if (filterSourcing) filterSourcing.checked = false;
     if (filterAllergens) filterAllergens.checked = false;
+    if (includeExotic) includeExotic.checked = false;
 
     // Clear exclusions
     state.excludedFats = [];
@@ -355,14 +359,16 @@ function handleResetAdditives() {
     calculate();
 }
 
-function handleResetExclusions() {
+function handleResetFilters() {
     // Clear dietary filter checkboxes
     const filterAnimal = $(ELEMENT_IDS.filterAnimalBased);
     const filterSourcing = $(ELEMENT_IDS.filterSourcingConcerns);
     const filterAllergens = $(ELEMENT_IDS.filterCommonAllergens);
+    const includeExotic = $(ELEMENT_IDS.includeExoticFats);
     if (filterAnimal) filterAnimal.checked = false;
     if (filterSourcing) filterSourcing.checked = false;
     if (filterAllergens) filterAllergens.checked = false;
+    if (includeExotic) includeExotic.checked = false;
 
     // Clear excluded fats list
     state.excludedFats = [];
@@ -530,13 +536,14 @@ function updateAdditiveSelect() {
 
 /**
  * Get the current dietary filter selections from the UI
- * @returns {Object} {animalBased, sourcingConcerns, commonAllergens}
+ * @returns {Object} {animalBased, sourcingConcerns, commonAllergens, includeExoticFats}
  */
 function getDietaryFilters() {
     return {
         animalBased: $(ELEMENT_IDS.filterAnimalBased)?.checked || false,
         sourcingConcerns: $(ELEMENT_IDS.filterSourcingConcerns)?.checked || false,
-        commonAllergens: $(ELEMENT_IDS.filterCommonAllergens)?.checked || false
+        commonAllergens: $(ELEMENT_IDS.filterCommonAllergens)?.checked || false,
+        includeExoticFats: $(ELEMENT_IDS.includeExoticFats)?.checked || false
     };
 }
 
@@ -572,8 +579,10 @@ function createDietaryFilterFn() {
     const manualExclusions = new Set(state.excludedFats);
     const hasFilters = filters.animalBased || filters.sourcingConcerns || filters.commonAllergens;
     const hasExclusions = manualExclusions.size > 0;
+    // Exotic fats are excluded by default (unless includeExoticFats is checked)
+    const excludeExotic = !filters.includeExoticFats;
 
-    if (!hasFilters && !hasExclusions) {
+    if (!hasFilters && !hasExclusions && !excludeExotic) {
         return null;
     }
 
@@ -586,6 +595,8 @@ function createDietaryFilterFn() {
         if (filters.animalBased && dietary.animalBased === true) return false;
         if (filters.sourcingConcerns && hasSignificantEthicalConcerns(data)) return false;
         if (filters.commonAllergens && dietary.commonAllergen === true) return false;
+        // Exotic fats: exclude when NOT checked (opposite of other filters)
+        if (excludeExotic && dietary.isExotic === true) return false;
         return true;
     };
 }
@@ -884,6 +895,7 @@ function setupSettingsListeners() {
     $(ELEMENT_IDS.filterAnimalBased)?.addEventListener('change', handleDietaryFilterChange);
     $(ELEMENT_IDS.filterSourcingConcerns)?.addEventListener('change', handleDietaryFilterChange);
     $(ELEMENT_IDS.filterCommonAllergens)?.addEventListener('change', handleDietaryFilterChange);
+    $(ELEMENT_IDS.includeExoticFats)?.addEventListener('change', handleDietaryFilterChange);
 }
 
 function setupRecipeListeners() {
@@ -892,7 +904,7 @@ function setupRecipeListeners() {
     $(ELEMENT_IDS.resetSettingsBtn)?.addEventListener('click', handleResetSettings);
     $(ELEMENT_IDS.resetFatsBtn)?.addEventListener('click', handleResetFats);
     $(ELEMENT_IDS.resetAdditivesBtn)?.addEventListener('click', handleResetAdditives);
-    $(ELEMENT_IDS.resetExclusionsBtn)?.addEventListener('click', handleResetExclusions);
+    $(ELEMENT_IDS.resetFiltersBtn)?.addEventListener('click', handleResetFilters);
     $(ELEMENT_IDS.useFatsBtn)?.addEventListener('click', handleUseFats);
 }
 

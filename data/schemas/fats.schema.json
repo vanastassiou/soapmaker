@@ -140,6 +140,10 @@
             "commonAllergen": {
               "description": "True if associated with common allergens (tree nuts, soy, etc.)",
               "type": "boolean"
+            },
+            "isExotic": {
+              "description": "True if this is a specialty/exotic oil not commonly available",
+              "type": "boolean"
             }
           },
           "type": "object"

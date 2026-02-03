@@ -38,7 +38,8 @@
       }
     },
     "dietary": {
-      "animalBased": false
+      "animalBased": false,
+      "isExotic": true
     },
     "ethicalConcerns": {
       "environmental": ["Argan forest ecosystem under pressure from climate change and overgrazing"],
@@ -205,7 +206,8 @@
       }
     },
     "dietary": {
-      "animalBased": false
+      "animalBased": false,
+      "isExotic": true
     },
     "ethicalConcerns": {
       "environmental": ["Native babassu forests under pressure from cattle ranching and soy expansion"],
@@ -316,7 +318,8 @@
       }
     },
     "dietary": {
-      "animalBased": false
+      "animalBased": false,
+      "isExotic": true
     },
     "ethicalConcerns": {
       "environmental": [],
@@ -371,7 +374,8 @@
       }
     },
     "dietary": {
-      "animalBased": false
+      "animalBased": false,
+      "isExotic": true
     },
     "ethicalConcerns": {
       "environmental": [],
@@ -708,7 +712,8 @@
       }
     },
     "dietary": {
-      "animalBased": false
+      "animalBased": false,
+      "isExotic": true
     },
     "ethicalConcerns": {
       "environmental": ["Amazon deforestation pressures habitat"],
@@ -929,7 +934,8 @@
       }
     },
     "dietary": {
-      "animalBased": true
+      "animalBased": true,
+      "isExotic": true
     },
     "ethicalConcerns": {
       "environmental": [],
@@ -1427,7 +1433,8 @@
       }
     },
     "dietary": {
-      "animalBased": false
+      "animalBased": false,
+      "isExotic": true
     },
     "ethicalConcerns": {
       "environmental": ["Tropical rainforest habitat under threat", "Over-harvesting concerns for wild populations"],
@@ -1483,7 +1490,8 @@
       }
     },
     "dietary": {
-      "animalBased": false
+      "animalBased": false,
+      "isExotic": true
     },
     "ethicalConcerns": {
       "environmental": ["Wild populations under pressure from habitat loss"],
@@ -1539,7 +1547,8 @@
       }
     },
     "dietary": {
-      "animalBased": false
+      "animalBased": false,
+      "isExotic": true
     },
     "ethicalConcerns": {
       "environmental": [],
@@ -1705,7 +1714,8 @@
       }
     },
     "dietary": {
-      "animalBased": false
+      "animalBased": false,
+      "isExotic": true
     },
     "ethicalConcerns": {
       "environmental": [],
@@ -1766,7 +1776,8 @@
       }
     },
     "dietary": {
-      "animalBased": false
+      "animalBased": false,
+      "isExotic": true
     },
     "ethicalConcerns": {
       "environmental": [],
@@ -2683,7 +2694,8 @@
       }
     },
     "dietary": {
-      "animalBased": false
+      "animalBased": false,
+      "isExotic": true
     },
     "ethicalConcerns": {
       "environmental": ["Forest management practices vary"],
@@ -2738,7 +2750,8 @@
       }
     },
     "dietary": {
-      "animalBased": false
+      "animalBased": false,
+      "isExotic": true
     },
     "ethicalConcerns": {
       "environmental": [],
@@ -3195,7 +3208,8 @@
       }
     },
     "dietary": {
-      "animalBased": false
+      "animalBased": false,
+      "isExotic": true
     },
     "ethicalConcerns": {
       "environmental": [],

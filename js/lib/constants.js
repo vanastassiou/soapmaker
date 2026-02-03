@@ -23,7 +23,7 @@ export const ELEMENT_IDS = {
     resetSettingsBtn: 'resetSettingsBtn',
     resetFatsBtn: 'resetFatsBtn',
     resetAdditivesBtn: 'resetAdditivesBtn',
-    resetExclusionsBtn: 'resetExclusionsBtn',
+    resetFiltersBtn: 'resetFiltersBtn',
     recipeFats: 'recipeFats',
 
     // Panels
@@ -104,11 +104,12 @@ export const ELEMENT_IDS = {
     addCupboardFatBtn: 'addCupboardFatBtn',
 
     // Dietary filters / Exclusions
-    exclusionsSection: 'exclusionsSection',
+    filtersSection: 'filtersSection',
     dietaryFiltersSection: 'dietaryFiltersSection',
     filterAnimalBased: 'filterAnimalBased',
     filterSourcingConcerns: 'filterSourcingConcerns',
     filterCommonAllergens: 'filterCommonAllergens',
+    includeExoticFats: 'includeExoticFats',
 
     // Additives
     additivesSubcontainer: 'additivesSubcontainer',

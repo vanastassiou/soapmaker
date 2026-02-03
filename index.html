@@ -104,14 +104,14 @@
                         </div>
                     </details>
 
-                    <!-- Exclusions Subcontainer -->
-                    <details class="build-subcontainer" id="exclusionsSection">
+                    <!-- Filters Subcontainer -->
+                    <details class="build-subcontainer" id="filtersSection">
                         <summary class="collapsible-header">
                             <span class="collapse-icon" aria-hidden="true"></span>
-                            <h3 class="subcontainer-title">Exclusions <span class="optional-label">(optional)</span></h3>
-                            <button class="btn btn-text btn-small reset-btn" id="resetExclusionsBtn">Reset</button>
+                            <h3 class="subcontainer-title">Filters <span class="optional-label">(optional)</span></h3>
+                            <button class="btn btn-text btn-small reset-btn" id="resetFiltersBtn">Reset</button>
                         </summary>
-                        <div class="collapsible-content" id="exclusionsContent">
+                        <div class="collapsible-content" id="filtersContent">
                             <div class="dietary-filters" id="dietaryFiltersSection">
                                 <label class="dietary-filter">
                                     <input type="checkbox" id="filterAnimalBased">
@@ -127,6 +127,11 @@
                                     <input type="checkbox" id="filterCommonAllergens">
                                     <span>Common allergens</span>
                                     <span class="ui-tip" data-tooltip="filter-allergens" aria-label="What does this filter?">ⓘ</span>
+                                </label>
+                                <label class="dietary-filter">
+                                    <input type="checkbox" id="includeExoticFats">
+                                    <span>Include exotic fats</span>
+                                    <span class="ui-tip" data-tooltip="include-exotic" aria-label="What does this filter?">ⓘ</span>
                                 </label>
                             </div>
                             <div class="fat-selector">

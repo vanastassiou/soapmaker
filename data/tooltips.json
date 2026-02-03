@@ -19,5 +19,9 @@
   "sourcing-concerns": {
     "title": "Ethical concerns",
     "desc": "Excludes ingredients with significant ethical concerns (environmental, social, or political issues documented)."
+  },
+  "include-exotic": {
+    "title": "Include exotic fats",
+    "desc": "Shows specialty oils like argan, babassu, tamanu, and kukui that aren't commonly available at regular suppliers."
   }
 }
