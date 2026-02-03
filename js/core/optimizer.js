@@ -559,35 +559,23 @@ export function validatePropertyTargets(targets) {
 /**
  * Generate a random recipe with properties in acceptable ranges
  * @param {Object} fatsDatabase - Fat database
- * @param {Object} options - {excludeFats, minFats, maxFats, maxAttempts}
+ * @param {Object} options - {excludeFats, lockedFats (IDs only), minFats, maxFats, maxAttempts}
  * @returns {Object|null} {recipe, properties} or null if no valid recipe found
  */
 export function generateRandomRecipe(fatsDatabase, options = {}) {
     const excludeFats = new Set(options.excludeFats || []);
-    const lockedFats = options.lockedFats || []; // Array of {id, percentage}
+    const lockedFatIds = options.lockedFats || []; // Array of fat IDs (presence locked, not percentage)
     const minFats = options.minFats || 3;
     const maxFats = options.maxFats || 5;
     const maxAttempts = options.maxAttempts || 50;
 
-    // Calculate remaining percentage after locked fats
-    const lockedTotal = lockedFats.reduce((sum, f) => sum + f.percentage, 0);
-    const remainingPercent = 100 - lockedTotal;
-
-    // If locked fats take all percentage, just return them
-    if (remainingPercent <= 0 && lockedFats.length > 0) {
-        const recipe = [...lockedFats];
-        const fattyAcids = calculateFattyAcidsFromPercentages(recipe, fatsDatabase);
-        const properties = calculateProperties(fattyAcids);
-        return { recipe, fattyAcids, properties };
-    }
-
-    // Get available fats (exclude locked fat IDs too)
-    const lockedIds = new Set(lockedFats.map(f => f.id));
+    // Get available fats for random selection (exclude locked fat IDs so they don't get picked again)
+    const lockedIds = new Set(lockedFatIds);
     const availableFats = Object.keys(fatsDatabase).filter(id =>
         !excludeFats.has(id) && !lockedIds.has(id)
     );
 
-    const neededFats = Math.max(0, minFats - lockedFats.length);
+    const neededFats = Math.max(0, minFats - lockedFatIds.length);
     if (availableFats.length < neededFats) return null;
 
     // Track best recipe found (even if not perfect)
@@ -598,17 +586,15 @@ export function generateRandomRecipe(fatsDatabase, options = {}) {
     for (let attempt = 0; attempt < maxAttempts; attempt++) {
         // Random number of new fats to add
         const numNewFats = Math.max(neededFats,
-            Math.floor(Math.random() * (maxFats - lockedFats.length + 1)));
+            Math.floor(Math.random() * (maxFats - lockedFatIds.length + 1)));
 
         // Shuffle and pick random fats
         const shuffled = [...availableFats].sort(() => Math.random() - 0.5);
         const selectedFats = shuffled.slice(0, Math.min(numNewFats, shuffled.length));
 
-        // Generate random percentages for new fats (scaled to remaining percent)
-        const newFatRecipe = generateRandomPercentagesScaled(selectedFats, remainingPercent);
-
-        // Combine locked fats with new fats
-        const recipe = [...lockedFats, ...newFatRecipe];
+        // Combine locked fats with new fats - locked come first, all get new percentages
+        const allFats = [...lockedFatIds, ...selectedFats];
+        const recipe = generateRandomPercentagesScaled(allFats, 100);
 
         // Calculate fatty acids and properties
         const fattyAcids = calculateFattyAcidsFromPercentages(recipe, fatsDatabase);
@@ -647,32 +633,15 @@ export function generateRandomRecipe(fatsDatabase, options = {}) {
     for (let attempt = 0; attempt < fallbackAttempts; attempt++) {
         // Random number of new fats
         const numNewFats = Math.max(neededFats,
-            Math.floor(Math.random() * (maxFats - lockedFats.length + 1)));
+            Math.floor(Math.random() * (maxFats - lockedFatIds.length + 1)));
 
         // Shuffle and pick random fats
         const shuffled = [...availableFats].sort(() => Math.random() - 0.5);
         const selectedFatIds = shuffled.slice(0, Math.min(numNewFats, shuffled.length));
 
-        // Use optimizer to find good percentages for these fats
-        const allFatIds = [...lockedFats.map(f => f.id), ...selectedFatIds];
-        const optimizedRecipe = optimizeWeights(allFatIds, balancedTarget, fatsDatabase);
-
-        // Reorder so locked fats come first with their original percentages preserved
-        const recipe = lockedFats.length > 0
-            ? [...lockedFats, ...optimizedRecipe.filter(f => !lockedIds.has(f.id))]
-            : optimizedRecipe;
-
-        // Recalculate with locked percentages if needed
-        if (lockedFats.length > 0) {
-            // Scale unlocked fat percentages to fit remaining space
-            const unlockedFats = recipe.filter(f => !lockedIds.has(f.id));
-            const unlockedTotal = unlockedFats.reduce((sum, f) => sum + f.percentage, 0);
-            if (unlockedTotal > 0) {
-                unlockedFats.forEach(f => {
-                    f.percentage = Math.round(f.percentage / unlockedTotal * remainingPercent);
-                });
-            }
-        }
+        // Use optimizer to find good percentages for all fats (locked + new)
+        const allFatIds = [...lockedFatIds, ...selectedFatIds];
+        const recipe = optimizeWeights(allFatIds, balancedTarget, fatsDatabase);
 
         const fattyAcids = calculateFattyAcidsFromPercentages(recipe, fatsDatabase);
         const properties = calculateProperties(fattyAcids);

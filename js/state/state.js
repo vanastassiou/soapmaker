@@ -326,11 +326,13 @@ export function removeYoloFat(index) {
 }
 
 /**
- * Get locked fats from YOLO recipe
- * @returns {Array} Array of {id, percentage} for locked fats
+ * Get locked fat IDs from YOLO recipe (locks presence, not percentage)
+ * @returns {Array} Array of fat IDs that are locked
  */
 export function getYoloLockedFats() {
-    return state.yoloRecipe.filter((_, i) => state.yoloLockedIndices.has(i));
+    return state.yoloRecipe
+        .filter((_, i) => state.yoloLockedIndices.has(i))
+        .map(f => f.id);
 }
 
 /**
