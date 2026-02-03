@@ -2,7 +2,7 @@
  * Glossary view - Scientific concept terms
  */
 
-import { renderReferencesHtml, renderRelatedLinks, renderDetails, renderEmptyState } from '../shared/render.js';
+import { renderReferencesHtml, renderRelatedLinks, renderDetails, renderEmptyState, formatDetailsText } from '../shared/render.js';
 
 const HIGHLIGHT_DURATION = 2000;
 
@@ -23,7 +23,7 @@ export function renderGlossary(data, container, targetKey = null) {
                 <h2 class="entry-title">${d.name}</h2>
             </header>
             <p class="entry-desc">${d.description}</p>
-            ${renderDetails('More details', 'Hide details', d.details?.replace(/\n/g, '<br>'))}
+            ${renderDetails('More details', 'Hide details', formatDetailsText(d.details))}
             ${renderRelatedLinks(d.related, glossary, { dataAttr: true })}
             ${renderReferencesHtml(d.references, sources)}
         </article>

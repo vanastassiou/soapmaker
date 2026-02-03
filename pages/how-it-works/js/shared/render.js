@@ -86,6 +86,62 @@ export function renderEmptyState(container, entries, message) {
 }
 
 /**
+ * Format details text with proper HTML structure
+ * Converts bullet points (•) to <ul><li> and paragraphs to <p>
+ * @param {string} text - Raw details text with \n separators
+ * @returns {string} Formatted HTML
+ */
+export function formatDetailsText(text) {
+    if (!text) return '';
+
+    const paragraphs = text.split(/\n\n+/);
+    const result = [];
+
+    for (const para of paragraphs) {
+        const lines = para.split('\n');
+        const bulletLines = lines.filter(l => l.trim().startsWith('•'));
+
+        if (bulletLines.length > 0 && bulletLines.length === lines.length) {
+            // All lines are bullets - render as list
+            const items = lines.map(l => `<li>${l.trim().slice(1).trim()}</li>`).join('');
+            result.push(`<ul>${items}</ul>`);
+        } else if (bulletLines.length > 0) {
+            // Mixed content - split into text and list parts
+            let currentList = [];
+            let currentText = [];
+
+            for (const line of lines) {
+                if (line.trim().startsWith('•')) {
+                    if (currentText.length > 0) {
+                        result.push(`<p>${currentText.join(' ')}</p>`);
+                        currentText = [];
+                    }
+                    currentList.push(`<li>${line.trim().slice(1).trim()}</li>`);
+                } else {
+                    if (currentList.length > 0) {
+                        result.push(`<ul>${currentList.join('')}</ul>`);
+                        currentList = [];
+                    }
+                    currentText.push(line.trim());
+                }
+            }
+
+            if (currentList.length > 0) {
+                result.push(`<ul>${currentList.join('')}</ul>`);
+            }
+            if (currentText.length > 0) {
+                result.push(`<p>${currentText.join(' ')}</p>`);
+            }
+        } else {
+            // No bullets - regular paragraph
+            result.push(`<p>${para.replace(/\n/g, ' ')}</p>`);
+        }
+    }
+
+    return result.join('');
+}
+
+/**
  * Render a basic entry card
  * @param {string} key - Entry key
  * @param {Object} data - Entry data

@@ -2,7 +2,7 @@
  * Properties view - Property glossary terms with related formulas
  */
 
-import { renderReferencesHtml, renderRelatedLinks, renderEmptyState } from '../shared/render.js';
+import { renderReferencesHtml, renderRelatedLinks, renderEmptyState, formatDetailsText } from '../shared/render.js';
 
 export function renderProperties(data, container) {
     const { glossary, formulas, sources } = data;
@@ -29,7 +29,7 @@ export function renderProperties(data, container) {
 
                 ${d.details ? `
                     <div class="property-details">
-                        <p>${d.details.replace(/\n/g, '<br>')}</p>
+                        ${formatDetailsText(d.details)}
                     </div>
                 ` : ''}
 
