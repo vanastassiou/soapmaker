@@ -25,8 +25,38 @@ import {
 } from './state/state.js';
 import { attachRowEventHandlers, renderItemRow } from './ui/components/itemRow.js';
 import { toast } from './ui/components/toast.js';
-import { $, enableTabArrowNavigation } from './ui/helpers.js';
+import { $, enableTabArrowNavigation, setVisibility } from './ui/helpers.js';
 import * as ui from './ui/ui.js';
+
+// ============================================
+// Shared Handlers
+// ============================================
+
+/**
+ * Create a fat info handler for a specific recipe context
+ * @param {Function} getRecipe - Function that returns the relevant recipe array
+ * @returns {Function} Handler function that shows fat info with proper fatty acid context
+ */
+function createFatInfoHandler(getRecipe) {
+    return (fatId) => {
+        if (fatId && state.fatsDatabase[fatId]) {
+            ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, state.sourcesData, (acidKey) => {
+                ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, getRecipe(), state.fatsDatabase, state.sourcesData);
+            });
+        }
+    };
+}
+
+/**
+ * Update all property displays with values from a properties object
+ * @param {Object} properties - Object with property values (hardness, degreasing, etc.)
+ */
+function applyPropertyUpdates(properties) {
+    PROPERTY_KEYS.forEach(key => {
+        const range = PROPERTY_RANGES[key];
+        ui.updateProperty(key, properties[key], range.min, range.max);
+    });
+}
 
 // ============================================
 // Data Loading
@@ -134,11 +164,7 @@ function calculate() {
     const ins = calc.calculateINS(recipeAsWeights, fatsDatabase);
     const properties = calc.calculateProperties(fa);
 
-    const allProperties = { ...properties, iodine, ins };
-    PROPERTY_KEYS.forEach(key => {
-        const range = PROPERTY_RANGES[key];
-        ui.updateProperty(key, allProperties[key], range.min, range.max);
-    });
+    applyPropertyUpdates({ ...properties, iodine, ins });
 
     // Render additives
     renderAdditivesList();
@@ -152,19 +178,11 @@ function renderRecipeList() {
         onPercentageChange: handlePercentageChange,
         onToggleLock: handleToggleRecipeLock,
         onRemove: handleRemoveFat,
-        onFatInfo: (fatId) => ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, state.sourcesData, (acidKey) => {
-            ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, state.recipe, state.fatsDatabase, state.sourcesData);
-        })
+        onFatInfo: createFatInfoHandler(() => state.recipe)
     });
 
     // Show/hide "Use these fats" button based on recipe content
-    if (useFatsAction) {
-        if (state.recipe.length > 0) {
-            useFatsAction.classList.remove(CSS_CLASSES.hidden);
-        } else {
-            useFatsAction.classList.add(CSS_CLASSES.hidden);
-        }
-    }
+    setVisibility(useFatsAction, state.recipe.length > 0);
 }
 
 function renderAdditivesList() {
@@ -683,11 +701,7 @@ function handleGenerateFromProfile() {
 function renderPropertiesResults(result, targetProfile) {
     ui.renderProfileResults(result, targetProfile, state.fatsDatabase, state.propertiesLockedIndices, {
         onUseRecipe: handleUseGeneratedRecipe,
-        onFatInfo: (fatId) => {
-            ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, state.sourcesData, (acidKey) => {
-                ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, state.propertiesRecipe, state.fatsDatabase, state.sourcesData);
-            });
-        },
+        onFatInfo: createFatInfoHandler(() => state.propertiesRecipe),
         onToggleLock: handleTogglePropertiesLock
     });
 }
@@ -1072,7 +1086,7 @@ function renderYoloRecipe() {
 
     if (state.yoloRecipe.length === 0) {
         container.innerHTML = '';
-        if (useAction) useAction.classList.add(CSS_CLASSES.hidden);
+        setVisibility(useAction, false);
         // Clear properties display
         updatePropertiesFromFats([]);
         return;
@@ -1086,7 +1100,7 @@ function renderYoloRecipe() {
     updatePropertiesFromFats(yoloFatsAsWeights);
 
     // Show the "Use This Recipe" action
-    if (useAction) useAction.classList.remove(CSS_CLASSES.hidden);
+    setVisibility(useAction, true);
 
     // Render rows using shared component
     container.innerHTML = state.yoloRecipe.map((item, index) => {
@@ -1124,13 +1138,7 @@ function renderYoloRecipe() {
             }
             renderYoloRecipe();
         },
-        onInfo: (fatId) => {
-            if (fatId && state.fatsDatabase[fatId]) {
-                ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, state.sourcesData, (acidKey) => {
-                    ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, state.yoloRecipe, state.fatsDatabase, state.sourcesData);
-                });
-            }
-        }
+        onInfo: createFatInfoHandler(() => state.yoloRecipe)
     };
 
     // Only attach event handlers once per container
@@ -1253,7 +1261,7 @@ function handleGetCupboardSuggestions() {
     updatePropertiesFromFats([...state.cupboardFats, ...state.cupboardSuggestions]);
 
     // Show the "Use" button
-    $(ELEMENT_IDS.useCupboardAction)?.classList.remove(CSS_CLASSES.hidden);
+    setVisibility($(ELEMENT_IDS.useCupboardAction), true);
 
     // Change button text to "Re-roll" after first generation
     const cupboardBtn = $(ELEMENT_IDS.cupboardCleanerBtn);
@@ -1317,13 +1325,7 @@ function renderCupboardFatsList() {
     ui.renderCupboardFats(container, state.cupboardFats, state.fatsDatabase, getWeightLabel(settings.unit), {
         onWeightChange: handleCupboardWeightChange,
         onRemove: handleRemoveCupboardFat,
-        onInfo: (fatId) => {
-            if (fatId && state.fatsDatabase[fatId]) {
-                ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, state.sourcesData, (acidKey) => {
-                    ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, state.cupboardFats, state.fatsDatabase, state.sourcesData);
-                });
-            }
-        }
+        onInfo: createFatInfoHandler(() => state.cupboardFats)
     });
 
     updatePropertiesFromFats([...state.cupboardFats, ...state.cupboardSuggestions]);
@@ -1353,13 +1355,7 @@ function renderCupboardSuggestionsList() {
                 renderCupboardSuggestionsList();
                 updatePropertiesFromFats([...state.cupboardFats, ...state.cupboardSuggestions]);
             },
-            onInfo: (fatId) => {
-                if (fatId && state.fatsDatabase[fatId]) {
-                    ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, state.sourcesData, (acidKey) => {
-                        ui.showFattyAcidInfo(acidKey, state.fattyAcidsData, state.cupboardSuggestions, state.fatsDatabase, state.sourcesData);
-                    });
-                }
-            }
+            onInfo: createFatInfoHandler(() => state.cupboardSuggestions)
         }
     );
 
@@ -1377,9 +1373,7 @@ function renderCupboardSuggestionsList() {
 function updatePropertiesFromFats(fats) {
     if (!fats || fats.length === 0) {
         // Clear properties to zero
-        PROPERTY_KEYS.forEach(key => {
-            ui.updateProperty(key, 0, PROPERTY_RANGES[key].min, PROPERTY_RANGES[key].max);
-        });
+        applyPropertyUpdates(Object.fromEntries(PROPERTY_KEYS.map(k => [k, 0])));
         return;
     }
 
@@ -1388,11 +1382,7 @@ function updatePropertiesFromFats(fats) {
     const iodine = calc.calculateIodine(fats, state.fatsDatabase);
     const ins = calc.calculateINS(fats, state.fatsDatabase);
 
-    const allProperties = { ...properties, iodine, ins };
-    PROPERTY_KEYS.forEach(key => {
-        const range = PROPERTY_RANGES[key];
-        ui.updateProperty(key, allProperties[key], range.min, range.max);
-    });
+    applyPropertyUpdates({ ...properties, iodine, ins });
 }
 
 function setupExclusionHandlers() {

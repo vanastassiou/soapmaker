@@ -34,8 +34,6 @@ export const ELEMENT_IDS = {
 
     // Fat panel elements
     fatPanelName: 'fatPanelName',
-    fatPanelSap: 'fatPanelSap',
-    fatPanelUsage: 'fatPanelUsage',
     fatPanelDescription: 'fatPanelDescription',
     fatPanelProperties: 'fatPanelProperties',
     fatPanelFattyAcids: 'fatPanelFattyAcids',
@@ -51,9 +49,7 @@ export const ELEMENT_IDS = {
 
     // Fatty acid panel elements
     faName: 'faName',
-    faFormula: 'faFormula',
     faChemistry: 'faChemistry',
-    faDetails: 'faDetails',
     faOccurrence: 'faOccurrence',
 
     // Additive panel elements

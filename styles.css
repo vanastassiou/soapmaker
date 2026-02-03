@@ -254,7 +254,7 @@ header p {
 }
 
 .sub-nav-link {
-    color: var(--text-tertiary);
+    color: var(--text-muted);
     text-decoration: none;
     font-size: var(--text-sm);
     padding: var(--space-1) var(--space-3);
@@ -1518,11 +1518,6 @@ input:focus, select:focus {
     background: var(--accent-gold);
     border-color: var(--accent-gold);
     color: var(--bg-primary);
-}
-
-.tab:focus-visible {
-    outline: none;
-    box-shadow: var(--focus-ring);
 }
 /* ============================================
    Tag and Badge Components
@@ -3487,21 +3482,10 @@ ol.instructions li:last-child {
     text-decoration: underline;
 }
 
-.science-section .details-toggle {
-    display: inline;
-}
-
-.science-section .details-hide {
-    display: none;
-}
-
-.science-section[open] .details-toggle {
-    display: none;
-}
-
-.science-section[open] .details-hide {
-    display: inline;
-}
+.science-section .details-toggle { display: inline; }
+.science-section .details-hide { display: none; }
+.science-section[open] .details-toggle { display: none; }
+.science-section[open] .details-hide { display: inline; }
 
 .science-content {
     padding: var(--space-4) var(--space-5);

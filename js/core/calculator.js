@@ -159,12 +159,12 @@ const LEVEL_TO_NUM = {
 const NUM_TO_LEVEL = ['', 'very low', 'low', 'moderate', 'high', 'very high'];
 
 /**
- * Get structured soap properties for a fat
+ * Calculate weighted soap property values from dominant fatty acids
  * @param {Object} fat - Fat object with fattyAcids percentages
  * @param {Object} fattyAcidsData - Fatty acid data with soapProperties
  * @returns {{hardness: string, degreasing: string, lather: string, moisturizing: string}|null}
  */
-export function getFatSoapProperties(fat, fattyAcidsData) {
+function calculateWeightedSoapProperties(fat, fattyAcidsData) {
     const fattyAcids = fat.details?.fattyAcids || fat.fattyAcids;
     if (!fattyAcids) return null;
 
@@ -188,14 +188,9 @@ export function getFatSoapProperties(fat, fattyAcidsData) {
         if (!props) return;
         totalWeight += pct;
 
-        // Convert qualitative to numeric and weight
-        const hardnessNum = LEVEL_TO_NUM[props.hardness] || 3;
-        const degreasingNum = LEVEL_TO_NUM[props.degreasing] || 3;
-        const moisturizingNum = LEVEL_TO_NUM[props.moisturizing] || 3;
-
-        weightedHardness += hardnessNum * pct;
-        weightedDegreasing += degreasingNum * pct;
-        weightedMoisturizing += moisturizingNum * pct;
+        weightedHardness += (LEVEL_TO_NUM[props.hardness] || 3) * pct;
+        weightedDegreasing += (LEVEL_TO_NUM[props.degreasing] || 3) * pct;
+        weightedMoisturizing += (LEVEL_TO_NUM[props.moisturizing] || 3) * pct;
 
         if (props.lather && !latherDescriptions.includes(props.lather)) {
             latherDescriptions.push(props.lather);
@@ -204,17 +199,22 @@ export function getFatSoapProperties(fat, fattyAcidsData) {
 
     if (totalWeight === 0) return null;
 
-    // Calculate averages and convert back to levels
-    const avgHardness = Math.round(weightedHardness / totalWeight);
-    const avgDegreasing = Math.round(weightedDegreasing / totalWeight);
-    const avgMoisturizing = Math.round(weightedMoisturizing / totalWeight);
-
     return {
-        hardness: NUM_TO_LEVEL[avgHardness] || 'moderate',
-        degreasing: NUM_TO_LEVEL[avgDegreasing] || 'moderate',
+        hardness: NUM_TO_LEVEL[Math.round(weightedHardness / totalWeight)] || 'moderate',
+        degreasing: NUM_TO_LEVEL[Math.round(weightedDegreasing / totalWeight)] || 'moderate',
         lather: latherDescriptions[0] || 'moderate',
-        moisturizing: NUM_TO_LEVEL[avgMoisturizing] || 'moderate'
+        moisturizing: NUM_TO_LEVEL[Math.round(weightedMoisturizing / totalWeight)] || 'moderate'
     };
+}
+
+/**
+ * Get structured soap properties for a fat
+ * @param {Object} fat - Fat object with fattyAcids percentages
+ * @param {Object} fattyAcidsData - Fatty acid data with soapProperties
+ * @returns {{hardness: string, degreasing: string, lather: string, moisturizing: string}|null}
+ */
+export function getFatSoapProperties(fat, fattyAcidsData) {
+    return calculateWeightedSoapProperties(fat, fattyAcidsData);
 }
 
 /**
@@ -224,72 +224,27 @@ export function getFatSoapProperties(fat, fattyAcidsData) {
  * @returns {string} Prose description of soap properties
  */
 export function generateFatProperties(fat, fattyAcidsData) {
-    const fattyAcids = fat.details?.fattyAcids || fat.fattyAcids;
-    if (!fattyAcids) return '';
+    const props = calculateWeightedSoapProperties(fat, fattyAcidsData);
+    if (!props) {
+        const fattyAcids = fat.details?.fattyAcids || fat.fattyAcids;
+        return fattyAcids ? 'Minimal fatty acid contribution.' : '';
+    }
 
-    // Get fatty acids above the dominant threshold
-    const dominant = Object.entries(fattyAcids)
-        .filter(([_, pct]) => pct >= CALCULATION.DOMINANT_FATTY_ACID_THRESHOLD)
-        .sort((a, b) => b[1] - a[1]);
-
-    if (dominant.length === 0) return 'Minimal fatty acid contribution.';
-
-    // Calculate weighted properties
-    let totalWeight = 0;
-    let weightedHardness = 0;
-    let weightedDegreasing = 0;
-    let weightedMoisturizing = 0;
-    const latherDescriptions = [];
-
-    dominant.forEach(([acidKey, pct]) => {
-        const acidData = fattyAcidsData[acidKey];
-        const props = acidData?.details?.soapProperties ?? acidData?.soapProperties;
-        if (!props) return;
-        totalWeight += pct;
-
-        // Convert qualitative to numeric and weight
-        const hardnessNum = LEVEL_TO_NUM[props.hardness] || 3;
-        const degreasingNum = LEVEL_TO_NUM[props.degreasing] || 3;
-        const moisturizingNum = LEVEL_TO_NUM[props.moisturizing] || 3;
-
-        weightedHardness += hardnessNum * pct;
-        weightedDegreasing += degreasingNum * pct;
-        weightedMoisturizing += moisturizingNum * pct;
-
-        // Collect unique lather descriptions
-        if (props.lather && !latherDescriptions.includes(props.lather)) {
-            latherDescriptions.push(props.lather);
-        }
-    });
-
-    if (totalWeight === 0) return 'Minimal fatty acid contribution.';
-
-    // Calculate averages and convert back to levels
-    const avgHardness = Math.round(weightedHardness / totalWeight);
-    const avgDegreasing = Math.round(weightedDegreasing / totalWeight);
-    const avgMoisturizing = Math.round(weightedMoisturizing / totalWeight);
-
-    const hardnessLevel = NUM_TO_LEVEL[avgHardness] || 'moderate';
-    const degreasingLevel = NUM_TO_LEVEL[avgDegreasing] || 'moderate';
-    const moisturizingLevel = NUM_TO_LEVEL[avgMoisturizing] || 'moderate';
-
-    // Build prose description
     const parts = [];
 
     // Combine similar levels
-    if (hardnessLevel === degreasingLevel) {
-        parts.push(`${hardnessLevel} hardness and degreasing.`);
+    if (props.hardness === props.degreasing) {
+        parts.push(`${props.hardness} hardness and degreasing.`);
     } else {
-        parts.push(`${hardnessLevel} hardness. ${degreasingLevel} degreasing.`);
+        parts.push(`${props.hardness} hardness. ${props.degreasing} degreasing.`);
     }
 
-    // Add lather description (pick most descriptive from dominant acids)
-    if (latherDescriptions.length > 0) {
-        const lather = latherDescriptions[0];
-        parts.push(lather + ' lather.');
+    // Add lather description
+    if (props.lather !== 'moderate') {
+        parts.push(props.lather + ' lather.');
     }
 
-    parts.push(`${moisturizingLevel} moisturizing.`);
+    parts.push(`${props.moisturizing} moisturizing.`);
 
     return parts.join(' ');
 }

@@ -66,12 +66,23 @@ export function toggleClass(id, className, force) {
 }
 
 /**
- * Add/remove 'hidden' class
+ * Add/remove 'hidden' class (by element ID)
  * @param {string} id - Element ID
  * @param {boolean} hidden - Whether to hide
  */
 export function setHidden(id, hidden) {
     toggleClass(id, 'hidden', hidden);
+}
+
+/**
+ * Set visibility of an element (add/remove 'hidden' class)
+ * @param {HTMLElement|null} element - Element to show/hide
+ * @param {boolean} isVisible - Whether element should be visible
+ */
+export function setVisibility(element, isVisible) {
+    if (element) {
+        element.classList.toggle('hidden', !isVisible);
+    }
 }
 
 /**
