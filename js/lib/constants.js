@@ -333,7 +333,8 @@ export const PROPERTY_CONVERSION = {
 export const UI_ICONS = {
     LOCK: '🔒',
     UNLOCK: '🔓',
-    REMOVE: '❌'
+    REMOVE: '❌',
+    EXCLUDE: '🚫'
 };
 
 export const NOTE_TYPES = {

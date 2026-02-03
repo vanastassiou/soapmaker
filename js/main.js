@@ -19,7 +19,9 @@ import {
     // Cupboard cleaner state functions
     addCupboardFat, removeCupboardFat, updateCupboardFatWeight,
     toggleCupboardLock, setCupboardSuggestions,
-    removeCupboardSuggestion, updateCupboardSuggestionWeight, setAllowRatioMode
+    removeCupboardSuggestion, updateCupboardSuggestionWeight, setAllowRatioMode,
+    // Suggestion exclusion functions
+    addSuggestionExclusion, clearSuggestionExclusions
 } from './state/state.js';
 import { attachRowEventHandlers, renderItemRow } from './ui/components/itemRow.js';
 import { toast } from './ui/components/toast.js';
@@ -621,7 +623,7 @@ function updateFatSelectWithFilters() {
 function getCombinedExclusions() {
     const dietaryFilters = getDietaryFilters();
     const dietaryExclusions = optimizer.getDietaryExclusions(state.fatsDatabase, dietaryFilters);
-    return [...state.excludedFats, ...dietaryExclusions];
+    return [...state.excludedFats, ...state.suggestionExcludedFats, ...dietaryExclusions];
 }
 
 // ============================================
@@ -779,6 +781,7 @@ function clearModeData(mode) {
             break;
         case 'yolo':
             clearYoloRecipe();
+            clearSuggestionExclusions();
             renderYoloRecipe();
             // Reset button text
             const yoloBtn = $(ELEMENT_IDS.yoloBtn);
@@ -786,6 +789,7 @@ function clearModeData(mode) {
             break;
         case 'cupboard':
             clearCupboardFats();
+            clearSuggestionExclusions();
             renderCupboardFatsList();
             renderCupboardSuggestionsList();
             // Reset select options
@@ -1096,6 +1100,7 @@ function renderYoloRecipe() {
             showWeight: false,
             showPercentage: true,
             lockableField: 'percentage',
+            showExcludeButton: true,
             itemType: 'fat'
         });
     }).join('');
@@ -1108,6 +1113,15 @@ function renderYoloRecipe() {
         },
         onRemove: (index) => {
             removeYoloFat(index);
+            renderYoloRecipe();
+        },
+        onExclude: (fatId) => {
+            addSuggestionExclusion(fatId);
+            // Find and remove this fat from the current YOLO recipe
+            const index = state.yoloRecipe.findIndex(f => f.id === fatId);
+            if (index !== -1) {
+                removeYoloFat(index);
+            }
             renderYoloRecipe();
         },
         onInfo: (fatId) => {
@@ -1329,6 +1343,16 @@ function renderCupboardSuggestionsList() {
         {
             onWeightChange: handleCupboardSuggestionWeightChange,
             onRemove: handleRemoveCupboardSuggestion,
+            onExclude: (fatId) => {
+                addSuggestionExclusion(fatId);
+                // Find and remove this fat from the current suggestions
+                const index = state.cupboardSuggestions.findIndex(f => f.id === fatId);
+                if (index !== -1) {
+                    removeCupboardSuggestion(index);
+                }
+                renderCupboardSuggestionsList();
+                updatePropertiesFromFats([...state.cupboardFats, ...state.cupboardSuggestions]);
+            },
             onInfo: (fatId) => {
                 if (fatId && state.fatsDatabase[fatId]) {
                     ui.showFatInfo(fatId, state.fatsDatabase, state.fattyAcidsData, state.sourcesData, (acidKey) => {

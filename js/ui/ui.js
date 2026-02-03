@@ -1001,7 +1001,7 @@ export function renderCupboardFats(container, cupboardFats, fatsDatabase, unit, 
  * @param {Array} suggestions - Array of {id, weight, percentage}
  * @param {Object} fatsDatabase - Fat database for name lookups
  * @param {string} unit - Unit string (g or oz)
- * @param {Object} callbacks - {onWeightChange, onRemove, onInfo}
+ * @param {Object} callbacks - {onWeightChange, onRemove, onExclude, onInfo}
  */
 export function renderCupboardSuggestions(container, suggestions, fatsDatabase, unit, callbacks) {
     const signal = setupAbortSignal(container);
@@ -1026,6 +1026,7 @@ export function renderCupboardSuggestions(container, suggestions, fatsDatabase, 
             showWeight: true,
             showPercentage: true,
             lockableField: null,  // No locks for suggestions
+            showExcludeButton: true,
             unit,
             itemType: 'fat'
         });
@@ -1037,6 +1038,7 @@ export function renderCupboardSuggestions(container, suggestions, fatsDatabase, 
     attachRowEventHandlersWithSignal(container, {
         onWeightChange: callbacks.onWeightChange,
         onRemove: callbacks.onRemove,
+        onExclude: callbacks.onExclude,
         onInfo: callbacks.onInfo
     }, 'fat', signal);
 }

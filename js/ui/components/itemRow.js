@@ -24,6 +24,7 @@ import { delegate, onActivate } from '../helpers.js';
  * @property {boolean} [showPercentage=true] - Show percentage column
  * @property {'weight'|'percentage'|null} [lockableField=null] - Which field can be locked
  * @property {boolean} [showRemoveButton=true] - Show remove button
+ * @property {boolean} [showExcludeButton=false] - Show exclude button (for YOLO/Cupboard modes)
  * @property {string} [unit='g'] - Unit for weight display/input
  * @property {string} [itemType='fat'] - Type for data attributes ('fat' or 'additive')
  * @property {string} [className=''] - Additional CSS class(es) for the row
@@ -43,6 +44,7 @@ export function renderItemRow(config, index, options = {}) {
         showPercentage = true,
         lockableField = null,
         showRemoveButton = true,
+        showExcludeButton = false,
         unit = 'g',
         itemType = 'fat',
         className = ''
@@ -124,6 +126,12 @@ export function renderItemRow(config, index, options = {}) {
         }
     }
 
+    const excludeCell = showExcludeButton
+        ? `<button class="icon-btn exclude-btn" data-action="exclude" data-id="${id}" aria-label="Exclude ${name} from future suggestions">
+               ${UI_ICONS.EXCLUDE}
+           </button>`
+        : '';
+
     const removeCell = showRemoveButton
         ? `<button class="icon-btn remove-btn" data-action="remove" data-index="${index}" aria-label="Remove ${name}">
                ${UI_ICONS.REMOVE}
@@ -131,7 +139,7 @@ export function renderItemRow(config, index, options = {}) {
         : '';
 
     // Determine column layout class based on visible columns
-    const colCount = 1 + (showWeight ? 1 : 0) + (showPercentage ? 1 : 0) + (showRemoveButton ? 1 : 0);
+    const colCount = 1 + (showWeight ? 1 : 0) + (showPercentage ? 1 : 0) + (showExcludeButton ? 1 : 0) + (showRemoveButton ? 1 : 0);
     const colClass = `cols-${colCount}`;
 
     const rowClasses = `item-row ${colClass} ${rowLockedClass} ${warningClass} ${className}`.trim().replace(/\s+/g, ' ');
@@ -141,6 +149,7 @@ export function renderItemRow(config, index, options = {}) {
             ${nameCell}
             ${weightCell}
             ${percentageCell}
+            ${excludeCell}
             ${removeCell}
         </div>
     `;
@@ -191,6 +200,7 @@ export function renderEmptyState(message, subMessage = '', className = '') {
  * @param {Function} [callbacks.onPercentageChange] - Percentage input handler (index, value)
  * @param {Function} [callbacks.onToggleLock] - Unified lock toggle handler (index)
  * @param {Function} [callbacks.onRemove] - Remove handler (index)
+ * @param {Function} [callbacks.onExclude] - Exclude handler (id)
  * @param {Function} [callbacks.onInfo] - Info click handler (id)
  * @param {string} [itemType='fat'] - Item type for selectors
  */
@@ -218,6 +228,12 @@ export function attachRowEventHandlers(container, callbacks, itemType = 'fat') {
     if (callbacks.onRemove) {
         delegate(container, 'button[data-action="remove"]', 'click', (_e, el) => {
             callbacks.onRemove(parseInt(el.dataset.index, 10));
+        });
+    }
+
+    if (callbacks.onExclude) {
+        delegate(container, 'button[data-action="exclude"]', 'click', (_e, el) => {
+            callbacks.onExclude(el.dataset.id);
         });
     }
 
@@ -278,6 +294,12 @@ export function attachRowEventHandlersWithSignal(container, callbacks, itemType 
     if (callbacks.onRemove) {
         addDelegated('button[data-action="remove"]', 'click', (_e, el) => {
             callbacks.onRemove(parseInt(el.dataset.index, 10));
+        });
+    }
+
+    if (callbacks.onExclude) {
+        addDelegated('button[data-action="exclude"]', 'click', (_e, el) => {
+            callbacks.onExclude(el.dataset.id);
         });
     }
 

@@ -168,7 +168,10 @@ export const state = createReactiveState({
     cupboardFats: [],              // Array of {id, weight}
     cupboardLocks: new Set(),      // Indices of locked cupboard fat weights
     cupboardSuggestions: [],       // Array of {id, weight, percentage}
-    allowRatioMode: false          // If true, optimizer can suggest ratio changes
+    allowRatioMode: false,         // If true, optimizer can suggest ratio changes
+
+    // Suggestion exclusions (YOLO and Cupboard modes)
+    suggestionExcludedFats: []     // Fats excluded from YOLO and Cupboard suggestions
 });
 
 // ============================================
@@ -461,6 +464,26 @@ export function updateCupboardSuggestionWeight(index, weight) {
  */
 export function setAllowRatioMode(allow) {
     state.allowRatioMode = allow;
+}
+
+// ============================================
+// Suggestion Exclusion Methods
+// ============================================
+
+/**
+ * Add a fat to the suggestion exclusion list (YOLO and Cupboard modes)
+ * @param {string} id - Fat id (kebab-case key)
+ */
+export function addSuggestionExclusion(id) {
+    if (!id || state.suggestionExcludedFats.includes(id)) return;
+    state.suggestionExcludedFats = [...state.suggestionExcludedFats, id];
+}
+
+/**
+ * Clear all suggestion exclusions
+ */
+export function clearSuggestionExclusions() {
+    state.suggestionExcludedFats = [];
 }
 
 /**
