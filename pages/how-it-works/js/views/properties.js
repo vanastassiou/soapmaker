@@ -2,7 +2,7 @@
  * Properties view - Property glossary terms with related formulas
  */
 
-import { renderReferencesHtml } from '../shared/render.js';
+import { renderReferencesHtml, renderRelatedLinks, renderEmptyState } from '../shared/render.js';
 
 export function renderProperties(data, container) {
     const { glossary, formulas, sources } = data;
@@ -12,10 +12,7 @@ export function renderProperties(data, container) {
         .filter(([_, d]) => d.domain?.includes('calculator') && d.type === 'property')
         .sort((a, b) => a[1].name.localeCompare(b[1].name));
 
-    if (propertyTerms.length === 0) {
-        container.innerHTML = '<p class="no-results">No properties found.</p>';
-        return;
-    }
+    if (renderEmptyState(container, propertyTerms, 'No properties found.')) return;
 
     container.innerHTML = propertyTerms.map(([key, d]) => {
         // Find related formula if exists
@@ -47,16 +44,7 @@ export function renderProperties(data, container) {
                     </div>
                 ` : ''}
 
-                ${d.related?.filter(r => glossary[r] && glossary[r].domain?.includes('calculator')).length > 0 ? `
-                    <div class="entry-related">
-                        <span class="entry-related-label">Related:</span>
-                        ${d.related
-                            .filter(r => glossary[r] && glossary[r].domain?.includes('calculator'))
-                            .map(r => `<a href="#glossary/${r}" class="entry-related-link">${glossary[r].name}</a>`)
-                            .join('')}
-                    </div>
-                ` : ''}
-
+                ${renderRelatedLinks(d.related, glossary)}
                 ${renderReferencesHtml(d.references, sources)}
             </article>
         `;

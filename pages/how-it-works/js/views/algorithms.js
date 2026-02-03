@@ -2,7 +2,7 @@
  * Algorithms view - Formulas with category filtering
  */
 
-import { renderReferencesHtml } from '../shared/render.js';
+import { renderReferencesHtml, renderRelatedLinks, renderDetails, renderEmptyState } from '../shared/render.js';
 
 let currentCategory = 'all';
 
@@ -19,93 +19,94 @@ export function renderAlgorithms(data, container, filterNav, category = 'all') {
         .filter(([_, d]) => currentCategory === 'all' || d.category === currentCategory)
         .sort((a, b) => a[1].name.localeCompare(b[1].name));
 
-    if (entries.length === 0) {
-        container.innerHTML = '<p class="no-results">No formulas found in this category.</p>';
-        return;
+    if (renderEmptyState(container, entries, 'No formulas found in this category.')) return;
+
+    container.innerHTML = entries.map(([key, d]) => {
+        const technicalContent = buildTechnicalContent(d);
+        return `
+            <article class="entry-card" data-key="${key}">
+                <header class="entry-header">
+                    <h2 class="entry-title">${d.name}</h2>
+                </header>
+
+                <p class="entry-desc">${d.summary}</p>
+
+                <div class="formula-equation">
+                    <code>${d.formula}</code>
+                </div>
+
+                <div class="formula-user-friendly">
+                    <p>${d.userFriendly}</p>
+                </div>
+
+                ${d.recommendedRange ? `
+                    <div class="formula-range">
+                        <span class="range-label">Recommended range:</span>
+                        <span class="range-values">${d.recommendedRange.min} - ${d.recommendedRange.max}</span>
+                    </div>
+                ` : ''}
+
+                ${renderDetails('Technical details', 'Hide technical details', technicalContent)}
+
+                ${renderReferencesHtml(d.references, sources)}
+
+                ${d.learnMore ? `
+                    <div class="entry-learn-more">
+                        <a href="${d.learnMore.url}" target="_blank" rel="noopener noreferrer" class="learn-more-link">${d.learnMore.text} →</a>
+                    </div>
+                ` : ''}
+
+                ${renderRelatedLinks(d.related, glossary, { filterDomain: false })}
+            </article>
+        `;
+    }).join('');
+}
+
+/**
+ * Build technical details content for a formula
+ */
+function buildTechnicalContent(d) {
+    if (!d.variables && !d.example && !d.technical) return null;
+
+    const parts = [];
+
+    if (d.variables) {
+        parts.push(`
+            <div class="formula-variables">
+                <h3 class="formula-section-heading">Variables</h3>
+                <dl class="formula-section-box">
+                    ${Object.entries(d.variables).map(([varName, desc]) => `
+                        <dt>${varName}</dt>
+                        <dd>${desc}</dd>
+                    `).join('')}
+                </dl>
+            </div>
+        `);
     }
 
-    container.innerHTML = entries.map(([key, d]) => `
-        <article class="entry-card" data-key="${key}">
-            <header class="entry-header">
-                <h2 class="entry-title">${d.name}</h2>
-            </header>
-
-            <p class="entry-desc">${d.summary}</p>
-
-            <div class="formula-equation">
-                <code>${d.formula}</code>
-            </div>
-
-            <div class="formula-user-friendly">
-                <p>${d.userFriendly}</p>
-            </div>
-
-            ${d.recommendedRange ? `
-                <div class="formula-range">
-                    <span class="range-label">Recommended range:</span>
-                    <span class="range-values">${d.recommendedRange.min} - ${d.recommendedRange.max}</span>
-                </div>
-            ` : ''}
-
-            ${d.variables || d.example || d.technical ? `
-                <details class="entry-details">
-                    <summary>
-                        <span class="details-toggle">Technical details</span>
-                        <span class="details-hide">Hide technical details</span>
-                    </summary>
-                    <div class="entry-details-content">
-                        ${d.variables ? `
-                            <div class="formula-variables">
-                                <h3 class="formula-section-heading">Variables</h3>
-                                <dl class="formula-section-box">
-                                    ${Object.entries(d.variables).map(([varName, desc]) => `
-                                        <dt>${varName}</dt>
-                                        <dd>${desc}</dd>
-                                    `).join('')}
-                                </dl>
-                            </div>
-                        ` : ''}
-
-                        ${d.example ? `
-                            <div class="formula-example">
-                                <h3 class="formula-section-heading">Example</h3>
-                                <div class="formula-section-box">
-                                    <p class="example-scenario">${d.example.scenario}</p>
-                                    <div class="example-steps">
-                                        ${d.example.steps.map(step => `<div class="example-step">${step}</div>`).join('')}
-                                    </div>
-                                </div>
-                            </div>
-                        ` : ''}
-
-                        ${d.technical ? `
-                            <div class="formula-technical">
-                                <p>${d.technical}</p>
-                            </div>
-                        ` : ''}
+    if (d.example) {
+        parts.push(`
+            <div class="formula-example">
+                <h3 class="formula-section-heading">Example</h3>
+                <div class="formula-section-box">
+                    <p class="example-scenario">${d.example.scenario}</p>
+                    <div class="example-steps">
+                        ${d.example.steps.map(step => `<div class="example-step">${step}</div>`).join('')}
                     </div>
-                </details>
-            ` : ''}
-
-            ${renderReferencesHtml(d.references, sources)}
-
-            ${d.learnMore ? `
-                <div class="entry-learn-more">
-                    <a href="${d.learnMore.url}" target="_blank" rel="noopener noreferrer" class="learn-more-link">${d.learnMore.text} →</a>
                 </div>
-            ` : ''}
+            </div>
+        `);
+    }
 
-            ${d.related?.filter(r => glossary[r]).length > 0 ? `
-                <div class="entry-related">
-                    <span class="entry-related-label">Related:</span>
-                    ${d.related
-                        .filter(r => glossary[r])
-                        .map(r => `<a href="#glossary/${r}" class="entry-related-link">${glossary[r].name}</a>`)
-                        .join('')}
-                </div>
-            ` : ''}
-        </article>
-    `).join('');
+    if (d.technical) {
+        parts.push(`
+            <div class="formula-technical">
+                <p>${d.technical}</p>
+            </div>
+        `);
+    }
+
+    return parts.join('');
 }
 
 function renderFilterNav(filterNav, activeCategory) {

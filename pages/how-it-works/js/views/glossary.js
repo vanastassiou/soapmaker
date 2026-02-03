@@ -2,7 +2,7 @@
  * Glossary view - Scientific concept terms
  */
 
-import { renderReferencesHtml } from '../shared/render.js';
+import { renderReferencesHtml, renderRelatedLinks, renderDetails, renderEmptyState } from '../shared/render.js';
 
 const HIGHLIGHT_DURATION = 2000;
 
@@ -15,10 +15,7 @@ export function renderGlossary(data, container, targetKey = null) {
         .filter(([_, d]) => d.type === 'concept')
         .sort((a, b) => a[1].name.localeCompare(b[1].name));
 
-    if (entries.length === 0) {
-        container.innerHTML = '<p class="no-results">No concepts found.</p>';
-        return;
-    }
+    if (renderEmptyState(container, entries, 'No concepts found.')) return;
 
     container.innerHTML = entries.map(([key, d]) => `
         <article class="entry-card" data-key="${key}">
@@ -26,24 +23,8 @@ export function renderGlossary(data, container, targetKey = null) {
                 <h2 class="entry-title">${d.name}</h2>
             </header>
             <p class="entry-desc">${d.description}</p>
-            ${d.details ? `
-                <details class="entry-details">
-                    <summary>
-                        <span class="details-toggle">More details</span>
-                        <span class="details-hide">Hide details</span>
-                    </summary>
-                    <div class="entry-details-content">${d.details.replace(/\n/g, '<br>')}</div>
-                </details>
-            ` : ''}
-            ${d.related?.filter(r => glossary[r] && glossary[r].domain?.includes('calculator')).length > 0 ? `
-                <div class="entry-related">
-                    <span class="entry-related-label">Related:</span>
-                    ${d.related
-                        .filter(r => glossary[r] && glossary[r].domain?.includes('calculator'))
-                        .map(r => `<a href="#glossary/${r}" class="entry-related-link" data-term="${r}">${glossary[r].name}</a>`)
-                        .join('')}
-                </div>
-            ` : ''}
+            ${renderDetails('More details', 'Hide details', d.details?.replace(/\n/g, '<br>'))}
+            ${renderRelatedLinks(d.related, glossary, { dataAttr: true })}
             ${renderReferencesHtml(d.references, sources)}
         </article>
     `).join('');
