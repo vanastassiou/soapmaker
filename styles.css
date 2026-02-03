@@ -2006,6 +2006,32 @@ details[open] .details-hide {
     line-height: 1.7;
 }
 
+.entry-details-content p {
+    margin: 0 0 var(--space-3) 0;
+}
+
+.entry-details-content p:last-child {
+    margin-bottom: 0;
+}
+
+.entry-details-content ul {
+    margin: 0 0 var(--space-3) 0;
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+.entry-details-content ul:last-child {
+    margin-bottom: 0;
+}
+
+.entry-details-content li {
+    margin-bottom: var(--space-2);
+}
+
+.entry-details-content li:last-child {
+    margin-bottom: 0;
+}
+
 /* Related terms/links */
 .entry-related {
     display: flex;
@@ -2449,6 +2475,32 @@ a.entry-title:hover,
 .property-details {
     margin-bottom: var(--space-4);
     line-height: var(--leading-relaxed);
+}
+
+.property-details p {
+    margin: 0 0 var(--space-3) 0;
+}
+
+.property-details p:last-child {
+    margin-bottom: 0;
+}
+
+.property-details ul {
+    margin: 0 0 var(--space-3) 0;
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+.property-details ul:last-child {
+    margin-bottom: 0;
+}
+
+.property-details li {
+    margin-bottom: var(--space-2);
+}
+
+.property-details li:last-child {
+    margin-bottom: 0;
 }
 
 .property-formula {
