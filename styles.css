@@ -106,6 +106,12 @@
     --space-12: 3rem;     /* 48px */
     --space-14: 3.5rem;   /* 56px */
 
+    /* Composite padding tokens */
+    --padding-xs: var(--space-1) var(--space-2);   /* 4px 8px */
+    --padding-sm: var(--space-2) var(--space-3);   /* 8px 12px */
+    --padding-md: var(--space-2) var(--space-4);   /* 8px 16px */
+    --padding-lg: var(--space-3) var(--space-4);   /* 12px 16px */
+
     /* ============================================
        Component sizing
        ============================================ */
@@ -130,6 +136,7 @@
     --transition-fast: 0.15s ease;
     --transition-base: 0.2s ease;
     --transition-slow: 0.3s ease;
+    --transition-all: all var(--transition-base);
 }
 /* ============================================
    Reset & Base Styles
@@ -214,10 +221,10 @@ header p {
     font-size: var(--text-base);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    padding: var(--space-2) var(--space-4);
+    padding: var(--padding-md);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
-    transition: all var(--transition-base);
+    transition: var(--transition-all);
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -252,7 +259,7 @@ header p {
     font-size: var(--text-sm);
     padding: var(--space-1) var(--space-3);
     border-radius: var(--radius-sm);
-    transition: all var(--transition-base);
+    transition: var(--transition-all);
 }
 
 .sub-nav-link:hover {
@@ -278,9 +285,9 @@ header p {
     text-decoration: none;
     font-size: var(--text-md);
     font-weight: 600;
-    padding: var(--space-2) var(--space-4);
+    padding: var(--padding-md);
     border-radius: var(--radius-md);
-    transition: all var(--transition-base);
+    transition: var(--transition-all);
 }
 
 .kofi-button:hover {
@@ -341,7 +348,7 @@ header p {
     left: 0;
     background: var(--accent-gold);
     color: var(--bg-primary);
-    padding: var(--space-2) var(--space-4);
+    padding: var(--padding-md);
     z-index: 10000;
     font-weight: 600;
     text-decoration: none;
@@ -386,7 +393,7 @@ button:focus-visible,
     color: var(--bg-primary);
     border: none;
     border-radius: var(--radius-md);
-    padding: var(--space-2) var(--space-4);
+    padding: var(--padding-md);
     font-family: var(--font-body);
     font-weight: 600;
     font-size: var(--text-lg);
@@ -446,7 +453,7 @@ button:focus-visible,
     border: none;
     color: var(--text-muted);
     font-size: var(--text-base);
-    padding: var(--space-1) var(--space-2);
+    padding: var(--padding-xs);
     cursor: pointer;
 }
 
@@ -466,7 +473,7 @@ button:focus-visible,
     justify-content: center;
     font-size: var(--text-xl);
     line-height: 1;
-    transition: all var(--transition-base);
+    transition: var(--transition-all);
     flex-shrink: 0;
 }
 
@@ -523,6 +530,27 @@ button:focus-visible,
 
 .clickable:hover {
     color: var(--accent-green);
+}
+
+/* Link base - green underline-on-hover */
+.link,
+.reference-link,
+.learn-more-link,
+.equipment-link,
+.reference-item a,
+.science-citation a {
+    color: var(--accent-green);
+    text-decoration: none;
+}
+
+.link:hover,
+.link:focus,
+.reference-link:hover,
+.learn-more-link:hover,
+.equipment-link:hover,
+.reference-item a:hover,
+.science-citation a:hover {
+    text-decoration: underline;
 }
 
 /* Item name buttons */
@@ -661,7 +689,7 @@ input, select {
     background: var(--bg-input);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    padding: var(--space-2) var(--space-3);
+    padding: var(--padding-sm);
     color: var(--text-primary);
     font-family: var(--font-mono);
     font-size: var(--text-xl);
@@ -1004,7 +1032,7 @@ input:focus, select:focus {
     font-size: var(--text-md);
     color: var(--text-secondary);
     cursor: pointer;
-    transition: all var(--transition-base);
+    transition: var(--transition-all);
     /* WCAG 2.2 Target Size: minimum 24x24px */
     min-height: 24px;
     display: inline-flex;
@@ -1033,13 +1061,7 @@ input:focus, select:focus {
 }
 
 .reference-item a {
-    color: var(--accent-green);
-    text-decoration: none;
     font-size: var(--text-lg);
-}
-
-.reference-item a:hover {
-    text-decoration: underline;
 }
 
 .reference-section {
@@ -1117,12 +1139,21 @@ input:focus, select:focus {
     margin-bottom: var(--space-3);
 }
 
-.panel-prop-item {
+/* Panel list - vertical list of items */
+.panel-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+/* Shared panel item styles */
+.panel-prop-item,
+.panel-list-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: var(--bg-secondary);
-    padding: var(--space-2) var(--space-3);
+    padding: var(--padding-sm);
     border-radius: var(--radius-sm);
     border: 1px solid var(--border);
 }
@@ -1135,23 +1166,6 @@ input:focus, select:focus {
 .panel-prop-value {
     font-size: var(--text-md);
     color: var(--accent-cream);
-}
-
-/* Panel list - vertical list of items */
-.panel-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-}
-
-.panel-list-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--bg-secondary);
-    padding: var(--space-2) var(--space-3);
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
 }
 
 .panel-list-item--dashed {
@@ -1240,7 +1254,7 @@ input:focus, select:focus {
     cursor: pointer;
     font-size: var(--text-md);
     margin-left: var(--space-2);
-    transition: all var(--transition-base);
+    transition: var(--transition-all);
 }
 
 /* Responsive panel sizing */
@@ -1326,34 +1340,8 @@ input:focus, select:focus {
 .property-fill.mid { background: var(--accent-gold); }
 .property-fill.high { background: var(--success); }
 
-/* Fatty acids display */
-.fatty-acids {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-2);
-}
-
-.fatty-acid-item {
-    display: flex;
-    justify-content: space-between;
-    padding: var(--space-2) var(--space-3);
-    background: var(--bg-secondary);
-    border-radius: var(--radius-md);
-    font-size: var(--text-lg);
-}
-
-.fatty-acid-name {
-    color: var(--text-secondary);
-}
-
-.fatty-acid-value {
-    font-family: var(--font-mono);
-    color: var(--accent-cream);
-}
-
 @media (max-width: 480px) {
-    .properties-grid,
-    .fatty-acids {
+    .properties-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -1511,13 +1499,13 @@ input:focus, select:focus {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    padding: var(--space-2) var(--space-4);
+    padding: var(--padding-md);
     color: var(--text-secondary);
     cursor: pointer;
     font-family: var(--font-body);
     font-size: var(--text-lg);
     font-weight: 600;
-    transition: all var(--transition-base);
+    transition: var(--transition-all);
     min-height: var(--size-btn-md);
 }
 
@@ -1617,7 +1605,7 @@ input:focus, select:focus {
     display: flex;
     align-items: flex-start;
     gap: var(--space-3);
-    padding: var(--space-3) var(--space-4);
+    padding: var(--padding-lg);
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
@@ -1966,12 +1954,12 @@ details[open] .details-hide {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    padding: var(--space-2) var(--space-4);
+    padding: var(--padding-md);
     color: var(--text-secondary);
     cursor: pointer;
     font-family: var(--font-body);
     font-size: var(--text-lg);
-    transition: all var(--transition-base);
+    transition: var(--transition-all);
 }
 
 .page-filter:hover {
@@ -1997,7 +1985,7 @@ details[open] .details-hide {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: var(--space-2) var(--space-4);
+    padding: var(--padding-md);
     transition: border-color var(--transition-slow), box-shadow var(--transition-slow);
 }
 
@@ -2065,7 +2053,7 @@ details[open] .details-hide {
 .entry-details-content {
     background: var(--bg-secondary);
     border-radius: var(--radius-md);
-    padding: var(--space-3) var(--space-4);
+    padding: var(--padding-lg);
     margin-top: var(--space-2);
     color: var(--text-secondary);
     font-size: var(--text-lg);
@@ -2119,7 +2107,7 @@ details[open] .details-hide {
     border-radius: var(--radius-sm);
     text-decoration: none;
     border: 1px solid var(--border);
-    transition: all var(--transition-base);
+    transition: var(--transition-all);
 }
 
 .entry-related-link:hover {
@@ -2179,28 +2167,13 @@ a.entry-title:hover,
     color: var(--text-muted);
 }
 
-.reference-link {
-    color: var(--accent-green);
-    text-decoration: none;
-}
-
-.reference-link:hover {
-    text-decoration: underline;
-}
-
 /* Learn more link */
 .entry-learn-more {
     margin-top: var(--space-2);
 }
 
 .learn-more-link {
-    color: var(--accent-green);
     font-size: var(--text-md);
-    text-decoration: none;
-}
-
-.learn-more-link:hover {
-    text-decoration: underline;
 }
 
 .no-results {
@@ -2339,7 +2312,7 @@ a.entry-title:hover,
 
 .step-warnings {
     list-style: none;
-    padding: var(--space-2) var(--space-3);
+    padding: var(--padding-sm);
     margin: var(--space-2) 0;
     background: rgba(208, 112, 96, 0.1);
     border-left: 3px solid var(--danger);
@@ -2374,15 +2347,6 @@ a.entry-title:hover,
     padding: var(--space-1) var(--space-3);
     border-radius: var(--radius-md);
     font-size: var(--text-md);
-}
-
-.equipment-link {
-    color: var(--accent-green);
-    text-decoration: none;
-}
-
-.equipment-link:hover {
-    text-decoration: underline;
 }
 
 .process-pros-cons {
@@ -2457,7 +2421,7 @@ a.entry-title:hover,
     flex-wrap: wrap;
     gap: var(--space-3);
     margin-bottom: var(--space-3);
-    padding: var(--space-2) var(--space-3);
+    padding: var(--padding-sm);
     background: var(--bg-secondary);
     border-radius: var(--radius-md);
 }
@@ -2716,14 +2680,9 @@ details.mode-subcontainer > .collapsible-content {
     gap: var(--space-2);
 }
 
-.build-mode-tab {
-    padding: var(--space-2) var(--space-4);
-    font-size: var(--text-lg);
-    border-radius: var(--radius-md);
-    min-height: var(--size-btn-md);
-}
-
-.build-mode-tab.active {
+/* Build mode & additive tabs share green active styling */
+.build-mode-tab.active,
+.additive-tab.active {
     background: var(--accent-green-20);
     border-color: var(--accent-green);
     color: var(--text-primary);
@@ -2760,18 +2719,6 @@ details.mode-subcontainer > .collapsible-content {
     gap: var(--space-2);
 }
 
-.additive-tab {
-    padding: var(--space-2) var(--space-4);
-    font-size: var(--text-lg);
-    border-radius: var(--radius-md);
-    min-height: var(--size-btn-md);
-}
-
-.additive-tab.active {
-    background: var(--accent-green-20);
-    border-color: var(--accent-green);
-    color: var(--text-primary);
-}
 
 #additivesContent .mode-area .empty-state,
 #additivesContent .mode-area .empty-state-small {
@@ -2891,6 +2838,11 @@ details.mode-subcontainer > .collapsible-content {
     border-top: none;
     margin-top: 0;
     padding-top: 0;
+}
+
+/* Add spacing between YOLO button and recipe list */
+#yoloMode > .recipe-fats {
+    margin-top: var(--space-4);
 }
 
 /* Instructions list */
@@ -3146,7 +3098,7 @@ ol.instructions li:last-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--space-2) var(--space-3);
+    padding: var(--padding-sm);
     background: var(--bg-secondary);
     border-radius: var(--radius-md);
     margin-bottom: var(--space-2);
@@ -3284,7 +3236,7 @@ ol.instructions li:last-child {
 
     .build-mode-tab,
     .additive-tab {
-        padding: var(--space-2) var(--space-3);
+        padding: var(--padding-sm);
         font-size: var(--text-md);
         flex: 1 1 45%;
     }
@@ -3610,15 +3562,6 @@ ol.instructions li:last-child {
     margin-top: var(--space-3);
 }
 
-.science-citation a {
-    color: var(--accent-green);
-    text-decoration: none;
-}
-
-.science-citation a:hover {
-    text-decoration: underline;
-}
-
 .science-learn-more {
     font-size: var(--text-md);
     color: var(--text-muted);
@@ -3708,11 +3651,11 @@ ol.instructions li:last-child {
     }
 
     .science-section summary {
-        padding: var(--space-3) var(--space-4);
+        padding: var(--padding-lg);
     }
 
     .science-content {
-        padding: var(--space-3) var(--space-4);
+        padding: var(--padding-lg);
     }
 
     .science-explanation h5 {
@@ -3736,7 +3679,7 @@ ol.instructions li:last-child {
 .fat-badge-sourcing { color: var(--text-primary); background: var(--bg-tertiary); border: 1px solid var(--border); }
 
 /* Fat-specific: stats grid */
-.fat-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: var(--space-2); padding: var(--space-3) var(--space-4); background: var(--bg-secondary); border-radius: var(--radius-md); }
+.fat-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: var(--space-2); padding: var(--padding-lg); background: var(--bg-secondary); border-radius: var(--radius-md); }
 .fat-stat { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .fat-stat-label { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: var(--space-1); }
 a.fat-stat-label { text-decoration: none; border-bottom: 1px dotted var(--text-muted); transition: color var(--transition-fast), border-color var(--transition-fast); }
@@ -3789,7 +3732,7 @@ a.fat-stat-label:hover { color: var(--accent-gold); border-bottom-color: var(--a
    ============================================ */
 
 /* Formula-specific: equation display */
-.formula-equation { background: var(--bg-secondary); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); margin-bottom: var(--space-3); text-align: center; }
+.formula-equation { background: var(--bg-secondary); border-radius: var(--radius-md); padding: var(--padding-lg); margin-bottom: var(--space-3); text-align: center; }
 .formula-equation code { font-family: var(--font-mono); font-size: var(--text-3xl); color: var(--accent-gold); }
 .formula-user-friendly { color: var(--text-secondary); margin-bottom: var(--space-3); }
 
@@ -3797,7 +3740,7 @@ a.fat-stat-label:hover { color: var(--accent-gold); border-bottom-color: var(--a
 .formula-variables,
 .formula-example { margin-bottom: var(--space-3); }
 .formula-section-heading { font-size: var(--text-xs); color: var(--text-muted); margin: 0; text-transform: uppercase; letter-spacing: 0.05em; background: var(--bg-secondary); display: inline-block; padding: var(--space-1) var(--space-3); border-radius: var(--radius-md) var(--radius-md) 0 0; }
-.formula-section-box { background: var(--bg-secondary); border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md); padding: var(--space-3) var(--space-4); font-size: var(--text-md); color: var(--text-secondary); }
+.formula-section-box { background: var(--bg-secondary); border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md); padding: var(--padding-lg); font-size: var(--text-md); color: var(--text-secondary); }
 .formula-section-box:last-child { margin-bottom: 0; }
 .formula-variables dl { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-1) var(--space-4); }
 .formula-variables dt { font-family: var(--font-mono); color: var(--accent-cream); }
@@ -3827,7 +3770,7 @@ a.fat-stat-label:hover { color: var(--accent-gold); border-bottom-color: var(--a
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    padding: var(--space-3) var(--space-4);
+    padding: var(--padding-lg);
 }
 
 .citation-title {
@@ -3936,6 +3879,25 @@ a.citation-title .external-icon {
     align-items: center;
 }
 
+/* Gap utilities */
+.u-gap-2 { gap: var(--space-2); }
+.u-gap-3 { gap: var(--space-3); }
+.u-gap-4 { gap: var(--space-4); }
+
+/* Flex direction */
+.u-flex { display: flex; }
+.u-flex-col { display: flex; flex-direction: column; }
+.u-flex-wrap { flex-wrap: wrap; }
+.u-items-center { align-items: center; }
+.u-items-start { align-items: flex-start; }
+.u-justify-end { justify-content: flex-end; }
+
+/* Grid */
+.u-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); }
+
+/* Border */
+.u-border { border: 1px solid var(--border); }
+
 /* ============================================
    Touch Targets (WCAG 2.2)
    ============================================ */
@@ -3957,6 +3919,21 @@ a.citation-title .external-icon {
 /* ============================================
    Component Patterns
    ============================================ */
+
+/* Container base - secondary background with border */
+.container-base {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+}
+
+/* Container card - larger radius with padding */
+.container-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3);
+}
 
 /* Mode area container */
 .mode-area {
