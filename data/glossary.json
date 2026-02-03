@@ -434,7 +434,7 @@
       "craft",
       "calculator"
     ],
-    "details": "Below 41: very hard, stable bar but potentially less conditioning.\n\nAbove 70: soft bar, shorter shelf life, consider antioxidants.\n\nWhy iodine value predicts rancidity:\n\nThe iodine value test works by adding iodine molecules across carbon-carbon double bonds. More double bonds = more iodine absorbed = higher IV number. This makes IV a direct measure of unsaturation.\n\nDouble bonds are oxidation targets because:\n\n• The π electrons in a C=C double bond are loosely held and exposed above and below the carbon chain\n\n• Oxygen (especially as free radicals) attacks these electron-rich sites\n\n• Each attack breaks the double bond and creates reactive peroxides that propagate chain reactions\n\n• These peroxides eventually break down into aldehydes and ketones—the compounds that smell and taste rancid\n\nThis is why polyunsaturated fats (linoleic C18:2, linolenic C18:3) with multiple double bonds are far more oxidation-prone than monounsaturated fats (oleic C18:1), which are more stable than saturated fats (no double bonds, no oxidation sites).",
+    "details": "Below 41: very hard, stable bar but potentially less conditioning.\n\nAbove 70: soft bar, shorter shelf life, consider antioxidants.\n\nWhy iodine value predicts rancidity:\n\nThe iodine value test works by adding iodine molecules across carbon-carbon double bonds. More double bonds = more iodine absorbed = higher IV number. This makes IV a direct measure of unsaturation.\n\nDouble bonds are oxidation targets because:\n\n• The π electrons in a C=C double bond are loosely held and exposed above and below the carbon chain\n\n• Oxygen (especially as free radicals) attacks these electron-rich sites\n\n• Each attack breaks the double bond and creates reactive peroxides that propagate chain reactions\n\n• These peroxides eventually break down into aldehydes and ketones—the compounds that smell and taste rancid\n\nThis is why polyunsaturated fats (linoleic C18:2, linolenic C18:3) with multiple double bonds are far more oxidation-prone than monounsaturated fats (oleic C18:1), which are more stable than saturated fats (no double bonds, no oxidation sites).\n\nLimitations: G. Knothe (2002) noted that iodine value alone poorly predicts oxidative stability because it only measures total unsaturation, not where the double bonds are located.\n\nWhy double bond position matters:\n\n• Omega-3 position (near methyl end): The terminal methyl group (-CH₃) weakly stabilizes adjacent carbons. A double bond at the omega-3 position (like in linolenic acid, C18:3) places reactive sites near this weak anchor, making the bis-allylic hydrogens extremely vulnerable to abstraction by free radicals.\n\n• Mid-chain position: Double bonds in the middle of the chain (like oleic acid's omega-9 position) are flanked by longer carbon chains on both sides, providing more steric shielding and electron density distribution that slightly stabilizes the structure.\n\n• Bis-allylic hydrogens: The hydrogens on carbons between two double bonds (=CH-CH₂-CH=) have exceptionally weak C-H bonds (~75 kcal/mol vs ~100 kcal/mol for saturated C-H). Linoleic acid (C18:2) has one bis-allylic site; linolenic acid (C18:3) has two, making it oxidize roughly twice as fast.\n\nPractical impact: Two oils with identical iodine values can have very different shelf lives. High-oleic sunflower oil and regular sunflower oil might have similar IV, but the high-oleic version (mostly omega-9 monounsaturated) is far more stable than the regular version (high in omega-6 linoleic acid with bis-allylic sites).",
     "ranges": {
       "max": 70,
       "min": 41
@@ -450,6 +450,12 @@
         "section": "Soap Qualities",
         "url": "http://soapcalc.net/info/soapqualities.asp",
         "note": "Recommended ranges are empirically derived from soapmaking practice"
+      },
+      {
+        "sourceId": "journal-aocs",
+        "section": "Structure Indices in FA Chemistry",
+        "url": "https://doi.org/10.1007/s11746-002-0569-4",
+        "note": "Knothe (2002): IV poorly predicts oxidative stability; double bond position matters more"
       }
     ],
     "related": [
