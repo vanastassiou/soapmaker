@@ -83,14 +83,6 @@ export function renderRecipe(container, recipe, locks, fatsDatabase, callbacks) 
 
     const totalPercentage = recipe.reduce((sum, fat) => sum + fat.percentage, 0);
 
-    const headerRow = `
-        <div class="item-row header-row cols-3">
-            <span>Fat</span>
-            <span>%</span>
-            <span></span>
-        </div>
-    `;
-
     const rows = recipe.map((fat, i) => {
         const fatData = fatsDatabase[fat.id];
         return renderItemRow({
@@ -116,7 +108,7 @@ export function renderRecipe(container, recipe, locks, fatsDatabase, callbacks) 
         </div>
     `;
 
-    container.innerHTML = headerRow + rows + totalsRow;
+    container.innerHTML = rows + totalsRow;
 
     // Attach event handlers with abort signal for cleanup
     attachRowEventHandlersWithSignal(container, {
@@ -975,15 +967,6 @@ export function renderCupboardFats(container, cupboardFats, fatsDatabase, unit, 
 
     const totalWeight = cupboardFats.reduce((sum, fat) => sum + fat.weight, 0);
 
-    const headerRow = `
-        <div class="item-row header-row cols-4">
-            <span>Fat</span>
-            <span>${unit}</span>
-            <span>%</span>
-            <span></span>
-        </div>
-    `;
-
     const rows = cupboardFats.map((fat, i) => {
         const fatData = fatsDatabase[fat.id];
         return renderItemRow({
@@ -1002,7 +985,7 @@ export function renderCupboardFats(container, cupboardFats, fatsDatabase, unit, 
         });
     }).join('');
 
-    container.innerHTML = headerRow + rows + renderTotalsRow('Total Fats', totalWeight, unit, 0);
+    container.innerHTML = rows + renderTotalsRow('Total Fats', totalWeight, unit, 0);
 
     // Attach event handlers with abort signal for cleanup
     attachRowEventHandlersWithSignal(container, {
@@ -1030,15 +1013,6 @@ export function renderCupboardSuggestions(container, suggestions, fatsDatabase, 
 
     const totalWeight = suggestions.reduce((sum, s) => sum + s.weight, 0);
 
-    const headerRow = `
-        <div class="item-row header-row cols-4">
-            <span>Suggested fat</span>
-            <span>${unit}</span>
-            <span>%</span>
-            <span></span>
-        </div>
-    `;
-
     const rows = suggestions.map((sugg, i) => {
         const fatData = fatsDatabase[sugg.id];
         return renderItemRow({
@@ -1057,7 +1031,7 @@ export function renderCupboardSuggestions(container, suggestions, fatsDatabase, 
         });
     }).join('');
 
-    container.innerHTML = headerRow + rows + renderTotalsRow('Total suggested', totalWeight, unit, 1);
+    container.innerHTML = rows + renderTotalsRow('Total suggested', totalWeight, unit, 1);
 
     // Attach event handlers with abort signal for cleanup
     attachRowEventHandlersWithSignal(container, {

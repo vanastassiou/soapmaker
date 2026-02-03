@@ -91,6 +91,7 @@ export function renderItemRow(config, index, options = {}) {
         if (isWeightInput) {
             weightCell = `<div class="weight-cell">
                    <input type="number" value="${weight}" min="0" step="1" data-action="weight" data-index="${index}" aria-label="${name} weight in ${unit}" ${disabledAttr}>
+                   <span class="unit-label">${unit}</span>
                    ${lockBtn}
                </div>`;
         } else {
@@ -111,6 +112,7 @@ export function renderItemRow(config, index, options = {}) {
         if (isPercentageInput) {
             percentageCell = `<div class="percentage-cell">
                    <input type="number" value="${percentage}" min="0" max="100" step="0.1" data-action="percentage" data-index="${index}" aria-label="${name} percentage" ${disabledAttr}>
+                   <span class="unit-label">%</span>
                    ${lockBtn}
                </div>`;
         } else {

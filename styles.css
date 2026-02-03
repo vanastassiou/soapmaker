@@ -694,29 +694,25 @@ input:focus, select:focus {
     grid-column: 1 / -1;
 }
 
-/* Item rows - base styles */
+/* Item rows - base styles (flexbox keeps items on one line) */
 .item-row {
-    display: grid;
-    grid-template-columns: 1fr auto auto auto;
-    gap: var(--space-2);
+    display: flex;
+    flex-wrap: nowrap;
     align-items: center;
+    gap: var(--space-2);
     padding: var(--space-3);
     background: var(--bg-secondary);
     border-radius: var(--radius-lg);
     border: 1px solid var(--border);
 }
 
-/* Column layout variants */
-.item-row.cols-4 {
-    grid-template-columns: 1fr auto auto auto;
-}
-
-.item-row.cols-3 {
-    grid-template-columns: 1fr auto auto;
-}
-
-.item-row.cols-2 {
-    grid-template-columns: 1fr auto;
+/* Name takes remaining space */
+.item-row .item-name {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .item-row.locked {
@@ -745,17 +741,23 @@ input:focus, select:focus {
 .weight-cell,
 .percentage-cell {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-end;
     justify-self: end;
     gap: var(--space-2);
+    white-space: nowrap;
 }
 
 .weight-cell input,
 .percentage-cell input {
-    flex: 1;
-    min-width: 0;
-    max-width: var(--width-input-list);
+    flex-shrink: 0;
+}
+
+.weight-cell .unit-label,
+.percentage-cell .unit-label {
+    flex-shrink: 0;
+    color: var(--text-muted);
 }
 
 /* Item row inputs and percentages */
@@ -816,51 +818,59 @@ input:focus, select:focus {
 }
 
 /* Mobile responsive item rows */
-@media (max-width: 480px) {
+@media (max-width: 500px) {
     .item-row,
     .totals-row {
         gap: var(--space-1);
         padding: var(--space-2);
     }
 
-    /* Mobile item rows: name on left, controls stacked on right */
-    .item-row.cols-4,
-    .item-row.cols-3 {
-        grid-template-columns: 1fr auto;
+    /* Mobile: switch to grid for multiline layout */
+    .item-row {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
         grid-template-rows: auto auto;
     }
 
-    .item-row.cols-4 .item-name,
-    .item-row.cols-3 .item-name {
-        grid-column: 1;
-        grid-row: 1 / -1;
-        align-self: center;
-    }
-
-    .item-row.cols-3 .weight-cell,
-    .item-row.cols-3 .percentage-cell,
-    .item-row.cols-4 .weight-cell {
-        grid-column: 2;
+    /* Name on first row, full width, never truncated */
+    .item-row .item-name {
+        grid-column: 1 / -1;
         grid-row: 1;
-        justify-self: end;
+        justify-self: start;
+        flex: unset;
+        min-width: unset;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
     }
 
-    .item-row.cols-4 .percentage-cell {
+    /* Input cells on second row */
+    .item-row .weight-cell {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: start;
+    }
+
+    .item-row .percentage-cell {
         grid-column: 2;
         grid-row: 2;
+        justify-self: start;
+    }
+
+    /* Remove button on second row, right side */
+    .item-row .remove-btn {
+        grid-column: 3;
+        grid-row: 2;
         justify-self: end;
+    }
+
+    /* cols-3: percentage cell can stretch, remove in col 2 */
+    .item-row.cols-3 .percentage-cell {
+        grid-column: 1;
     }
 
     .item-row.cols-3 .remove-btn {
         grid-column: 2;
-        grid-row: 2;
-        justify-self: end;
-    }
-
-    .item-row.cols-4 .remove-btn {
-        grid-column: 2;
-        grid-row: 3;
-        justify-self: end;
     }
 
     .item-row input {
