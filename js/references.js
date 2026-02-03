@@ -166,11 +166,11 @@ function buildPublicationIndex(allRefs) {
 function getCitedByLink(item) {
     switch (item.type) {
         case 'formula':
-            return `how-it-works/formulas.html#${item.id}`;
+            return `how-it-works/#algorithms/${item.id}`;
         case 'glossary':
             return `soapmaking/glossary.html#${item.id}`;
         case 'fatty-acid':
-            return `how-it-works/glossary.html#${item.id}`;
+            return `how-it-works/#glossary/${item.id}`;
         case 'fat':
             return `soapmaking/ingredients.html#${item.id}`;
         case 'additive':
